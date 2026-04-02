@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0B0C10"/>
+  <rect x="60" y="60" width="1080" height="680" rx="36" fill="url(#p2)" stroke="#2A3C43"/>
+  <circle cx="320" cy="400" r="170" fill="#66FCF1" fill-opacity="0.2"/>
+  <rect x="560" y="220" width="470" height="120" rx="22" fill="#15262D"/>
+  <rect x="560" y="380" width="470" height="120" rx="22" fill="#15262D"/>
+  <rect x="560" y="540" width="320" height="80" rx="20" fill="#15262D"/>
+  <text x="120" y="130" fill="#FFFFFF" font-size="42" font-family="Arial, sans-serif" font-weight="700">HoReCa Brand Growth</text>
+  <defs>
+    <linearGradient id="p2" x1="60" y1="60" x2="1140" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1418"/>
+      <stop offset="1" stop-color="#173237"/>
+    </linearGradient>
+  </defs>
+</svg>

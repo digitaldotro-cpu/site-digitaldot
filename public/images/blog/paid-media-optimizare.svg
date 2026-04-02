@@ -1,0 +1,17 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0B0C10"/>
+  <rect x="90" y="90" width="1420" height="720" rx="50" fill="url(#grad3)" stroke="#2A3C43"/>
+  <rect x="180" y="220" width="1240" height="460" rx="30" fill="#111A1F" stroke="#2F4249"/>
+  <polyline points="250,580 420,500 620,530 840,400 1040,430 1240,300 1360,340" stroke="#66FCF1" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="420" cy="500" r="12" fill="#66FCF1"/>
+  <circle cx="840" cy="400" r="12" fill="#66FCF1"/>
+  <circle cx="1240" cy="300" r="12" fill="#66FCF1"/>
+  <text x="180" y="170" fill="#FFFFFF" font-size="54" font-family="Arial, sans-serif" font-weight="700">Optimizare Paid Media</text>
+  <text x="180" y="740" fill="#C6C6C6" font-size="24" font-family="Arial, sans-serif">Meta + Google: prioritate pe eficienta si conversie</text>
+  <defs>
+    <linearGradient id="grad3" x1="90" y1="90" x2="1510" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1318"/>
+      <stop offset="1" stop-color="#153338"/>
+    </linearGradient>
+  </defs>
+</svg>

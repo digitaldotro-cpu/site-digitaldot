@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0B0C10"/>
+  <rect x="60" y="60" width="1080" height="680" rx="36" fill="url(#p1)" stroke="#2A3C43"/>
+  <rect x="140" y="180" width="420" height="440" rx="24" fill="#131D22"/>
+  <rect x="620" y="190" width="460" height="80" rx="18" fill="#14242B"/>
+  <rect x="620" y="300" width="340" height="80" rx="18" fill="#14242B"/>
+  <rect x="620" y="410" width="260" height="80" rx="18" fill="#14242B"/>
+  <text x="140" y="130" fill="#FFFFFF" font-size="42" font-family="Arial, sans-serif" font-weight="700">eCommerce Fashion</text>
+  <defs>
+    <linearGradient id="p1" x1="60" y1="60" x2="1140" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1418"/>
+      <stop offset="1" stop-color="#17353A"/>
+    </linearGradient>
+  </defs>
+</svg>

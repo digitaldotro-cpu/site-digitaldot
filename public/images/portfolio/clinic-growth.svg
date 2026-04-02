@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0B0C10"/>
+  <rect x="60" y="60" width="1080" height="680" rx="36" fill="url(#p3)" stroke="#2A3C43"/>
+  <rect x="140" y="210" width="920" height="380" rx="28" fill="#121C21" stroke="#30434A"/>
+  <polyline points="200,520 350,460 490,470 660,390 820,370 980,310" stroke="#66FCF1" stroke-width="10" fill="none"/>
+  <text x="120" y="130" fill="#FFFFFF" font-size="42" font-family="Arial, sans-serif" font-weight="700">Clinic Lead Growth</text>
+  <defs>
+    <linearGradient id="p3" x1="60" y1="60" x2="1140" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1419"/>
+      <stop offset="1" stop-color="#153238"/>
+    </linearGradient>
+  </defs>
+</svg>
