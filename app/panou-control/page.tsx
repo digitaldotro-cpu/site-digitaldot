@@ -1,13 +1,13 @@
 import { buildMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { Container } from "@/components/ui/container";
-import { ControlPanel } from "@/components/admin/control-panel";
+import { siteContentToCmsData } from "@/lib/cms-site-adapter";
+import { DashboardShell } from "@/components/cms/dashboard-shell";
 
 export const metadata = {
   ...buildMetadata({
-    title: "Panou de Control",
+    title: "Digital Dot CMS",
     path: "/panou-control",
-    description: "Panou intern pentru editarea conținutului website-ului Digital Dot.",
+    description: "Panou CMS pentru administrarea conținutului Digital Dot.",
   }),
   robots: {
     index: false,
@@ -16,13 +16,8 @@ export const metadata = {
 };
 
 export default async function ControlPanelPage() {
-  const content = await getSiteContent();
+  const siteContent = await getSiteContent();
+  const initialData = siteContentToCmsData(siteContent);
 
-  return (
-    <section className="py-16 sm:py-20">
-      <Container>
-        <ControlPanel initialContent={content} />
-      </Container>
-    </section>
-  );
+  return <DashboardShell initialData={initialData} />;
 }

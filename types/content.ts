@@ -17,6 +17,9 @@ export type PortfolioProject = {
   metrics: string[];
   image: string;
   hasVideo?: boolean;
+  href?: string;
+  layoutVariant?: "hero" | "wide" | "tall" | "standard";
+  highlightBadge?: string;
 };
 
 export type BlogCategory = {

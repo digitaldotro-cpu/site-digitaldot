@@ -1,0 +1,408 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "name": "Homepage",
+      "slug": "/",
+      "status": "published",
+      "sections": [
+        {
+          "id": "hero-home",
+          "name": "Hero Section",
+          "type": "hero",
+          "elements": [
+            {
+              "id": "eyebrow-home",
+              "type": "text",
+              "label": "Eyebrow",
+              "content": "DIGITAL CURATORS",
+              "style": {
+                "fontSize": 12,
+                "fontWeight": 700,
+                "textAlign": "center",
+                "color": "#66fcf1",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "title-home",
+              "type": "text",
+              "label": "Main Heading",
+              "content": "Curating Digital Excellence",
+              "style": {
+                "fontSize": 72,
+                "fontWeight": 800,
+                "textAlign": "center",
+                "color": "#ffffff",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "subtitle-home",
+              "type": "text",
+              "label": "Subtitle",
+              "content": "We design high-end digital experiences that feel more like galleries than interfaces.",
+              "style": {
+                "fontSize": 30,
+                "fontWeight": 400,
+                "textAlign": "center",
+                "color": "#c6c6c6",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "cta-primary-home",
+              "type": "button",
+              "label": "Primary CTA",
+              "content": "Start Curating",
+              "href": "/contacteaza-ne",
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 700,
+                "textAlign": "center",
+                "color": "#0b0c10",
+                "backgroundColor": "#66fcf1",
+                "padding": 14,
+                "margin": 0,
+                "borderRadius": 999
+              }
+            },
+            {
+              "id": "cta-secondary-home",
+              "type": "button",
+              "label": "Secondary CTA",
+              "content": "View Portfolio",
+              "href": "/portofoliu",
+              "style": {
+                "fontSize": 18,
+                "fontWeight": 600,
+                "textAlign": "center",
+                "color": "#ffffff",
+                "backgroundColor": "#11181d",
+                "padding": 14,
+                "margin": 0,
+                "borderRadius": 999
+              }
+            }
+          ],
+          "settings": {
+            "backgroundColor": "#0b0c10",
+            "paddingY": 64,
+            "borderRadius": 28
+          }
+        },
+        {
+          "id": "services-home",
+          "name": "Services Grid",
+          "type": "gallery",
+          "elements": [
+            {
+              "id": "services-home-title",
+              "type": "text",
+              "label": "Section Title",
+              "content": "Services Grid",
+              "style": {
+                "fontSize": 36,
+                "fontWeight": 700,
+                "textAlign": "left",
+                "color": "#ffffff",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "services-home-media",
+              "type": "media",
+              "label": "Services Preview",
+              "mediaId": "media-home-services",
+              "caption": "Card collection",
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "left",
+                "color": "#c6c6c6",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 22
+              }
+            }
+          ],
+          "settings": {
+            "backgroundColor": "#0f1418",
+            "paddingY": 56,
+            "borderRadius": 24
+          }
+        },
+        {
+          "id": "cta-home",
+          "name": "Call to Action",
+          "type": "cta",
+          "elements": [
+            {
+              "id": "cta-home-main",
+              "type": "cta",
+              "label": "Main CTA Block",
+              "content": "Ready to build the next digital benchmark?",
+              "subcontent": "Book a strategy call and let's shape your next growth chapter.",
+              "buttonLabel": "Schedule Call",
+              "buttonHref": "/contacteaza-ne",
+              "style": {
+                "fontSize": 34,
+                "fontWeight": 700,
+                "textAlign": "center",
+                "color": "#ffffff",
+                "backgroundColor": "#10181d",
+                "padding": 24,
+                "margin": 0,
+                "borderRadius": 28
+              }
+            }
+          ],
+          "settings": {
+            "backgroundColor": "#0b0c10",
+            "paddingY": 54,
+            "borderRadius": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Media",
+      "slug": "/servicii/social-media-management",
+      "status": "draft",
+      "sections": [
+        {
+          "id": "hero-social",
+          "name": "Hero Section",
+          "type": "hero",
+          "elements": [
+            {
+              "id": "title-social",
+              "type": "text",
+              "label": "Main Heading",
+              "content": "Curatorii de Prezență Digitală",
+              "style": {
+                "fontSize": 62,
+                "fontWeight": 800,
+                "textAlign": "left",
+                "color": "#ffffff",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "subtitle-social",
+              "type": "text",
+              "label": "Subtitle",
+              "content": "Strategie, producție, publicare și optimizare într-un sistem complet de growth social.",
+              "style": {
+                "fontSize": 28,
+                "fontWeight": 400,
+                "textAlign": "left",
+                "color": "#c6c6c6",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "hero-social-media",
+              "type": "media",
+              "label": "Hero Visual",
+              "mediaId": "media-social-hero",
+              "caption": "Social preview",
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 400,
+                "textAlign": "center",
+                "color": "#c6c6c6",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 24
+              }
+            }
+          ],
+          "settings": {
+            "backgroundColor": "#0b0c10",
+            "paddingY": 64,
+            "borderRadius": 28
+          }
+        },
+        {
+          "id": "results-social",
+          "name": "Results",
+          "type": "gallery",
+          "elements": [
+            {
+              "id": "results-social-title",
+              "type": "text",
+              "label": "Section Title",
+              "content": "Impact Măsurabil",
+              "style": {
+                "fontSize": 36,
+                "fontWeight": 700,
+                "textAlign": "left",
+                "color": "#ffffff",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "results-social-media",
+              "type": "media",
+              "label": "Result Visual",
+              "mediaId": "media-social-result",
+              "caption": "Metrics snapshot",
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 500,
+                "textAlign": "left",
+                "color": "#c6c6c6",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 22
+              }
+            }
+          ],
+          "settings": {
+            "backgroundColor": "#0d1216",
+            "paddingY": 52,
+            "borderRadius": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "photo-video",
+      "name": "Producție Foto & Video",
+      "slug": "/servicii/productie-foto-video",
+      "status": "published",
+      "sections": [
+        {
+          "id": "hero-photo",
+          "name": "Hero Section",
+          "type": "hero",
+          "elements": [
+            {
+              "id": "title-photo",
+              "type": "text",
+              "label": "Main Heading",
+              "content": "Capturăm esența brandului tău",
+              "style": {
+                "fontSize": 58,
+                "fontWeight": 800,
+                "textAlign": "left",
+                "color": "#ffffff",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 0
+              }
+            },
+            {
+              "id": "hero-photo-media",
+              "type": "media",
+              "label": "Hero Visual",
+              "mediaId": "media-photo-hero",
+              "caption": "Camera rig",
+              "style": {
+                "fontSize": 14,
+                "fontWeight": 400,
+                "textAlign": "center",
+                "color": "#c6c6c6",
+                "backgroundColor": "transparent",
+                "padding": 0,
+                "margin": 0,
+                "borderRadius": 24
+              }
+            }
+          ],
+          "settings": {
+            "backgroundColor": "#0b0c10",
+            "paddingY": 64,
+            "borderRadius": 26
+          }
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "media-home-services",
+      "name": "Home Services",
+      "type": "image",
+      "url": "/images/portfolio/ecom-fashion.svg",
+      "tags": ["home", "services"],
+      "createdAt": "2026-04-03T10:00:00.000Z"
+    },
+    {
+      "id": "media-social-hero",
+      "name": "Social Hero",
+      "type": "image",
+      "url": "/images/social-media/hero-phone.svg",
+      "tags": ["social", "hero"],
+      "createdAt": "2026-04-03T10:05:00.000Z"
+    },
+    {
+      "id": "media-social-result",
+      "name": "Social Results",
+      "type": "image",
+      "url": "/images/social-media/result-watch.svg",
+      "tags": ["social", "results"],
+      "createdAt": "2026-04-03T10:06:00.000Z"
+    },
+    {
+      "id": "media-photo-hero",
+      "name": "Photo Video Hero",
+      "type": "image",
+      "url": "/images/photo-video/camera-rig.svg",
+      "tags": ["photo-video", "hero"],
+      "createdAt": "2026-04-03T10:07:00.000Z"
+    }
+  ],
+  "blog": [
+    {
+      "id": "blog-1",
+      "title": "Cum construiești un funnel social care aduce leaduri",
+      "content": "## Introducere\n\nUn funnel social eficient începe cu mesaje clare și conținut structurat pe etape.",
+      "category": "social-media",
+      "tags": ["funnel", "leaduri"],
+      "published": true,
+      "updatedAt": "2026-04-03T10:10:00.000Z",
+      "coverMediaId": "media-social-hero"
+    },
+    {
+      "id": "blog-2",
+      "title": "Checklist pentru audit de conținut în 30 de minute",
+      "content": "## Checklist\n\n- Poziționare clară\n- CTA pe fiecare pilon\n- KPI pe fiecare format",
+      "category": "strategie",
+      "tags": ["audit", "content"],
+      "published": false,
+      "updatedAt": "2026-04-03T10:12:00.000Z"
+    }
+  ],
+  "settings": {
+    "siteTitle": "Digital Dot CMS",
+    "primaryColor": "#66fcf1"
+  }
+}

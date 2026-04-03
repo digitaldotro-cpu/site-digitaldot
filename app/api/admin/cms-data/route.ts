@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { siteContentSchema } from "@/lib/site-content-schema";
+import { cmsDataSchema } from "@/lib/cms-schema";
 import { readSiteContent, writeSiteContent } from "@/lib/site-content";
+import { applyCmsToSiteContent, siteContentToCmsData } from "@/lib/cms-site-adapter";
 import { isAdminAuthorized } from "@/lib/admin-auth";
 
 export async function GET(request: NextRequest) {
@@ -8,8 +9,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ message: "Neautorizat." }, { status: 401 });
   }
 
-  const content = await readSiteContent();
-  return NextResponse.json(content);
+  const siteContent = await readSiteContent();
+  return NextResponse.json(siteContentToCmsData(siteContent));
 }
 
 export async function PUT(request: NextRequest) {
@@ -28,12 +29,12 @@ export async function PUT(request: NextRequest) {
     );
   }
 
-  const parsed = siteContentSchema.safeParse(payload);
+  const parsed = cmsDataSchema.safeParse(payload);
 
   if (!parsed.success) {
-    const firstIssue = parsed.error.issues[0];
-    const path = firstIssue?.path.join(".") || "root";
-    const message = firstIssue?.message || "Conținut invalid.";
+    const issue = parsed.error.issues[0];
+    const path = issue?.path.join(".") || "root";
+    const message = issue?.message || "Date invalide.";
 
     return NextResponse.json(
       { message: `Eroare la ${path}: ${message}` },
@@ -41,10 +42,12 @@ export async function PUT(request: NextRequest) {
     );
   }
 
-  await writeSiteContent(parsed.data);
+  const currentSiteContent = await readSiteContent();
+  const nextSiteContent = applyCmsToSiteContent(parsed.data, currentSiteContent);
+  await writeSiteContent(nextSiteContent);
 
   return NextResponse.json({
-    message: "Conținutul a fost salvat cu succes.",
+    message: "Modificările au fost salvate.",
     savedAt: new Date().toISOString(),
   });
 }

@@ -27,7 +27,12 @@ Website premium, multi-page, construit cu Next.js App Router pentru agenția de 
   - tag-uri, categorie, reading time, related articles
 - Contact page cu formular validat client + server
 - SEO-ready metadata pe pagini, plus `sitemap.xml` și `robots.txt`
-- Panou de control conținut la `/panou-control` (editează și salvează `content/site-content.json`)
+- Panou CMS complet la `/panou-control`:
+  - editor pagini cu secțiuni și elemente
+  - media library cu upload/replace/delete
+  - blog manager (create/edit/publish/unpublish)
+  - autosave + publish + undo/redo
+  - autentificare de sesiune admin
 
 ## Structură proiect
 
@@ -97,7 +102,12 @@ npm run build
 - Recomandat: Vercel (deploy direct din repository)
 - Variabile utile pentru producție:
   - `NEXT_PUBLIC_SITE_URL` (opțional, dacă vrei URL configurabil)
-  - `ADMIN_DASHBOARD_KEY` (opțional, protejează API-ul panoului de control)
+  - `ADMIN_DASHBOARD_KEY` (parola pentru autentificarea în CMS)
+  - `ADMIN_SESSION_SECRET` (recomandat, semnare cookie sesiune admin)
+  - `CLOUDINARY_CLOUD_NAME` (opțional, activează upload media Cloudinary)
+  - `CLOUDINARY_API_KEY`
+  - `CLOUDINARY_API_SECRET`
+  - `CLOUDINARY_FOLDER` (opțional, default: `digital-dot`)
 - Formularul de contact este pregătit pentru integrare cu:
   - email provider (Resend, SendGrid etc.)
   - CRM/webhook (HubSpot, Pipedrive, Make, Zapier)
@@ -106,8 +116,11 @@ npm run build
 ## Panou De Control
 
 - URL: `/panou-control`
-- Editarea din UI salvează direct în `content/site-content.json`
-- Dacă setezi `ADMIN_DASHBOARD_KEY`, introdu cheia în panou pentru salvare/reîncărcare
+- API CMS salvează în `content/cms-data.json`
+- Dacă `ADMIN_DASHBOARD_KEY` este setat, dashboard-ul cere autentificare
+- Media upload:
+  - cu Cloudinary configurat: upload server-side în Cloudinary
+  - fără Cloudinary: fallback local (Data URL în JSON) pentru dezvoltare
 
 ## Licență
 
