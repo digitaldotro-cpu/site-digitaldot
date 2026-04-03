@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Varela_Round } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { siteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
+import { AppShell } from "@/components/layout/app-shell";
 
 const varelaRound = Varela_Round({
   variable: "--font-varela-round",
@@ -44,25 +43,9 @@ export default async function RootLayout({
   return (
     <html lang="ro" className={varelaRound.variable}>
       <body className="bg-[#0b0c10] text-white antialiased">
-        <div className="relative min-h-screen overflow-hidden">
+        <div className="relative min-h-screen overflow-x-hidden">
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(102,252,241,0.11),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(39,104,100,0.26),transparent_36%),linear-gradient(160deg,#090b0f_10%,#0c1014_55%,#0b0f12_100%)]" />
-          <Navbar
-            brandName={content.global.brandName}
-            navItems={content.global.navigation}
-            ctaLabel={content.global.navbarCtaLabel}
-          />
-          <main>{children}</main>
-          <Footer
-            brandName={content.global.brandName}
-            description={content.global.footer.description}
-            quickLinksTitle={content.global.footer.quickLinksTitle}
-            quickLinks={content.global.footer.quickLinks}
-            contactTitle={content.global.footer.contactTitle}
-            contactEmail={content.global.footer.contactEmail}
-            contactPhone={content.global.footer.contactPhone}
-            contactLocation={content.global.footer.contactLocation}
-            copyrightTemplate={content.global.footer.copyrightTemplate}
-          />
+          <AppShell content={content}>{children}</AppShell>
         </div>
       </body>
     </html>

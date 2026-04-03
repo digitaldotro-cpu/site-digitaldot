@@ -224,6 +224,9 @@
       "heroTitle": "Social Media Management orientat spre brand awareness și leaduri.",
       "heroDescription": "Construim un sistem de conținut care menține brandul relevant, creează încredere și aduce conversații comerciale constante.",
       "heroCtaLabel": "Programează o discuție",
+      "heroSecondaryCtaLabel": "Vezi portofoliu",
+      "heroSecondaryCtaHref": "/portofoliu",
+      "heroImage": "/images/social-media/hero-phone.svg",
       "sectionOneTitle": "Probleme pe care le rezolvăm",
       "sectionOneItems": [
         "Conținut inconsistent și lipsă de direcție editorială",
@@ -271,6 +274,9 @@
       "heroTitle": "Producție Foto & Video pentru branduri care vor să iasă din zgomot.",
       "heroDescription": "Livrăm conținut video-first și foto premium, gândit pentru performanță media și comunicare coerentă pe toate canalele.",
       "heroCtaLabel": "Programează o discuție",
+      "heroSecondaryCtaLabel": "Vezi portofoliu",
+      "heroSecondaryCtaHref": "/portofoliu",
+      "heroImage": "/images/photo-video/camera-rig.svg",
       "sectionOneTitle": "Tipuri de conținut",
       "sectionOneItems": [
         "Video vertical pentru Reels, TikTok, Ads",
@@ -484,8 +490,8 @@
     "defaultFilter": "toate",
     "projectsTitle": "Selecție curată de proiecte",
     "projectsDescription": "Fiecare card evidențiază contextul, deciziile și rezultatele comerciale.",
-    "caseStudiesTitle": "Case study previews",
-    "caseStudiesDescription": "Fiecare proiect este prezentat din perspectivă de impact în business.",
+    "caseStudiesTitle": "Case Study Highlights",
+    "caseStudiesDescription": "Extragem insight-uri tactice din proiecte și le transformăm în sisteme replicabile.",
     "videoBlockTitle": "Video-first, acolo unde aduce impact",
     "videoBlockDescription": "Pentru proiectele cu componentă de awareness sau performance pe social media, prioritizăm formatele video și adaptăm cadrele în funcție de obiectivul campaniei.",
     "videoShowcaseCtaLabel": "Vezi toate proiectele",
@@ -686,6 +692,56 @@
       "description": "Scrie-ne pe email sau sună-ne și stabilim rapid următorii pași.",
       "primaryLabel": "Programează o discuție",
       "primaryHref": "/contacteaza-ne"
+    }
+  },
+  "cmsPages": {
+    "home": {
+      "name": "Homepage",
+      "slug": "/",
+      "seoTitle": "Homepage | Digital Dot",
+      "seoDescription": "Informații despre Homepage în ecosistemul Digital Dot."
+    },
+    "social": {
+      "name": "Social Media Management",
+      "slug": "/servicii/social-media-management",
+      "seoTitle": "Social Media Management | Digital Dot",
+      "seoDescription": "Informații despre Social Media Management în ecosistemul Digital Dot."
+    },
+    "photo-video": {
+      "name": "Producție Foto & Video",
+      "slug": "/servicii/productie-foto-video",
+      "seoTitle": "Producție Foto & Video | Digital Dot",
+      "seoDescription": "Informații despre Producție Foto & Video în ecosistemul Digital Dot."
+    },
+    "strategy": {
+      "name": "Strategie de marketing",
+      "slug": "/servicii/strategie-marketing",
+      "seoTitle": "Strategie de marketing | Digital Dot",
+      "seoDescription": "Informații despre Strategie de marketing în ecosistemul Digital Dot."
+    },
+    "global": {
+      "name": "Global (Navbar + Footer)",
+      "slug": "/",
+      "seoTitle": "Global (Navbar + Footer) | Digital Dot",
+      "seoDescription": "Informații despre Global (Navbar + Footer) în ecosistemul Digital Dot."
+    },
+    "portfolio": {
+      "name": "Portofoliu",
+      "slug": "/portofoliu",
+      "seoTitle": "Portofoliu | Digital Dot",
+      "seoDescription": "Informații despre Portofoliu în ecosistemul Digital Dot."
+    },
+    "blog-page": {
+      "name": "Blog Page",
+      "slug": "/blog",
+      "seoTitle": "Blog Page | Digital Dot",
+      "seoDescription": "Informații despre Blog Page în ecosistemul Digital Dot."
+    },
+    "contact": {
+      "name": "Contact",
+      "slug": "/contacteaza-ne",
+      "seoTitle": "Contact | Digital Dot",
+      "seoDescription": "Informații despre Contact în ecosistemul Digital Dot."
     }
   }
 }

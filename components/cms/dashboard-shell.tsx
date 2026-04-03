@@ -1046,17 +1046,19 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
 
   if (!isAuthChecked) {
     return (
-      <div className="fixed inset-0 z-[130] flex items-center justify-center bg-[#121414]">
+      <div className="min-h-screen bg-[#121414]">
+        <div className="flex min-h-screen items-center justify-center">
         <div className="rounded-2xl border border-[#3c4948]/30 bg-[#1e2020] px-6 py-4 text-sm text-[#bacac7]">
           Se verifică sesiunea CMS...
+        </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="fixed inset-0 z-[130] bg-[#121414] text-white">
-      <div className="flex h-full">
+    <div className="min-h-screen bg-[#121414] text-white">
+      <div className="flex min-h-screen">
         <Sidebar
           activeView={view}
           collapsed={sidebarCollapsed}
