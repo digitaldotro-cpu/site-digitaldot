@@ -110,5 +110,7 @@ export type CmsData = {
   settings: {
     siteTitle: string;
     primaryColor: string;
+    headerLogoMediaId?: string;
+    faviconMediaId?: string;
   };
 };

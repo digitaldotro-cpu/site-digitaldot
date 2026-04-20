@@ -9,6 +9,8 @@ type AppShellProps = {
   content: {
     global: {
       brandName: string;
+      headerLogo?: string;
+      favicon?: string;
       navbarCtaLabel: string;
       navigation: Array<{ label: string; href: string }>;
       footer: {
@@ -37,6 +39,7 @@ export function AppShell({ children, content }: AppShellProps) {
     <>
       <Navbar
         brandName={content.global.brandName}
+        headerLogo={content.global.headerLogo}
         navItems={content.global.navigation}
         ctaLabel={content.global.navbarCtaLabel}
       />

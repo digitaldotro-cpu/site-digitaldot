@@ -14,7 +14,6 @@ type TopbarProps = {
   onRedo: () => void;
   canUndo: boolean;
   canRedo: boolean;
-  isDirty: boolean;
   isSaving: boolean;
   autosaveLabel: string;
 };
@@ -31,7 +30,6 @@ export function Topbar({
   onRedo,
   canUndo,
   canRedo,
-  isDirty,
   isSaving,
   autosaveLabel,
 }: TopbarProps) {
@@ -106,7 +104,7 @@ export function Topbar({
         <button
           type="button"
           onClick={onSave}
-          disabled={isSaving || !isDirty}
+          disabled={isSaving}
           className="inline-flex h-9 min-w-[104px] items-center justify-center rounded-full bg-[#62f9ee] px-5 text-sm font-bold text-[#003734] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSaving ? "Saving..." : "Publish"}

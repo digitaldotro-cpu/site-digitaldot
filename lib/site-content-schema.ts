@@ -167,6 +167,8 @@ const cmsPageMetaSchema = z.object({
 export const siteContentSchema = z.object({
   global: z.object({
     brandName: z.string().min(1),
+    headerLogo: z.string().min(1).optional(),
+    favicon: z.string().min(1).optional(),
     navbarCtaLabel: z.string().min(1),
     navigation: z.array(navItemSchema).min(1),
     footer: z.object({

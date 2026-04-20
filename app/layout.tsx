@@ -11,27 +11,39 @@ const varelaRound = Varela_Round({
   weight: "400",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteMetadata.siteUrl),
-  title: {
-    default: "Digital Dot | Agenție de Marketing Digital",
-    template: "%s",
-  },
-  description: siteMetadata.defaultDescription,
-  openGraph: {
-    title: "Digital Dot | Agenție de Marketing Digital",
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getSiteContent();
+  const favicon = content.global.favicon?.trim();
+
+  return {
+    metadataBase: new URL(siteMetadata.siteUrl),
+    title: {
+      default: "Digital Dot | Agenție de Marketing Digital",
+      template: "%s",
+    },
     description: siteMetadata.defaultDescription,
-    url: siteMetadata.siteUrl,
-    siteName: siteMetadata.siteName,
-    locale: "ro_RO",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Digital Dot | Agenție de Marketing Digital",
-    description: siteMetadata.defaultDescription,
-  },
-};
+    openGraph: {
+      title: "Digital Dot | Agenție de Marketing Digital",
+      description: siteMetadata.defaultDescription,
+      url: siteMetadata.siteUrl,
+      siteName: siteMetadata.siteName,
+      locale: "ro_RO",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Digital Dot | Agenție de Marketing Digital",
+      description: siteMetadata.defaultDescription,
+    },
+    icons: favicon
+      ? {
+          icon: [{ url: favicon }],
+          shortcut: [{ url: favicon }],
+          apple: [{ url: favicon }],
+        }
+      : undefined,
+  };
+}
 
 export default async function RootLayout({
   children,

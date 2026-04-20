@@ -1404,8 +1404,32 @@ export function siteContentToCmsData(site: SiteContent): CmsData {
   const portfolioFeaturedVideo = getPortfolioFeaturedVideo(site.portfolioPage, site.portfolioProjects);
   const portfolioVideoItems = getPortfolioVideoItems(site.portfolioPage, site.portfolioProjects);
   const portfolioSocialProof = getPortfolioSocialProof(site.portfolioPage, site.portfolioProjects);
+  const globalBrandMedia: CmsData["media"] = [];
+  if (site.global.headerLogo) {
+    globalBrandMedia.push({
+      id: "media-global-header-logo",
+      name: "Logo Header",
+      type: "image",
+      url: site.global.headerLogo,
+      tags: ["brand", "header", "logo"],
+      createdAt: new Date().toISOString(),
+      provider: "local",
+    });
+  }
+  if (site.global.favicon) {
+    globalBrandMedia.push({
+      id: "media-global-favicon",
+      name: "Favicon",
+      type: "image",
+      url: site.global.favicon,
+      tags: ["brand", "favicon", "icon"],
+      createdAt: new Date().toISOString(),
+      provider: "local",
+    });
+  }
 
   const media: CmsData["media"] = [
+    ...globalBrandMedia,
     {
       id: "media-social-hero",
       name: "Social Hero",
@@ -1487,6 +1511,8 @@ export function siteContentToCmsData(site: SiteContent): CmsData {
     settings: {
       siteTitle: site.global.brandName,
       primaryColor: "#66fcf1",
+      headerLogoMediaId: site.global.headerLogo ? "media-global-header-logo" : undefined,
+      faviconMediaId: site.global.favicon ? "media-global-favicon" : undefined,
     },
   };
 }
@@ -2449,6 +2475,14 @@ export function applyCmsToSiteContent(data: CmsData, current: SiteContent): Site
   }));
 
   const updatedGlobal = updateGlobalFromCms(data, current.global);
+  const selectedHeaderLogoMediaId = data.settings.headerLogoMediaId?.trim();
+  const selectedFaviconMediaId = data.settings.faviconMediaId?.trim();
+  const nextHeaderLogo = selectedHeaderLogoMediaId
+    ? findMediaUrlById(data, selectedHeaderLogoMediaId) ?? updatedGlobal.headerLogo
+    : undefined;
+  const nextFavicon = selectedFaviconMediaId
+    ? findMediaUrlById(data, selectedFaviconMediaId) ?? updatedGlobal.favicon
+    : undefined;
   const updatedPortfolio = updatePortfolioFromCms(data, current.portfolioPage, current.portfolioProjects);
   const updatedBlogPage = updateBlogPageFromCms(data, current.blogPage);
   const updatedContactPage = updateContactPageFromCms(data, current.contactPage);
@@ -2468,6 +2502,8 @@ export function applyCmsToSiteContent(data: CmsData, current: SiteContent): Site
     global: {
       ...updatedGlobal,
       brandName: data.settings.siteTitle || updatedGlobal.brandName,
+      headerLogo: nextHeaderLogo,
+      favicon: nextFavicon,
     },
     home: {
       ...current.home,

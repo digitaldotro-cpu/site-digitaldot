@@ -780,7 +780,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
     name: string;
     tags: string[];
     type: "image" | "video";
-  }) {
+  }): Promise<MediaItem | null> {
     const formData = new FormData();
     formData.append("file", payload.file);
     formData.append("name", payload.name);
@@ -794,7 +794,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
 
     if (response.status === 401) {
       handleUnauthorized();
-      return;
+      return null;
     }
 
     if (response.ok) {
@@ -807,25 +807,28 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           return next;
         });
         addToast("success", "Media încărcată în Cloudinary.");
-        return;
+        return nextItem;
       }
     }
 
     const dataUrl = await fileToDataUrl(payload.file);
+    const fallbackItem: MediaItem = {
+      id: createId("media"),
+      name: payload.name,
+      type: payload.type,
+      url: dataUrl,
+      tags: payload.tags,
+      createdAt: new Date().toISOString(),
+      provider: "local",
+    };
+
     applyUpdate((current) => {
       const next = deepClone(current);
-      next.media.unshift({
-        id: createId("media"),
-        name: payload.name,
-        type: payload.type,
-        url: dataUrl,
-        tags: payload.tags,
-        createdAt: new Date().toISOString(),
-        provider: "local",
-      });
+      next.media.unshift(fallbackItem);
       return next;
     });
     addToast("info", "Cloudinary indisponibil. Media a fost salvată local.");
+    return fallbackItem;
   }
 
   async function handleMediaReplace(mediaId: string, file: File) {
@@ -1085,7 +1088,6 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
             onRedo={handleRedo}
             canUndo={historyPast.length > 0}
             canRedo={historyFuture.length > 0}
-            isDirty={isDirty}
             isSaving={isSaving}
             autosaveLabel={autosaveLabel}
           />
@@ -1258,6 +1260,11 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
             {view === "settings" ? (
               <SettingsPanel
                 values={draft.settings}
+                media={draft.media}
+                onUploadAsset={async (payload) => {
+                  const item = await handleMediaUpload(payload);
+                  return item?.id ?? null;
+                }}
                 onUpdate={(values) => {
                   applyUpdate((current) => ({ ...current, settings: values }));
                   addToast("success", "Setări actualizate.");

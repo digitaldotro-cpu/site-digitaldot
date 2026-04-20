@@ -107,6 +107,8 @@ export const cmsDataSchema = z.object({
   settings: z.object({
     siteTitle: z.string().min(1),
     primaryColor: z.string().min(3),
+    headerLogoMediaId: z.string().optional(),
+    faviconMediaId: z.string().optional(),
   }),
 });
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -15,11 +16,12 @@ type NavItem = {
 
 type NavbarProps = {
   brandName: string;
+  headerLogo?: string;
   navItems: NavItem[];
   ctaLabel: string;
 };
 
-export function Navbar({ brandName, navItems, ctaLabel }: NavbarProps) {
+export function Navbar({ brandName, headerLogo, navItems, ctaLabel }: NavbarProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,10 +30,24 @@ export function Navbar({ brandName, navItems, ctaLabel }: NavbarProps) {
       <Container>
         <div className="flex h-20 items-center justify-between gap-4">
           <Link href="/" className="group inline-flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#66fcf1] shadow-[0_0_20px_0_rgba(102,252,241,0.7)]" />
-            <span className="text-lg font-semibold tracking-tight text-white">
-              {brandName}
-            </span>
+            {headerLogo ? (
+              <>
+                <Image
+                  src={headerLogo}
+                  alt={brandName}
+                  width={160}
+                  height={44}
+                  unoptimized
+                  className="h-10 w-auto object-contain"
+                />
+                <span className="sr-only">{brandName}</span>
+              </>
+            ) : (
+              <>
+                <span className="h-2.5 w-2.5 rounded-full bg-[#66fcf1] shadow-[0_0_20px_0_rgba(102,252,241,0.7)]" />
+                <span className="text-lg font-semibold tracking-tight text-white">{brandName}</span>
+              </>
+            )}
           </Link>
 
           <nav className="hidden items-center gap-2 lg:flex">
