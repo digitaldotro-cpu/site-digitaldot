@@ -304,7 +304,7 @@ function servicePageToCmsPage(
         "hero",
         [
           textElement(`${id}-hero-badge`, "Badge", source.heroBadge, { fontSize: 12, color: "#66fcf1" }),
-          textElement(`${id}-hero-title`, "Title", source.heroTitle, { fontSize: 56, fontWeight: 800 }),
+          textElement(`${id}-hero-title`, "Title", source.heroTitle, { fontSize: 50, fontWeight: 800 }),
           textElement(`${id}-hero-description`, "Description", source.heroDescription, {
             fontSize: 22,
             color: "#c6c6c6",
@@ -544,7 +544,7 @@ function portfolioPageToCmsPage(
             fontSize: 12,
             color: "#66fcf1",
           }),
-          textElement("portfolio-hero-title", "Titlu", page.heroTitle, { fontSize: 56, fontWeight: 800 }),
+          textElement("portfolio-hero-title", "Titlu", page.heroTitle, { fontSize: 50, fontWeight: 800 }),
           textElement("portfolio-hero-description", "Descriere", page.heroDescription, { color: "#c6c6c6" }),
           buttonElement("portfolio-hero-cta", "CTA", page.heroCtaLabel, page.heroCtaHref ?? "/contacteaza-ne", {
             backgroundColor: "#66fcf1",
@@ -826,7 +826,7 @@ function blogPageToCmsPage(page: BlogPageContent): CmsPageDraft {
     status: "published",
     sections: [
       section("blog-hero", "Hero", "hero", [
-        textElement("blog-hero-title", "Titlu", page.heroTitle, { fontSize: 56, fontWeight: 800 }),
+        textElement("blog-hero-title", "Titlu", page.heroTitle, { fontSize: 50, fontWeight: 800 }),
         textElement("blog-hero-description", "Descriere", page.heroDescription, { color: "#c6c6c6" }),
       ]),
       section("blog-featured", "Featured", "text-image", [
@@ -866,7 +866,7 @@ function contactPageToCmsPage(page: ContactPageContent): CmsPageDraft {
     status: "published",
     sections: [
       section("contact-hero", "Hero", "hero", [
-        textElement("contact-hero-title", "Titlu", page.heroTitle, { fontSize: 56, fontWeight: 800 }),
+        textElement("contact-hero-title", "Titlu", page.heroTitle, { fontSize: 50, fontWeight: 800 }),
         textElement("contact-hero-description", "Descriere", page.heroDescription, { color: "#c6c6c6" }),
       ]),
       section("contact-form", "Form Block", "text-image", [
@@ -916,7 +916,7 @@ function strategyServicePageToCmsPage(source: StrategyPageContent): CmsPageDraft
         "hero",
         [
           textElement("strategy-hero-badge", "Badge", source.heroBadge, { fontSize: 12, color: "#66fcf1" }),
-          textElement("strategy-hero-title", "Titlu", source.heroTitle, { fontSize: 56, fontWeight: 800 }),
+          textElement("strategy-hero-title", "Titlu", source.heroTitle, { fontSize: 50, fontWeight: 800 }),
           textElement("strategy-hero-description", "Descriere", source.heroDescription, {
             fontSize: 22,
             color: "#c6c6c6",
@@ -1154,7 +1154,7 @@ export function siteContentToCmsData(site: SiteContent): CmsData {
             color: "#66fcf1",
           }),
           textElement("home-hero-title", "Titlu", site.home.hero.title, {
-            fontSize: 68,
+            fontSize: 50,
             fontWeight: 800,
             textAlign: "center",
           }),

@@ -39,7 +39,7 @@ export function StrategyHero({
             {badge}
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[1.03] tracking-tight text-white sm:text-6xl">
+          <h1 className="mt-6 max-w-3xl text-[50px] font-semibold leading-[1.03] tracking-tight text-white">
             {title}
           </h1>
 

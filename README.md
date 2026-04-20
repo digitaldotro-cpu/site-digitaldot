@@ -90,6 +90,12 @@ npm run dev
 
 Deschide `http://localhost:3000`.
 
+Pentru rulare pe portul 3001:
+
+```bash
+npm run dev -- -p 3001
+```
+
 ## Validare
 
 ```bash
@@ -108,9 +114,14 @@ npm run build
   - `CLOUDINARY_API_KEY`
   - `CLOUDINARY_API_SECRET`
   - `CLOUDINARY_FOLDER` (opțional, default: `digital-dot`)
-- Formularul de contact este pregătit pentru integrare cu:
-  - email provider (Resend, SendGrid etc.)
-  - CRM/webhook (HubSpot, Pipedrive, Make, Zapier)
+- Formularul de contact trimite email prin SMTP (`POST /api/contact`):
+  - `SMTP_HOST` (default recomandat: `smtp.gmail.com`)
+  - `SMTP_PORT` (default recomandat: `465`)
+  - `SMTP_SECURE` (`true` pentru 465)
+  - `SMTP_USER` (`digitaldot.ro@gmail.com`)
+  - `SMTP_PASS` (Gmail App Password, nu parola contului)
+  - `CONTACT_TO_EMAIL` (default: `digitaldot.ro@gmail.com`)
+  - `CONTACT_FROM_EMAIL` (default: `SMTP_USER`)
 - Blog-ul se extinde prin adăugare de fișiere `.mdx` în `content/blog/`.
 
 ## Panou De Control

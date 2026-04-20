@@ -33,7 +33,7 @@
               "label": "Main Heading",
               "content": "Curating Digital Excellence",
               "style": {
-                "fontSize": 72,
+                "fontSize": 50,
                 "fontWeight": 800,
                 "textAlign": "center",
                 "color": "#ffffff",
@@ -195,7 +195,7 @@
               "label": "Main Heading",
               "content": "Curatorii de Prezență Digitală",
               "style": {
-                "fontSize": 62,
+                "fontSize": 50,
                 "fontWeight": 800,
                 "textAlign": "left",
                 "color": "#ffffff",
@@ -309,7 +309,7 @@
               "label": "Main Heading",
               "content": "Capturăm esența brandului tău",
               "style": {
-                "fontSize": 58,
+                "fontSize": 50,
                 "fontWeight": 800,
                 "textAlign": "left",
                 "color": "#ffffff",

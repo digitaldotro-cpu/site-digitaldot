@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/validation/contact";
+import { sendContactEmail } from "@/lib/email/send-contact-email";
+
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   let payload: unknown;
@@ -18,6 +21,29 @@ export async function POST(request: Request) {
   if (!parsed.success) {
     const firstError = parsed.error.issues[0]?.message ?? "Date invalide.";
     return NextResponse.json({ message: firstError }, { status: 400 });
+  }
+
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    request.headers.get("x-real-ip") ??
+    "Necunoscut";
+  const userAgent = request.headers.get("user-agent") ?? "Necunoscut";
+
+  try {
+    await sendContactEmail(parsed.data, {
+      ip,
+      userAgent,
+      submittedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    console.error("Contact form email send failed:", error);
+    return NextResponse.json(
+      {
+        message:
+          "Mesajul nu a putut fi trimis momentan. Te rugăm să încerci din nou în câteva minute.",
+      },
+      { status: 500 },
+    );
   }
 
   return NextResponse.json(

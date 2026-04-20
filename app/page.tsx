@@ -75,7 +75,7 @@ export default async function HomePage() {
               <span className="text-xs uppercase tracking-[0.2em] text-[#bacac7]">{home.hero.eyebrow}</span>
             </div>
 
-            <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-7xl lg:text-8xl">
+            <h1 className="text-[50px] font-extrabold leading-[1.1] tracking-tight text-white">
               {highlightDigitalWord(home.hero.title)}
             </h1>
 

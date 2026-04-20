@@ -103,7 +103,7 @@ export default async function SocialMediaPage() {
                 </span>
               </div>
 
-              <h1 className="text-5xl font-extrabold leading-[0.96] tracking-tight text-white sm:text-7xl lg:text-8xl">
+              <h1 className="text-[50px] font-extrabold leading-[0.96] tracking-tight text-white">
                 {page.heroTitle}
               </h1>
 
