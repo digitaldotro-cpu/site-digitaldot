@@ -40,6 +40,46 @@ type EditPanelProps = {
 
 const colorPalette = ["#ffffff", "#66fcf1", "#276864", "#c6c6c6", "#61727a"];
 
+function clampNumber(value: unknown, min: number, max: number, fallback: number) {
+  if (typeof value !== "number" || Number.isNaN(value)) {
+    return fallback;
+  }
+
+  return Math.min(max, Math.max(min, value));
+}
+
+function normalizeValues(
+  raw: Partial<ElementEditorValues> | undefined,
+  fallback: ElementEditorValues,
+): ElementEditorValues {
+  const next = raw ?? {};
+
+  return {
+    label: (next.label && next.label.trim()) || fallback.label,
+    content: typeof next.content === "string" ? next.content : fallback.content,
+    subcontent: typeof next.subcontent === "string" ? next.subcontent : fallback.subcontent,
+    buttonLabel: typeof next.buttonLabel === "string" ? next.buttonLabel : fallback.buttonLabel,
+    buttonHref: typeof next.buttonHref === "string" ? next.buttonHref : fallback.buttonHref,
+    href: typeof next.href === "string" ? next.href : fallback.href,
+    mediaId: typeof next.mediaId === "string" ? next.mediaId : fallback.mediaId,
+    caption: typeof next.caption === "string" ? next.caption : fallback.caption,
+    fontSize: clampNumber(next.fontSize, 10, 120, fallback.fontSize),
+    fontWeight: clampNumber(next.fontWeight, 100, 900, fallback.fontWeight),
+    textAlign:
+      next.textAlign === "left" || next.textAlign === "center" || next.textAlign === "right"
+        ? next.textAlign
+        : fallback.textAlign,
+    color: typeof next.color === "string" && next.color.length >= 4 ? next.color : fallback.color,
+    backgroundColor:
+      typeof next.backgroundColor === "string" && next.backgroundColor.length >= 4
+        ? next.backgroundColor
+        : fallback.backgroundColor,
+    padding: clampNumber(next.padding, 0, 200, fallback.padding),
+    margin: clampNumber(next.margin, 0, 200, fallback.margin),
+    borderRadius: clampNumber(next.borderRadius, 0, 999, fallback.borderRadius),
+  };
+}
+
 function toFormValues(element?: SectionElement): ElementEditorValues {
   if (!element) {
     return {
@@ -175,24 +215,20 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
       return;
     }
 
-    const parsed = elementEditorSchema.safeParse(values);
+    const normalized = normalizeValues(values, elementDefaults);
 
-    if (!parsed.success) {
-      return;
-    }
-
-    const snapshot = JSON.stringify(parsed.data);
+    const snapshot = JSON.stringify(normalized);
     if (snapshot === lastAppliedSnapshotRef.current) {
       return;
     }
 
     lastAppliedSnapshotRef.current = snapshot;
 
-    const nextElement = buildElement(element, parsed.data);
+    const nextElement = buildElement(element, normalized);
     if (JSON.stringify(nextElement) !== JSON.stringify(element)) {
       onUpdate(nextElement);
     }
-  }, [element, onUpdate, values]);
+  }, [element, elementDefaults, onUpdate, values]);
 
   if (!element) {
     return (
@@ -203,7 +239,7 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
     );
   }
 
-  const fontSize = values.fontSize ?? elementDefaults.fontSize;
+  const fontSize = clampNumber(values.fontSize, 10, 120, elementDefaults.fontSize);
   const currentColor = values.color ?? elementDefaults.color;
   const currentAlignment = values.textAlign ?? elementDefaults.textAlign;
 
@@ -282,7 +318,13 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
           min={10}
           max={120}
           value={fontSize}
-          onChange={(event) => setValue("fontSize", Number(event.target.value), { shouldValidate: true })}
+          onChange={(event) =>
+            setValue("fontSize", Number(event.target.value), {
+              shouldValidate: true,
+              shouldDirty: true,
+              shouldTouch: true,
+            })
+          }
           className="h-1 w-full cursor-pointer appearance-none rounded-full bg-[#333535] accent-[#62f9ee]"
         />
 
@@ -307,7 +349,13 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
                 <button
                   key={color}
                   type="button"
-                  onClick={() => setValue("color", color, { shouldValidate: true })}
+                  onClick={() =>
+                    setValue("color", color, {
+                      shouldValidate: true,
+                      shouldDirty: true,
+                      shouldTouch: true,
+                    })
+                  }
                   className={cn(
                     "h-8 w-8 rounded-full border transition",
                     active ? "border-[#66fcf1] shadow-[0_0_0_2px_rgba(102,252,241,0.25)]" : "border-transparent",
@@ -331,7 +379,13 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
                 <button
                   key={item.value}
                   type="button"
-                  onClick={() => setValue("textAlign", item.value, { shouldValidate: true })}
+                  onClick={() =>
+                    setValue("textAlign", item.value, {
+                      shouldValidate: true,
+                      shouldDirty: true,
+                      shouldTouch: true,
+                    })
+                  }
                   className={cn(
                     "inline-flex h-9 items-center justify-center rounded-full transition",
                     active ? "bg-[#123643] text-[#66fcf1]" : "text-[#7a909b] hover:text-white",
