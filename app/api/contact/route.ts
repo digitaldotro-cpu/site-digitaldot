@@ -37,6 +37,35 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Contact form email send failed:", error);
+
+    if (
+      error instanceof Error &&
+      error.message.startsWith("Missing required environment variable:")
+    ) {
+      const missing = error.message.replace("Missing required environment variable:", "").trim();
+      return NextResponse.json(
+        {
+          message: `Formularul nu este configurat complet pe server (lipsește ${missing}). Configurează variabilele SMTP în .env.local și repornește aplicația.`,
+        },
+        { status: 500 },
+      );
+    }
+
+    if (
+      typeof error === "object" &&
+      error !== null &&
+      "code" in error &&
+      (error as { code?: string }).code === "EAUTH"
+    ) {
+      return NextResponse.json(
+        {
+          message:
+            "Autentificarea SMTP a eșuat. Verifică SMTP_USER și SMTP_PASS (Gmail App Password, nu parola contului).",
+        },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json(
       {
         message:
