@@ -143,6 +143,14 @@ function findText(data: CmsData, pageId: string, sectionId: string, elementId: s
   return element.content;
 }
 
+function findTextFontSize(data: CmsData, pageId: string, sectionId: string, elementId: string) {
+  const element = findSection(data, pageId, sectionId)?.elements.find((item) => item.id === elementId);
+  if (!element || element.type !== "text") {
+    return undefined;
+  }
+  return element.style.fontSize;
+}
+
 function findButton(data: CmsData, pageId: string, sectionId: string, elementId: string) {
   const element = findSection(data, pageId, sectionId)?.elements.find((item) => item.id === elementId);
   if (!element || element.type !== "button") {
@@ -304,7 +312,10 @@ function servicePageToCmsPage(
         "hero",
         [
           textElement(`${id}-hero-badge`, "Badge", source.heroBadge, { fontSize: 12, color: "#66fcf1" }),
-          textElement(`${id}-hero-title`, "Title", source.heroTitle, { fontSize: 50, fontWeight: 800 }),
+          textElement(`${id}-hero-title`, "Title", source.heroTitle, {
+            fontSize: source.heroTitleFontSize ?? 50,
+            fontWeight: 800,
+          }),
           textElement(`${id}-hero-description`, "Description", source.heroDescription, {
             fontSize: 22,
             color: "#c6c6c6",
@@ -544,7 +555,10 @@ function portfolioPageToCmsPage(
             fontSize: 12,
             color: "#66fcf1",
           }),
-          textElement("portfolio-hero-title", "Titlu", page.heroTitle, { fontSize: 50, fontWeight: 800 }),
+          textElement("portfolio-hero-title", "Titlu", page.heroTitle, {
+            fontSize: page.heroTitleFontSize ?? 50,
+            fontWeight: 800,
+          }),
           textElement("portfolio-hero-description", "Descriere", page.heroDescription, { color: "#c6c6c6" }),
           buttonElement("portfolio-hero-cta", "CTA", page.heroCtaLabel, page.heroCtaHref ?? "/contacteaza-ne", {
             backgroundColor: "#66fcf1",
@@ -826,7 +840,10 @@ function blogPageToCmsPage(page: BlogPageContent): CmsPageDraft {
     status: "published",
     sections: [
       section("blog-hero", "Hero", "hero", [
-        textElement("blog-hero-title", "Titlu", page.heroTitle, { fontSize: 50, fontWeight: 800 }),
+        textElement("blog-hero-title", "Titlu", page.heroTitle, {
+          fontSize: page.heroTitleFontSize ?? 50,
+          fontWeight: 800,
+        }),
         textElement("blog-hero-description", "Descriere", page.heroDescription, { color: "#c6c6c6" }),
       ]),
       section("blog-featured", "Featured", "text-image", [
@@ -866,7 +883,10 @@ function contactPageToCmsPage(page: ContactPageContent): CmsPageDraft {
     status: "published",
     sections: [
       section("contact-hero", "Hero", "hero", [
-        textElement("contact-hero-title", "Titlu", page.heroTitle, { fontSize: 50, fontWeight: 800 }),
+        textElement("contact-hero-title", "Titlu", page.heroTitle, {
+          fontSize: page.heroTitleFontSize ?? 50,
+          fontWeight: 800,
+        }),
         textElement("contact-hero-description", "Descriere", page.heroDescription, { color: "#c6c6c6" }),
       ]),
       section("contact-form", "Form Block", "text-image", [
@@ -916,7 +936,10 @@ function strategyServicePageToCmsPage(source: StrategyPageContent): CmsPageDraft
         "hero",
         [
           textElement("strategy-hero-badge", "Badge", source.heroBadge, { fontSize: 12, color: "#66fcf1" }),
-          textElement("strategy-hero-title", "Titlu", source.heroTitle, { fontSize: 50, fontWeight: 800 }),
+          textElement("strategy-hero-title", "Titlu", source.heroTitle, {
+            fontSize: source.heroTitleFontSize ?? 50,
+            fontWeight: 800,
+          }),
           textElement("strategy-hero-description", "Descriere", source.heroDescription, {
             fontSize: 22,
             color: "#c6c6c6",
@@ -1154,7 +1177,7 @@ export function siteContentToCmsData(site: SiteContent): CmsData {
             color: "#66fcf1",
           }),
           textElement("home-hero-title", "Titlu", site.home.hero.title, {
-            fontSize: 50,
+            fontSize: site.home.hero.titleFontSize ?? 50,
             fontWeight: 800,
             textAlign: "center",
           }),
@@ -1531,6 +1554,9 @@ function updateServicePageFromCms(
     ...current,
     heroBadge: findText(data, pageId, `${pageId}-hero`, `${pageId}-hero-badge`) ?? current.heroBadge,
     heroTitle: findText(data, pageId, `${pageId}-hero`, `${pageId}-hero-title`) ?? current.heroTitle,
+    heroTitleFontSize:
+      findTextFontSize(data, pageId, `${pageId}-hero`, `${pageId}-hero-title`) ??
+      current.heroTitleFontSize,
     heroDescription:
       findText(data, pageId, `${pageId}-hero`, `${pageId}-hero-description`) ?? current.heroDescription,
     heroCtaLabel:
@@ -1760,6 +1786,9 @@ function updateStrategyPageFromCms(data: CmsData, current: StrategyPageContent) 
     ...current,
     heroBadge: findText(data, "strategy", "strategy-hero", "strategy-hero-badge") ?? current.heroBadge,
     heroTitle: findText(data, "strategy", "strategy-hero", "strategy-hero-title") ?? current.heroTitle,
+    heroTitleFontSize:
+      findTextFontSize(data, "strategy", "strategy-hero", "strategy-hero-title") ??
+      current.heroTitleFontSize,
     heroDescription:
       findText(data, "strategy", "strategy-hero", "strategy-hero-description") ?? current.heroDescription,
     heroCtaLabel: heroPrimary?.content ?? current.heroCtaLabel,
@@ -2187,6 +2216,9 @@ function updatePortfolioFromCms(
         findText(data, "portfolio", "portfolio-hero", "portfolio-hero-badge") ??
         currentPage.heroBadge,
       heroTitle: findText(data, "portfolio", "portfolio-hero", "portfolio-hero-title") ?? currentPage.heroTitle,
+      heroTitleFontSize:
+        findTextFontSize(data, "portfolio", "portfolio-hero", "portfolio-hero-title") ??
+        currentPage.heroTitleFontSize,
       heroDescription:
         findText(data, "portfolio", "portfolio-hero", "portfolio-hero-description") ??
         currentPage.heroDescription,
@@ -2308,6 +2340,8 @@ function updateBlogPageFromCms(data: CmsData, current: BlogPageContent) {
   return {
     ...current,
     heroTitle: findText(data, "blog-page", "blog-hero", "blog-hero-title") ?? current.heroTitle,
+    heroTitleFontSize:
+      findTextFontSize(data, "blog-page", "blog-hero", "blog-hero-title") ?? current.heroTitleFontSize,
     heroDescription:
       findText(data, "blog-page", "blog-hero", "blog-hero-description") ?? current.heroDescription,
     featuredBadge:
@@ -2339,6 +2373,9 @@ function updateContactPageFromCms(data: CmsData, current: ContactPageContent) {
   return {
     ...current,
     heroTitle: findText(data, "contact", "contact-hero", "contact-hero-title") ?? current.heroTitle,
+    heroTitleFontSize:
+      findTextFontSize(data, "contact", "contact-hero", "contact-hero-title") ??
+      current.heroTitleFontSize,
     heroDescription:
       findText(data, "contact", "contact-hero", "contact-hero-description") ?? current.heroDescription,
     formTitle: findText(data, "contact", "contact-form", "contact-form-title") ?? current.formTitle,
@@ -2511,6 +2548,9 @@ export function applyCmsToSiteContent(data: CmsData, current: SiteContent): Site
         ...current.home.hero,
         eyebrow: findText(data, "home", "home-hero", "home-hero-eyebrow") ?? current.home.hero.eyebrow,
         title: findText(data, "home", "home-hero", "home-hero-title") ?? current.home.hero.title,
+        titleFontSize:
+          findTextFontSize(data, "home", "home-hero", "home-hero-title") ??
+          current.home.hero.titleFontSize,
         description:
           findText(data, "home", "home-hero", "home-hero-description") ?? current.home.hero.description,
         primaryCtaLabel:

@@ -103,7 +103,10 @@ export default async function SocialMediaPage() {
                 </span>
               </div>
 
-              <h1 className="text-[50px] font-extrabold leading-[0.96] tracking-tight text-white">
+              <h1
+                className="font-extrabold leading-[0.96] tracking-tight text-white"
+                style={{ fontSize: `${page.heroTitleFontSize ?? 50}px` }}
+              >
                 {page.heroTitle}
               </h1>
 

@@ -81,6 +81,7 @@ const caseStudySchema = z.object({
 const servicePageSchema = z.object({
   heroBadge: z.string().min(1),
   heroTitle: z.string().min(1),
+  heroTitleFontSize: z.number().min(10).max(120).optional(),
   heroDescription: z.string().min(1),
   heroCtaLabel: z.string().min(1),
   heroSecondaryCtaLabel: z.string().min(1).optional(),
@@ -186,6 +187,7 @@ export const siteContentSchema = z.object({
     hero: z.object({
       eyebrow: z.string().min(1),
       title: z.string().min(1),
+      titleFontSize: z.number().min(10).max(120).optional(),
       description: z.string().min(1),
       primaryCtaLabel: z.string().min(1),
       primaryCtaHref: z.string().min(1),
@@ -231,6 +233,7 @@ export const siteContentSchema = z.object({
   portfolioPage: z.object({
     heroBadge: z.string().min(1).optional(),
     heroTitle: z.string().min(1),
+    heroTitleFontSize: z.number().min(10).max(120).optional(),
     heroDescription: z.string().min(1),
     heroCtaLabel: z.string().min(1),
     heroCtaHref: z.string().min(1).optional(),
@@ -270,6 +273,7 @@ export const siteContentSchema = z.object({
   portfolioProjects: z.array(portfolioProjectSchema).min(1),
   blogPage: z.object({
     heroTitle: z.string().min(1),
+    heroTitleFontSize: z.number().min(10).max(120).optional(),
     heroDescription: z.string().min(1),
     featuredBadge: z.string().min(1),
     newsletterTitle: z.string().min(1),
@@ -280,6 +284,7 @@ export const siteContentSchema = z.object({
   }),
   contactPage: z.object({
     heroTitle: z.string().min(1),
+    heroTitleFontSize: z.number().min(10).max(120).optional(),
     heroDescription: z.string().min(1),
     formTitle: z.string().min(1),
     formDescription: z.string().min(1),

@@ -71,6 +71,7 @@ export default async function StrategieMarketingPage() {
           <StrategyHero
             badge={page.heroBadge}
             title={page.heroTitle}
+            titleFontSize={page.heroTitleFontSize}
             description={page.heroDescription}
             primaryCtaLabel={page.heroCtaLabel}
             primaryCtaHref="/contacteaza-ne"

@@ -75,7 +75,10 @@ export default async function HomePage() {
               <span className="text-xs uppercase tracking-[0.2em] text-[#bacac7]">{home.hero.eyebrow}</span>
             </div>
 
-            <h1 className="text-[50px] font-extrabold leading-[1.1] tracking-tight text-white">
+            <h1
+              className="font-extrabold leading-[1.1] tracking-tight text-white"
+              style={{ fontSize: `${home.hero.titleFontSize ?? 50}px` }}
+            >
               {highlightDigitalWord(home.hero.title)}
             </h1>
 

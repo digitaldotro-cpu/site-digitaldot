@@ -95,7 +95,10 @@ export default async function PortofoliuPage() {
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#66fcf1]">
                 {page.heroBadge ?? "Portofoliu Curat"}
               </p>
-              <h1 className="text-[50px] font-extrabold leading-[0.96] tracking-tight text-white">
+              <h1
+                className="font-extrabold leading-[0.96] tracking-tight text-white"
+                style={{ fontSize: `${page.heroTitleFontSize ?? 50}px` }}
+              >
                 {page.heroTitle}
               </h1>
               <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-[#bacac7] sm:text-xl">

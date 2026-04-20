@@ -97,7 +97,10 @@ export default async function ProductieFotoVideoPage() {
               <p className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-[#66fcf1]">
                 {page.heroBadge}
               </p>
-              <h1 className="text-[50px] font-extrabold leading-[1.04] tracking-tight text-white">
+              <h1
+                className="font-extrabold leading-[1.04] tracking-tight text-white"
+                style={{ fontSize: `${page.heroTitleFontSize ?? 50}px` }}
+              >
                 {page.heroTitle}
               </h1>
               <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[#bacac7] sm:text-2xl">

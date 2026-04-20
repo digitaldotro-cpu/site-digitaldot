@@ -30,7 +30,10 @@ export default async function BlogPage() {
     <>
       <section className="py-20 sm:py-24">
         <Container>
-          <h1 className="max-w-4xl text-[50px] font-semibold tracking-tight text-white">
+          <h1
+            className="max-w-4xl font-semibold tracking-tight text-white"
+            style={{ fontSize: `${page.heroTitleFontSize ?? 50}px` }}
+          >
             {page.heroTitle}
           </h1>
           <p className="mt-5 max-w-3xl text-lg text-[#c7cdd1]">{page.heroDescription}</p>

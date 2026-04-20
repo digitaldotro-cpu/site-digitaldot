@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/ui/button";
 type StrategyHeroProps = {
   badge: string;
   title: string;
+  titleFontSize?: number;
   description: string;
   primaryCtaLabel: string;
   primaryCtaHref: string;
@@ -19,6 +20,7 @@ type StrategyHeroProps = {
 export function StrategyHero({
   badge,
   title,
+  titleFontSize = 50,
   description,
   primaryCtaLabel,
   primaryCtaHref,
@@ -39,7 +41,10 @@ export function StrategyHero({
             {badge}
           </p>
 
-          <h1 className="mt-6 max-w-3xl text-[50px] font-semibold leading-[1.03] tracking-tight text-white">
+          <h1
+            className="mt-6 max-w-3xl font-semibold leading-[1.03] tracking-tight text-white"
+            style={{ fontSize: `${titleFontSize}px` }}
+          >
             {title}
           </h1>
 
