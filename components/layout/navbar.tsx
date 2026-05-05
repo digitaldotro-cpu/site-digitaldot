@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
@@ -19,11 +19,23 @@ type NavbarProps = {
   headerLogo?: string;
   navItems: NavItem[];
   ctaLabel: string;
+  ctaHref: string;
 };
 
-export function Navbar({ brandName, headerLogo, navItems, ctaLabel }: NavbarProps) {
+export function Navbar({ brandName, headerLogo, navItems, ctaLabel, ctaHref }: NavbarProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
+
+  useEffect(() => {
+    function handleHashChange() {
+      setActiveHash(window.location.hash);
+    }
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0b0c10]/85 backdrop-blur-lg">
@@ -52,8 +64,9 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel }: NavbarProp
 
           <nav className="hidden items-center gap-2 lg:flex">
             {navItems.map((item) => {
-              const active =
-                item.href === "/"
+              const active = item.href.startsWith("#")
+                ? (activeHash || "#hero") === item.href
+                : item.href === "/"
                   ? pathname === "/"
                   : pathname.startsWith(item.href);
 
@@ -75,7 +88,7 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel }: NavbarProp
           </nav>
 
           <div className="hidden lg:block">
-            <ButtonLink href="/contacteaza-ne" size="sm">
+            <ButtonLink href={ctaHref} size="sm">
               {ctaLabel}
             </ButtonLink>
           </div>
@@ -97,8 +110,9 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel }: NavbarProp
           <Container>
             <nav className="mt-4 flex flex-col gap-2">
               {navItems.map((item) => {
-                const active =
-                  item.href === "/"
+                const active = item.href.startsWith("#")
+                  ? (activeHash || "#hero") === item.href
+                  : item.href === "/"
                     ? pathname === "/"
                     : pathname.startsWith(item.href);
 
@@ -119,7 +133,7 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel }: NavbarProp
                 );
               })}
               <ButtonLink
-                href="/contacteaza-ne"
+                href={ctaHref}
                 size="sm"
                 className="mt-1"
                 onClick={() => setIsOpen(false)}

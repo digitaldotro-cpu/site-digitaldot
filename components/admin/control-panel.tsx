@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { Save, RefreshCcw, Plus, Trash2 } from "lucide-react";
+import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { SiteContent } from "@/lib/site-content-schema";
 import { cn } from "@/lib/utils";
@@ -19,6 +19,7 @@ type EditorProps = {
   onChange: (path: Path, nextValue: JsonValue) => void;
   onAddArrayItem: (path: Path) => void;
   onRemoveArrayItem: (path: Path) => void;
+  onMoveArrayItem: (path: Path, direction: "up" | "down") => void;
 };
 
 function isObject(value: JsonValue): value is JsonObject {
@@ -79,12 +80,6 @@ function setIn(value: JsonValue, path: Path, next: JsonValue): JsonValue {
 }
 
 function removeAtPath(value: JsonValue, path: Path): JsonValue {
-  const target = getIn(value, path);
-
-  if (!Array.isArray(target)) {
-    return value;
-  }
-
   const parentPath = path.slice(0, -1);
   const indexToRemove = path[path.length - 1] as number;
   const parent = getIn(value, parentPath);
@@ -97,6 +92,27 @@ function removeAtPath(value: JsonValue, path: Path): JsonValue {
   return setIn(value, parentPath, nextParent);
 }
 
+function moveAtPath(value: JsonValue, path: Path, direction: "up" | "down"): JsonValue {
+  const parentPath = path.slice(0, -1);
+  const index = path[path.length - 1] as number;
+  const parent = getIn(value, parentPath);
+
+  if (!Array.isArray(parent)) {
+    return value;
+  }
+
+  const nextIndex = direction === "up" ? index - 1 : index + 1;
+  if (nextIndex < 0 || nextIndex >= parent.length) {
+    return value;
+  }
+
+  const clone = [...parent];
+  const [item] = clone.splice(index, 1);
+  clone.splice(nextIndex, 0, item as JsonValue);
+
+  return setIn(value, parentPath, clone);
+}
+
 function EditorNode({
   label,
   value,
@@ -105,6 +121,7 @@ function EditorNode({
   onChange,
   onAddArrayItem,
   onRemoveArrayItem,
+  onMoveArrayItem,
 }: EditorProps) {
   if (Array.isArray(value)) {
     const primitiveArray = value.every(isPrimitive);
@@ -141,9 +158,7 @@ function EditorNode({
             }}
             className="min-h-28 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
           />
-          <p className="text-xs text-[#8e99a1]">
-            Elementele din listă sunt separate prin rânduri noi.
-          </p>
+          <p className="text-xs text-[#8e99a1]">Elementele din listă sunt separate prin rânduri noi.</p>
         </div>
       );
     }
@@ -168,14 +183,32 @@ function EditorNode({
                 <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#9bc6c3]">
                   {label} #{index + 1}
                 </p>
-                <button
-                  type="button"
-                  onClick={() => onRemoveArrayItem([...path, index])}
-                  disabled={value.length <= 1}
-                  className="inline-flex items-center gap-1 rounded-full border border-[#473437] px-2 py-1 text-[11px] text-[#f0b5bb] disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  <Trash2 size={12} /> Șterge
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => onMoveArrayItem([...path, index], "up")}
+                    disabled={index === 0}
+                    className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-2 py-1 text-[11px] text-[#b7d9d7] disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    ↑ Sus
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onMoveArrayItem([...path, index], "down")}
+                    disabled={index === value.length - 1}
+                    className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-2 py-1 text-[11px] text-[#b7d9d7] disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    ↓ Jos
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onRemoveArrayItem([...path, index])}
+                    disabled={value.length <= 1}
+                    className="inline-flex items-center gap-1 rounded-full border border-[#473437] px-2 py-1 text-[11px] text-[#f0b5bb] disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <Trash2 size={12} /> Șterge
+                  </button>
+                </div>
               </div>
 
               <EditorNode
@@ -186,6 +219,7 @@ function EditorNode({
                 onChange={onChange}
                 onAddArrayItem={onAddArrayItem}
                 onRemoveArrayItem={onRemoveArrayItem}
+                onMoveArrayItem={onMoveArrayItem}
               />
             </div>
           ))}
@@ -196,13 +230,8 @@ function EditorNode({
 
   if (isObject(value)) {
     return (
-      <details
-        open={depth < 2}
-        className="rounded-2xl border border-[#25373f] bg-[#0f171c] p-4"
-      >
-        <summary className="cursor-pointer text-sm font-semibold text-white">
-          {label}
-        </summary>
+      <details open={depth < 2} className="rounded-2xl border border-[#25373f] bg-[#0f171c] p-4">
+        <summary className="cursor-pointer text-sm font-semibold text-white">{label}</summary>
         <div className="mt-4 space-y-3">
           {Object.entries(value).map(([key, child]) => (
             <EditorNode
@@ -214,6 +243,7 @@ function EditorNode({
               onChange={onChange}
               onAddArrayItem={onAddArrayItem}
               onRemoveArrayItem={onRemoveArrayItem}
+              onMoveArrayItem={onMoveArrayItem}
             />
           ))}
         </div>
@@ -306,6 +336,10 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
     setDraft((current) => removeAtPath(current as JsonValue, path) as SiteContent);
   }
 
+  function handleMoveArrayItem(path: Path, direction: "up" | "down") {
+    setDraft((current) => moveAtPath(current as JsonValue, path, direction) as SiteContent);
+  }
+
   async function saveContent() {
     setIsSaving(true);
     setStatus({ type: "idle" });
@@ -369,15 +403,12 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
       <section className="rounded-[1.8rem] border border-[#2a3c44] bg-[#10181d] p-6 sm:p-8">
         <h1 className="text-3xl font-semibold text-white">Panou de control conținut</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#bfc5ca]">
-          Editează orice text, listă sau secțiune din website și salvează direct
-          în `content/site-content.json`.
+          Editează orice text, listă sau secțiune din website și salvează direct în `content/site-content.json`.
         </p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-[1fr_auto_auto] md:items-end">
           <label className="space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#8da0aa]">
-              Cheie admin (opțional)
-            </span>
+            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#8da0aa]">Cheie admin (opțional)</span>
             <input
               type="password"
               value={adminKey}
@@ -398,9 +429,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
           </Button>
         </div>
 
-        <div className="mt-4 text-xs text-[#8ea0aa]">
-          Status modificări: {dirty ? "nesalvate" : "sincronizat"}
-        </div>
+        <div className="mt-4 text-xs text-[#8ea0aa]">Status modificări: {dirty ? "nesalvate" : "sincronizat"}</div>
 
         {status.type !== "idle" ? (
           <p
@@ -427,6 +456,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
             onChange={handleChange}
             onAddArrayItem={handleAddArrayItem}
             onRemoveArrayItem={handleRemoveArrayItem}
+            onMoveArrayItem={handleMoveArrayItem}
           />
         ))}
       </section>

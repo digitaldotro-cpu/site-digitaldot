@@ -5,12 +5,6 @@ import { siteMetadata } from "@/lib/seo";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
-    "/servicii/social-media-management",
-    "/servicii/productie-foto-video",
-    "/servicii/strategie-marketing",
-    "/portofoliu",
-    "/blog",
-    "/contacteaza-ne",
   ];
 
   const posts = await getAllPosts();

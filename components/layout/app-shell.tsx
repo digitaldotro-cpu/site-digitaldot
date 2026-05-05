@@ -12,16 +12,25 @@ type AppShellProps = {
       headerLogo?: string;
       favicon?: string;
       navbarCtaLabel: string;
+      navbarCtaHref: string;
       navigation: Array<{ label: string; href: string }>;
       footer: {
+        logo?: string;
         description: string;
-        quickLinksTitle: string;
-        quickLinks: Array<{ label: string; href: string }>;
+        socialLinksTitle: string;
+        socialLinks: Array<{ label: string; href: string }>;
+        legalLinksTitle: string;
+        legalLinks: Array<{ label: string; href: string }>;
         contactTitle: string;
         contactEmail: string;
         contactPhone: string;
         contactLocation: string;
         copyrightTemplate: string;
+      };
+    };
+    landing?: {
+      footer?: {
+        enabled: boolean;
       };
     };
   };
@@ -35,6 +44,8 @@ export function AppShell({ children, content }: AppShellProps) {
     return <main>{children}</main>;
   }
 
+  const footerEnabled = content.landing?.footer?.enabled ?? true;
+
   return (
     <>
       <Navbar
@@ -42,19 +53,25 @@ export function AppShell({ children, content }: AppShellProps) {
         headerLogo={content.global.headerLogo}
         navItems={content.global.navigation}
         ctaLabel={content.global.navbarCtaLabel}
+        ctaHref={content.global.navbarCtaHref}
       />
       <main>{children}</main>
-      <Footer
-        brandName={content.global.brandName}
-        description={content.global.footer.description}
-        quickLinksTitle={content.global.footer.quickLinksTitle}
-        quickLinks={content.global.footer.quickLinks}
-        contactTitle={content.global.footer.contactTitle}
-        contactEmail={content.global.footer.contactEmail}
-        contactPhone={content.global.footer.contactPhone}
-        contactLocation={content.global.footer.contactLocation}
-        copyrightTemplate={content.global.footer.copyrightTemplate}
-      />
+      {footerEnabled ? (
+        <Footer
+          brandName={content.global.brandName}
+          logo={content.global.footer.logo}
+          description={content.global.footer.description}
+          socialLinksTitle={content.global.footer.socialLinksTitle}
+          socialLinks={content.global.footer.socialLinks}
+          legalLinksTitle={content.global.footer.legalLinksTitle}
+          legalLinks={content.global.footer.legalLinks}
+          contactTitle={content.global.footer.contactTitle}
+          contactEmail={content.global.footer.contactEmail}
+          contactPhone={content.global.footer.contactPhone}
+          contactLocation={content.global.footer.contactLocation}
+          copyrightTemplate={content.global.footer.copyrightTemplate}
+        />
+      ) : null}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { contactSchema } from "@/lib/validation/contact";
+import { readSiteContent } from "@/lib/site-content";
+import { createContactSchema } from "@/lib/validation/contact";
 import { sendContactEmail } from "@/lib/email/send-contact-email";
 
 export const runtime = "nodejs";
@@ -16,6 +17,8 @@ export async function POST(request: Request) {
     );
   }
 
+  const siteContent = await readSiteContent();
+  const contactSchema = createContactSchema(siteContent.landing.contact.validationMessages);
   const parsed = contactSchema.safeParse(payload);
 
   if (!parsed.success) {

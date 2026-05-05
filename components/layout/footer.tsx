@@ -1,11 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 
 type FooterProps = {
   brandName: string;
+  logo?: string;
   description: string;
-  quickLinksTitle: string;
-  quickLinks: Array<{ label: string; href: string }>;
+  socialLinksTitle: string;
+  socialLinks: Array<{ label: string; href: string }>;
+  legalLinksTitle: string;
+  legalLinks: Array<{ label: string; href: string }>;
   contactTitle: string;
   contactEmail: string;
   contactPhone: string;
@@ -15,9 +19,12 @@ type FooterProps = {
 
 export function Footer({
   brandName,
+  logo,
   description,
-  quickLinksTitle,
-  quickLinks,
+  socialLinksTitle,
+  socialLinks,
+  legalLinksTitle,
+  legalLinks,
   contactTitle,
   contactEmail,
   contactPhone,
@@ -31,9 +38,13 @@ export function Footer({
 
   return (
     <footer className="mt-16 border-t border-[#1e2a30] bg-[#0a0d10]">
-      <Container className="grid gap-10 py-14 md:grid-cols-3">
+      <Container className="grid gap-10 py-14 md:grid-cols-4">
         <div>
-          <p className="text-lg font-semibold text-white">{brandName}</p>
+          {logo ? (
+            <Image src={logo} alt={brandName} width={180} height={50} unoptimized className="h-10 w-auto object-contain" />
+          ) : (
+            <p className="text-lg font-semibold text-white">{brandName}</p>
+          )}
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#b7bcc0]">
             {description}
           </p>
@@ -41,10 +52,23 @@ export function Footer({
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
-            {quickLinksTitle}
+            {socialLinksTitle}
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
-            {quickLinks.map((link) => (
+            {socialLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+            {legalLinksTitle}
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
+            {legalLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href}>{link.label}</Link>
               </li>

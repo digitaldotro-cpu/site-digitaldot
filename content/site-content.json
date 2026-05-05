@@ -1,60 +1,59 @@
 {
   "global": {
     "brandName": "Digital Dot",
-    "navbarCtaLabel": "Programează o discuție",
+    "headerLogo": "/branding/logo-landscape-turcoaz-dot-white-stroke.png",
+    "favicon": "/branding/favicon-blue.png",
+    "navbarCtaLabel": "Hai să povestim",
+    "navbarCtaHref": "#contact",
     "navigation": [
       {
         "label": "Acasă",
-        "href": "/"
+        "href": "#hero"
       },
       {
-        "label": "Social Media",
-        "href": "/servicii/social-media-management"
+        "label": "Poziționare",
+        "href": "#positioning"
       },
       {
-        "label": "Foto & Video",
-        "href": "/servicii/productie-foto-video"
+        "label": "Servicii",
+        "href": "#services"
       },
       {
-        "label": "Strategie",
-        "href": "/servicii/strategie-marketing"
-      },
-      {
-        "label": "Portofoliu",
-        "href": "/portofoliu"
-      },
-      {
-        "label": "Blog",
-        "href": "/blog"
+        "label": "Proces",
+        "href": "#process"
       },
       {
         "label": "Contact",
-        "href": "/contacteaza-ne"
+        "href": "#contact"
       }
     ],
     "footer": {
-      "description": "Agenție de marketing digital orientată spre rezultate măsurabile, procese clare și parteneriate pe termen lung.",
-      "quickLinksTitle": "Linkuri rapide",
-      "quickLinks": [
+      "logo": "/branding/logo-landscape-turcoaz-dot-white-stroke.png",
+      "description": "Strategie clară. Execuție impecabilă. Rezultate măsurabile.",
+      "socialLinksTitle": "Social",
+      "socialLinks": [
         {
-          "label": "Social Media Management",
-          "href": "/servicii/social-media-management"
+          "label": "Instagram",
+          "href": "https://www.instagram.com"
         },
         {
-          "label": "Producție Foto & Video",
-          "href": "/servicii/productie-foto-video"
+          "label": "Facebook",
+          "href": "https://www.facebook.com"
         },
         {
-          "label": "Strategie de marketing",
-          "href": "/servicii/strategie-marketing"
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com"
+        }
+      ],
+      "legalLinksTitle": "Legal",
+      "legalLinks": [
+        {
+          "label": "Politica de confidențialitate",
+          "href": "/politica-confidentialitate"
         },
         {
-          "label": "Portofoliu",
-          "href": "/portofoliu"
-        },
-        {
-          "label": "Blog",
-          "href": "/blog"
+          "label": "Termeni și condiții",
+          "href": "/termeni-si-conditii"
         }
       ],
       "contactTitle": "Contact",
@@ -64,684 +63,254 @@
       "copyrightTemplate": "© {year} Digital Dot. Toate drepturile rezervate."
     }
   },
-  "home": {
+  "landing": {
+    "seoTitle": "Digital Dot | Agenție de Marketing",
+    "seoDescription": "Landing unificat Digital Dot pentru antreprenori și manageri care vor marketing strategic, execuție premium și rezultate măsurabile.",
+    "sectionOrder": [
+      "hero",
+      "positioning",
+      "authority",
+      "services",
+      "process",
+      "clientFilter",
+      "visualBreak",
+      "primaryCta",
+      "contact",
+      "footer"
+    ],
     "hero": {
-      "eyebrow": "Growth-first marketing",
-      "title": "Transformăm atenția în leaduri reale pentru branduri ambițioase.",
-      "description": "Digital Dot este agenția care îți aliniează strategia, conținutul și performanța media într-un sistem clar de creștere.",
-      "primaryCtaLabel": "Programează o discuție",
-      "primaryCtaHref": "/contacteaza-ne",
-      "secondaryCtaLabel": "Vezi rezultate",
-      "secondaryCtaHref": "/portofoliu",
-      "highlightsTitle": "Ce primești din colaborare",
-      "highlights": [
+      "enabled": true,
+      "badge": "STRATEGIE. CREAȚIE. REZULTATE.",
+      "headlineVariants": [
+        "Ai nevoie de o agenție de marketing?",
+        "Ai buget de marketing sau doar speranțe?"
+      ],
+      "activeHeadlineIndex": 0,
+      "subheadline": "Partener strategic pentru business-uri care tratează marketingul ca investiție, nu ca loterie.",
+      "ctaText": "Hai să povestim",
+      "ctaLink": "#contact",
+      "backgroundImage": "/branding/references/ai-nevoie-agentie-marketing.png",
+      "supportingPoints": [
+        "Strategie clară.",
+        "Execuție impecabilă.",
+        "Rezultate măsurabile."
+      ]
+    },
+    "positioning": {
+      "enabled": true,
+      "title": "Ești în căutarea unei agenții de marketing?",
+      "entries": [
         {
-          "title": "Sistem de lead generation",
-          "description": "Funnel, mesaje și canale conectate cu KPI clari."
+          "id": "pos-1",
+          "text": "Dacă ai ajuns aici, probabil nu cauți doar postări frumoase. Cauți claritate, structură și rezultate care se văd în cifre.",
+          "highlight": false
         },
         {
-          "title": "Execuție predictibilă",
-          "description": "Proces lunar clar, fără blocaje și fără dependență de improvizații."
+          "id": "pos-2",
+          "text": "Marketingul fără strategie este doar activitate. Marketingul cu strategie devine avantaj competitiv.",
+          "highlight": true
         },
         {
-          "title": "Conținut premium",
-          "description": "Active vizuale și copy orientat spre diferențiere și conversie."
+          "id": "pos-3",
+          "text": "Noi nu intrăm în proiecte ca să bifăm task-uri. Intrăm ca să construim un sistem care susține creșterea pe termen lung.",
+          "highlight": false
+        },
+        {
+          "id": "pos-4",
+          "text": "Dacă vrei o echipă care gândește business-first, atunci ești în locul potrivit.",
+          "highlight": true
         }
       ]
     },
-    "primaryServicesTitle": "Trei servicii construite ca mini landing systems",
-    "primaryServicesDescription": "Fiecare serviciu are obiective, livrabile și fluxuri clare, astfel încât să poți scala fără haos operațional.",
-    "primaryServices": [
-      {
-        "title": "Social Media Management",
-        "description": "Construim un sistem de conținut care face brandul recognoscibil și convertește atenția în cereri reale.",
-        "bullets": [
-          "Strategie editorială pe obiective de business",
-          "Calendar lunar, producție și publicare completă",
-          "Analiză KPI și optimizare continuă"
-        ],
-        "href": "/servicii/social-media-management"
-      },
-      {
-        "title": "Producție Foto & Video",
-        "description": "Creăm active vizuale premium pentru reclame, social media și site, adaptate pe funnel și platformă.",
-        "bullets": [
-          "Concept creativ și scenarii orientate spre conversie",
-          "Filmări verticale și orizontale pentru multiple canale",
-          "Post-producție rapidă și livrabile modularizate"
-        ],
-        "href": "/servicii/productie-foto-video"
-      },
-      {
-        "title": "Strategii de marketing",
-        "description": "Punem ordine în canale, mesaje și bugete printr-o strategie clară, executabilă și măsurabilă.",
-        "bullets": [
-          "Audit de poziționare și funnel",
-          "Plan trimestrial cu priorități și KPI",
-          "Integrare organic + paid + website"
-        ],
-        "href": "/servicii/strategie-marketing"
-      }
-    ],
-    "secondaryServicesTitle": "Suport specializat pentru performanță imediată",
-    "secondaryServicesDescription": "Intervenim punctual acolo unde se blochează rezultatele: media buying, tracking și audit operațional.",
-    "secondaryServices": [
-      {
-        "title": "Reclame Plătite: Google & Facebook",
-        "description": "Administrăm campanii pentru leaduri și vânzări, cu variante de colaborare flexibile: Setup sau Setup + Abonament lunar de optimizare."
-      },
-      {
-        "title": "Audit Reclame & Instalare Tracking",
-        "description": "Verificăm conturile și datele de conversie, apoi implementăm tracking corect (GA4, Pixel, CAPI, evenimente) ca să poți lua decizii pe date reale."
-      }
-    ],
-    "paidAds": {
-      "eyebrow": "Growth Engine",
-      "title": "Performance Ads & Tracking",
-      "description": "Scalează veniturile cu Google & Facebook Ads optimizate strategic și tracking complet pentru decizii bazate pe profit.",
-      "tags": [
-        "Google Ads",
-        "Meta Business",
-        "GA4 Audit"
-      ],
-      "statValue": "+140%",
-      "statDescription": "Media de creștere a ROI-ului pentru clienții noștri în primele 6 luni."
+    "authority": {
+      "enabled": true,
+      "title": "De ce multe companii încep să investească inteligent în marketing",
+      "entries": [
+        {
+          "id": "auth-1",
+          "text": "Un business fără marketing predictibil e ca o companie care conduce noaptea fără faruri: merge, dar nu vede suficient de departe.",
+          "highlight": true
+        },
+        {
+          "id": "auth-2",
+          "text": "Companiile mature înțeleg că marketingul nu e un cost lunar, ci infrastructura care generează cerere constantă.",
+          "highlight": false
+        },
+        {
+          "id": "auth-3",
+          "text": "Când ai date bune, mesaj corect și execuție disciplinată, deciziile nu mai sunt emoționale. Devin strategice.",
+          "highlight": false
+        },
+        {
+          "id": "auth-4",
+          "text": "Dacă mentalitatea este „testăm la întâmplare”, rezultatele vor rămâne la întâmplare.",
+          "highlight": true
+        }
+      ]
     },
-    "portfolioPreview": {
-      "title": "Portofoliu Selectat",
-      "viewAllLabel": "Vezi toate proiectele"
+    "services": {
+      "enabled": true,
+      "title": "Servicii esențiale într-un singur sistem",
+      "items": [
+        {
+          "id": "srv-1",
+          "icon": "Lightbulb",
+          "title": "Strategie de Marketing",
+          "description": "Audit, prioritizare și direcție clară pe 90 de zile, conectată la obiective reale de business."
+        },
+        {
+          "id": "srv-2",
+          "icon": "Share2",
+          "title": "Social Media Management",
+          "description": "Conținut și execuție editorială care construiesc încredere și transformă atenția în leaduri calificate."
+        },
+        {
+          "id": "srv-3",
+          "icon": "Clapperboard",
+          "title": "Producție Foto & Video",
+          "description": "Active premium, filmate și editate pentru awareness, ads și conversie în același timp."
+        },
+        {
+          "id": "srv-4",
+          "icon": "Megaphone",
+          "title": "Google & Meta Ads",
+          "description": "Campanii orientate pe profit, cu tracking corect și optimizare continuă pe KPI relevanți."
+        }
+      ]
     },
     "process": {
-      "title": "Metoda noastră de lucru",
-      "description": "Un proces liniar, transparent și axat pe rezultate palpabile.",
+      "enabled": true,
+      "title": "Procesul nostru",
       "steps": [
         {
-          "icon": "architecture",
-          "title": "01. Strategy",
-          "description": "Analizăm nișa, definim publicul țintă și trasăm harta succesului tău digital."
+          "id": "step-1",
+          "title": "Audit",
+          "description": "Analizăm ce funcționează, ce blochează și unde se pierde bugetul."
         },
         {
-          "icon": "movie_filter",
-          "title": "02. Production",
-          "description": "Executăm elementele creative cu o atenție obsesivă la detalii și estetică premium."
+          "id": "step-2",
+          "title": "Strategie",
+          "description": "Construim direcția: mesaj, canale, priorități, ritm de execuție."
         },
         {
-          "icon": "trending_up",
-          "title": "03. Growth",
-          "description": "Lansăm, optimizăm și scalăm campaniile pentru a asigura o creștere constantă."
+          "id": "step-3",
+          "title": "Execuție",
+          "description": "Implementăm, măsurăm și optimizăm constant pentru rezultate scalabile."
         }
       ]
     },
-    "additionalServicesTitle": "Capabilități complete pentru ecosistemul digital",
-    "additionalServices": [
-      "SEO",
-      "Creare Web (WordPress & Shopify)",
-      "Email Marketing"
-    ],
-    "complementaryServicesTitle": "Servicii Complementare",
-    "complementaryServices": [
-      {
-        "icon": "search_check",
-        "title": "SEO Authority",
-        "description": "Vizibilitate organică prin optimizări tehnice și autoritate de domeniu construită inteligent."
-      },
-      {
-        "icon": "shopping_bag",
-        "title": "Web Design & E-com",
-        "description": "Experiențe fluide pe WordPress și Shopify, optimizate pentru rata de conversie."
-      },
-      {
-        "icon": "alternate_email",
-        "title": "Email Marketing",
-        "description": "Fluxuri automate care fidelizează baza de clienți și maximizează valoarea fiecărui lead."
-      }
-    ],
-    "trustTitle": "Parteneriat orientat spre business, nu doar spre execuție",
-    "testimonials": [
-      {
-        "quote": "Echipa Digital Dot ne-a dat, în sfârșit, claritate: ce mesaje funcționează, ce canale merită buget și cum scalăm fără să pierdem controlul pe cifre.",
-        "name": "Andrei M.",
-        "role": "CEO, brand eCommerce"
-      },
-      {
-        "quote": "În 90 de zile am trecut de la postări sporadice la un sistem predictibil de conținut și leaduri. Colaborarea este extrem de structurată.",
-        "name": "Mara D.",
-        "role": "Marketing Manager, clinică premium"
-      }
-    ],
-    "finalCta": {
-      "title": "Vrei un plan clar de creștere pentru următoarele 90 de zile?",
-      "description": "Stabilim împreună obiectivele, canalele prioritare și ritmul de execuție care îți aduce rezultate măsurabile.",
-      "primaryLabel": "Programează o discuție",
-      "primaryHref": "/contacteaza-ne",
-      "secondaryLabel": "Explorează blogul",
-      "secondaryHref": "/blog"
-    }
-  },
-  "services": {
-    "socialMedia": {
-      "heroBadge": "Serviciu principal",
-      "heroTitle": "Social Media Management orientat spre brand awareness și leaduri.",
-      "heroDescription": "Construim un sistem de conținut care menține brandul relevant, creează încredere și aduce conversații comerciale constante.",
-      "heroCtaLabel": "Programează o discuție",
-      "heroSecondaryCtaLabel": "Vezi portofoliu",
-      "heroSecondaryCtaHref": "/portofoliu",
-      "heroImage": "/images/social-media/hero-phone.svg",
-      "sectionOneTitle": "Probleme pe care le rezolvăm",
-      "sectionOneItems": [
-        "Conținut inconsistent și lipsă de direcție editorială",
-        "Mesaje care adună vizualizări, dar nu generează cereri",
-        "Lipsa unui proces clar între marketing și echipa internă"
-      ],
-      "sectionTwoTitle": "Deliverables clare",
-      "sectionTwoItems": [
-        "Audit de prezență digitală și poziționare",
-        "Strategie lunară pe obiective și etape de funnel",
-        "Calendar editorial cu concept, copy și direcție vizuală",
-        "Publicare, community management și raportare KPI"
-      ],
-      "sectionThreeTitle": "Workflow de lucru",
-      "sectionThreeItems": [
-        "Discovery call și setare KPI",
-        "Strategie + calendar + format content",
-        "Producție și publicare",
-        "Analiză săptămânală + iterații"
-      ],
-      "sectionFourTitle": "Beneficii pentru business",
-      "sectionFourItems": [
-        "Coerență de brand pe toate canalele sociale",
-        "Mai multe leaduri calificate din organic",
-        "Timp salvat pentru echipa internă",
-        "Vizibilitate constantă și predictibilă"
-      ],
-      "sectionVisibility": {
-        "hero": true,
-        "problems": true,
-        "deliverables": true,
-        "process": true,
-        "caseStudies": true,
-        "finalCta": true
-      },
-      "finalCta": {
-        "title": "Vrei social media care susține vânzările, nu doar prezența?",
-        "description": "Îți propunem un plan concret de execuție pentru următoarele 3 luni.",
-        "primaryLabel": "Programează o discuție",
-        "primaryHref": "/contacteaza-ne"
-      }
-    },
-    "photoVideo": {
-      "heroBadge": "Serviciu principal",
-      "heroTitle": "Producție Foto & Video pentru branduri care vor să iasă din zgomot.",
-      "heroDescription": "Livrăm conținut video-first și foto premium, gândit pentru performanță media și comunicare coerentă pe toate canalele.",
-      "heroCtaLabel": "Programează o discuție",
-      "heroSecondaryCtaLabel": "Vezi portofoliu",
-      "heroSecondaryCtaHref": "/portofoliu",
-      "heroImage": "/images/photo-video/camera-rig.svg",
-      "sectionOneTitle": "Tipuri de conținut",
-      "sectionOneItems": [
-        "Video vertical pentru Reels, TikTok, Ads",
-        "Cadre lifestyle și produs pentru feed-uri premium",
-        "Testimoniale video și interviuri de autoritate",
-        "Short-form creatives pentru A/B testing în campanii"
-      ],
-      "sectionTwoTitle": "Proces de producție",
-      "sectionTwoItems": [
-        "Brief strategic și obiective de business",
-        "Concept creativ + scenarii + shot list",
-        "Filmări și fotografiere pe locație",
-        "Editare, subtitrări, adaptări pe platforme"
-      ],
-      "sectionThreeTitle": "Impact în business",
-      "sectionThreeItems": [
-        "Creștere CTR în reclame prin creative relevante",
-        "Consistență vizuală pe toate punctele de contact",
-        "Reducere timp de lansare pentru campanii noi",
-        "Percepție premium care susține prețul corect"
-      ],
-      "sectionFourTitle": "Livrabile finale",
-      "sectionFourItems": [
-        "Pachete creative pe platforme și obiective",
-        "Versiuni pentru A/B testing în campanii",
-        "Arhivă organizată pentru reutilizare rapidă"
-      ],
-      "sectionVisibility": {
-        "hero": true,
-        "problems": true,
-        "deliverables": true,
-        "process": true,
-        "caseStudies": true,
-        "finalCta": true
-      },
-      "finalCta": {
-        "title": "Ai nevoie de conținut care convertește, nu doar arată bine?",
-        "description": "Îți propunem un setup de producție adaptat obiectivelor și canalelor tale.",
-        "primaryLabel": "Programează o discuție",
-        "primaryHref": "/contacteaza-ne"
-      }
-    },
-    "strategy": {
-      "heroBadge": "Serviciu principal",
-      "heroTitle": "Strategie de marketing care conectează mesajul, canalele și rezultatele.",
-      "heroDescription": "Eliminăm deciziile reactive și construim un sistem clar de creștere, adaptat etapei în care se află business-ul tău.",
-      "heroCtaLabel": "Programează o discuție",
-      "heroSecondaryCtaLabel": "Vezi portofoliu",
-      "heroSecondaryCtaHref": "/portofoliu",
-      "heroImage": "/images/social-media/team-production.svg",
-      "sectionOneTitle": "Audit & Discovery",
-      "sectionOneItems": [
-        "Canalele sunt active, dar mesajele nu converg spre același obiectiv de business.",
-        "Investițiile sunt distribuite reactiv, fără model de prioritate pe impact.",
-        "Fără tracking și KPI relevanți, optimizarea devine un exercițiu de intuiție."
-      ],
-      "sectionTwoTitle": "Strategic Planning",
-      "sectionTwoItems": [
-        "Blueprint Strategic",
-        "Calendar pe 90 de zile",
-        "Canal & Budget Split",
-        "Measurement Stack"
-      ],
-      "sectionThreeTitle": "Integrare Multi-Channel",
-      "sectionThreeItems": [
-        "Analizăm funnel-ul actual, activele și canalele pentru a identifica blocajele.",
-        "Selectăm inițiativele cu cel mai mare impact pe leaduri și venit.",
-        "Aliniem content, paid media și website într-un plan unitar.",
-        "Măsurăm, testăm și recalibrăm periodic pe baza rezultatelor."
-      ],
-      "sectionFourTitle": "Growth Framework",
-      "sectionFourItems": [
-        "Ipoteze de testare și ritm de experimentare",
-        "Rutine de raportare și decizie",
-        "Scalare doar pe canale validate prin date"
-      ],
-      "problemsIntro": "Fără strategie, marketingul devine o listă de task-uri. Noi construim o direcție clară, măsurabilă și executabilă.",
-      "problems": [
+    "clientFilter": {
+      "enabled": true,
+      "title": "Cu cine lucrăm",
+      "worksWithTitle": "Lucrăm cu",
+      "worksWith": [
         {
-          "icon": "Target",
-          "title": "Lipsă direcție",
-          "description": "Canalele sunt active, dar mesajele nu converg spre același obiectiv de business."
+          "id": "fit-1",
+          "text": "Antreprenori și manageri maturi"
         },
         {
-          "icon": "Gauge",
-          "title": "Bugete fragmentate",
-          "description": "Investițiile sunt distribuite reactiv, fără model de prioritate pe impact."
+          "id": "fit-2",
+          "text": "Companii cu buget clar de marketing"
         },
         {
-          "icon": "BarChart3",
-          "title": "Decizii fără date",
-          "description": "Fără tracking și KPI relevanți, optimizarea devine un exercițiu de intuiție."
+          "id": "fit-3",
+          "text": "Echipe cu mindset pe termen lung"
         }
       ],
-      "deliverablesIntro": "Un framework strategic complet, nu doar recomandări generale.",
-      "deliverables": [
+      "notForTitle": "Nu lucrăm cu",
+      "notFor": [
         {
-          "title": "Blueprint Strategic",
-          "description": "Poziționare, audiențe, mesaje, ofertă și canale prioritare într-un document operațional.",
-          "variant": "large"
+          "id": "nofit-1",
+          "text": "Bugete improvizate"
         },
         {
-          "title": "Calendar pe 90 de zile",
-          "description": "Obiective lunare, inițiative prioritare și ritm de execuție.",
-          "variant": "small"
+          "id": "nofit-2",
+          "text": "Așteptări nerealiste"
         },
         {
-          "title": "Canal & Budget Split",
-          "description": "Alocare clară pe funnel: awareness, consideration și conversie.",
-          "variant": "accent"
+          "id": "nofit-3",
+          "text": "Mindset oportunist"
+        }
+      ]
+    },
+    "visualBreak": {
+      "enabled": true,
+      "image": "/branding/references/ai-buget-marketing-sau-doar-sperante.png",
+      "overlayText": "Ușa e deschisă. Întrebarea e dacă intri cu strategie sau cu speranțe."
+    },
+    "primaryCta": {
+      "enabled": true,
+      "headline": "Hai să povestim",
+      "supportText": "Dacă vrei un plan clar, nu încă un experiment, următorul pas e simplu.",
+      "buttonText": "Programează discuția",
+      "buttonLink": "#contact"
+    },
+    "contact": {
+      "enabled": true,
+      "title": "Trimite-ne contextul tău",
+      "description": "Îți răspundem cu următorii pași concreți, nu cu un template generic.",
+      "fields": {
+        "name": {
+          "label": "Nume",
+          "placeholder": "Numele tău"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "email@companie.ro"
+        },
+        "phone": {
+          "label": "Telefon",
+          "placeholder": "07xx xxx xxx"
+        },
+        "service": {
+          "label": "Serviciu",
+          "placeholder": "Alege serviciul de interes"
+        },
+        "message": {
+          "label": "Mesaj",
+          "placeholder": "Descrie pe scurt obiectivul, bugetul și etapa business-ului."
+        }
+      },
+      "serviceOptions": [
+        {
+          "value": "strategie-marketing",
+          "label": "Strategie de Marketing"
         },
         {
-          "title": "Measurement Stack",
-          "description": "Evenimente, dashboard-uri și rutină de raportare pentru decizie rapidă.",
-          "variant": "small"
+          "value": "social-media-management",
+          "label": "Social Media Management"
+        },
+        {
+          "value": "productie-foto-video",
+          "label": "Producție Foto & Video"
+        },
+        {
+          "value": "google-meta-ads",
+          "label": "Google & Meta Ads"
         }
       ],
-      "processIntro": "Metodologia noastră urmărește claritate, viteză și control.",
-      "processSteps": [
-        {
-          "title": "Audit",
-          "description": "Analizăm funnel-ul actual, activele și canalele pentru a identifica blocajele."
-        },
-        {
-          "title": "Prioritizare",
-          "description": "Selectăm inițiativele cu cel mai mare impact pe leaduri și venit."
-        },
-        {
-          "title": "Orchestrare",
-          "description": "Aliniem content, paid media și website într-un plan unitar."
-        },
-        {
-          "title": "Optimizare",
-          "description": "Măsurăm, testăm și recalibrăm periodic pe baza rezultatelor."
-        }
-      ],
-      "caseStudiesTitle": "Impact strategic în proiecte reale",
-      "caseStudiesIntro": "Strategia bună se vede în rezultate: costuri mai eficiente, conversii mai bune, decizii mai rapide.",
-      "caseStudies": [
-        {
-          "category": "Healthcare",
-          "title": "Clinic Growth System",
-          "description": "Repoziționare ofertă + funnel de programări. Rezultat: +62% conversie landing.",
-          "image": "/images/portfolio/clinic-growth.svg",
-          "href": "/portofoliu"
-        },
-        {
-          "category": "eCommerce",
-          "title": "Launch Framework Q4",
-          "description": "Strategie multicanal pentru lansare sezonieră. Rezultat: ROAS 4.8x.",
-          "image": "/images/portfolio/ecom-fashion.svg",
-          "href": "/portofoliu"
-        }
-      ],
-      "sectionVisibility": {
-        "hero": true,
-        "problems": true,
-        "deliverables": true,
-        "process": true,
-        "caseStudies": true,
-        "finalCta": true
-      },
-      "finalCta": {
-        "title": "Vrei claritate strategică înainte să scalezi bugetele?",
-        "description": "Programăm un audit inițial și îți propunem prioritățile cu cel mai mare impact.",
-        "primaryLabel": "Programează o discuție",
-        "primaryHref": "/contacteaza-ne"
+      "buttonText": "Trimite solicitarea",
+      "buttonLoadingText": "Trimitem...",
+      "successMessage": "Mulțumim. Revenim cu un răspuns în maximum 24 de ore.",
+      "errorMessage": "Mesajul nu a putut fi trimis momentan. Încearcă din nou în câteva minute.",
+      "validationMessages": {
+        "nameMin": "Numele trebuie să aibă cel puțin 2 caractere.",
+        "emailInvalid": "Introdu o adresă de email validă.",
+        "phoneMin": "Numărul de telefon este prea scurt.",
+        "serviceRequired": "Selectează un serviciu de interes.",
+        "messageMin": "Mesajul trebuie să aibă cel puțin 20 de caractere."
       }
-    }
-  },
-  "portfolioPage": {
-    "heroBadge": "Portofoliu Curat",
-    "heroTitle": "Portofoliu construit pe rezultate măsurabile, nu doar pe vizual.",
-    "heroDescription": "Selectăm proiectele unde impactul este clar: costuri optimizate, conversii crescute și sisteme de marketing scalabile.",
-    "heroCtaLabel": "Discută cu echipa noastră",
-    "heroCtaHref": "/contacteaza-ne",
-    "filterTitle": "Proiecte filtrabile pe tipuri de rezultate",
-    "filterDescription": "Explorează proiectele după arie: Social Media, Performance, Branding sau Web.",
-    "filters": [
-      {
-        "label": "Toate",
-        "value": "toate",
-        "categories": [
-          "*"
-        ]
-      },
-      {
-        "label": "Social Media",
-        "value": "social-media",
-        "categories": [
-          "Social Media"
-        ]
-      },
-      {
-        "label": "Video Production",
-        "value": "video-production",
-        "categories": [
-          "Branding",
-          "Web"
-        ]
-      },
-      {
-        "label": "Ads / Strategy",
-        "value": "ads-strategy",
-        "categories": [
-          "Performance",
-          "Branding"
-        ]
-      }
-    ],
-    "defaultFilter": "toate",
-    "projectsTitle": "Selecție curată de proiecte",
-    "projectsDescription": "Fiecare card evidențiază contextul, deciziile și rezultatele comerciale.",
-    "caseStudiesTitle": "Case Study Highlights",
-    "caseStudiesDescription": "Extragem insight-uri tactice din proiecte și le transformăm în sisteme replicabile.",
-    "videoBlockTitle": "Video-first, acolo unde aduce impact",
-    "videoBlockDescription": "Pentru proiectele cu componentă de awareness sau performance pe social media, prioritizăm formatele video și adaptăm cadrele în funcție de obiectivul campaniei.",
-    "videoShowcaseCtaLabel": "Vezi toate proiectele",
-    "videoShowcaseCtaHref": "/portofoliu",
-    "featuredVideo": {
-      "label": "Featured Video",
-      "title": "Video Framework pentru lansări de produs",
-      "description": "Configurăm un sistem video-first pentru awareness, remarketing și conversie.",
-      "image": "/images/photo-video/sport-video.svg",
-      "href": "/contacteaza-ne"
     },
-    "videoItems": [
-      {
-        "label": "Reels Pack",
-        "title": "Vertical Ads Bundle",
-        "description": "Set de creative pentru testare rapidă pe Meta și TikTok.",
-        "image": "/images/photo-video/reels-pack.svg",
-        "href": "/contacteaza-ne"
-      },
-      {
-        "label": "Brand Content",
-        "title": "Lifestyle Cutdowns",
-        "description": "Cadre premium pentru feed, stories și campanii de retargeting.",
-        "image": "/images/photo-video/culture-video.svg",
-        "href": "/portofoliu"
-      },
-      {
-        "label": "Performance",
-        "title": "UGC + Studio Hybrid",
-        "description": "Mix de autenticitate și control vizual pentru conversii.",
-        "image": "/images/photo-video/atmosphere-still.svg",
-        "href": "/contacteaza-ne"
-      }
-    ],
-    "caseHighlightsTitle": "Case Study Highlights",
-    "caseHighlightsIntro": "Extragem insight-uri tactice din proiecte și le transformăm în sisteme replicabile.",
-    "caseHighlights": [
-      {
-        "icon": "Target",
-        "title": "Cronometrăm impactul",
-        "context": "Brand eCommerce cu costuri ridicate pe conversie.",
-        "approach": "Am reconstruit mixul creative + audiențe în sprinturi săptămânale.",
-        "metric": "ROAS 4.8x în 60 de zile"
-      },
-      {
-        "icon": "ChartLine",
-        "title": "Optimizare pe funnel",
-        "context": "Clinică premium cu leaduri fluctuante.",
-        "approach": "Am aliniat mesajele pe etape de decizie și am introdus tracking complet.",
-        "metric": "CPL -29% și conversie +62%"
-      },
-      {
-        "icon": "Sparkles",
-        "title": "Consistență vizuală",
-        "context": "Brand HoReCa fără direcție editorială unitară.",
-        "approach": "Am implementat un sistem de producție modular pentru social + ads.",
-        "metric": "Engagement +94% în primul trimestru"
-      }
-    ],
-    "socialProofTitle": "Branduri care au ales Digital Dot",
-    "socialProofIntro": "Colaborăm cu echipe care caută claritate, execuție și creștere predictibilă.",
-    "socialProofLogos": [
-      {
-        "name": "Luxe Interiors",
-        "image": "/images/portfolio/horeca-brand.svg",
-        "href": "/portofoliu"
-      },
-      {
-        "name": "Chronos",
-        "image": "/images/portfolio/ecom-fashion.svg",
-        "href": "/portofoliu"
-      },
-      {
-        "name": "SaaS Flow",
-        "image": "/images/portfolio/clinic-growth.svg",
-        "href": "/portofoliu"
-      },
-      {
-        "name": "Shopify Pro",
-        "image": "/images/portfolio/shopify-upgrade.svg",
-        "href": "/portofoliu"
-      }
-    ],
-    "sectionVisibility": {
-      "hero": true,
-      "filters": true,
-      "projects": true,
-      "videoShowcase": true,
-      "caseHighlights": true,
-      "socialProof": true,
-      "finalCta": true
-    },
-    "finalCta": {
-      "title": "Vrei ca următorul studiu de caz să fie brandul tău?",
-      "description": "Construim un plan orientat spre KPI și livrăm execuție cap-coadă.",
-      "primaryLabel": "Programează o discuție",
-      "primaryHref": "/contacteaza-ne"
-    }
-  },
-  "portfolioProjects": [
-    {
-      "slug": "ecom-launch-q4",
-      "title": "Lansare eCommerce Fashion",
-      "category": "Performance",
-      "excerpt": "Strategie full-funnel pe Meta + Google, cu focus pe ROAS și reducerea costului per conversie.",
-      "metrics": [
-        "ROAS 4.8x",
-        "CPA -37%",
-        "+212% venit lunar"
-      ],
-      "image": "/images/portfolio/ecom-fashion.svg",
-      "hasVideo": true,
-      "href": "/contacteaza-ne",
-      "layoutVariant": "hero",
-      "highlightBadge": "Video First"
-    },
-    {
-      "slug": "restaurant-local-brand",
-      "title": "Rebrand & Social Media pentru lanț HoReCa",
-      "category": "Social Media",
-      "excerpt": "Poziționare premium, calendar editorial video-first și campanii de awareness local.",
-      "metrics": [
-        "+168% reach",
-        "+94% engagement",
-        "+41% rezervări"
-      ],
-      "image": "/images/portfolio/horeca-brand.svg",
-      "hasVideo": false,
-      "href": "/portofoliu",
-      "layoutVariant": "standard",
-      "highlightBadge": "Organic Growth"
-    },
-    {
-      "slug": "clinic-growth-system",
-      "title": "Sistem de lead generation pentru clinică",
-      "category": "Branding",
-      "excerpt": "Audit, mesaje diferențiatoare și funnel de programări cu atribuție clară pe surse.",
-      "metrics": [
-        "+123 leaduri/lună",
-        "CPL -29%",
-        "+62% conversie landing"
-      ],
-      "image": "/images/portfolio/clinic-growth.svg",
-      "hasVideo": false,
-      "href": "/contacteaza-ne",
-      "layoutVariant": "tall",
-      "highlightBadge": "Strategy"
-    },
-    {
-      "slug": "shopify-conversion-upgrade",
-      "title": "Optimizare Shopify pentru conversii",
-      "category": "Web",
-      "excerpt": "Refacere UX, pagini produs orientate spre decizie și integrare tracking complet.",
-      "metrics": [
-        "CR +32%",
-        "AOV +18%",
-        "Bounce -24%"
-      ],
-      "image": "/images/portfolio/shopify-upgrade.svg",
-      "hasVideo": true,
-      "href": "/contacteaza-ne",
-      "layoutVariant": "wide",
-      "highlightBadge": "Performance"
-    }
-  ],
-  "blogPage": {
-    "heroTitle": "Blog Digital Dot: tactici aplicabile pentru marketing care produce rezultate.",
-    "heroDescription": "Conținut strategic pentru antreprenori și echipe de marketing care vor să ia decizii mai bune pe date reale.",
-    "featuredBadge": "Featured Article",
-    "newsletterTitle": "Newsletter pentru decizii mai bune",
-    "newsletterDescription": "Primești lunar insight-uri practice despre funnel, campanii și optimizări care pot fi implementate rapid în business.",
-    "newsletterPlaceholder": "Adresa ta de email",
-    "newsletterButtonLabel": "Mă abonez",
-    "finalCta": {
-      "title": "Vrei să trecem de la informație la implementare?",
-      "description": "Stabilim ce tactici se potrivesc modelului tău de business și le transformăm într-un plan executabil.",
-      "primaryLabel": "Programează o discuție",
-      "primaryHref": "/contacteaza-ne"
-    }
-  },
-  "contactPage": {
-    "heroTitle": "Hai să construim un motor de creștere potrivit pentru business-ul tău.",
-    "heroDescription": "Completează formularul și revenim cu un plan de discuție clar, orientat spre obiective și rezultate măsurabile.",
-    "formTitle": "Formular de contact",
-    "formDescription": "Câmpurile marcate sunt necesare pentru a înțelege contextul tău și a propune cea mai bună direcție.",
-    "contactTitle": "Date de contact",
-    "contactEmail": "hello@digitaldot.ro",
-    "contactPhone": "+40 773 330 551",
-    "contactLocation": "Suceava, România",
-    "trustTitle": "Trust & credibilitate",
-    "trustItems": [
-      "Proces documentat, raportare transparentă și obiective comune.",
-      "Focus pe rezultate de business, nu doar metrici de vanitate.",
-      "Strategie + execuție + optimizare într-un singur partener."
-    ],
-    "finalCta": {
-      "title": "Preferi să discutăm direct?",
-      "description": "Scrie-ne pe email sau sună-ne și stabilim rapid următorii pași.",
-      "primaryLabel": "Programează o discuție",
-      "primaryHref": "/contacteaza-ne"
+    "footer": {
+      "enabled": true
     }
   },
   "cmsPages": {
-    "home": {
-      "name": "Homepage",
+    "landing": {
+      "name": "Landing Unificat",
       "slug": "/",
-      "seoTitle": "Homepage | Digital Dot",
-      "seoDescription": "Informații despre Homepage în ecosistemul Digital Dot."
-    },
-    "social": {
-      "name": "Social Media Management",
-      "slug": "/servicii/social-media-management",
-      "seoTitle": "Social Media Management | Digital Dot",
-      "seoDescription": "Informații despre Social Media Management în ecosistemul Digital Dot."
-    },
-    "photo-video": {
-      "name": "Producție Foto & Video",
-      "slug": "/servicii/productie-foto-video",
-      "seoTitle": "Producție Foto & Video | Digital Dot",
-      "seoDescription": "Informații despre Producție Foto & Video în ecosistemul Digital Dot."
-    },
-    "strategy": {
-      "name": "Strategie de marketing",
-      "slug": "/servicii/strategie-marketing",
-      "seoTitle": "Strategie de marketing | Digital Dot",
-      "seoDescription": "Informații despre Strategie de marketing în ecosistemul Digital Dot."
-    },
-    "global": {
-      "name": "Global (Navbar + Footer)",
-      "slug": "/",
-      "seoTitle": "Global (Navbar + Footer) | Digital Dot",
-      "seoDescription": "Informații despre Global (Navbar + Footer) în ecosistemul Digital Dot."
-    },
-    "portfolio": {
-      "name": "Portofoliu",
-      "slug": "/portofoliu",
-      "seoTitle": "Portofoliu | Digital Dot",
-      "seoDescription": "Informații despre Portofoliu în ecosistemul Digital Dot."
-    },
-    "blog-page": {
-      "name": "Blog Page",
-      "slug": "/blog",
-      "seoTitle": "Blog Page | Digital Dot",
-      "seoDescription": "Informații despre Blog Page în ecosistemul Digital Dot."
-    },
-    "contact": {
-      "name": "Contact",
-      "slug": "/contacteaza-ne",
-      "seoTitle": "Contact | Digital Dot",
-      "seoDescription": "Informații despre Contact în ecosistemul Digital Dot."
+      "seoTitle": "Digital Dot | Agenție de Marketing",
+      "seoDescription": "Landing unificat Digital Dot pentru antreprenori și manageri care vor marketing strategic, execuție premium și rezultate măsurabile."
     }
   }
 }

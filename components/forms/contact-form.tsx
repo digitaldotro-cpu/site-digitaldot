@@ -1,31 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/forms/form-field";
 import { FormSelect } from "@/components/forms/form-select";
 import { FormTextarea } from "@/components/forms/form-textarea";
-import {
-  contactSchema,
-  type ContactFormValues,
-} from "@/lib/validation/contact";
+import { createContactSchema, type ContactFormValues } from "@/lib/validation/contact";
+import type { SiteContent } from "@/lib/site-content-schema";
 
-const serviceOptions = [
-  { value: "", label: "Alege serviciul" },
-  { value: "social-media-management", label: "Social Media Management" },
-  { value: "productie-foto-video", label: "Producție Foto & Video" },
-  { value: "strategie-marketing", label: "Strategie de marketing" },
-  { value: "reclame-platite", label: "Reclame Plătite (Google & Facebook)" },
-  { value: "audit-tracking", label: "Audit Reclame & Tracking" },
-];
+type ContactFormConfig = SiteContent["landing"]["contact"];
 
-export function ContactForm() {
+type ContactFormProps = {
+  config: ContactFormConfig;
+};
+
+export function ContactForm({ config }: ContactFormProps) {
   const [serverState, setServerState] = useState<{
     type: "idle" | "success" | "error";
     message?: string;
   }>({ type: "idle" });
+
+  const contactSchema = useMemo(
+    () => createContactSchema(config.validationMessages),
+    [config.validationMessages],
+  );
 
   const {
     register,
@@ -43,6 +43,11 @@ export function ContactForm() {
     },
   });
 
+  const selectOptions = [
+    { value: "", label: config.fields.service.placeholder },
+    ...config.serviceOptions,
+  ];
+
   const onSubmit = handleSubmit(async (values) => {
     setServerState({ type: "idle" });
 
@@ -58,22 +63,20 @@ export function ContactForm() {
       if (!response.ok) {
         setServerState({
           type: "error",
-          message: data.message ??
-            "A apărut o problemă la trimiterea formularului.",
+          message: data.message ?? config.errorMessage,
         });
         return;
       }
 
       setServerState({
         type: "success",
-        message: data.message ?? "Mesajul tău a fost trimis cu succes.",
+        message: data.message ?? config.successMessage,
       });
       reset();
     } catch {
       setServerState({
         type: "error",
-        message:
-          "Nu am putut trimite formularul acum. Încearcă din nou în câteva minute.",
+        message: config.errorMessage,
       });
     }
   });
@@ -82,8 +85,8 @@ export function ContactForm() {
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
       <FormField
         id="name"
-        label="Nume"
-        placeholder="Numele tău"
+        label={config.fields.name.label}
+        placeholder={config.fields.name.placeholder}
         autoComplete="name"
         error={errors.name?.message}
         {...register("name")}
@@ -92,8 +95,8 @@ export function ContactForm() {
       <FormField
         id="email"
         type="email"
-        label="Email"
-        placeholder="email@companie.ro"
+        label={config.fields.email.label}
+        placeholder={config.fields.email.placeholder}
         autoComplete="email"
         error={errors.email?.message}
         {...register("email")}
@@ -102,8 +105,8 @@ export function ContactForm() {
       <FormField
         id="phone"
         type="tel"
-        label="Telefon"
-        placeholder="07xx xxx xxx"
+        label={config.fields.phone.label}
+        placeholder={config.fields.phone.placeholder}
         autoComplete="tel"
         error={errors.phone?.message}
         {...register("phone")}
@@ -111,22 +114,22 @@ export function ContactForm() {
 
       <FormSelect
         id="service"
-        label="Serviciu de interes"
-        options={serviceOptions}
+        label={config.fields.service.label}
+        options={selectOptions}
         error={errors.service?.message}
         {...register("service")}
       />
 
       <FormTextarea
         id="message"
-        label="Mesaj"
-        placeholder="Spune-ne pe scurt care este obiectivul principal și ce ai testat până acum."
+        label={config.fields.message.label}
+        placeholder={config.fields.message.placeholder}
         error={errors.message?.message}
         {...register("message")}
       />
 
       <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
-        {isSubmitting ? "Trimitem..." : "Trimite mesajul"}
+        {isSubmitting ? config.buttonLoadingText : config.buttonText}
       </Button>
 
       {serverState.type !== "idle" ? (

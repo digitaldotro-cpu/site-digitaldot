@@ -14,17 +14,19 @@ const varelaRound = Varela_Round({
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   const favicon = content.global.favicon?.trim();
+  const landingTitle = content.landing.seoTitle;
+  const landingDescription = content.landing.seoDescription;
 
   return {
     metadataBase: new URL(siteMetadata.siteUrl),
     title: {
-      default: "Digital Dot | Agenție de Marketing Digital",
+      default: landingTitle,
       template: "%s",
     },
-    description: siteMetadata.defaultDescription,
+    description: landingDescription,
     openGraph: {
-      title: "Digital Dot | Agenție de Marketing Digital",
-      description: siteMetadata.defaultDescription,
+      title: landingTitle,
+      description: landingDescription,
       url: siteMetadata.siteUrl,
       siteName: siteMetadata.siteName,
       locale: "ro_RO",
@@ -32,8 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Digital Dot | Agenție de Marketing Digital",
-      description: siteMetadata.defaultDescription,
+      title: landingTitle,
+      description: landingDescription,
     },
     icons: favicon
       ? {

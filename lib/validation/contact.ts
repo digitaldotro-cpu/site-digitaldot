@@ -1,23 +1,16 @@
 import { z } from "zod";
+import type { SiteContent } from "@/lib/site-content-schema";
 
-export const contactSchema = z.object({
-  name: z
-    .string()
-    .min(2, "Numele trebuie să aibă cel puțin 2 caractere.")
-    .max(80, "Numele este prea lung."),
-  email: z
-    .string()
-    .email("Introdu o adresă de email validă.")
-    .max(120, "Email-ul este prea lung."),
-  phone: z
-    .string()
-    .min(8, "Numărul de telefon este prea scurt.")
-    .max(20, "Numărul de telefon este prea lung."),
-  service: z.string().min(2, "Selectează un serviciu de interes."),
-  message: z
-    .string()
-    .min(20, "Mesajul trebuie să aibă cel puțin 20 de caractere.")
-    .max(1200, "Mesajul este prea lung."),
-});
+export type ContactValidationMessages = SiteContent["landing"]["contact"]["validationMessages"];
 
-export type ContactFormValues = z.infer<typeof contactSchema>;
+export function createContactSchema(messages: ContactValidationMessages) {
+  return z.object({
+    name: z.string().min(2, messages.nameMin).max(80, messages.nameMin),
+    email: z.string().email(messages.emailInvalid).max(120, messages.emailInvalid),
+    phone: z.string().min(8, messages.phoneMin).max(20, messages.phoneMin),
+    service: z.string().min(2, messages.serviceRequired),
+    message: z.string().min(20, messages.messageMin).max(1200, messages.messageMin),
+  });
+}
+
+export type ContactFormValues = z.infer<ReturnType<typeof createContactSchema>>;

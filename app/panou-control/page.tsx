@@ -1,7 +1,7 @@
 import { buildMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { siteContentToCmsData } from "@/lib/cms-site-adapter";
-import { DashboardShell } from "@/components/cms/dashboard-shell";
+import { Container } from "@/components/ui/container";
+import { ControlPanel } from "@/components/admin/control-panel";
 
 export const metadata = {
   ...buildMetadata({
@@ -16,8 +16,13 @@ export const metadata = {
 };
 
 export default async function ControlPanelPage() {
-  const siteContent = await getSiteContent();
-  const initialData = siteContentToCmsData(siteContent);
+  const content = await getSiteContent();
 
-  return <DashboardShell initialData={initialData} />;
+  return (
+    <section className="py-10 sm:py-14">
+      <Container>
+        <ControlPanel initialContent={content} />
+      </Container>
+    </section>
+  );
 }
