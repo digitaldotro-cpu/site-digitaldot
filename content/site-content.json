@@ -33,22 +33,24 @@
       "socialLinksTitle": "Social",
       "socialLinks": [
         {
-          "platform": "Instagram",
+          "platform": "instagram",
           "url": "https://www.instagram.com/digitaldot.ro/",
-          "icon": "Instagram",
-          "visible": true
+          "enabled": true
         },
         {
-          "platform": "Facebook",
+          "platform": "facebook",
           "url": "https://www.facebook.com/digitaldot.marketing.agency",
-          "icon": "Facebook",
-          "visible": true
+          "enabled": true
         },
         {
-          "platform": "LinkedIn",
+          "platform": "linkedin",
           "url": "https://www.linkedin.com/company/digitaldot-ro/",
-          "icon": "Linkedin",
-          "visible": true
+          "enabled": true
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@digitaldot.ro?is_from_webapp=1&sender_device=pc",
+          "enabled": true
         }
       ],
       "legalLinksTitle": "Legal",

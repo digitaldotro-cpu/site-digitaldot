@@ -1,10 +1,9 @@
 import { SocialLinkItem } from "@/components/layout/social-link-item";
 
 type FooterSocialLink = {
-  platform: string;
+  platform: "instagram" | "facebook" | "linkedin" | "tiktok";
   url: string;
-  icon: string;
-  visible: boolean;
+  enabled: boolean;
 };
 
 type FooterSocialLinksProps = {
@@ -13,7 +12,7 @@ type FooterSocialLinksProps = {
 };
 
 export function FooterSocialLinks({ title, links }: FooterSocialLinksProps) {
-  const visibleLinks = links.filter((link) => link.visible);
+  const visibleLinks = links.filter((link) => link.enabled);
 
   if (visibleLinks.length === 0) {
     return null;
@@ -24,7 +23,7 @@ export function FooterSocialLinks({ title, links }: FooterSocialLinksProps) {
       <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">{title}</h3>
       <div className="mt-4 flex flex-wrap gap-2.5">
         {visibleLinks.map((link) => (
-          <SocialLinkItem key={`${link.platform}-${link.url}`} platform={link.platform} url={link.url} icon={link.icon} />
+          <SocialLinkItem key={`${link.platform}-${link.url}`} platform={link.platform} url={link.url} />
         ))}
       </div>
     </div>

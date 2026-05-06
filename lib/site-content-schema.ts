@@ -6,10 +6,9 @@ const navItemSchema = z.object({
 });
 
 const socialLinkSchema = z.object({
-  platform: z.string().min(1),
+  platform: z.enum(["instagram", "facebook", "linkedin", "tiktok"]),
   url: z.string().min(1),
-  icon: z.string().min(1),
-  visible: z.boolean().default(true),
+  enabled: z.boolean().default(true),
 });
 
 const legalLinkSchema = z.object({

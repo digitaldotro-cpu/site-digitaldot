@@ -8,7 +8,7 @@ type FooterProps = {
   logo?: string;
   description: string;
   socialLinksTitle: string;
-  socialLinks: Array<{ platform: string; url: string; icon: string; visible: boolean }>;
+  socialLinks: Array<{ platform: "instagram" | "facebook" | "linkedin" | "tiktok"; url: string; enabled: boolean }>;
   legalLinksTitle: string;
   legalLinks: Array<{ label: string; href: string }>;
   contactTitle: string;
