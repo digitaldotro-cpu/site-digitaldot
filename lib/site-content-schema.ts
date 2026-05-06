@@ -6,8 +6,10 @@ const navItemSchema = z.object({
 });
 
 const socialLinkSchema = z.object({
-  label: z.string().min(1),
-  href: z.string().min(1),
+  platform: z.string().min(1),
+  url: z.string().min(1),
+  icon: z.string().min(1),
+  visible: z.boolean().default(true),
 });
 
 const legalLinkSchema = z.object({
@@ -68,6 +70,7 @@ const sectionKeySchema = z.enum([
   "positioning",
   "authority",
   "services",
+  "instagramPortfolio",
   "process",
   "clientFilter",
   "visualBreak",
@@ -122,6 +125,15 @@ export const siteContentSchema = z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
       items: z.array(serviceItemSchema).min(1),
+    }),
+    instagramPortfolio: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      description: z.string().min(1),
+      ctaLabel: z.string().min(1),
+      ctaUrl: z.string().min(1),
+      icon: z.string().min(1).optional(),
+      media: z.string().min(1).optional(),
     }),
     process: z.object({
       enabled: z.boolean().default(true),

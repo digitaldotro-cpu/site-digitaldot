@@ -1,8 +1,8 @@
 {
   "global": {
     "brandName": "Digital Dot",
-    "headerLogo": "/branding/logo-landscape-turcoaz-dot-white-stroke.png",
-    "favicon": "/branding/favicon-blue.png",
+    "headerLogo": "/branding/logo-primary.png",
+    "favicon": "/branding/logo-primary.png",
     "navbarCtaLabel": "Hai să povestim",
     "navbarCtaHref": "#contact",
     "navigation": [
@@ -28,21 +28,27 @@
       }
     ],
     "footer": {
-      "logo": "/branding/logo-landscape-turcoaz-dot-white-stroke.png",
+      "logo": "/branding/logo-primary.png",
       "description": "Strategie clară. Execuție impecabilă. Rezultate măsurabile.",
       "socialLinksTitle": "Social",
       "socialLinks": [
         {
-          "label": "Instagram",
-          "href": "https://www.instagram.com"
+          "platform": "Instagram",
+          "url": "https://www.instagram.com/digitaldot.ro/",
+          "icon": "Instagram",
+          "visible": true
         },
         {
-          "label": "Facebook",
-          "href": "https://www.facebook.com"
+          "platform": "Facebook",
+          "url": "https://www.facebook.com/digitaldot.marketing.agency",
+          "icon": "Facebook",
+          "visible": true
         },
         {
-          "label": "LinkedIn",
-          "href": "https://www.linkedin.com"
+          "platform": "LinkedIn",
+          "url": "https://www.linkedin.com/company/digitaldot-ro/",
+          "icon": "Linkedin",
+          "visible": true
         }
       ],
       "legalLinksTitle": "Legal",
@@ -71,6 +77,7 @@
       "positioning",
       "authority",
       "services",
+      "instagramPortfolio",
       "process",
       "clientFilter",
       "visualBreak",
@@ -177,6 +184,15 @@
           "description": "Campanii orientate pe profit, cu tracking corect și optimizare continuă pe KPI relevanți."
         }
       ]
+    },
+    "instagramPortfolio": {
+      "enabled": true,
+      "title": "Vezi creațiile noastre în acțiune",
+      "description": "Pe Instagram publicăm o parte importantă din proiectele realizate împreună cu clienții noștri: conținut video, social media, campanii, idei vizuale și execuții care arată cum transformăm strategia în rezultate vizibile.",
+      "ctaLabel": "Vezi portofoliul pe Instagram",
+      "ctaUrl": "https://www.instagram.com/digitaldot.ro/",
+      "icon": "Instagram",
+      "media": "/branding/references/ai-nevoie-agentie-marketing.png"
     },
     "process": {
       "enabled": true,

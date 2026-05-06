@@ -5,6 +5,7 @@ import { getSiteContent } from "@/lib/site-content";
 import { HeroSection } from "@/components/landing/hero-section";
 import { TextBlockSection } from "@/components/landing/text-block-section";
 import { ServicesGrid } from "@/components/landing/services-grid";
+import { InstagramPortfolioSection } from "@/components/landing/instagram-portfolio-section";
 import { ProcessSteps } from "@/components/landing/process-steps";
 import { ClientFilterSection } from "@/components/landing/client-filter-section";
 import { VisualBreakSection } from "@/components/landing/visual-break-section";
@@ -30,6 +31,7 @@ export default async function HomePage() {
     positioning: <TextBlockSection id="positioning" section={landing.positioning} />,
     authority: <TextBlockSection id="authority" section={landing.authority} />,
     services: <ServicesGrid section={landing.services} />,
+    instagramPortfolio: <InstagramPortfolioSection section={landing.instagramPortfolio} />,
     process: <ProcessSteps section={landing.process} />,
     clientFilter: <ClientFilterSection section={landing.clientFilter} />,
     visualBreak: <VisualBreakSection section={landing.visualBreak} />,

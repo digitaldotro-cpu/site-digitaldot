@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { FooterSocialLinks } from "@/components/layout/footer-social-links";
 
 type FooterProps = {
   brandName: string;
   logo?: string;
   description: string;
   socialLinksTitle: string;
-  socialLinks: Array<{ label: string; href: string }>;
+  socialLinks: Array<{ platform: string; url: string; icon: string; visible: boolean }>;
   legalLinksTitle: string;
   legalLinks: Array<{ label: string; href: string }>;
   contactTitle: string;
@@ -51,16 +52,7 @@ export function Footer({
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
-            {socialLinksTitle}
-          </h3>
-          <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
-            {socialLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
+          <FooterSocialLinks title={socialLinksTitle} links={socialLinks} />
         </div>
 
         <div>

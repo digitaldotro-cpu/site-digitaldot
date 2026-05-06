@@ -18,7 +18,7 @@ type AppShellProps = {
         logo?: string;
         description: string;
         socialLinksTitle: string;
-        socialLinks: Array<{ label: string; href: string }>;
+        socialLinks: Array<{ platform: string; url: string; icon: string; visible: boolean }>;
         legalLinksTitle: string;
         legalLinks: Array<{ label: string; href: string }>;
         contactTitle: string;
