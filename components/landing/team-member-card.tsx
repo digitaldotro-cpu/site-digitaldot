@@ -25,8 +25,8 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
       delay={delay}
       className="group rounded-3xl border border-[#2a3e42] bg-[#101418]/80 p-6 transition-all duration-300 hover:border-[#66fcf1]/40 hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.8)]"
     >
-      <div className="grid grid-cols-[auto_1fr] items-start gap-4">
-        <div className="relative aspect-square h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:h-32 md:w-32 lg:h-28 lg:w-28">
+      <div className="grid grid-cols-[auto_1fr] items-stretch gap-4 md:items-start">
+        <div className="relative h-full min-h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:aspect-square md:h-32 md:w-32 lg:h-28 lg:w-28">
           {member.avatar ? (
             <Image
               src={member.avatar}
