@@ -168,27 +168,45 @@
       "items": [
         {
           "id": "srv-1",
+          "enabled": true,
           "icon": "Lightbulb",
           "title": "Strategie de Marketing",
           "description": "Audit, prioritizare și direcție clară pe 90 de zile, conectată la obiective reale de business."
         },
         {
           "id": "srv-2",
+          "enabled": true,
           "icon": "Share2",
           "title": "Social Media Management",
           "description": "Conținut și execuție editorială care construiesc încredere și transformă atenția în leaduri calificate."
         },
         {
           "id": "srv-3",
+          "enabled": true,
           "icon": "Clapperboard",
           "title": "Producție Foto & Video",
           "description": "Active premium, filmate și editate pentru awareness, ads și conversie în același timp."
         },
         {
           "id": "srv-4",
+          "enabled": true,
           "icon": "Megaphone",
           "title": "Google & Meta Ads",
           "description": "Campanii orientate pe profit, cu tracking corect și optimizare continuă pe KPI relevanți."
+        },
+        {
+          "id": "srv-5",
+          "enabled": true,
+          "icon": "Monitor",
+          "title": "Website Creation",
+          "description": "Website-uri rapide, premium și construite pentru conversie, nu doar pentru prezență online."
+        },
+        {
+          "id": "srv-6",
+          "enabled": true,
+          "icon": "Search",
+          "title": "SEO",
+          "description": "Optimizare tehnică și strategică pentru vizibilitate organică, trafic relevant și creștere sustenabilă."
         }
       ]
     },

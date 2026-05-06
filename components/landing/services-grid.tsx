@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { Clapperboard, Lightbulb, Megaphone, Share2 } from "lucide-react";
+import { Clapperboard, Code2, LayoutPanelTop, Lightbulb, Megaphone, Monitor, Search, Share2, TrendingUp } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import type { SiteContent } from "@/lib/site-content-schema";
@@ -9,6 +9,11 @@ const iconByName: Record<string, ComponentType<{ className?: string }>> = {
   Share2,
   Clapperboard,
   Megaphone,
+  Monitor,
+  LayoutPanelTop,
+  Code2,
+  Search,
+  TrendingUp,
 };
 
 type ServicesGridProps = {
@@ -28,7 +33,7 @@ export function ServicesGrid({ section }: ServicesGridProps) {
         </AnimatedSection>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {section.items.map((item, index) => {
+          {section.items.filter((item) => item.enabled !== false).map((item, index) => {
             const Icon = iconByName[item.icon] ?? Lightbulb;
             return (
               <AnimatedSection

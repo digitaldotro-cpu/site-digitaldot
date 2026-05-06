@@ -39,6 +39,7 @@ const longFormEntrySchema = z.object({
 
 const serviceItemSchema = z.object({
   id: z.string().min(1),
+  enabled: z.boolean().default(true),
   icon: z.string().min(1),
   title: z.string().min(1),
   description: z.string().min(1),
