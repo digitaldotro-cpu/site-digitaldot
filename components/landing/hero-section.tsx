@@ -46,10 +46,10 @@ export function HeroSection({ section }: HeroSectionProps) {
       ) : null}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(102,252,241,0.16),transparent_42%),radial-gradient(circle_at_82%_12%,rgba(39,104,100,0.22),transparent_45%)]" />
 
-      <Container className="relative z-10 pb-14 pt-8 sm:pb-14 sm:pt-10 lg:py-14">
+      <Container className="relative z-10 pb-8 pt-8 sm:pb-10 sm:pt-10 lg:py-14">
         <div
           className={cn(
-            "min-h-[calc(100svh-6.5rem)] items-start lg:min-h-[calc(100vh-8rem)] lg:items-center",
+            "items-start lg:min-h-[calc(100vh-8rem)] lg:items-center",
             useBackgroundMode ? "flex" : "grid gap-10 lg:grid-cols-12 lg:gap-12",
           )}
         >
