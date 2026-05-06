@@ -45,7 +45,7 @@ export function ContactSection({ section, global }: ContactSectionProps) {
           </div>
 
           <div className="rounded-3xl border border-[#2a3b42] bg-[#0f1519]/85 p-6 text-sm text-[#c6c6c6]">
-            {global.footer.description}
+            {global.footer.contactDescription}
           </div>
         </AnimatedSection>
       </Container>

@@ -19,6 +19,7 @@ const legalLinkSchema = z.object({
 const footerSchema = z.object({
   logo: z.string().min(1).optional(),
   description: z.string().min(1),
+  contactDescription: z.string().min(1),
   socialLinksTitle: z.string().min(1),
   socialLinks: z.array(socialLinkSchema).min(1),
   legalLinksTitle: z.string().min(1),
