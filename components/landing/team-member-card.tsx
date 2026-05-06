@@ -19,17 +19,7 @@ function getInitials(name: string) {
     .join("");
 }
 
-const channelLabelByPlatform = {
-  facebook: "Facebook",
-  linkedin: "LinkedIn",
-  instagram: "Instagram",
-} as const;
-
 export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
-  const focusText = member.focusChannels
-    .map((channel) => channelLabelByPlatform[channel])
-    .join(" / ");
-
   return (
     <AnimatedSection
       delay={delay}
@@ -55,9 +45,6 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
         <div className="min-w-0">
           <h3 className="text-xl font-semibold text-white">{member.name}</h3>
           <p className="mt-1 text-sm leading-relaxed text-[#c6c6c6]">{member.role}</p>
-          <span className="mt-3 inline-flex rounded-full border border-[#66fcf1]/40 bg-[#66fcf1]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#66fcf1]">
-            Focus: {focusText}
-          </span>
         </div>
       </div>
 
@@ -75,4 +62,3 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
     </AnimatedSection>
   );
 }
-
