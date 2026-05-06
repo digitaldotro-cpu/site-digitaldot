@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
 import { HeroSection } from "@/components/landing/hero-section";
 import { TextBlockSection } from "@/components/landing/text-block-section";
+import { ImageCtaSection } from "@/components/landing/image-cta-section";
 import { ServicesGrid } from "@/components/landing/services-grid";
 import { InstagramPortfolioSection } from "@/components/landing/instagram-portfolio-section";
 import { StrategySection } from "@/components/landing/strategy-section";
@@ -31,6 +32,7 @@ export default async function HomePage() {
     hero: <HeroSection section={landing.hero} />,
     positioning: <TextBlockSection id="positioning" section={landing.positioning} />,
     authority: <TextBlockSection id="authority" section={landing.authority} />,
+    brandValueSection: <ImageCtaSection id="brand-value" section={landing.brandValueSection} />,
     services: <ServicesGrid section={landing.services} />,
     instagramSection: <InstagramPortfolioSection section={landing.instagramSection} />,
     strategySection: <StrategySection section={landing.strategySection} />,

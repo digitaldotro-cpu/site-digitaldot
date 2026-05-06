@@ -80,6 +80,7 @@
       "positioning",
       "instagramSection",
       "authority",
+      "brandValueSection",
       "services",
       "teamSection",
       "process",
@@ -161,6 +162,16 @@
           "highlight": true
         }
       ]
+    },
+    "brandValueSection": {
+      "enabled": true,
+      "heading": "Tu cât crezi că valorează brandul tău?",
+      "image": "/branding/references/brand-value-lucian-filip.jpeg",
+      "imageAlt": "Lucian Filip prezentând pe scenă despre branding și strategie",
+      "imageLink": "https://www.facebook.com/lafilip.ro",
+      "openInNewTab": true,
+      "ariaLabel": "Deschide pagina Facebook Lucian Filip",
+      "hoverGlow": true
     },
     "services": {
       "enabled": true,
