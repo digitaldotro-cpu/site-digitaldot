@@ -22,16 +22,36 @@ export function HeroSection({ section }: HeroSectionProps) {
   const selectedHeadline =
     section.headlineVariants[section.activeHeadlineIndex] ?? section.headlineVariants[0];
   const overlayOpacity = clamp(section.overlayIntensity / 100, 0, 1);
+  const useBackgroundMode = section.imagePosition === "right";
 
   return (
     <section id="hero" className="relative overflow-hidden pt-20">
+      {section.imageVisibility && useBackgroundMode ? (
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src={section.image}
+            alt="Digital Dot hero visual"
+            fill
+            priority
+            className="object-cover object-right"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(90deg, rgba(11,12,16,${overlayOpacity}) 0%, rgba(11,12,16,${Math.max(overlayOpacity * 0.76, 0.3)}) 45%, rgba(11,12,16,0.22) 100%)`,
+            }}
+          />
+        </div>
+      ) : null}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(102,252,241,0.16),transparent_42%),radial-gradient(circle_at_82%_12%,rgba(39,104,100,0.22),transparent_45%)]" />
 
       <Container className="relative z-10 py-14">
-        <div className="grid min-h-[calc(100vh-8rem)] items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className={cn("min-h-[calc(100vh-8rem)] items-center", useBackgroundMode ? "flex" : "grid gap-10 lg:grid-cols-12 lg:gap-12")}>
           <AnimatedSection
             className={cn(
-              "order-1 space-y-8 lg:col-span-6",
+              "order-1 space-y-8",
+              useBackgroundMode ? "max-w-3xl" : "lg:col-span-6",
               section.imageVisibility && section.imagePosition === "left" ? "lg:order-2" : "lg:order-1",
             )}
           >
@@ -57,7 +77,7 @@ export function HeroSection({ section }: HeroSectionProps) {
             </ButtonLink>
           </AnimatedSection>
 
-          {section.imageVisibility ? (
+          {section.imageVisibility && !useBackgroundMode ? (
             <AnimatedSection
               className={cn(
                 "order-2 lg:col-span-6",
