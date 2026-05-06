@@ -25,7 +25,7 @@ export function HeroSection({ section }: HeroSectionProps) {
   const useBackgroundMode = section.imagePosition === "right";
 
   return (
-    <section id="hero" className="relative overflow-hidden pt-10 sm:pt-14 lg:pt-20">
+    <section id="hero" className="relative overflow-hidden pt-10 sm:pt-14 lg:pt-16">
       {section.imageVisibility && useBackgroundMode ? (
         <div className="pointer-events-none absolute inset-0">
           <Image
@@ -46,7 +46,7 @@ export function HeroSection({ section }: HeroSectionProps) {
       ) : null}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(102,252,241,0.16),transparent_42%),radial-gradient(circle_at_82%_12%,rgba(39,104,100,0.22),transparent_45%)]" />
 
-      <Container className="relative z-10 pb-8 pt-8 sm:pb-10 sm:pt-10 lg:py-14">
+      <Container className="relative z-10 pb-8 pt-8 sm:pb-10 sm:pt-10 lg:pb-14 lg:pt-10">
         <div
           className={cn(
             "items-start lg:min-h-[calc(100vh-8rem)] lg:items-center",
