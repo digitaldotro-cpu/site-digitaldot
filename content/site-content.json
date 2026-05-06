@@ -2,7 +2,7 @@
   "global": {
     "brandName": "Digital Dot",
     "headerLogo": "/branding/logo-primary.png",
-    "favicon": "/branding/logo-primary.png",
+    "favicon": "/branding/favicon-blue.png",
     "navbarCtaLabel": "Hai să povestim",
     "navbarCtaHref": "#contact",
     "navigation": [
