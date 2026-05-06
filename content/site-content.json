@@ -81,6 +81,7 @@
       "instagramSection",
       "authority",
       "services",
+      "teamSection",
       "process",
       "clientFilter",
       "strategySection",
@@ -206,6 +207,154 @@
       "text": "Ușa e deschisă. Întrebarea e dacă intri cu strategie sau cu speranțe.",
       "textAlignment": "left",
       "paddingBottom": 140
+    },
+    "teamSection": {
+      "enabled": true,
+      "title": "Cine suntem",
+      "subtitle": "O echipă construită în jurul strategiei, execuției și rezultatelor măsurabile.",
+      "members": [
+        {
+          "id": "team-1",
+          "name": "Lucian Filip",
+          "role": "Business Strategist & Mentor",
+          "avatar": "",
+          "focusChannels": [
+            "facebook",
+            "linkedin",
+            "instagram"
+          ],
+          "socials": [
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/lafilip.ro"
+            },
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/lafilip/"
+            },
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/l.a.filip/"
+            }
+          ]
+        },
+        {
+          "id": "team-2",
+          "name": "Elena Loghin",
+          "role": "Social Media Manager & Content Creator",
+          "avatar": "",
+          "focusChannels": [
+            "instagram",
+            "facebook"
+          ],
+          "socials": [
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/elena.r.logg/"
+            },
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/alina.logg"
+            },
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/elena-rosu-loghin/"
+            }
+          ]
+        },
+        {
+          "id": "team-3",
+          "name": "Marius Ciurariu",
+          "role": "PPC Master & Web Developer",
+          "avatar": "",
+          "focusChannels": [
+            "linkedin"
+          ],
+          "socials": [
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/ciurariu-marius-adrian/"
+            },
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/mariusadrian.ciurariu"
+            },
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/marius.ciurariu/"
+            }
+          ]
+        },
+        {
+          "id": "team-4",
+          "name": "Denisa Barbă",
+          "role": "SEO Specialist & Web Designer",
+          "avatar": "",
+          "focusChannels": [
+            "linkedin"
+          ],
+          "socials": [
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/denisa-barba/"
+            },
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/denisa.bianca.barba"
+            },
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/denisaabb/"
+            }
+          ]
+        },
+        {
+          "id": "team-5",
+          "name": "Albert Grab",
+          "role": "Videographer & Photographer",
+          "avatar": "",
+          "focusChannels": [
+            "instagram"
+          ],
+          "socials": [
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/albert.grab/"
+            },
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/profile.php?id=100000942460264"
+            },
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/albert-grab-6565391a1/"
+            }
+          ]
+        },
+        {
+          "id": "team-6",
+          "name": "Marian Aramă",
+          "role": "Video Editor & Photo Editor",
+          "avatar": "",
+          "focusChannels": [
+            "instagram"
+          ],
+          "socials": [
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/arama_marian/"
+            },
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/profile.php?id=100009497313835"
+            },
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/arama-marian-320803313/"
+            }
+          ]
+        }
+      ]
     },
     "process": {
       "enabled": true,

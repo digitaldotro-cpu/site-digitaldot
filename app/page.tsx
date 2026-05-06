@@ -7,6 +7,7 @@ import { TextBlockSection } from "@/components/landing/text-block-section";
 import { ServicesGrid } from "@/components/landing/services-grid";
 import { InstagramPortfolioSection } from "@/components/landing/instagram-portfolio-section";
 import { StrategySection } from "@/components/landing/strategy-section";
+import { TeamSection } from "@/components/landing/team-section";
 import { ProcessSteps } from "@/components/landing/process-steps";
 import { ClientFilterSection } from "@/components/landing/client-filter-section";
 import { CTASection } from "@/components/landing/cta-section";
@@ -33,6 +34,7 @@ export default async function HomePage() {
     services: <ServicesGrid section={landing.services} />,
     instagramSection: <InstagramPortfolioSection section={landing.instagramSection} />,
     strategySection: <StrategySection section={landing.strategySection} />,
+    teamSection: <TeamSection section={landing.teamSection} />,
     process: <ProcessSteps section={landing.process} />,
     clientFilter: <ClientFilterSection section={landing.clientFilter} />,
     primaryCta: <CTASection section={landing.primaryCta} />,
