@@ -50,6 +50,22 @@ const processStepSchema = z.object({
   description: z.string().min(1),
 });
 
+const teamSocialPlatformSchema = z.enum(["facebook", "linkedin", "instagram"]);
+
+const teamSocialLinkSchema = z.object({
+  platform: teamSocialPlatformSchema,
+  url: z.string().min(1),
+});
+
+const teamMemberSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  role: z.string().min(1),
+  avatar: z.string().optional(),
+  focusChannels: z.array(teamSocialPlatformSchema).min(1),
+  socials: z.array(teamSocialLinkSchema).min(1),
+});
+
 const filterCriteriaSchema = z.object({
   id: z.string().min(1),
   text: z.string().min(1),
@@ -72,6 +88,7 @@ const sectionKeySchema = z.enum([
   "services",
   "instagramSection",
   "strategySection",
+  "teamSection",
   "process",
   "clientFilter",
   "primaryCta",
@@ -144,6 +161,12 @@ export const siteContentSchema = z.object({
       text: z.string().min(1),
       textAlignment: z.enum(["left", "center"]).default("left"),
       paddingBottom: z.number().min(0).max(400).default(120),
+    }),
+    teamSection: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      members: z.array(teamMemberSchema).min(1),
     }),
     process: z.object({
       enabled: z.boolean().default(true),
