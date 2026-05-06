@@ -74,7 +74,6 @@ const sectionKeySchema = z.enum([
   "strategySection",
   "process",
   "clientFilter",
-  "visualBreak",
   "primaryCta",
   "contact",
   "footer",
@@ -158,11 +157,6 @@ export const siteContentSchema = z.object({
       worksWith: z.array(filterCriteriaSchema).min(1),
       notForTitle: z.string().min(1),
       notFor: z.array(filterCriteriaSchema).min(1),
-    }),
-    visualBreak: z.object({
-      enabled: z.boolean().default(true),
-      image: z.string().min(1),
-      overlayText: z.string().min(1),
     }),
     primaryCta: z.object({
       enabled: z.boolean().default(true),

@@ -78,10 +78,9 @@
       "authority",
       "services",
       "instagramSection",
-      "strategySection",
       "process",
       "clientFilter",
-      "visualBreak",
+      "strategySection",
       "primaryCta",
       "contact",
       "footer"
@@ -259,11 +258,6 @@
           "text": "Mindset oportunist"
         }
       ]
-    },
-    "visualBreak": {
-      "enabled": true,
-      "image": "/branding/references/ai-buget-marketing-sau-doar-sperante.png",
-      "overlayText": "Ușa e deschisă. Întrebarea e dacă intri cu strategie sau cu speranțe."
     },
     "primaryCta": {
       "enabled": true,
