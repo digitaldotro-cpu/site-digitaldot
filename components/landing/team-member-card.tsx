@@ -20,28 +20,43 @@ function getInitials(name: string) {
 }
 
 export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
+  const avatarClasses =
+    "relative h-full min-h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:aspect-square md:h-32 md:w-32 lg:h-28 lg:w-28";
+
+  const avatarContent = member.avatar ? (
+    <Image
+      src={member.avatar}
+      alt={member.name}
+      fill
+      className="object-cover object-center"
+      sizes="(max-width: 767px) 112px, (max-width: 1279px) 128px, 112px"
+      quality={90}
+    />
+  ) : (
+    <div className="flex h-full w-full items-center justify-center text-sm font-semibold tracking-[0.12em] text-[#66fcf1]">
+      {getInitials(member.name)}
+    </div>
+  );
+
   return (
     <AnimatedSection
       delay={delay}
       className="group rounded-3xl border border-[#2a3e42] bg-[#101418]/80 p-6 transition-all duration-300 hover:border-[#66fcf1]/40 hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.8)]"
     >
       <div className="grid grid-cols-[auto_1fr] items-stretch gap-4 md:items-start">
-        <div className="relative h-full min-h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:aspect-square md:h-32 md:w-32 lg:h-28 lg:w-28">
-          {member.avatar ? (
-            <Image
-              src={member.avatar}
-              alt={member.name}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 767px) 112px, (max-width: 1279px) 128px, 112px"
-              quality={90}
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-sm font-semibold tracking-[0.12em] text-[#66fcf1]">
-              {getInitials(member.name)}
-            </div>
-          )}
-        </div>
+        {member.avatarLink ? (
+          <a
+            href={member.avatarLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name} profile link`}
+            className={`${avatarClasses} transition-colors duration-300 hover:border-[#66fcf1]/55`}
+          >
+            {avatarContent}
+          </a>
+        ) : (
+          <div className={avatarClasses}>{avatarContent}</div>
+        )}
 
         <div className="min-w-0">
           <h3 className="text-xl font-semibold text-white">{member.name}</h3>
