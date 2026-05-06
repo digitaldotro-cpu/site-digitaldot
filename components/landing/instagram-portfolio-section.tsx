@@ -36,7 +36,7 @@ export function InstagramPortfolioSection({ section }: InstagramPortfolioSection
                     src={section.image}
                     alt={section.title}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    className="object-contain transition duration-500 group-hover:scale-[1.01]"
                     sizes="(max-width: 1024px) 100vw, 58vw"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0c10]/32 via-transparent to-transparent" />
