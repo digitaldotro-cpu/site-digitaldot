@@ -77,7 +77,8 @@
       "positioning",
       "authority",
       "services",
-      "instagramPortfolio",
+      "instagramSection",
+      "strategySection",
       "process",
       "clientFilter",
       "visualBreak",
@@ -96,7 +97,10 @@
       "subheadline": "Partener strategic pentru business-uri care tratează marketingul ca investiție, nu ca loterie.",
       "ctaText": "Hai să povestim",
       "ctaLink": "#contact",
-      "backgroundImage": "/branding/references/ai-nevoie-agentie-marketing.png",
+      "image": "/branding/references/chess-hero-wide.png",
+      "imagePosition": "right",
+      "overlayIntensity": 72,
+      "imageVisibility": true,
       "supportingPoints": [
         "Strategie clară.",
         "Execuție impecabilă.",
@@ -185,14 +189,21 @@
         }
       ]
     },
-    "instagramPortfolio": {
+    "instagramSection": {
       "enabled": true,
       "title": "Vezi creațiile noastre în acțiune",
-      "description": "Pe Instagram publicăm o parte importantă din proiectele realizate împreună cu clienții noștri: conținut video, social media, campanii, idei vizuale și execuții care arată cum transformăm strategia în rezultate vizibile.",
-      "ctaLabel": "Vezi portofoliul pe Instagram",
-      "ctaUrl": "https://www.instagram.com/digitaldot.ro/",
-      "icon": "Instagram",
-      "media": "/branding/references/ai-nevoie-agentie-marketing.png"
+      "description": "Portofoliul nostru trăiește în timp real. Explorează colaborările și rezultatele direct pe Instagram.",
+      "image": "/branding/references/instagram-call.png",
+      "ctaText": "Vezi pe Instagram",
+      "ctaLink": "https://www.instagram.com/digitaldot.ro/"
+    },
+    "strategySection": {
+      "enabled": true,
+      "image": "/branding/references/door-strategy-wide.png",
+      "overlayIntensity": 52,
+      "text": "Ușa e deschisă. Întrebarea e dacă intri cu strategie sau cu speranțe.",
+      "textAlignment": "left",
+      "paddingBottom": 140
     },
     "process": {
       "enabled": true,

@@ -1,49 +1,52 @@
 import Image from "next/image";
-import type { ComponentType } from "react";
-import { Globe, Camera, Building2, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { CTAButton } from "@/components/landing/cta-button";
 import type { SiteContent } from "@/lib/site-content-schema";
 
 type InstagramPortfolioSectionProps = {
-  section: SiteContent["landing"]["instagramPortfolio"];
-};
-
-const iconByName: Record<string, ComponentType<{ className?: string }>> = {
-  Instagram: Camera,
-  Linkedin: Building2,
-  Facebook: MessageCircle,
+  section: SiteContent["landing"]["instagramSection"];
 };
 
 export function InstagramPortfolioSection({ section }: InstagramPortfolioSectionProps) {
   if (!section.enabled) {
     return null;
   }
-  const Icon = section.icon ? iconByName[section.icon] ?? Globe : Camera;
 
   return (
     <section id="instagram-portfolio" className="py-18 sm:py-24">
       <Container>
-        <AnimatedSection className="relative overflow-hidden rounded-[2rem] border border-[#276864]/60 bg-[linear-gradient(150deg,rgba(11,12,16,0.96),rgba(14,28,30,0.92))] p-7 sm:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#66fcf1]/10 blur-3xl" />
-          <div className="grid items-center gap-8 md:grid-cols-[1.2fr_0.8fr]">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#66fcf1]/35 bg-[#66fcf1]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#66fcf1]">
-                <Icon className="h-4 w-4" />
-                {section.icon ?? "Instagram"}
-              </div>
-              <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#c6c6c6] sm:text-lg">{section.description}</p>
-              <CTAButton label={section.ctaLabel} href={section.ctaUrl} external className="mt-7" />
+        <AnimatedSection className="overflow-hidden rounded-[2rem] border border-[#276864]/55 bg-[linear-gradient(150deg,rgba(11,12,16,0.96),rgba(10,22,24,0.9))] p-6 sm:p-8 lg:p-10">
+          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="order-1 lg:col-span-5">
+              <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-[#c6c6c6] sm:text-lg">{section.description}</p>
             </div>
 
-            {section.media ? (
-              <div className="relative overflow-hidden rounded-3xl border border-[#66fcf1]/30">
-                <Image src={section.media} alt={section.title} width={1200} height={900} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10]/78 to-transparent" />
+            <a
+              href={section.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group order-2 block lg:col-span-7"
+              aria-label={section.ctaText}
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-[#66fcf1]/35 bg-[#0b0c10] transition duration-300 group-hover:border-[#66fcf1]/65 group-hover:shadow-[0_0_34px_-16px_rgba(102,252,241,0.8)]">
+                <div className="relative aspect-[5/4] w-full sm:aspect-[16/10]">
+                  <Image
+                    src={section.image}
+                    alt={section.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0c10]/32 via-transparent to-transparent" />
+                </div>
               </div>
-            ) : null}
+            </a>
+
+            <div className="order-3 lg:col-span-5">
+              <CTAButton label={section.ctaText} href={section.ctaLink} external className="w-full justify-center sm:w-auto" />
+            </div>
           </div>
         </AnimatedSection>
       </Container>
