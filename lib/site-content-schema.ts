@@ -62,6 +62,7 @@ const teamMemberSchema = z.object({
   name: z.string().min(1),
   role: z.string().min(1),
   avatar: z.string().optional(),
+  avatarLink: z.string().optional(),
   focusChannels: z.array(teamSocialPlatformSchema).min(1),
   socials: z.array(teamSocialLinkSchema).min(1),
 });
