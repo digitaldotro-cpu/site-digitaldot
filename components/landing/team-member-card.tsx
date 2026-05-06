@@ -32,8 +32,9 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
               src={member.avatar}
               alt={member.name}
               fill
-              className="object-cover"
+              className="object-cover object-center scale-[1.08]"
               sizes="80px"
+              quality={90}
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-sm font-semibold tracking-[0.12em] text-[#66fcf1]">
