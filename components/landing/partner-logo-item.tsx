@@ -9,6 +9,10 @@ type PartnerLogoItemProps = {
 };
 
 export function PartnerLogoItem({ logo }: PartnerLogoItemProps) {
+  const isBiggerLogo =
+    /lunna|artio|cosmetic/i.test(logo.alt) ||
+    /logo-no-bg|cosmetic/i.test(logo.src);
+
   const content = (
     <div className="flex h-16 min-w-[140px] items-center justify-center px-5 sm:h-20 sm:min-w-[170px] sm:px-6">
       <Image
@@ -17,7 +21,12 @@ export function PartnerLogoItem({ logo }: PartnerLogoItemProps) {
         width={220}
         height={72}
         unoptimized
-        className="max-h-9 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:max-h-10"
+        className={cn(
+          "w-auto object-contain transition duration-300",
+          "max-h-9 sm:max-h-10",
+          "opacity-100 grayscale-0 md:opacity-60 md:grayscale md:hover:opacity-100 md:hover:grayscale-0",
+          isBiggerLogo && "max-h-11 sm:max-h-12 md:max-h-12",
+        )}
       />
     </div>
   );
