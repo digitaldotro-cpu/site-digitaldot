@@ -27,6 +27,15 @@
         "href": "#contact"
       }
     ],
+    "whatsappButton": {
+      "enabled": true,
+      "phoneNumber": "+40773330551",
+      "url": "https://wa.me/40773330551",
+      "icon": "whatsapp",
+      "position": "bottom-right",
+      "openInNewTab": true,
+      "ariaLabel": "Contactează-ne pe WhatsApp"
+    },
     "footer": {
       "logo": "/branding/logo-primary.png",
       "description": "Dacă marketingul tău a ridicat steagul alb, noi suntem aici să îi dăm culoare.",

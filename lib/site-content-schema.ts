@@ -31,6 +31,16 @@ const footerSchema = z.object({
   copyrightTemplate: z.string().min(1),
 });
 
+const whatsappButtonSchema = z.object({
+  enabled: z.boolean().default(true),
+  phoneNumber: z.string().min(1),
+  url: z.string().min(1),
+  icon: z.string().min(1).default("whatsapp"),
+  position: z.enum(["bottom-right", "bottom-left"]).default("bottom-right"),
+  openInNewTab: z.boolean().default(true),
+  ariaLabel: z.string().min(1),
+});
+
 const longFormEntrySchema = z.object({
   id: z.string().min(1),
   text: z.string().min(1),
@@ -114,6 +124,7 @@ export const siteContentSchema = z.object({
     navbarCtaLabel: z.string().min(1),
     navbarCtaHref: z.string().min(1),
     navigation: z.array(navItemSchema).min(1),
+    whatsappButton: whatsappButtonSchema,
     footer: footerSchema,
   }),
   landing: z.object({

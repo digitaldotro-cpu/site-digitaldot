@@ -77,8 +77,8 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel, ctaHref }: N
 
   return (
     <>
-      <div className="h-20 lg:hidden" aria-hidden />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(39,104,100,0.25)] bg-[rgba(11,12,16,0.82)] backdrop-blur-[20px] lg:sticky lg:border-white/5 lg:bg-[#0b0c10]/85 lg:backdrop-blur-lg">
+      <div className="h-20" aria-hidden />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(39,104,100,0.25)] bg-[rgba(11,12,16,0.82)] backdrop-blur-[20px] lg:border-white/5 lg:bg-[#0b0c10]/85 lg:backdrop-blur-lg">
         <Container>
           <div className="hidden h-20 items-center justify-between gap-4 lg:flex">
             <Link href="/" className="group inline-flex items-center gap-2">

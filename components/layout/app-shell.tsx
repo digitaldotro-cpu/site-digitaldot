@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { WhatsappFloatingButton } from "@/components/layout/whatsapp-floating-button";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -14,6 +15,15 @@ type AppShellProps = {
       navbarCtaLabel: string;
       navbarCtaHref: string;
       navigation: Array<{ label: string; href: string }>;
+      whatsappButton: {
+        enabled: boolean;
+        phoneNumber: string;
+        url: string;
+        icon: string;
+        position: "bottom-right" | "bottom-left";
+        openInNewTab: boolean;
+        ariaLabel: string;
+      };
       footer: {
         logo?: string;
         description: string;
@@ -72,6 +82,7 @@ export function AppShell({ children, content }: AppShellProps) {
           copyrightTemplate={content.global.footer.copyrightTemplate}
         />
       ) : null}
+      <WhatsappFloatingButton config={content.global.whatsappButton} />
     </>
   );
 }
