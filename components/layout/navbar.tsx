@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -76,73 +76,104 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel, ctaHref }: N
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0b0c10]/85 backdrop-blur-lg">
-      <Container>
-        <div className="flex h-20 items-center justify-between gap-4">
-          <Link href="/" className="group inline-flex items-center gap-2">
-            {headerLogo ? (
-              <>
-                <Image
-                  src={headerLogo}
-                  alt={brandName}
-                  width={160}
-                  height={44}
-                  unoptimized
-                  className="h-10 w-auto object-contain"
-                />
-                <span className="sr-only">{brandName}</span>
-              </>
-            ) : (
-              <>
-                <span className="h-2.5 w-2.5 rounded-full bg-[#66fcf1] shadow-[0_0_20px_0_rgba(102,252,241,0.7)]" />
-                <span className="text-lg font-semibold tracking-tight text-white">{brandName}</span>
-              </>
-            )}
-          </Link>
+    <>
+      <div className="h-20 lg:hidden" aria-hidden />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(39,104,100,0.25)] bg-[rgba(11,12,16,0.82)] backdrop-blur-[20px] lg:sticky lg:border-white/5 lg:bg-[#0b0c10]/85 lg:backdrop-blur-lg">
+        <Container>
+          <div className="hidden h-20 items-center justify-between gap-4 lg:flex">
+            <Link href="/" className="group inline-flex items-center gap-2">
+              {headerLogo ? (
+                <>
+                  <Image
+                    src={headerLogo}
+                    alt={brandName}
+                    width={160}
+                    height={44}
+                    unoptimized
+                    className="h-10 w-auto object-contain"
+                  />
+                  <span className="sr-only">{brandName}</span>
+                </>
+              ) : (
+                <>
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#66fcf1] shadow-[0_0_20px_0_rgba(102,252,241,0.7)]" />
+                  <span className="text-lg font-semibold tracking-tight text-white">{brandName}</span>
+                </>
+              )}
+            </Link>
 
-          <nav className="hidden items-center gap-2 lg:flex">
-            {navItems.map((item) => {
-              const active = item.href.startsWith("#")
-                ? (activeHash || "#hero") === item.href
-                : item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+            <nav className="hidden items-center gap-2 lg:flex">
+              {navItems.map((item) => {
+                const active = item.href.startsWith("#")
+                  ? (activeHash || "#hero") === item.href
+                  : item.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href);
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                    active
-                      ? "bg-[#122126] text-[#66fcf1]"
-                      : "text-[#c5cad0] hover:text-white",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn(
+                      "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                      active
+                        ? "bg-[#122126] text-[#66fcf1]"
+                        : "text-[#c5cad0] hover:text-white",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
 
-          <div className="hidden lg:block">
-            <ButtonLink href={ctaHref} size="sm">
-              {ctaLabel}
-            </ButtonLink>
+            <div className="hidden lg:block">
+              <ButtonLink href={ctaHref} size="sm">
+                {ctaLabel}
+              </ButtonLink>
+            </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setIsOpen((state) => !state)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#2c3d44] text-white lg:hidden"
-            aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
-            aria-expanded={isOpen}
-            aria-controls="mobile-nav-overlay"
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </Container>
+          <div className="grid h-20 grid-cols-3 items-center lg:hidden">
+            <a
+              href="tel:+40773330551"
+              aria-label="Sună Digital Dot"
+              className="inline-flex h-11 w-11 items-center justify-center justify-self-start rounded-full border border-[#2c3d44] bg-[#0f1418]/70 text-white transition-colors duration-300 hover:border-[#66fcf1]/50 hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+            >
+              <Phone size={18} />
+            </a>
+
+            <Link href="/" className="group inline-flex justify-self-center">
+              {headerLogo ? (
+                <>
+                  <Image
+                    src={headerLogo}
+                    alt={brandName}
+                    width={136}
+                    height={38}
+                    unoptimized
+                    className="h-9 w-auto object-contain"
+                  />
+                  <span className="sr-only">{brandName}</span>
+                </>
+              ) : (
+                <span className="text-base font-semibold tracking-tight text-white">{brandName}</span>
+              )}
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setIsOpen((state) => !state)}
+              className="inline-flex h-11 w-11 items-center justify-center justify-self-end rounded-full border border-[#2c3d44] bg-[#0f1418]/70 text-white transition-colors duration-300 hover:border-[#66fcf1]/50 hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+              aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav-overlay"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </Container>
+      </header>
 
       <AnimatePresence>
         {isOpen ? (
@@ -201,6 +232,6 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel, ctaHref }: N
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
