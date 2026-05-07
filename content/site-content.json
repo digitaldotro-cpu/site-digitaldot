@@ -27,6 +27,11 @@
         "href": "#contact"
       }
     ],
+    "scrollBehavior": {
+      "hideOnScrollDown": true,
+      "scrollThreshold": 80,
+      "transitionDuration": 300
+    },
     "whatsappButton": {
       "enabled": true,
       "phoneNumber": "+40773330551",
@@ -35,6 +40,14 @@
       "position": "bottom-right",
       "openInNewTab": true,
       "ariaLabel": "Contactează-ne pe WhatsApp"
+    },
+    "callButton": {
+      "enabled": true,
+      "phoneNumber": "+40773330551",
+      "telLink": "tel:+40773330551",
+      "icon": "phone",
+      "position": "bottom-left",
+      "ariaLabel": "Sună Digital Dot"
     },
     "footer": {
       "logo": "/branding/logo-primary.png",

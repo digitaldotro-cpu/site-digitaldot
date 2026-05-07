@@ -21,9 +21,19 @@ type NavbarProps = {
   navItems: NavItem[];
   ctaLabel: string;
   ctaHref: string;
+  isVisible?: boolean;
+  transitionDuration?: number;
 };
 
-export function Navbar({ brandName, headerLogo, navItems, ctaLabel, ctaHref }: NavbarProps) {
+export function Navbar({
+  brandName,
+  headerLogo,
+  navItems,
+  ctaLabel,
+  ctaHref,
+  isVisible = true,
+  transitionDuration = 300,
+}: NavbarProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
@@ -75,10 +85,20 @@ export function Navbar({ brandName, headerLogo, navItems, ctaLabel, ctaHref }: N
     };
   }, [isOpen]);
 
+  const shouldShowHeader = isOpen || isVisible;
+
   return (
     <>
       <div className="h-20" aria-hidden />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(39,104,100,0.25)] bg-[rgba(11,12,16,0.82)] backdrop-blur-[20px] lg:border-white/5 lg:bg-[#0b0c10]/85 lg:backdrop-blur-lg">
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 border-b border-[rgba(39,104,100,0.25)] bg-[rgba(11,12,16,0.82)] backdrop-blur-[20px] transition-[transform,opacity] lg:border-white/5 lg:bg-[#0b0c10]/85 lg:backdrop-blur-lg",
+          shouldShowHeader
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "-translate-y-full opacity-0 pointer-events-none",
+        )}
+        style={{ transitionDuration: `${transitionDuration}ms` }}
+      >
         <Container>
           <div className="hidden h-20 items-center justify-between gap-4 lg:flex">
             <Link href="/" className="group inline-flex items-center gap-2">

@@ -41,6 +41,21 @@ const whatsappButtonSchema = z.object({
   ariaLabel: z.string().min(1),
 });
 
+const callButtonSchema = z.object({
+  enabled: z.boolean().default(true),
+  phoneNumber: z.string().min(1),
+  telLink: z.string().min(1),
+  icon: z.string().min(1).default("phone"),
+  position: z.enum(["bottom-right", "bottom-left"]).default("bottom-left"),
+  ariaLabel: z.string().min(1),
+});
+
+const scrollBehaviorSchema = z.object({
+  hideOnScrollDown: z.boolean().default(true),
+  scrollThreshold: z.number().min(0).max(500).default(80),
+  transitionDuration: z.number().min(100).max(1000).default(300),
+});
+
 const longFormEntrySchema = z.object({
   id: z.string().min(1),
   text: z.string().min(1),
@@ -124,7 +139,9 @@ export const siteContentSchema = z.object({
     navbarCtaLabel: z.string().min(1),
     navbarCtaHref: z.string().min(1),
     navigation: z.array(navItemSchema).min(1),
+    scrollBehavior: scrollBehaviorSchema,
     whatsappButton: whatsappButtonSchema,
+    callButton: callButtonSchema,
     footer: footerSchema,
   }),
   landing: z.object({
