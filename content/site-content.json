@@ -122,6 +122,7 @@
       "teamSection",
       "process",
       "clientFilter",
+      "partnersSection",
       "strategySection",
       "primaryCta",
       "contact",
@@ -482,6 +483,136 @@
           "text": "Mindset oportunist"
         }
       ]
+    },
+    "partnersSection": {
+      "enabled": true,
+      "title": "Parteneri",
+      "subtitle": "Branduri și companii cu care am construit proiecte digitale.",
+      "logos": [
+        {
+          "id": "partner-1",
+          "enabled": true,
+          "src": "/branding/partners/tacoloco.jpg",
+          "alt": "Tacoloco"
+        },
+        {
+          "id": "partner-2",
+          "enabled": true,
+          "src": "/branding/partners/fff-logo.jpg",
+          "alt": "FFF Logo"
+        },
+        {
+          "id": "partner-3",
+          "enabled": true,
+          "src": "/branding/partners/decon.jpg",
+          "alt": "Decon"
+        },
+        {
+          "id": "partner-4",
+          "enabled": true,
+          "src": "/branding/partners/5in1.png",
+          "alt": "5 in 1"
+        },
+        {
+          "id": "partner-5",
+          "enabled": true,
+          "src": "/branding/partners/brodmax.jpg",
+          "alt": "Brodmax"
+        },
+        {
+          "id": "partner-6",
+          "enabled": true,
+          "src": "/branding/partners/lunna.png",
+          "alt": "Lunna"
+        },
+        {
+          "id": "partner-7",
+          "enabled": true,
+          "src": "/branding/partners/logo-no-bg.png",
+          "alt": "Logo fără fundal"
+        },
+        {
+          "id": "partner-8",
+          "enabled": true,
+          "src": "/branding/partners/optiktataru-negru-verde-principal.p.png",
+          "alt": "Optik Tataru"
+        },
+        {
+          "id": "partner-9",
+          "enabled": true,
+          "src": "/branding/partners/bfe.png",
+          "alt": "BFE"
+        },
+        {
+          "id": "partner-10",
+          "enabled": true,
+          "src": "/branding/partners/freedompack-02.jpg.jpg",
+          "alt": "Freedom Pack"
+        },
+        {
+          "id": "partner-11",
+          "enabled": true,
+          "src": "/branding/partners/logo-amir-best-clean.jpg",
+          "alt": "Amir Best"
+        },
+        {
+          "id": "partner-12",
+          "enabled": true,
+          "src": "/branding/partners/petsmartshop-1000-500px.png.png",
+          "alt": "Pet Smart Shop"
+        },
+        {
+          "id": "partner-13",
+          "enabled": true,
+          "src": "/branding/partners/gbu-spedition.png",
+          "alt": "GBU Spedition"
+        },
+        {
+          "id": "partner-14",
+          "enabled": true,
+          "src": "/branding/partners/pss-1000x1000.png",
+          "alt": "PSS"
+        },
+        {
+          "id": "partner-15",
+          "enabled": true,
+          "src": "/branding/partners/romfourrulate.png",
+          "alt": "Romfour Rulate"
+        },
+        {
+          "id": "partner-16",
+          "enabled": true,
+          "src": "/branding/partners/cameracucafea.jpg",
+          "alt": "Camera cu Cafea"
+        },
+        {
+          "id": "partner-17",
+          "enabled": true,
+          "src": "/branding/partners/aibusiness.png",
+          "alt": "AI Business"
+        },
+        {
+          "id": "partner-18",
+          "enabled": true,
+          "src": "/branding/partners/logo-at-dental-care.png",
+          "alt": "AT Dental Care"
+        },
+        {
+          "id": "partner-19",
+          "enabled": true,
+          "src": "/branding/partners/artio.png",
+          "alt": "Artio"
+        },
+        {
+          "id": "partner-20",
+          "enabled": true,
+          "src": "/branding/partners/romfour-orizontal-inversat.svg",
+          "alt": "Romfour"
+        }
+      ],
+      "tickerDirection": "rtl",
+      "tickerSpeed": 36,
+      "pauseOnHover": true
     },
     "primaryCta": {
       "enabled": true,
