@@ -77,6 +77,14 @@ const processStepSchema = z.object({
   description: z.string().min(1),
 });
 
+const partnerLogoSchema = z.object({
+  id: z.string().min(1),
+  enabled: z.boolean().default(true),
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  url: z.string().optional(),
+});
+
 const teamSocialPlatformSchema = z.enum(["facebook", "linkedin", "instagram"]);
 
 const teamSocialLinkSchema = z.object({
@@ -120,6 +128,7 @@ const sectionKeySchema = z.enum([
   "teamSection",
   "process",
   "clientFilter",
+  "partnersSection",
   "primaryCta",
   "contact",
   "footer",
@@ -222,6 +231,15 @@ export const siteContentSchema = z.object({
       worksWith: z.array(filterCriteriaSchema).min(1),
       notForTitle: z.string().min(1),
       notFor: z.array(filterCriteriaSchema).min(1),
+    }),
+    partnersSection: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      logos: z.array(partnerLogoSchema).min(1),
+      tickerDirection: z.enum(["rtl", "ltr"]).default("rtl"),
+      tickerSpeed: z.number().min(8).max(120).default(36),
+      pauseOnHover: z.boolean().default(true),
     }),
     primaryCta: z.object({
       enabled: z.boolean().default(true),
