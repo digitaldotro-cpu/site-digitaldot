@@ -28,32 +28,6 @@ export function PartnersTickerSection({ section }: PartnersTickerSectionProps) {
           </div>
         </AnimatedSection>
       </Container>
-
-      <style jsx global>{`
-        .partner-ticker {
-          overflow: hidden;
-          width: 100%;
-        }
-        .partner-ticker-track {
-          display: flex;
-          width: max-content;
-          will-change: transform;
-          animation-name: partner-ticker-scroll;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-        }
-        .partner-ticker.is-paused-on-hover:hover .partner-ticker-track {
-          animation-play-state: paused;
-        }
-        @keyframes partner-ticker-scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 }
