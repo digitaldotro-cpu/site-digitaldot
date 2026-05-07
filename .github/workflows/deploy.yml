@@ -19,18 +19,23 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           script: |
+            # Source profile/bashrc to load NVM/Node paths in non-interactive SSH session
+            source ~/.bash_profile || source ~/.bashrc || true
+            export PATH=$PATH:/usr/local/bin:/usr/bin
+
             cd /home/digitaldot/htdocs/digitaldot.ro
             
-            # Pull latest changes
-            git pull origin main
+            # Fetch and hard reset to avoid merge conflicts with local server files
+            git fetch origin
+            git reset --hard origin/main
             
-            # Install dependencies
-            npm install
+            # Install dependencies cleanly
+            npm ci
             
             # Build the Next.js application
             npm run build
             
-            # Restart the Node app (CloudPanel usually uses the domain name for the PM2 process)
+            # Restart the Node app
             pm2 restart digitaldot.ro
             
             echo "Deployment finished!"
