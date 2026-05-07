@@ -583,7 +583,7 @@
           "id": "partner-16",
           "enabled": true,
           "src": "/branding/partners/cameracucafea.jpg",
-          "alt": "Camera cu Cafea"
+          "alt": "BeerTime"
         },
         {
           "id": "partner-17",
@@ -608,6 +608,18 @@
           "enabled": true,
           "src": "/branding/partners/romfour-orizontal-inversat.svg",
           "alt": "Romfour"
+        },
+        {
+          "id": "partner-21",
+          "enabled": true,
+          "src": "/branding/partners/camera-cu-cafea.png",
+          "alt": "Camera Cu Cafea"
+        },
+        {
+          "id": "partner-22",
+          "enabled": true,
+          "src": "/branding/partners/radburg.jpg",
+          "alt": "Radburg"
         }
       ],
       "tickerDirection": "rtl",
