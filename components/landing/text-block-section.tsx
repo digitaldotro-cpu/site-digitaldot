@@ -16,7 +16,7 @@ export function TextBlockSection({ id, section }: TextBlockSectionProps) {
   }
 
   return (
-    <section id={id} className="py-18 sm:py-24">
+    <section id={id} className="scroll-mt-24 py-18 sm:py-24">
       <Container className="max-w-5xl">
         <AnimatedSection>
           <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>

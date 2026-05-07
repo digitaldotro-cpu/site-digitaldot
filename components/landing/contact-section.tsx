@@ -15,7 +15,7 @@ export function ContactSection({ section, global }: ContactSectionProps) {
   }
 
   return (
-    <section id="contact" className="py-18 sm:py-24">
+    <section id="contact" className="scroll-mt-24 py-18 sm:py-24">
       <Container className="grid gap-7 lg:grid-cols-[1.2fr_0.8fr]">
         <AnimatedSection className="rounded-[2rem] border border-[#2a3b42] bg-[#0f1519]/85 p-7 sm:p-9">
           <h2 className="text-3xl font-semibold text-white">{section.title}</h2>

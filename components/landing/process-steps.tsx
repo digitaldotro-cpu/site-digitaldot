@@ -12,7 +12,7 @@ export function ProcessSteps({ section }: ProcessStepsProps) {
   }
 
   return (
-    <section id="process" className="py-18 sm:py-24">
+    <section id="process" className="scroll-mt-24 py-18 sm:py-24">
       <Container>
         <AnimatedSection>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">{section.title}</h2>

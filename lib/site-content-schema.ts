@@ -3,6 +3,7 @@ import { z } from "zod";
 const navItemSchema = z.object({
   label: z.string().min(1),
   href: z.string().min(1),
+  enabled: z.boolean().default(true),
 });
 
 const socialLinkSchema = z.object({

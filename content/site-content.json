@@ -8,23 +8,38 @@
     "navigation": [
       {
         "label": "Acasă",
-        "href": "#hero"
+        "href": "#hero",
+        "enabled": true
       },
       {
         "label": "Poziționare",
-        "href": "#positioning"
+        "href": "#positioning",
+        "enabled": true
       },
       {
         "label": "Servicii",
-        "href": "#services"
+        "href": "#services",
+        "enabled": true
+      },
+      {
+        "label": "Cine Suntem",
+        "href": "#team",
+        "enabled": true
+      },
+      {
+        "label": "Cu Cine Lucrăm",
+        "href": "#clients",
+        "enabled": true
       },
       {
         "label": "Proces",
-        "href": "#process"
+        "href": "#process",
+        "enabled": true
       },
       {
         "label": "Contact",
-        "href": "#contact"
+        "href": "#contact",
+        "enabled": true
       }
     ],
     "scrollBehavior": {

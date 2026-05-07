@@ -15,7 +15,7 @@ type AppShellProps = {
       favicon?: string;
       navbarCtaLabel: string;
       navbarCtaHref: string;
-      navigation: Array<{ label: string; href: string }>;
+      navigation: Array<{ label: string; href: string; enabled: boolean }>;
       scrollBehavior: {
         hideOnScrollDown: boolean;
         scrollThreshold: number;

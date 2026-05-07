@@ -25,7 +25,7 @@ export function HeroSection({ section }: HeroSectionProps) {
   const useBackgroundMode = section.imagePosition === "right";
 
   return (
-    <section id="hero" className="relative overflow-hidden pt-10 sm:pt-14 lg:pt-16">
+    <section id="hero" className="relative overflow-hidden scroll-mt-24 pt-10 sm:pt-14 lg:pt-16">
       {section.imageVisibility && useBackgroundMode ? (
         <div className="pointer-events-none absolute inset-0">
           <Image

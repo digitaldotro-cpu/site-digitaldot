@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 type NavItem = {
   label: string;
   href: string;
+  enabled: boolean;
 };
 
 type NavbarProps = {
@@ -37,6 +38,7 @@ export function Navbar({
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
+  const visibleNavItems = navItems.filter((item) => item.enabled !== false);
 
   useEffect(() => {
     function handleHashChange() {
@@ -123,7 +125,7 @@ export function Navbar({
             </Link>
 
             <nav className="hidden items-center gap-2 lg:flex">
-              {navItems.map((item) => {
+              {visibleNavItems.map((item) => {
                 const active = item.href.startsWith("#")
                   ? (activeHash || "#hero") === item.href
                   : item.href === "/"
@@ -216,7 +218,7 @@ export function Navbar({
               onClick={(event) => event.stopPropagation()}
             >
               <nav className="flex flex-col gap-2">
-                {navItems.map((item) => {
+                {visibleNavItems.map((item) => {
                   const active = item.href.startsWith("#")
                     ? (activeHash || "#hero") === item.href
                     : item.href === "/"

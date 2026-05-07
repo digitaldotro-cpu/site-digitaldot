@@ -26,7 +26,7 @@ export function ServicesGrid({ section }: ServicesGridProps) {
   }
 
   return (
-    <section id="services" className="py-18 sm:py-24">
+    <section id="services" className="scroll-mt-24 py-18 sm:py-24">
       <Container>
         <AnimatedSection>
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
