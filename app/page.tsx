@@ -11,6 +11,7 @@ import { StrategySection } from "@/components/landing/strategy-section";
 import { TeamSection } from "@/components/landing/team-section";
 import { ProcessSteps } from "@/components/landing/process-steps";
 import { ClientFilterSection } from "@/components/landing/client-filter-section";
+import { PartnersTickerSection } from "@/components/landing/partners-ticker-section";
 import { CTASection } from "@/components/landing/cta-section";
 import { ContactSection } from "@/components/landing/contact-section";
 import type { LandingSectionKey } from "@/lib/site-content-schema";
@@ -39,6 +40,7 @@ export default async function HomePage() {
     teamSection: <TeamSection section={landing.teamSection} />,
     process: <ProcessSteps section={landing.process} />,
     clientFilter: <ClientFilterSection section={landing.clientFilter} />,
+    partnersSection: <PartnersTickerSection section={landing.partnersSection} />,
     primaryCta: <CTASection section={landing.primaryCta} />,
     contact: <ContactSection section={landing.contact} global={content.global} />,
     footer: null,
