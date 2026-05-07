@@ -24,9 +24,9 @@ export function LogoTicker({
   const track = [...visibleLogos, ...visibleLogos];
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-[#276864]/35 bg-[#66fcf1]">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#66fcf1] to-transparent sm:w-14" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#66fcf1] to-transparent sm:w-14" />
+    <div className="relative overflow-hidden rounded-2xl border border-[#276864]/35 bg-[#66fcf1]/10">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#66fcf1]/10 to-transparent sm:w-14" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#66fcf1]/10 to-transparent sm:w-14" />
 
       <div className={`partner-ticker ${pauseOnHover ? "is-paused-on-hover" : ""}`}>
         <div
