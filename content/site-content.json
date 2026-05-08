@@ -150,29 +150,54 @@
     },
     "positioning": {
       "enabled": true,
-      "title": "Ești în căutarea unei agenții de marketing?",
-      "entries": [
+      "title": "Marketingul nu este loterie. Este strategie.",
+      "highlightedWords": [
+        "nu este loterie",
+        "Este strategie."
+      ],
+      "introParagraph": "Dacă ai ajuns aici, cel mai probabil nu cauți doar execuție vizibilă. Cauți claritate, structură și un mod de lucru care transformă marketingul într-o funcție predictibilă de business.",
+      "editorialParagraphs": [
         {
           "id": "pos-1",
-          "text": "Dacă ai ajuns aici, probabil nu cauți doar postări frumoase. Cauți claritate, structură și rezultate care se văd în cifre.",
-          "highlight": false
+          "text": "Marketingul fără strategie rămâne activitate: mult efort, puțină direcție. Când obiectivele, mesajele și canalele sunt aliniate, aceeași energie produce rezultate care se văd în cifre."
         },
         {
           "id": "pos-2",
-          "text": "Marketingul fără strategie este doar activitate. Marketingul cu strategie devine avantaj competitiv.",
-          "highlight": true
+          "text": "Noi nu intrăm în proiecte pentru a bifa task-uri izolate. Construim un sistem coerent, cu priorități clare, metrici utile și ritm de execuție disciplinat."
         },
         {
           "id": "pos-3",
-          "text": "Noi nu intrăm în proiecte ca să bifăm task-uri. Intrăm ca să construim un sistem care susține creșterea pe termen lung.",
-          "highlight": false
+          "text": "Această abordare este orientată spre creștere pe termen lung: decizii mature, investiții mai bine calibrate și poziționare care rezistă în timp."
+        }
+      ],
+      "quoteBlocks": [
+        {
+          "id": "pos-q1",
+          "text": "Marketingul cu strategie devine avantaj competitiv."
         },
         {
-          "id": "pos-4",
-          "text": "Dacă vrei o echipă care gândește business-first, atunci ești în locul potrivit.",
-          "highlight": true
+          "id": "pos-q2",
+          "text": "Business-first nu este un slogan. Este standardul de lucru."
         }
-      ]
+      ],
+      "closingParagraph": "Lucrăm selectiv, cu companii care tratează marketingul ca investiție strategică, nu ca experiment permanent. Dacă urmărești execuție controlată și progres măsurabil, suntem aliniați.",
+      "optionalHighlightedPhrases": [
+        "claritate",
+        "strategie",
+        "sistem",
+        "business-first",
+        "avantaj competitiv"
+      ],
+      "layout": {
+        "spacingPreset": "cinematic",
+        "alignment": "left",
+        "backgroundVariant": "glow"
+      },
+      "cta": {
+        "enabled": true,
+        "text": "Descoperă serviciile noastre strategice",
+        "link": "#services"
+      }
     },
     "authority": {
       "enabled": true,
