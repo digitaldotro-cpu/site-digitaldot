@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ImageUploadField } from "@/components/admin/image-upload-field";
 import type { SiteContent } from "@/lib/site-content-schema";
 import { cn } from "@/lib/utils";
 
@@ -266,11 +267,21 @@ function EditorNode({
   }
 
   const isLongText = typeof value === "string" && value.length > 90;
+  const keyName = String(path[path.length - 1]);
+  const isImageField =
+    typeof value === "string" &&
+    (keyName.toLowerCase().includes("image") ||
+      keyName.toLowerCase().includes("logo") ||
+      keyName.toLowerCase().includes("avatar") ||
+      keyName.toLowerCase().includes("favicon") ||
+      keyName === "src");
 
   return (
     <div className="space-y-2 rounded-2xl border border-[#25373f] bg-[#0f171c] p-4">
       <label className="text-sm font-semibold text-white">{label}</label>
-      {isLongText ? (
+      {isImageField ? (
+        <ImageUploadField value={value as string} onChange={(val) => onChange(path, val)} />
+      ) : isLongText ? (
         <textarea
           value={String(value ?? "")}
           onChange={(event) => onChange(path, event.target.value)}
