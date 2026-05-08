@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { readSiteContent } from "@/lib/site-content";
 import { createContactSchema } from "@/lib/validation/contact";
 import { sendContactEmail } from "@/lib/email/send-contact-email";
+import { logSubmission, logEmailStatus } from "@/lib/logs";
 
 export const runtime = "nodejs";
 
@@ -32,14 +33,26 @@ export async function POST(request: Request) {
     "Necunoscut";
   const userAgent = request.headers.get("user-agent") ?? "Necunoscut";
 
+  let submissionId = "unknown";
+
   try {
+    submissionId = await logSubmission(parsed.data, { ip, userAgent });
+
     await sendContactEmail(parsed.data, {
       ip,
       userAgent,
       submittedAt: new Date().toISOString(),
     });
+
+    await logEmailStatus(submissionId, "success");
   } catch (error) {
     console.error("Contact form email send failed:", error);
+    
+    await logEmailStatus(
+      submissionId,
+      "error",
+      error instanceof Error ? error.message : String(error),
+    );
 
     if (
       error instanceof Error &&
