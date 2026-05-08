@@ -5,6 +5,7 @@ import { siteMetadata } from "@/lib/seo";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
+    "/politica-confidentialitate",
   ];
 
   const posts = await getAllPosts();

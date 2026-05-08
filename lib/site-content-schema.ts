@@ -117,6 +117,19 @@ const serviceOptionSchema = z.object({
   label: z.string().min(1),
 });
 
+const legalContentSectionSchema = z.object({
+  id: z.string().min(1),
+  enabled: z.boolean().default(true),
+  title: z.string().min(1),
+  body: z.string().min(1),
+});
+
+const legalContactLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+  enabled: z.boolean().default(true),
+});
+
 const sectionKeySchema = z.enum([
   "hero",
   "positioning",
@@ -274,6 +287,39 @@ export const siteContentSchema = z.object({
     }),
     footer: z.object({
       enabled: z.boolean().default(true),
+    }),
+  }),
+  privacyPolicy: z.object({
+    settings: z.object({
+      enabled: z.boolean().default(true),
+      seoTitle: z.string().min(3),
+      seoDescription: z.string().min(10),
+      lastUpdated: z.string().min(1),
+    }),
+    hero: z.object({
+      badge: z.string().min(1),
+      title: z.string().min(1),
+      paragraph: z.string().min(1),
+    }),
+    legalContent: z.object({
+      title: z.string().min(1),
+      showTableOfContents: z.boolean().default(true),
+      sections: z.array(legalContentSectionSchema).min(1),
+    }),
+    contactCard: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      email: z.string().min(1),
+      companyName: z.string().min(1),
+      location: z.string().min(1),
+      links: z.array(legalContactLinkSchema).default([]),
+    }),
+    finalCta: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      paragraph: z.string().min(1),
+      buttonLabel: z.string().min(1),
+      buttonUrl: z.string().min(1),
     }),
   }),
   cmsPages: z.record(z.string(), cmsPageMetaSchema).optional(),

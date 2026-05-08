@@ -700,5 +700,122 @@
       "seoTitle": "Digital Dot | Agenție de Marketing",
       "seoDescription": "Digital Dot pentru antreprenori și manageri care vor marketing strategic, execuție premium și rezultate măsurabile."
     }
+  },
+  "privacyPolicy": {
+    "settings": {
+      "enabled": true,
+      "seoTitle": "Politica de Confidențialitate | Digital Dot",
+      "seoDescription": "Află cum Digital Dot colectează, utilizează și protejează datele utilizatorilor în conformitate cu standardele moderne de confidențialitate și GDPR.",
+      "lastUpdated": "8 mai 2026"
+    },
+    "hero": {
+      "badge": "Legal & GDPR",
+      "title": "Politica de Confidențialitate",
+      "paragraph": "Respectăm datele utilizatorilor și tratăm confidențialitatea cu aceeași seriozitate cu care construim strategii digitale."
+    },
+    "legalContent": {
+      "title": "Conținut legal",
+      "showTableOfContents": true,
+      "sections": [
+        {
+          "id": "cine-suntem",
+          "enabled": true,
+          "title": "Cine suntem",
+          "body": "Digital Dot este un brand operat de IONNEL TECH SRL, companie înregistrată în România.\n\nWebsite-ul Digital Dot are rolul de a prezenta serviciile companiei, portofoliul, informațiile comerciale și metodele prin care utilizatorii pot contacta echipa noastră.\n\nRespectăm confidențialitatea utilizatorilor și tratăm datele personale cu responsabilitate, transparență și în conformitate cu legislația aplicabilă."
+        },
+        {
+          "id": "ce-date-colectam",
+          "enabled": true,
+          "title": "Ce date colectăm",
+          "body": "Putem colecta următoarele categorii de date:\n\n- nume și prenume\n- adresă de email\n- număr de telefon\n- companie / business\n- informații transmise prin formularele de contact\n- informații oferite voluntar prin WhatsApp, email sau Social Media\n- date tehnice:\n- IP\n- browser\n- device type\n- sistem de operare\n- pagini vizitate\n- comportament de navigare\n\nNu colectăm intenționat date sensibile."
+        },
+        {
+          "id": "cum-folosim-datele",
+          "enabled": true,
+          "title": "Cum folosim datele",
+          "body": "Datele pot fi utilizate pentru:\n\n- contactarea utilizatorilor\n- răspuns la solicitări comerciale\n- ofertare servicii\n- comunicare contractuală\n- îmbunătățirea experienței website-ului\n- analiză statistică și performanță\n- marketing și remarketing\n- securitate și prevenirea abuzurilor\n\nNu vindem datele utilizatorilor către terți."
+        },
+        {
+          "id": "cookie-uri-si-tracking",
+          "enabled": true,
+          "title": "Cookie-uri și tracking",
+          "body": "Website-ul poate utiliza:\n\n- cookie-uri esențiale\n- cookie-uri de analiză\n- cookie-uri de marketing\n- Meta Pixel\n- Google Analytics\n- instrumente de tracking și măsurare performanță\n\nAceste tehnologii ne ajută să înțelegem modul în care este utilizat website-ul și să optimizăm experiența utilizatorilor.\n\nUtilizatorii pot controla cookie-urile din setările browserului."
+        },
+        {
+          "id": "formulare-de-contact",
+          "enabled": true,
+          "title": "Formulare de contact",
+          "body": "Atunci când completezi un formular de contact pe website:\n\n- datele sunt transmise către echipa Digital Dot\n- datele pot fi stocate pentru comunicare ulterioară\n- utilizăm informațiile exclusiv pentru scopul solicitării trimise\n\nTransmiterea formularelor reprezintă acordul utilizatorului pentru procesarea datelor furnizate."
+        },
+        {
+          "id": "whatsapp-social-media",
+          "enabled": true,
+          "title": "WhatsApp / Social Media integrations",
+          "body": "Website-ul poate conține:\n\n- link-uri către WhatsApp\n- link-uri către Instagram\n- link-uri către Facebook\n- link-uri către LinkedIn\n- alte integrări Social Media\n\nInteracțiunea cu aceste platforme este supusă politicilor lor proprii de confidențialitate.\n\nDigital Dot nu controlează politicile platformelor externe."
+        },
+        {
+          "id": "newsletter-si-comunicare",
+          "enabled": true,
+          "title": "Newsletter și comunicare",
+          "body": "Dacă utilizatorii aleg să se aboneze la comunicări de marketing:\n\n- pot primi email-uri informative sau comerciale\n- se pot dezabona oricând\n- nu trimitem spam\n\nComunicările sunt limitate la informații relevante pentru serviciile și activitatea Digital Dot."
+        },
+        {
+          "id": "partajarea-datelor",
+          "enabled": true,
+          "title": "Partajarea datelor",
+          "body": "Datele pot fi partajate doar:\n\n- cu furnizori tehnici necesari funcționării website-ului\n- cu platforme de analiză și marketing\n- dacă legislația impune acest lucru\n- pentru protejarea drepturilor și securității companiei\n\nNu distribuim date personale în scop comercial neautorizat."
+        },
+        {
+          "id": "drepturile-utilizatorilor",
+          "enabled": true,
+          "title": "Drepturile utilizatorilor",
+          "body": "Conform legislației aplicabile, utilizatorii au dreptul:\n\n- de acces la date\n- de rectificare\n- de ștergere\n- de restricționare a procesării\n- de opoziție\n- la portabilitatea datelor\n- de retragere a consimțământului\n\nSolicitările pot fi trimise către:\n\n[hello@digitaldot.ro](mailto:hello@digitaldot.ro)"
+        },
+        {
+          "id": "securitatea-datelor",
+          "enabled": true,
+          "title": "Securitatea datelor",
+          "body": "Implementăm măsuri tehnice și organizatorice rezonabile pentru protejarea datelor împotriva:\n\n- accesului neautorizat\n- pierderii\n- modificării\n- divulgării\n- utilizării abuzive\n\nCu toate acestea, nicio metodă de transmitere online nu poate garanta securitate absolută."
+        },
+        {
+          "id": "modificari-ale-politicii",
+          "enabled": true,
+          "title": "Modificări ale politicii",
+          "body": "Ne rezervăm dreptul de a actualiza această Politică de Confidențialitate atunci când este necesar.\n\nVersiunea actualizată va fi publicată pe website.\n\nContinuarea utilizării website-ului reprezintă acceptarea eventualelor modificări."
+        },
+        {
+          "id": "contact-gdpr",
+          "enabled": true,
+          "title": "Contact GDPR",
+          "body": "Pentru întrebări privind confidențialitatea și protecția datelor:\n\nEmail:\n[hello@digitaldot.ro](mailto:hello@digitaldot.ro)\n\nCompanie:\nIONNEL TECH SRL\n\nȚară:\nRomânia"
+        }
+      ]
+    },
+    "contactCard": {
+      "enabled": true,
+      "title": "Suport legal și GDPR",
+      "email": "hello@digitaldot.ro",
+      "companyName": "IONNEL TECH SRL",
+      "location": "România",
+      "links": [
+        {
+          "label": "Trimite email",
+          "href": "mailto:hello@digitaldot.ro",
+          "enabled": true
+        },
+        {
+          "label": "Pagina de contact",
+          "href": "/contacteaza-ne",
+          "enabled": true
+        }
+      ]
+    },
+    "finalCta": {
+      "enabled": true,
+      "title": "Ai întrebări despre datele tale?",
+      "paragraph": "Ne poți contacta oricând pentru informații despre modul în care gestionăm datele și comunicarea digitală.",
+      "buttonLabel": "Contactează-ne",
+      "buttonUrl": "/contacteaza-ne"
+    }
   }
 }
