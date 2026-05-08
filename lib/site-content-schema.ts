@@ -226,6 +226,7 @@ export const siteContentSchema = z.object({
     brandValueSection: z.object({
       enabled: z.boolean().default(true),
       heading: z.string().min(1),
+      paragraph: z.string().min(1),
       image: z.string().min(1),
       imageAlt: z.string().min(1),
       imageLink: z.string().min(1),

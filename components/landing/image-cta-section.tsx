@@ -19,6 +19,9 @@ export function ImageCtaSection({ id, section }: ImageCtaSectionProps) {
       <Container className="max-w-5xl">
         <AnimatedSection>
           <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.heading}</h2>
+          <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[#c6c6c6] sm:text-xl">
+            {section.paragraph}
+          </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.04}>
@@ -28,7 +31,7 @@ export function ImageCtaSection({ id, section }: ImageCtaSectionProps) {
             rel={section.openInNewTab ? "noopener noreferrer" : undefined}
             aria-label={section.ariaLabel}
             className={cn(
-              "group mt-10 block rounded-3xl border border-[#276864]/40 bg-[#0f1418]/80 p-3 backdrop-blur-sm transition duration-300 hover:border-[#66fcf1]/55 sm:p-4",
+              "group mt-12 block rounded-3xl border border-[#276864]/40 bg-[#0f1418]/80 p-3 backdrop-blur-sm transition duration-300 hover:border-[#66fcf1]/55 sm:mt-14 sm:p-4",
               section.hoverGlow ? "hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.85)]" : "",
             )}
           >
@@ -46,4 +49,3 @@ export function ImageCtaSection({ id, section }: ImageCtaSectionProps) {
     </section>
   );
 }
-
