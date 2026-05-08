@@ -49,10 +49,9 @@ function renderHighlightedText(text: string, phrases: string[], tone: "headline"
       <span
         key={`${part}-${index}`}
         className={cn(
-          "rounded-full px-2 py-0.5",
           tone === "headline"
-            ? "bg-[#66fcf1]/12 text-[#66fcf1]"
-            : "bg-[#66fcf1]/10 text-[#d8fffc]",
+            ? "text-[#66fcf1]"
+            : "rounded-full bg-[#66fcf1]/10 px-2 py-0.5 text-[#d8fffc]",
         )}
       >
         {part}
