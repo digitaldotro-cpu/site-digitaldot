@@ -302,6 +302,7 @@ type ControlPanelProps = {
 export function ControlPanel({ initialContent }: ControlPanelProps) {
   const initialRef = useRef(initialContent);
   const [draft, setDraft] = useState<SiteContent>(initialContent);
+  const [activeTab, setActiveTab] = useState<string>(Object.keys(initialContent)[0] || "");
   const [isSaving, setIsSaving] = useState(false);
   const [isReloading, setIsReloading] = useState(false);
   const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; message?: string }>({
@@ -439,23 +440,28 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
       <div className="sticky top-4 z-10 flex flex-wrap items-center gap-2 rounded-2xl border border-[#2a3c44] bg-[#10181d]/90 px-6 py-4 shadow-lg backdrop-blur-md">
         <span className="mr-2 text-sm font-semibold text-[#8da0aa]">Secțiuni:</span>
         {Object.keys(draft).map((key) => (
-          <a
+          <button
             key={key}
-            href={`#section-${key}`}
-            className="rounded-full bg-[#1c2c33] px-3 py-1.5 text-xs font-medium text-[#b7d9d7] transition-colors hover:bg-[#66fcf1] hover:text-[#0b1318]"
+            onClick={() => setActiveTab(key)}
+            className={cn(
+              "rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
+              activeTab === key
+                ? "bg-[#66fcf1] text-[#0b1318]"
+                : "bg-[#1c2c33] text-[#b7d9d7] hover:bg-[#66fcf1] hover:text-[#0b1318]"
+            )}
           >
             {formatLabel(key)}
-          </a>
+          </button>
         ))}
       </div>
 
-      <section className="space-y-6">
-        {Object.entries(draft).map(([key, value]) => (
-          <div key={key} id={`section-${key}`} className="scroll-mt-28">
+      <section className="space-y-6 pt-4">
+        {activeTab && draft[activeTab as keyof SiteContent] && (
+          <div key={activeTab}>
             <EditorNode
-              label={formatLabel(key)}
-              value={value as JsonValue}
-              path={[key]}
+              label={formatLabel(activeTab)}
+              value={draft[activeTab as keyof SiteContent] as JsonValue}
+              path={[activeTab]}
               depth={0}
               onChange={handleChange}
               onAddArrayItem={handleAddArrayItem}
@@ -463,7 +469,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
               onMoveArrayItem={handleMoveArrayItem}
             />
           </div>
-        ))}
+        )}
       </section>
     </div>
   );

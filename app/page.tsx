@@ -43,7 +43,6 @@ export default async function HomePage() {
     partnersSection: <PartnersTickerSection section={landing.partnersSection} />,
     primaryCta: <CTASection section={landing.primaryCta} />,
     contact: <ContactSection section={landing.contact} global={content.global} />,
-    footer: null,
   };
 
   return <>{landing.sectionOrder.map((key) => <div key={key}>{sections[key]}</div>)}</>;

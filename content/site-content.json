@@ -125,8 +125,7 @@
       "partnersSection",
       "strategySection",
       "primaryCta",
-      "contact",
-      "footer"
+      "contact"
     ],
     "hero": {
       "enabled": true,
@@ -688,23 +687,6 @@
         "serviceRequired": "Selectează un serviciu de interes.",
         "messageMin": "Mesajul trebuie să aibă cel puțin 20 de caractere."
       }
-    },
-    "footer": {
-      "enabled": true
-    }
-  },
-  "cmsPages": {
-    "landing": {
-      "name": "Landing Unificat",
-      "slug": "/",
-      "seoTitle": "Digital Dot | Agenție de Marketing",
-      "seoDescription": "Digital Dot pentru antreprenori și manageri care vor marketing strategic, execuție premium și rezultate măsurabile."
-    },
-    "termsConditions": {
-      "name": "Termeni și Condiții",
-      "slug": "/termeni-si-conditii",
-      "seoTitle": "Termeni și Condiții | Digital Dot",
-      "seoDescription": "Consultă termenii și condițiile de utilizare ale website-ului Digital Dot și informațiile legale privind serviciile, drepturile de autor și limitarea răspunderii."
     }
   },
   "privacyPolicy": {

@@ -178,15 +178,9 @@ const sectionKeySchema = z.enum([
   "partnersSection",
   "primaryCta",
   "contact",
-  "footer",
 ]);
 
-const cmsPageMetaSchema = z.object({
-  name: z.string().min(1),
-  slug: z.string().min(1),
-  seoTitle: z.string().min(3),
-  seoDescription: z.string().min(10),
-});
+
 
 export const siteContentSchema = z.object({
   global: z.object({
@@ -319,13 +313,9 @@ export const siteContentSchema = z.object({
         messageMin: z.string().min(1),
       }),
     }),
-    footer: z.object({
-      enabled: z.boolean().default(true),
-    }),
   }),
   privacyPolicy: legalPageSchema,
   termsConditions: legalPageSchema,
-  cmsPages: z.record(z.string(), cmsPageMetaSchema).optional(),
 });
 
 export type SiteContent = z.infer<typeof siteContentSchema>;

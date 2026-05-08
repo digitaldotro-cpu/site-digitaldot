@@ -52,11 +52,6 @@ type AppShellProps = {
         copyrightTemplate: string;
       };
     };
-    landing?: {
-      footer?: {
-        enabled: boolean;
-      };
-    };
   };
 };
 
@@ -66,7 +61,6 @@ export function AppShell({ children, content }: AppShellProps) {
   const [isUiVisible, setIsUiVisible] = useState(true);
   const lastScrollY = useRef(0);
   const scrollBehavior = content.global.scrollBehavior;
-  const footerEnabled = content.landing?.footer?.enabled ?? true;
   const effectiveUiVisible = scrollBehavior.hideOnScrollDown ? isUiVisible : true;
   const scrollStorageKey = typeof window !== "undefined"
     ? `digitaldot:scroll:${window.location.pathname}${window.location.search}${window.location.hash}`
@@ -194,22 +188,20 @@ export function AppShell({ children, content }: AppShellProps) {
         transitionDuration={scrollBehavior.transitionDuration}
       />
       <main>{children}</main>
-      {footerEnabled ? (
-        <Footer
-          brandName={content.global.brandName}
-          logo={content.global.footer.logo}
-          description={content.global.footer.description}
-          socialLinksTitle={content.global.footer.socialLinksTitle}
-          socialLinks={content.global.footer.socialLinks}
-          legalLinksTitle={content.global.footer.legalLinksTitle}
-          legalLinks={content.global.footer.legalLinks}
-          contactTitle={content.global.footer.contactTitle}
-          contactEmail={content.global.footer.contactEmail}
-          contactPhone={content.global.footer.contactPhone}
-          contactLocation={content.global.footer.contactLocation}
-          copyrightTemplate={content.global.footer.copyrightTemplate}
-        />
-      ) : null}
+      <Footer
+        brandName={content.global.brandName}
+        logo={content.global.footer.logo}
+        description={content.global.footer.description}
+        socialLinksTitle={content.global.footer.socialLinksTitle}
+        socialLinks={content.global.footer.socialLinks}
+        legalLinksTitle={content.global.footer.legalLinksTitle}
+        legalLinks={content.global.footer.legalLinks}
+        contactTitle={content.global.footer.contactTitle}
+        contactEmail={content.global.footer.contactEmail}
+        contactPhone={content.global.footer.contactPhone}
+        contactLocation={content.global.footer.contactLocation}
+        copyrightTemplate={content.global.footer.copyrightTemplate}
+      />
       <FloatingContactButtons
         whatsapp={content.global.whatsappButton}
         call={content.global.callButton}
