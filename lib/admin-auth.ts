@@ -59,6 +59,16 @@ export function isAdminDashboardKeyValid(candidate: string) {
   return safeEqual(candidate, expectedKey);
 }
 
+export function isAdminUsernameValid(candidate: string) {
+  const expectedUsername = process.env.ADMIN_DASHBOARD_USER?.trim() ?? "";
+
+  if (!expectedUsername) {
+    return true;
+  }
+
+  return safeEqual(candidate, expectedUsername);
+}
+
 function sign(value: string) {
   const secret = getSigningSecret();
   return crypto.createHmac("sha256", secret).update(value).digest("base64url");
