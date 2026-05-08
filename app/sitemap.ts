@@ -6,6 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/politica-confidentialitate",
+    "/termeni-si-conditii",
   ];
 
   const posts = await getAllPosts();

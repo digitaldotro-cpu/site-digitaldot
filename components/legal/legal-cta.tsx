@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { ButtonLink } from "@/components/ui/button";
-import type { SiteContent } from "@/lib/site-content-schema";
+import type { LegalPageContent } from "@/lib/site-content-schema";
 
 type LegalCtaProps = {
-  finalCta: SiteContent["privacyPolicy"]["finalCta"];
+  finalCta: LegalPageContent["finalCta"];
 };
 
 export function LegalCTA({ finalCta }: LegalCtaProps) {

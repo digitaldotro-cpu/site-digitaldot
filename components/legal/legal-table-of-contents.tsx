@@ -1,8 +1,8 @@
-import type { SiteContent } from "@/lib/site-content-schema";
+import type { LegalPageContent } from "@/lib/site-content-schema";
 
 type LegalTableOfContentsProps = {
   title: string;
-  sections: SiteContent["privacyPolicy"]["legalContent"]["sections"];
+  sections: LegalPageContent["legalContent"]["sections"];
 };
 
 export function LegalTableOfContents({ title, sections }: LegalTableOfContentsProps) {

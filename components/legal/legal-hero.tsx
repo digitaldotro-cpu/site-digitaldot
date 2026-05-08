@@ -1,9 +1,9 @@
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import type { SiteContent } from "@/lib/site-content-schema";
+import type { LegalPageContent } from "@/lib/site-content-schema";
 
 type LegalHeroProps = {
-  hero: SiteContent["privacyPolicy"]["hero"];
+  hero: LegalPageContent["hero"];
 };
 
 export function LegalHero({ hero }: LegalHeroProps) {

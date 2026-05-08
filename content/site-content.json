@@ -699,6 +699,12 @@
       "slug": "/",
       "seoTitle": "Digital Dot | Agenție de Marketing",
       "seoDescription": "Digital Dot pentru antreprenori și manageri care vor marketing strategic, execuție premium și rezultate măsurabile."
+    },
+    "termsConditions": {
+      "name": "Termeni și Condiții",
+      "slug": "/termeni-si-conditii",
+      "seoTitle": "Termeni și Condiții | Digital Dot",
+      "seoDescription": "Consultă termenii și condițiile de utilizare ale website-ului Digital Dot și informațiile legale privind serviciile, drepturile de autor și limitarea răspunderii."
     }
   },
   "privacyPolicy": {
@@ -814,6 +820,128 @@
       "enabled": true,
       "title": "Ai întrebări despre datele tale?",
       "paragraph": "Ne poți contacta oricând pentru informații despre modul în care gestionăm datele și comunicarea digitală.",
+      "buttonLabel": "Contactează-ne",
+      "buttonUrl": "/contacteaza-ne"
+    }
+  },
+  "termsConditions": {
+    "settings": {
+      "enabled": true,
+      "seoTitle": "Termeni și Condiții | Digital Dot",
+      "seoDescription": "Consultă termenii și condițiile de utilizare ale website-ului Digital Dot și informațiile legale privind serviciile, drepturile de autor și limitarea răspunderii.",
+      "lastUpdated": "8 mai 2026"
+    },
+    "hero": {
+      "badge": "Legal Notice",
+      "title": "Termeni și Condiții",
+      "paragraph": "Stabilim clar cadrul legal de utilizare al website-ului și modul în care interacționăm transparent cu utilizatorii și partenerii noștri."
+    },
+    "legalContent": {
+      "title": "Conținut legal",
+      "showTableOfContents": true,
+      "sections": [
+        {
+          "id": "informatii-generale",
+          "enabled": true,
+          "title": "Informații generale",
+          "body": "Website-ul Digital Dot este operat de IONNEL TECH SRL, companie înregistrată în România.\n\nPrin accesarea și utilizarea acestui website, utilizatorul acceptă termenii și condițiile prezentate în această pagină.\n\nDacă nu ești de acord cu acești termeni, te rugăm să nu utilizezi website-ul."
+        },
+        {
+          "id": "scopul-website-ului",
+          "enabled": true,
+          "title": "Scopul website-ului",
+          "body": "Website-ul are rol informativ și comercial și prezintă:\n\n- serviciile oferite de Digital Dot\n- portofoliu\n- informații despre companie\n- metode de contact\n- conținut de marketing și branding\n\nInformațiile prezentate pe website pot fi modificate fără notificare prealabilă."
+        },
+        {
+          "id": "servicii",
+          "enabled": true,
+          "title": "Servicii",
+          "body": "Digital Dot oferă servicii precum:\n\n- Social Media Management\n- Strategie de Marketing\n- Producție Foto & Video\n- Google Ads\n- Meta Ads\n- SEO\n- Website Creation\n- Email Marketing\n- servicii conexe de branding și comunicare\n\nServiciile prezentate pe website au caracter informativ și nu reprezintă automat ofertă contractuală fermă.\n\nColaborările comerciale sunt stabilite individual prin contract sau ofertă comercială."
+        },
+        {
+          "id": "drepturi-de-autor",
+          "enabled": true,
+          "title": "Drepturi de autor",
+          "body": "Întregul conținut al website-ului:\n\n- texte\n- imagini\n- materiale video\n- elemente grafice\n- logo-uri\n- branding\n- design\n- structură UI/UX\n- cod\n- conținut creativ\n\neste protejat de legislația privind drepturile de autor.\n\nEste interzisă:\n\n- copierea\n- reproducerea\n- distribuirea\n- modificarea\n- republicarea\n- utilizarea comercială\n\nfără acordul scris al Digital Dot / IONNEL TECH SRL."
+        },
+        {
+          "id": "limitarea-raspunderii",
+          "enabled": true,
+          "title": "Limitarea răspunderii",
+          "body": "Digital Dot depune eforturi pentru a menține informațiile actualizate și corecte.\n\nCu toate acestea:\n\n- nu garantăm lipsa erorilor\n- nu garantăm funcționarea permanentă a website-ului\n- nu garantăm rezultate comerciale specifice\n\nUtilizarea informațiilor de pe website se face pe propria răspundere a utilizatorului.\n\nDigital Dot nu poate fi trasă la răspundere pentru:\n\n- pierderi indirecte\n- pierderi comerciale\n- întreruperi\n- erori tehnice\n- incompatibilități software\n- probleme generate de terți"
+        },
+        {
+          "id": "link-uri-externe",
+          "enabled": true,
+          "title": "Link-uri externe",
+          "body": "Website-ul poate conține link-uri către:\n\n- Instagram\n- Facebook\n- LinkedIn\n- TikTok\n- WhatsApp\n- alte website-uri externe\n\nDigital Dot nu controlează și nu își asumă responsabilitatea pentru conținutul sau politicile acestor platforme externe."
+        },
+        {
+          "id": "utilizarea-website-ului",
+          "enabled": true,
+          "title": "Utilizarea website-ului",
+          "body": "Utilizatorii se obligă:\n\n- să utilizeze website-ul legal\n- să nu încerce compromiterea securității\n- să nu transmită conținut abuziv sau malițios\n- să nu afecteze funcționarea platformei\n\nEste interzisă utilizarea website-ului pentru:\n\n- spam\n- fraudă\n- atacuri informatice\n- colectare neautorizată de date"
+        },
+        {
+          "id": "formulare-si-comunicare",
+          "enabled": true,
+          "title": "Formulare și comunicare",
+          "body": "Prin completarea formularelor de contact:\n\n- utilizatorul confirmă că datele furnizate sunt reale\n- acceptă procesarea datelor pentru comunicare comercială\n- acceptă posibilitatea de a fi contactat de echipa Digital Dot\n\nTransmiterea unui formular nu garantează acceptarea unei colaborări comerciale."
+        },
+        {
+          "id": "politica-de-confidentialitate",
+          "enabled": true,
+          "title": "Politica de confidențialitate",
+          "body": "Utilizarea website-ului este supusă și Politicii de Confidențialitate.\n\nUtilizatorii sunt încurajați să consulte pagina dedicată protecției datelor personale:\n[Politica de Confidențialitate](/politica-confidentialitate).\n\nPoți reveni rapid și la [Homepage](/) sau ne poți scrie din [Contact](/contacteaza-ne)."
+        },
+        {
+          "id": "modificarea-termenilor",
+          "enabled": true,
+          "title": "Modificarea termenilor",
+          "body": "Digital Dot își rezervă dreptul de a modifica oricând acești Termeni și Condiții.\n\nVersiunea actualizată va fi publicată pe website.\n\nContinuarea utilizării website-ului reprezintă acceptarea modificărilor."
+        },
+        {
+          "id": "legislatie-aplicabila",
+          "enabled": true,
+          "title": "Legislație aplicabilă",
+          "body": "Acești Termeni și Condiții sunt guvernați de legislația din România.\n\nEventualele litigii vor fi soluționate pe cale amiabilă, iar în cazul imposibilității soluționării, competența revine instanțelor din România."
+        },
+        {
+          "id": "date-de-contact",
+          "enabled": true,
+          "title": "Date de contact",
+          "body": "Companie:\nIONNEL TECH SRL\n\nEmail:\n[hello@digitaldot.ro](mailto:hello@digitaldot.ro)\n\nȚară:\nRomânia"
+        }
+      ]
+    },
+    "contactCard": {
+      "enabled": true,
+      "title": "Asistență legală",
+      "email": "hello@digitaldot.ro",
+      "companyName": "IONNEL TECH SRL",
+      "location": "România",
+      "links": [
+        {
+          "label": "Politica de Confidențialitate",
+          "href": "/politica-confidentialitate",
+          "enabled": true
+        },
+        {
+          "label": "Contactează-ne",
+          "href": "/contacteaza-ne",
+          "enabled": true
+        },
+        {
+          "label": "Acasă",
+          "href": "/",
+          "enabled": true
+        }
+      ]
+    },
+    "finalCta": {
+      "enabled": true,
+      "title": "Ai nevoie de clarificări legale?",
+      "paragraph": "Dacă ai întrebări despre utilizarea website-ului sau colaborarea comercială, echipa noastră îți răspunde transparent și rapid.",
       "buttonLabel": "Contactează-ne",
       "buttonUrl": "/contacteaza-ne"
     }

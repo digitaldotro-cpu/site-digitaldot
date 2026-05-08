@@ -6,27 +6,27 @@ import { siteMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
-  const policy = content.privacyPolicy;
-  const canonicalUrl = new URL("/politica-confidentialitate", siteMetadata.siteUrl).toString();
+  const terms = content.termsConditions;
+  const canonicalUrl = new URL("/termeni-si-conditii", siteMetadata.siteUrl).toString();
 
   return {
-    title: policy.settings.seoTitle,
-    description: policy.settings.seoDescription,
+    title: terms.settings.seoTitle,
+    description: terms.settings.seoDescription,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
       type: "article",
-      title: policy.settings.seoTitle,
-      description: policy.settings.seoDescription,
+      title: terms.settings.seoTitle,
+      description: terms.settings.seoDescription,
       url: canonicalUrl,
       siteName: siteMetadata.siteName,
       locale: "ro_RO",
     },
     twitter: {
       card: "summary_large_image",
-      title: policy.settings.seoTitle,
-      description: policy.settings.seoDescription,
+      title: terms.settings.seoTitle,
+      description: terms.settings.seoDescription,
     },
     robots: {
       index: true,
@@ -35,13 +35,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function PoliticaConfidentialitatePage() {
+export default async function TermeniSiConditiiPage() {
   const content = await getSiteContent();
-  const policy = content.privacyPolicy;
+  const terms = content.termsConditions;
 
-  if (!policy.settings.enabled) {
+  if (!terms.settings.enabled) {
     notFound();
   }
 
-  return <LegalPageLayout page={policy} />;
+  return <LegalPageLayout page={terms} />;
 }

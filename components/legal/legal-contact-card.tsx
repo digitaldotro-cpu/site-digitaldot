@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import type { SiteContent } from "@/lib/site-content-schema";
+import type { LegalPageContent } from "@/lib/site-content-schema";
 
 type LegalContactCardProps = {
-  contactCard: SiteContent["privacyPolicy"]["contactCard"];
+  contactCard: LegalPageContent["contactCard"];
 };
 
 export function LegalContactCard({ contactCard }: LegalContactCardProps) {

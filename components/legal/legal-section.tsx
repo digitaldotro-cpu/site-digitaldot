@@ -1,9 +1,9 @@
 import { AnimatedSection } from "@/components/ui/animated-section";
-import type { SiteContent } from "@/lib/site-content-schema";
+import type { LegalPageContent } from "@/lib/site-content-schema";
 import { RichTextRenderer } from "@/components/legal/rich-text-renderer";
 
 type LegalSectionProps = {
-  section: SiteContent["privacyPolicy"]["legalContent"]["sections"][number];
+  section: LegalPageContent["legalContent"]["sections"][number];
   index: number;
 };
 
