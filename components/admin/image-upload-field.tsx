@@ -58,14 +58,14 @@ export function ImageUploadField({ value, onChange }: ImageUploadFieldProps) {
   return (
     <div className="space-y-3">
       {value ? (
-        <div className="relative group overflow-hidden rounded-xl border border-[#2b3d45] bg-[#0b1318]">
+        <div className="relative group overflow-hidden rounded-xl border border-[#2b3d45] bg-[#0a1014] w-fit">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={value}
             alt="Preview"
-            className="w-full h-auto max-h-[300px] object-contain bg-[#0a1014]"
+            className="w-auto h-auto max-h-[120px] max-w-full object-contain"
           />
-          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
             <button
               type="button"
               onClick={handleClear}

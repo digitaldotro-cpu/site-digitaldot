@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageUploadField } from "@/components/admin/image-upload-field";
@@ -29,6 +29,22 @@ function isObject(value: JsonValue): value is JsonObject {
 
 function isPrimitive(value: JsonValue): value is JsonPrimitive {
   return !Array.isArray(value) && !isObject(value);
+}
+
+function getItemTitle(value: JsonValue) {
+  if (!isObject(value)) {
+    return null;
+  }
+
+  const titleKeys = ["name", "title", "label", "heading"] as const;
+  for (const key of titleKeys) {
+    const candidate = value[key];
+    if (typeof candidate === "string" && candidate.trim().length > 0) {
+      return candidate;
+    }
+  }
+
+  return null;
 }
 
 const labelDictionary: Record<string, string> = {
@@ -229,7 +245,7 @@ function EditorNode({
 
         <div className="space-y-3">
           {value.map((item, index) => {
-            const itemTitle = typeof item === "object" && item !== null ? ((item as any).name || (item as any).title || (item as any).label || (item as any).heading) : null;
+            const itemTitle = getItemTitle(item as JsonValue);
             const displayTitle = itemTitle ? `${itemTitle} (#${index + 1})` : `${label} #${index + 1}`;
 
             return (
@@ -520,16 +536,32 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
 
       {(() => {
         const activeSectionData = draft[activeTab as keyof SiteContent];
-        const isObject = typeof activeSectionData === "object" && activeSectionData !== null && !Array.isArray(activeSectionData);
-        const primitiveKeys = isObject ? Object.keys(activeSectionData).filter(k => typeof (activeSectionData as any)[k] !== "object" || Array.isArray((activeSectionData as any)[k])) : [];
-        const objectKeys = isObject ? Object.keys(activeSectionData).filter(k => typeof (activeSectionData as any)[k] === "object" && !Array.isArray((activeSectionData as any)[k]) && (activeSectionData as any)[k] !== null) : [];
+        const sectionIsObject =
+          typeof activeSectionData === "object" &&
+          activeSectionData !== null &&
+          !Array.isArray(activeSectionData);
+        const sectionObject = sectionIsObject
+          ? (activeSectionData as Record<string, unknown>)
+          : null;
+        const primitiveKeys = sectionObject
+          ? Object.keys(sectionObject).filter((key) => {
+              const value = sectionObject[key];
+              return typeof value !== "object" || Array.isArray(value) || value === null;
+            })
+          : [];
+        const objectKeys = sectionObject
+          ? Object.keys(sectionObject).filter((key) => {
+              const value = sectionObject[key];
+              return typeof value === "object" && !Array.isArray(value) && value !== null;
+            })
+          : [];
         const hasPrimitives = primitiveKeys.length > 0;
         const subTabKeys = hasPrimitives ? ["general", ...objectKeys] : objectKeys;
         const currentSubTab = activeSubTab && subTabKeys.includes(activeSubTab) ? activeSubTab : subTabKeys[0];
 
         return (
           <>
-            {isObject && subTabKeys.length > 0 && (
+            {sectionIsObject && subTabKeys.length > 0 && (
               <div className="flex flex-wrap items-center gap-2 mt-4 px-6">
                 {subTabKeys.map(key => (
                   <button
@@ -551,14 +583,14 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
             <section className="space-y-6 pt-4">
               {activeTab && activeSectionData && (
                 <div key={`${activeTab}-${currentSubTab}`}>
-                  {isObject && currentSubTab ? (
+                  {sectionIsObject && currentSubTab && sectionObject ? (
                     currentSubTab === "general" ? (
                       <div className="space-y-6">
                         {primitiveKeys.map(key => (
                           <EditorNode
                             key={key}
                             label={formatLabel(key)}
-                            value={(activeSectionData as any)[key]}
+                            value={sectionObject[key] as JsonValue}
                             path={[activeTab, key]}
                             depth={0}
                             onChange={handleChange}
@@ -571,7 +603,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
                     ) : (
                       <EditorNode
                         label={formatLabel(currentSubTab)}
-                        value={(activeSectionData as any)[currentSubTab]}
+                        value={sectionObject[currentSubTab] as JsonValue}
                         path={[activeTab, currentSubTab]}
                         depth={0}
                         onChange={handleChange}
