@@ -2,6 +2,8 @@ import { buildMetadata } from "@/lib/seo";
 import { getSubmissionLogs, getEmailLogs } from "@/lib/logs";
 import { LogsViewer } from "@/components/admin/logs-viewer";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   ...buildMetadata({
     title: "Loguri & Formulare - CMS",
