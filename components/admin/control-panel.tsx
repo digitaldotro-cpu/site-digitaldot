@@ -537,19 +537,33 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
         ) : null}
       </section>
 
-      <section className="space-y-4">
-        {Object.entries(draft).map(([key, value]) => (
-          <EditorNode
+      <div className="sticky top-4 z-10 flex flex-wrap items-center gap-2 rounded-2xl border border-[#2a3c44] bg-[#10181d]/90 px-6 py-4 shadow-lg backdrop-blur-md">
+        <span className="mr-2 text-sm font-semibold text-[#8da0aa]">Secțiuni:</span>
+        {Object.keys(draft).map((key) => (
+          <a
             key={key}
-            label={formatLabel(key)}
-            value={value as JsonValue}
-            path={[key]}
-            depth={0}
-            onChange={handleChange}
-            onAddArrayItem={handleAddArrayItem}
-            onRemoveArrayItem={handleRemoveArrayItem}
-            onMoveArrayItem={handleMoveArrayItem}
-          />
+            href={`#section-${key}`}
+            className="rounded-full bg-[#1c2c33] px-3 py-1.5 text-xs font-medium text-[#b7d9d7] transition-colors hover:bg-[#66fcf1] hover:text-[#0b1318]"
+          >
+            {formatLabel(key)}
+          </a>
+        ))}
+      </div>
+
+      <section className="space-y-6">
+        {Object.entries(draft).map(([key, value]) => (
+          <div key={key} id={`section-${key}`} className="scroll-mt-28">
+            <EditorNode
+              label={formatLabel(key)}
+              value={value as JsonValue}
+              path={[key]}
+              depth={0}
+              onChange={handleChange}
+              onAddArrayItem={handleAddArrayItem}
+              onRemoveArrayItem={handleRemoveArrayItem}
+              onMoveArrayItem={handleMoveArrayItem}
+            />
+          </div>
         ))}
       </section>
     </div>
