@@ -31,7 +31,57 @@ function isPrimitive(value: JsonValue): value is JsonPrimitive {
   return !Array.isArray(value) && !isObject(value);
 }
 
+const labelDictionary: Record<string, string> = {
+  hero: "Secțiunea Hero",
+  positioning: "Poziționare",
+  authority: "Autoritate",
+  brandValueSection: "Valori Brand",
+  services: "Servicii",
+  instagramSection: "Secțiune Instagram",
+  strategySection: "Strategie",
+  teamSection: "Echipă",
+  process: "Proces",
+  clientFilter: "Filtru Clienți",
+  partnersSection: "Parteneri",
+  primaryCta: "Buton Principal (CTA)",
+  contact: "Contact",
+  seoTitle: "Titlu SEO",
+  seoDescription: "Descriere SEO",
+  sectionOrder: "Ordine Secțiuni",
+  global: "Global",
+  landing: "Landing Page",
+  privacyPolicy: "Politică de Confidențialitate",
+  termsConditions: "Termeni și Condiții",
+  brandName: "Nume Brand",
+  headerLogo: "Logo Antet",
+  favicon: "Favicon",
+  navbarCtaLabel: "Etichetă Buton Meniu",
+  navbarCtaHref: "Link Buton Meniu",
+  navigation: "Navigare",
+  scrollBehavior: "Comportament Scroll",
+  whatsappButton: "Buton WhatsApp",
+  callButton: "Buton Apel",
+  footer: "Subsol (Footer)",
+  socialLinksTitle: "Titlu Rețele Sociale",
+  socialLinks: "Rețele Sociale",
+  legalLinksTitle: "Titlu Linkuri Legale",
+  legalLinks: "Linkuri Legale",
+  contactTitle: "Titlu Contact",
+  contactEmail: "Email Contact",
+  contactPhone: "Telefon Contact",
+  contactLocation: "Locație Contact",
+  copyrightTemplate: "Text Copyright",
+  badge: "Ecuson (Badge)",
+  heading: "Titlu",
+  subheading: "Subtitlu",
+  buttonText: "Text Buton",
+  buttonLink: "Link Buton",
+  description: "Descriere",
+  title: "Titlu Secțiune",
+};
+
 function formatLabel(key: string) {
+  if (labelDictionary[key]) return labelDictionary[key];
   return key
     .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
     .replace(/-/g, " ")
@@ -178,52 +228,59 @@ function EditorNode({
         </div>
 
         <div className="space-y-3">
-          {value.map((item, index) => (
-            <div key={`${label}-${index}`} className="rounded-xl border border-[#28414a] bg-[#101b20] p-3">
-              <div className="mb-2 flex items-center justify-between">
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#9bc6c3]">
-                  {label} #{index + 1}
-                </p>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => onMoveArrayItem([...path, index], "up")}
-                    disabled={index === 0}
-                    className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-2 py-1 text-[11px] text-[#b7d9d7] disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    ↑ Sus
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => onMoveArrayItem([...path, index], "down")}
-                    disabled={index === value.length - 1}
-                    className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-2 py-1 text-[11px] text-[#b7d9d7] disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    ↓ Jos
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => onRemoveArrayItem([...path, index])}
-                    disabled={value.length <= 1}
-                    className="inline-flex items-center gap-1 rounded-full border border-[#473437] px-2 py-1 text-[11px] text-[#f0b5bb] disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <Trash2 size={12} /> Șterge
-                  </button>
-                </div>
-              </div>
+          {value.map((item, index) => {
+            const itemTitle = typeof item === "object" && item !== null ? ((item as any).name || (item as any).title || (item as any).label || (item as any).heading) : null;
+            const displayTitle = itemTitle ? `${itemTitle} (#${index + 1})` : `${label} #${index + 1}`;
 
-              <EditorNode
-                label={`${label} item`}
-                value={item as JsonValue}
-                path={[...path, index]}
-                depth={depth + 1}
-                onChange={onChange}
-                onAddArrayItem={onAddArrayItem}
-                onRemoveArrayItem={onRemoveArrayItem}
-                onMoveArrayItem={onMoveArrayItem}
-              />
-            </div>
-          ))}
+            return (
+              <details key={`${label}-${index}`} className="rounded-xl border border-[#28414a] bg-[#101b20] group [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between p-3 cursor-pointer select-none">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#9bc6c3]">
+                    {displayTitle}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); e.preventDefault(); onMoveArrayItem([...path, index], "up"); }}
+                      disabled={index === 0}
+                      className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-2 py-1 text-[11px] text-[#b7d9d7] hover:bg-[#1c2c33] disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      ↑ Sus
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); e.preventDefault(); onMoveArrayItem([...path, index], "down"); }}
+                      disabled={index === value.length - 1}
+                      className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-2 py-1 text-[11px] text-[#b7d9d7] hover:bg-[#1c2c33] disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      ↓ Jos
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); e.preventDefault(); onRemoveArrayItem([...path, index]); }}
+                      disabled={value.length <= 1}
+                      className="inline-flex items-center gap-1 rounded-full border border-[#473437] px-2 py-1 text-[11px] text-[#f0b5bb] hover:bg-[#2f1b1d] disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <Trash2 size={12} /> Șterge
+                    </button>
+                  </div>
+                </summary>
+  
+                <div className="p-3 border-t border-[#28414a]">
+                  <EditorNode
+                    label={`${label} item`}
+                    value={item as JsonValue}
+                    path={[...path, index]}
+                    depth={depth + 1}
+                    onChange={onChange}
+                    onAddArrayItem={onAddArrayItem}
+                    onRemoveArrayItem={onRemoveArrayItem}
+                    onMoveArrayItem={onMoveArrayItem}
+                  />
+                </div>
+              </details>
+            );
+          })}
         </div>
       </div>
     );
@@ -254,14 +311,17 @@ function EditorNode({
 
   if (typeof value === "boolean") {
     return (
-      <label className="flex items-center justify-between rounded-2xl border border-[#25373f] bg-[#0f171c] p-4">
-        <span className="text-sm font-semibold text-white">{label}</span>
-        <input
-          type="checkbox"
-          checked={value}
-          onChange={(event) => onChange(path, event.target.checked)}
-          className="h-4 w-4 accent-[#66fcf1]"
-        />
+      <label className="flex items-center justify-between rounded-2xl border border-[#25373f] bg-[#0f171c] p-4 cursor-pointer hover:bg-[#151d22] transition-colors group">
+        <span className="text-sm font-semibold text-white group-hover:text-[#66fcf1] transition-colors">{label}</span>
+        <div className="relative">
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(event) => onChange(path, event.target.checked)}
+            className="sr-only peer"
+          />
+          <div className="w-11 h-6 bg-[#25373f] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-[#0f171c] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#8da0aa] after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#66fcf1] peer-checked:after:bg-[#0f171c]"></div>
+        </div>
       </label>
     );
   }
@@ -285,7 +345,7 @@ function EditorNode({
         <textarea
           value={String(value ?? "")}
           onChange={(event) => onChange(path, event.target.value)}
-          className="min-h-24 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
+          className="min-h-24 resize-y w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
         />
       ) : (
         <input
@@ -314,6 +374,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
   const initialRef = useRef(initialContent);
   const [draft, setDraft] = useState<SiteContent>(initialContent);
   const [activeTab, setActiveTab] = useState<string>(Object.keys(initialContent)[0] || "");
+  const [activeSubTab, setActiveSubTab] = useState<string>("");
   const [isSaving, setIsSaving] = useState(false);
   const [isReloading, setIsReloading] = useState(false);
   const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; message?: string }>({
@@ -418,20 +479,8 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
           Editează orice text, listă sau secțiune din website și salvează direct în `content/site-content.json`.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-4">
-          <Button type="button" variant="secondary" onClick={reloadFromDisk} disabled={isReloading}>
-            <RefreshCcw className={cn("mr-2 h-4 w-4", isReloading && "animate-spin")} />
-            Reîncarcă
-          </Button>
-
-          <Button type="button" onClick={saveContent} disabled={isSaving || !dirty}>
-            <Save className="mr-2 h-4 w-4" />
-            {isSaving ? "Salvare..." : "Salvează"}
-          </Button>
-        </div>
-
         <div className="mt-4 flex flex-wrap gap-4 text-xs text-[#8ea0aa]">
-          <span>Status modificări: {dirty ? "nesalvate" : "sincronizat"}</span>
+          <span>Status modificări: <span className={dirty ? "text-[#f0b5bb]" : "text-[#9bc6c3]"}>{dirty ? "Nesalvate" : "Sincronizat"}</span></span>
         </div>
 
         {status.type !== "idle" ? (
@@ -448,12 +497,15 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
         ) : null}
       </section>
 
-      <div className="sticky top-4 z-10 flex flex-wrap items-center gap-2 rounded-2xl border border-[#2a3c44] bg-[#10181d]/90 px-6 py-4 shadow-lg backdrop-blur-md">
+      <div className="sticky top-4 z-20 flex flex-wrap items-center gap-2 rounded-2xl border border-[#2a3c44] bg-[#10181d]/90 px-6 py-4 shadow-lg backdrop-blur-md">
         <span className="mr-2 text-sm font-semibold text-[#8da0aa]">Secțiuni:</span>
         {Object.keys(draft).map((key) => (
           <button
             key={key}
-            onClick={() => setActiveTab(key)}
+            onClick={() => {
+              setActiveTab(key);
+              setActiveSubTab(""); // Reset sub-tab
+            }}
             className={cn(
               "rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
               activeTab === key
@@ -466,22 +518,103 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
         ))}
       </div>
 
-      <section className="space-y-6 pt-4">
-        {activeTab && draft[activeTab as keyof SiteContent] && (
-          <div key={activeTab}>
-            <EditorNode
-              label={formatLabel(activeTab)}
-              value={draft[activeTab as keyof SiteContent] as JsonValue}
-              path={[activeTab]}
-              depth={0}
-              onChange={handleChange}
-              onAddArrayItem={handleAddArrayItem}
-              onRemoveArrayItem={handleRemoveArrayItem}
-              onMoveArrayItem={handleMoveArrayItem}
-            />
-          </div>
-        )}
-      </section>
+      {(() => {
+        const activeSectionData = draft[activeTab as keyof SiteContent];
+        const isObject = typeof activeSectionData === "object" && activeSectionData !== null && !Array.isArray(activeSectionData);
+        const primitiveKeys = isObject ? Object.keys(activeSectionData).filter(k => typeof (activeSectionData as any)[k] !== "object" || Array.isArray((activeSectionData as any)[k])) : [];
+        const objectKeys = isObject ? Object.keys(activeSectionData).filter(k => typeof (activeSectionData as any)[k] === "object" && !Array.isArray((activeSectionData as any)[k]) && (activeSectionData as any)[k] !== null) : [];
+        const hasPrimitives = primitiveKeys.length > 0;
+        const subTabKeys = hasPrimitives ? ["general", ...objectKeys] : objectKeys;
+        const currentSubTab = activeSubTab && subTabKeys.includes(activeSubTab) ? activeSubTab : subTabKeys[0];
+
+        return (
+          <>
+            {isObject && subTabKeys.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2 mt-4 px-6">
+                {subTabKeys.map(key => (
+                  <button
+                    key={key}
+                    onClick={() => setActiveSubTab(key)}
+                    className={cn(
+                      "rounded-lg px-4 py-2 text-xs font-semibold transition-colors",
+                      currentSubTab === key
+                        ? "bg-[#25373f] text-white"
+                        : "bg-transparent text-[#8da0aa] hover:bg-[#1c2c33] hover:text-[#dce2e6]"
+                    )}
+                  >
+                    {key === "general" ? "Setări Generale" : formatLabel(key)}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <section className="space-y-6 pt-4">
+              {activeTab && activeSectionData && (
+                <div key={`${activeTab}-${currentSubTab}`}>
+                  {isObject && currentSubTab ? (
+                    currentSubTab === "general" ? (
+                      <div className="space-y-6">
+                        {primitiveKeys.map(key => (
+                          <EditorNode
+                            key={key}
+                            label={formatLabel(key)}
+                            value={(activeSectionData as any)[key]}
+                            path={[activeTab, key]}
+                            depth={0}
+                            onChange={handleChange}
+                            onAddArrayItem={handleAddArrayItem}
+                            onRemoveArrayItem={handleRemoveArrayItem}
+                            onMoveArrayItem={handleMoveArrayItem}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <EditorNode
+                        label={formatLabel(currentSubTab)}
+                        value={(activeSectionData as any)[currentSubTab]}
+                        path={[activeTab, currentSubTab]}
+                        depth={0}
+                        onChange={handleChange}
+                        onAddArrayItem={handleAddArrayItem}
+                        onRemoveArrayItem={handleRemoveArrayItem}
+                        onMoveArrayItem={handleMoveArrayItem}
+                      />
+                    )
+                  ) : (
+                    <EditorNode
+                      label={formatLabel(activeTab)}
+                      value={activeSectionData as JsonValue}
+                      path={[activeTab]}
+                      depth={0}
+                      onChange={handleChange}
+                      onAddArrayItem={handleAddArrayItem}
+                      onRemoveArrayItem={handleRemoveArrayItem}
+                      onMoveArrayItem={handleMoveArrayItem}
+                    />
+                  )}
+                </div>
+              )}
+            </section>
+          </>
+        );
+      })()}
+
+      {dirty && (
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full border border-[#2a3c44] bg-[#10181d]/95 px-4 py-3 shadow-[0_0_40px_rgba(102,252,241,0.1)] backdrop-blur-md transition-all animate-in slide-in-from-bottom-10 fade-in duration-300">
+          <span className="text-xs font-semibold text-[#8ea0aa] hidden sm:inline-block mr-2">
+            Ai modificări nesalvate
+          </span>
+          <Button type="button" variant="secondary" size="sm" onClick={reloadFromDisk} disabled={isReloading} className="rounded-full bg-[#1c2c33] text-[#b7d9d7] hover:bg-[#25373f] hover:text-white border-0">
+            <RefreshCcw className={cn("mr-2 h-3 w-3", isReloading && "animate-spin")} />
+            Anulează
+          </Button>
+
+          <Button type="button" size="sm" onClick={saveContent} disabled={isSaving} className="rounded-full bg-[#66fcf1] text-[#0b1318] hover:bg-[#52e8dd] font-semibold px-6 shadow-[0_0_15px_rgba(102,252,241,0.4)]">
+            <Save className="mr-2 h-4 w-4" />
+            {isSaving ? "Se salvează..." : "Salvează"}
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 
 export const ADMIN_SESSION_COOKIE = "dd_admin_session";
 const SESSION_TTL_SECONDS = 60 * 60 * 8;
+const REQUIRED_ADMIN_ENV_VARS = ["ADMIN_DASHBOARD_KEY", "ADMIN_SESSION_SECRET"] as const;
 
 function base64UrlEncode(value: string) {
   return Buffer.from(value, "utf8").toString("base64url");
@@ -12,8 +13,50 @@ function base64UrlDecode(value: string) {
   return Buffer.from(value, "base64url").toString("utf8");
 }
 
+function safeEqual(left: string, right: string) {
+  const leftBuffer = Buffer.from(left, "utf8");
+  const rightBuffer = Buffer.from(right, "utf8");
+
+  if (leftBuffer.length !== rightBuffer.length) {
+    return false;
+  }
+
+  return crypto.timingSafeEqual(leftBuffer, rightBuffer);
+}
+
+function getAdminDashboardKey() {
+  return process.env.ADMIN_DASHBOARD_KEY?.trim() ?? "";
+}
+
 function getSigningSecret() {
-  return process.env.ADMIN_SESSION_SECRET || process.env.ADMIN_DASHBOARD_KEY || "";
+  return process.env.ADMIN_SESSION_SECRET?.trim() ?? "";
+}
+
+export function getAdminAuthConfigurationError() {
+  const missing = REQUIRED_ADMIN_ENV_VARS.filter((variableName) => {
+    const value = process.env[variableName];
+    return typeof value !== "string" || value.trim().length === 0;
+  });
+
+  if (missing.length === 0) {
+    return null;
+  }
+
+  return `Missing required environment variable${missing.length > 1 ? "s" : ""}: ${missing.join(", ")}`;
+}
+
+export function isAdminAuthConfigured() {
+  return getAdminAuthConfigurationError() === null;
+}
+
+export function isAdminDashboardKeyValid(candidate: string) {
+  const expectedKey = getAdminDashboardKey();
+
+  if (!expectedKey) {
+    return false;
+  }
+
+  return safeEqual(candidate, expectedKey);
 }
 
 function sign(value: string) {
@@ -22,6 +65,10 @@ function sign(value: string) {
 }
 
 export function createAdminSessionToken() {
+  if (!isAdminAuthConfigured()) {
+    throw new Error(getAdminAuthConfigurationError() ?? "Admin auth is not configured.");
+  }
+
   const payload = {
     role: "admin",
     exp: Math.floor(Date.now() / 1000) + SESSION_TTL_SECONDS,
@@ -33,16 +80,19 @@ export function createAdminSessionToken() {
 }
 
 export function verifyAdminSessionToken(token: string) {
-  const secret = getSigningSecret();
-
-  if (!secret || !token.includes(".")) {
+  if (!isAdminAuthConfigured()) {
     return false;
   }
 
-  const [body, signature] = token.split(".");
+  const tokenParts = token.split(".");
+  if (tokenParts.length !== 2) {
+    return false;
+  }
+
+  const [body, signature] = tokenParts;
   const expected = sign(body);
 
-  if (signature !== expected) {
+  if (!safeEqual(signature, expected)) {
     return false;
   }
 
@@ -55,20 +105,13 @@ export function verifyAdminSessionToken(token: string) {
 }
 
 export function isAdminAuthorized(request: NextRequest) {
-  const expectedKey = process.env.ADMIN_DASHBOARD_KEY;
-  const incomingKey = request.headers.get("x-admin-key");
-
-  if (expectedKey && incomingKey === expectedKey) {
-    return true;
+  if (!isAdminAuthConfigured()) {
+    return false;
   }
 
   const token = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
 
   if (token && verifyAdminSessionToken(token)) {
-    return true;
-  }
-
-  if (!expectedKey) {
     return true;
   }
 
