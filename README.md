@@ -108,6 +108,7 @@ npm run build
 - Recomandat: Vercel (deploy direct din repository)
 - Variabile utile pentru producție:
   - `NEXT_PUBLIC_SITE_URL` (opțional, dacă vrei URL configurabil)
+  - `ADMIN_DASHBOARD_USER` (utilizatorul pentru autentificarea în CMS, opțional)
   - `ADMIN_DASHBOARD_KEY` (parola pentru autentificarea în CMS)
   - `ADMIN_SESSION_SECRET` (recomandat, semnare cookie sesiune admin)
   - `CLOUDINARY_CLOUD_NAME` (opțional, activează upload media Cloudinary)
@@ -128,6 +129,9 @@ npm run build
 
 - URL: `/panou-control`
 - API CMS salvează în `content/cms-data.json`
+- Date de logare:
+  - utilizator: valoarea din `ADMIN_DASHBOARD_USER` (dacă variabila nu este setată, se validează doar parola)
+  - parolă: valoarea din `ADMIN_DASHBOARD_KEY`
 - Dacă `ADMIN_DASHBOARD_KEY` este setat, dashboard-ul cere autentificare
 - Media upload:
   - cu Cloudinary configurat: upload server-side în Cloudinary

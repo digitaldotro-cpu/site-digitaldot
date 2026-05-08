@@ -8,6 +8,7 @@ import { ShieldCheck } from "lucide-react";
 import { FieldError, FieldLabel, Input } from "@/components/cms/ui/form-controls";
 
 const loginSchema = z.object({
+  username: z.string().min(1, "Introdu utilizatorul de administrator."),
   password: z.string().min(3, "Introdu parola de administrator."),
 });
 
@@ -25,7 +26,7 @@ export function AuthGate({ onAuthenticated }: AuthGateProps) {
     formState: { errors, isSubmitting },
   } = useForm<LoginValues>({
     resolver: zodResolver(loginSchema),
-    defaultValues: { password: "" },
+    defaultValues: { username: "admin", password: "" },
   });
 
   return (
@@ -64,6 +65,12 @@ export function AuthGate({ onAuthenticated }: AuthGateProps) {
         </div>
 
         <div className="space-y-2">
+          <FieldLabel>Utilizator admin</FieldLabel>
+          <Input type="text" autoComplete="username" {...register("username")} />
+          <FieldError message={errors.username?.message} />
+        </div>
+
+        <div className="mt-4 space-y-2">
           <FieldLabel>Parolă admin</FieldLabel>
           <Input type="password" autoComplete="current-password" {...register("password")} />
           <FieldError message={errors.password?.message} />

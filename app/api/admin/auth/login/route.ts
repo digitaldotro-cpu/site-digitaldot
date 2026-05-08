@@ -3,6 +3,7 @@ import { ADMIN_SESSION_COOKIE, createAdminSessionToken, getSessionMaxAge } from 
 
 export async function POST(request: Request) {
   const expectedKey = process.env.ADMIN_DASHBOARD_KEY;
+  const expectedUsername = process.env.ADMIN_DASHBOARD_USER;
 
   if (!expectedKey) {
     return NextResponse.json(
@@ -23,9 +24,17 @@ export async function POST(request: Request) {
     typeof payload === "object" && payload !== null && "password" in payload
       ? String((payload as { password?: unknown }).password || "")
       : "";
+  const username =
+    typeof payload === "object" && payload !== null && "username" in payload
+      ? String((payload as { username?: unknown }).username || "")
+      : "";
+
+  if (expectedUsername && username.trim() !== expectedUsername.trim()) {
+    return NextResponse.json({ message: "Date de autentificare invalide." }, { status: 401 });
+  }
 
   if (!password || password !== expectedKey) {
-    return NextResponse.json({ message: "Parolă invalidă." }, { status: 401 });
+    return NextResponse.json({ message: "Date de autentificare invalide." }, { status: 401 });
   }
 
   const response = NextResponse.json({ message: "Autentificare reușită." });

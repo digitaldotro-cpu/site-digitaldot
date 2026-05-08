@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { LogIn, Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { SiteContent } from "@/lib/site-content-schema";
 import { cn } from "@/lib/utils";
@@ -302,7 +302,10 @@ type ControlPanelProps = {
 export function ControlPanel({ initialContent }: ControlPanelProps) {
   const initialRef = useRef(initialContent);
   const [draft, setDraft] = useState<SiteContent>(initialContent);
-  const [adminKey, setAdminKey] = useState("");
+  const [adminUsername, setAdminUsername] = useState("admin");
+  const [adminPassword, setAdminPassword] = useState("");
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isReloading, setIsReloading] = useState(false);
   const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; message?: string }>({
@@ -313,6 +316,34 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
     () => JSON.stringify(draft) !== JSON.stringify(initialRef.current),
     [draft],
   );
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function checkSession() {
+      try {
+        const response = await fetch("/api/admin/auth/session", { cache: "no-store" });
+        const data = (await response.json().catch(() => null)) as { authenticated?: boolean } | null;
+
+        if (!mounted) {
+          return;
+        }
+
+        setIsAuthenticated(Boolean(data?.authenticated));
+      } catch {
+        if (!mounted) {
+          return;
+        }
+        setIsAuthenticated(false);
+      }
+    }
+
+    void checkSession();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   function handleChange(path: Path, nextValue: JsonValue) {
     setDraft((current) => setIn(current as JsonValue, path, nextValue) as SiteContent);
@@ -340,6 +371,40 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
     setDraft((current) => moveAtPath(current as JsonValue, path, direction) as SiteContent);
   }
 
+  async function authenticate() {
+    setIsAuthenticating(true);
+    setStatus({ type: "idle" });
+
+    try {
+      const response = await fetch("/api/admin/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: adminUsername,
+          password: adminPassword,
+        }),
+      });
+
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
+
+      if (!response.ok) {
+        setIsAuthenticated(false);
+        setStatus({ type: "error", message: data?.message ?? "Date de logare invalide." });
+        return;
+      }
+
+      setIsAuthenticated(true);
+      setStatus({ type: "success", message: "Autentificare reușită. Poți salva modificările." });
+    } catch {
+      setIsAuthenticated(false);
+      setStatus({ type: "error", message: "A apărut o eroare de rețea la autentificare." });
+    } finally {
+      setIsAuthenticating(false);
+    }
+  }
+
   async function saveContent() {
     setIsSaving(true);
     setStatus({ type: "idle" });
@@ -349,7 +414,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          ...(adminKey ? { "x-admin-key": adminKey } : {}),
+          ...(adminPassword ? { "x-admin-key": adminPassword } : {}),
         },
         body: JSON.stringify(draft),
       });
@@ -357,6 +422,9 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
       const data = (await response.json()) as { message?: string };
 
       if (!response.ok) {
+        if (response.status === 401) {
+          setIsAuthenticated(false);
+        }
         setStatus({ type: "error", message: data.message ?? "Nu am putut salva conținutul." });
         return;
       }
@@ -377,13 +445,16 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
     try {
       const response = await fetch("/api/admin/site-content", {
         headers: {
-          ...(adminKey ? { "x-admin-key": adminKey } : {}),
+          ...(adminPassword ? { "x-admin-key": adminPassword } : {}),
         },
       });
 
       const data = (await response.json()) as SiteContent & { message?: string };
 
       if (!response.ok) {
+        if (response.status === 401) {
+          setIsAuthenticated(false);
+        }
         setStatus({ type: "error", message: data.message ?? "Nu am putut reîncărca conținutul." });
         return;
       }
@@ -406,17 +477,35 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
           Editează orice text, listă sau secțiune din website și salvează direct în `content/site-content.json`.
         </p>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-[1fr_auto_auto] md:items-end">
+        <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto_auto_auto] lg:items-end">
           <label className="space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#8da0aa]">Cheie admin (opțional)</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#8da0aa]">Utilizator admin</span>
             <input
-              type="password"
-              value={adminKey}
-              onChange={(event) => setAdminKey(event.target.value)}
-              placeholder="Completează dacă ai setat ADMIN_DASHBOARD_KEY"
+              type="text"
+              value={adminUsername}
+              onChange={(event) => setAdminUsername(event.target.value)}
+              placeholder="admin"
+              autoComplete="username"
               className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0c1418] px-3 text-sm text-white focus:border-[#66fcf1] focus:outline-none"
             />
           </label>
+
+          <label className="space-y-2">
+            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#8da0aa]">Parolă admin</span>
+            <input
+              type="password"
+              value={adminPassword}
+              onChange={(event) => setAdminPassword(event.target.value)}
+              placeholder="Valoarea din ADMIN_DASHBOARD_KEY"
+              autoComplete="current-password"
+              className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0c1418] px-3 text-sm text-white focus:border-[#66fcf1] focus:outline-none"
+            />
+          </label>
+
+          <Button type="button" variant="secondary" onClick={authenticate} disabled={isAuthenticating}>
+            <LogIn className="mr-2 h-4 w-4" />
+            {isAuthenticating ? "Autentificare..." : "Autentifică-te"}
+          </Button>
 
           <Button type="button" variant="secondary" onClick={reloadFromDisk} disabled={isReloading}>
             <RefreshCcw className={cn("mr-2 h-4 w-4", isReloading && "animate-spin")} />
@@ -429,7 +518,10 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
           </Button>
         </div>
 
-        <div className="mt-4 text-xs text-[#8ea0aa]">Status modificări: {dirty ? "nesalvate" : "sincronizat"}</div>
+        <div className="mt-4 flex flex-wrap gap-4 text-xs text-[#8ea0aa]">
+          <span>Status modificări: {dirty ? "nesalvate" : "sincronizat"}</span>
+          <span>Status autentificare: {isAuthenticated ? "autentificat" : "neautentificat"}</span>
+        </div>
 
         {status.type !== "idle" ? (
           <p
