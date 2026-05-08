@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { isAdminAuthorized } from "@/lib/admin-auth";
-import { destroyFromCloudinary, isCloudinaryConfigured } from "@/lib/media-provider";
+import { destroyMedia, isMediaConfigured } from "@/lib/media-provider";
 
 const destroySchema = z.object({
   publicId: z.string().min(1),
@@ -13,9 +13,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "Neautorizat." }, { status: 401 });
   }
 
-  if (!isCloudinaryConfigured()) {
+  if (!isMediaConfigured()) {
     return NextResponse.json(
-      { message: "Cloudinary nu este configurat.", configured: false },
+      { message: "Media provider nu este configurat.", configured: false },
       { status: 503 },
     );
   }
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    await destroyFromCloudinary(parsed.data);
+    await destroyMedia(parsed.data);
     return NextResponse.json({ ok: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Ștergere media eșuată.";

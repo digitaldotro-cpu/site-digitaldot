@@ -1,16 +1,16 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isAdminAuthorized } from "@/lib/admin-auth";
 import { createId } from "@/lib/id";
-import { isCloudinaryConfigured, uploadToCloudinary } from "@/lib/media-provider";
+import { isMediaConfigured, uploadMedia } from "@/lib/media-provider";
 
 export async function POST(request: NextRequest) {
   if (!isAdminAuthorized(request)) {
     return NextResponse.json({ message: "Neautorizat." }, { status: 401 });
   }
 
-  if (!isCloudinaryConfigured()) {
+  if (!isMediaConfigured()) {
     return NextResponse.json(
-      { message: "Cloudinary nu este configurat.", configured: false },
+      { message: "Media provider nu este configurat.", configured: false },
       { status: 503 },
     );
   }
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
   const folder = typeof folderRaw === "string" && folderRaw.trim() ? folderRaw.trim() : undefined;
 
   try {
-    const uploaded = await uploadToCloudinary({ file, folder });
+    const uploaded = await uploadMedia({ file, folder });
 
     return NextResponse.json({
       item: {
