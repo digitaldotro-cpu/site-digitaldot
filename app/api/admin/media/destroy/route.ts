@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
-import { isAdminAuthorized } from "@/lib/admin-auth";
+import { getAdminAuthConfigurationError, isAdminAuthorized } from "@/lib/admin-auth";
 import { destroyMedia, isMediaConfigured } from "@/lib/media-provider";
 
 const destroySchema = z.object({
@@ -9,6 +9,11 @@ const destroySchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
+  const configError = getAdminAuthConfigurationError();
+  if (configError) {
+    return NextResponse.json({ message: "Admin authentication is not configured." }, { status: 500 });
+  }
+
   if (!isAdminAuthorized(request)) {
     return NextResponse.json({ message: "Neautorizat." }, { status: 401 });
   }
@@ -39,6 +44,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Ștergere media eșuată.";
-    return NextResponse.json({ message }, { status: 500 });
+    const status = message.toLowerCase().includes("invalid") ? 400 : 500;
+    return NextResponse.json({ message }, { status });
   }
 }

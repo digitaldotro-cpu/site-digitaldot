@@ -129,5 +129,6 @@ export function isAdminAuthorized(request: NextRequest) {
 }
 
 export function getSessionMaxAge() {
+  // Session cookie lifetime: 8h. Token is rotated on each successful login.
   return SESSION_TTL_SECONDS;
 }

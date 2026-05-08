@@ -100,6 +100,7 @@ npm run dev -- -p 3001
 
 ```bash
 npm run lint
+npm run check:security-env
 npm run build
 ```
 
@@ -109,33 +110,36 @@ npm run build
 - Variabile utile pentru producție:
   - `NEXT_PUBLIC_SITE_URL` (opțional, dacă vrei URL configurabil)
   - `ADMIN_DASHBOARD_USER` (utilizatorul pentru autentificarea în CMS, opțional)
-  - `ADMIN_DASHBOARD_KEY` (parola pentru autentificarea în CMS)
-  - `ADMIN_SESSION_SECRET` (recomandat, semnare cookie sesiune admin)
+  - `ADMIN_DASHBOARD_KEY` (obligatoriu, parolă CMS)
+  - `ADMIN_SESSION_SECRET` (obligatoriu, semnare cookie sesiune admin)
+  - `ADMIN_LOGIN_RATE_LIMIT_MAX` (opțional, default: `10`)
+  - `ADMIN_LOGIN_RATE_LIMIT_WINDOW_SEC` (opțional, default: `300`)
+  - `ADMIN_UPLOAD_MAX_BYTES` (opțional, default: `5242880` = 5MB)
   - `CLOUDINARY_CLOUD_NAME` (opțional, activează upload media Cloudinary)
   - `CLOUDINARY_API_KEY`
   - `CLOUDINARY_API_SECRET`
   - `CLOUDINARY_FOLDER` (opțional, default: `digital-dot`)
-- Formularul de contact trimite email prin SMTP (`POST /api/contact`):
-  - `SMTP_HOST` (default recomandat: `smtp.gmail.com`)
-  - `SMTP_PORT` (default recomandat: `465`)
-  - `SMTP_SECURE` (`true` pentru 465)
-  - `SMTP_USER` (`digitaldot.ro@gmail.com`)
-  - `SMTP_PASS` (Gmail App Password, nu parola contului)
+- Formularul de contact trimite email prin Brevo API (`POST /api/contact`):
+  - `BREVO_API_KEY`
   - `CONTACT_TO_EMAIL` (default: `digitaldot.ro@gmail.com`)
-  - `CONTACT_FROM_EMAIL` (default: `SMTP_USER`)
+  - `CONTACT_FROM_EMAIL` (default: `digitaldot.ro@gmail.com`)
+  - `CONTACT_RATE_LIMIT_MAX` (opțional, default: `8`)
+  - `CONTACT_RATE_LIMIT_WINDOW_SEC` (opțional, default: `300`)
 - Blog-ul se extinde prin adăugare de fișiere `.mdx` în `content/blog/`.
 
 ## Panou De Control
 
 - URL: `/panou-control`
-- API CMS salvează în `content/cms-data.json`
+- API CMS salvează în `content/site-content.json`
 - Date de logare:
   - utilizator: valoarea din `ADMIN_DASHBOARD_USER` (dacă variabila nu este setată, se validează doar parola)
   - parolă: valoarea din `ADMIN_DASHBOARD_KEY`
-- Dacă `ADMIN_DASHBOARD_KEY` este setat, dashboard-ul cere autentificare
+- `ADMIN_DASHBOARD_KEY` și `ADMIN_SESSION_SECRET` sunt obligatorii pentru autentificare
+- Cookie-ul de sesiune admin este `httpOnly`, `sameSite=lax`, TTL implicit `8h` (`getSessionMaxAge`)
 - Media upload:
-  - cu Cloudinary configurat: upload server-side în Cloudinary
-  - fără Cloudinary: fallback local (Data URL în JSON) pentru dezvoltare
+  - upload local în `public/uploads/*`
+  - sunt acceptate doar imagini (`png`, `jpg`, `jpeg`, `webp`, `svg`)
+  - limita implicită per fișier este 5MB (`ADMIN_UPLOAD_MAX_BYTES`)
 
 ## Licență
 

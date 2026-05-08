@@ -3,10 +3,37 @@ import { readSiteContent } from "@/lib/site-content";
 import { createContactSchema } from "@/lib/validation/contact";
 import { sendContactEmail } from "@/lib/email/send-contact-email";
 import { logSubmission, logEmailStatus } from "@/lib/logs";
+import { checkRateLimit, readPositiveIntEnv } from "@/lib/rate-limit";
+import { getRequestIp } from "@/lib/request-ip";
 
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
+  const contactLimitMax = readPositiveIntEnv("CONTACT_RATE_LIMIT_MAX", 8);
+  const contactWindowSec = readPositiveIntEnv("CONTACT_RATE_LIMIT_WINDOW_SEC", 300);
+  const ip = getRequestIp(request.headers);
+  const rateLimit = checkRateLimit({
+    scope: "contact-form",
+    key: ip,
+    max: contactLimitMax,
+    windowMs: contactWindowSec * 1000,
+  });
+
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      {
+        message:
+          "Ai trimis prea multe cereri într-un timp scurt. Te rugăm să încerci din nou mai târziu.",
+      },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(rateLimit.retryAfterSeconds),
+        },
+      },
+    );
+  }
+
   let payload: unknown;
 
   try {
@@ -27,11 +54,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: firstError }, { status: 400 });
   }
 
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    request.headers.get("x-real-ip") ??
-    "Necunoscut";
-  const userAgent = request.headers.get("user-agent") ?? "Necunoscut";
+  const userAgent = request.headers.get("user-agent") ?? "unknown";
 
   let submissionId = "unknown";
 
@@ -61,22 +84,7 @@ export async function POST(request: Request) {
       const missing = error.message.replace("Missing required environment variable:", "").trim();
       return NextResponse.json(
         {
-          message: `Formularul nu este configurat complet pe server (lipsește ${missing}). Configurează variabilele SMTP în .env.local și repornește aplicația.`,
-        },
-        { status: 500 },
-      );
-    }
-
-    if (
-      typeof error === "object" &&
-      error !== null &&
-      "code" in error &&
-      (error as { code?: string }).code === "EAUTH"
-    ) {
-      return NextResponse.json(
-        {
-          message:
-            "Autentificarea SMTP a eșuat. Verifică credențialele SMTP (SMTP_USER și SMTP_PASS).",
+          message: `Formularul nu este configurat complet pe server (lipsește ${missing}). Configurează variabilele Brevo în .env.local și repornește aplicația.`,
         },
         { status: 500 },
       );

@@ -1,14 +1,44 @@
 import { NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, createAdminSessionToken, getSessionMaxAge } from "@/lib/admin-auth";
+import {
+  ADMIN_SESSION_COOKIE,
+  createAdminSessionToken,
+  getAdminAuthConfigurationError,
+  getSessionMaxAge,
+  isAdminDashboardKeyValid,
+  isAdminUsernameValid,
+} from "@/lib/admin-auth";
+import { checkRateLimit, readPositiveIntEnv } from "@/lib/rate-limit";
+import { getRequestIp } from "@/lib/request-ip";
 
 export async function POST(request: Request) {
-  const expectedKey = process.env.ADMIN_DASHBOARD_KEY;
-  const expectedUsername = process.env.ADMIN_DASHBOARD_USER;
-
-  if (!expectedKey) {
+  const configError = getAdminAuthConfigurationError();
+  if (configError) {
     return NextResponse.json(
-      { message: "ADMIN_DASHBOARD_KEY nu este configurat pe server." },
+      { message: "Admin authentication is not configured on the server." },
       { status: 500 },
+    );
+  }
+
+  const loginLimitMax = readPositiveIntEnv("ADMIN_LOGIN_RATE_LIMIT_MAX", 10);
+  const loginWindowSec = readPositiveIntEnv("ADMIN_LOGIN_RATE_LIMIT_WINDOW_SEC", 300);
+  const clientIp = getRequestIp(request.headers);
+  const rateLimit = checkRateLimit({
+    scope: "admin-login",
+    key: clientIp,
+    max: loginLimitMax,
+    windowMs: loginWindowSec * 1000,
+  });
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      {
+        message: "Prea multe încercări de autentificare. Te rugăm să încerci din nou mai târziu.",
+      },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(rateLimit.retryAfterSeconds),
+        },
+      },
     );
   }
 
@@ -29,11 +59,11 @@ export async function POST(request: Request) {
       ? String((payload as { username?: unknown }).username || "")
       : "";
 
-  if (expectedUsername && username.trim() !== expectedUsername.trim()) {
+  if (!isAdminUsernameValid(username.trim())) {
     return NextResponse.json({ message: "Date de autentificare invalide." }, { status: 401 });
   }
 
-  if (!password || password !== expectedKey) {
+  if (!password || !isAdminDashboardKeyValid(password)) {
     return NextResponse.json({ message: "Date de autentificare invalide." }, { status: 401 });
   }
 

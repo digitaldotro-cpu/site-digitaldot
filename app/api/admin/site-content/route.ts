@@ -1,9 +1,14 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { siteContentSchema } from "@/lib/site-content-schema";
 import { readSiteContent, writeSiteContent } from "@/lib/site-content";
-import { isAdminAuthorized } from "@/lib/admin-auth";
+import { getAdminAuthConfigurationError, isAdminAuthorized } from "@/lib/admin-auth";
 
 export async function GET(request: NextRequest) {
+  const configError = getAdminAuthConfigurationError();
+  if (configError) {
+    return NextResponse.json({ message: "Admin authentication is not configured." }, { status: 500 });
+  }
+
   if (!isAdminAuthorized(request)) {
     return NextResponse.json({ message: "Neautorizat." }, { status: 401 });
   }
@@ -13,6 +18,11 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
+  const configError = getAdminAuthConfigurationError();
+  if (configError) {
+    return NextResponse.json({ message: "Admin authentication is not configured." }, { status: 500 });
+  }
+
   if (!isAdminAuthorized(request)) {
     return NextResponse.json({ message: "Neautorizat." }, { status: 401 });
   }
