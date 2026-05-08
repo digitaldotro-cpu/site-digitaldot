@@ -195,6 +195,7 @@ const sectionKeySchema = z.enum([
 export const siteContentSchema = z.object({
   global: z.object({
     brandName: z.string().min(1),
+    gtmId: z.string().optional(),
     headerLogo: z.string().min(1).optional(),
     favicon: z.string().min(1).optional(),
     navbarCtaLabel: z.string().min(1),

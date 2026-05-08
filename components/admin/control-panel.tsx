@@ -69,6 +69,7 @@ const labelDictionary: Record<string, string> = {
   privacyPolicy: "Politică de Confidențialitate",
   termsConditions: "Termeni și Condiții",
   brandName: "Nume Brand",
+  gtmId: "Google Tag Manager ID",
   headerLogo: "Logo Antet",
   favicon: "Favicon",
   navbarCtaLabel: "Etichetă Buton Meniu",
