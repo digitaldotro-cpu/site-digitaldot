@@ -40,6 +40,37 @@ export function Navbar({
   const [activeHash, setActiveHash] = useState("");
   const visibleNavItems = navItems.filter((item) => item.enabled !== false);
 
+  function normalizeNavHref(href: string) {
+    if (!href) {
+      return "/";
+    }
+
+    if (href.startsWith("#")) {
+      return `/${href}`;
+    }
+
+    return href;
+  }
+
+  function isActiveNavLink(href: string) {
+    const normalizedHref = normalizeNavHref(href);
+    const [rawPath, rawHash] = normalizedHref.split("#");
+    const targetPath = rawPath || "/";
+    const targetHash = rawHash ? `#${rawHash}` : "";
+    const isPathMatch = pathname === targetPath;
+
+    if (!targetHash) {
+      return targetPath === "/" ? pathname === "/" : pathname.startsWith(targetPath);
+    }
+
+    if (!isPathMatch) {
+      return false;
+    }
+
+    const currentHash = activeHash || (pathname === "/" ? "#hero" : "");
+    return currentHash === targetHash;
+  }
+
   useEffect(() => {
     function handleHashChange() {
       setActiveHash(window.location.hash);
@@ -126,16 +157,13 @@ export function Navbar({
 
             <nav className="hidden items-center gap-2 lg:flex">
               {visibleNavItems.map((item) => {
-                const active = item.href.startsWith("#")
-                  ? (activeHash || "#hero") === item.href
-                  : item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href);
+                const active = isActiveNavLink(item.href);
+                const href = normalizeNavHref(item.href);
 
                 return (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={href}
                     className={cn(
                       "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                       active
@@ -219,16 +247,13 @@ export function Navbar({
             >
               <nav className="flex flex-col gap-2">
                 {visibleNavItems.map((item) => {
-                  const active = item.href.startsWith("#")
-                    ? (activeHash || "#hero") === item.href
-                    : item.href === "/"
-                      ? pathname === "/"
-                      : pathname.startsWith(item.href);
+                  const active = isActiveNavLink(item.href);
+                  const href = normalizeNavHref(item.href);
 
                   return (
                     <Link
                       key={item.href}
-                      href={item.href}
+                      href={href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
                         "rounded-2xl px-4 py-3 text-sm font-medium transition-colors",
