@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 import type { ContactFormValues } from "@/lib/validation/contact";
 
 type RequestMeta = {
@@ -6,45 +5,6 @@ type RequestMeta = {
   userAgent: string;
   submittedAt: string;
 };
-
-let transporter: nodemailer.Transporter | null = null;
-
-function getRequiredEnv(name: string): string {
-  const value = process.env[name];
-
-  if (!value || value.trim().length === 0) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
-
-  return value.trim();
-}
-
-function getTransporter() {
-  if (transporter) {
-    return transporter;
-  }
-
-  const host = process.env.SMTP_HOST ?? "smtp.gmail.com";
-  const port = Number.parseInt(process.env.SMTP_PORT ?? "465", 10);
-  const secure =
-    process.env.SMTP_SECURE != null
-      ? process.env.SMTP_SECURE === "true"
-      : port === 465;
-  const user = getRequiredEnv("SMTP_USER");
-  const pass = getRequiredEnv("SMTP_PASS");
-
-  transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    auth: {
-      user,
-      pass,
-    },
-  });
-
-  return transporter;
-}
 
 function escapeHtml(value: string) {
   return value
@@ -59,13 +19,20 @@ export async function sendContactEmail(
   values: ContactFormValues,
   meta: RequestMeta,
 ) {
-  const smtpUser = getRequiredEnv("SMTP_USER");
-  const to = process.env.CONTACT_TO_EMAIL ?? "digitaldot.ro@gmail.com";
-  const from = process.env.CONTACT_FROM_EMAIL ?? smtpUser;
+  // Try to use BREVO_API_KEY, fallback to SMTP_PASS if they haven't renamed it yet
+  const apiKey = process.env.BREVO_API_KEY || process.env.SMTP_PASS;
+  
+  if (!apiKey || apiKey.trim().length === 0) {
+    throw new Error("Missing required environment variable: BREVO_API_KEY");
+  }
+
+  const toEmail = process.env.CONTACT_TO_EMAIL ?? "digitaldot.ro@gmail.com";
+  // The sender email must be an authorized sender in Brevo
+  const fromEmail = process.env.CONTACT_FROM_EMAIL ?? process.env.SMTP_USER ?? "digitaldot.ro@gmail.com";
 
   const subject = `Cerere nouă de contact — ${values.name}`;
 
-  const text = [
+  const textContent = [
     "Ai primit o cerere nouă din formularul de contact Digital Dot.",
     "",
     `Nume: ${values.name}`,
@@ -82,7 +49,7 @@ export async function sendContactEmail(
     `Trimis la: ${meta.submittedAt}`,
   ].join("\n");
 
-  const html = `
+  const htmlContent = `
     <div style="font-family:Arial,Helvetica,sans-serif;background:#0b0c10;color:#ffffff;padding:24px;">
       <h2 style="margin:0 0 16px;">Cerere nouă din formularul Digital Dot</h2>
       <table style="width:100%;border-collapse:collapse;background:#111319;border:1px solid #276864;border-radius:12px;overflow:hidden;">
@@ -102,14 +69,26 @@ export async function sendContactEmail(
     </div>
   `;
 
-  const mailer = getTransporter();
-
-  await mailer.sendMail({
-    to,
-    from,
-    replyTo: values.email,
-    subject,
-    text,
-    html,
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      "accept": "application/json",
+      "content-type": "application/json",
+      "api-key": apiKey.trim()
+    },
+    body: JSON.stringify({
+      sender: { name: "Digital Dot Website", email: fromEmail },
+      to: [{ email: toEmail }],
+      replyTo: { email: values.email, name: values.name },
+      subject: subject,
+      htmlContent: htmlContent,
+      textContent: textContent
+    })
   });
+
+  if (!response.ok) {
+    const errorData = await response.text();
+    console.error("Brevo API Error:", response.status, errorData);
+    throw new Error(`Brevo API responded with status ${response.status}: ${errorData}`);
+  }
 }
