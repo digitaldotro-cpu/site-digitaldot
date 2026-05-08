@@ -63,6 +63,16 @@ const longFormEntrySchema = z.object({
   highlight: z.boolean().default(false),
 });
 
+const editorialParagraphSchema = z.object({
+  id: z.string().min(1),
+  text: z.string().min(1),
+});
+
+const quoteBlockSchema = z.object({
+  id: z.string().min(1),
+  text: z.string().min(1),
+});
+
 const serviceItemSchema = z.object({
   id: z.string().min(1),
   enabled: z.boolean().default(true),
@@ -216,7 +226,22 @@ export const siteContentSchema = z.object({
     positioning: z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
-      entries: z.array(longFormEntrySchema).min(1),
+      highlightedWords: z.array(z.string().min(1)).default([]),
+      introParagraph: z.string().min(1),
+      editorialParagraphs: z.array(editorialParagraphSchema).min(1),
+      quoteBlocks: z.array(quoteBlockSchema).min(1),
+      closingParagraph: z.string().min(1),
+      optionalHighlightedPhrases: z.array(z.string().min(1)).default([]),
+      layout: z.object({
+        spacingPreset: z.enum(["compact", "standard", "cinematic"]).default("cinematic"),
+        alignment: z.enum(["left", "center"]).default("left"),
+        backgroundVariant: z.enum(["subtle", "glow", "glass"]).default("glow"),
+      }),
+      cta: z.object({
+        enabled: z.boolean().default(true),
+        text: z.string().min(1),
+        link: z.string().min(1),
+      }),
     }),
     authority: z.object({
       enabled: z.boolean().default(true),

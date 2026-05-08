@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/ui/animated-section";
 import { HighlightText } from "@/components/landing/highlight-text";
 import type { SiteContent } from "@/lib/site-content-schema";
 
-type LongFormSection = SiteContent["landing"]["positioning"] | SiteContent["landing"]["authority"];
+type LongFormSection = SiteContent["landing"]["authority"];
 
 type TextBlockSectionProps = {
   id: string;

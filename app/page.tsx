@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { buildMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
 import { HeroSection } from "@/components/landing/hero-section";
+import { PositioningManifestoSection } from "@/components/landing/positioning-manifesto-section";
 import { TextBlockSection } from "@/components/landing/text-block-section";
 import { ImageCtaSection } from "@/components/landing/image-cta-section";
 import { ServicesGrid } from "@/components/landing/services-grid";
@@ -31,7 +32,7 @@ export default async function HomePage() {
 
   const sections: Record<LandingSectionKey, ReactNode> = {
     hero: <HeroSection section={landing.hero} />,
-    positioning: <TextBlockSection id="positioning" section={landing.positioning} />,
+    positioning: <PositioningManifestoSection section={landing.positioning} />,
     authority: <TextBlockSection id="authority" section={landing.authority} />,
     brandValueSection: <ImageCtaSection id="brand-value" section={landing.brandValueSection} />,
     services: <ServicesGrid section={landing.services} />,
