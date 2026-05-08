@@ -63,7 +63,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           message:
-            "Autentificarea SMTP a eșuat. Verifică SMTP_USER și SMTP_PASS (Gmail App Password, nu parola contului).",
+            "Autentificarea SMTP a eșuat. Verifică credențialele SMTP (SMTP_USER și SMTP_PASS).",
         },
         { status: 500 },
       );

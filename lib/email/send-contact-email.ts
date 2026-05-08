@@ -16,11 +16,6 @@ function getRequiredEnv(name: string): string {
     throw new Error(`Missing required environment variable: ${name}`);
   }
 
-  if (name === "SMTP_PASS") {
-    // Gmail app passwords are often copied with spaces every 4 chars.
-    return value.replace(/\s+/g, "");
-  }
-
   return value.trim();
 }
 
