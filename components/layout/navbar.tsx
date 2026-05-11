@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { type MouseEvent, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
@@ -37,7 +37,6 @@ export function Navbar({
   transitionDuration = 300,
 }: NavbarProps) {
   const pathname = usePathname();
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
   const visibleNavItems = navItems.filter((item) => item.enabled !== false);
@@ -88,9 +87,7 @@ export function Navbar({
       return;
     }
 
-    requestAnimationFrame(() => {
-      router.push(logoHref);
-    });
+    window.location.assign(logoHref);
   }
 
   useEffect(() => {
