@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { type MouseEvent, useEffect, useState } from "react";
+import { flushSync } from "react-dom";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
@@ -36,9 +37,11 @@ export function Navbar({
   transitionDuration = 300,
 }: NavbarProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
   const visibleNavItems = navItems.filter((item) => item.enabled !== false);
+  const logoHref = "/#hero";
 
   function normalizeNavHref(href: string) {
     if (!href) {
@@ -69,6 +72,25 @@ export function Navbar({
 
     const currentHash = activeHash || (pathname === "/" ? "#hero" : "");
     return currentHash === targetHash;
+  }
+
+  function handleLogoClick(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+
+    flushSync(() => {
+      setIsOpen(false);
+    });
+
+    if (pathname === "/") {
+      window.history.pushState(window.history.state, "", logoHref);
+      setActiveHash("#hero");
+      document.getElementById("hero")?.scrollIntoView({ block: "start", behavior: "smooth" });
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      router.push(logoHref);
+    });
   }
 
   useEffect(() => {
@@ -134,12 +156,17 @@ export function Navbar({
       >
         <Container>
           <div className="hidden h-20 items-center justify-between gap-4 lg:flex">
-            <Link href="/" className="group inline-flex items-center gap-2">
+            <Link
+              href={logoHref}
+              onClick={handleLogoClick}
+              aria-label="Digital Dot - Acasă"
+              className="group inline-flex min-h-12 items-center gap-2 rounded-lg px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+            >
               {headerLogo ? (
                 <>
                   <Image
                     src={headerLogo}
-                    alt={brandName}
+                    alt=""
                     width={160}
                     height={44}
                     unoptimized
@@ -193,12 +220,17 @@ export function Navbar({
               <Phone size={18} />
             </a>
 
-            <Link href="/" className="group inline-flex justify-self-center">
+            <Link
+              href={logoHref}
+              onClick={handleLogoClick}
+              aria-label="Digital Dot - Acasă"
+              className="group inline-flex min-h-12 min-w-24 items-center justify-center justify-self-center rounded-lg px-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+            >
               {headerLogo ? (
                 <>
                   <Image
                     src={headerLogo}
-                    alt={brandName}
+                    alt=""
                     width={136}
                     height={38}
                     unoptimized
