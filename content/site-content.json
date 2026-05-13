@@ -85,6 +85,11 @@
           "platform": "tiktok",
           "url": "https://www.tiktok.com/@digitaldot.ro",
           "enabled": true
+        },
+        {
+          "platform": "google-business",
+          "url": "https://share.google/uWv3C2nxwAMfSC6zJ",
+          "enabled": true
         }
       ],
       "legalLinksTitle": "Legal",
@@ -133,6 +138,34 @@
         {
           "label": "Cluj-Napoca",
           "href": "/agentie-marketing/cluj-napoca",
+          "enabled": true
+        }
+      ],
+      "serviceLinksTitle": "Servicii",
+      "serviceLinks": [
+        {
+          "label": "Social Media Management",
+          "href": "/social-media-management",
+          "enabled": true
+        },
+        {
+          "label": "Google & Meta Ads",
+          "href": "/google-meta-ads",
+          "enabled": true
+        },
+        {
+          "label": "Producție Video",
+          "href": "/productie-video",
+          "enabled": true
+        },
+        {
+          "label": "SEO",
+          "href": "/seo",
+          "enabled": true
+        },
+        {
+          "label": "Website Creation",
+          "href": "/website-creation",
           "enabled": true
         }
       ]
@@ -1028,9 +1061,9 @@
         "path": "/social-media-management",
         "label": "Social Media Management",
         "seoTitle": "Social Media Management | Digital Dot",
-        "seoDescription": "Social media management strategic: calendar editorial, producție, publicare, optimizare și raportare pentru branduri care vor leaduri și încredere.",
-        "ogTitle": "Social Media Management orientat spre business",
-        "ogDescription": "Construim sisteme editoriale care transformă atenția în încredere și cereri reale.",
+        "seoDescription": "Social Media Management înseamnă mai mult decât publicare frecventă. Pentru Digital Dot, înseamnă un sistem editorial care transformă poziționarea într-un ",
+        "ogTitle": "Social Media Management | Digital Dot",
+        "ogDescription": "Social Media Management înseamnă mai mult decât publicare frecventă. Pentru Digital Dot, înseamnă un sistem editorial care transformă poziționarea într-un ritm vizibil, memorabil și util pentru decizia de cumpărare.",
         "ogImage": "/images/social-media/social-preview.svg",
         "canonicalUrl": "https://digitaldot.ro/social-media-management",
         "robots": {
@@ -1042,11 +1075,11 @@
       },
       {
         "path": "/google-meta-ads",
-        "label": "Google & Meta Ads",
+        "label": "Google Ads & Meta Ads",
         "seoTitle": "Google Ads & Meta Ads | Digital Dot",
-        "seoDescription": "Campanii Google Ads și Meta Ads cu tracking corect, funnel clar, optimizare continuă și focus pe leaduri sau vânzări măsurabile.",
-        "ogTitle": "Google & Meta Ads cu strategie și tracking corect",
-        "ogDescription": "Administrăm campanii paid media construite pe date, obiective clare și optimizare disciplinată.",
+        "seoDescription": "Google Ads și Meta Ads funcționează când sunt construite ca un sistem de performanță: tracking curat, funnel clar, mesaje testabile, bugete disciplinate și",
+        "ogTitle": "Google Ads & Meta Ads | Digital Dot",
+        "ogDescription": "Google Ads și Meta Ads funcționează când sunt construite ca un sistem de performanță: tracking curat, funnel clar, mesaje testabile, bugete disciplinate și optimizare după calitatea rezultatelor, nu după impresii.",
         "ogImage": "/branding/references/ai-buget-marketing-sau-doar-sperante.png",
         "canonicalUrl": "https://digitaldot.ro/google-meta-ads",
         "robots": {
@@ -1059,10 +1092,10 @@
       {
         "path": "/productie-video",
         "label": "Producție Video",
-        "seoTitle": "Producție Foto Video | Digital Dot",
-        "seoDescription": "Producție foto și video pentru reclame, social media, website și campanii digitale, cu direcție creativă și livrabile adaptate pe funnel.",
-        "ogTitle": "Producție foto-video pentru branduri premium",
-        "ogDescription": "Creăm active vizuale clare, cinematice și utile pentru campanii digitale performante.",
+        "seoTitle": "Producție Video | Digital Dot",
+        "seoDescription": "Producția video Digital Dot combină atenția cinematică pentru imagine cu rolul pragmatic al marketingului: materiale care explică, diferențiază, rețin aten",
+        "ogTitle": "Producție Video | Digital Dot",
+        "ogDescription": "Producția video Digital Dot combină atenția cinematică pentru imagine cu rolul pragmatic al marketingului: materiale care explică, diferențiază, rețin atenția și susțin conversia în social media, ads și website.",
         "ogImage": "/images/photo-video/camera-rig.svg",
         "canonicalUrl": "https://digitaldot.ro/productie-video",
         "robots": {
@@ -1075,10 +1108,10 @@
       {
         "path": "/website-creation",
         "label": "Website Creation",
-        "seoTitle": "Creare Website | Digital Dot",
-        "seoDescription": "Creare website WordPress, Shopify și landing pages orientate spre claritate, conversie, tracking corect, SEO tehnic și scalabilitate.",
-        "ogTitle": "Website-uri construite pentru conversie și SEO",
-        "ogDescription": "Dezvoltăm experiențe web curate, rapide și ușor de indexat pentru business-uri în creștere.",
+        "seoTitle": "Website Creation | Digital Dot",
+        "seoDescription": "Website creation înseamnă arhitectură de conversie, performanță, UX, conținut indexabil și o bază tehnică pregătită pentru marketing. Un website bun nu est",
+        "ogTitle": "Website Creation | Digital Dot",
+        "ogDescription": "Website creation înseamnă arhitectură de conversie, performanță, UX, conținut indexabil și o bază tehnică pregătită pentru marketing. Un website bun nu este o broșură; este infrastructură de business.",
         "ogImage": "/images/portfolio/shopify-upgrade.svg",
         "canonicalUrl": "https://digitaldot.ro/website-creation",
         "robots": {
@@ -1091,10 +1124,10 @@
       {
         "path": "/seo",
         "label": "SEO",
-        "seoTitle": "SEO Tehnic și Content SEO | Digital Dot",
-        "seoDescription": "SEO tehnic, structură semantică, optimizare on-page, conținut indexabil și arhitectură pentru Google și AI search.",
-        "ogTitle": "SEO pentru Google, AI Search și creștere organică",
-        "ogDescription": "Optimizăm site-uri pentru crawlabilitate, structură semantică, performanță și rezultate organice sustenabile.",
+        "seoTitle": "SEO | Digital Dot",
+        "seoDescription": "SEO nu mai înseamnă doar poziții în Google. Înseamnă arhitectură semantică, performanță tehnică, conținut clar, structured data și o prezență pe care siste",
+        "ogTitle": "SEO | Digital Dot",
+        "ogDescription": "SEO nu mai înseamnă doar poziții în Google. Înseamnă arhitectură semantică, performanță tehnică, conținut clar, structured data și o prezență pe care sistemele AI o pot înțelege, cita și recomanda.",
         "ogImage": "/branding/references/door-strategy-wide.png",
         "canonicalUrl": "https://digitaldot.ro/seo",
         "robots": {
@@ -1164,7 +1197,7 @@
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, paid media, video production, website creation, SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, paid media, video production, website creation, SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -1242,70 +1275,47 @@
           "platform": "tiktok",
           "url": "https://www.tiktok.com/@digitaldot.ro",
           "enabled": true
+        },
+        {
+          "platform": "google-business",
+          "url": "https://share.google/uWv3C2nxwAMfSC6zJ",
+          "enabled": true
         }
       ],
       "services": [
         {
           "id": "social-media-management",
           "name": "Social Media Management",
-          "description": "Strategie editorială, producție, publicare, community trust și optimizare pentru social media.",
+          "description": "Social Media Management înseamnă mai mult decât publicare frecventă. Pentru Digital Dot, înseamnă un sistem editorial care transformă poziționarea într-un ritm vizibil, memorabil și util pentru decizia de cumpărare.",
           "url": "/social-media-management"
         },
         {
           "id": "google-meta-ads",
           "name": "Google Ads & Meta Ads",
-          "description": "Campanii paid media cu tracking corect, structură de funnel și optimizare pentru leaduri sau vânzări.",
+          "description": "Google Ads și Meta Ads funcționează când sunt construite ca un sistem de performanță: tracking curat, funnel clar, mesaje testabile, bugete disciplinate și optimizare după calitatea rezultatelor, nu după impresii.",
           "url": "/google-meta-ads"
         },
         {
           "id": "productie-video",
-          "name": "Producție Foto Video",
-          "description": "Active foto și video pentru reclame, social media, website și comunicare de brand.",
+          "name": "Producție Video",
+          "description": "Producția video Digital Dot combină atenția cinematică pentru imagine cu rolul pragmatic al marketingului: materiale care explică, diferențiază, rețin atenția și susțin conversia în social media, ads și website.",
           "url": "/productie-video"
-        },
-        {
-          "id": "website-creation",
-          "name": "Creare Website",
-          "description": "Website-uri, landing pages, WordPress și Shopify cu UX clar, performanță și SEO tehnic.",
-          "url": "/website-creation"
         },
         {
           "id": "seo",
           "name": "SEO",
-          "description": "SEO tehnic, on-page, structură semantică, conținut indexabil și optimizare pentru AI search.",
+          "description": "SEO nu mai înseamnă doar poziții în Google. Înseamnă arhitectură semantică, performanță tehnică, conținut clar, structured data și o prezență pe care sistemele AI o pot înțelege, cita și recomanda.",
           "url": "/seo"
+        },
+        {
+          "id": "website-creation",
+          "name": "Website Creation",
+          "description": "Website creation înseamnă arhitectură de conversie, performanță, UX, conținut indexabil și o bază tehnică pregătită pentru marketing. Un website bun nu este o broșură; este infrastructură de business.",
+          "url": "/website-creation"
         }
       ]
     },
     "faqGroups": [
-      {
-        "id": "services-faq",
-        "title": "Întrebări frecvente despre serviciile Digital Dot",
-        "assignedPaths": [
-          "/social-media-management",
-          "/google-meta-ads",
-          "/productie-video",
-          "/website-creation",
-          "/seo"
-        ],
-        "items": [
-          {
-            "id": "faq-1",
-            "question": "Cum începe colaborarea cu Digital Dot?",
-            "answer": "Începem cu o discuție de clarificare, analizăm obiectivele de business și prioritizăm canalele care pot produce impact măsurabil."
-          },
-          {
-            "id": "faq-2",
-            "question": "Lucrați pe strategie sau doar pe execuție?",
-            "answer": "Lucrăm integrat: strategie, structură, execuție și optimizare. Execuția fără direcție clară nu este modelul nostru de lucru."
-          },
-          {
-            "id": "faq-3",
-            "question": "Pot fi măsurate rezultatele?",
-            "answer": "Da. Definim KPI relevanți, urmărim performanța prin date și ajustăm constant campaniile, conținutul sau website-ul."
-          }
-        ]
-      },
       {
         "id": "blog-faq",
         "title": "Întrebări frecvente despre resursele Digital Dot",
@@ -1322,6 +1332,201 @@
             "id": "blog-faq-2",
             "question": "Conținutul este aplicabil pentru business-uri locale?",
             "answer": "Da. Majoritatea exemplelor și recomandărilor sunt gândite pentru companii locale sau regionale care vor creștere predictibilă."
+          }
+        ]
+      },
+      {
+        "id": "social-media-management-faq",
+        "title": "Întrebări frecvente despre Social Media Management",
+        "assignedPaths": [
+          "/social-media-management"
+        ],
+        "items": [
+          {
+            "id": "social-media-management-faq-1",
+            "question": "Cât de des ar trebui să posteze un brand?",
+            "answer": "Frecvența depinde de capacitatea de producție, complexitatea pieței și obiective. Preferăm un ritm sustenabil, cu mesaje bune și serii recurente, în locul unui volum mare care diluează poziționarea."
+          },
+          {
+            "id": "social-media-management-faq-2",
+            "question": "Social Media Management include și strategie?",
+            "answer": "Da. Fără strategie, social media devine doar execuție. Definim poziționarea, pilonii editoriali, tipurile de conținut, ritmul și modul în care canalul susține vânzarea."
+          },
+          {
+            "id": "social-media-management-faq-3",
+            "question": "Ce platforme sunt relevante pentru un business local?",
+            "answer": "Depinde de public și ofertă. De obicei analizăm Instagram, Facebook, TikTok, LinkedIn și Google Business, apoi alegem canalele unde conținutul poate produce încredere și acțiune."
+          },
+          {
+            "id": "social-media-management-faq-4",
+            "question": "Cum măsurați rezultatele în social media?",
+            "answer": "Urmărim reach, retenție, salvări, comentarii relevante, clickuri, leaduri, calitatea interacțiunilor și contribuția la funnel. Nu tratăm like-urile ca obiectiv final."
+          },
+          {
+            "id": "social-media-management-faq-5",
+            "question": "Aveți nevoie de materiale foto-video lunar?",
+            "answer": "De multe ori da, dar nu întotdeauna în același volum. Planificăm producția astfel încât materialele să fie reutilizabile și adaptate pentru social, ads și website."
+          },
+          {
+            "id": "social-media-management-faq-6",
+            "question": "Cât durează până se văd rezultate?",
+            "answer": "Primele semnale apar în câteva săptămâni, dar încrederea și memorabilitatea se construiesc în luni. Social media este un sistem de acumulare, nu o acțiune singulară."
+          }
+        ]
+      },
+      {
+        "id": "google-meta-ads-faq",
+        "title": "Întrebări frecvente despre Google Ads & Meta Ads",
+        "assignedPaths": [
+          "/google-meta-ads"
+        ],
+        "items": [
+          {
+            "id": "google-meta-ads-faq-1",
+            "question": "Cât buget este necesar pentru Google Ads și Meta Ads?",
+            "answer": "Bugetul depinde de piață, obiectiv, valoarea leadului și competiție. Recomandăm un buget suficient pentru date relevante, nu un minim simbolic care nu permite optimizare."
+          },
+          {
+            "id": "google-meta-ads-faq-2",
+            "question": "De ce nu performează campaniile mele actuale?",
+            "answer": "Cele mai frecvente cauze sunt tracking incomplet, ofertă neclară, landing page slab, creative obosite, structură de campanii confuză sau optimizare după metrici greșite."
+          },
+          {
+            "id": "google-meta-ads-faq-3",
+            "question": "Google Ads sau Meta Ads: ce alegem?",
+            "answer": "Google este mai potrivit când există intenție de căutare clară. Meta este puternic pentru demand generation, remarketing și distribuție creativă. De multe ori funcționează mai bine împreună."
+          },
+          {
+            "id": "google-meta-ads-faq-4",
+            "question": "Includeți tracking și conversii?",
+            "answer": "Da. Verificăm GA4, Pixel, Conversions API, evenimente, formulare și obiective. Fără date corecte, campaniile nu pot fi optimizate responsabil."
+          },
+          {
+            "id": "google-meta-ads-faq-5",
+            "question": "Cât durează optimizarea campaniilor?",
+            "answer": "Primele ajustări pot apărea rapid, dar deciziile solide au nevoie de date. În general, lucrăm în cicluri de testare, învățare și scalare."
+          },
+          {
+            "id": "google-meta-ads-faq-6",
+            "question": "Cum evaluați calitatea leadurilor?",
+            "answer": "Privim dincolo de CPL: analizăm rata de contactare, relevanța cererii, valoarea potențială, feedbackul din vânzări și conversiile post-lead."
+          }
+        ]
+      },
+      {
+        "id": "productie-video-faq",
+        "title": "Întrebări frecvente despre Producție Video",
+        "assignedPaths": [
+          "/productie-video"
+        ],
+        "items": [
+          {
+            "id": "productie-video-faq-1",
+            "question": "Ce tipuri de video produce Digital Dot?",
+            "answer": "Producem materiale pentru social media, reclame, website, brand, prezentări comerciale, produse, HoReCa, servicii, testimonials și campanii integrate."
+          },
+          {
+            "id": "productie-video-faq-2",
+            "question": "Video-ul este gândit și pentru reclame?",
+            "answer": "Da. Stabilim de la început ce materiale sunt pentru ads, ce materiale sunt pentru organic și ce versiuni trebuie livrate pentru fiecare platformă."
+          },
+          {
+            "id": "productie-video-faq-3",
+            "question": "Cât durează o producție video?",
+            "answer": "Depinde de complexitate: concept, locații, număr de cadre, oameni implicați și post-producție. Stabilim calendarul după brief și livrabile."
+          },
+          {
+            "id": "productie-video-faq-4",
+            "question": "Pot folosi materialele și pe website?",
+            "answer": "Da. Planificăm cadre și formate utile pentru website, landing pages, pagini de servicii și prezentări comerciale, nu doar pentru social media."
+          },
+          {
+            "id": "productie-video-faq-5",
+            "question": "Aveți nevoie de scenariu?",
+            "answer": "Da, chiar și pentru materiale scurte. Scenariul poate fi minimalist, dar trebuie să clarifice mesajul, ritmul, cadrele și rolul comercial al materialului."
+          },
+          {
+            "id": "productie-video-faq-6",
+            "question": "De ce contează producția video pentru brand?",
+            "answer": "Pentru că imaginea transmite rapid calitate, energie și încredere. Video-ul bun reduce distanța dintre companie și public, mai ales în piețe competitive."
+          }
+        ]
+      },
+      {
+        "id": "seo-faq",
+        "title": "Întrebări frecvente despre SEO",
+        "assignedPaths": [
+          "/seo"
+        ],
+        "items": [
+          {
+            "id": "seo-faq-1",
+            "question": "Ce include un audit SEO?",
+            "answer": "Auditul include crawlabilitate, metadata, canonicals, sitemap, robots, headings, conținut, linkuri interne, performanță, schema, imagini și oportunități de conținut."
+          },
+          {
+            "id": "seo-faq-2",
+            "question": "Ce este AI SEO?",
+            "answer": "AI SEO înseamnă optimizare pentru sisteme precum ChatGPT, Gemini, Claude și Perplexity prin structură semantică, entități clare, conținut explicit, schema și llms.txt."
+          },
+          {
+            "id": "seo-faq-3",
+            "question": "Cât durează până apar rezultate SEO?",
+            "answer": "SEO este un canal de acumulare. Unele probleme tehnice pot produce efecte rapide, dar autoritatea organică și conținutul au nevoie de luni de lucru consecvent."
+          },
+          {
+            "id": "seo-faq-4",
+            "question": "FAQ-urile ajută SEO?",
+            "answer": "Da, dacă răspund la întrebări reale și sunt implementate semantic. FAQ-urile clarifică intenții de căutare și pot fi incluse în FAQ Schema."
+          },
+          {
+            "id": "seo-faq-5",
+            "question": "SEO este diferit pentru business-uri locale?",
+            "answer": "Da. Pentru business-uri locale contează Google Business, pagini regionale, consistența datelor de contact, recenziile, servicii clare și conținut adaptat contextului local."
+          },
+          {
+            "id": "seo-faq-6",
+            "question": "Aveți nevoie de blog pentru SEO?",
+            "answer": "Nu întotdeauna la început, dar blogul devine util când există o strategie de autoritate topică. Prioritatea este fundația: servicii, structură, schema și conținut principal solid."
+          }
+        ]
+      },
+      {
+        "id": "website-creation-faq",
+        "title": "Întrebări frecvente despre Website Creation",
+        "assignedPaths": [
+          "/website-creation"
+        ],
+        "items": [
+          {
+            "id": "website-creation-faq-1",
+            "question": "Ce înseamnă website SEO-first?",
+            "answer": "Înseamnă că structura, headingurile, metadata, viteza, schema, sitemapul, URL-urile și conținutul sunt gândite înainte de lansare, nu reparate ulterior."
+          },
+          {
+            "id": "website-creation-faq-2",
+            "question": "Construiți website-uri responsive?",
+            "answer": "Da. Website-ul trebuie să funcționeze bine pe desktop, tabletă și mobil, cu ierarhie clară, încărcare rapidă și interacțiuni potrivite pentru touch."
+          },
+          {
+            "id": "website-creation-faq-3",
+            "question": "Website-ul poate fi editat din admin?",
+            "answer": "Da, zonele importante de conținut și SEO sunt pregătite pentru editare din panou, astfel încât site-ul să poată evolua fără intervenții inutile."
+          },
+          {
+            "id": "website-creation-faq-4",
+            "question": "Includeți optimizare de performanță?",
+            "answer": "Da. Urmărim imagini optimizate, dimensiuni stabile, font loading corect, lazy loading unde este potrivit și structură care reduce layout shift."
+          },
+          {
+            "id": "website-creation-faq-5",
+            "question": "Care este diferența dintre design și arhitectură de conversie?",
+            "answer": "Designul construiește percepție. Arhitectura de conversie organizează decizia: mesaj, dovadă, structură, CTA, formulare și traseu logic."
+          },
+          {
+            "id": "website-creation-faq-6",
+            "question": "Website-ul se poate extinde cu blog și pagini regionale?",
+            "answer": "Da. Structura este gândită pentru scalare cu servicii, articole, case studies, SEO regional și conținut semantic fără a aglomera navigația principală."
           }
         ]
       }
@@ -2212,6 +2417,607 @@
             "href": "/blog"
           }
         ]
+      }
+    ]
+  },
+  "serviceSeo": {
+    "enabled": true,
+    "footerTitle": "Servicii",
+    "pages": [
+      {
+        "id": "social-media-management",
+        "path": "/social-media-management",
+        "enabled": true,
+        "title": "Social Media Management",
+        "eyebrow": "Conținut. Ritm. Încredere.",
+        "heroImage": "/images/social-media/social-preview.svg",
+        "intro": "Social Media Management înseamnă mai mult decât publicare frecventă. Pentru Digital Dot, înseamnă un sistem editorial care transformă poziționarea într-un ritm vizibil, memorabil și util pentru decizia de cumpărare.",
+        "ctaLabel": "Discută strategia social media",
+        "ctaHref": "/#contact",
+        "explanationTitle": "Ce înseamnă Social Media Management când este tratat ca infrastructură de brand",
+        "explanationParagraphs": [
+          "Un brand matur nu postează doar pentru a rămâne activ. Construiește contexte repetabile în care publicul înțelege cine este compania, ce promite, ce problemă rezolvă și de ce merită atenție. Social Media Management devine astfel o infrastructură de încredere: calendar editorial, direcție creativă, consistență vizuală, mesaje recurente și feedback interpretat corect.",
+          "Multe companii eșuează în social media pentru că tratează canalul ca pe o galerie de postări disparate. În lipsa unei strategii, apar formate fără direcție, tonuri schimbătoare, campanii reactive și conținut care adună impresii, dar nu construiește memorie de brand. Digital Dot pornește de la poziționare, ofertă, audiență și traseul real al deciziei, nu de la ideea că trebuie să existe o postare nouă cu orice preț.",
+          "Un sistem editorial bun combină psihologia audienței cu disciplină operațională. Folosim teme, piloni de conținut, serii recurente, video scurt, carousels, stories și mesaje de conversie într-o arhitectură coerentă. Fiecare material trebuie să aibă un rol: clarifică, educă, validează, reduce risc, arată expertiză sau creează următorul pas către conversație."
+        ],
+        "problemsTitle": "Probleme de business pe care social media le scoate rapid la suprafață",
+        "problems": [
+          {
+            "id": "inconsistent-branding",
+            "title": "Branding inconsistent",
+            "description": "Când fiecare postare pare din altă companie, publicul nu dezvoltă recunoaștere. Inconsistența reduce încrederea și face campaniile plătite mai scumpe, pentru că brandul nu are memorie acumulată."
+          },
+          {
+            "id": "weak-positioning",
+            "title": "Poziționare neclară",
+            "description": "Dacă mesajele nu explică diferența reală, audiența compară doar prețul. Social media trebuie să susțină poziționarea, nu să o dilueze prin conținut decorativ."
+          },
+          {
+            "id": "random-content",
+            "title": "Conținut fără sistem",
+            "description": "Postările izolate pot produce reacții temporare, dar nu formează autoritate. Fără piloni editoriali și repetiție inteligentă, rezultatele rămân greu de măsurat și imposibil de scalat."
+          },
+          {
+            "id": "low-trust",
+            "title": "Lipsă de încredere",
+            "description": "Oamenii cumpără mai ușor de la companii pe care le înțeleg. Conținutul trebuie să arate competență, proces, rezultate, oameni și criterii de decizie, nu doar promisiuni."
+          },
+          {
+            "id": "creative-fatigue",
+            "title": "Oboseală creativă",
+            "description": "Când echipa improvizează lunar, calitatea scade. Un sistem editorial reduce presiunea, clarifică producția și menține consistența fără a sacrifica naturalețea."
+          },
+          {
+            "id": "no-conversion-path",
+            "title": "Fără traseu către conversie",
+            "description": "Reach-ul este util doar dacă există următorul pas. Social media trebuie conectată la website, landing pages, reclame, formular, calendar de vânzări și follow-up."
+          }
+        ],
+        "approachTitle": "Abordarea Digital Dot",
+        "approachIntro": "Lucrăm social media ca pe un sistem, nu ca pe o listă de livrabile. Ritmul este important, dar direcția este decisivă.",
+        "approachSteps": [
+          {
+            "id": "audit",
+            "title": "Audit și poziționare",
+            "description": "Analizăm comunicarea actuală, competiția, publicul, diferențiatorii și rolul fiecărui canal. Stabilim ce trebuie repetat, ce trebuie eliminat și ce trebuie clarificat."
+          },
+          {
+            "id": "strategy",
+            "title": "Strategie editorială",
+            "description": "Construim piloni de conținut, teme lunare, serii recurente și direcții creative care susțin obiectivele comerciale ale brandului."
+          },
+          {
+            "id": "execution",
+            "title": "Execuție și producție",
+            "description": "Transformăm strategia în postări, carousels, reels, stories și materiale utile pentru campanii, cu atenție la consistență vizuală și ton."
+          },
+          {
+            "id": "optimization",
+            "title": "Optimizare",
+            "description": "Cititm datele fără vanitate: retenție, salvări, comentarii relevante, clickuri, leaduri și semnale de încredere. Ajustăm pe baza comportamentului real."
+          }
+        ],
+        "authorityTitle": "De ce contează pentru Google SEO și AI SEO",
+        "authorityParagraphs": [
+          "Conținutul social nu este doar distribuție. El consolidează entitatea Digital Dot și entitățile brandului clientului prin mesaje recurente, servicii explicite, oameni, proiecte și contexte de piață. Pentru sistemele AI, consistența semantică dintre website, social profiles, Google Business și conținut public ajută la recunoașterea mai clară a expertizei.",
+          "Pentru Google, social media nu înlocuiește SEO, dar susține cererea de brand, clickurile directe, reputația, mențiunile și semnalele externe. O companie care comunică coerent devine mai ușor de căutat, de citat și de înțeles. Această claritate ajută și reclamele: creativele performează mai bine când publicul a întâlnit deja aceeași promisiune în conținut organic.",
+          "Digital Dot conectează Social Media Management cu Google Ads, Meta Ads, producție video, website creation și SEO. Când aceste piese nu sunt separate artificial, brandul are o voce mai stabilă, un funnel mai clar și o infrastructură de marketing care poate fi optimizată pe termen lung."
+        ],
+        "relatedTitle": "Linkuri interne utile pentru context",
+        "relatedLinks": [
+          {
+            "label": "Google & Meta Ads",
+            "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Video",
+            "href": "/productie-video"
+          },
+          {
+            "label": "Website Creation",
+            "href": "/website-creation"
+          },
+          {
+            "label": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "label": "Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          }
+        ],
+        "cta": {
+          "title": "Social media are nevoie de direcție înainte de volum.",
+          "description": "Putem începe cu o discuție despre poziționare, audiență, ritm editorial și rolul conținutului în procesul tău de vânzare.",
+          "primaryLabel": "Programează o discuție",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Vezi case studies",
+          "secondaryHref": "/case-studies"
+        }
+      },
+      {
+        "id": "google-meta-ads",
+        "path": "/google-meta-ads",
+        "enabled": true,
+        "title": "Google Ads & Meta Ads",
+        "eyebrow": "Paid media cu tracking corect",
+        "heroImage": "/branding/references/ai-buget-marketing-sau-doar-sperante.png",
+        "intro": "Google Ads și Meta Ads funcționează când sunt construite ca un sistem de performanță: tracking curat, funnel clar, mesaje testabile, bugete disciplinate și optimizare după calitatea rezultatelor, nu după impresii.",
+        "ctaLabel": "Auditează campaniile",
+        "ctaHref": "/#contact",
+        "explanationTitle": "Ce înseamnă performance marketing responsabil",
+        "explanationParagraphs": [
+          "Reclamele plătite pot accelera creșterea, dar pot accelera și risipa. Diferența apare în infrastructură: conturi curate, conversii măsurate corect, audiențe separate logic, landing pages rapide și creative care corespund etapei din funnel. Fără aceste piese, algoritmii optimizează după semnale incomplete.",
+          "Digital Dot tratează Google Ads și Meta Ads ca pe un sistem de decizie. Nu urmărim doar clickuri, CPM sau leaduri ieftine. Urmărim raportul dintre intenție, cost, calitatea leadului, capacitatea de conversie și valoarea comercială. Uneori problema nu este în campanie, ci în ofertă, website, formular sau follow-up.",
+          "O structură bună separă căutarea cu intenție mare de audiențele reci, remarketingul de prospectare și testele creative de campaniile stabile. Asta permite bugetelor să fie direcționate pe ipoteze clare, nu pe impulsuri. În timp, reclamele devin un instrument predictibil, nu un pariu lunar."
+        ],
+        "problemsTitle": "Unde se pierd de obicei bugetele",
+        "problems": [
+          {
+            "id": "bad-tracking",
+            "title": "Tracking incomplet",
+            "description": "Dacă evenimentele sunt greșite, fiecare decizie ulterioară devine fragilă. GA4, Pixel, CAPI și conversiile trebuie să fie verificate înainte de scalare."
+          },
+          {
+            "id": "poor-leads",
+            "title": "Leaduri multe, calitate slabă",
+            "description": "Un CPL mic poate ascunde pierderi comerciale. Optimizarea trebuie să țină cont de calitatea leadului, nu doar de volumul formularului."
+          },
+          {
+            "id": "unclear-funnel",
+            "title": "Funnel neclar",
+            "description": "Aceeași reclamă nu poate convinge toate audiențele. Mesajele trebuie adaptate pentru awareness, considerație, conversie și remarketing."
+          },
+          {
+            "id": "creative-fatigue",
+            "title": "Creative epuizate",
+            "description": "Campaniile scad când materialele nu mai produc atenție. Sistemul trebuie să includă producție și refresh creativ, nu doar optimizare în platformă."
+          },
+          {
+            "id": "weak-landing",
+            "title": "Landing page slab",
+            "description": "Dacă pagina nu explică oferta, nu reduce riscul și nu are viteză bună, bugetul plătit cumpără trafic care se pierde."
+          },
+          {
+            "id": "budget-noise",
+            "title": "Bugete mutate fără logică",
+            "description": "Schimbările dese, fără ipoteze și perioade de învățare, creează zgomot. Optimizarea are nevoie de disciplină și citire corectă a datelor."
+          }
+        ],
+        "approachTitle": "Abordarea Digital Dot",
+        "approachIntro": "Începem de la măsurare și ofertă, apoi construim campanii capabile să învețe corect.",
+        "approachSteps": [
+          {
+            "id": "audit",
+            "title": "Audit tehnic și comercial",
+            "description": "Verificăm conturile, conversiile, istoricul, website-ul, formularul, oferta și calitatea datelor existente."
+          },
+          {
+            "id": "architecture",
+            "title": "Arhitectură de campanii",
+            "description": "Separăm campaniile după intenție, audiență, obiectiv, mesaj și etapă de funnel pentru a evita confuzia algoritmică."
+          },
+          {
+            "id": "creative",
+            "title": "Mesaje și creative",
+            "description": "Dezvoltăm unghiuri de comunicare testabile și materiale adaptate pentru Google Search, Performance Max, Meta prospecting și remarketing."
+          },
+          {
+            "id": "optimization",
+            "title": "Optimizare continuă",
+            "description": "Analizăm CPA, CPL, ROAS, rate de conversie, calitate leaduri și comportament post-click pentru decizii mai bune de buget."
+          }
+        ],
+        "authorityTitle": "Rolul reclamelor într-o infrastructură SEO și AI-ready",
+        "authorityParagraphs": [
+          "Paid media nu este separat de SEO. Reclamele generează cerere, testează mesaje, validează oferte și produce date despre intenție. Aceste date pot informa pagini de servicii, articole, FAQ-uri și structură semantică pentru căutare organică.",
+          "Pentru AI SEO, claritatea entităților contează: Digital Dot, Google Ads, Meta Ads, strategie de marketing, conversii, funnel, tracking și website trebuie să apară coerent în pagini, schema, social profiles și Google Business. Sistemele AI înțeleg mai bine expertiza când conținutul este explicit și conectat.",
+          "De aceea campaniile performante nu sunt doar operațiuni media buying. Ele sunt un laborator de poziționare, conversie și învățare. Când concluziile intră în website, conținut și SEO, compania construiește autoritate pe termen lung, nu doar trafic închiriat."
+        ],
+        "relatedTitle": "Linkuri interne utile pentru performanță",
+        "relatedLinks": [
+          {
+            "label": "Website Creation",
+            "href": "/website-creation"
+          },
+          {
+            "label": "SEO",
+            "href": "/seo"
+          },
+          {
+            "label": "Social Media Management",
+            "href": "/social-media-management"
+          },
+          {
+            "label": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "label": "Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          }
+        ],
+        "cta": {
+          "title": "Campaniile bune încep cu date curate.",
+          "description": "Putem analiza structura actuală, trackingul și traseul de conversie înainte să decizi următorul buget.",
+          "primaryLabel": "Cere un audit",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Vezi servicii conexe",
+          "secondaryHref": "/seo"
+        }
+      },
+      {
+        "id": "productie-video",
+        "path": "/productie-video",
+        "enabled": true,
+        "title": "Producție Video",
+        "eyebrow": "Imagine cinematică cu rol comercial",
+        "heroImage": "/images/photo-video/camera-rig.svg",
+        "intro": "Producția video Digital Dot combină atenția cinematică pentru imagine cu rolul pragmatic al marketingului: materiale care explică, diferențiază, rețin atenția și susțin conversia în social media, ads și website.",
+        "ctaLabel": "Discută un concept video",
+        "ctaHref": "/#contact",
+        "explanationTitle": "Ce înseamnă producție video pentru branduri care vor să fie luate în serios",
+        "explanationParagraphs": [
+          "Video-ul nu mai este doar un format de prezentare. Este una dintre cele mai rapide forme prin care un public evaluează energie, calitate, proces, oameni și diferență. În atenția comprimată de astăzi, un material video bun poate clarifica în câteva secunde ceea ce un text explică în minute.",
+          "Multe companii produc video-uri frumoase, dar greu de folosit în marketing. Digital Dot pornește de la rolul materialului: brand awareness, reclamă, landing page, recrutare, prezentare de produs, social media sau dovadă de încredere. Conceptul, cadrele și montajul sunt adaptate acestei funcții.",
+          "O producție eficientă livrează modular. Dintr-o filmare pot rezulta spoturi scurte, reels, cadre pentru website, secvențe pentru campanii, testimonials, b-roll și materiale evergreen. Asta transformă producția video într-o investiție reutilizabilă, nu într-un eveniment izolat."
+        ],
+        "problemsTitle": "Probleme pe care video-ul le poate rezolva sau amplifica",
+        "problems": [
+          {
+            "id": "generic-look",
+            "title": "Imagine generică",
+            "description": "Dacă materialele arată interschimbabil, brandul nu câștigă diferență. Stilul vizual trebuie să exprime poziționarea, nu doar să arate premium."
+          },
+          {
+            "id": "no-story",
+            "title": "Fără poveste comercială",
+            "description": "Cadrele bune nu sunt suficiente. Fiecare video trebuie să aibă un fir: problemă, context, promisiune, dovadă și următor pas."
+          },
+          {
+            "id": "low-retention",
+            "title": "Retenție slabă",
+            "description": "Primele secunde decid atenția. Ritmul, unghiul de mesaj și montajul trebuie construite pentru comportamentul real al platformei."
+          },
+          {
+            "id": "unused-assets",
+            "title": "Materiale greu de reutilizat",
+            "description": "O filmare fără plan de livrabile produce fișiere frumoase, dar puțin utile. Avem nevoie de variante pentru ads, social, website și vânzări."
+          },
+          {
+            "id": "brand-disconnect",
+            "title": "Deconectare de brand",
+            "description": "Video-ul trebuie să pară parte din identitatea companiei. Culorile, tonul, cadrele și mesajul trebuie să susțină aceeași promisiune."
+          },
+          {
+            "id": "poor-commercial-fit",
+            "title": "Lipsă de obiectiv",
+            "description": "Un video fără obiectiv clar este greu de evaluat. Definim înainte dacă scopul este atenție, încredere, explicație sau conversie."
+          }
+        ],
+        "approachTitle": "Abordarea Digital Dot",
+        "approachIntro": "Construim materialele video dinspre strategie spre imagine, apoi livrăm formate pregătite pentru distribuție.",
+        "approachSteps": [
+          {
+            "id": "concept",
+            "title": "Concept și rol",
+            "description": "Clarificăm publicul, mesajul, canalul și obiectivul materialului înainte de filmare."
+          },
+          {
+            "id": "production",
+            "title": "Producție",
+            "description": "Planificăm cadre, locații, oameni, produse și lumină pentru a obține materiale coerente cu brandul."
+          },
+          {
+            "id": "post-production",
+            "title": "Post-producție",
+            "description": "Edităm ritmul, culoarea, sunetul, grafica și versiunile astfel încât materialul să fie gata pentru platformele relevante."
+          },
+          {
+            "id": "distribution",
+            "title": "Distribuție inteligentă",
+            "description": "Pregătim livrabile pentru social media, Google & Meta Ads, website și comunicare comercială."
+          }
+        ],
+        "authorityTitle": "Video, semantică și încredere",
+        "authorityParagraphs": [
+          "Pentru AI SEO și Google SEO, video-ul devine mai valoros când este conectat la pagini indexabile, texte descriptive, metadata, schema și contexte clare. Un material publicat fără structură este greu de interpretat. Un material integrat în pagini de servicii, studii de caz și articole devine dovadă semantică.",
+          "Digital Dot folosește producția video ca parte dintr-un ecosistem: social media, paid media, website creation și SEO. Astfel, aceeași direcție vizuală întărește recunoașterea brandului în mai multe puncte de contact.",
+          "Într-o piață în care atenția este scumpă, calitatea vizuală nu este decor. Este o formă de poziționare. Dar calitatea devine eficientă doar când este legată de obiective, audiență și structură comercială."
+        ],
+        "relatedTitle": "Linkuri interne utile pentru producție și distribuție",
+        "relatedLinks": [
+          {
+            "label": "Social Media Management",
+            "href": "/social-media-management"
+          },
+          {
+            "label": "Google & Meta Ads",
+            "href": "/google-meta-ads"
+          },
+          {
+            "label": "Website Creation",
+            "href": "/website-creation"
+          },
+          {
+            "label": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "label": "Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          }
+        ],
+        "cta": {
+          "title": "Un video bun trebuie să fie frumos și folosibil.",
+          "description": "Putem discuta despre rolul materialului, formatele necesare și modul în care producția se conectează la marketingul tău.",
+          "primaryLabel": "Planifică o producție",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Vezi portofoliu",
+          "secondaryHref": "/case-studies"
+        }
+      },
+      {
+        "id": "seo",
+        "path": "/seo",
+        "enabled": true,
+        "title": "SEO",
+        "eyebrow": "Google Search + AI Search",
+        "heroImage": "/branding/references/door-strategy-wide.png",
+        "intro": "SEO nu mai înseamnă doar poziții în Google. Înseamnă arhitectură semantică, performanță tehnică, conținut clar, structured data și o prezență pe care sistemele AI o pot înțelege, cita și recomanda.",
+        "ctaLabel": "Cere un audit SEO",
+        "ctaHref": "/#contact",
+        "explanationTitle": "Ce înseamnă SEO modern pentru companii care vor vizibilitate predictibilă",
+        "explanationParagraphs": [
+          "SEO modern este o combinație între infrastructură tehnică, strategie de conținut, intenție de căutare și claritate semantică. Google trebuie să poată crawla, indexa și interpreta pagina. Utilizatorul trebuie să găsească repede răspunsuri credibile. Sistemele AI trebuie să recunoască entitățile, serviciile, locațiile, expertiza și relațiile dintre ele.",
+          "Companiile pierd vizibilitate când au pagini subțiri, structură confuză, meta descrieri generice, headinguri fără logică, imagini neoptimizate, lipsă de schema și conținut care nu răspunde intenției reale. Traficul organic nu apare doar pentru că există un website; apare când fiecare pagină are un rol clar în arhitectura de informație.",
+          "Digital Dot construiește SEO ca un sistem de autoritate. Asta înseamnă pagini de servicii bine explicate, FAQ-uri indexabile, legături interne, articole strategice, sitemap curat, robots corect, llms.txt, JSON-LD, performanță și un model editorial care poate crește fără să devină spam."
+        ],
+        "problemsTitle": "Blocaje SEO frecvente",
+        "problems": [
+          {
+            "id": "thin-content",
+            "title": "Conținut prea subțire",
+            "description": "Pagini care spun puțin nu pot construi autoritate. Fiecare serviciu are nevoie de explicații, context, probleme, abordare și întrebări reale."
+          },
+          {
+            "id": "technical-debt",
+            "title": "Datorie tehnică",
+            "description": "Indexarea, canonicals, sitemap, performanța, imaginile și structura HTML pot bloca rezultatele chiar dacă textele sunt bune."
+          },
+          {
+            "id": "weak-intent",
+            "title": "Intenție de căutare ignorată",
+            "description": "SEO nu înseamnă să repeți cuvinte cheie. Înseamnă să răspunzi precis la ce caută utilizatorul în fiecare etapă."
+          },
+          {
+            "id": "no-structured-data",
+            "title": "Lipsă structured data",
+            "description": "Schema.org ajută motoarele de căutare și sistemele AI să înțeleagă organizația, serviciile, FAQ-urile, articolele și breadcrumburile."
+          },
+          {
+            "id": "poor-linking",
+            "title": "Linking intern slab",
+            "description": "Paginile fără legături interne rămân izolate. O arhitectură bună conectează homepage, servicii, contact, blog, case studies și pagini regionale."
+          },
+          {
+            "id": "ai-blindness",
+            "title": "Lipsă AI SEO",
+            "description": "Sistemele AI au nevoie de entități explicite, ierarhie clară, llms.txt, conținut coerent și surse publice consistente."
+          }
+        ],
+        "approachTitle": "Abordarea Digital Dot",
+        "approachIntro": "Optimizăm SEO ca infrastructură de business: tehnic, semantic, editorial și orientat spre creștere sustenabilă.",
+        "approachSteps": [
+          {
+            "id": "audit",
+            "title": "Audit tehnic și semantic",
+            "description": "Verificăm crawlabilitatea, metadata, headings, sitemap, robots, schema, viteza, structură URL, conținut și legături interne."
+          },
+          {
+            "id": "architecture",
+            "title": "Arhitectură de conținut",
+            "description": "Stabilim pagini de servicii, hub-uri, articole, FAQ-uri, categorii și conexiuni interne pentru autoritate topică."
+          },
+          {
+            "id": "implementation",
+            "title": "Implementare SEO + AI SEO",
+            "description": "Aplicăm metadata, JSON-LD, llms.txt, optimizări de performanță, pagini indexabile și conținut semantic."
+          },
+          {
+            "id": "growth",
+            "title": "Creștere editorială",
+            "description": "Construim în timp articole, studii de caz, pagini regionale și răspunsuri la întrebări reale ale pieței."
+          }
+        ],
+        "authorityTitle": "AI SEO: de ce contează structura, nu doar textul",
+        "authorityParagraphs": [
+          "ChatGPT, Gemini, Claude și Perplexity nu citesc website-urile ca un om grăbit. Ele extrag entități, relații, surse, consistență și semnale de încredere. De aceea, Digital Dot optimizează nu doar pentru ranking, ci și pentru interpretare: cine este compania, ce servicii oferă, unde activează, ce expertiză are și ce conținut susține afirmațiile.",
+          "Un website AI-ready include headinguri clare, FAQ-uri reale, schema, breadcrumbs, social profiles, Google Business, pagini de servicii consistente și un llms.txt care explică structura publică. Aceste elemente nu garantează apariția în răspunsuri AI, dar cresc lizibilitatea și reduc ambiguitatea.",
+          "Pentru Google, aceeași disciplină produce beneficii clasice: indexare mai curată, snippeturi mai bune, relevanță crescută și capacitatea de a extinde site-ul cu blog, case studies și pagini regionale fără să compromită calitatea."
+        ],
+        "relatedTitle": "Linkuri interne utile pentru autoritate",
+        "relatedLinks": [
+          {
+            "label": "Website Creation",
+            "href": "/website-creation"
+          },
+          {
+            "label": "Google & Meta Ads",
+            "href": "/google-meta-ads"
+          },
+          {
+            "label": "Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "label": "Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          }
+        ],
+        "cta": {
+          "title": "SEO bun începe cu structură, nu cu trucuri.",
+          "description": "Putem analiza baza tehnică, arhitectura semantică și oportunitățile de conținut pentru următoarea etapă de creștere.",
+          "primaryLabel": "Cere audit SEO",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Citește articole",
+          "secondaryHref": "/blog"
+        }
+      },
+      {
+        "id": "website-creation",
+        "path": "/website-creation",
+        "enabled": true,
+        "title": "Website Creation",
+        "eyebrow": "Claritate. Conversie. Indexare.",
+        "heroImage": "/images/portfolio/shopify-upgrade.svg",
+        "intro": "Website creation înseamnă arhitectură de conversie, performanță, UX, conținut indexabil și o bază tehnică pregătită pentru marketing. Un website bun nu este o broșură; este infrastructură de business.",
+        "ctaLabel": "Discută arhitectura website-ului",
+        "ctaHref": "/#contact",
+        "explanationTitle": "Ce înseamnă un website construit pentru creștere",
+        "explanationParagraphs": [
+          "Un website matur trebuie să explice clar compania, serviciile, diferența, dovada și următorul pas. Designul contează, dar designul fără arhitectură produce pagini frumoase care nu conving. Digital Dot construiește website-uri pornind de la decizie: ce trebuie să înțeleagă utilizatorul, ce întrebări are, ce riscuri percepe și ce îl ajută să avanseze.",
+          "SEO-first development înseamnă că structura URL, headingurile, metadata, schema, viteza, imaginile, linkurile interne și conținutul sunt gândite înainte ca website-ul să fie publicat. Astfel, site-ul nu trebuie reparat imediat după lansare pentru a putea fi indexat corect.",
+          "Un website bun susține toate canalele: Google Ads, Meta Ads, social media, SEO, email, recrutare, vânzări și parteneriate. El devine locul unde mesajele se clarifică, ofertele se organizează și datele de conversie devin utile."
+        ],
+        "problemsTitle": "Probleme pe care le vedem des în website-uri",
+        "problems": [
+          {
+            "id": "unclear-message",
+            "title": "Mesaj neclar",
+            "description": "Vizitatorul nu înțelege rapid ce face compania, pentru cine și de ce contează. Asta reduce încrederea și crește abandonul."
+          },
+          {
+            "id": "poor-conversion",
+            "title": "Conversie slabă",
+            "description": "Formulare greu de găsit, CTA-uri vagi și pagini fără traseu logic fac ca traficul să nu devină conversații comerciale."
+          },
+          {
+            "id": "slow-performance",
+            "title": "Performanță scăzută",
+            "description": "Timpul de încărcare afectează experiența, reclamele, SEO și percepția de profesionalism."
+          },
+          {
+            "id": "no-seo-foundation",
+            "title": "Fără fundație SEO",
+            "description": "Pagini fără headinguri clare, schema, sitemap, metadata și conținut indexabil limitează vizibilitatea organică."
+          },
+          {
+            "id": "fragile-cms",
+            "title": "CMS greu de administrat",
+            "description": "Dacă echipa nu poate edita conținutul important, site-ul devine static și îmbătrânește rapid."
+          },
+          {
+            "id": "design-only",
+            "title": "Design fără strategie",
+            "description": "Estetica premium trebuie să susțină claritatea. Un website nu trebuie doar să impresioneze, ci să explice și să convertească."
+          }
+        ],
+        "approachTitle": "Abordarea Digital Dot",
+        "approachIntro": "Construim website-uri ca sisteme scalabile, conectate la marketing, SEO și obiective comerciale.",
+        "approachSteps": [
+          {
+            "id": "strategy",
+            "title": "Strategie și arhitectură",
+            "description": "Definim obiective, audiențe, pagini, servicii, trasee de conversie și structură semantică."
+          },
+          {
+            "id": "ux-content",
+            "title": "UX și conținut",
+            "description": "Organizăm secțiunile, mesajele, CTA-urile și dovada astfel încât utilizatorul să înțeleagă repede valoarea."
+          },
+          {
+            "id": "development",
+            "title": "Dezvoltare performantă",
+            "description": "Construim responsive, rapid, accesibil și pregătit pentru tracking, SEO, sitemap, robots și structured data."
+          },
+          {
+            "id": "optimization",
+            "title": "Lansare și optimizare",
+            "description": "Verificăm indexarea, formularele, evenimentele de conversie, performanța și comportamentul post-lansare."
+          }
+        ],
+        "authorityTitle": "Website-ul ca infrastructură pentru SEO, AI și conversie",
+        "authorityParagraphs": [
+          "Pentru Google și sistemele AI, website-ul este sursa principală de claritate. Dacă serviciile sunt explicate superficial, dacă entitățile nu sunt conectate și dacă paginile nu au structură semantică, brandul devine mai greu de interpretat. Website creation trebuie să includă din start SEO și AI SEO.",
+          "Un website Digital Dot poate fi extins cu pagini de servicii, blog, case studies, pagini regionale, FAQ-uri și schema fără să pară un director SEO. Asta este diferența dintre scalare și aglomerare. Structura trebuie să fie invizibilă când nu este necesară, dar foarte clară pentru crawlere și sisteme AI.",
+          "Pentru business, beneficiul este practic: campaniile plătite trimit trafic către pagini mai bune, social media are unde să ducă atenția, SEO are ce indexa, iar echipa de vânzări primește leaduri mai bine informate."
+        ],
+        "relatedTitle": "Linkuri interne utile pentru arhitectură digitală",
+        "relatedLinks": [
+          {
+            "label": "SEO",
+            "href": "/seo"
+          },
+          {
+            "label": "Google & Meta Ads",
+            "href": "/google-meta-ads"
+          },
+          {
+            "label": "Social Media Management",
+            "href": "/social-media-management"
+          },
+          {
+            "label": "Contact",
+            "href": "/#contact"
+          },
+          {
+            "label": "Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          }
+        ],
+        "cta": {
+          "title": "Website-ul trebuie să susțină decizia, nu doar să existe.",
+          "description": "Putem discuta despre structură, pagini, conținut, performanță și traseul real de conversie înainte de dezvoltare.",
+          "primaryLabel": "Începe o discuție",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Vezi SEO",
+          "secondaryHref": "/seo"
+        }
       }
     ]
   }

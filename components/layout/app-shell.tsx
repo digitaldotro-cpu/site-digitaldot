@@ -42,7 +42,9 @@ type AppShellProps = {
         logo?: string;
         description: string;
         socialLinksTitle: string;
-        socialLinks: Array<{ platform: "instagram" | "facebook" | "linkedin" | "tiktok"; url: string; enabled: boolean }>;
+        socialLinks: Array<{ platform: "instagram" | "facebook" | "linkedin" | "tiktok" | "google-business"; url: string; enabled: boolean }>;
+        serviceLinksTitle: string;
+        serviceLinks: Array<{ label: string; href: string; enabled: boolean }>;
         legalLinksTitle: string;
         legalLinks: Array<{ label: string; href: string }>;
         regionalLinksTitle: string;
@@ -197,6 +199,8 @@ export function AppShell({ children, content }: AppShellProps) {
         description={content.global.footer.description}
         socialLinksTitle={content.global.footer.socialLinksTitle}
         socialLinks={content.global.footer.socialLinks}
+        serviceLinksTitle={content.global.footer.serviceLinksTitle}
+        serviceLinks={content.global.footer.serviceLinks}
         regionalLinksTitle={content.global.footer.regionalLinksTitle}
         regionalLinks={content.global.footer.regionalLinks}
         legalLinksTitle={content.global.footer.legalLinksTitle}

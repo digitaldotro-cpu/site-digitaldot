@@ -1,7 +1,7 @@
 import { SocialLinkItem } from "@/components/layout/social-link-item";
 
 type FooterSocialLink = {
-  platform: "instagram" | "facebook" | "linkedin" | "tiktok";
+  platform: "instagram" | "facebook" | "linkedin" | "tiktok" | "google-business";
   url: string;
   enabled: boolean;
 };

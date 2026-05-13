@@ -1,20 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BarChart3, CheckCircle2, Clapperboard, Code2, Search, Share2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { FaqSection } from "@/components/seo/faq-section";
-import type { FaqGroupContent } from "@/lib/site-content-schema";
-import type { SeoServicePage } from "@/data/seo-pages";
+import type { FaqGroupContent, ServiceSeoPageContent } from "@/lib/site-content-schema";
 
 type ServicePageLayoutProps = {
-  page: SeoServicePage;
+  page: ServiceSeoPageContent;
   faqGroups: FaqGroupContent[];
 };
 
+const iconByPath = {
+  "/social-media-management": Share2,
+  "/google-meta-ads": BarChart3,
+  "/productie-video": Clapperboard,
+  "/website-creation": Code2,
+  "/seo": Search,
+} as const;
+
 export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
-  const Icon = page.icon;
+  const Icon = iconByPath[page.path as keyof typeof iconByPath] || CheckCircle2;
 
   return (
     <>
@@ -36,11 +43,11 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
               {page.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#c6c6c6]">
-              {page.description}
+              {page.intro}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <ButtonLink href="/#contact">
-                Hai să povestim
+              <ButtonLink href={page.ctaHref}>
+                {page.ctaLabel}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink href="/case-studies" variant="ghost">
@@ -72,26 +79,48 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
       <section className="border-y border-[#1a252d] bg-[#0d1217] py-18 sm:py-24" aria-labelledby="outcomes-title">
         <Container>
           <h2 id="outcomes-title" className="max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
-            Ce construim concret
+            {page.explanationTitle}
           </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {page.outcomes.map((outcome) => (
-              <article key={outcome} className="rounded-3xl border border-[#263740] bg-[#10181d] p-5">
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {page.explanationParagraphs.map((paragraph, index) => (
+              <article key={`${page.id}-explanation-${index}`} className="rounded-3xl border border-[#263740] bg-[#10181d] p-6">
                 <CheckCircle2 className="h-5 w-5 text-[#66fcf1]" />
-                <h3 className="mt-3 text-lg font-semibold text-white">{outcome}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-[#c6c6c6]">{paragraph}</p>
               </article>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-18 sm:py-24" aria-labelledby="process-title">
+      <section className="py-18 sm:py-24" aria-labelledby="problems-title">
         <Container>
-          <h2 id="process-title" className="text-3xl font-semibold text-white sm:text-4xl">
-            Proces de lucru
+          <h2 id="problems-title" className="max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
+            {page.problemsTitle}
           </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {page.problems.map((problem, index) => (
+              <article key={problem.id} className="rounded-3xl border border-[#263740] bg-[#10161a] p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-4 text-xl font-semibold text-white">{problem.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#c6c6c6]">{problem.description}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-[#1a252d] bg-[#0d1217] py-18 sm:py-24" aria-labelledby="process-title">
+        <Container>
+          <div className="max-w-3xl">
+            <h2 id="process-title" className="text-3xl font-semibold text-white sm:text-4xl">
+              {page.approachTitle}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-[#c6c6c6]">{page.approachIntro}</p>
+          </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {page.process.map((step, index) => (
+            {page.approachSteps.map((step, index) => (
               <article key={step.title} className="rounded-3xl border border-[#263740] bg-[#10161a] p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">
                   0{index + 1}
@@ -104,13 +133,30 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
         </Container>
       </section>
 
+      <section className="py-18 sm:py-24" aria-labelledby="authority-title">
+        <Container className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 id="authority-title" className="text-3xl font-semibold text-white sm:text-4xl">
+              {page.authorityTitle}
+            </h2>
+          </div>
+          <div className="space-y-5 lg:col-span-8">
+            {page.authorityParagraphs.map((paragraph, index) => (
+              <p key={`${page.id}-authority-${index}`} className="text-base leading-relaxed text-[#c6c6c6]">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="border-y border-[#1a252d] bg-[#0d1217] py-14" aria-labelledby="related-services-title">
         <Container>
           <h2 id="related-services-title" className="text-2xl font-semibold text-white">
-            Linkuri utile
+            {page.relatedTitle}
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            {page.related.map((item) => (
+            {page.relatedLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -124,6 +170,21 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
       </section>
 
       <FaqSection groups={faqGroups} />
+
+      <section className="py-18 sm:py-24" aria-labelledby="service-cta-title">
+        <Container>
+          <div className="rounded-[2rem] border border-[#276864]/45 bg-[#10181d] p-8 sm:p-10">
+            <h2 id="service-cta-title" className="max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
+              {page.cta.title}
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#c6c6c6]">{page.cta.description}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <ButtonLink href={page.cta.primaryHref}>{page.cta.primaryLabel}</ButtonLink>
+              <ButtonLink href={page.cta.secondaryHref} variant="ghost">{page.cta.secondaryLabel}</ButtonLink>
+            </div>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }

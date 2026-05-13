@@ -7,7 +7,7 @@ const navItemSchema = z.object({
 });
 
 const socialLinkSchema = z.object({
-  platform: z.enum(["instagram", "facebook", "linkedin", "tiktok"]),
+  platform: z.enum(["instagram", "facebook", "linkedin", "tiktok", "google-business"]),
   url: z.string().min(1),
   enabled: z.boolean().default(true),
 });
@@ -23,12 +23,20 @@ const footerRegionalLinkSchema = z.object({
   enabled: z.boolean().default(true),
 });
 
+const footerServiceLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+  enabled: z.boolean().default(true),
+});
+
 const footerSchema = z.object({
   logo: z.string().min(1).optional(),
   description: z.string().min(1),
   contactDescription: z.string().min(1),
   socialLinksTitle: z.string().min(1),
   socialLinks: z.array(socialLinkSchema).min(1),
+  serviceLinksTitle: z.string().min(1).default("Servicii"),
+  serviceLinks: z.array(footerServiceLinkSchema).default([]),
   regionalLinksTitle: z.string().min(1).default("Agenție de Marketing"),
   regionalLinks: z.array(footerRegionalLinkSchema).default([]),
   legalLinksTitle: z.string().min(1),
@@ -240,6 +248,60 @@ const faqGroupSchema = z.object({
   items: z.array(faqItemSchema).min(1),
 });
 
+const serviceProblemSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(20),
+});
+
+const serviceApproachStepSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(20),
+});
+
+const serviceRelatedLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+});
+
+const serviceSeoPageSchema = z.object({
+  id: z.string().min(1),
+  path: z.string().min(1),
+  enabled: z.boolean().default(true),
+  title: z.string().min(1),
+  eyebrow: z.string().min(1),
+  heroImage: z.string().min(1),
+  intro: z.string().min(20),
+  ctaLabel: z.string().min(1),
+  ctaHref: z.string().min(1),
+  explanationTitle: z.string().min(1),
+  explanationParagraphs: z.array(z.string().min(40)).min(3),
+  problemsTitle: z.string().min(1),
+  problems: z.array(serviceProblemSchema).min(3),
+  approachTitle: z.string().min(1),
+  approachIntro: z.string().min(20),
+  approachSteps: z.array(serviceApproachStepSchema).min(3),
+  authorityTitle: z.string().min(1),
+  authorityParagraphs: z.array(z.string().min(40)).min(3),
+  relatedTitle: z.string().min(1),
+  relatedLinks: z.array(serviceRelatedLinkSchema).default([]),
+  cta: z.object({
+    title: z.string().min(1),
+    description: z.string().min(20),
+    primaryLabel: z.string().min(1),
+    primaryHref: z.string().min(1),
+    secondaryLabel: z.string().min(1),
+    secondaryHref: z.string().min(1),
+  }),
+});
+
+const serviceSeoSchema = z.object({
+  enabled: z.boolean().default(true),
+  footerTitle: z.string().min(1).default("Servicii"),
+  pages: z.array(serviceSeoPageSchema).min(1),
+});
+
 const seoSettingsSchema = z.object({
   global: z.object({
     siteTitle: z.string().min(3),
@@ -390,6 +452,7 @@ export const siteContentSchema = z.object({
     footer: footerSchema,
   }),
   seoSettings: seoSettingsSchema,
+  serviceSeo: serviceSeoSchema,
   regionalSeo: regionalSeoSchema,
   landing: z.object({
     seoTitle: z.string().min(3),
@@ -534,5 +597,7 @@ export type SiteContent = z.infer<typeof siteContentSchema>;
 export type LandingSectionKey = z.infer<typeof sectionKeySchema>;
 export type LegalPageContent = z.infer<typeof legalPageSchema>;
 export type FaqGroupContent = z.infer<typeof faqGroupSchema>;
+export type ServiceSeoContent = z.infer<typeof serviceSeoSchema>;
+export type ServiceSeoPageContent = z.infer<typeof serviceSeoPageSchema>;
 export type RegionalSeoContent = z.infer<typeof regionalSeoSchema>;
 export type RegionalPageContent = z.infer<typeof regionalPageSchema>;

@@ -1,7 +1,7 @@
 import type { ComponentType, SVGProps } from "react";
-import { Camera, Building2, MessageCircle } from "lucide-react";
+import { Building2, Camera, MapPin, MessageCircle } from "lucide-react";
 
-type SocialPlatform = "instagram" | "facebook" | "linkedin" | "tiktok";
+type SocialPlatform = "instagram" | "facebook" | "linkedin" | "tiktok" | "google-business";
 
 type SocialLinkItemProps = {
   platform: SocialPlatform;
@@ -24,6 +24,7 @@ const iconByPlatform: Record<SocialPlatform, ComponentType<{ className?: string 
   facebook: MessageCircle,
   linkedin: Building2,
   tiktok: TikTokIcon,
+  "google-business": MapPin,
 };
 
 const labelByPlatform: Record<SocialPlatform, string> = {
@@ -31,6 +32,7 @@ const labelByPlatform: Record<SocialPlatform, string> = {
   facebook: "Facebook",
   linkedin: "LinkedIn",
   tiktok: "TikTok",
+  "google-business": "Google Business",
 };
 
 export function SocialLinkItem({ platform, url }: SocialLinkItemProps) {
