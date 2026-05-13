@@ -17,12 +17,20 @@ const legalLinkSchema = z.object({
   href: z.string().min(1),
 });
 
+const footerRegionalLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+  enabled: z.boolean().default(true),
+});
+
 const footerSchema = z.object({
   logo: z.string().min(1).optional(),
   description: z.string().min(1),
   contactDescription: z.string().min(1),
   socialLinksTitle: z.string().min(1),
   socialLinks: z.array(socialLinkSchema).min(1),
+  regionalLinksTitle: z.string().min(1).default("Agenție de Marketing"),
+  regionalLinks: z.array(footerRegionalLinkSchema).default([]),
   legalLinksTitle: z.string().min(1),
   legalLinks: z.array(legalLinkSchema).min(1),
   contactTitle: z.string().min(1),
@@ -261,6 +269,94 @@ const seoSettingsSchema = z.object({
   faqGroups: z.array(faqGroupSchema).default([]),
 });
 
+const regionalServiceSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  href: z.string().min(1),
+  description: z.string().min(20),
+});
+
+const regionalInternalLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+});
+
+const regionalPageSchema = z.object({
+  id: z.string().min(1),
+  slug: z.string().min(1),
+  cityName: z.string().min(1),
+  countyName: z.string().min(1),
+  enabled: z.boolean().default(true),
+  seoTitle: z.string().min(3),
+  seoDescription: z.string().min(10),
+  ogTitle: z.string().min(3),
+  ogDescription: z.string().min(10),
+  ogImage: z.string().min(1),
+  hero: z.object({
+    eyebrow: z.string().min(1),
+    title: z.string().min(1),
+    intro: z.string().min(20),
+    ctaLabel: z.string().min(1),
+    ctaHref: z.string().min(1),
+  }),
+  positioning: z.object({
+    title: z.string().min(1),
+    paragraphs: z.array(z.string().min(20)).min(2),
+  }),
+  regionalContext: z.object({
+    title: z.string().min(1),
+    paragraphs: z.array(z.string().min(20)).min(2),
+    sectors: z.array(z.string().min(1)).min(2),
+  }),
+  services: z.array(regionalServiceSchema).min(1),
+  worksWith: z.object({
+    title: z.string().min(1),
+    paragraphs: z.array(z.string().min(20)).min(2),
+    criteria: z.array(z.string().min(1)).min(2),
+  }),
+  faqs: z.array(faqItemSchema).min(1),
+  cta: z.object({
+    title: z.string().min(1),
+    description: z.string().min(20),
+    primaryLabel: z.string().min(1),
+    primaryHref: z.string().min(1),
+    secondaryLabel: z.string().min(1),
+    secondaryHref: z.string().min(1),
+  }),
+  internalLinks: z.array(regionalInternalLinkSchema).default([]),
+});
+
+const regionalSeoSchema = z.object({
+  enabled: z.boolean().default(true),
+  footerTitle: z.string().min(1),
+  hub: z.object({
+    path: z.string().min(1),
+    seoTitle: z.string().min(3),
+    seoDescription: z.string().min(10),
+    ogTitle: z.string().min(3),
+    ogDescription: z.string().min(10),
+    ogImage: z.string().min(1),
+    hero: z.object({
+      eyebrow: z.string().min(1),
+      title: z.string().min(1),
+      intro: z.string().min(20),
+      ctaLabel: z.string().min(1),
+      ctaHref: z.string().min(1),
+    }),
+    overviewTitle: z.string().min(1),
+    overviewParagraphs: z.array(z.string().min(20)).min(2),
+    serviceTitle: z.string().min(1),
+    regionTitle: z.string().min(1),
+    cta: z.object({
+      title: z.string().min(1),
+      description: z.string().min(20),
+      primaryLabel: z.string().min(1),
+      primaryHref: z.string().min(1),
+    }),
+  }),
+  pages: z.array(regionalPageSchema).min(1),
+});
+
 const sectionKeySchema = z.enum([
   "hero",
   "positioning",
@@ -294,6 +390,7 @@ export const siteContentSchema = z.object({
     footer: footerSchema,
   }),
   seoSettings: seoSettingsSchema,
+  regionalSeo: regionalSeoSchema,
   landing: z.object({
     seoTitle: z.string().min(3),
     seoDescription: z.string().min(10),
@@ -437,3 +534,5 @@ export type SiteContent = z.infer<typeof siteContentSchema>;
 export type LandingSectionKey = z.infer<typeof sectionKeySchema>;
 export type LegalPageContent = z.infer<typeof legalPageSchema>;
 export type FaqGroupContent = z.infer<typeof faqGroupSchema>;
+export type RegionalSeoContent = z.infer<typeof regionalSeoSchema>;
+export type RegionalPageContent = z.infer<typeof regionalPageSchema>;

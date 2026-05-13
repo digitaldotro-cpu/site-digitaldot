@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useMemo, useRef, useState } from "react";
 import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
@@ -65,6 +66,38 @@ const labelDictionary: Record<string, string> = {
   contact: "Contact",
   seoTitle: "Titlu SEO",
   seoDescription: "Descriere SEO",
+  ogTitle: "Titlu Open Graph",
+  ogDescription: "Descriere Open Graph",
+  ogImage: "Imagine Open Graph",
+  canonicalUrl: "URL Canonic",
+  seoSettings: "SEO Settings",
+  regionalSeo: "SEO Regional",
+  hub: "Hub Regional",
+  pages: "Pagini Regionale",
+  cityName: "Oraș",
+  countyName: "Județ",
+  regionalContext: "Context Regional",
+  sectors: "Sectoare",
+  worksWith: "Cu Cine Lucrăm",
+  criteria: "Criterii",
+  faqs: "FAQ",
+  cta: "CTA",
+  internalLinks: "Linkuri Interne",
+  defaultKeywords: "Cuvinte Cheie",
+  defaultOgImage: "Imagine OG Implicită",
+  canonicalBaseUrl: "Domeniu Canonic",
+  aiSeo: "AI SEO",
+  llmsTxt: "Editor llms.txt",
+  allowedCrawlers: "Crawler AI Permiși",
+  semanticKeywordGroups: "Grupuri Semantice",
+  structuredData: "Structured Data",
+  organizationName: "Nume Organizație",
+  legalName: "Nume Legal",
+  websiteUrl: "URL Website",
+  address: "Adresă",
+  assignedPaths: "Pagini Asociate",
+  question: "Întrebare",
+  answer: "Răspuns",
   sectionOrder: "Ordine Secțiuni",
   global: "Global",
   landing: "Landing Page",
@@ -83,6 +116,8 @@ const labelDictionary: Record<string, string> = {
   footer: "Subsol (Footer)",
   socialLinksTitle: "Titlu Rețele Sociale",
   socialLinks: "Rețele Sociale",
+  regionalLinksTitle: "Titlu Linkuri Regionale",
+  regionalLinks: "Linkuri Regionale",
   legalLinksTitle: "Titlu Linkuri Legale",
   legalLinks: "Linkuri Legale",
   contactTitle: "Titlu Contact",
@@ -505,7 +540,14 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
             className="shrink-0 flex items-center justify-center p-3 rounded-2xl bg-[#1c2c33] border border-[#2a3c44] transition-all hover:bg-[#25373f] hover:border-[#66fcf1]"
             title="Înapoi pe site"
           >
-            <img src="/branding/logo-primary.png" alt="Digital Dot Logo" className="h-6 w-auto" />
+            <Image
+              src="/branding/logo-primary.png"
+              alt="Digital Dot Logo"
+              width={120}
+              height={34}
+              unoptimized
+              className="h-6 w-auto"
+            />
           </Link>
         </div>
 

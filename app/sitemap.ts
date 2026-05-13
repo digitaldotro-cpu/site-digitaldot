@@ -15,8 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const serviceRoutes = seoServicePages.map((page) => page.path);
+  const regionalRoutes = content.regionalSeo.enabled
+    ? [
+        content.regionalSeo.hub.path,
+        ...content.regionalSeo.pages
+          .filter((page) => page.enabled !== false)
+          .map((page) => `/agentie-marketing/${page.slug}`),
+      ]
+    : [];
 
-  const staticEntries = [...staticRoutes, ...serviceRoutes].map((path) => ({
+  const staticEntries = [...staticRoutes, ...serviceRoutes, ...regionalRoutes].map((path) => ({
     url: absoluteUrl(path || "/", content),
     lastModified: new Date(),
   }));

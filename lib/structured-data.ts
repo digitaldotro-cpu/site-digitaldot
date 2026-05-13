@@ -1,5 +1,5 @@
 import type { BlogPost } from "@/types/content";
-import type { FaqGroupContent, SiteContent } from "@/lib/site-content-schema";
+import type { FaqGroupContent, RegionalPageContent, SiteContent } from "@/lib/site-content-schema";
 import { absoluteUrl, getCanonicalBaseUrl, getPageSeo, siteMetadata } from "@/lib/seo";
 
 type BreadcrumbItem = {
@@ -80,6 +80,44 @@ export function buildServiceSchema(content: SiteContent, path: string) {
     serviceType: service.name,
     areaServed: "Romania",
     mainEntityOfPage: pageSeo?.canonicalUrl || absoluteUrl(path, content),
+  };
+}
+
+export function buildRegionalServiceSchemas(content: SiteContent, page: RegionalPageContent) {
+  const pageUrl = absoluteUrl(`/agentie-marketing/${page.slug}`, content);
+
+  return page.services.map((service) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#${service.id}`,
+    name: `${service.title} ${page.cityName}`,
+    description: service.description,
+    url: pageUrl,
+    serviceType: service.title,
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: page.cityName,
+    },
+    provider: {
+      "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+      name: siteMetadata.siteName,
+    },
+    mainEntityOfPage: pageUrl,
+  }));
+}
+
+export function buildRegionalLocalBusinessSchema(content: SiteContent, page: RegionalPageContent) {
+  const base = buildLocalBusinessSchema(content);
+
+  return {
+    ...base,
+    "@id": `${absoluteUrl(`/agentie-marketing/${page.slug}`, content)}#localbusiness`,
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: page.cityName,
+    },
+    name: `${siteMetadata.siteName} - agenție de marketing ${page.cityName}`,
+    url: absoluteUrl(`/agentie-marketing/${page.slug}`, content),
   };
 }
 
