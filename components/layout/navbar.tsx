@@ -23,6 +23,7 @@ type NavbarProps = {
   navItems: NavItem[];
   ctaLabel: string;
   ctaHref: string;
+  contactPhone?: string;
   isVisible?: boolean;
   transitionDuration?: number;
 };
@@ -33,6 +34,7 @@ export function Navbar({
   navItems,
   ctaLabel,
   ctaHref,
+  contactPhone,
   isVisible = true,
   transitionDuration = 300,
 }: NavbarProps) {
@@ -210,7 +212,7 @@ export function Navbar({
 
           <div className="grid h-20 grid-cols-3 items-center lg:hidden">
             <a
-              href="tel:+40773330551"
+              href={`tel:${contactPhone || "+40773330551"}`}
               aria-label="Sună Digital Dot"
               className="inline-flex h-11 w-11 items-center justify-center justify-self-start rounded-full border border-[#2c3d44] bg-[#0f1418]/70 text-white transition-colors duration-300 hover:border-[#66fcf1]/50 hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
             >

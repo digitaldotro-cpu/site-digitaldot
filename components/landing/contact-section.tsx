@@ -31,11 +31,15 @@ export function ContactSection({ section, global }: ContactSectionProps) {
             <ul className="mt-4 space-y-3 text-sm text-[#c6c6c6]">
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
-                {global.footer.contactEmail}
+                <a href={`mailto:${global.footer.contactEmail}`} className="transition-colors hover:text-[#66fcf1]">
+                  {global.footer.contactEmail}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
-                {global.footer.contactPhone}
+                <a href={`tel:${global.footer.contactPhone}`} className="transition-colors hover:text-[#66fcf1]">
+                  {global.footer.contactPhone}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 text-[#66fcf1]" />

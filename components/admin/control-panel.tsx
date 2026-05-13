@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useMemo, useRef, useState } from "react";
 import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -491,10 +493,21 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
   return (
     <div className="space-y-8">
       <section className="rounded-[1.8rem] border border-[#2a3c44] bg-[#10181d] p-6 sm:p-8">
-        <h1 className="text-3xl font-semibold text-white">Panou de control conținut</h1>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#bfc5ca]">
-          Editează orice text, listă sau secțiune din website și salvează direct în `content/site-content.json`.
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+          <div>
+            <h1 className="text-3xl font-semibold text-white">Panou de control conținut</h1>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#bfc5ca]">
+              Editează orice text, listă sau secțiune din website și salvează direct în `content/site-content.json`.
+            </p>
+          </div>
+          <Link 
+            href="/" 
+            className="shrink-0 flex items-center justify-center p-3 rounded-2xl bg-[#1c2c33] border border-[#2a3c44] transition-all hover:bg-[#25373f] hover:border-[#66fcf1]"
+            title="Înapoi pe site"
+          >
+            <img src="/branding/logo-primary.png" alt="Digital Dot Logo" className="h-6 w-auto" />
+          </Link>
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-4 text-xs text-[#8ea0aa]">
           <span>Status modificări: <span className={dirty ? "text-[#f0b5bb]" : "text-[#9bc6c3]"}>{dirty ? "Nesalvate" : "Sincronizat"}</span></span>

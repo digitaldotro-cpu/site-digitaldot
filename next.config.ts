@@ -73,6 +73,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/politica-de-confidentialitate",
+        destination: "/politica-confidentialitate",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -73,8 +73,12 @@ export function Footer({
             {contactTitle}
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
-            <li>Email: {contactEmail}</li>
-            <li>Telefon: {contactPhone}</li>
+            <li>
+              Email: <a href={`mailto:${contactEmail}`} className="transition-colors hover:text-[#66fcf1]">{contactEmail}</a>
+            </li>
+            <li>
+              Telefon: <a href={`tel:${contactPhone}`} className="transition-colors hover:text-[#66fcf1]">{contactPhone}</a>
+            </li>
             <li>{contactLocation}</li>
           </ul>
         </div>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { siteMetadata } from "@/lib/seo";
+import { generateArticleSchema } from "@/lib/schema";
 import { BlogPostLayout } from "@/components/blog/blog-post-layout";
 import { mdxComponents } from "@/components/blog/mdx-components";
 
@@ -65,10 +66,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const relatedPosts = await getRelatedPosts(post.slug, 3);
+  const jsonLd = generateArticleSchema(post);
 
   return (
-    <BlogPostLayout post={post} relatedPosts={relatedPosts}>
-      <MDXRemote source={post.content} components={mdxComponents} />
-    </BlogPostLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogPostLayout post={post} relatedPosts={relatedPosts}>
+        <MDXRemote source={post.content} components={mdxComponents} />
+      </BlogPostLayout>
+    </>
   );
 }

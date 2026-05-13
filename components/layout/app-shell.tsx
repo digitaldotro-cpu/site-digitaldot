@@ -184,6 +184,7 @@ export function AppShell({ children, content }: AppShellProps) {
         navItems={content.global.navigation}
         ctaLabel={content.global.navbarCtaLabel}
         ctaHref={content.global.navbarCtaHref}
+        contactPhone={content.global.footer.contactPhone}
         isVisible={effectiveUiVisible}
         transitionDuration={scrollBehavior.transitionDuration}
       />
