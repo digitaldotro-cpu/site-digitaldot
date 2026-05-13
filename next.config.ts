@@ -1,8 +1,43 @@
 import type { NextConfig } from "next";
 
+const marketingScripts = [
+  "https://*.googletagmanager.com",
+  "https://*.google-analytics.com",
+  "https://*.analytics.google.com",
+  "https://*.googleadservices.com",
+  "https://*.doubleclick.net",
+  "https://connect.facebook.net",
+  "https://*.facebook.com",
+  "https://*.tiktok.com",
+  "https://analytics.tiktok.com",
+  "https://snap.licdn.com",
+  "https://*.hotjar.com",
+  "https://www.clarity.ms",
+];
+
+const marketingConnections = [
+  "https://*.google-analytics.com",
+  "https://*.analytics.google.com",
+  "https://*.googletagmanager.com",
+  "https://*.google.com",
+  "https://*.doubleclick.net",
+  "https://*.facebook.com",
+  "https://*.tiktok.com",
+  "https://px.ads.linkedin.com",
+  "https://*.hotjar.com",
+  "wss://*.hotjar.com",
+  "https://*.clarity.ms",
+];
+
+const marketingFrames = [
+  "https://*.googletagmanager.com",
+  "https://*.doubleclick.net",
+  "https://*.facebook.com",
+];
+
 const scriptSrc = process.env.NODE_ENV === "development"
-  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com"
-  : "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com";
+  ? `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${marketingScripts.join(" ")}`
+  : `script-src 'self' 'unsafe-inline' ${marketingScripts.join(" ")}`;
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -14,8 +49,8 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
-  "frame-src 'self' https://*.googletagmanager.com",
+  `connect-src 'self' ${marketingConnections.join(" ")}`,
+  `frame-src 'self' ${marketingFrames.join(" ")}`,
   "upgrade-insecure-requests",
 ].join("; ");
 
