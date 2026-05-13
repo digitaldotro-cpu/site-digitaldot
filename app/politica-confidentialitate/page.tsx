@@ -2,37 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LegalPageLayout } from "@/components/legal/legal-page-layout";
 import { getSiteContent } from "@/lib/site-content";
-import { siteMetadata } from "@/lib/seo";
+import { buildRouteMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema } from "@/lib/structured-data";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   const policy = content.privacyPolicy;
-  const canonicalUrl = new URL("/politica-confidentialitate", siteMetadata.siteUrl).toString();
 
-  return {
-    title: policy.settings.seoTitle,
-    description: policy.settings.seoDescription,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-    openGraph: {
-      type: "article",
-      title: policy.settings.seoTitle,
-      description: policy.settings.seoDescription,
-      url: canonicalUrl,
-      siteName: siteMetadata.siteName,
-      locale: "ro_RO",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: policy.settings.seoTitle,
-      description: policy.settings.seoDescription,
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-  };
+  return buildRouteMetadata({
+    content,
+    path: "/politica-confidentialitate",
+    fallbackTitle: policy.settings.seoTitle,
+    fallbackDescription: policy.settings.seoDescription,
+    type: "article",
+  });
 }
 
 export default async function PoliticaConfidentialitatePage() {
@@ -43,5 +27,15 @@ export default async function PoliticaConfidentialitatePage() {
     notFound();
   }
 
-  return <LegalPageLayout page={policy} />;
+  return (
+    <>
+      <JsonLd
+        data={buildBreadcrumbSchema(content, [
+          { name: "Acasă", path: "/" },
+          { name: "Politica de confidențialitate", path: "/politica-confidentialitate" },
+        ])}
+      />
+      <LegalPageLayout page={policy} />
+    </>
+  );
 }

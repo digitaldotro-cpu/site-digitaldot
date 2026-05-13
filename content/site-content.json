@@ -88,7 +88,7 @@
         },
         {
           "platform": "tiktok",
-          "url": "https://www.tiktok.com/@digitaldot.ro?is_from_webapp=1&sender_device=pc",
+          "url": "https://www.tiktok.com/@digitaldot.ro",
           "enabled": true
         }
       ],
@@ -954,5 +954,349 @@
       "buttonLabel": "Contactează-ne",
       "buttonUrl": "/contacteaza-ne"
     }
+  },
+  "seoSettings": {
+    "global": {
+      "siteTitle": "Digital Dot | Agenție de Marketing Digital",
+      "siteDescription": "Digital Dot este agenția de marketing digital pentru business-uri care vor strategie clară, execuție premium, lead generation și creștere măsurabilă.",
+      "defaultOgImage": "/branding/references/chess-hero-wide.png",
+      "defaultKeywords": [
+        "agenție marketing digital",
+        "Digital Dot",
+        "social media management",
+        "Google Ads",
+        "Meta Ads",
+        "SEO România",
+        "creare website",
+        "producție video",
+        "lead generation"
+      ],
+      "canonicalBaseUrl": "https://digitaldot.ro",
+      "robots": {
+        "index": true,
+        "follow": true,
+        "googleBotIndex": true,
+        "googleBotFollow": true
+      }
+    },
+    "pages": [
+      {
+        "path": "/",
+        "label": "Homepage",
+        "seoTitle": "Digital Dot | Agenție de Marketing Digital",
+        "seoDescription": "Agenție de marketing digital pentru strategie, social media, reclame, producție video, website-uri și SEO orientate spre rezultate măsurabile.",
+        "ogTitle": "Digital Dot | Marketing strategic pentru business-uri ambițioase",
+        "ogDescription": "Strategie clară, execuție premium și rezultate măsurabile pentru branduri care tratează marketingul ca investiție.",
+        "ogImage": "/branding/references/chess-hero-wide.png",
+        "canonicalUrl": "https://digitaldot.ro/",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/social-media-management",
+        "label": "Social Media Management",
+        "seoTitle": "Social Media Management | Digital Dot",
+        "seoDescription": "Social media management strategic: calendar editorial, producție, publicare, optimizare și raportare pentru branduri care vor leaduri și încredere.",
+        "ogTitle": "Social Media Management orientat spre business",
+        "ogDescription": "Construim sisteme editoriale care transformă atenția în încredere și cereri reale.",
+        "ogImage": "/images/social-media/social-preview.svg",
+        "canonicalUrl": "https://digitaldot.ro/social-media-management",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/google-meta-ads",
+        "label": "Google & Meta Ads",
+        "seoTitle": "Google Ads & Meta Ads | Digital Dot",
+        "seoDescription": "Campanii Google Ads și Meta Ads cu tracking corect, funnel clar, optimizare continuă și focus pe leaduri sau vânzări măsurabile.",
+        "ogTitle": "Google & Meta Ads cu strategie și tracking corect",
+        "ogDescription": "Administrăm campanii paid media construite pe date, obiective clare și optimizare disciplinată.",
+        "ogImage": "/branding/references/ai-buget-marketing-sau-doar-sperante.png",
+        "canonicalUrl": "https://digitaldot.ro/google-meta-ads",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/productie-video",
+        "label": "Producție Video",
+        "seoTitle": "Producție Foto Video | Digital Dot",
+        "seoDescription": "Producție foto și video pentru reclame, social media, website și campanii digitale, cu direcție creativă și livrabile adaptate pe funnel.",
+        "ogTitle": "Producție foto-video pentru branduri premium",
+        "ogDescription": "Creăm active vizuale clare, cinematice și utile pentru campanii digitale performante.",
+        "ogImage": "/images/photo-video/camera-rig.svg",
+        "canonicalUrl": "https://digitaldot.ro/productie-video",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/website-creation",
+        "label": "Website Creation",
+        "seoTitle": "Creare Website | Digital Dot",
+        "seoDescription": "Creare website WordPress, Shopify și landing pages orientate spre claritate, conversie, tracking corect, SEO tehnic și scalabilitate.",
+        "ogTitle": "Website-uri construite pentru conversie și SEO",
+        "ogDescription": "Dezvoltăm experiențe web curate, rapide și ușor de indexat pentru business-uri în creștere.",
+        "ogImage": "/images/portfolio/shopify-upgrade.svg",
+        "canonicalUrl": "https://digitaldot.ro/website-creation",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/seo",
+        "label": "SEO",
+        "seoTitle": "SEO Tehnic și Content SEO | Digital Dot",
+        "seoDescription": "SEO tehnic, structură semantică, optimizare on-page, conținut indexabil și arhitectură pentru Google și AI search.",
+        "ogTitle": "SEO pentru Google, AI Search și creștere organică",
+        "ogDescription": "Optimizăm site-uri pentru crawlabilitate, structură semantică, performanță și rezultate organice sustenabile.",
+        "ogImage": "/branding/references/door-strategy-wide.png",
+        "canonicalUrl": "https://digitaldot.ro/seo",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/case-studies",
+        "label": "Case Studies",
+        "seoTitle": "Case Studies Marketing Digital | Digital Dot",
+        "seoDescription": "Studii de caz și exemple de proiecte Digital Dot pentru social media, performance marketing, branding, website-uri și lead generation.",
+        "ogTitle": "Case Studies Digital Dot",
+        "ogDescription": "Proiecte orientate spre strategie, execuție premium și rezultate măsurabile.",
+        "ogImage": "/images/portfolio/ecom-fashion.svg",
+        "canonicalUrl": "https://digitaldot.ro/case-studies",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/blog",
+        "label": "Blog",
+        "seoTitle": "Blog Marketing Digital | Digital Dot",
+        "seoDescription": "Articole despre strategie de marketing, social media, paid media, lead generation, audit și creștere digitală pentru business-uri locale.",
+        "ogTitle": "Blog Digital Dot",
+        "ogDescription": "Ghiduri și insight-uri pentru marketing digital matur, măsurabil și strategic.",
+        "ogImage": "/images/blog/strategie-social-media.svg",
+        "canonicalUrl": "https://digitaldot.ro/blog",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/politica-confidentialitate",
+        "label": "Politica de confidențialitate",
+        "seoTitle": "Politica de Confidențialitate | Digital Dot",
+        "seoDescription": "Politica de confidențialitate Digital Dot privind colectarea, utilizarea și protejarea datelor personale.",
+        "canonicalUrl": "https://digitaldot.ro/politica-confidentialitate",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      },
+      {
+        "path": "/termeni-si-conditii",
+        "label": "Termeni și condiții",
+        "seoTitle": "Termeni și Condiții | Digital Dot",
+        "seoDescription": "Termenii și condițiile de utilizare pentru website-ul Digital Dot și colaborarea comercială.",
+        "canonicalUrl": "https://digitaldot.ro/termeni-si-conditii",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
+      }
+    ],
+    "aiSeo": {
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, paid media, video production, website creation, SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.",
+      "allowedCrawlers": [
+        "GPTBot",
+        "ClaudeBot",
+        "PerplexityBot",
+        "Google-Extended",
+        "Googlebot"
+      ],
+      "semanticKeywordGroups": [
+        {
+          "id": "services",
+          "label": "Servicii marketing digital",
+          "keywords": [
+            "social media management",
+            "Google Ads",
+            "Meta Ads",
+            "SEO",
+            "creare website",
+            "producție video"
+          ]
+        },
+        {
+          "id": "business-outcomes",
+          "label": "Rezultate business",
+          "keywords": [
+            "lead generation",
+            "creștere măsurabilă",
+            "strategie marketing",
+            "tracking conversii",
+            "funnel marketing"
+          ]
+        },
+        {
+          "id": "brand-positioning",
+          "label": "Poziționare brand",
+          "keywords": [
+            "brand premium",
+            "strategie de conținut",
+            "poziționare digitală",
+            "marketing strategic"
+          ]
+        }
+      ]
+    },
+    "structuredData": {
+      "organizationName": "Digital Dot",
+      "legalName": "IONNEL TECH SRL",
+      "logo": "/branding/logo-primary.png",
+      "websiteUrl": "https://digitaldot.ro",
+      "email": "hello@digitaldot.ro",
+      "phone": "+40773330551",
+      "address": {
+        "streetAddress": "",
+        "addressLocality": "Suceava",
+        "addressRegion": "Suceava",
+        "postalCode": "",
+        "addressCountry": "RO"
+      },
+      "socialLinks": [
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/digitaldot.ro/",
+          "enabled": true
+        },
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/digitaldot.marketing.agency",
+          "enabled": true
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/digitaldot-ro/",
+          "enabled": true
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@digitaldot.ro",
+          "enabled": true
+        }
+      ],
+      "services": [
+        {
+          "id": "social-media-management",
+          "name": "Social Media Management",
+          "description": "Strategie editorială, producție, publicare, community trust și optimizare pentru social media.",
+          "url": "/social-media-management"
+        },
+        {
+          "id": "google-meta-ads",
+          "name": "Google Ads & Meta Ads",
+          "description": "Campanii paid media cu tracking corect, structură de funnel și optimizare pentru leaduri sau vânzări.",
+          "url": "/google-meta-ads"
+        },
+        {
+          "id": "productie-video",
+          "name": "Producție Foto Video",
+          "description": "Active foto și video pentru reclame, social media, website și comunicare de brand.",
+          "url": "/productie-video"
+        },
+        {
+          "id": "website-creation",
+          "name": "Creare Website",
+          "description": "Website-uri, landing pages, WordPress și Shopify cu UX clar, performanță și SEO tehnic.",
+          "url": "/website-creation"
+        },
+        {
+          "id": "seo",
+          "name": "SEO",
+          "description": "SEO tehnic, on-page, structură semantică, conținut indexabil și optimizare pentru AI search.",
+          "url": "/seo"
+        }
+      ]
+    },
+    "faqGroups": [
+      {
+        "id": "services-faq",
+        "title": "Întrebări frecvente despre serviciile Digital Dot",
+        "assignedPaths": [
+          "/social-media-management",
+          "/google-meta-ads",
+          "/productie-video",
+          "/website-creation",
+          "/seo"
+        ],
+        "items": [
+          {
+            "id": "faq-1",
+            "question": "Cum începe colaborarea cu Digital Dot?",
+            "answer": "Începem cu o discuție de clarificare, analizăm obiectivele de business și prioritizăm canalele care pot produce impact măsurabil."
+          },
+          {
+            "id": "faq-2",
+            "question": "Lucrați pe strategie sau doar pe execuție?",
+            "answer": "Lucrăm integrat: strategie, structură, execuție și optimizare. Execuția fără direcție clară nu este modelul nostru de lucru."
+          },
+          {
+            "id": "faq-3",
+            "question": "Pot fi măsurate rezultatele?",
+            "answer": "Da. Definim KPI relevanți, urmărim performanța prin date și ajustăm constant campaniile, conținutul sau website-ul."
+          }
+        ]
+      },
+      {
+        "id": "blog-faq",
+        "title": "Întrebări frecvente despre resursele Digital Dot",
+        "assignedPaths": [
+          "/blog"
+        ],
+        "items": [
+          {
+            "id": "blog-faq-1",
+            "question": "Pentru cine sunt articolele Digital Dot?",
+            "answer": "Articolele sunt create pentru antreprenori, manageri și echipe care vor decizii mai bune în marketing digital."
+          },
+          {
+            "id": "blog-faq-2",
+            "question": "Conținutul este aplicabil pentru business-uri locale?",
+            "answer": "Da. Majoritatea exemplelor și recomandărilor sunt gândite pentru companii locale sau regionale care vor creștere predictibilă."
+          }
+        ]
+      }
+    ]
   }
 }

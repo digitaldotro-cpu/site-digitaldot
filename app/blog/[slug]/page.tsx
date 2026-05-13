@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
-import { siteMetadata } from "@/lib/seo";
-import { generateArticleSchema } from "@/lib/schema";
+import { buildRouteMetadata } from "@/lib/seo";
+import { getSiteContent } from "@/lib/site-content";
+import { buildArticleSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
+import { JsonLd } from "@/components/seo/json-ld";
 import { BlogPostLayout } from "@/components/blog/blog-post-layout";
 import { mdxComponents } from "@/components/blog/mdx-components";
 
@@ -18,7 +20,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const [post, content] = await Promise.all([getPostBySlug(slug), getSiteContent()]);
 
   if (!post) {
     return {
@@ -26,35 +28,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
-  const fullUrl = `${siteMetadata.siteUrl}/blog/${post.slug}`;
-  const coverUrl = new URL(post.coverImage, siteMetadata.siteUrl).toString();
-
-  return {
-    title: `${post.title} | Digital Dot`,
-    description: post.excerpt,
-    alternates: {
-      canonical: fullUrl,
-    },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      url: fullUrl,
-      type: "article",
-      publishedTime: post.publishedAt,
-      images: [
-        {
-          url: coverUrl,
-          alt: post.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [coverUrl],
-    },
-  };
+  return buildRouteMetadata({
+    content,
+    path: `/blog/${post.slug}`,
+    fallbackTitle: `${post.title} | Digital Dot`,
+    fallbackDescription: post.excerpt,
+    type: "article",
+    publishedTime: post.publishedAt,
+    image: post.coverImage,
+  });
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -65,14 +47,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const relatedPosts = await getRelatedPosts(post.slug, 3);
-  const jsonLd = generateArticleSchema(post);
+  const [content, relatedPosts] = await Promise.all([
+    getSiteContent(),
+    getRelatedPosts(post.slug, 3),
+  ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={[
+          buildArticleSchema(content, post),
+          buildBreadcrumbSchema(content, [
+            { name: "Acasă", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${post.slug}` },
+          ]),
+        ]}
       />
       <BlogPostLayout post={post} relatedPosts={relatedPosts}>
         <MDXRemote source={post.content} components={mdxComponents} />

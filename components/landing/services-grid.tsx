@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import Link from "next/link";
 import { Clapperboard, Code2, LayoutPanelTop, Lightbulb, Megaphone, Monitor, Search, Share2, TrendingUp } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
@@ -14,6 +15,15 @@ const iconByName: Record<string, ComponentType<{ className?: string }>> = {
   Code2,
   Search,
   TrendingUp,
+};
+
+const hrefByServiceTitle: Record<string, string> = {
+  "Social Media Management": "/social-media-management",
+  "Producție Foto & Video": "/productie-video",
+  "Strategie de Marketing": "/#positioning",
+  "Reclame Plătite: Google & Facebook": "/google-meta-ads",
+  "Creare Web (WordPress & Shopify)": "/website-creation",
+  SEO: "/seo",
 };
 
 type ServicesGridProps = {
@@ -35,17 +45,28 @@ export function ServicesGrid({ section }: ServicesGridProps) {
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {section.items.filter((item) => item.enabled !== false).map((item, index) => {
             const Icon = iconByName[item.icon] ?? Lightbulb;
+            const href = hrefByServiceTitle[item.title];
             return (
               <AnimatedSection
                 key={item.id}
                 delay={index * 0.04}
                 className="rounded-3xl border border-[#276864]/40 bg-[#0f1418]/80 p-7 backdrop-blur-sm transition duration-300 hover:border-[#66fcf1]/55 hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.85)]"
               >
+                <article>
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#66fcf1]/40 bg-[#66fcf1]/8 text-[#66fcf1]">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  {href ? (
+                    <Link href={href} className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]">
+                      {item.title}
+                    </Link>
+                  ) : (
+                    item.title
+                  )}
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#c6c6c6] sm:text-base">{item.description}</p>
+                </article>
               </AnimatedSection>
             );
           })}

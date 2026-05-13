@@ -174,6 +174,93 @@ const legalPageSchema = z.object({
   }),
 });
 
+const robotsSettingsSchema = z.object({
+  index: z.boolean().default(true),
+  follow: z.boolean().default(true),
+  googleBotIndex: z.boolean().default(true),
+  googleBotFollow: z.boolean().default(true),
+});
+
+const pageSeoSchema = z.object({
+  path: z.string().min(1),
+  label: z.string().min(1),
+  seoTitle: z.string().min(3),
+  seoDescription: z.string().min(10),
+  ogTitle: z.string().min(3).optional(),
+  ogDescription: z.string().min(10).optional(),
+  ogImage: z.string().min(1).optional(),
+  canonicalUrl: z.string().min(1).optional(),
+  robots: robotsSettingsSchema.default({
+    index: true,
+    follow: true,
+    googleBotIndex: true,
+    googleBotFollow: true,
+  }),
+});
+
+const semanticKeywordGroupSchema = z.object({
+  id: z.string().min(1),
+  label: z.string().min(1),
+  keywords: z.array(z.string().min(1)).min(1),
+});
+
+const businessAddressSchema = z.object({
+  streetAddress: z.string().default(""),
+  addressLocality: z.string().min(1),
+  addressRegion: z.string().default(""),
+  postalCode: z.string().default(""),
+  addressCountry: z.string().min(1),
+});
+
+const structuredServiceSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  description: z.string().min(10),
+  url: z.string().min(1),
+});
+
+const faqItemSchema = z.object({
+  id: z.string().min(1),
+  question: z.string().min(3),
+  answer: z.string().min(10),
+});
+
+const faqGroupSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  assignedPaths: z.array(z.string().min(1)).default([]),
+  items: z.array(faqItemSchema).min(1),
+});
+
+const seoSettingsSchema = z.object({
+  global: z.object({
+    siteTitle: z.string().min(3),
+    siteDescription: z.string().min(10),
+    defaultOgImage: z.string().min(1),
+    defaultKeywords: z.array(z.string().min(1)).default([]),
+    canonicalBaseUrl: z.string().min(1),
+    robots: robotsSettingsSchema,
+  }),
+  pages: z.array(pageSeoSchema).min(1),
+  aiSeo: z.object({
+    llmsTxt: z.string().min(10),
+    allowedCrawlers: z.array(z.string().min(1)).min(1),
+    semanticKeywordGroups: z.array(semanticKeywordGroupSchema).default([]),
+  }),
+  structuredData: z.object({
+    organizationName: z.string().min(1),
+    legalName: z.string().min(1),
+    logo: z.string().min(1),
+    websiteUrl: z.string().min(1),
+    email: z.string().min(1),
+    phone: z.string().min(1),
+    address: businessAddressSchema,
+    socialLinks: z.array(socialLinkSchema).min(1),
+    services: z.array(structuredServiceSchema).min(1),
+  }),
+  faqGroups: z.array(faqGroupSchema).default([]),
+});
+
 const sectionKeySchema = z.enum([
   "hero",
   "positioning",
@@ -206,6 +293,7 @@ export const siteContentSchema = z.object({
     callButton: callButtonSchema,
     footer: footerSchema,
   }),
+  seoSettings: seoSettingsSchema,
   landing: z.object({
     seoTitle: z.string().min(3),
     seoDescription: z.string().min(10),
@@ -348,3 +436,4 @@ export const siteContentSchema = z.object({
 export type SiteContent = z.infer<typeof siteContentSchema>;
 export type LandingSectionKey = z.infer<typeof sectionKeySchema>;
 export type LegalPageContent = z.infer<typeof legalPageSchema>;
+export type FaqGroupContent = z.infer<typeof faqGroupSchema>;

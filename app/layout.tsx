@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Varela_Round } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
 import { siteMetadata } from "@/lib/seo";
+import { buildLocalBusinessSchema, buildOrganizationSchema } from "@/lib/structured-data";
 import { getSiteContent } from "@/lib/site-content";
 import { AppShell } from "@/components/layout/app-shell";
+import { JsonLd } from "@/components/seo/json-ld";
 
 const varelaRound = Varela_Round({
   variable: "--font-varela-round",
@@ -13,31 +15,44 @@ const varelaRound = Varela_Round({
   weight: "400",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0b0c10",
+};
+
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   const favicon = content.global.favicon?.trim();
-  const landingTitle = content.landing.seoTitle;
-  const landingDescription = content.landing.seoDescription;
+  const landingTitle = content.seoSettings.global.siteTitle || content.landing.seoTitle;
+  const landingDescription = content.seoSettings.global.siteDescription || content.landing.seoDescription;
+  const defaultOgImage = new URL(
+    content.seoSettings.global.defaultOgImage,
+    content.seoSettings.global.canonicalBaseUrl,
+  ).toString();
 
   return {
-    metadataBase: new URL(siteMetadata.siteUrl),
+    metadataBase: new URL(content.seoSettings.global.canonicalBaseUrl),
     title: {
       default: landingTitle,
       template: "%s",
     },
     description: landingDescription,
+    keywords: content.seoSettings.global.defaultKeywords,
     openGraph: {
       title: landingTitle,
       description: landingDescription,
-      url: siteMetadata.siteUrl,
+      url: content.seoSettings.global.canonicalBaseUrl,
       siteName: siteMetadata.siteName,
       locale: "ro_RO",
       type: "website",
+      images: [{ url: defaultOgImage, alt: landingTitle }],
     },
     twitter: {
       card: "summary_large_image",
       title: landingTitle,
       description: landingDescription,
+      images: [defaultOgImage],
     },
     icons: favicon
       ? {
@@ -82,6 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         )}
         <div className="relative min-h-screen overflow-x-hidden">
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(102,252,241,0.11),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(39,104,100,0.26),transparent_36%),linear-gradient(160deg,#090b0f_10%,#0c1014_55%,#0b0f12_100%)]" />
+          <JsonLd data={[buildOrganizationSchema(content), buildLocalBusinessSchema(content)]} />
           <AppShell content={content}>{children}</AppShell>
         </div>
       </body>

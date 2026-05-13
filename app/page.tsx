@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { buildMetadata } from "@/lib/seo";
+import { Fragment, type ReactNode } from "react";
+import { buildRouteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { generateLocalBusinessSchema } from "@/lib/schema";
 import { HeroSection } from "@/components/landing/hero-section";
 import { PositioningManifestoSection } from "@/components/landing/positioning-manifesto-section";
 import { TextBlockSection } from "@/components/landing/text-block-section";
@@ -20,10 +19,11 @@ import type { LandingSectionKey } from "@/lib/site-content-schema";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
-  return buildMetadata({
-    title: content.landing.seoTitle,
-    description: content.landing.seoDescription,
+  return buildRouteMetadata({
+    content,
     path: "/",
+    fallbackTitle: content.landing.seoTitle,
+    fallbackDescription: content.landing.seoDescription,
   });
 }
 
@@ -47,16 +47,12 @@ export default async function HomePage() {
     contact: <ContactSection section={landing.contact} global={content.global} />,
   };
 
-  const jsonLd = generateLocalBusinessSchema(content);
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       {landing.sectionOrder.map((key) => (
-        <div key={key}>{sections[key]}</div>
+        <Fragment key={key}>
+          {sections[key]}
+        </Fragment>
       ))}
     </>
   );

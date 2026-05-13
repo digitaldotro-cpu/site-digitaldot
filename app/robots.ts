@@ -1,12 +1,22 @@
 import type { MetadataRoute } from "next";
-import { siteMetadata } from "@/lib/seo";
+import { getCanonicalBaseUrl } from "@/lib/seo";
+import { getSiteContent } from "@/lib/site-content";
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const content = await getSiteContent();
+  const baseUrl = getCanonicalBaseUrl(content);
+  const allowedCrawlers = [
+    "*",
+    ...content.seoSettings.aiSeo.allowedCrawlers,
+  ];
+
   return {
-    rules: {
-      userAgent: "*",
+    rules: allowedCrawlers.map((userAgent) => ({
+      userAgent,
       allow: "/",
-    },
-    sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+      disallow: ["/panou-control", "/api/admin"],
+    })),
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }
