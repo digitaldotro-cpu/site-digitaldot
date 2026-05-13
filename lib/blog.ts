@@ -17,6 +17,10 @@ const blogFrontmatterSchema: z.ZodType<BlogFrontmatter> = z.object({
   authorRole: z.string().min(2),
   authorSlug: z.string().min(2).optional(),
   authorBio: z.string().min(20).optional(),
+  faqs: z.array(z.object({
+    question: z.string().min(3),
+    answer: z.string().min(10),
+  })).optional(),
   featured: z.boolean().optional(),
 });
 

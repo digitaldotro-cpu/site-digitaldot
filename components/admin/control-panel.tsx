@@ -81,6 +81,8 @@ const labelDictionary: Record<string, string> = {
   serviceSeo: "SEO Servicii",
   serviceLinksTitle: "Titlu Linkuri Servicii",
   serviceLinks: "Linkuri Servicii",
+  resourceLinksTitle: "Titlu Resurse",
+  resourceLinks: "Linkuri Resurse",
   explanationTitle: "Titlu Explicație Serviciu",
   explanationParagraphs: "Paragrafe Explicație",
   problemsTitle: "Titlu Probleme",

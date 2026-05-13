@@ -60,6 +60,10 @@ export type BlogFrontmatter = {
   authorRole: string;
   authorSlug?: string;
   authorBio?: string;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
   featured?: boolean;
 };
 

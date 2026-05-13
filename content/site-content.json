@@ -168,6 +168,29 @@
           "href": "/website-creation",
           "enabled": true
         }
+      ],
+      "resourceLinksTitle": "Resurse",
+      "resourceLinks": [
+        {
+          "label": "Blog",
+          "href": "/blog",
+          "enabled": true
+        },
+        {
+          "label": "Studii de Caz",
+          "href": "/case-studies",
+          "enabled": true
+        },
+        {
+          "label": "Strategie Marketing",
+          "href": "/blog/categorie/strategie",
+          "enabled": true
+        },
+        {
+          "label": "SEO & AI",
+          "href": "/blog/categorie/seo-ai",
+          "enabled": true
+        }
       ]
     }
   },

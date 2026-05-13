@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { buildRouteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { buildArticleSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
+import { buildArticleSchema, buildBreadcrumbSchema, buildFaqSchema } from "@/lib/structured-data";
 import { JsonLd } from "@/components/seo/json-ld";
 import { BlogPostLayout } from "@/components/blog/blog-post-layout";
 import { mdxComponents } from "@/components/blog/mdx-components";
@@ -51,18 +51,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     getSiteContent(),
     getRelatedPosts(post.slug, 3),
   ]);
+  const articleFaqGroup = post.faqs?.length
+    ? {
+        id: `${post.slug}-faq`,
+        title: `FAQ ${post.title}`,
+        assignedPaths: [`/blog/${post.slug}`],
+        items: post.faqs.map((item, index) => ({
+          id: `${post.slug}-faq-${index + 1}`,
+          question: item.question,
+          answer: item.answer,
+        })),
+      }
+    : null;
 
   return (
     <>
       <JsonLd
         data={[
           buildArticleSchema(content, post),
+          articleFaqGroup ? buildFaqSchema(articleFaqGroup) : null,
           buildBreadcrumbSchema(content, [
             { name: "Acasă", path: "/" },
             { name: "Blog", path: "/blog" },
             { name: post.title, path: `/blog/${post.slug}` },
           ]),
-        ]}
+        ].filter(Boolean) as Array<Record<string, unknown>>}
       />
       <BlogPostLayout post={post} relatedPosts={relatedPosts}>
         <MDXRemote source={post.content} components={mdxComponents} />

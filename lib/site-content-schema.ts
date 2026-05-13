@@ -29,6 +29,12 @@ const footerServiceLinkSchema = z.object({
   enabled: z.boolean().default(true),
 });
 
+const footerResourceLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+  enabled: z.boolean().default(true),
+});
+
 const footerSchema = z.object({
   logo: z.string().min(1).optional(),
   description: z.string().min(1),
@@ -37,6 +43,8 @@ const footerSchema = z.object({
   socialLinks: z.array(socialLinkSchema).min(1),
   serviceLinksTitle: z.string().min(1).default("Servicii"),
   serviceLinks: z.array(footerServiceLinkSchema).default([]),
+  resourceLinksTitle: z.string().min(1).default("Resurse"),
+  resourceLinks: z.array(footerResourceLinkSchema).default([]),
   regionalLinksTitle: z.string().min(1).default("Agenție de Marketing"),
   regionalLinks: z.array(footerRegionalLinkSchema).default([]),
   legalLinksTitle: z.string().min(1),

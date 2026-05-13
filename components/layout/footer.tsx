@@ -11,6 +11,8 @@ type FooterProps = {
   socialLinks: Array<{ platform: "instagram" | "facebook" | "linkedin" | "tiktok" | "google-business"; url: string; enabled: boolean }>;
   serviceLinksTitle: string;
   serviceLinks: Array<{ label: string; href: string; enabled: boolean }>;
+  resourceLinksTitle: string;
+  resourceLinks: Array<{ label: string; href: string; enabled: boolean }>;
   regionalLinksTitle: string;
   regionalLinks: Array<{ label: string; href: string; enabled: boolean }>;
   legalLinksTitle: string;
@@ -30,6 +32,8 @@ export function Footer({
   socialLinks,
   serviceLinksTitle,
   serviceLinks,
+  resourceLinksTitle,
+  resourceLinks,
   regionalLinksTitle,
   regionalLinks,
   legalLinksTitle,
@@ -47,7 +51,7 @@ export function Footer({
 
   return (
     <footer className="mt-16 border-t border-[#1e2a30] bg-[#0a0d10]">
-      <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-6">
+      <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-7">
         <div>
           {logo ? (
             <Image src={logo} alt={brandName} width={180} height={50} unoptimized className="h-10 w-auto object-contain" />
@@ -84,6 +88,21 @@ export function Footer({
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
             {regionalLinks.filter((link) => link.enabled !== false).map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="transition-colors hover:text-[#66fcf1]">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+            {resourceLinksTitle}
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
+            {resourceLinks.filter((link) => link.enabled !== false).map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="transition-colors hover:text-[#66fcf1]">
                   {link.label}
