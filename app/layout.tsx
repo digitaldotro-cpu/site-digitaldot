@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Varela_Round } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 import { siteMetadata } from "@/lib/seo";
@@ -58,9 +59,11 @@ export default async function RootLayout({
 
   return (
     <html lang="ro" className={varelaRound.variable}>
-      <head>
+      <body className="bg-[#0b0c10] text-white antialiased">
         {gtmId && (
-          <script
+          <Script
+            id="gtm-script"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -70,8 +73,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
         )}
-      </head>
-      <body className="bg-[#0b0c10] text-white antialiased">
         {gtmId && (
           <noscript>
             <iframe
