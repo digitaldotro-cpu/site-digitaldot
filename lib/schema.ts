@@ -1,6 +1,6 @@
 import { siteMetadata } from "./seo";
 import type { SiteContent } from "./site-content-schema";
-import type { BlogPost } from "./blog";
+import type { BlogPost } from "@/types/content";
 
 export function generateLocalBusinessSchema(content: SiteContent) {
   return {
@@ -10,10 +10,10 @@ export function generateLocalBusinessSchema(content: SiteContent) {
     image: `${siteMetadata.siteUrl}${content.global.headerLogo}`,
     "@id": siteMetadata.siteUrl,
     url: siteMetadata.siteUrl,
-    telephone: content.global.contactPhone,
+    telephone: content.global.footer.contactPhone,
     address: {
       "@type": "PostalAddress",
-      addressLocality: content.global.contactLocation.split(",")[0]?.trim() || "Suceava",
+      addressLocality: content.global.footer.contactLocation.split(",")[0]?.trim() || "Suceava",
       addressCountry: "RO",
     },
     geo: {
