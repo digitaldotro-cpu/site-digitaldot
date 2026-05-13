@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const scriptSrc = process.env.NODE_ENV === "development"
-  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
-  : "script-src 'self' 'unsafe-inline'";
+  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com"
+  : "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com";
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -14,8 +14,8 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "connect-src 'self'",
-  "frame-src 'none'",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+  "frame-src 'self' https://*.googletagmanager.com",
   "upgrade-insecure-requests",
 ].join("; ");
 
