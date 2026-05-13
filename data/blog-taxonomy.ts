@@ -21,6 +21,21 @@ export const blogCategories: BlogCategory[] = [
     label: "Strategie",
     description: "Cadre de lucru pentru decizii de marketing mai bune.",
   },
+  {
+    key: "branding",
+    label: "Branding",
+    description: "Poziționare, consistență și arhitectură de brand.",
+  },
+  {
+    key: "seo-ai",
+    label: "SEO & AI",
+    description: "Vizibilitate organică, AI SEO și structură semantică.",
+  },
+  {
+    key: "productie-video",
+    label: "Producție Video",
+    description: "Percepție de brand, storytelling și active video.",
+  },
 ];
 
 export const blogTags: BlogTag[] = [
@@ -32,6 +47,14 @@ export const blogTags: BlogTag[] = [
   { key: "strategie", label: "Strategie" },
   { key: "audit", label: "Audit" },
   { key: "leaduri", label: "Leaduri" },
+  { key: "branding", label: "Branding" },
+  { key: "pozitionare", label: "Poziționare" },
+  { key: "productie-video", label: "Producție Video" },
+  { key: "seo", label: "SEO" },
+  { key: "ai-seo", label: "AI SEO" },
+  { key: "website-creation", label: "Website Creation" },
+  { key: "strategie-marketing", label: "Strategie de marketing" },
+  { key: "brand-infrastructure", label: "Brand Infrastructure" },
 ];
 
 export function getCategoryLabel(key: string) {

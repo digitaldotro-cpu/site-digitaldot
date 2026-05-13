@@ -154,7 +154,7 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "BlogPosting"],
     headline: post.title,
     description: post.excerpt,
     image: absoluteUrl(post.coverImage, content),
@@ -164,6 +164,7 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
       "@type": "Person",
       name: post.authorName,
       jobTitle: post.authorRole,
+      url: absoluteUrl(`/blog/autor/${post.authorSlug}`, content),
     },
     publisher: {
       "@id": `${getCanonicalBaseUrl(content)}/#organization`,
@@ -174,5 +175,21 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
       },
     },
     mainEntityOfPage: url,
+  };
+}
+
+export function buildAuthorSchema(content: SiteContent, author: { slug: string; name: string; role: string; bio: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${absoluteUrl(`/blog/autor/${author.slug}`, content)}#person`,
+    name: author.name,
+    jobTitle: author.role,
+    description: author.bio,
+    url: absoluteUrl(`/blog/autor/${author.slug}`, content),
+    worksFor: {
+      "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+      name: siteMetadata.siteName,
+    },
   };
 }

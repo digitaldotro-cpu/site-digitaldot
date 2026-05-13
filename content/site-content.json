@@ -1197,7 +1197,7 @@
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, paid media, video production, website creation, SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, paid media, video production, website creation, SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -3337,6 +3337,162 @@
           "secondaryLabel": "Vezi SEO",
           "secondaryHref": "/seo"
         }
+      }
+    ]
+  },
+  "editorialSeo": {
+    "enabled": true,
+    "blogTitle": "Blog Marketing Digital Digital Dot",
+    "blogDescription": "Arhitectură editorială pentru strategie de marketing, branding, Social Media Management, Google Ads, Meta Ads, producție video, SEO, AI SEO și website creation.",
+    "authors": [
+      {
+        "name": "Filip Lucian",
+        "slug": "filip-lucian",
+        "role": "Fondator & Strategie Digital Dot",
+        "bio": "Scrie despre poziționare, strategie de marketing, infrastructură de brand și creștere predictibilă."
+      },
+      {
+        "name": "Digital Dot Team",
+        "slug": "digital-dot-team",
+        "role": "Strategie, SEO & Performance",
+        "bio": "Echipa editorială Digital Dot conectează SEO, AI SEO, paid media, social media, producție video și website creation."
+      }
+    ],
+    "topicClusters": [
+      {
+        "label": "Social Media Management",
+        "slug": "social-media-management",
+        "description": "Conținut, ritm editorial, poziționare și încredere.",
+        "links": [
+          {
+            "title": "Social Media Management",
+            "href": "/social-media-management",
+            "description": "Pagina de serviciu pentru Social Media Management."
+          },
+          {
+            "title": "Social media fără strategie",
+            "href": "/blog/social-media-fara-strategie-produce-zgomot",
+            "description": "Articol de autoritate despre zgomot și strategie editorială."
+          }
+        ]
+      },
+      {
+        "label": "Google Ads & Meta Ads",
+        "slug": "google-meta-ads",
+        "description": "Tracking, performance, funnel și predictibilitate.",
+        "links": [
+          {
+            "title": "Google & Meta Ads",
+            "href": "/google-meta-ads",
+            "description": "Pagina de serviciu pentru paid media."
+          },
+          {
+            "title": "Reclamele nu generează predictibil",
+            "href": "/blog/reclamele-nu-genereaza-rezultate-predictibile",
+            "description": "Articol despre de ce campaniile eșuează fără sistem."
+          }
+        ]
+      },
+      {
+        "label": "SEO & AI SEO",
+        "slug": "seo-ai",
+        "description": "Vizibilitate organică, structured data, llms.txt și entități.",
+        "links": [
+          {
+            "title": "SEO",
+            "href": "/seo",
+            "description": "Pagina de serviciu SEO."
+          },
+          {
+            "title": "SEO modern în era AI",
+            "href": "/blog/seo-modern-vizibilitate-online-era-ai",
+            "description": "Articol despre AI SEO și arhitectură semantică."
+          }
+        ]
+      }
+    ],
+    "articleRegistry": [
+      {
+        "title": "De ce multe companii investesc prea târziu în marketing",
+        "href": "/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing",
+        "description": "Analiză editorială despre momentul greșit al investiției în marketing și rolul infrastructurii."
+      },
+      {
+        "title": "Marketingul nu este loterie. Este infrastructură.",
+        "href": "/blog/marketingul-nu-este-loterie-este-infrastructura",
+        "description": "Eseu strategic despre sisteme, măsurare, poziționare și execuție coerentă."
+      },
+      {
+        "title": "De ce Social Media fără strategie produce doar zgomot",
+        "href": "/blog/social-media-fara-strategie-produce-zgomot",
+        "description": "Articol despre diferența dintre activitate social media și sistem editorial."
+      },
+      {
+        "title": "Cum distruge improvizația consistența unui brand",
+        "href": "/blog/improvizatia-distruge-consistenta-brandului",
+        "description": "Analiză despre costul deciziilor reactive în branding și comunicare."
+      },
+      {
+        "title": "De ce multe reclame nu generează rezultate predictibile",
+        "href": "/blog/reclamele-nu-genereaza-rezultate-predictibile",
+        "description": "Articol despre Google Ads, Meta Ads, tracking, ofertă și landing pages."
+      },
+      {
+        "title": "Diferența dintre conținut și poziționare",
+        "href": "/blog/diferenta-dintre-continut-si-pozitionare",
+        "description": "Articol despre conținut, poziționare și memorie de brand."
+      },
+      {
+        "title": "Cum construiești un brand care rezistă în perioade economice dificile",
+        "href": "/blog/brand-rezistent-in-perioade-economice-dificile",
+        "description": "Eseu despre încredere, brand infrastructure și stabilitate comercială."
+      },
+      {
+        "title": "De ce multe business-uri confundă boost-ul cu strategia",
+        "href": "/blog/boost-ul-nu-este-strategie",
+        "description": "Articol despre diferența dintre boost, distribuție plătită și strategie."
+      },
+      {
+        "title": "Cum influențează producția video percepția unui brand",
+        "href": "/blog/productia-video-si-perceptia-brandului",
+        "description": "Analiză despre producție video, percepție și dovadă vizuală."
+      },
+      {
+        "title": "SEO modern: cum se schimbă vizibilitatea online în era AI",
+        "href": "/blog/seo-modern-vizibilitate-online-era-ai",
+        "description": "Articol despre SEO, AI SEO, structured data, llms.txt și entități."
+      }
+    ],
+    "caseStudyRegistry": [
+      {
+        "title": "HoReCa local: din conținut reactiv în sistem de rezervări",
+        "href": "/case-studies",
+        "description": "Case study despre HoReCa, video-first content și Meta Ads pentru rezervări."
+      },
+      {
+        "title": "Retail regional: campanii predictibile pentru vânzări recurente",
+        "href": "/case-studies",
+        "description": "Case study despre Google Ads, Meta Ads, tracking și optimizare retail."
+      },
+      {
+        "title": "Medical: funnel de programări cu încredere și claritate",
+        "href": "/case-studies",
+        "description": "Case study despre medical, SEO local și lead generation."
+      },
+      {
+        "title": "Branding: consistență pentru o companie de servicii B2B",
+        "href": "/case-studies",
+        "description": "Case study despre poziționare, website creation și autoritate B2B."
+      },
+      {
+        "title": "Producție video: percepție premium pentru brand local",
+        "href": "/case-studies",
+        "description": "Case study despre producție video, percepție și active modulare."
+      },
+      {
+        "title": "SEO + AI SEO: arhitectură semantică pentru autoritate națională",
+        "href": "/case-studies",
+        "description": "Case study despre schema, llms.txt, topic clusters și internal linking."
       }
     ]
   }

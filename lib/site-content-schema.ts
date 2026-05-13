@@ -302,6 +302,32 @@ const serviceSeoSchema = z.object({
   pages: z.array(serviceSeoPageSchema).min(1),
 });
 
+const editorialRegistryItemSchema = z.object({
+  title: z.string().min(1),
+  href: z.string().min(1),
+  description: z.string().min(10),
+});
+
+const editorialSeoSchema = z.object({
+  enabled: z.boolean().default(true),
+  blogTitle: z.string().min(1),
+  blogDescription: z.string().min(10),
+  authors: z.array(z.object({
+    name: z.string().min(1),
+    slug: z.string().min(1),
+    role: z.string().min(1),
+    bio: z.string().min(10),
+  })).default([]),
+  topicClusters: z.array(z.object({
+    label: z.string().min(1),
+    slug: z.string().min(1),
+    description: z.string().min(10),
+    links: z.array(editorialRegistryItemSchema).default([]),
+  })).default([]),
+  articleRegistry: z.array(editorialRegistryItemSchema).default([]),
+  caseStudyRegistry: z.array(editorialRegistryItemSchema).default([]),
+});
+
 const seoSettingsSchema = z.object({
   global: z.object({
     siteTitle: z.string().min(3),
@@ -452,6 +478,7 @@ export const siteContentSchema = z.object({
     footer: footerSchema,
   }),
   seoSettings: seoSettingsSchema,
+  editorialSeo: editorialSeoSchema,
   serviceSeo: serviceSeoSchema,
   regionalSeo: regionalSeoSchema,
   landing: z.object({

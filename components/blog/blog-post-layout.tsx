@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button";
 import { TagBadge } from "@/components/ui/tag-badge";
 import { Container } from "@/components/ui/container";
@@ -37,8 +38,10 @@ export function BlogPostLayout({
               </span>
               <span>•</span>
               <span>{post.readingTime}</span>
-              <span>•</span>
-              <span>{post.authorName}</span>
+            <span>•</span>
+              <Link href={`/blog/autor/${post.authorSlug}`} className="transition-colors hover:text-[#66fcf1]">
+                {post.authorName}
+              </Link>
             </div>
           </header>
 
@@ -66,8 +69,13 @@ export function BlogPostLayout({
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
               Autor
             </p>
-            <p className="mt-3 text-lg font-semibold text-white">{post.authorName}</p>
+            <Link href={`/blog/autor/${post.authorSlug}`} className="mt-3 inline-block text-lg font-semibold text-white transition-colors hover:text-[#66fcf1]">
+              {post.authorName}
+            </Link>
             <p className="text-sm text-[#b8bec2]">{post.authorRole}</p>
+            {post.authorBio ? (
+              <p className="mt-3 text-sm leading-relaxed text-[#c6c6c6]">{post.authorBio}</p>
+            ) : null}
           </div>
         </Container>
       </article>

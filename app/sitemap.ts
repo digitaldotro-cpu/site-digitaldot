@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/blog";
+import { getAllAuthors, getAllPosts } from "@/lib/blog";
+import { blogCategories, blogTags } from "@/data/blog-taxonomy";
 import { absoluteUrl } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [content, posts] = await Promise.all([getSiteContent(), getAllPosts()]);
+  const [content, posts, authors] = await Promise.all([getSiteContent(), getAllPosts(), getAllAuthors()]);
   const staticRoutes = [
     "",
     "/case-studies",
@@ -35,5 +36,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(post.publishedAt),
   }));
 
-  return [...staticEntries, ...blogEntries];
+  const authorEntries = authors.map((author) => ({
+    url: absoluteUrl(`/blog/autor/${author.slug}`, content),
+    lastModified: new Date(),
+  }));
+
+  const taxonomyEntries = [
+    ...blogCategories.map((category) => `/blog/categorie/${category.key}`),
+    ...blogTags.map((tag) => `/blog/tag/${tag.key}`),
+  ].map((route) => ({
+    url: absoluteUrl(route, content),
+    lastModified: new Date(),
+  }));
+
+  return [...staticEntries, ...blogEntries, ...authorEntries, ...taxonomyEntries];
 }

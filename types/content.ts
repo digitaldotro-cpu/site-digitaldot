@@ -20,6 +20,22 @@ export type PortfolioProject = {
   href?: string;
   layoutVariant?: "hero" | "wide" | "tall" | "standard";
   highlightBadge?: string;
+  client?: string;
+  industry?: string;
+  challenge?: string;
+  strategy?: string;
+  execution?: string[];
+  results?: string[];
+  mediaGallery?: string[];
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+  };
+  cta?: {
+    label: string;
+    href: string;
+  };
 };
 
 export type BlogCategory = {
@@ -42,6 +58,8 @@ export type BlogFrontmatter = {
   publishedAt: string;
   authorName: string;
   authorRole: string;
+  authorSlug?: string;
+  authorBio?: string;
   featured?: boolean;
 };
 
