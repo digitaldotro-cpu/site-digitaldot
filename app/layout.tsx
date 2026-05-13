@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Varela_Round } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+
 import "./globals.css";
 import { siteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
@@ -58,8 +58,30 @@ export default async function RootLayout({
 
   return (
     <html lang="ro" className={varelaRound.variable}>
-      {gtmId && <GoogleTagManager gtmId={gtmId} />}
+      <head>
+        {gtmId && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`,
+            }}
+          />
+        )}
+      </head>
       <body className="bg-[#0b0c10] text-white antialiased">
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
         <div className="relative min-h-screen overflow-x-hidden">
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(102,252,241,0.11),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(39,104,100,0.26),transparent_36%),linear-gradient(160deg,#090b0f_10%,#0c1014_55%,#0b0f12_100%)]" />
           <AppShell content={content}>{children}</AppShell>
