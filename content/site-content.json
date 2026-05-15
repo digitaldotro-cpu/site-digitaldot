@@ -536,6 +536,30 @@
               "url": "https://www.linkedin.com/in/arama-marian-320803313/"
             }
           ]
+        },
+        {
+          "id": "team-7",
+          "name": "Ancuța Juravle",
+          "role": "Economist & Specialist Contabil",
+          "avatar": "/branding/team/ancuta-juravle-portret-digital.png",
+          "avatarLink": "https://www.facebook.com/ancuta.maria.16",
+          "focusChannels": [
+            "facebook"
+          ],
+          "socials": [
+            {
+              "platform": "facebook",
+              "url": "https://www.facebook.com/ancuta.maria.16"
+            },
+            {
+              "platform": "instagram",
+              "url": "https://www.instagram.com/ancutapoinar"
+            },
+            {
+              "platform": "linkedin",
+              "url": "https://www.linkedin.com/in/ancuta-juravle-37915324b"
+            }
+          ]
         }
       ]
     },
