@@ -208,6 +208,25 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
         </Container>
       </section>
 
+      {page.semanticSummary ? (
+        <section className="border-y border-[#1a252d] bg-[#0d1217] py-14 sm:py-18" aria-labelledby="semantic-summary-title">
+          <Container>
+            <div className="rounded-[2rem] border border-[#263740] bg-[#10161a] p-6 sm:p-8">
+              <h2 id="semantic-summary-title" className="text-2xl font-semibold text-white sm:text-3xl">
+                {page.semanticSummary.title}
+              </h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {page.semanticSummary.points.map((point) => (
+                  <p key={point} className="rounded-2xl border border-[#223239] bg-[#0c1216] p-4 text-sm leading-relaxed text-[#c6c6c6]">
+                    {point}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       <section className="border-y border-[#1a252d] bg-[#0d1217] py-18 sm:py-24">
         <Container>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">Servicii de marketing pentru {page.cityName}</h2>
@@ -225,6 +244,30 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
           </div>
         </Container>
       </section>
+
+      {page.serviceExpansion ? (
+        <section className="py-14 sm:py-18" aria-labelledby="regional-service-expansion-title">
+          <Container>
+            <div className="max-w-3xl">
+              <h2 id="regional-service-expansion-title" className="text-2xl font-semibold text-white sm:text-3xl">
+                {page.serviceExpansion.title}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-[#c6c6c6]">{page.serviceExpansion.intro}</p>
+            </div>
+            <div className="mt-7 grid gap-4 md:grid-cols-2">
+              {page.serviceExpansion.items.map((item) => (
+                <article key={item.id} className="rounded-2xl border border-[#263740] bg-[#10161a] p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">
+                    {item.futurePath}
+                  </p>
+                  <h3 className="mt-3 text-lg font-semibold text-white">{item.label}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#c6c6c6]">{item.context}</p>
+                </article>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section className="py-18 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">

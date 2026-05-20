@@ -139,6 +139,16 @@
           "label": "Cluj-Napoca",
           "href": "/agentie-marketing/cluj-napoca",
           "enabled": true
+        },
+        {
+          "label": "Iași",
+          "href": "/agentie-marketing/iasi",
+          "enabled": true
+        },
+        {
+          "label": "București",
+          "href": "/agentie-marketing/bucuresti",
+          "enabled": true
         }
       ],
       "serviceLinksTitle": "Servicii",
@@ -1359,7 +1369,7 @@
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, paid media, video production, website creation, SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -1399,6 +1409,62 @@
             "strategie de conținut",
             "poziționare digitală",
             "marketing strategic"
+          ]
+        },
+        {
+          "id": "regional-authority",
+          "label": "Autoritate SEO regională",
+          "keywords": [
+            "Agenție de marketing Iași",
+            "Agenție de marketing București",
+            "Agenție de marketing Suceava",
+            "Agenție promovare online regională",
+            "marketing local România",
+            "AI SEO regional"
+          ]
+        },
+        {
+          "id": "paid-media",
+          "label": "Reclame plătite și performance",
+          "keywords": [
+            "Google Ads",
+            "Meta Ads",
+            "Reclame plătite",
+            "Reclame Google Ads",
+            "Reclame Meta Ads",
+            "Agenție Facebook Ads",
+            "performance marketing"
+          ]
+        },
+        {
+          "id": "social-content",
+          "label": "Social Media și content marketing",
+          "keywords": [
+            "Social Media Marketing",
+            "Social Media",
+            "Agenție Social Media",
+            "Agenție content marketing",
+            "Promovare Social Media",
+            "Servicii promovare social media",
+            "Administrare Pagini Social Media",
+            "Administrare Social Media",
+            "Creare Conținut Video"
+          ]
+        },
+        {
+          "id": "business-marketing",
+          "label": "Consultanță și digital marketing",
+          "keywords": [
+            "Consultanță Marketing",
+            "B2B Marketing Digital",
+            "Firma Digital Marketing",
+            "Agentia Digital Marketing",
+            "Agenție publicitate",
+            "Agenție publicitate online",
+            "Agenție marketing Ecommerce",
+            "Agenție promovare",
+            "Creare Website",
+            "Strategie de marketing"
           ]
         }
       ]
@@ -1750,22 +1816,23 @@
     "hub": {
       "path": "/agentie-marketing",
       "seoTitle": "Agenție de Marketing Regională | Digital Dot",
-      "seoDescription": "Digital Dot construiește marketing strategic pentru business-uri regionale din Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud și Cluj-Napoca.",
+      "seoDescription": "Digital Dot construiește marketing regional pentru Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași și București, cu strategie, SEO și AI SEO.",
       "ogTitle": "Digital Dot | Agenție de marketing pentru business-uri regionale",
       "ogDescription": "O arhitectură regională de marketing pentru companii care vor claritate, autoritate și creștere măsurabilă.",
       "ogImage": "/branding/references/chess-hero-wide.png",
       "hero": {
         "eyebrow": "Regional SEO. Strategie. Autoritate.",
         "title": "Agenție de Marketing pentru business-uri regionale care vor creștere cu structură",
-        "intro": "Digital Dot lucrează cu branduri locale și regionale care vor mai mult decât prezență online. Construim sisteme de marketing clare, cu poziționare, conținut, reclame, website-uri și SEO conectate la obiective reale.",
+        "intro": "Digital Dot lucrează cu branduri locale și regionale care vor mai mult decât prezență online. Construim sisteme de marketing clare, cu poziționare, conținut, Google Ads, Meta Ads, website-uri, SEO și AI SEO conectate la obiective reale.",
         "ctaLabel": "Discută cu Digital Dot",
         "ctaHref": "/#contact"
       },
       "overviewTitle": "Acoperire regională fără mentalitate de director SEO",
       "overviewParagraphs": [
         "Paginile regionale Digital Dot nu sunt create ca o listă mecanică de orașe. Ele explică felul în care marketingul se schimbă în funcție de contextul local, maturitatea business-urilor și tipul de competiție.",
-        "Pentru Google, această structură clarifică aria de lucru și relația dintre servicii, orașe și expertiza Digital Dot. Pentru sistemele AI, oferă entități consistente, conținut contextual și răspunsuri ușor de extras despre acoperirea regională.",
-        "Abordarea noastră rămâne premium: mai puține pagini, mai multă substanță, legături interne curate și conținut care poate fi citit de oameni, nu doar de crawleri."
+        "Pentru Google, această structură clarifică aria de lucru și relația dintre servicii, orașe și expertiza Digital Dot. Pentru sistemele AI precum ChatGPT, Gemini, Claude și Perplexity, oferă entități consistente, conținut contextual și răspunsuri ușor de extras despre acoperirea regională.",
+        "Abordarea noastră rămâne premium: mai puține pagini, mai multă substanță, legături interne curate și conținut care poate fi citit de oameni, nu doar de crawleri.",
+        "Iași și București extind arhitectura regională în două direcții diferite: Iași pentru startup-uri, tech, medical și educație; București pentru competiție premium, performance, diferențiere și scalare."
       ],
       "serviceTitle": "Servicii conectate la obiective regionale",
       "regionTitle": "Zone în care construim autoritate digitală",
@@ -1784,9 +1851,9 @@
         "countyName": "Suceava",
         "enabled": true,
         "seoTitle": "Agenție de Marketing în Suceava pentru business-uri care vor creștere predictibilă | Digital Dot",
-        "seoDescription": "În Suceava, multe companii au construit încredere ani la rând prin relații directe, recomandări și seriozitate operațională. Digital Dot ajută aceste busin",
+        "seoDescription": "Digital Dot construiește în Suceava strategie de marketing, Social Media, Google Ads, Meta Ads, SEO și website-uri pentru business-uri care vor creștere predictibilă.",
         "ogTitle": "Agenție de Marketing în Suceava pentru business-uri care vor creștere predictibilă",
-        "ogDescription": "În Suceava, multe companii au construit încredere ani la rând prin relații directe, recomandări și seriozitate operațională. Digital Dot ajută aceste business-uri să transforme capitalul local într-un sistem digital clar, măsurabil și scalabil.",
+        "ogDescription": "În Suceava, Digital Dot ajută business-urile locale să transforme reputația, recomandările și seriozitatea operațională într-un sistem digital clar, măsurabil și scalabil.",
         "ogImage": "/branding/references/chess-hero-wide.png",
         "hero": {
           "eyebrow": "Agenție de Marketing Suceava",
@@ -1798,26 +1865,20 @@
         "positioning": {
           "title": "Marketingul ca infrastructură, nu ca improvizație",
           "paragraphs": [
-            "Digital Dot tratează marketingul ca infrastructură de business: poziționare, canale, conținut, tracking și ritm de optimizare. Fără această bază, execuția devine zgomot scump.",
-            "Abordarea noastră este anti-hype. Înainte de campanii, clarificăm oferta, audiența, mesajul și criteriile de succes, apoi construim un sistem care poate fi măsurat și îmbunătățit.",
-            "Pentru business-urile regionale, avantajul nu vine din a copia trenduri naționale, ci din a transforma cunoașterea pieței locale într-o strategie digitală matură.",
-            "În Suceava, multe companii au crescut prin reputație, relații locale și execuție serioasă, dar ajung într-un punct în care aceste avantaje nu mai sunt suficiente pentru scalare. Marketingul devine infrastructură atunci când traduce această reputație într-un sistem vizibil: website clar, Social Media Management consecvent, Google Ads, Meta Ads, producție video, SEO și o strategie de marketing care poate fi urmărită în timp.",
-            "Pentru business-uri tradiționale, provocarea nu este să pară altceva decât sunt. Provocarea este să exprime mai clar standardul pe care deja îl au. De aceea Digital Dot evită comunicarea zgomotoasă și construiește mesaje care explică diferența, reduc neîncrederea și creează predictibilitate comercială.",
-            "Multe companii investesc prea târziu în marketing pentru că îl văd ca pe o reacție la scăderea vânzărilor. În realitate, marketingul matur trebuie construit înainte ca presiunea să devină urgentă: structură de conținut, funnel, tracking, branding și pagini indexabile care susțin căutările locale și regionale."
+            "În Suceava, marketingul eficient pornește de la reputația pe care companiile au construit-o deja. O strategie de marketing bună nu schimbă artificial identitatea unui business, ci o face mai ușor de înțeles în Google, Social Media, website și conversații comerciale.",
+            "Pentru firme locale, provocarea nu este doar vizibilitatea. Provocarea este să conecteze Social Media Management, Google Ads, Meta Ads, SEO, website și conținut video într-un sistem care produce încredere înainte de prima discuție.",
+            "Digital Dot lucrează cu această logică: clarificăm oferta, construim mesaje, definim canalele potrivite și măsurăm rezultatele. Promovarea online devine astfel infrastructură, nu o listă de postări și reclame plătite fără direcție."
           ]
         },
         "regionalContext": {
           "title": "Contextul de business din Suceava",
           "paragraphs": [
-            "Suceava are o economie în care retailul, HoReCa, transportul, serviciile medicale, producția și business-urile tradiționale coexistă cu o generație nouă de antreprenori care vor vizibilitate mai bună.",
-            "Provocarea nu este doar să fii prezent online, ci să explici rapid de ce un client ar trebui să te aleagă. Aici strategia, conținutul, reclamele și website-ul trebuie să lucreze împreună.",
-            "Pentru companiile locale, marketingul matur înseamnă predictibilitate: cereri mai bune, comunicare mai clară și decizii bazate pe date, nu pe impuls.",
-            "Contextul din Suceava combină business-uri tradiționale cu domenii în mișcare: retail, HoReCa, transport, medical, producție și servicii locale. Multe companii au clienți fideli, dar au nevoie de o prezență digitală mai clară pentru generații noi de cumpărători și pentru competiție venită din alte orașe.",
-            "În retail și HoReCa, vizibilitatea nu înseamnă doar postări frumoase, ci consistență, diferențiere și dovadă. În medical, încrederea, sobrietatea și claritatea contează mai mult decât promisiunile agresive. În transport și producție, comunicarea trebuie să transmită capacitate, seriozitate și standard operațional.",
-            "O agenție de marketing în Suceava trebuie să înțeleagă această combinație: piețe apropiate, reputație locală, decizii bazate pe recomandări, dar și nevoia tot mai mare de website-uri rapide, SEO local, Google Business, campanii plătite și materiale video credibile."
+            "Suceava combină business-uri tradiționale, retail, HoReCa, medical, transport și producție cu o generație nouă de antreprenori care caută creștere digitală. Piața locală apreciază seriozitatea, dar clienții compară tot mai mult online înainte să aleagă.",
+            "În acest context, o agenție de marketing trebuie să înțeleagă atât relațiile locale, cât și mecanismele moderne: Google Business, reclame Google Ads, reclame Meta Ads, administrare Social Media, pagini de servicii clare și conținut care explică diferența.",
+            "Pentru Suceava, direcția bună înseamnă comunicare matură: nu agresivă, nu generică, ci suficient de clară încât reputația existentă să devină vizibilă și pentru clienți noi."
           ],
           "sectors": [
-            "retail",
+            "retail local",
             "HoReCa",
             "transport",
             "medical",
@@ -1828,95 +1889,83 @@
         "services": [
           {
             "id": "social-media-management",
-            "title": "Social Media Management",
+            "title": "Social Media Marketing",
             "href": "/social-media-management",
-            "description": "Construim prezență social media cu strategie editorială, conținut coerent și mesaje adaptate publicului local, fără postări făcute doar pentru bifă."
+            "description": "Administrare Social Media și Promovare Social Media pentru Suceava, cu strategie editorială, mesaje coerente și conținut adaptat pentru reputație locală, business-uri tradiționale și servicii regionale."
           },
           {
             "id": "google-meta-ads",
             "title": "Google Ads & Meta Ads",
             "href": "/google-meta-ads",
-            "description": "Campaniile paid media sunt gândite pe obiective, tracking și calitatea leadurilor, nu doar pe trafic ieftin sau reach fără context."
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Suceava, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
           },
           {
             "id": "productie-video",
-            "title": "Producție Video",
+            "title": "Creare Conținut Video",
             "href": "/productie-video",
-            "description": "Producem materiale video și foto care explică diferența brandului, susțin reclamele și dau consistență comunicării comerciale."
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Suceava."
           },
           {
             "id": "website-creation",
-            "title": "Website Creation",
+            "title": "Creare Website",
             "href": "/website-creation",
-            "description": "Website-urile și landing page-urile sunt construite cu structură clară, performanță, SEO tehnic și trasee de conversie ușor de urmărit."
+            "description": "Creare Website, landing pages și pagini de servicii pentru Suceava, cu structură SEO, viteză bună și trasee clare de conversie."
           },
           {
             "id": "seo",
-            "title": "SEO",
+            "title": "SEO & AI SEO",
             "href": "/seo",
-            "description": "Optimizăm arhitectura, conținutul și datele structurale pentru Google, AI search și utilizatori care caută soluții reale, nu promisiuni vagi."
+            "description": "SEO local, SEO semantic și AI SEO pentru Suceava, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
           }
         ],
         "worksWith": {
           "title": "Cu cine lucrăm în Suceava",
           "paragraphs": [
-            "Lucrăm cu antreprenori și manageri din Suceava care înțeleg că reputația locală trebuie dublată de o prezență digitală coerentă.",
-            "Ne potrivim cu business-uri care vor să construiască pe termen lung: conținut bun, campanii măsurabile, website-uri clare și un proces de optimizare constant.",
-            "Lucrăm cel mai bine cu antreprenori care au depășit etapa improvizației și vor să construiască o imagine stabilă. Nu este nevoie ca businessul să fie mare; este nevoie să existe deschidere pentru strategie, măsurare și coerență pe termen lung.",
-            "În Suceava, asta poate însemna o clinică ce vrea mai multă claritate online, un restaurant care are nevoie de conținut recurent, o firmă de transport care vrea credibilitate B2B sau un producător care trebuie să explice mai bine ce îl diferențiază.",
-            "Digital Dot nu promite rezultate instant. Construim sisteme care fac brandul mai ușor de înțeles, mai ușor de găsit și mai ușor de ales."
+            "Lucrăm cu antreprenori și manageri din Suceava care înțeleg că reputația locală trebuie susținută de o prezență digitală coerentă.",
+            "Ne potrivim cu business-uri care vor strategie, conținut, campanii măsurabile, website-uri clare și optimizare constantă, nu acțiuni izolate făcute doar pentru vizibilitate.",
+            "Pentru Suceava, colaborarea bună apare când există ofertă validată, disponibilitate pentru măsurare și dorința de a construi pe termen mediu."
           ],
           "criteria": [
-            "business-uri cu ofertă validată",
+            "business-uri cu reputație locală",
             "echipe care pot susține cererea generată",
-            "decizii bazate pe date și ritm de execuție"
+            "decizii bazate pe date și execuție constantă"
           ]
         },
         "faqs": [
           {
             "id": "suceava-faq-1",
             "question": "Cât costă promovarea online în Suceava?",
-            "answer": "Costul depinde de obiectiv, competiție, canale și maturitatea materialelor existente. Începem prin a înțelege oferta și stabilim un buget care poate fi măsurat, nu doar consumat."
+            "answer": "Costul depinde de obiectiv, competiție, canale și materialele existente. Un buget realist include strategie, conținut, tracking, reclame plătite și optimizare, nu doar suma investită în Google Ads sau Meta Ads."
           },
           {
             "id": "suceava-faq-2",
             "question": "Merită Google Ads pentru un business local din Suceava?",
-            "answer": "Da, dacă există cerere activă și tracking corect. Google Ads funcționează bine pentru servicii, medical, retail specializat și companii unde intenția de cumpărare este clară."
+            "answer": "Da, mai ales pentru servicii, medical, retail specializat și companii unde oamenii caută activ soluția. Reclamele Google Ads funcționează mai bine când pagina de destinație, oferta și trackingul sunt corecte."
           },
           {
             "id": "suceava-faq-3",
-            "question": "Cât durează până apar rezultatele?",
-            "answer": "Primele semnale apar de obicei în câteva săptămâni, dar stabilitatea vine din optimizare pe 60-90 de zile, mai ales când combinăm reclame, conținut și landing pages."
+            "question": "Este Social Media Marketing suficient pentru creștere locală?",
+            "answer": "Social Media ajută la încredere și consistență, dar rareori este suficient singur. De obicei trebuie conectat cu website, Google Business, SEO, Meta Ads și un proces clar de conversie."
           },
           {
             "id": "suceava-faq-4",
-            "question": "De ce multe companii investesc prea târziu în marketing?",
-            "answer": "Pentru că marketingul este tratat ca reacție la scăderea vânzărilor. Noi îl vedem ca infrastructură care trebuie construită înainte ca piața să devină presantă."
+            "question": "Cum alegi o agenție de marketing în Suceava?",
+            "answer": "Alege o agenție care întreabă despre obiective, marje, public, diferențiere și proces comercial înainte să propună postări sau reclame. Strategia contează mai mult decât volumul de activitate."
           },
           {
             "id": "suceava-faq-5",
-            "question": "Merită SEO local pentru un business din Suceava?",
-            "answer": "Da, mai ales pentru servicii, medical, HoReCa, retail și companii care primesc cereri prin Google. SEO local ajută businessul să fie găsit când oamenii caută soluții în oraș sau în județ."
+            "question": "Ce rol are Creare Website în marketingul local?",
+            "answer": "Website-ul este punctul în care încrederea se transformă în acțiune. Pentru business-uri locale, un site clar susține SEO, reclame Google Ads, campanii Meta Ads și răspunsuri utile pentru clienți."
           },
           {
             "id": "suceava-faq-6",
-            "question": "Cum ajută Google Business în marketingul local?",
-            "answer": "Google Business consolidează încrederea locală prin date corecte, recenzii, fotografii, program, link către website și prezență în căutări locale. Este o piesă importantă în local SEO și AI SEO."
-          },
-          {
-            "id": "suceava-faq-7",
             "question": "Poate Digital Dot lucra cu business-uri tradiționale?",
-            "answer": "Da. Pentru business-uri tradiționale, abordarea potrivită nu este schimbarea identității, ci traducerea reputației existente într-o comunicare modernă, clară și indexabilă."
-          },
-          {
-            "id": "suceava-faq-8",
-            "question": "Ce servicii de marketing sunt prioritare pentru retail în Suceava?",
-            "answer": "Pentru retail, prioritare sunt de obicei Google Business, Social Media Management, Meta Ads, conținut foto-video și pagini clare pentru produse sau categorii importante. Ordinea depinde de poziționare și de sezonalitate."
+            "answer": "Da. Pentru business-uri tradiționale, abordarea potrivită este traducerea reputației existente într-o comunicare modernă, clară și indexabilă, fără să forțăm un ton artificial."
           }
         ],
         "cta": {
           "title": "Vrei o strategie de marketing pentru Suceava?",
-          "description": "Putem începe cu o discuție clară despre obiective, piață, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "description": "Putem începe cu o discuție clară despre piața din Suceava, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
           "primaryLabel": "Solicită o discuție",
           "primaryHref": "/#contact",
           "secondaryLabel": "Vezi serviciile",
@@ -1924,8 +1973,8 @@
         },
         "internalLinks": [
           {
-            "label": "Homepage Digital Dot",
-            "href": "/"
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
           },
           {
             "label": "Social Media Management",
@@ -1934,6 +1983,10 @@
           {
             "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
@@ -1946,8 +1999,47 @@
           {
             "label": "Blog",
             "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
-        ]
+        ],
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Suceava",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Suceava, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: reputație locală, business-uri tradiționale și servicii regionale. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Suceava, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads local și lead generation",
+              "futurePath": "/agentie-marketing/suceava/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Suceava."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Management regional",
+              "futurePath": "/agentie-marketing/suceava/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Suceava."
+            }
+          ]
+        }
       },
       {
         "id": "botosani",
@@ -1955,10 +2047,10 @@
         "cityName": "Botoșani",
         "countyName": "Botoșani",
         "enabled": true,
-        "seoTitle": "Agenție de Marketing în Botoșani pentru business-uri locale care vor diferențiere digitală | Digital Dot",
-        "seoDescription": "În Botoșani, diferența dintre un business cunoscut local și un brand ales constant se construiește prin claritate. Digital Dot ajută companiile locale să t",
-        "ogTitle": "Agenție de Marketing în Botoșani pentru business-uri locale care vor diferențiere digitală",
-        "ogDescription": "În Botoșani, diferența dintre un business cunoscut local și un brand ales constant se construiește prin claritate. Digital Dot ajută companiile locale să treacă de la prezență online sporadică la marketing structurat.",
+        "seoTitle": "Agenție de Marketing în Botoșani pentru branduri locale care vor diferențiere digitală | Digital Dot",
+        "seoDescription": "Digital Dot susține business-uri din Botoșani cu strategie de marketing, Social Media, reclame plătite, creare website și SEO orientate spre diferențiere locală.",
+        "ogTitle": "Agenție de Marketing în Botoșani pentru branduri locale care vor diferențiere digitală",
+        "ogDescription": "În Botoșani, Digital Dot ajută companiile locale să treacă de la prezență online sporadică la marketing structurat, cu mesaje clare și diferențiere reală.",
         "ogImage": "/branding/references/chess-hero-wide.png",
         "hero": {
           "eyebrow": "Agenție de Marketing Botoșani",
@@ -1970,124 +2062,106 @@
         "positioning": {
           "title": "Marketingul ca infrastructură, nu ca improvizație",
           "paragraphs": [
-            "Digital Dot tratează marketingul ca infrastructură de business: poziționare, canale, conținut, tracking și ritm de optimizare. Fără această bază, execuția devine zgomot scump.",
-            "Abordarea noastră este anti-hype. Înainte de campanii, clarificăm oferta, audiența, mesajul și criteriile de succes, apoi construim un sistem care poate fi măsurat și îmbunătățit.",
-            "Pentru business-urile regionale, avantajul nu vine din a copia trenduri naționale, ci din a transforma cunoașterea pieței locale într-o strategie digitală matură.",
-            "În Botoșani, multe business-uri locale au avantajul proximității și al relațiilor directe cu clienții, dar pierd teren atunci când comunicarea digitală rămâne neclară sau inconsistentă. Marketingul devine util atunci când ajută compania să fie mai ușor de înțeles, de comparat și de ales.",
-            "Modernizarea digitală nu înseamnă să copiezi stilul brandurilor mari. Înseamnă să ai o identitate coerentă, un website care explică oferta, Social Media Management cu ritm, campanii Google Ads și Meta Ads măsurate corect și SEO care susține căutările locale.",
-            "Digital Dot tratează poziționarea regională ca pe un proces de clarificare. Înainte de volum, stabilim ce trebuie să știe piața despre business, ce diferență reală există și cum poate fi comunicată fără artificii."
+            "În Botoșani, multe business-uri au relații bune cu clienții existenți, dar comunicarea digitală nu explică suficient de clar de ce ar trebui alese de clienți noi. Aici intervine strategia de marketing: poziționare, mesaje și canale conectate.",
+            "Social Media Marketing, administrare pagini Social Media, Google Ads, Meta Ads și creare website trebuie să transmită aceeași diferență. Dacă fiecare canal spune altceva, marketingul devine greu de măsurat și ușor de ignorat.",
+            "Digital Dot construiește direcție înainte de execuție. Pentru Botoșani, asta înseamnă comunicare realistă, conținut util, reclame plătite bine segmentate și SEO local care susține căutările relevante."
           ]
         },
         "regionalContext": {
           "title": "Contextul de business din Botoșani",
           "paragraphs": [
-            "Multe business-uri din Botoșani au avantajul proximității și al relațiilor directe, dar pierd oportunități când comunicarea digitală nu transmite suficient de clar valoarea ofertei.",
-            "Modernizarea digitală nu înseamnă să copiezi branduri mari, ci să construiești o identitate credibilă, conținut relevant și campanii adaptate ritmului pieței locale.",
-            "Pentru companiile care vor diferențiere regională, marketingul trebuie să explice de ce merită să fii ales înainte ca prețul să devină singurul criteriu.",
-            "Botoșani are un context în care reputația locală încă are greutate, dar decizia de cumpărare este tot mai des influențată de căutări online, recenzii, social media și calitatea website-ului. Asta creează oportunități pentru companiile care se mișcă mai devreme și mai disciplinat.",
-            "Pentru servicii locale, retail, educație, sănătate sau business-uri de familie, diferențierea nu vine doar din preț. Vine din felul în care compania explică procesul, arată dovadă, răspunde întrebărilor și păstrează o prezență constantă.",
-            "O agenție de marketing pentru Botoșani trebuie să evite șabloanele. Piața are nevoie de comunicare realistă, de branding matur și de pași digitali care respectă ritmul businessului, dar îl scot din zona de invizibilitate."
+            "Botoșani are un mediu de business în care reputația locală încă are greutate, dar decizia de cumpărare este influențată de căutări online, recenzii, Social Media și calitatea website-ului.",
+            "Pentru servicii locale, retail, educație, sănătate sau business-uri de familie, diferențierea nu vine doar din preț. Vine din felul în care compania explică procesul, arată dovadă și păstrează o prezență constantă.",
+            "O agenție de marketing pentru Botoșani trebuie să evite șabloanele. Piața are nevoie de branding matur, promovare online contextuală și pași digitali care respectă ritmul businessului, dar îl scot din zona de invizibilitate."
           ],
           "sectors": [
-            "business-uri locale",
-            "servicii",
+            "servicii locale",
             "retail",
             "educație",
-            "branduri în modernizare digitală"
+            "sănătate",
+            "business-uri de familie"
           ]
         },
         "services": [
           {
             "id": "social-media-management",
-            "title": "Social Media Management",
+            "title": "Social Media Marketing",
             "href": "/social-media-management",
-            "description": "Construim prezență social media cu strategie editorială, conținut coerent și mesaje adaptate publicului local, fără postări făcute doar pentru bifă."
+            "description": "Administrare Social Media și Promovare Social Media pentru Botoșani, cu strategie editorială, mesaje coerente și conținut adaptat pentru diferențiere locală, modernizare digitală și servicii antreprenoriale."
           },
           {
             "id": "google-meta-ads",
             "title": "Google Ads & Meta Ads",
             "href": "/google-meta-ads",
-            "description": "Campaniile paid media sunt gândite pe obiective, tracking și calitatea leadurilor, nu doar pe trafic ieftin sau reach fără context."
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Botoșani, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
           },
           {
             "id": "productie-video",
-            "title": "Producție Video",
+            "title": "Creare Conținut Video",
             "href": "/productie-video",
-            "description": "Producem materiale video și foto care explică diferența brandului, susțin reclamele și dau consistență comunicării comerciale."
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Botoșani."
           },
           {
             "id": "website-creation",
-            "title": "Website Creation",
+            "title": "Creare Website",
             "href": "/website-creation",
-            "description": "Website-urile și landing page-urile sunt construite cu structură clară, performanță, SEO tehnic și trasee de conversie ușor de urmărit."
+            "description": "Creare Website, landing pages și pagini de servicii pentru Botoșani, cu structură SEO, viteză bună și trasee clare de conversie."
           },
           {
             "id": "seo",
-            "title": "SEO",
+            "title": "SEO & AI SEO",
             "href": "/seo",
-            "description": "Optimizăm arhitectura, conținutul și datele structurale pentru Google, AI search și utilizatori care caută soluții reale, nu promisiuni vagi."
+            "description": "SEO local, SEO semantic și AI SEO pentru Botoșani, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
           }
         ],
         "worksWith": {
           "title": "Cu cine lucrăm în Botoșani",
           "paragraphs": [
-            "Lucrăm cu business-uri din Botoșani care vor să fie percepute mai profesionist și să transforme recomandările locale într-un flux digital mai stabil.",
-            "Căutăm colaborări cu echipe dispuse să clarifice oferta, să investească în conținut și să măsoare progresul fără scurtături artificiale.",
-            "Lucrăm cu business-uri locale care vor să fie evaluate după valoare, nu doar după preț. Asta cere poziționare, conținut, pagini clare și un sistem de marketing care poate fi îmbunătățit lunar.",
-            "Pentru Botoșani, potrivirea bună este cu antreprenori care înțeleg că modernizarea digitală nu este o cheltuială punctuală, ci o investiție în încredere și vizibilitate.",
-            "Digital Dot ajută companiile să își păstreze autenticitatea locală, dar să o exprime într-o formă mai competitivă pentru Google, social media și sisteme AI."
+            "Lucrăm cu antreprenori din Botoșani care vor să își clarifice mesajul și să devină mai ușor de ales, nu doar mai vizibili.",
+            "Ne potrivim cu firme care au ofertă reală, dar au nevoie de branding, conținut, website, SEO și campanii plătite care să explice mai bine valoarea.",
+            "Pentru piața locală, obiectivul nu este volum artificial, ci o prezență constantă care reduce dependența de preț și recomandări întâmplătoare."
           ],
           "criteria": [
-            "ofertă locală clară",
-            "dorință de modernizare digitală",
-            "deschidere pentru diferențiere, nu doar promovare ieftină"
+            "business-uri locale cu ofertă validată",
+            "branduri care vor diferențiere",
+            "echipe deschise la strategie și consistență"
           ]
         },
         "faqs": [
           {
             "id": "botosani-faq-1",
             "question": "Cum poate un business din Botoșani să se diferențieze online?",
-            "answer": "Prin poziționare clară, conținut care arată competență și campanii care duc utilizatorul spre decizie, nu doar spre vizualizări."
+            "answer": "Prin poziționare clară, website coerent, conținut util și reclame care comunică diferența reală, nu doar prețul. Diferențierea apare când toate canalele spun aceeași poveste."
           },
           {
             "id": "botosani-faq-2",
-            "question": "Este social media suficientă pentru promovare locală?",
-            "answer": "Social media ajută la încredere și memorabilitate, dar devine mai puternică atunci când este conectată cu website, reclame și tracking."
+            "question": "Este suficientă promovarea pe Facebook pentru un business local?",
+            "answer": "Nu de obicei. Facebook și Instagram sunt utile, dar promovarea Social Media trebuie susținută de website, SEO, Google Business și campanii măsurate corect."
           },
           {
             "id": "botosani-faq-3",
-            "question": "Ce buget minim are sens pentru campanii locale?",
-            "answer": "Depinde de industrie și obiectiv. Important este ca bugetul să fie suficient pentru testare, învățare și optimizare, nu împărțit în prea multe direcții simultan."
+            "question": "Ce buget are sens pentru reclame plătite în Botoșani?",
+            "answer": "Bugetul depinde de obiectiv și competiție. Important este să existe tracking, ofertă clară și o pagină bună înainte de a mări investiția în Google Ads sau Meta Ads."
           },
           {
             "id": "botosani-faq-4",
-            "question": "Pot concura business-urile locale cu branduri mai mari?",
-            "answer": "Da, dacă nu încearcă să joace același joc. Avantajul local poate fi transformat în încredere, relevanță și comunicare mai personală."
+            "question": "Merită o agenție de content marketing pentru branduri locale?",
+            "answer": "Da, dacă businessul are nevoie să explice proces, diferență, dovadă și încredere. Content marketingul bun ajută atât Social Media, cât și SEO și vânzarea."
           },
           {
             "id": "botosani-faq-5",
-            "question": "Cât costă promovarea online în Botoșani?",
-            "answer": "Costul depinde de canale, obiective și nivelul actual de pregătire. Unele companii au nevoie de branding și website înainte de reclame, altele pot începe cu SEO local și campanii plătite."
+            "question": "Poate SEO local ajuta un business mic?",
+            "answer": "Da. SEO local ajută businessurile mici să fie găsite când oamenii caută servicii concrete în oraș sau județ, mai ales dacă website-ul are structură și răspunsuri clare."
           },
           {
             "id": "botosani-faq-6",
-            "question": "Este suficientă promovarea pe Facebook pentru un business local?",
-            "answer": "Nu întotdeauna. Facebook poate fi util, dar un sistem matur combină social media, website, Google Business, SEO, campanii Meta Ads și uneori Google Ads."
-          },
-          {
-            "id": "botosani-faq-7",
-            "question": "Cum se diferențiază un brand local în Botoșani?",
-            "answer": "Prin claritate: ofertă bine explicată, dovezi concrete, conținut consecvent, identitate vizuală coerentă și mesaje care arată de ce businessul merită ales."
-          },
-          {
-            "id": "botosani-faq-8",
-            "question": "Poate SEO local ajuta un business mic?",
-            "answer": "Da. SEO local poate aduce vizibilitate pentru căutări specifice, mai ales când pagina, Google Business și conținutul răspund la întrebările reale ale clienților."
+            "question": "Cum alegi o agenție de promovare online?",
+            "answer": "Caută o echipă care vorbește despre strategie, tracking, conversii și poziționare, nu doar despre postări, reach sau promisiuni rapide."
           }
         ],
         "cta": {
           "title": "Vrei o strategie de marketing pentru Botoșani?",
-          "description": "Putem începe cu o discuție clară despre obiective, piață, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "description": "Putem începe cu o discuție clară despre piața din Botoșani, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
           "primaryLabel": "Solicită o discuție",
           "primaryHref": "/#contact",
           "secondaryLabel": "Vezi serviciile",
@@ -2095,8 +2169,8 @@
         },
         "internalLinks": [
           {
-            "label": "Homepage Digital Dot",
-            "href": "/"
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
           },
           {
             "label": "Social Media Management",
@@ -2105,6 +2179,10 @@
           {
             "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
@@ -2117,8 +2195,47 @@
           {
             "label": "Blog",
             "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
-        ]
+        ],
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Botoșani",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Botoșani, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: diferențiere locală, modernizare digitală și servicii antreprenoriale. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Botoșani, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads local și lead generation",
+              "futurePath": "/agentie-marketing/botosani/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Botoșani."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Management regional",
+              "futurePath": "/agentie-marketing/botosani/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Botoșani."
+            }
+          ]
+        }
       },
       {
         "id": "neamt",
@@ -2127,9 +2244,9 @@
         "countyName": "Neamț",
         "enabled": true,
         "seoTitle": "Agenție de Marketing în Neamț pentru branduri locale care vor consolidare și creștere | Digital Dot",
-        "seoDescription": "În Neamț, multe companii cresc sănătos prin stabilitate, relații și reputație. Digital Dot aduce aceste atuuri într-o arhitectură digitală clară, potrivită",
+        "seoDescription": "Digital Dot construiește în Neamț marketing strategic, SEO, Social Media, creare website și reclame online pentru branduri locale care vor consolidare.",
         "ogTitle": "Agenție de Marketing în Neamț pentru branduri locale care vor consolidare și creștere",
-        "ogDescription": "În Neamț, multe companii cresc sănătos prin stabilitate, relații și reputație. Digital Dot aduce aceste atuuri într-o arhitectură digitală clară, potrivită pentru consolidare de brand și dezvoltare regională.",
+        "ogDescription": "În Neamț, Digital Dot transformă reputația locală și stabilitatea operațională într-o arhitectură digitală clară, potrivită pentru consolidare de brand.",
         "ogImage": "/branding/references/chess-hero-wide.png",
         "hero": {
           "eyebrow": "Agenție de Marketing Neamț",
@@ -2141,72 +2258,64 @@
         "positioning": {
           "title": "Marketingul ca infrastructură, nu ca improvizație",
           "paragraphs": [
-            "Digital Dot tratează marketingul ca infrastructură de business: poziționare, canale, conținut, tracking și ritm de optimizare. Fără această bază, execuția devine zgomot scump.",
-            "Abordarea noastră este anti-hype. Înainte de campanii, clarificăm oferta, audiența, mesajul și criteriile de succes, apoi construim un sistem care poate fi măsurat și îmbunătățit.",
-            "Pentru business-urile regionale, avantajul nu vine din a copia trenduri naționale, ci din a transforma cunoașterea pieței locale într-o strategie digitală matură.",
-            "În Neamț, multe companii au crescut prin continuitate, relații și reputație familială. Acest capital este valoros, dar trebuie tradus într-o prezență digitală capabilă să convingă oameni care nu cunosc încă businessul.",
-            "Strategia de marketing contează mai ales pentru brandurile care vor consolidare, nu doar campanii punctuale. O companie stabilă are nevoie de mesaj, structură, SEO, website, conținut și materiale video care transmit încredere fără exagerare.",
-            "Digital Dot abordează marketingul ca infrastructură de consolidare. Nu ne interesează să producem zgomot, ci să facem compania mai clară, mai memorabilă și mai ușor de găsit în căutări locale și regionale."
+            "În Neamț, marketingul eficient nu trebuie să pară zgomotos ca să fie convingător. Pentru companii stabile, miza este să traducă reputația în website, SEO, Social Media, conținut video și reclame plătite care inspiră încredere.",
+            "Strategia de marketing contează mai ales pentru brandurile care vor consolidare, nu doar campanii punctuale. Mesajul, dovada, procesul și diferențierea trebuie să fie vizibile înainte ca un client să ceară o ofertă.",
+            "Digital Dot lucrează cu această maturitate: clarificăm ce face compania valoroasă, apoi alegem canalele potrivite, de la Google Ads și Meta Ads până la content marketing și AI SEO."
           ]
         },
         "regionalContext": {
           "title": "Contextul de business din Neamț",
           "paragraphs": [
-            "Business-urile familiale și companiile locale stabile au adesea produse bune, servicii solide și o reputație reală, dar comunicarea digitală nu reflectă întotdeauna această valoare.",
-            "Într-o piață regională în dezvoltare, marketingul trebuie să creeze încredere înainte de contact: prin website, conținut, dovezi, campanii și o voce de brand coerentă.",
-            "Pentru Neamț, miza este consolidarea: branduri mai clare, procese comerciale mai bine susținute și o prezență care poate depăși limita recomandărilor directe.",
-            "Neamț are un mediu de business în care relațiile directe și reputația pe termen lung contează mult. În același timp, clienții compară tot mai des online, iar companiile care nu își explică bine valoarea pot părea mai puțin competitive decât sunt în realitate.",
-            "Pentru business-uri familiale, servicii locale, turism, producție sau retail regional, provocarea este să păstreze autenticitatea și să o transforme în comunicare modernă. Brandingul pe termen lung ajută această tranziție.",
-            "O agenție de marketing pentru Neamț trebuie să lucreze cu maturitate: să înțeleagă ritmul deciziei, să construiască încredere și să evite promisiunile rapide care nu se potrivesc unei companii stabile."
+            "Neamț are un mediu de business în care relațiile directe și reputația pe termen lung contează mult. În același timp, clienții compară tot mai des online, iar companiile care nu își explică bine valoarea pot părea mai puțin competitive decât sunt.",
+            "Pentru business-uri familiale, servicii locale, turism, producție sau retail regional, provocarea este să păstreze autenticitatea și să o transforme în comunicare modernă.",
+            "O agenție de marketing pentru Neamț trebuie să construiască încredere, să respecte ritmul deciziei și să evite promisiunile rapide care nu se potrivesc unei companii stabile."
           ],
           "sectors": [
             "business-uri familiale",
             "servicii locale",
             "turism",
             "retail specializat",
-            "dezvoltare regională"
+            "producție regională"
           ]
         },
         "services": [
           {
             "id": "social-media-management",
-            "title": "Social Media Management",
+            "title": "Social Media Marketing",
             "href": "/social-media-management",
-            "description": "Construim prezență social media cu strategie editorială, conținut coerent și mesaje adaptate publicului local, fără postări făcute doar pentru bifă."
+            "description": "Administrare Social Media și Promovare Social Media pentru Neamț, cu strategie editorială, mesaje coerente și conținut adaptat pentru consolidare de brand, reputație locală și comunicare matură."
           },
           {
             "id": "google-meta-ads",
             "title": "Google Ads & Meta Ads",
             "href": "/google-meta-ads",
-            "description": "Campaniile paid media sunt gândite pe obiective, tracking și calitatea leadurilor, nu doar pe trafic ieftin sau reach fără context."
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Neamț, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
           },
           {
             "id": "productie-video",
-            "title": "Producție Video",
+            "title": "Creare Conținut Video",
             "href": "/productie-video",
-            "description": "Producem materiale video și foto care explică diferența brandului, susțin reclamele și dau consistență comunicării comerciale."
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Neamț."
           },
           {
             "id": "website-creation",
-            "title": "Website Creation",
+            "title": "Creare Website",
             "href": "/website-creation",
-            "description": "Website-urile și landing page-urile sunt construite cu structură clară, performanță, SEO tehnic și trasee de conversie ușor de urmărit."
+            "description": "Creare Website, landing pages și pagini de servicii pentru Neamț, cu structură SEO, viteză bună și trasee clare de conversie."
           },
           {
             "id": "seo",
-            "title": "SEO",
+            "title": "SEO & AI SEO",
             "href": "/seo",
-            "description": "Optimizăm arhitectura, conținutul și datele structurale pentru Google, AI search și utilizatori care caută soluții reale, nu promisiuni vagi."
+            "description": "SEO local, SEO semantic și AI SEO pentru Neamț, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
           }
         ],
         "worksWith": {
           "title": "Cu cine lucrăm în Neamț",
           "paragraphs": [
             "Lucrăm cu antreprenori din Neamț care vor să păstreze seriozitatea brandului, dar să comunice mai modern și mai convingător.",
-            "Ne potrivim cu firme care au răbdare să construiască: poziționare, conținut, campanii, website și SEO local gândite ca sistem.",
-            "Lucrăm cu business-uri care nu vor să schimbe direcția la fiecare lună, ci să construiască un brand mai clar. Această abordare este potrivită pentru companii familiale, servicii specializate și firme care vor dezvoltare regională.",
-            "În Neamț, calitatea comunicării poate face diferența între o companie cunoscută doar local și una care devine relevantă într-o piață mai largă. Pentru asta sunt necesare website, SEO, conținut, reclame și coerență.",
-            "Ne potrivim cu antreprenori care acceptă că marketingul bun cere răbdare, date și standarde, nu doar idei creative izolate."
+            "Ne potrivim cu firme care au răbdare să construiască poziționare, conținut, campanii, website și SEO local gândite ca sistem.",
+            "În Neamț, colaborarea potrivită înseamnă consistență: o imagine mai clară, canale mai bine conectate și decizii comerciale susținute de date."
           ],
           "criteria": [
             "branduri cu reputație locală",
@@ -2218,47 +2327,37 @@
           {
             "id": "neamt-faq-1",
             "question": "Ce înseamnă marketing eficient pentru un business din Neamț?",
-            "answer": "Înseamnă să transformi reputația, oferta și diferențele reale în conținut, pagini și campanii care pot genera încredere înainte de prima discuție."
+            "answer": "Înseamnă să transformi reputația, oferta și diferențele reale în conținut, pagini și campanii care generează încredere înainte de prima discuție."
           },
           {
             "id": "neamt-faq-2",
             "question": "Ajută SEO pentru business-uri regionale?",
-            "answer": "Da. SEO ajută mai ales când oamenii caută servicii locale sau comparații. Contează structura site-ului, conținutul și consistența semnalelor de brand."
+            "answer": "Da. SEO ajută când oamenii caută servicii locale sau comparații. Contează structura site-ului, conținutul, datele structurate și consistența semnalelor de brand."
           },
           {
             "id": "neamt-faq-3",
-            "question": "Cum lucrăm dacă echipa este în alt oraș?",
-            "answer": "Procesul este remote-friendly: audit, strategie, plan editorial, campanii și raportare se pot gestiona eficient online, cu întâlniri punctuale când sunt utile."
+            "question": "Merită brandingul pe termen lung pentru companii locale?",
+            "answer": "Da. Brandingul coerent reduce dependența de preț, crește încrederea și face compania mai ușor de recunoscut în căutări, recomandări și Social Media."
           },
           {
             "id": "neamt-faq-4",
-            "question": "De ce nu recomandăm campanii fără strategie?",
-            "answer": "Pentru că bugetul se consumă rapid când mesajul, audiența și pagina de destinație nu sunt aliniate. Strategia reduce risipa."
+            "question": "Ce canal este prioritar în Neamț?",
+            "answer": "Depinde de business. Pentru unele companii prioritatea este website-ul și SEO local; pentru altele, administrare Social Media, Google Business, Google Ads sau Meta Ads."
           },
           {
             "id": "neamt-faq-5",
-            "question": "Cât costă promovarea online în Neamț?",
-            "answer": "Costurile depind de obiective, competiție și canale. Pentru consolidare de brand, bugetul trebuie să acopere strategie, conținut, website, SEO și eventual campanii plătite."
-          },
-          {
-            "id": "neamt-faq-6",
             "question": "Cum ajută marketingul un business familial?",
             "answer": "Marketingul ajută un business familial să își exprime reputația, valorile, procesul și diferența într-o formă clară pentru clienți noi, nu doar pentru cei care îl cunosc deja."
           },
           {
-            "id": "neamt-faq-7",
-            "question": "Merită brandingul pe termen lung pentru companii locale?",
-            "answer": "Da. Brandingul coerent reduce dependența de preț, crește încrederea și face compania mai ușor de recunoscut în căutări, recomandări și social media."
-          },
-          {
-            "id": "neamt-faq-8",
-            "question": "Ce canal este prioritar în Neamț?",
-            "answer": "Depinde de business. Pentru unele companii prioritatea este website-ul și SEO local; pentru altele, social media, Google Business sau campanii Google Ads și Meta Ads."
+            "id": "neamt-faq-6",
+            "question": "De ce nu recomandăm campanii fără strategie?",
+            "answer": "Pentru că bugetul se consumă rapid când mesajul, audiența și pagina de destinație nu sunt aliniate. Strategia reduce risipa și face rezultatele mai ușor de interpretat."
           }
         ],
         "cta": {
           "title": "Vrei o strategie de marketing pentru Neamț?",
-          "description": "Putem începe cu o discuție clară despre obiective, piață, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "description": "Putem începe cu o discuție clară despre piața din Neamț, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
           "primaryLabel": "Solicită o discuție",
           "primaryHref": "/#contact",
           "secondaryLabel": "Vezi serviciile",
@@ -2266,8 +2365,8 @@
         },
         "internalLinks": [
           {
-            "label": "Homepage Digital Dot",
-            "href": "/"
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
           },
           {
             "label": "Social Media Management",
@@ -2276,6 +2375,10 @@
           {
             "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
@@ -2288,8 +2391,47 @@
           {
             "label": "Blog",
             "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
-        ]
+        ],
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Neamț",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Neamț, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: consolidare de brand, reputație locală și comunicare matură. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Neamț, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads local și lead generation",
+              "futurePath": "/agentie-marketing/neamt/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Neamț."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Management regional",
+              "futurePath": "/agentie-marketing/neamt/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Neamț."
+            }
+          ]
+        }
       },
       {
         "id": "bacau",
@@ -2298,9 +2440,9 @@
         "countyName": "Bacău",
         "enabled": true,
         "seoTitle": "Agenție de Marketing în Bacău pentru servicii, industrie și retail regional | Digital Dot",
-        "seoDescription": "Bacăul are o piață activă, cu servicii, retail regional și companii industriale care au nevoie de comunicare clară și leaduri mai bune. Digital Dot constru",
+        "seoDescription": "Digital Dot oferă în Bacău strategie de marketing, Google Ads, Meta Ads, B2B Marketing Digital, Social Media, SEO și website-uri pentru creștere măsurabilă.",
         "ogTitle": "Agenție de Marketing în Bacău pentru servicii, industrie și retail regional",
-        "ogDescription": "Bacăul are o piață activă, cu servicii, retail regional și companii industriale care au nevoie de comunicare clară și leaduri mai bune. Digital Dot construiește marketing cu structură, date și direcție.",
+        "ogDescription": "În Bacău, Digital Dot construiește marketing cu structură, date și direcție pentru servicii, industrie, retail regional și companii B2B.",
         "ogImage": "/branding/references/chess-hero-wide.png",
         "hero": {
           "eyebrow": "Agenție de Marketing Bacău",
@@ -2312,21 +2454,15 @@
         "positioning": {
           "title": "Marketingul ca infrastructură, nu ca improvizație",
           "paragraphs": [
-            "Digital Dot tratează marketingul ca infrastructură de business: poziționare, canale, conținut, tracking și ritm de optimizare. Fără această bază, execuția devine zgomot scump.",
-            "Abordarea noastră este anti-hype. Înainte de campanii, clarificăm oferta, audiența, mesajul și criteriile de succes, apoi construim un sistem care poate fi măsurat și îmbunătățit.",
-            "Pentru business-urile regionale, avantajul nu vine din a copia trenduri naționale, ci din a transforma cunoașterea pieței locale într-o strategie digitală matură.",
-            "Bacău are un profil regional în care serviciile, industria și retailul se intersectează cu nevoia de marketing predictibil. Companiile care au operațiuni serioase au nevoie de comunicare care explică diferența și susține vânzarea, nu doar prezență online.",
-            "Marketingul predictibil începe cu infrastructură: tracking, website, pagini de servicii, Social Media Management, Google Ads, Meta Ads, SEO și conținut care poate fi evaluat. Fără aceste piese, bugetele sunt greu de controlat.",
-            "Digital Dot construiește strategii care separă clar obiectivele: vizibilitate, lead generation, conversie, recrutare, autoritate și retenție. Această claritate este importantă într-un oraș cu business-uri regionale și competiție diversă."
+            "Bacău are un profil regional în care serviciile, industria și retailul se intersectează cu nevoia de marketing predictibil. Companiile care au operațiuni serioase au nevoie de comunicare care explică diferența și susține vânzarea.",
+            "Marketingul predictibil începe cu infrastructură: tracking, website, pagini de servicii, Social Media Management, Google Ads, Meta Ads, SEO și conținut care poate fi evaluat.",
+            "Digital Dot separă clar obiectivele: vizibilitate, lead generation, conversie, recrutare, autoritate și retenție. Această claritate este importantă într-un oraș cu business-uri regionale și competiție diversă."
           ]
         },
         "regionalContext": {
           "title": "Contextul de business din Bacău",
           "paragraphs": [
-            "În Bacău, competiția dintre servicii, retail și companii B2B obligă brandurile să fie mai clare: ce oferă, cui se adresează și de ce merită atenție acum.",
-            "Pentru industrie și servicii, marketingul nu trebuie să fie zgomotos. Trebuie să explice valoarea, să reducă fricțiunea comercială și să susțină procesul de vânzare.",
-            "Retailul regional are nevoie de campanii agile, conținut bun și măsurare atentă, mai ales când decizia clientului se mută între social media, Google și website.",
-            "În Bacău, multe companii au nevoie să comunice către mai multe tipuri de public: clienți locali, parteneri regionali, candidați, distribuitori sau decidenți B2B. Această complexitate cere mesaje segmentate și o arhitectură digitală curată.",
+            "În Bacău, multe companii comunică spre mai multe tipuri de public: clienți locali, parteneri regionali, candidați, distribuitori sau decidenți B2B. Această complexitate cere mesaje segmentate și o arhitectură digitală curată.",
             "Pentru industrie și servicii, încrederea se construiește prin explicații clare, procese, dovezi și conținut care arată capacitatea reală. Pentru retail regional, diferențierea ține de poziționare, experiență și frecvență inteligentă în comunicare.",
             "O agenție de marketing pentru Bacău trebuie să gândească dincolo de campanii izolate. Important este sistemul: ce află publicul, unde ajunge, ce poate compara și cum se transformă interesul în contact."
           ],
@@ -2341,33 +2477,33 @@
         "services": [
           {
             "id": "social-media-management",
-            "title": "Social Media Management",
+            "title": "Social Media Marketing",
             "href": "/social-media-management",
-            "description": "Construim prezență social media cu strategie editorială, conținut coerent și mesaje adaptate publicului local, fără postări făcute doar pentru bifă."
+            "description": "Administrare Social Media și Promovare Social Media pentru Bacău, cu strategie editorială, mesaje coerente și conținut adaptat pentru servicii, industrie, B2B și retail regional."
           },
           {
             "id": "google-meta-ads",
             "title": "Google Ads & Meta Ads",
             "href": "/google-meta-ads",
-            "description": "Campaniile paid media sunt gândite pe obiective, tracking și calitatea leadurilor, nu doar pe trafic ieftin sau reach fără context."
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Bacău, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
           },
           {
             "id": "productie-video",
-            "title": "Producție Video",
+            "title": "Creare Conținut Video",
             "href": "/productie-video",
-            "description": "Producem materiale video și foto care explică diferența brandului, susțin reclamele și dau consistență comunicării comerciale."
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Bacău."
           },
           {
             "id": "website-creation",
-            "title": "Website Creation",
+            "title": "Creare Website",
             "href": "/website-creation",
-            "description": "Website-urile și landing page-urile sunt construite cu structură clară, performanță, SEO tehnic și trasee de conversie ușor de urmărit."
+            "description": "Creare Website, landing pages și pagini de servicii pentru Bacău, cu structură SEO, viteză bună și trasee clare de conversie."
           },
           {
             "id": "seo",
-            "title": "SEO",
+            "title": "SEO & AI SEO",
             "href": "/seo",
-            "description": "Optimizăm arhitectura, conținutul și datele structurale pentru Google, AI search și utilizatori care caută soluții reale, nu promisiuni vagi."
+            "description": "SEO local, SEO semantic și AI SEO pentru Bacău, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
           }
         ],
         "worksWith": {
@@ -2375,9 +2511,7 @@
           "paragraphs": [
             "Lucrăm cu firme din Bacău care vor să își alinieze marketingul cu vânzările, nu să producă materiale disparate.",
             "Ne potrivim cu business-uri care au ofertă serioasă și vor să transforme comunicarea într-un sistem de cerere, nu într-un cost decorativ.",
-            "Lucrăm cu business-uri care au nevoie de structură, nu doar de vizibilitate. Asta include firme de servicii, retaileri regionali, companii industriale și branduri care vor o comunicare mai matură.",
-            "Pentru Bacău, o colaborare bună pornește de la obiective comerciale clare și de la disponibilitatea de a măsura. Nu orice problemă se rezolvă prin reclame; uneori este nevoie de website, ofertă, branding sau conținut mai bun.",
-            "Digital Dot aduce disciplină în proces: audit, strategie, execuție, optimizare și învățare continuă."
+            "Pentru Bacău, o colaborare bună pornește de la obiective comerciale clare și de la disponibilitatea de a măsura."
           ],
           "criteria": [
             "servicii cu ciclu de vânzare clar",
@@ -2398,38 +2532,28 @@
           },
           {
             "id": "bacau-faq-3",
-            "question": "Cum abordăm companiile industriale?",
-            "answer": "Prin claritate, dovezi și conținut care explică procese, capacitate, diferențiatori și aplicații reale, nu prin comunicare superficială."
+            "question": "Cum abordăm B2B Marketing Digital în Bacău?",
+            "answer": "În B2B, marketingul trebuie să explice capacitatea, procesul, diferențierea și dovada. De obicei combinăm website, SEO, content marketing, LinkedIn și campanii plătite bine segmentate."
           },
           {
             "id": "bacau-faq-4",
             "question": "Ce contează mai mult: brand sau performance?",
-            "answer": "Pentru creștere sănătoasă, ambele. Brandul creează încredere, performance-ul captează cerere și datele le conectează."
+            "answer": "Pentru companii mature, ambele contează. Brandul reduce fricțiunea, iar performance marketingul aduce semnale măsurabile. Separarea lor completă produce decizii incomplete."
           },
           {
             "id": "bacau-faq-5",
-            "question": "Cât costă promovarea online în Bacău?",
-            "answer": "Costul depinde de obiectiv și de complexitatea pieței. Pentru servicii și industrie, bugetul trebuie să includă adesea website, SEO, conținut, tracking și campanii plătite."
+            "question": "Este producția video utilă pentru industrie?",
+            "answer": "Da. Creare Conținut Video poate arăta procese, capacitate, oameni și standarde operaționale care sunt greu de explicat doar prin text sau reclame."
           },
           {
             "id": "bacau-faq-6",
-            "question": "Merită Google Ads pentru companii de servicii?",
-            "answer": "Da, dacă există intenție de căutare și o pagină de destinație clară. Google Ads funcționează mai bine când trackingul și procesul de conversie sunt corecte."
-          },
-          {
-            "id": "bacau-faq-7",
             "question": "Cum devine marketingul predictibil?",
-            "answer": "Prin structură: obiective clare, date curate, mesaje testabile, raportare, optimizare și legătură între campanii, website, SEO și vânzări."
-          },
-          {
-            "id": "bacau-faq-8",
-            "question": "Este producția video utilă pentru industrie?",
-            "answer": "Da. Video-ul poate arăta procese, capacitate, echipamente, standarde și oameni, lucruri greu de transmis doar prin text sau fotografii statice."
+            "answer": "Prin tracking, obiective clare, funnel, pagini bune, conținut relevant și optimizare constantă. Predictibilitatea nu vine dintr-o singură campanie, ci din sistem."
           }
         ],
         "cta": {
           "title": "Vrei o strategie de marketing pentru Bacău?",
-          "description": "Putem începe cu o discuție clară despre obiective, piață, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "description": "Putem începe cu o discuție clară despre piața din Bacău, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
           "primaryLabel": "Solicită o discuție",
           "primaryHref": "/#contact",
           "secondaryLabel": "Vezi serviciile",
@@ -2437,8 +2561,8 @@
         },
         "internalLinks": [
           {
-            "label": "Homepage Digital Dot",
-            "href": "/"
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
           },
           {
             "label": "Social Media Management",
@@ -2447,6 +2571,10 @@
           {
             "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
@@ -2459,8 +2587,47 @@
           {
             "label": "Blog",
             "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
-        ]
+        ],
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Bacău",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Bacău, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: servicii, industrie, B2B și retail regional. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Bacău, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads local și lead generation",
+              "futurePath": "/agentie-marketing/bacau/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Bacău."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Management regional",
+              "futurePath": "/agentie-marketing/bacau/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Bacău."
+            }
+          ]
+        }
       },
       {
         "id": "bistrita-nasaud",
@@ -2468,138 +2635,121 @@
         "cityName": "Bistrița-Năsăud",
         "countyName": "Bistrița-Năsăud",
         "enabled": true,
-        "seoTitle": "Agenție de Marketing în Bistrița-Năsăud pentru producție și business-uri stabile în expansiune digitală | Digital Dot",
-        "seoDescription": "În Bistrița-Năsăud, multe companii au crescut prin stabilitate operațională și seriozitate. Digital Dot le ajută să transforme această bază într-o prezență",
-        "ogTitle": "Agenție de Marketing în Bistrița-Năsăud pentru producție și business-uri stabile în expansiune digitală",
-        "ogDescription": "În Bistrița-Năsăud, multe companii au crescut prin stabilitate operațională și seriozitate. Digital Dot le ajută să transforme această bază într-o prezență digitală mai clară, mai convingătoare și mai scalabilă.",
+        "seoTitle": "Agenție de Marketing în Bistrița-Năsăud pentru companii stabile care vor extindere digitală | Digital Dot",
+        "seoDescription": "Digital Dot dezvoltă în Bistrița-Năsăud marketing strategic, B2B, Social Media, SEO, creare website și reclame online pentru companii stabile.",
+        "ogTitle": "Agenție de Marketing în Bistrița-Năsăud pentru companii stabile care vor extindere digitală",
+        "ogDescription": "În Bistrița-Năsăud, Digital Dot ajută companiile stabile să transforme seriozitatea operațională într-o prezență digitală clară și extensibilă.",
         "ogImage": "/branding/references/chess-hero-wide.png",
         "hero": {
           "eyebrow": "Agenție de Marketing Bistrița-Năsăud",
-          "title": "Agenție de Marketing în Bistrița-Năsăud pentru producție și business-uri stabile în expansiune digitală",
-          "intro": "În Bistrița-Năsăud, multe companii au crescut prin stabilitate operațională și seriozitate. Digital Dot le ajută să transforme această bază într-o prezență digitală mai clară, mai convingătoare și mai scalabilă.",
+          "title": "Agenție de Marketing în Bistrița-Năsăud pentru companii stabile care vor extindere digitală",
+          "intro": "În Bistrița-Năsăud, multe companii au crescut prin stabilitate operațională și seriozitate. Digital Dot le ajută să transforme această bază într-o prezență digitală mai clară, mai credibilă și mai ușor de extins.",
           "ctaLabel": "Hai să povestim",
           "ctaHref": "/#contact"
         },
         "positioning": {
           "title": "Marketingul ca infrastructură, nu ca improvizație",
           "paragraphs": [
-            "Digital Dot tratează marketingul ca infrastructură de business: poziționare, canale, conținut, tracking și ritm de optimizare. Fără această bază, execuția devine zgomot scump.",
-            "Abordarea noastră este anti-hype. Înainte de campanii, clarificăm oferta, audiența, mesajul și criteriile de succes, apoi construim un sistem care poate fi măsurat și îmbunătățit.",
-            "Pentru business-urile regionale, avantajul nu vine din a copia trenduri naționale, ci din a transforma cunoașterea pieței locale într-o strategie digitală matură.",
-            "Bistrița-Năsăud are un context potrivit pentru companii stabile, producție și business-uri care au crescut prin seriozitate operațională. Pentru aceste firme, marketingul nu trebuie să pară spectaculos, ci să transmită capacitate, standard și direcție.",
-            "Extinderea digitală devine necesară când compania vrea să fie înțeleasă dincolo de cercul existent de relații. Website-ul, SEO, producția video, Google Ads, Meta Ads și Social Media Management pot transforma stabilitatea într-un avantaj vizibil.",
-            "Digital Dot abordează modernizarea fără să forțeze un stil artificial. Construim comunicare care respectă business-ul, dar îl face mai ușor de descoperit, evaluat și contactat."
+            "Pentru companiile stabile din Bistrița-Năsăud, marketingul nu trebuie să fie decorativ. El trebuie să explice capacitate, standard, diferențiere și motive reale pentru care un client sau partener ar trebui să aleagă compania.",
+            "B2B Marketing Digital, creare website, SEO, Social Media și Creare Conținut Video funcționează bine când sunt conectate la procesul comercial, nu tratate ca materiale separate.",
+            "Digital Dot construiește sisteme de marketing pentru extindere: pagini clare, conținut care dovedește, campanii Google Ads sau Meta Ads unde există cerere și raportare pe metrici relevante."
           ]
         },
         "regionalContext": {
           "title": "Contextul de business din Bistrița-Năsăud",
           "paragraphs": [
-            "Zona are business-uri stabile, producție, servicii și companii care nu au nevoie de artificii vizuale, ci de comunicare matură și procese digitale coerente.",
-            "Expansiunea digitală cere mai mult decât un website nou. Cere poziționare, conținut, SEO, campanii și o structură care poate susține creșterea fără să dilueze brandul.",
-            "Pentru companiile cu reputație deja formată, marketingul trebuie să traducă seriozitatea operațională într-un limbaj ușor de înțeles pentru clienți, parteneri și candidați.",
-            "Pentru producție și business-uri stabile, provocarea este adesea lipsa de vizibilitate, nu lipsa de valoare. Compania are procese bune, oameni buni și standarde clare, dar acestea nu sunt suficient de explicate online.",
-            "În Bistrița-Năsăud, extinderea digitală poate însemna pagini mai clare pentru servicii, materiale video despre proces, SEO pentru căutări relevante, Google Business actualizat și campanii plătite care susțin obiective precise.",
-            "O agenție de marketing pentru Bistrița-Năsăud trebuie să înțeleagă diferența dintre modernizare și cosmetizare. Modernizarea reală creează infrastructură, nu doar un aspect mai nou."
+            "Bistrița-Năsăud are companii solide în producție, servicii, logistică, retail și dezvoltare regională. Multe dintre ele au standard operațional bun, dar comunicarea digitală nu arată suficient această valoare.",
+            "Pentru B2B și producție, decizia nu este impulsivă. De aceea contează website-ul, explicațiile, dovada, fotografiile, video-ul, studiile de caz și vizibilitatea în căutări relevante.",
+            "O firmă digital marketing potrivită pentru această piață trebuie să înțeleagă diferența dintre vizibilitate generală și autoritate comercială reală."
           ],
           "sectors": [
             "producție",
-            "business-uri stabile",
-            "servicii regionale",
-            "companii în expansiune digitală"
+            "B2B",
+            "logistică",
+            "retail regional",
+            "servicii specializate"
           ]
         },
         "services": [
           {
             "id": "social-media-management",
-            "title": "Social Media Management",
+            "title": "Social Media Marketing",
             "href": "/social-media-management",
-            "description": "Construim prezență social media cu strategie editorială, conținut coerent și mesaje adaptate publicului local, fără postări făcute doar pentru bifă."
+            "description": "Administrare Social Media și Promovare Social Media pentru Bistrița-Năsăud, cu strategie editorială, mesaje coerente și conținut adaptat pentru companii stabile, producție, B2B și extindere regională."
           },
           {
             "id": "google-meta-ads",
             "title": "Google Ads & Meta Ads",
             "href": "/google-meta-ads",
-            "description": "Campaniile paid media sunt gândite pe obiective, tracking și calitatea leadurilor, nu doar pe trafic ieftin sau reach fără context."
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Bistrița-Năsăud, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
           },
           {
             "id": "productie-video",
-            "title": "Producție Video",
+            "title": "Creare Conținut Video",
             "href": "/productie-video",
-            "description": "Producem materiale video și foto care explică diferența brandului, susțin reclamele și dau consistență comunicării comerciale."
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Bistrița-Năsăud."
           },
           {
             "id": "website-creation",
-            "title": "Website Creation",
+            "title": "Creare Website",
             "href": "/website-creation",
-            "description": "Website-urile și landing page-urile sunt construite cu structură clară, performanță, SEO tehnic și trasee de conversie ușor de urmărit."
+            "description": "Creare Website, landing pages și pagini de servicii pentru Bistrița-Năsăud, cu structură SEO, viteză bună și trasee clare de conversie."
           },
           {
             "id": "seo",
-            "title": "SEO",
+            "title": "SEO & AI SEO",
             "href": "/seo",
-            "description": "Optimizăm arhitectura, conținutul și datele structurale pentru Google, AI search și utilizatori care caută soluții reale, nu promisiuni vagi."
+            "description": "SEO local, SEO semantic și AI SEO pentru Bistrița-Năsăud, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
           }
         ],
         "worksWith": {
           "title": "Cu cine lucrăm în Bistrița-Năsăud",
           "paragraphs": [
-            "Lucrăm cu business-uri din Bistrița-Năsăud care vor să crească fără să piardă rigoarea și identitatea construită în timp.",
-            "Ne potrivim cu echipe care vor marketing aplicat: website mai bun, conținut strategic, campanii măsurabile și SEO care susține autoritatea regională.",
-            "Lucrăm cu firme care au stabilitate și vor să o transforme în autoritate. Acest lucru este potrivit pentru producători, servicii B2B, companii regionale și business-uri care vor extindere fără pierderea identității.",
-            "Pentru aceste companii, marketingul trebuie să fie riguros: explicații clare, imagini credibile, structură SEO, pagini de servicii și comunicare care poate fi susținută în timp.",
-            "Digital Dot se potrivește cu antreprenori care preferă calitatea în locul volumului și care vor să construiască o prezență digitală stabilă."
+            "Lucrăm cu firme din Bistrița-Năsăud care vor să își modernizeze comunicarea fără să piardă seriozitatea brandului.",
+            "Ne potrivim cu business-uri care au procese reale, echipe stabile și nevoie de mai multă claritate în website, conținut, SEO și campanii.",
+            "Pentru acest tip de piață, marketingul bun explică valoarea înainte de contact și susține echipa comercială după contact."
           ],
           "criteria": [
-            "companii stabile",
-            "producători și servicii B2B",
-            "business-uri pregătite pentru expansiune digitală"
+            "companii stabile cu operațiuni clare",
+            "business-uri B2B și regionale",
+            "echipe care vor extindere fără comunicare agresivă"
           ]
         },
         "faqs": [
           {
             "id": "bistrita-nasaud-faq-1",
             "question": "Cum ajută marketingul o companie de producție?",
-            "answer": "Ajută prin clarificarea capacităților, aplicațiilor, diferențiatorilor și dovezilor comerciale, astfel încât vânzarea să înceapă înainte de primul apel."
+            "answer": "Marketingul ajută o companie de producție să explice standardul, capacitatea, procesele și diferențierea. Website-ul, SEO și conținutul video sunt foarte utile în acest context."
           },
           {
             "id": "bistrita-nasaud-faq-2",
             "question": "Este util SEO pentru companii B2B regionale?",
-            "answer": "Da. SEO susține descoperirea pe termen lung și oferă context clar pentru clienți, parteneri și sisteme AI care caută informații despre expertiză."
+            "answer": "Da. SEO ajută decidenții să găsească informații clare despre servicii, capacitate și expertiză, mai ales în faza de cercetare și comparație."
           },
           {
             "id": "bistrita-nasaud-faq-3",
-            "question": "Ce rol are producția video?",
-            "answer": "Video-ul poate explica procese, echipamente, echipă și calitate într-un mod mai credibil decât descrierile generice."
+            "question": "Ce rol are producția video în B2B?",
+            "answer": "Video-ul arată procese, echipamente, oameni și standarde. Pentru B2B, dovada vizuală poate reduce neîncrederea și poate accelera conversația comercială."
           },
           {
             "id": "bistrita-nasaud-faq-4",
-            "question": "Cum evităm un ton prea comercial?",
-            "answer": "Prin conținut editorial, dovezi reale și o voce matură. Marketingul bun nu trebuie să pară forțat ca să fie eficient."
+            "question": "Ce înseamnă extindere digitală?",
+            "answer": "Înseamnă să construiești o prezență care poate susține vânzări dincolo de recomandări: website, conținut, SEO, reclame plătite, pagini de servicii și raportare."
           },
           {
             "id": "bistrita-nasaud-faq-5",
-            "question": "Cât costă promovarea online în Bistrița-Năsăud?",
-            "answer": "Costul depinde de obiective și de nivelul actual al prezenței digitale. Pentru producție sau B2B, investiția include adesea website, SEO, video și campanii orientate spre leaduri calificate."
+            "question": "Este Social Media relevantă pentru B2B?",
+            "answer": "Da, dacă este folosită pentru autoritate, recrutare, dovadă și consistență. Nu orice companie B2B are nevoie de postări dese, dar are nevoie de comunicare clară."
           },
           {
             "id": "bistrita-nasaud-faq-6",
-            "question": "Ce înseamnă extindere digitală?",
-            "answer": "Extinderea digitală înseamnă să faci compania mai vizibilă și mai ușor de evaluat online prin website, SEO, conținut, video, Google Business și campanii măsurabile."
-          },
-          {
-            "id": "bistrita-nasaud-faq-7",
-            "question": "Este social media relevantă pentru B2B?",
-            "answer": "Da, dacă este folosită pentru autoritate, proces, recrutare, dovadă și comunicare de brand. Nu trebuie tratată ca divertisment, ci ca infrastructură de încredere."
-          },
-          {
-            "id": "bistrita-nasaud-faq-8",
-            "question": "Ce ar trebui modernizat prima dată pentru un business stabil?",
-            "answer": "De obicei începem cu mesajul, website-ul, Google Business, SEO local și materialele care explică procesul sau serviciile. Apoi campaniile plătite pot amplifica o bază deja clară."
+            "question": "Cum evităm un ton prea comercial?",
+            "answer": "Pornim de la fapte: proces, standarde, rezultate, echipă și diferențe reale. Comunicarea premium nu forțează promisiuni, ci explică valoarea cu sobrietate."
           }
         ],
         "cta": {
           "title": "Vrei o strategie de marketing pentru Bistrița-Năsăud?",
-          "description": "Putem începe cu o discuție clară despre obiective, piață, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "description": "Putem începe cu o discuție clară despre piața din Bistrița-Năsăud, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
           "primaryLabel": "Solicită o discuție",
           "primaryHref": "/#contact",
           "secondaryLabel": "Vezi serviciile",
@@ -2607,8 +2757,8 @@
         },
         "internalLinks": [
           {
-            "label": "Homepage Digital Dot",
-            "href": "/"
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
           },
           {
             "label": "Social Media Management",
@@ -2617,6 +2767,10 @@
           {
             "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
@@ -2629,8 +2783,47 @@
           {
             "label": "Blog",
             "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
-        ]
+        ],
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Bistrița-Năsăud",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Bistrița-Năsăud, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: companii stabile, producție, B2B și extindere regională. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Bistrița-Năsăud, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads local și lead generation",
+              "futurePath": "/agentie-marketing/bistrita-nasaud/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Bistrița-Năsăud."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Management regional",
+              "futurePath": "/agentie-marketing/bistrita-nasaud/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Bistrița-Năsăud."
+            }
+          ]
+        }
       },
       {
         "id": "cluj-napoca",
@@ -2638,140 +2831,122 @@
         "cityName": "Cluj-Napoca",
         "countyName": "Cluj",
         "enabled": true,
-        "seoTitle": "Agenție de Marketing în Cluj-Napoca pentru startup-uri, tech și branduri care vor scalare | Digital Dot",
-        "seoDescription": "Cluj-Napoca este o piață competitivă, cu startup-uri, tech, SaaS, servicii premium și branduri care luptă pentru atenție, talent și diferențiere. Digital D",
-        "ogTitle": "Agenție de Marketing în Cluj-Napoca pentru startup-uri, tech și branduri care vor scalare",
-        "ogDescription": "Cluj-Napoca este o piață competitivă, cu startup-uri, tech, SaaS, servicii premium și branduri care luptă pentru atenție, talent și diferențiere. Digital Dot construiește marketing strategic pentru companii care vor claritate înainte de scalare.",
+        "seoTitle": "Agenție de Marketing în Cluj-Napoca pentru startup-uri, SaaS și servicii premium | Digital Dot",
+        "seoDescription": "Digital Dot susține în Cluj-Napoca startup-uri, SaaS și servicii premium cu strategie de marketing, B2B digital, SEO, Google Ads, Meta Ads și content.",
+        "ogTitle": "Agenție de Marketing în Cluj-Napoca pentru startup-uri, SaaS și servicii premium",
+        "ogDescription": "În Cluj-Napoca, Digital Dot construiește sisteme de marketing pentru startup-uri, SaaS, tech, servicii premium și branduri care concurează prin diferențiere.",
         "ogImage": "/branding/references/door-strategy-wide.png",
         "hero": {
           "eyebrow": "Agenție de Marketing Cluj-Napoca",
-          "title": "Agenție de Marketing în Cluj-Napoca pentru startup-uri, tech și branduri care vor scalare",
-          "intro": "Cluj-Napoca este o piață competitivă, cu startup-uri, tech, SaaS, servicii premium și branduri care luptă pentru atenție, talent și diferențiere. Digital Dot construiește marketing strategic pentru companii care vor claritate înainte de scalare.",
+          "title": "Agenție de Marketing în Cluj-Napoca pentru startup-uri, SaaS și servicii premium",
+          "intro": "Cluj-Napoca este o piață competitivă, cu startup-uri, tech, SaaS, servicii premium și branduri care luptă pentru atenție, talent și diferențiere. Digital Dot construiește sisteme de marketing potrivite pentru această presiune competitivă.",
           "ctaLabel": "Hai să povestim",
           "ctaHref": "/#contact"
         },
         "positioning": {
           "title": "Marketingul ca infrastructură, nu ca improvizație",
           "paragraphs": [
-            "Digital Dot tratează marketingul ca infrastructură de business: poziționare, canale, conținut, tracking și ritm de optimizare. Fără această bază, execuția devine zgomot scump.",
-            "Abordarea noastră este anti-hype. Înainte de campanii, clarificăm oferta, audiența, mesajul și criteriile de succes, apoi construim un sistem care poate fi măsurat și îmbunătățit.",
-            "Pentru business-urile regionale, avantajul nu vine din a copia trenduri naționale, ci din a transforma cunoașterea pieței locale într-o strategie digitală matură.",
-            "Cluj-Napoca este o piață densă, competitivă și sofisticată, mai ales pentru startup-uri, tech, SaaS, servicii profesionale și branduri care concurează pentru atenție și talent. Aici, marketingul slab nu doar că nu ajută, ci devine rapid vizibil.",
-            "Diferențierea într-o piață aglomerată cere poziționare riguroasă. Nu este suficient să ai produs bun, echipă bună sau ambiție de scalare. Publicul, investitorii, candidații și clienții trebuie să înțeleagă rapid de ce brandul contează.",
-            "Digital Dot construiește strategie de marketing pentru companii care au nevoie de claritate, funnel, branding competitiv, SEO, Social Media Management, Google Ads, Meta Ads și website-uri capabile să susțină creșterea."
+            "În Cluj-Napoca, marketingul trebuie să fie strategic și rapid de înțeles. Startup-urile, companiile tech, SaaS și serviciile premium au nevoie de poziționare, funnel, content marketing, SEO și campanii care susțin atât vânzarea, cât și autoritatea.",
+            "Social Media, Google Ads, Meta Ads, B2B Marketing Digital și website-ul trebuie să lucreze împreună. Într-o piață aglomerată, diferențierea slabă se vede imediat în costuri, conversii și retenția atenției.",
+            "Digital Dot construiește marketing pentru companii care gândesc scalabil: claritate în mesaj, disciplină în execuție, optimizare continuă și conținut care poate fi înțeles de oameni, Google și sisteme AI."
           ]
         },
         "regionalContext": {
           "title": "Contextul de business din Cluj-Napoca",
           "paragraphs": [
-            "În Cluj, competiția nu este doar comercială. Este competiție pentru percepție, încredere, recrutare, parteneriate și poziționare într-un ecosistem obișnuit cu standarde ridicate.",
-            "Pentru startup-uri, SaaS și companii tech, marketingul trebuie să traducă produsul în valoare clară: problemă, diferențiator, dovadă, funnel și ritm de experimentare.",
-            "Brandurile care scalează au nevoie de consistență. Social media, Google Ads, Meta Ads, producția video, website-ul și SEO trebuie să transmită aceeași strategie, nu mesaje fragmentate.",
-            "În Cluj-Napoca, competiția este mai zgomotoasă și mai matură. Startup-urile și companiile tech trebuie să comunice nu doar funcționalități, ci categorie, diferență, tracțiune, cultură și credibilitate. Brandingul are rol comercial și de recrutare.",
+            "Cluj-Napoca are o densitate mare de startup-uri, servicii specializate, tech, SaaS, educație și branduri premium. Asta ridică standardul: prezența online trebuie să fie clară, credibilă și diferită.",
             "Pentru SaaS și servicii scalabile, marketingul trebuie să combine poziționare, conținut educațional, landing pages, performance marketing și SEO semantic. AI discoverability devine importantă pentru că decidenții folosesc tot mai des sisteme AI în cercetare.",
-            "O agenție de marketing pentru Cluj-Napoca trebuie să poată lucra cu complexitate: funnel-uri mai lungi, buyer personas diferite, conținut B2B, recrutare, brand equity și competiție intensă."
+            "O agenție digital marketing pentru Cluj trebuie să înțeleagă competiția pentru atenție, talent și încredere, nu doar să livreze campanii."
           ],
           "sectors": [
             "startup-uri",
             "tech",
             "SaaS",
-            "branding competitiv",
-            "recrutare",
-            "scalare"
+            "servicii premium",
+            "educație",
+            "recrutare"
           ]
         },
         "services": [
           {
             "id": "social-media-management",
-            "title": "Social Media Management",
+            "title": "Social Media Marketing",
             "href": "/social-media-management",
-            "description": "Construim prezență social media cu strategie editorială, conținut coerent și mesaje adaptate publicului local, fără postări făcute doar pentru bifă."
+            "description": "Administrare Social Media și Promovare Social Media pentru Cluj-Napoca, cu strategie editorială, mesaje coerente și conținut adaptat pentru startup-uri, SaaS, tech, servicii premium și recrutare."
           },
           {
             "id": "google-meta-ads",
             "title": "Google Ads & Meta Ads",
             "href": "/google-meta-ads",
-            "description": "Campaniile paid media sunt gândite pe obiective, tracking și calitatea leadurilor, nu doar pe trafic ieftin sau reach fără context."
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Cluj-Napoca, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
           },
           {
             "id": "productie-video",
-            "title": "Producție Video",
+            "title": "Creare Conținut Video",
             "href": "/productie-video",
-            "description": "Producem materiale video și foto care explică diferența brandului, susțin reclamele și dau consistență comunicării comerciale."
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Cluj-Napoca."
           },
           {
             "id": "website-creation",
-            "title": "Website Creation",
+            "title": "Creare Website",
             "href": "/website-creation",
-            "description": "Website-urile și landing page-urile sunt construite cu structură clară, performanță, SEO tehnic și trasee de conversie ușor de urmărit."
+            "description": "Creare Website, landing pages și pagini de servicii pentru Cluj-Napoca, cu structură SEO, viteză bună și trasee clare de conversie."
           },
           {
             "id": "seo",
-            "title": "SEO",
+            "title": "SEO & AI SEO",
             "href": "/seo",
-            "description": "Optimizăm arhitectura, conținutul și datele structurale pentru Google, AI search și utilizatori care caută soluții reale, nu promisiuni vagi."
+            "description": "SEO local, SEO semantic și AI SEO pentru Cluj-Napoca, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
           }
         ],
         "worksWith": {
           "title": "Cu cine lucrăm în Cluj-Napoca",
           "paragraphs": [
-            "Lucrăm cu echipe din Cluj-Napoca care au ambiție de scalare, dar vor să evite marketingul improvizat și promisiunile fără date.",
-            "Ne potrivim cu startup-uri, servicii premium și companii tech care au nevoie de poziționare, conținut, campanii și arhitectură digitală coerentă.",
-            "Lucrăm cu startup-uri, companii tech, SaaS, servicii specializate și branduri care vor să iasă din comparația simplă de preț sau funcționalitate. Asta cere gândire strategică și execuție disciplinată.",
-            "În Cluj-Napoca, potrivirea bună este cu echipe care înțeleg că marketingul nu este doar demand generation, ci și poziționare, recrutare, încredere și structură de creștere.",
-            "Digital Dot aduce o abordare matură: clarificăm promisiunea, construim infrastructura și optimizăm canalele fără să sacrificăm identitatea brandului."
+            "Lucrăm cu startup-uri și servicii premium din Cluj-Napoca care au nevoie de poziționare clară, nu doar de execuție rapidă.",
+            "Ne potrivim cu echipe care vor să lege content marketing, SEO, Google Ads, Meta Ads, Social Media și website într-un sistem de creștere.",
+            "Pentru această piață, marketingul bun trebuie să susțină vânzarea, recrutarea, autoritatea și diferențierea în același timp."
           ],
           "criteria": [
-            "startup-uri cu obiective clare",
-            "SaaS și tech cu nevoie de poziționare",
-            "branduri care concurează prin valoare, nu doar vizibilitate"
+            "startup-uri și SaaS cu obiective clare",
+            "servicii premium care vor diferențiere",
+            "echipe care gândesc scalabil și măsoară deciziile"
           ]
         },
         "faqs": [
           {
             "id": "cluj-napoca-faq-1",
             "question": "Cum se face marketing pentru un startup din Cluj?",
-            "answer": "Începem cu poziționarea, ICP-ul, mesajele și funnelul. Apoi testăm canale, conținut și campanii cu ipoteze clare și date utile."
+            "answer": "Începem cu poziționare, public, ofertă și funnel. Apoi conectăm website, content marketing, SEO, Social Media și campanii plătite în funcție de etapa startup-ului."
           },
           {
             "id": "cluj-napoca-faq-2",
-            "question": "Ajută brandingul în recrutare?",
-            "answer": "Da. În piețe competitive precum Cluj, percepția publică influențează nu doar clienții, ci și candidații, partenerii și investitorii."
+            "question": "Ce canale sunt potrivite pentru SaaS?",
+            "answer": "Pentru SaaS, de obicei contează SEO semantic, conținut educațional, landing pages, Google Ads pe intenție, remarketing și canale B2B precum LinkedIn."
           },
           {
             "id": "cluj-napoca-faq-3",
-            "question": "Ce canale sunt potrivite pentru SaaS?",
-            "answer": "Depinde de piață, dar de obicei combinăm website clar, SEO, conținut de expertiză, LinkedIn, Google Ads și campanii de remarketing."
+            "question": "Ajută brandingul în recrutare?",
+            "answer": "Da. În Cluj-Napoca, competiția pentru talent este importantă. Un brand clar ajută candidații să înțeleagă cultura, standardul și diferența companiei."
           },
           {
             "id": "cluj-napoca-faq-4",
             "question": "Cât de rapid poate scala o campanie?",
-            "answer": "Scalarea sănătoasă vine după validarea mesajelor, audiențelor și conversiilor. Altfel, creșterea bugetului amplifică problemele existente."
+            "answer": "Scalarea depinde de ofertă, piață, tracking, creative și capacitatea operațională. Creșterea bugetului fără sistem poate amplifica problemele."
           },
           {
             "id": "cluj-napoca-faq-5",
-            "question": "Cât costă promovarea online în Cluj-Napoca?",
-            "answer": "Costul este influențat de competiție, obiectiv, complexitatea funnelului și nivelul de producție necesar. Pentru tech și SaaS, strategia, conținutul, website-ul și trackingul sunt la fel de importante ca bugetul media."
+            "question": "Este AI SEO important pentru SaaS?",
+            "answer": "Da. Decidenții folosesc tot mai des ChatGPT, Gemini, Claude sau Perplexity pentru cercetare. Structura semantică, FAQ-urile și entitățile clare ajută discoverability."
           },
           {
             "id": "cluj-napoca-faq-6",
-            "question": "Cum se diferențiază un startup într-o piață aglomerată?",
-            "answer": "Prin poziționare clară, mesaj de categorie, dovezi de tracțiune, conținut educațional, website bun și campanii care explică valoarea fără jargon inutil."
-          },
-          {
-            "id": "cluj-napoca-faq-7",
-            "question": "Ajută marketingul în recrutare?",
-            "answer": "Da. Brandingul, conținutul, video-ul și prezența socială transmit cultura, standardele și ambiția companiei. În Cluj-Napoca, acest lucru poate influența atractivitatea pentru candidați."
-          },
-          {
-            "id": "cluj-napoca-faq-8",
-            "question": "Este SEO important pentru SaaS?",
-            "answer": "Da. SEO semantic și conținutul educațional pot susține discovery, comparații, întrebări de categorie și autoritate pe termen lung, inclusiv în sisteme AI."
+            "question": "Ce înseamnă Agenție content marketing pentru companii tech?",
+            "answer": "Înseamnă o echipă care poate transforma expertiza tehnică în conținut clar: articole, pagini de servicii, landing pages, materiale video și mesaje pentru funnel."
           }
         ],
         "cta": {
           "title": "Vrei o strategie de marketing pentru Cluj-Napoca?",
-          "description": "Putem începe cu o discuție clară despre obiective, piață, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "description": "Putem începe cu o discuție clară despre piața din Cluj-Napoca, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
           "primaryLabel": "Solicită o discuție",
           "primaryHref": "/#contact",
           "secondaryLabel": "Vezi serviciile",
@@ -2779,8 +2954,8 @@
         },
         "internalLinks": [
           {
-            "label": "Homepage Digital Dot",
-            "href": "/"
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
           },
           {
             "label": "Social Media Management",
@@ -2789,6 +2964,10 @@
           {
             "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
@@ -2801,6 +2980,431 @@
           {
             "label": "Blog",
             "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
+          }
+        ],
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Cluj-Napoca",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Cluj-Napoca, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: startup-uri, SaaS, tech, servicii premium și recrutare. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Cluj-Napoca, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads și performance media",
+              "futurePath": "/agentie-marketing/cluj-napoca/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Cluj-Napoca."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Marketing și content systems",
+              "futurePath": "/agentie-marketing/cluj-napoca/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Cluj-Napoca."
+            }
+          ]
+        }
+      },
+      {
+        "id": "iasi",
+        "slug": "iasi",
+        "enabled": true,
+        "ogImage": "/branding/references/chess-hero-wide.png",
+        "cityName": "Iași",
+        "countyName": "Iași",
+        "seoTitle": "Agenție de Marketing în Iași pentru startup-uri, tech, medical și branduri în creștere | Digital Dot",
+        "seoDescription": "Digital Dot construiește în Iași strategie de marketing, Social Media, Google Ads, Meta Ads, SEO, creare website și content pentru startup-uri, tech și medical.",
+        "ogTitle": "Agenție de Marketing în Iași pentru startup-uri, tech, medical și branduri în creștere",
+        "ogDescription": "În Iași, Digital Dot construiește marketing strategic pentru startup-uri, tech, medical, educație și business-uri care vor sisteme digitale scalabile.",
+        "hero": {
+          "eyebrow": "Agenție de Marketing Iași",
+          "title": "Agenție de Marketing în Iași pentru startup-uri, tech, medical și branduri în creștere",
+          "intro": "Iași are un ecosistem în care startup-urile, companiile tech, zona medicală, educația și serviciile moderne cer marketing mai clar, mai strategic și mai scalabil. Digital Dot construiește sisteme digitale pentru business-uri care vor direcție, nu doar prezență online.",
+          "ctaLabel": "Hai să povestim",
+          "ctaHref": "/#contact"
+        },
+        "positioning": {
+          "title": "Marketing scalabil pentru o piață educată și orientată spre creștere",
+          "paragraphs": [
+            "În Iași, marketingul eficient trebuie să vorbească pe limba unei piețe educate: clar, argumentat și conectat la obiective. Startup-urile, tech-ul, clinicile și serviciile moderne nu au nevoie de zgomot, ci de poziționare, funnel și conținut credibil.",
+            "Social Media Marketing, Google Ads, Meta Ads, SEO, creare website și Creare Conținut Video trebuie să funcționeze ca un sistem. Când fiecare canal susține aceeași strategie, bugetul devine mai ușor de controlat și rezultatele devin mai ușor de interpretat.",
+            "Digital Dot abordează Iașiul cu o mentalitate de creștere scalabilă: clarificăm avatarul de client, avantajul competitiv, mesajele și arhitectura de conversie înainte de execuție."
+          ]
+        },
+        "regionalContext": {
+          "title": "Contextul de business din Iași",
+          "paragraphs": [
+            "Iași este o piață cu energie universitară, servicii medicale puternice, companii tech, educație privată, startup-uri și business-uri care au nevoie de branding modern. Publicul este informat, compară și caută explicații înainte să aleagă.",
+            "Pentru tech și SaaS, contează educația pieței, conținutul semantic și vizibilitatea în căutări. Pentru medical, contează încrederea, sobrietatea și claritatea. Pentru educație, diferențierea trebuie să fie argumentată, nu doar promovată.",
+            "O agenție de marketing pentru Iași trebuie să combine strategie, content marketing, performance marketing, SEO și website-uri rapide într-un sistem care susține creșterea fără să piardă credibilitatea."
+          ],
+          "sectors": [
+            "startup-uri",
+            "tech",
+            "SaaS",
+            "medical",
+            "educație",
+            "servicii moderne"
+          ]
+        },
+        "semanticSummary": {
+          "title": "Sumar semantic pentru Iași",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru Iași, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: startup ecosystem, tech, medical, educație și sisteme scalabile. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "services": [
+          {
+            "id": "social-media-management",
+            "title": "Social Media Marketing",
+            "href": "/social-media-management",
+            "description": "Administrare Social Media și Promovare Social Media pentru Iași, cu strategie editorială, mesaje coerente și conținut adaptat pentru startup ecosystem, tech, medical, educație și sisteme scalabile."
+          },
+          {
+            "id": "google-meta-ads",
+            "title": "Google Ads & Meta Ads",
+            "href": "/google-meta-ads",
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru Iași, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
+          },
+          {
+            "id": "productie-video",
+            "title": "Creare Conținut Video",
+            "href": "/productie-video",
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din Iași."
+          },
+          {
+            "id": "website-creation",
+            "title": "Creare Website",
+            "href": "/website-creation",
+            "description": "Creare Website, landing pages și pagini de servicii pentru Iași, cu structură SEO, viteză bună și trasee clare de conversie."
+          },
+          {
+            "id": "seo",
+            "title": "SEO & AI SEO",
+            "href": "/seo",
+            "description": "SEO local, SEO semantic și AI SEO pentru Iași, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
+          }
+        ],
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru Iași, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads local și lead generation",
+              "futurePath": "/agentie-marketing/iasi/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru Iași."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Management regional",
+              "futurePath": "/agentie-marketing/iasi/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru Iași."
+            }
+          ]
+        },
+        "worksWith": {
+          "title": "Cu cine lucrăm în Iași",
+          "paragraphs": [
+            "Lucrăm cu echipe din Iași care vor să transforme expertiza într-o comunicare mai clară și mai scalabilă.",
+            "Ne potrivim cu startup-uri, clinici, servicii educaționale și companii tech care înțeleg că marketingul bun începe cu strategie, nu cu o listă de postări.",
+            "Pentru Iași, o colaborare matură înseamnă poziționare, conținut, SEO, reclame plătite și website conectate la un obiectiv de creștere."
+          ],
+          "criteria": [
+            "startup-uri și companii tech cu obiective de scalare",
+            "clinici și servicii medicale care comunică responsabil",
+            "branduri educaționale și servicii moderne care vor diferențiere"
+          ]
+        },
+        "faqs": [
+          {
+            "id": "iasi-faq-1",
+            "question": "Merită Social Media Marketing pentru business-uri din Iași?",
+            "answer": "Da, dacă Social Media este construită pe strategie, nu doar pe postări. Pentru Iași, conținutul trebuie să educe, să diferențieze și să susțină conversia spre website sau contact."
+          },
+          {
+            "id": "iasi-faq-2",
+            "question": "Cum ajută Google Ads un startup sau serviciu din Iași?",
+            "answer": "Google Ads ajută când există intenție clară de căutare și o ofertă bine explicată. Pentru startup-uri și servicii moderne, contează landing page-ul, trackingul și mesajul."
+          },
+          {
+            "id": "iasi-faq-3",
+            "question": "Ce înseamnă marketing pentru clinici medicale în Iași?",
+            "answer": "În medical, marketingul trebuie să fie sobru, clar și orientat spre încredere. Contează website-ul, SEO local, conținutul educațional, Google Business și campaniile măsurate responsabil."
+          },
+          {
+            "id": "iasi-faq-4",
+            "question": "Este SEO important pentru companii tech și SaaS din Iași?",
+            "answer": "Da. SEO și AI SEO ajută companiile tech să fie descoperite în faza de cercetare, inclusiv prin sisteme precum ChatGPT, Gemini, Claude și Perplexity."
+          },
+          {
+            "id": "iasi-faq-5",
+            "question": "Cum alegi o agenție de marketing în Iași?",
+            "answer": "Alege o agenție care înțelege poziționarea, funnelul, content marketingul, Google Ads, Meta Ads și rolul website-ului în conversie, nu doar execuția de campanii."
+          },
+          {
+            "id": "iasi-faq-6",
+            "question": "Ce înseamnă creare website pentru un business scalabil?",
+            "answer": "Înseamnă arhitectură clară, mesaje bune, performanță, SEO tehnic, pagini de servicii și trasee de conversie. Website-ul trebuie să poată susține campanii, conținut și creștere."
+          }
+        ],
+        "cta": {
+          "title": "Vrei o strategie de marketing pentru Iași?",
+          "description": "Putem începe cu o discuție clară despre piața din Iași, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "primaryLabel": "Solicită o discuție",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Vezi serviciile",
+          "secondaryHref": "/#services"
+        },
+        "internalLinks": [
+          {
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Social Media Management",
+            "href": "/social-media-management"
+          },
+          {
+            "label": "Google & Meta Ads",
+            "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
+          },
+          {
+            "label": "Website Creation",
+            "href": "/website-creation"
+          },
+          {
+            "label": "SEO",
+            "href": "/seo"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing București",
+            "href": "/agentie-marketing/bucuresti"
+          }
+        ]
+      },
+      {
+        "id": "bucuresti",
+        "slug": "bucuresti",
+        "enabled": true,
+        "ogImage": "/branding/references/chess-hero-wide.png",
+        "cityName": "București",
+        "countyName": "București",
+        "seoTitle": "Agenție de Marketing în București pentru branduri premium, performance și scalare | Digital Dot",
+        "seoDescription": "Digital Dot dezvoltă în București marketing premium, strategie, Google Ads, Meta Ads, Social Media, SEO, creare website și sisteme de performance pentru scalare.",
+        "ogTitle": "Agenție de Marketing în București pentru branduri premium, performance și scalare",
+        "ogDescription": "În București, Digital Dot construiește strategie, poziționare și execuție performance pentru branduri premium, companii competitive și organizații orientate spre scalare.",
+        "hero": {
+          "eyebrow": "Agenție de Marketing București",
+          "title": "Agenție de Marketing în București pentru branduri premium, performance și scalare",
+          "intro": "București este o piață cu presiune competitivă ridicată, bugete mai mari și standarde mai dure de diferențiere. Digital Dot construiește marketing premium pentru companii care au nevoie de poziționare clară, execuție disciplinată și performanță măsurabilă.",
+          "ctaLabel": "Hai să povestim",
+          "ctaHref": "/#contact"
+        },
+        "positioning": {
+          "title": "Poziționare strategică într-o piață în care marketingul generic nu rezistă",
+          "paragraphs": [
+            "În București, marketingul generic devine invizibil repede. Companiile concurează pe atenție, credibilitate, viteză de execuție și diferențiere. De aceea, strategia de marketing trebuie să stabilească exact ce promite brandul și de ce merită ales.",
+            "Google Ads, Meta Ads, Agenție Facebook Ads, Social Media Marketing, SEO, content marketing și creare website trebuie să fie integrate într-un sistem de performance. Reclamele plătite fără poziționare clară cresc costurile și reduc calitatea leadurilor.",
+            "Digital Dot abordează Bucureștiul la nivel premium: audit, strategie, funnel, tracking, creative, pagini de conversie și optimizare continuă. Execuția este importantă, dar doar după ce direcția este clară."
+          ]
+        },
+        "regionalContext": {
+          "title": "Contextul de business din București",
+          "paragraphs": [
+            "București concentrează branduri premium, servicii specializate, ecommerce, B2B, medical, real estate, educație și companii cu echipe comerciale mature. Într-o piață atât de densă, diferențierea nu mai poate fi vagă.",
+            "Pentru companiile care scalează, marketingul trebuie să lege poziționarea de performanță: website rapid, pagini de conversie, reclame Google Ads, reclame Meta Ads, administrare Social Media, conținut video și raportare pe indicatori reali.",
+            "O agenție de publicitate online pentru București trebuie să gândească strategic, nu doar să cumpere media. Contează calitatea traficului, mesajul, oferta, landing page-ul și capacitatea de optimizare."
+          ],
+          "sectors": [
+            "branduri premium",
+            "ecommerce",
+            "B2B",
+            "medical",
+            "real estate",
+            "servicii enterprise"
+          ]
+        },
+        "semanticSummary": {
+          "title": "Sumar semantic pentru București",
+          "points": [
+            "Digital Dot este poziționată ca agenție de marketing pentru București, cu servicii de strategie, Social Media, Google Ads, Meta Ads, SEO, creare website și conținut video.",
+            "Contextul regional principal: competiție ridicată, performance, diferențiere și execuție enterprise-level. Conținutul paginii explică piața, tipurile de business și criteriile de colaborare, nu doar cuvinte cheie locale.",
+            "Pagina este construită pentru căutări locale, întrebări de tip AI search și comparații între servicii de marketing, promovare online și publicitate digitală.",
+            "Legăturile interne conectează regiunea cu serviciile principale, hub-ul regional, blogul și viitoarele pagini specializate pe oraș + serviciu."
+          ]
+        },
+        "services": [
+          {
+            "id": "social-media-management",
+            "title": "Social Media Marketing",
+            "href": "/social-media-management",
+            "description": "Administrare Social Media și Promovare Social Media pentru București, cu strategie editorială, mesaje coerente și conținut adaptat pentru competiție ridicată, performance, diferențiere și execuție enterprise-level."
+          },
+          {
+            "id": "google-meta-ads",
+            "title": "Google Ads & Meta Ads",
+            "href": "/google-meta-ads",
+            "description": "Reclame Google Ads și Reclame Meta Ads pentru București, construite pe tracking, funnel, calitatea leadurilor și optimizare constantă a bugetului."
+          },
+          {
+            "id": "productie-video",
+            "title": "Creare Conținut Video",
+            "href": "/productie-video",
+            "description": "Creare Conținut Video și materiale foto-video care explică diferența brandului, susțin campaniile și cresc încrederea în piața din București."
+          },
+          {
+            "id": "website-creation",
+            "title": "Creare Website",
+            "href": "/website-creation",
+            "description": "Creare Website, landing pages și pagini de servicii pentru București, cu structură SEO, viteză bună și trasee clare de conversie."
+          },
+          {
+            "id": "seo",
+            "title": "SEO & AI SEO",
+            "href": "/seo",
+            "description": "SEO local, SEO semantic și AI SEO pentru București, astfel încât businessul să fie mai ușor de găsit în Google și mai ușor de înțeles de sistemele AI."
+          }
+        ],
+        "serviceExpansion": {
+          "title": "Arhitectură pregătită pentru pagini regionale specializate",
+          "intro": "Pentru București, structura este pregătită să susțină ulterior pagini dedicate pe servicii, fără să duplicăm conținut sau să publicăm rute subțiri. Fiecare pagină viitoare trebuie să aibă context local, intenție de căutare și diferențiere editorială reală.",
+          "items": [
+            {
+              "id": "future-google-ads",
+              "label": "Google Ads și performance media",
+              "futurePath": "/agentie-marketing/bucuresti/google-ads",
+              "context": "Rută planificată pentru cereri cu intenție ridicată, bugete, tracking, landing pages și exemple de funnel relevante pentru București."
+            },
+            {
+              "id": "future-social-media",
+              "label": "Social Media Marketing și content systems",
+              "futurePath": "/agentie-marketing/bucuresti/social-media-management",
+              "context": "Rută planificată pentru administrare pagini Social Media, calendar editorial, conținut video și promovare social media contextuală pentru București."
+            }
+          ]
+        },
+        "worksWith": {
+          "title": "Cu cine lucrăm în București",
+          "paragraphs": [
+            "Lucrăm cu business-uri din București care au nevoie de claritate strategică, diferențiere și execuție disciplinată într-o piață competitivă.",
+            "Ne potrivim cu branduri premium, companii B2B, ecommerce și servicii care au buget de marketing și vor să îl folosească mai eficient.",
+            "Pentru București, marketingul performant înseamnă sistem: poziționare, funnel, tracking, creative, website, reclame plătite și optimizare continuă."
+          ],
+          "criteria": [
+            "branduri premium cu ambiții de scalare",
+            "companii cu buget clar și obiective comerciale",
+            "echipe care vor performanță măsurabilă, nu activitate generică"
+          ]
+        },
+        "faqs": [
+          {
+            "id": "bucuresti-faq-1",
+            "question": "Cât costă Google Ads în București?",
+            "answer": "Costul depinde de industrie, competiție, intenția de căutare și calitatea landing page-ului. În București, costurile pot fi mai ridicate, de aceea strategia, trackingul și oferta sunt esențiale."
+          },
+          {
+            "id": "bucuresti-faq-2",
+            "question": "Merită Meta Ads pentru branduri premium?",
+            "answer": "Da, dacă mesajul, vizualurile și funnelul sunt potrivite. Reclamele Meta Ads pot susține awareness, remarketing și conversie, dar au nevoie de creative bune și poziționare clară."
+          },
+          {
+            "id": "bucuresti-faq-3",
+            "question": "Cum alegi o agenție de marketing în București?",
+            "answer": "Alege o agenție care poate discuta despre strategie, diferențiere, performance, tracking, funnel și calitatea leadurilor, nu doar despre bugete media sau număr de postări."
+          },
+          {
+            "id": "bucuresti-faq-4",
+            "question": "Ce înseamnă promovare online eficientă?",
+            "answer": "Promovarea online eficientă conectează poziționarea, website-ul, SEO, Social Media, reclame plătite și raportarea. Eficiența se vede în calitatea cererilor, nu doar în trafic."
+          },
+          {
+            "id": "bucuresti-faq-5",
+            "question": "Este importantă o agenție de content marketing pentru București?",
+            "answer": "Da. În piețele competitive, conținutul explică diferența, construiește autoritate și reduce dependența de reclame. Content marketingul susține SEO, Social Media și vânzarea consultativă."
+          },
+          {
+            "id": "bucuresti-faq-6",
+            "question": "Ce rol are creare website în performance marketing?",
+            "answer": "Website-ul este infrastructura de conversie. Pentru București, unde traficul poate fi scump, un website clar și rapid poate reduce risipa din Google Ads, Meta Ads și campanii de promovare online."
+          }
+        ],
+        "cta": {
+          "title": "Vrei o strategie de marketing pentru București?",
+          "description": "Putem începe cu o discuție clară despre piața din București, obiective, canale și pașii care pot transforma marketingul într-un sistem măsurabil.",
+          "primaryLabel": "Solicită o discuție",
+          "primaryHref": "/#contact",
+          "secondaryLabel": "Vezi serviciile",
+          "secondaryHref": "/#services"
+        },
+        "internalLinks": [
+          {
+            "label": "Hub Agenție de Marketing",
+            "href": "/agentie-marketing"
+          },
+          {
+            "label": "Social Media Management",
+            "href": "/social-media-management"
+          },
+          {
+            "label": "Google & Meta Ads",
+            "href": "/google-meta-ads"
+          },
+          {
+            "label": "Producție Foto & Video",
+            "href": "/productie-video"
+          },
+          {
+            "label": "Website Creation",
+            "href": "/website-creation"
+          },
+          {
+            "label": "SEO",
+            "href": "/seo"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Agenție de marketing Iași",
+            "href": "/agentie-marketing/iasi"
           }
         ]
       }
@@ -2933,6 +3537,14 @@
           {
             "label": "Case Studies",
             "href": "/case-studies"
+          },
+          {
+            "label": "Agenție Social Media Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Social Media Marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
         ],
         "cta": {
@@ -3071,6 +3683,14 @@
           {
             "label": "Case Studies",
             "href": "/case-studies"
+          },
+          {
+            "label": "Google Ads Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Reclame Google Ads București",
+            "href": "/agentie-marketing/bucuresti"
           }
         ],
         "cta": {
@@ -3210,6 +3830,14 @@
           {
             "label": "Case Studies",
             "href": "/case-studies"
+          },
+          {
+            "label": "Creare Conținut Video Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Content marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
         ],
         "cta": {
@@ -3338,16 +3966,20 @@
             "href": "/#contact"
           },
           {
-            "label": "Agenție de Marketing",
-            "href": "/agentie-marketing"
-          },
-          {
             "label": "Blog",
             "href": "/blog"
           },
           {
             "label": "Case Studies",
             "href": "/case-studies"
+          },
+          {
+            "label": "AI SEO Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "SEO și marketing București",
+            "href": "/agentie-marketing/bucuresti"
           }
         ],
         "cta": {
@@ -3489,6 +4121,14 @@
           {
             "label": "Case Studies",
             "href": "/case-studies"
+          },
+          {
+            "label": "Creare Website Iași",
+            "href": "/agentie-marketing/iasi"
+          },
+          {
+            "label": "Creare Website București",
+            "href": "/agentie-marketing/bucuresti"
           }
         ],
         "cta": {

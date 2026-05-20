@@ -401,6 +401,18 @@ const regionalInternalLinkSchema = z.object({
   href: z.string().min(1),
 });
 
+const regionalSemanticSummarySchema = z.object({
+  title: z.string().min(1),
+  points: z.array(z.string().min(1)).min(2),
+});
+
+const regionalServiceExpansionItemSchema = z.object({
+  id: z.string().min(1),
+  label: z.string().min(1),
+  futurePath: z.string().min(1),
+  context: z.string().min(20),
+});
+
 const regionalPageSchema = z.object({
   id: z.string().min(1),
   slug: z.string().min(1),
@@ -428,7 +440,13 @@ const regionalPageSchema = z.object({
     paragraphs: z.array(z.string().min(20)).min(2),
     sectors: z.array(z.string().min(1)).min(2),
   }),
+  semanticSummary: regionalSemanticSummarySchema.optional(),
   services: z.array(regionalServiceSchema).min(1),
+  serviceExpansion: z.object({
+    title: z.string().min(1),
+    intro: z.string().min(20),
+    items: z.array(regionalServiceExpansionItemSchema).min(1),
+  }).optional(),
   worksWith: z.object({
     title: z.string().min(1),
     paragraphs: z.array(z.string().min(20)).min(2),

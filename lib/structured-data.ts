@@ -33,6 +33,14 @@ export function buildOrganizationSchema(content: SiteContent) {
 
 export function buildLocalBusinessSchema(content: SiteContent) {
   const data = content.seoSettings.structuredData;
+  const enabledRegions = content.regionalSeo?.enabled
+    ? content.regionalSeo.pages
+        .filter((page) => page.enabled !== false)
+        .map((page) => ({
+          "@type": "AdministrativeArea",
+          name: page.countyName === page.cityName ? page.cityName : `${page.cityName}, ${page.countyName}`,
+        }))
+    : "Romania";
 
   return {
     "@context": "https://schema.org",
@@ -52,7 +60,7 @@ export function buildLocalBusinessSchema(content: SiteContent) {
       postalCode: data.address.postalCode || undefined,
       addressCountry: data.address.addressCountry,
     },
-    areaServed: "Romania",
+    areaServed: enabledRegions,
     priceRange: "$$",
     sameAs: data.socialLinks.filter((link) => link.enabled !== false).map((link) => link.url),
   };
@@ -96,7 +104,11 @@ export function buildRegionalServiceSchemas(content: SiteContent, page: Regional
     serviceType: service.title,
     areaServed: {
       "@type": "AdministrativeArea",
-      name: page.cityName,
+      name: page.countyName === page.cityName ? page.cityName : `${page.cityName}, ${page.countyName}`,
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: page.regionalContext.sectors.join(", "),
     },
     provider: {
       "@id": `${getCanonicalBaseUrl(content)}/#organization`,
@@ -114,7 +126,7 @@ export function buildRegionalLocalBusinessSchema(content: SiteContent, page: Reg
     "@id": `${absoluteUrl(`/agentie-marketing/${page.slug}`, content)}#localbusiness`,
     areaServed: {
       "@type": "AdministrativeArea",
-      name: page.cityName,
+      name: page.countyName === page.cityName ? page.cityName : `${page.cityName}, ${page.countyName}`,
     },
     name: `${siteMetadata.siteName} - agenție de marketing ${page.cityName}`,
     url: absoluteUrl(`/agentie-marketing/${page.slug}`, content),
