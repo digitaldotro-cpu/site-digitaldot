@@ -97,12 +97,36 @@ const quoteBlockSchema = z.object({
   text: z.string().min(1),
 });
 
+const comparisonColumnSchema = z.object({
+  title: z.string().min(1),
+  items: z.array(z.string().min(1)).min(1),
+});
+
 const serviceItemSchema = z.object({
   id: z.string().min(1),
   enabled: z.boolean().default(true),
   icon: z.string().min(1),
   title: z.string().min(1),
   description: z.string().min(1),
+});
+
+const proofMetricSchema = z.object({
+  id: z.string().min(1),
+  value: z.string().min(1),
+  description: z.string().min(1).optional(),
+});
+
+const caseStudyActionSchema = z.object({
+  id: z.string().min(1),
+  text: z.string().min(1),
+});
+
+const portfolioExampleSchema = z.object({
+  id: z.string().min(1),
+  businessType: z.string().min(1),
+  problem: z.string().min(1),
+  intervention: z.string().min(1),
+  result: z.string().min(1),
 });
 
 const processStepSchema = z.object({
@@ -456,9 +480,13 @@ const regionalSeoSchema = z.object({
 const sectionKeySchema = z.enum([
   "hero",
   "positioning",
+  "proofMetrics",
+  "miniCaseStudy",
+  "proofCta",
   "authority",
   "brandValueSection",
   "services",
+  "portfolioExamples",
   "instagramSection",
   "strategySection",
   "teamSection",
@@ -516,6 +544,10 @@ export const siteContentSchema = z.object({
       quoteBlocks: z.array(quoteBlockSchema).min(1),
       closingParagraph: z.string().min(1),
       optionalHighlightedPhrases: z.array(z.string().min(1)).default([]),
+      comparison: z.object({
+        left: comparisonColumnSchema,
+        right: comparisonColumnSchema,
+      }).optional(),
       layout: z.object({
         spacingPreset: z.enum(["compact", "standard", "cinematic"]).default("cinematic"),
         alignment: z.enum(["left", "center"]).default("left"),
@@ -526,6 +558,31 @@ export const siteContentSchema = z.object({
         text: z.string().min(1),
         link: z.string().min(1),
       }),
+    }),
+    proofMetrics: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      metrics: z.array(proofMetricSchema).min(1),
+    }),
+    miniCaseStudy: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      clientLabel: z.string().min(1),
+      clientValue: z.string().min(1),
+      problemLabel: z.string().min(1),
+      problem: z.string().min(1),
+      interventionLabel: z.string().min(1),
+      intervention: z.array(caseStudyActionSchema).min(1),
+      resultLabel: z.string().min(1),
+      result: z.string().min(1),
+    }),
+    proofCta: z.object({
+      enabled: z.boolean().default(true),
+      headline: z.string().min(1),
+      supportText: z.string().min(1),
+      buttonText: z.string().min(1),
+      buttonLink: z.string().min(1),
     }),
     authority: z.object({
       enabled: z.boolean().default(true),
@@ -546,7 +603,14 @@ export const siteContentSchema = z.object({
     services: z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
+      subtitle: z.string().min(1).optional(),
       items: z.array(serviceItemSchema).min(1),
+    }),
+    portfolioExamples: z.object({
+      enabled: z.boolean().default(true),
+      title: z.string().min(1),
+      subtitle: z.string().min(1),
+      examples: z.array(portfolioExampleSchema).min(1),
     }),
     instagramSection: z.object({
       enabled: z.boolean().default(true),
@@ -564,6 +628,15 @@ export const siteContentSchema = z.object({
       textAlignment: z.enum(["left", "center"]).default("left"),
       paddingBottom: z.number().min(0).max(400).default(120),
     }),
+    visualBreak: z.object({
+      enabled: z.boolean().default(false),
+      image: z.string().min(1).default("/branding/references/door-strategy-wide.png"),
+      overlayText: z.string().min(1).default("Strategie clară. Execuție disciplinată. Rezultate măsurabile."),
+    }).default({
+      enabled: false,
+      image: "/branding/references/door-strategy-wide.png",
+      overlayText: "Strategie clară. Execuție disciplinată. Rezultate măsurabile.",
+    }),
     teamSection: z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
@@ -573,11 +646,14 @@ export const siteContentSchema = z.object({
     process: z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
+      subtitle: z.string().min(1).optional(),
       steps: z.array(processStepSchema).min(1),
     }),
     clientFilter: z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
+      subtitle: z.string().min(1).optional(),
+      introText: z.string().min(1).optional(),
       worksWithTitle: z.string().min(1),
       worksWith: z.array(filterCriteriaSchema).min(1),
       notForTitle: z.string().min(1),

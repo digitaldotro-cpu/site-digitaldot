@@ -17,9 +17,9 @@ export function ContactSection({ section, global }: ContactSectionProps) {
   return (
     <section id="contact" className="scroll-mt-24 py-18 sm:py-24">
       <Container className="grid gap-7 lg:grid-cols-[1.2fr_0.8fr]">
-        <AnimatedSection className="rounded-[2rem] border border-[#2a3b42] bg-[#0f1519]/85 p-7 sm:p-9">
-          <h2 className="text-3xl font-semibold text-white">{section.title}</h2>
-          <p className="mt-3 max-w-2xl text-[#c6c6c6]">{section.description}</p>
+        <AnimatedSection className="rounded-[2rem] border border-[#66fcf1]/28 bg-[linear-gradient(145deg,rgba(15,21,25,0.94),rgba(8,11,15,0.98))] p-7 shadow-[0_24px_80px_-52px_rgba(102,252,241,0.8)] sm:p-9">
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#c6c6c6] sm:text-lg">{section.description}</p>
           <div className="mt-7">
             <ContactForm config={section} />
           </div>

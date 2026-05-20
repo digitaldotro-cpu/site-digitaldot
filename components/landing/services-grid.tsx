@@ -21,6 +21,8 @@ const hrefByServiceTitle: Record<string, string> = {
   "Social Media Management": "/social-media-management",
   "Producție Foto & Video": "/productie-video",
   "Strategie de Marketing": "/#positioning",
+  "Google & Meta Ads": "/google-meta-ads",
+  "Website Creation": "/website-creation",
   "Reclame Plătite: Google & Facebook": "/google-meta-ads",
   "Creare Web (WordPress & Shopify)": "/website-creation",
   SEO: "/seo",
@@ -38,8 +40,13 @@ export function ServicesGrid({ section }: ServicesGridProps) {
   return (
     <section id="services" className="scroll-mt-24 py-18 sm:py-24">
       <Container>
-        <AnimatedSection>
+        <AnimatedSection className="max-w-4xl">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
+          {section.subtitle ? (
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#c6c6c6] sm:text-lg">
+              {section.subtitle}
+            </p>
+          ) : null}
         </AnimatedSection>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">

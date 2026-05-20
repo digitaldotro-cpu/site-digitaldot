@@ -21,7 +21,7 @@ function getInitials(name: string) {
 
 export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
   const avatarClasses =
-    "relative h-full min-h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:aspect-square md:h-32 md:w-32 lg:h-28 lg:w-28";
+    "relative aspect-square h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:h-32 md:w-32 lg:h-28 lg:w-28";
 
   const avatarContent = member.avatar ? (
     <Image
@@ -41,9 +41,9 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
   return (
     <AnimatedSection
       delay={delay}
-      className="group rounded-3xl border border-[#2a3e42] bg-[#101418]/80 p-6 transition-all duration-300 hover:border-[#66fcf1]/40 hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.8)]"
+      className="group rounded-3xl border border-[#2a3e42] bg-[linear-gradient(150deg,rgba(16,20,24,0.92),rgba(10,13,16,0.98))] p-6 transition-all duration-300 hover:border-[#66fcf1]/40 hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.8)]"
     >
-      <div className="grid grid-cols-[auto_1fr] items-stretch gap-4 md:items-start">
+      <div className="grid grid-cols-[auto_1fr] items-start gap-4">
         {member.avatarLink ? (
           <a
             href={member.avatarLink}

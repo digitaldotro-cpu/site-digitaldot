@@ -15,8 +15,8 @@ export function TeamSection({ section }: TeamSectionProps) {
   return (
     <section id="team" className="scroll-mt-24 py-18 sm:py-24">
       <Container>
-        <AnimatedSection>
-          <h2 className="text-3xl font-semibold text-white sm:text-4xl">{section.title}</h2>
+        <AnimatedSection className="max-w-4xl">
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#c6c6c6] sm:text-lg">
             {section.subtitle}
           </p>

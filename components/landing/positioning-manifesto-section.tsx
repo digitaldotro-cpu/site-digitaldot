@@ -83,7 +83,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
           />
 
           <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#66fcf1]/12 blur-3xl transition-opacity duration-700" />
-          <div className="relative space-y-12 sm:space-y-14 lg:space-y-16">
+          <div className="relative space-y-10 sm:space-y-12 lg:space-y-14">
             <AnimatedSection className={cn("max-w-4xl", widthAlignmentClass)}>
               <h2
                 className={cn(
@@ -106,33 +106,68 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
               </p>
             </AnimatedSection>
 
-            <div className="grid gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
-              <div className="space-y-6">
-                {section.editorialParagraphs.map((entry, index) => (
-                  <AnimatedSection
-                    key={entry.id}
-                    delay={0.08 + index * 0.05}
-                    className="rounded-2xl border border-[#2a3c44]/65 bg-[#0f151a]/75 p-6 sm:p-7"
-                  >
-                    <p className="text-pretty text-base leading-8 text-[#d0d7db] sm:text-[1.06rem]">
-                      {renderHighlightedText(entry.text, paragraphHighlights, "body")}
-                    </p>
-                  </AnimatedSection>
-                ))}
-              </div>
+            {section.comparison ? (
+              <div className="grid items-stretch gap-5 lg:grid-cols-[1fr_auto_1fr]">
+                <AnimatedSection delay={0.08} className="rounded-3xl border border-[#344148] bg-[#0d1216]/86 p-6 sm:p-7">
+                  <h3 className="text-xl font-semibold text-white">{section.comparison.left.title}</h3>
+                  <ul className="mt-5 space-y-3 text-[#c6c6c6]">
+                    {section.comparison.left.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c6c6c6]/70" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </AnimatedSection>
 
-              <div className="space-y-5">
-                {section.quoteBlocks.map((quote, index) => (
-                  <AnimatedSection
-                    key={quote.id}
-                    delay={0.16 + index * 0.06}
-                    className="rounded-2xl border border-[#66fcf1]/28 bg-[#66fcf1]/8 p-6"
-                  >
-                    <p className="text-pretty text-lg leading-relaxed text-[#e8fffd]">“{quote.text}”</p>
-                  </AnimatedSection>
-                ))}
+                <AnimatedSection delay={0.12} className="relative hidden items-center px-1 lg:flex">
+                  <div className="flex h-full min-h-64 w-14 items-center justify-center">
+                    <div className="h-px w-full bg-gradient-to-r from-[#c6c6c6]/20 via-[#66fcf1] to-[#276864]" />
+                    <ArrowRight className="absolute h-5 w-5 rounded-full border border-[#66fcf1]/35 bg-[#0b0c10] p-1 text-[#66fcf1]" />
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.16} className="rounded-3xl border border-[#66fcf1]/34 bg-[#66fcf1]/8 p-6 sm:p-7">
+                  <h3 className="text-xl font-semibold text-[#e8fffd]">{section.comparison.right.title}</h3>
+                  <ul className="mt-5 space-y-3 text-[#d9fffc]">
+                    {section.comparison.right.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#66fcf1]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </AnimatedSection>
               </div>
-            </div>
+            ) : (
+              <div className="grid gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+                <div className="space-y-6">
+                  {section.editorialParagraphs.map((entry, index) => (
+                    <AnimatedSection
+                      key={entry.id}
+                      delay={0.08 + index * 0.05}
+                      className="rounded-2xl border border-[#2a3c44]/65 bg-[#0f151a]/75 p-6 sm:p-7"
+                    >
+                      <p className="text-pretty text-base leading-8 text-[#d0d7db] sm:text-[1.06rem]">
+                        {renderHighlightedText(entry.text, paragraphHighlights, "body")}
+                      </p>
+                    </AnimatedSection>
+                  ))}
+                </div>
+
+                <div className="space-y-5">
+                  {section.quoteBlocks.map((quote, index) => (
+                    <AnimatedSection
+                      key={quote.id}
+                      delay={0.16 + index * 0.06}
+                      className="rounded-2xl border border-[#66fcf1]/28 bg-[#66fcf1]/8 p-6"
+                    >
+                      <p className="text-pretty text-lg leading-relaxed text-[#e8fffd]">“{quote.text}”</p>
+                    </AnimatedSection>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <AnimatedSection delay={0.24} className={cn("space-y-7", widthAlignmentClass)}>
               <p

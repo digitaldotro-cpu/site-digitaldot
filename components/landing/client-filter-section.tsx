@@ -15,12 +15,22 @@ export function ClientFilterSection({ section }: ClientFilterSectionProps) {
   return (
     <section id="clients" className="scroll-mt-24 py-18 sm:py-24">
       <Container>
-        <AnimatedSection>
-          <h2 className="text-3xl font-semibold text-white sm:text-4xl">{section.title}</h2>
+        <AnimatedSection className="max-w-4xl">
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>
+          {section.subtitle ? (
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#c6c6c6] sm:text-lg">
+              {section.subtitle}
+            </p>
+          ) : null}
+          {section.introText ? (
+            <p className="mt-5 max-w-4xl text-base leading-relaxed text-[#d7e3e2] sm:text-lg">
+              {section.introText}
+            </p>
+          ) : null}
         </AnimatedSection>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <AnimatedSection className="rounded-3xl border border-[#2d5a57] bg-[#10201f] p-7">
+          <AnimatedSection className="rounded-3xl border border-[#2d5a57] bg-[linear-gradient(150deg,rgba(16,32,31,0.95),rgba(11,16,18,0.98))] p-7">
             <h3 className="text-xl font-semibold text-[#66fcf1]">{section.worksWithTitle}</h3>
             <ul className="mt-4 space-y-3">
               {section.worksWith.map((item) => (
@@ -32,12 +42,12 @@ export function ClientFilterSection({ section }: ClientFilterSectionProps) {
             </ul>
           </AnimatedSection>
 
-          <AnimatedSection className="rounded-3xl border border-[#4a2b31] bg-[#1c1316] p-7" delay={0.06}>
-            <h3 className="text-xl font-semibold text-[#ffb8c2]">{section.notForTitle}</h3>
+          <AnimatedSection className="rounded-3xl border border-[#344148] bg-[#101418]/88 p-7" delay={0.06}>
+            <h3 className="text-xl font-semibold text-white">{section.notForTitle}</h3>
             <ul className="mt-4 space-y-3">
               {section.notFor.map((item) => (
-                <li key={item.id} className="flex items-start gap-3 text-[#f4d8dd]">
-                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#ff9eaf]" />
+                <li key={item.id} className="flex items-start gap-3 text-[#d5dddd]">
+                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#c6c6c6]" />
                   <span>{item.text}</span>
                 </li>
               ))}

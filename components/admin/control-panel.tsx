@@ -53,9 +53,13 @@ function getItemTitle(value: JsonValue) {
 const labelDictionary: Record<string, string> = {
   hero: "Secțiunea Hero",
   positioning: "Poziționare",
+  proofMetrics: "Metrici Proof",
+  miniCaseStudy: "Mini Studiu de Caz",
+  proofCta: "CTA Intermediar",
   authority: "Autoritate",
   brandValueSection: "Valori Brand",
   services: "Servicii",
+  portfolioExamples: "Portofoliu Exemple",
   instagramSection: "Secțiune Instagram",
   strategySection: "Strategie",
   teamSection: "Echipă",

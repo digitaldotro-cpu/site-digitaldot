@@ -200,27 +200,25 @@
     "sectionOrder": [
       "hero",
       "positioning",
-      "instagramSection",
-      "authority",
-      "brandValueSection",
+      "proofMetrics",
+      "miniCaseStudy",
+      "proofCta",
       "services",
-      "teamSection",
       "process",
-      "clientFilter",
+      "portfolioExamples",
       "partnersSection",
-      "strategySection",
-      "primaryCta",
+      "teamSection",
+      "clientFilter",
       "contact"
     ],
     "hero": {
       "enabled": true,
-      "badge": "STRATEGIE. CREAȚIE. REZULTATE.",
+      "badge": "MARKETING CU DIRECȚIE",
       "headlineVariants": [
-        "Ai nevoie de o agenție de marketing?",
-        "Ai buget de marketing sau doar speranțe?"
+        "Dacă marketingul tău nu are direcție, nu are cum să funcționeze."
       ],
       "activeHeadlineIndex": 0,
-      "subheadline": "Partener strategic pentru business-uri care tratează marketingul ca investiție, nu ca loterie.",
+      "subheadline": "Majoritatea companiilor investesc în reclame, conținut și campanii — fără un sistem clar care să le lege între ele. Acesta este principalul motiv pentru care marketingul nu produce creștere predictibilă. Noi ajutăm companiile să corecteze exact acest lucru.",
       "ctaText": "Hai să povestim",
       "ctaLink": "#contact",
       "image": "/branding/references/chess-hero-wide.png",
@@ -228,61 +226,135 @@
       "overlayIntensity": 72,
       "imageVisibility": true,
       "supportingPoints": [
-        "Strategie clară.",
-        "Execuție impecabilă.",
-        "Rezultate măsurabile."
+        "Claritate înainte de execuție.",
+        "Strategie înainte de buget consumat.",
+        "Sistem înainte de activitate."
       ]
     },
     "positioning": {
       "enabled": true,
-      "title": "Marketingul nu este loterie. Este strategie.",
+      "title": "Marketingul eficient începe înaintea reclamelor.",
       "highlightedWords": [
-        "nu este loterie",
-        "Este strategie."
+        "înaintea reclamelor"
       ],
-      "introParagraph": "Dacă ai ajuns aici, cel mai probabil nu cauți doar execuție vizibilă. Cauți claritate, structură și un mod de lucru care transformă marketingul într-o funcție predictibilă de business.",
+      "introParagraph": "Majoritatea companiilor sar direct la execuție: reclame, conținut, social media. Noi inversăm procesul. Începem cu claritate — definim poziționarea, strategia și avantajul competitiv. Pentru că execuția fără direcție nu creează creștere. Creează doar activitate.",
       "editorialParagraphs": [
         {
           "id": "pos-1",
-          "text": "Marketingul fără strategie rămâne activitate: mult efort, puțină direcție. Când obiectivele, mesajele și canalele sunt aliniate, aceeași energie produce rezultate care se văd în cifre."
+          "text": "Marketingul fără strategie rămâne activitate: mult efort, puțină direcție."
         },
         {
           "id": "pos-2",
-          "text": "Noi nu intrăm în proiecte pentru a bifa task-uri izolate. Construim un sistem coerent, cu priorități clare, metrici utile și ritm de execuție disciplinat."
-        },
-        {
-          "id": "pos-3",
-          "text": "Această abordare este orientată spre creștere pe termen lung: decizii mature, investiții mai bine calibrate și poziționare care rezistă în timp."
+          "text": "Când poziționarea, mesajele și canalele sunt aliniate, execuția începe să producă semnale clare."
         }
       ],
       "quoteBlocks": [
         {
           "id": "pos-q1",
-          "text": "Marketingul cu strategie devine avantaj competitiv."
-        },
-        {
-          "id": "pos-q2",
-          "text": "Business-first nu este un slogan. Este standardul de lucru."
+          "text": "Execuția fără direcție nu creează creștere. Creează doar activitate."
         }
       ],
-      "closingParagraph": "Lucrăm selectiv, cu companii care tratează marketingul ca investiție strategică, nu ca experiment permanent. Dacă urmărești execuție controlată și progres măsurabil, suntem aliniați.",
+      "closingParagraph": "Direcția bună reduce risipa, aliniază echipa și transformă bugetul de marketing într-un sistem care poate fi măsurat și optimizat.",
       "optionalHighlightedPhrases": [
         "claritate",
-        "strategie",
-        "sistem",
-        "business-first",
+        "poziționarea",
+        "strategia",
         "avantaj competitiv"
       ],
+      "comparison": {
+        "left": {
+          "title": "Majoritatea companiilor...",
+          "items": [
+            "reclame fără strategie",
+            "postări fără scop",
+            "agenții care vând activitate în loc de rezultate",
+            "branding fără diferențiere"
+          ]
+        },
+        "right": {
+          "title": "Noi începem cu...",
+          "items": [
+            "claritate",
+            "poziționare",
+            "strategie",
+            "avantaj competitiv",
+            "execuție disciplinată"
+          ]
+        }
+      },
       "layout": {
         "spacingPreset": "cinematic",
         "alignment": "left",
         "backgroundVariant": "glow"
       },
       "cta": {
-        "enabled": true,
+        "enabled": false,
         "text": "Descoperă serviciile noastre strategice",
         "link": "#services"
       }
+    },
+    "proofMetrics": {
+      "enabled": true,
+      "title": "Creștere măsurabilă prin strategie clară.",
+      "subtitle": "Câteva dintre rezultatele obținute prin campanii structurate strategic.",
+      "metrics": [
+        {
+          "id": "metric-1",
+          "value": "120+ proiecte livrate"
+        },
+        {
+          "id": "metric-2",
+          "value": "7 industrii abordate strategic"
+        },
+        {
+          "id": "metric-3",
+          "value": "Campanii Google & Meta Ads optimizate constant"
+        },
+        {
+          "id": "metric-4",
+          "value": "Conținut construit pentru încredere, nu doar reach"
+        },
+        {
+          "id": "metric-5",
+          "value": "Strategie bună. Rezultate măsurabile."
+        }
+      ]
+    },
+    "miniCaseStudy": {
+      "enabled": true,
+      "title": "Cum transformăm marketingul din cost în sistem de creștere",
+      "clientLabel": "Client",
+      "clientValue": "Ecommerce / Clinică / Retail / HoReCa",
+      "problemLabel": "Problemă",
+      "problem": "Campanii fără structură, costuri ridicate pe lead și lipsă de direcție între canale.",
+      "interventionLabel": "Intervenție",
+      "intervention": [
+        {
+          "id": "case-action-1",
+          "text": "audit complet"
+        },
+        {
+          "id": "case-action-2",
+          "text": "restructurare funnel"
+        },
+        {
+          "id": "case-action-3",
+          "text": "strategie de campanii"
+        },
+        {
+          "id": "case-action-4",
+          "text": "execuție și optimizare"
+        }
+      ],
+      "resultLabel": "Rezultat",
+      "result": "Rezultatele concrete vor fi completate cu date reale din portofoliu."
+    },
+    "proofCta": {
+      "enabled": true,
+      "headline": "Marketingul tău poate fi mai simplu și mai eficient.",
+      "supportText": "Îți arătăm exact unde pierzi buget și cum poate fi restructurată strategia ta de marketing.",
+      "buttonText": "Contactează-ne",
+      "buttonLink": "#contact"
     },
     "authority": {
       "enabled": true,
@@ -323,7 +395,8 @@
     },
     "services": {
       "enabled": true,
-      "title": "Servicii esențiale într-un singur sistem",
+      "title": "Servicii de marketing orientate spre performanță",
+      "subtitle": "Putem livra campanii individuale sau construi sisteme complete de creștere — în funcție de etapa în care se află business-ul tău.",
       "items": [
         {
           "id": "srv-1",
@@ -366,6 +439,41 @@
           "icon": "Search",
           "title": "SEO",
           "description": "Optimizare tehnică și strategică pentru vizibilitate organică, trafic relevant și creștere sustenabilă."
+        }
+      ]
+    },
+    "portfolioExamples": {
+      "enabled": true,
+      "title": "Proiecte care au generat creștere reală",
+      "subtitle": "Branduri cu care am lucrat pentru creștere predictibilă și performanță măsurabilă.",
+      "examples": [
+        {
+          "id": "portfolio-1",
+          "businessType": "Retail local",
+          "problem": "Vizibilitate fragmentată și campanii fără o direcție comună între social media și promovare plătită.",
+          "intervention": "Clarificare poziționare, calendar editorial și structură de campanii orientată spre leaduri relevante.",
+          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
+        },
+        {
+          "id": "portfolio-2",
+          "businessType": "Clinică medicală",
+          "problem": "Costuri ridicate pe lead și mesaje inconsistente între reclame, conținut și website.",
+          "intervention": "Audit, restructurare funnel, mesaje de încredere și optimizare Google & Meta Ads.",
+          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
+        },
+        {
+          "id": "portfolio-3",
+          "businessType": "HoReCa",
+          "problem": "Prezență vizuală bună, dar fără sistem constant de conversie și retenție.",
+          "intervention": "Conținut foto-video, campanii sezoniere și direcție editorială conectată la obiective comerciale.",
+          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
+        },
+        {
+          "id": "portfolio-4",
+          "businessType": "Ecommerce",
+          "problem": "Trafic plătit fără structură clară de testare, remarketing și optimizare pe funnel.",
+          "intervention": "Strategie de campanii, testare creativă, optimizare continuă și raportare pe metrici utile.",
+          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
         }
       ]
     },
@@ -565,33 +673,40 @@
     },
     "process": {
       "enabled": true,
-      "title": "Procesul nostru",
+      "title": "Cum construim claritate înainte de execuție?",
       "steps": [
         {
           "id": "step-1",
-          "title": "Audit",
-          "description": "Analizăm ce funcționează, ce blochează și unde se pierde bugetul."
+          "title": "Discuție inițială",
+          "description": "Începem cu o discuție pentru a înțelege business-ul, obiectivele și blocajele actuale."
         },
         {
           "id": "step-2",
-          "title": "Strategie",
-          "description": "Construim direcția: mesaj, canale, priorități, ritm de execuție."
+          "title": "Research",
+          "description": "Continuăm cu un research amplu pe industrie, competiție și audiență."
         },
         {
           "id": "step-3",
+          "title": "Strategie",
+          "description": "Construim un avatar de client și o strategie clară de poziționare."
+        },
+        {
+          "id": "step-4",
           "title": "Execuție",
-          "description": "Implementăm, măsurăm și optimizăm constant pentru rezultate scalabile."
+          "description": "După validare, trecem la execuție, măsurare și optimizare continuă."
         }
       ]
     },
     "clientFilter": {
       "enabled": true,
       "title": "Cu cine lucrăm",
+      "subtitle": "Lucrăm cel mai bine cu companii care își doresc claritate și scalare.",
+      "introText": "Suntem potriviți pentru business-uri, antreprenori și echipe care vor mai mult decât execuție — vor direcție, structură și creștere sustenabilă. Colaborăm cu organizații care au deja un buget de marketing și își doresc să îl folosească mai eficient.",
       "worksWithTitle": "Lucrăm cu",
       "worksWith": [
         {
           "id": "fit-1",
-          "text": "Antreprenori și manageri maturi"
+          "text": "business-uri care caută claritate înainte de scalare"
         },
         {
           "id": "fit-2",
@@ -599,22 +714,22 @@
         },
         {
           "id": "fit-3",
-          "text": "Echipe cu mindset pe termen lung"
+          "text": "echipe cu mindset pe termen mediu și lung"
         }
       ],
-      "notForTitle": "Nu lucrăm cu",
+      "notForTitle": "Nu suntem potriviți pentru",
       "notFor": [
         {
           "id": "nofit-1",
-          "text": "Bugete improvizate"
+          "text": "proiecte fără buget clar sau direcție stabilită"
         },
         {
           "id": "nofit-2",
-          "text": "Așteptări nerealiste"
+          "text": "așteptări nerealiste de rezultate rapide fără strategie"
         },
         {
           "id": "nofit-3",
-          "text": "Mindset oportunist"
+          "text": "abordări oportuniste, fără angajament pe termen mediu"
         }
       ]
     },
@@ -769,8 +884,8 @@
     },
     "contact": {
       "enabled": true,
-      "title": "Trimite-ne contextul tău",
-      "description": "Îți răspundem cu următorii pași concreți, nu cu un template generic.",
+      "title": "Hai să vedem ce lipsește din marketingul tău.",
+      "description": "Îți arătăm concret unde se pierde eficiența și cum poate fi refăcută structura.",
       "fields": {
         "name": {
           "label": "Nume",
@@ -790,7 +905,7 @@
         },
         "message": {
           "label": "Mesaj",
-          "placeholder": "Descrie pe scurt obiectivul, bugetul și etapa business-ului."
+          "placeholder": "Descrie pe scurt obiectivul, bugetul și etapa în care se află business-ul."
         }
       },
       "serviceOptions": [
