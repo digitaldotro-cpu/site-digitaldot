@@ -67,8 +67,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "2.230 materiale publicate",
       "558K+ video views TikTok",
     ],
-    image: "/branding/partners/logo-no-bg.png",
-    mediaGallery: ["/branding/partners/logo-no-bg.png"],
+    image: "/branding/partners/artio.png",
+    mediaGallery: ["/branding/partners/artio.png"],
     cta: { label: "Vezi studiul de caz", href: "/case-studies/artio-medica" },
   },
 ];
