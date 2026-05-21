@@ -41,8 +41,8 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                 className="group block h-full rounded-3xl border border-[#2a3e42] bg-[linear-gradient(150deg,rgba(16,20,24,0.92),rgba(10,13,16,0.98))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#66fcf1]/45 hover:shadow-[0_0_34px_-20px_rgba(102,252,241,0.85)]"
               >
                 <article className={hasMultipleStudies ? "flex h-full flex-col gap-7" : "grid h-full gap-7 lg:grid-cols-[0.82fr_1.18fr]"}>
-                  <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.4rem] border border-[#276864]/40 bg-white p-8">
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(102,252,241,0.16),transparent_50%)]" />
+                  <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.4rem] border border-[#276864]/40 bg-[#c6c6c6] p-8">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(102,252,241,0.08),transparent_50%)]" />
                     <Image
                       src={study.heroImage}
                       alt={`${study.clientName} case study`}

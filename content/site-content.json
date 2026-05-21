@@ -834,8 +834,8 @@
         {
           "id": "partner-19",
           "enabled": true,
-          "src": "/branding/partners/artio.png",
-          "alt": "Artio"
+          "src": "/branding/partners/artio-medica-logo.png",
+          "alt": "ARTIO Medica"
         },
         {
           "id": "partner-20",
@@ -1425,7 +1425,7 @@
         "seoDescription": "Studiu de caz Digital Dot pentru Lumea Perdelelor: 7,30M+ afișări Social Media, 282K+ interacțiuni, 2.951 materiale publicate și 1,67M+ video views pe TikTok.",
         "ogTitle": "Studiu de caz Lumea Perdelelor | Social Media, Reels & TikTok",
         "ogDescription": "Studiu de caz Digital Dot pentru Lumea Perdelelor: 7,30M+ afișări Social Media, 282K+ interacțiuni, 2.951 materiale publicate și 1,67M+ video views pe TikTok.",
-        "ogImage": "/branding/partners/decon.jpg",
+        "ogImage": "/branding/partners/lumea-perdelelor-logo.png",
         "canonicalUrl": "https://digitaldot.ro/case-studies/lumea-perdelelor",
         "robots": {
           "index": true,
@@ -1441,7 +1441,7 @@
         "seoDescription": "Studiu de caz Digital Dot pentru ARTIO Medica: 6,07M+ afișări Social Media, 95K+ interacțiuni, 2.230 materiale publicate și 558K+ video views pe TikTok.",
         "ogTitle": "Studiu de caz ARTIO Medica | Social Media pentru clinică medicală",
         "ogDescription": "Studiu de caz Digital Dot pentru ARTIO Medica: 6,07M+ afișări Social Media, 95K+ interacțiuni, 2.230 materiale publicate și 558K+ video views pe TikTok.",
-        "ogImage": "/branding/partners/artio.png",
+        "ogImage": "/branding/partners/artio-medica-logo.png",
         "canonicalUrl": "https://digitaldot.ro/case-studies/artio-medica",
         "robots": {
           "index": true,
@@ -4635,7 +4635,7 @@
         },
         "seoTitle": "Studiu de caz Lunna | Social Media, Reels & TikTok",
         "seoDescription": "Studiu de caz Digital Dot pentru Lunna: 1,54M+ afișări Social Media, 82K+ interacțiuni, 922 materiale publicate și 576K+ video views pe TikTok.",
-        "imageScale": 2.45
+        "imageScale": 2.1
       },
       {
         "slug": "taco-loco",
@@ -4928,9 +4928,9 @@
         "clientWebsite": "https://lumeaperdelelor.ro/",
         "period": "01 mai 2024 – 20 mai 2026",
         "audienceType": "Brand expansion și retail interior",
-        "heroImage": "/branding/partners/decon.jpg",
-        "ogImage": "/branding/partners/decon.jpg",
-        "imageScale": 2.4,
+        "heroImage": "/branding/partners/lumea-perdelelor-logo.png",
+        "ogImage": "/branding/partners/lumea-perdelelor-logo.png",
+        "imageScale": 1.08,
         "cardMetrics": [
           {
             "value": "7,30M+",
@@ -5073,10 +5073,9 @@
         "clientWebsite": "https://artiomedica.ro/",
         "period": "16 ianuarie 2024 – 20 mai 2026",
         "audienceType": "Clinică medicală",
-        "heroImage": "/branding/partners/artio.png",
-        "ogImage": "/branding/partners/artio.png",
-        "imagePosition": "center",
-        "imageScale": 2.4,
+        "heroImage": "/branding/partners/artio-medica-logo.png",
+        "ogImage": "/branding/partners/artio-medica-logo.png",
+        "imageScale": 1.12,
         "cardMetrics": [
           {
             "value": "6,07M+",

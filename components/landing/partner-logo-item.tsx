@@ -10,7 +10,7 @@ type PartnerLogoItemProps = {
 
 export function PartnerLogoItem({ logo }: PartnerLogoItemProps) {
   const isBiggerLogo =
-    /lunna|artio|cosmetic/i.test(logo.alt) ||
+    /artio|cosmetic/i.test(logo.alt) ||
     /logo-no-bg|cosmetic/i.test(logo.src);
 
   const content = (
