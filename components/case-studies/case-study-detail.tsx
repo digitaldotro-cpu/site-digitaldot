@@ -129,6 +129,20 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
         </Container>
       </section>
 
+      {study.highlightCampaign ? (
+        <section className="py-18 sm:py-24">
+          <Container>
+            <div className="rounded-[2rem] border border-[#66fcf1]/30 bg-[linear-gradient(145deg,rgba(16,24,28,0.95),rgba(11,12,16,0.98))] p-8 shadow-[0_35px_80px_-58px_rgba(102,252,241,0.5)] sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">
+                Highlight campanie
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{study.highlightCampaign.title}</h2>
+              <p className="mt-5 max-w-4xl text-base leading-8 text-[#c6c6c6]">{study.highlightCampaign.text}</p>
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       <section className="py-18 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">{study.conclusion.title}</h2>

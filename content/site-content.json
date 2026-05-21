@@ -1373,10 +1373,26 @@
           "googleBotIndex": true,
           "googleBotFollow": true
         }
+      },
+      {
+        "path": "/case-studies/taco-loco",
+        "label": "Studiu de caz Taco Loco",
+        "seoTitle": "Studiu de caz Taco Loco | Meta Ads, Social Media & Restaurant Marketing",
+        "seoDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30.",
+        "ogTitle": "Studiu de caz Taco Loco | Meta Ads, Social Media & Restaurant Marketing",
+        "ogDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30.",
+        "ogImage": "/branding/partners/tacoloco.jpg",
+        "canonicalUrl": "https://digitaldot.ro/case-studies/taco-loco",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -4282,6 +4298,11 @@
         "title": "Lunna: vizibilitate, interacțiuni și conținut social media construit strategic",
         "href": "/case-studies/lunna",
         "description": "Studiu de caz real despre Social Media, Reels, TikTok, content marketing, vizibilitate și interacțiuni."
+      },
+      {
+        "title": "Taco Loco: vizibilitate, trafic și Meta Ads cu ROAS 13,30",
+        "href": "/case-studies/taco-loco",
+        "description": "Studiu de caz real despre Social Media, Meta Ads, restaurant marketing, trafic website și ROAS."
       }
     ]
   },
@@ -4550,6 +4571,148 @@
         "seoTitle": "Studiu de caz Lunna | Social Media, Reels & TikTok",
         "seoDescription": "Studiu de caz Digital Dot pentru Lunna: 1,54M+ afișări Social Media, 82K+ interacțiuni, 922 materiale publicate și 576K+ video views pe TikTok.",
         "imageScale": 2.45
+      },
+      {
+        "slug": "taco-loco",
+        "clientName": "Taco Loco",
+        "category": "Meta Ads · Social Media · Website Traffic · Restaurant Marketing",
+        "title": "Taco Loco: vizibilitate, trafic și Meta Ads cu ROAS 13,30",
+        "excerpt": "Pentru Taco Loco, am construit un ecosistem digital care a combinat Social Media, Meta Ads și trafic către website, cu focus pe vizibilitate, interacțiuni, rezultate urmărite și eficiență în promovare.",
+        "heroIntro": "Pentru Taco Loco, am construit un ecosistem digital care a combinat Social Media, conținut constant, Meta Ads și trafic către website. Obiectivul a fost să susținem vizibilitatea brandului, interacțiunea cu publicul și performanța campaniilor plătite într-un domeniu unde pofta, contextul și viteza deciziei contează enorm.",
+        "clientWebsite": "https://tacoloco.ro/",
+        "period": "01 februarie 2024 – 20 mai 2026",
+        "audienceType": "Restaurant local și food marketing",
+        "heroImage": "/branding/partners/tacoloco.jpg",
+        "ogImage": "/branding/partners/tacoloco.jpg",
+        "imageScale": 1.9,
+        "cardMetrics": [
+          {
+            "value": "4,62M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "54K+",
+            "label": "interacțiuni"
+          },
+          {
+            "value": "2,91M+",
+            "label": "afișări Meta Ads"
+          },
+          {
+            "value": "ROAS 13,30",
+            "label": "Meta Ads"
+          }
+        ],
+        "metrics": [
+          {
+            "value": "4,62M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "54K+",
+            "label": "interacțiuni totale"
+          },
+          {
+            "value": "2,91M+",
+            "label": "afișări Meta Ads"
+          },
+          {
+            "value": "24,89K",
+            "label": "clickuri Meta Ads"
+          },
+          {
+            "value": "13,30",
+            "label": "ROAS Meta Ads"
+          },
+          {
+            "value": "180K+",
+            "label": "views pe website"
+          }
+        ],
+        "context": {
+          "title": "Context",
+          "text": "Taco Loco este un brand local din zona restaurantelor, cu o identitate vizuală puternică și o ofertă care se bazează pe apetit, recurență și decizie rapidă. Într-o piață în care utilizatorii aleg repede unde mănâncă, Social Media și campaniile plătite trebuie să lucreze împreună: conținutul creează poftă, iar promovarea îl duce în fața oamenilor potriviți."
+        },
+        "challenge": {
+          "title": "Provocarea",
+          "text": "Brandul avea nevoie de o prezență digitală constantă, capabilă să susțină atât vizibilitatea organică, cât și performanța campaniilor plătite. Provocarea nu era doar să publicăm conținut, ci să construim un sistem care să lege imaginea, apetitul, ofertele, website-ul și campaniile Meta Ads.",
+          "items": [
+            "vizibilitate constantă în Social Media",
+            "conținut adaptat pentru restaurant și food marketing",
+            "promovarea produselor și ofertelor",
+            "trafic către website",
+            "campanii Meta Ads eficiente",
+            "menținerea brandului în atenția publicului local"
+          ]
+        },
+        "intervention": {
+          "title": "Intervenția Digital Dot",
+          "text": "Am construit o direcție de comunicare bazată pe conținut constant, materiale vizuale, campanii Meta Ads și optimizarea prezenței digitale, astfel încât Taco Loco să rămână vizibil atât în feed, cât și în momentele în care publicul caută o opțiune rapidă și apetisantă.",
+          "items": [
+            {
+              "title": "Social Media constant",
+              "text": "Am menținut o prezență activă pe Facebook și Instagram, cu un volum mare de conținut adaptat produselor, ofertelor, momentelor sezoniere și tonului brandului."
+            },
+            {
+              "title": "Food content și comunicare vizuală",
+              "text": "Am pus accent pe preparate, atmosferă și contexte de consum, astfel încât publicul să asocieze Taco Loco cu poftă, energie și experiență socială."
+            },
+            {
+              "title": "Meta Ads",
+              "text": "Campaniile Meta Ads au fost folosite pentru vizibilitate, trafic, promovarea catalogului și susținerea rezultatelor urmărite în ecosistemul digital."
+            },
+            {
+              "title": "Website traffic",
+              "text": "Traficul a fost direcționat către website, unde utilizatorii puteau descoperi meniul, produsele și fluxul de comandă."
+            },
+            {
+              "title": "Optimizare și distribuție",
+              "text": "Am urmărit eficiența campaniilor prin indicatori precum CPC, CPM, clickuri, conversion value și ROAS, pentru a susține promovarea într-un mod măsurabil."
+            }
+          ]
+        },
+        "results": {
+          "title": "Rezultate",
+          "intro": "În perioada analizată, ecosistemul digital Taco Loco a generat rezultate relevante în Social Media, Meta Ads, trafic website și eficiență de campanie.",
+          "items": [
+            "4,62M afișări totale în Social Media",
+            "54,62K interacțiuni totale",
+            "+394,41% creștere interacțiuni totale",
+            "1.131 materiale publicate",
+            "17,94K followers total",
+            "3,74M afișări Facebook",
+            "879,54K afișări Instagram",
+            "44,71K interacțiuni Facebook",
+            "9.909 interacțiuni Instagram",
+            "2,91M afișări Meta Ads",
+            "24,89K clickuri Meta Ads",
+            "CPC mediu Meta Ads: 0,33",
+            "CPM mediu Meta Ads: 2,86",
+            "conversion value Meta Ads: 110,88K",
+            "ROAS Meta Ads: 13,30",
+            "180,72K views pe website",
+            "47,97K visits pe website",
+            "43,68K visitors pe website",
+            "top post cu 1,2M impressions",
+            "campanie DOT - Advantage shopping campaign cu ROAS 59,34"
+          ]
+        },
+        "highlightCampaign": {
+          "title": "Campanie cu performanță ridicată",
+          "text": "Unul dintre cele mai puternice rezultate din raport vine din campania DOT - Advantage shopping campaign, care a generat 244,87K afișări, 4.804 clickuri, 957 conversii urmărite, conversion value de 97,83K și ROAS 59,34."
+        },
+        "conclusion": {
+          "title": "Ce arată acest studiu de caz",
+          "text": "Taco Loco este un exemplu bun pentru modul în care Social Media și Meta Ads pot lucra împreună într-un business din zona restaurantelor. Conținutul creează poftă și menține brandul prezent în mintea publicului, iar campaniile plătite amplifică mesajul și îl transformă într-un sistem măsurabil. Când imaginea, distribuția și optimizarea funcționează împreună, marketingul nu mai este doar activitate în feed, ci infrastructură de creștere."
+        },
+        "cta": {
+          "title": "Vrei să construim un sistem de promovare mai eficient pentru brandul tău?",
+          "subtitle": "Hai să vedem unde se pierde eficiența în marketingul tău și cum poate fi transformată promovarea într-un sistem măsurabil.",
+          "buttonText": "Contactează-ne",
+          "buttonLink": "/#contact"
+        },
+        "seoTitle": "Studiu de caz Taco Loco | Meta Ads, Social Media & Restaurant Marketing",
+        "seoDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30."
       }
     ]
   }

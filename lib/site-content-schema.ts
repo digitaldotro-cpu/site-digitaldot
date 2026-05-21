@@ -175,6 +175,7 @@ const caseStudySchema = z.object({
     intro: z.string().min(20),
     items: z.array(z.string().min(1)).min(1),
   }),
+  highlightCampaign: caseStudyTextBlockSchema.optional(),
   conclusion: caseStudyTextBlockSchema,
   cta: z.object({
     title: z.string().min(1),
