@@ -36,4 +36,39 @@ export const portfolioProjects: PortfolioProject[] = [
     mediaGallery: ["/branding/partners/optiktataru-negru-verde-principal.p.png"],
     cta: { label: "Vezi studiul de caz", href: "/case-studies/optik-tataru" },
   },
+  {
+    slug: "artio-medica",
+    title: "ARTIO Medica: comunicare medicală construită pentru încredere și vizibilitate",
+    client: "ARTIO Medica",
+    industry: "Clinică medicală",
+    category: "Social Media · Medical Content · Reels · TikTok",
+    excerpt:
+      "Pentru ARTIO Medica, am construit un ecosistem de comunicare social media orientat spre încredere, educație medicală, vizibilitate locală și conținut video adaptat unei clinici medicale.",
+    challenge:
+      "Brandul avea nevoie de o comunicare social media care să susțină vizibilitatea clinicii, să explice serviciile medicale, să prezinte specialiștii și să construiască încredere fără exagerări comerciale.",
+    strategy:
+      "Am construit o direcție de comunicare bazată pe educație medicală, prezentarea specialiștilor, explicații accesibile, conținut video, postări recurente și adaptarea mesajelor pentru Facebook, Instagram și TikTok.",
+    execution: [
+      "Social Media medical constant",
+      "Conținut educațional medical",
+      "Prezentarea medicilor și specialiștilor",
+      "Reels și TikTok",
+      "Comunicare locală și încredere",
+    ],
+    results: [
+      "6,07M afișări totale în Social Media",
+      "95,63K interacțiuni totale",
+      "2.230 materiale publicate",
+      "558,38K video views TikTok",
+    ],
+    metrics: [
+      "6,07M+ afișări Social Media",
+      "95K+ interacțiuni",
+      "2.230 materiale publicate",
+      "558K+ video views TikTok",
+    ],
+    image: "/branding/partners/logo-no-bg.png",
+    mediaGallery: ["/branding/partners/logo-no-bg.png"],
+    cta: { label: "Vezi studiul de caz", href: "/case-studies/artio-medica" },
+  },
 ];

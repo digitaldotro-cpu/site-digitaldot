@@ -1421,10 +1421,26 @@
           "googleBotIndex": true,
           "googleBotFollow": true
         }
+      },
+      {
+        "path": "/case-studies/artio-medica",
+        "label": "Studiu de caz ARTIO Medica",
+        "seoTitle": "Studiu de caz ARTIO Medica | Social Media pentru clinică medicală",
+        "seoDescription": "Studiu de caz Digital Dot pentru ARTIO Medica: 6,07M+ afișări Social Media, 95K+ interacțiuni, 2.230 materiale publicate și 558K+ video views pe TikTok.",
+        "ogTitle": "Studiu de caz ARTIO Medica | Social Media pentru clinică medicală",
+        "ogDescription": "Studiu de caz Digital Dot pentru ARTIO Medica: 6,07M+ afișări Social Media, 95K+ interacțiuni, 2.230 materiale publicate și 558K+ video views pe TikTok.",
+        "ogImage": "/branding/partners/logo-no-bg.png",
+        "canonicalUrl": "https://digitaldot.ro/case-studies/artio-medica",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/case-studies/cosmeticahoteliera\n- https://digitaldot.ro/case-studies/lumea-perdelelor\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- cosmeticahoteliera.ro: https://digitaldot.ro/case-studies/cosmeticahoteliera\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n- Lumea Perdelelor: https://digitaldot.ro/case-studies/lumea-perdelelor\n- Confirmed metrics include 7.30M+ Social Media impressions, 282K+ interactions, 2.951 published materials, and 1.67M+ TikTok video views.\n",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/case-studies/cosmeticahoteliera\n- https://digitaldot.ro/case-studies/lumea-perdelelor\n- https://digitaldot.ro/case-studies/artio-medica\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- cosmeticahoteliera.ro: https://digitaldot.ro/case-studies/cosmeticahoteliera\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n- Lumea Perdelelor: https://digitaldot.ro/case-studies/lumea-perdelelor\n- Confirmed metrics include 7.30M+ Social Media impressions, 282K+ interactions, 2.951 published materials, and 1.67M+ TikTok video views.\n- ARTIO Medica: https://digitaldot.ro/case-studies/artio-medica\n- Confirmed metrics include 6.07M+ Social Media impressions, 95K+ interactions, 2,230 published materials, and 558K+ TikTok video views.\n",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -4335,6 +4351,11 @@
         "title": "Taco Loco: vizibilitate, trafic și Meta Ads cu ROAS 13,30",
         "href": "/case-studies/taco-loco",
         "description": "Studiu de caz real despre Social Media, Meta Ads, restaurant marketing, trafic website și ROAS."
+      },
+      {
+        "title": "ARTIO Medica: comunicare medicală construită pentru încredere și vizibilitate",
+        "href": "/case-studies/artio-medica",
+        "description": "Studiu de caz real despre Social Media, conținut educațional medical, Reels, TikTok și vizibilitate locală pentru o clinică medicală."
       }
     ]
   },
@@ -5027,6 +5048,149 @@
         },
         "seoTitle": "Studiu de caz Lumea Perdelelor | Social Media, Reels & TikTok",
         "seoDescription": "Studiu de caz Digital Dot pentru Lumea Perdelelor: 7,30M+ afișări Social Media, 282K+ interacțiuni, 2.951 materiale publicate și 1,67M+ video views pe TikTok."
+      },
+      {
+        "slug": "artio-medica",
+        "clientName": "ARTIO Medica",
+        "category": "Social Media · Medical Content · Reels · TikTok",
+        "title": "ARTIO Medica: comunicare medicală construită pentru încredere și vizibilitate",
+        "excerpt": "Pentru ARTIO Medica, am construit un ecosistem de comunicare social media orientat spre încredere, educație medicală, vizibilitate locală și conținut video adaptat unei clinici medicale.",
+        "heroIntro": "Pentru ARTIO Medica, am construit un ecosistem de comunicare social media orientat spre educație medicală, vizibilitate locală și încredere. Obiectivul nu a fost doar publicarea constantă, ci transformarea conținutului medical într-un sistem clar, recognoscibil și adaptat comportamentului publicului pe Facebook, Instagram și TikTok.",
+        "clientWebsite": "https://artiomedica.ro/",
+        "period": "16 ianuarie 2024 – 20 mai 2026",
+        "audienceType": "Clinică medicală",
+        "heroImage": "/branding/partners/logo-no-bg.png",
+        "ogImage": "/branding/partners/logo-no-bg.png",
+        "cardMetrics": [
+          {
+            "value": "6,07M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "95K+",
+            "label": "interacțiuni"
+          },
+          {
+            "value": "2.230",
+            "label": "materiale publicate"
+          },
+          {
+            "value": "558K+",
+            "label": "video views TikTok"
+          }
+        ],
+        "metrics": [
+          {
+            "value": "6,07M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "95K+",
+            "label": "interacțiuni totale"
+          },
+          {
+            "value": "2.230",
+            "label": "materiale publicate"
+          },
+          {
+            "value": "10K+",
+            "label": "followers total"
+          },
+          {
+            "value": "558K+",
+            "label": "video views TikTok"
+          },
+          {
+            "value": "57K+",
+            "label": "clickuri Facebook posts"
+          }
+        ],
+        "context": {
+          "title": "Context",
+          "text": "ARTIO Medica este o clinică medicală din Suceava, unde comunicarea are nevoie de echilibru între informare, încredere, claritate și responsabilitate. În zona medicală, Social Media nu poate fi tratat ca simplă promovare. Publicul are nevoie de explicații clare, specialiști vizibili, mesaje coerente și conținut care reduce distanța dintre pacient și clinică."
+        },
+        "challenge": {
+          "title": "Provocarea",
+          "text": "Brandul avea nevoie de o comunicare social media care să susțină vizibilitatea clinicii, să explice serviciile medicale, să prezinte specialiștii și să construiască încredere fără exagerări comerciale. Provocarea a fost să transformăm teme medicale complexe în conținut accesibil, constant și adaptat fiecărei platforme.",
+          "items": [
+            "comunicare medicală clară și responsabilă",
+            "prezentarea specialiștilor și serviciilor",
+            "educație medicală pentru publicul local",
+            "conținut video și Reels",
+            "TikTok adaptat zonei medicale",
+            "vizibilitate locală în Suceava și regiune",
+            "păstrarea unei tonalități profesioniste și credibile"
+          ]
+        },
+        "intervention": {
+          "title": "Intervenția Digital Dot",
+          "text": "Am construit o direcție de comunicare bazată pe educație medicală, prezentarea specialiștilor, explicații accesibile, conținut video, postări recurente și adaptarea mesajelor pentru Facebook, Instagram și TikTok.",
+          "items": [
+            {
+              "title": "Social Media medical constant",
+              "text": "Am menținut o prezență activă pe Facebook, Instagram și TikTok, cu un volum editorial capabil să susțină vizibilitatea unei clinici medicale regionale."
+            },
+            {
+              "title": "Conținut educațional medical",
+              "text": "Am transformat teme medicale precum ecografia mamară, cardiologia, urologia, ginecologia, chirurgia vasculară și prevenția în conținut mai ușor de înțeles pentru public."
+            },
+            {
+              "title": "Prezentarea medicilor și specialiștilor",
+              "text": "Am pus accent pe vizibilitatea medicilor, expertiza acestora și serviciile disponibile în clinică, pentru a reduce distanța dintre pacient și actul medical."
+            },
+            {
+              "title": "Reels și TikTok",
+              "text": "Am folosit formate video scurte pentru a crește vizibilitatea, retenția și accesibilitatea informației medicale, adaptând conținutul la fiecare platformă."
+            },
+            {
+              "title": "Comunicare locală și încredere",
+              "text": "Am structurat conținutul astfel încât ARTIO Medica să fie prezentă constant în atenția publicului local din Suceava și din zonele apropiate."
+            }
+          ]
+        },
+        "results": {
+          "title": "Rezultate",
+          "intro": "În perioada analizată, ecosistemul social media ARTIO Medica a generat rezultate relevante în vizibilitate, interacțiuni, conținut video și comunicare medicală locală.",
+          "items": [
+            "6,07M afișări totale în Social Media",
+            "95,63K interacțiuni totale",
+            "+195.053,06% creștere interacțiuni totale",
+            "2.230 materiale publicate",
+            "+4.855,56% creștere volum conținut",
+            "10,58K followers total",
+            "5,41M afișări Facebook",
+            "558,38K afișări TikTok",
+            "95,19K afișări Instagram",
+            "86,88K interacțiuni Facebook",
+            "7.877 interacțiuni TikTok",
+            "3,79M views Facebook",
+            "5,41M content views Facebook",
+            "57,78K clicks Facebook posts",
+            "22,10K reactions Facebook posts",
+            "1.063 comments Facebook posts",
+            "1.038 shares Facebook posts",
+            "558,38K video views TikTok",
+            "7.070 likes TikTok",
+            "949 shares TikTok",
+            "2.648 profile views TikTok"
+          ]
+        },
+        "highlightCampaign": {
+          "title": "Conținut medical cu vizibilitate ridicată",
+          "text": "Unele dintre cele mai puternice rezultate au venit din comunicarea serviciilor medicale și a specialiștilor. Conținutul despre ecografie mamară a generat peste 312K afișări, iar materialele despre cardiologie, urologie, ginecologie și chirurgie vasculară au susținut vizibilitatea clinicii în zona medicală locală.\n\n- ecografie mamară: 312,54K impressions și 3.103 interactions\n- cardiologie: 219,34K impressions și 1.963 interactions\n- urologie: 203,11K impressions și 1.064 interactions\n- obstetrică-ginecologie / Dr. Anamaria Vasilcovici: 158,9K impressions și 2.500 interactions\n- chirurgie vasculară / Dr. Lucian Iacob: 150,45K impressions și 3.910 interactions\n- chirurgie vasculară / Dr. Alina Luca: 143,31K impressions și 1.185 interactions\n- obstetrică-ginecologie: 97,29K impressions și 2.164 interactions"
+        },
+        "conclusion": {
+          "title": "Ce arată acest studiu de caz",
+          "text": "ARTIO Medica este un exemplu bun pentru modul în care Social Media poate susține o clinică medicală atunci când comunicarea este construită cu responsabilitate, claritate și consecvență. Într-un domeniu în care încrederea este esențială, conținutul nu trebuie să fie doar frecvent, ci și util, coerent și adaptat nevoilor reale ale publicului."
+        },
+        "cta": {
+          "title": "Vrei să construim o comunicare mai clară pentru brandul tău medical?",
+          "subtitle": "Hai să vedem cum poate fi transformat conținutul tău într-un sistem coerent de vizibilitate, educație și încredere.",
+          "buttonText": "Contactează-ne",
+          "buttonLink": "/#contact"
+        },
+        "seoTitle": "Studiu de caz ARTIO Medica | Social Media pentru clinică medicală",
+        "seoDescription": "Studiu de caz Digital Dot pentru ARTIO Medica: 6,07M+ afișări Social Media, 95K+ interacțiuni, 2.230 materiale publicate și 558K+ video views pe TikTok."
       }
     ]
   }
