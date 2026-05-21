@@ -239,7 +239,7 @@ export function buildCaseStudyServiceSchema(content: SiteContent, study: SiteCon
     serviceType: study.category,
     audience: {
       "@type": "BusinessAudience",
-      audienceType: "Optică medicală",
+      audienceType: study.audienceType || study.category,
     },
     mainEntityOfPage: url,
   };

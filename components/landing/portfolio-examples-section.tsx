@@ -16,6 +16,8 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
   }
 
   const visibleStudies = studies.slice(0, 6);
+  const hasMultipleStudies = visibleStudies.length > 1;
+  const gridClassName = `mt-10 grid gap-5 md:grid-cols-2 ${visibleStudies.length > 2 ? "xl:grid-cols-3" : ""}`;
 
   return (
     <section id="portfolio" className="scroll-mt-24 py-18 sm:py-24">
@@ -27,7 +29,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
           </p>
         </AnimatedSection>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className={gridClassName}>
           {visibleStudies.map((study, index) => (
             <AnimatedSection
               key={study.slug}
@@ -38,7 +40,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                 href={`/case-studies/${study.slug}`}
                 className="group block h-full rounded-3xl border border-[#2a3e42] bg-[linear-gradient(150deg,rgba(16,20,24,0.92),rgba(10,13,16,0.98))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#66fcf1]/45 hover:shadow-[0_0_34px_-20px_rgba(102,252,241,0.85)]"
               >
-                <article className="grid h-full gap-7 lg:grid-cols-[0.82fr_1.18fr]">
+                <article className={hasMultipleStudies ? "flex h-full flex-col gap-7" : "grid h-full gap-7 lg:grid-cols-[0.82fr_1.18fr]"}>
                   <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.4rem] border border-[#276864]/40 bg-white p-8">
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(102,252,241,0.16),transparent_50%)]" />
                     <Image
@@ -47,6 +49,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                       width={360}
                       height={180}
                       className="relative max-h-32 w-auto max-w-full object-contain"
+                      style={study.imageScale ? { transform: `scale(${study.imageScale})` } : undefined}
                     />
                   </div>
 

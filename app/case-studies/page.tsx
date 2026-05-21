@@ -29,13 +29,13 @@ export default async function CaseStudiesPage() {
       <JsonLd
         data={buildBreadcrumbSchema(content, [
           { name: "Acasă", path: "/" },
-          { name: "Case Studies", path },
+          { name: "Studii de caz", path },
         ])}
       />
       <Breadcrumbs
         items={[
           { label: "Acasă", href: "/" },
-          { label: "Case Studies", href: "/case-studies" },
+          { label: "Studii de caz", href: "/case-studies" },
         ]}
       />
       <section className="pb-16 pt-10 sm:pb-20 sm:pt-14">
@@ -58,7 +58,7 @@ export default async function CaseStudiesPage() {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {caseStudies.map((study, index) => (
-              <CaseStudyCard key={study.slug} study={study} featured={index === 0} />
+              <CaseStudyCard key={study.slug} study={study} featured={caseStudies.length === 1 && index === 0} />
             ))}
           </div>
         </Container>

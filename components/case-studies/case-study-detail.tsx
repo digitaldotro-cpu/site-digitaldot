@@ -47,6 +47,7 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
                 height={280}
                 priority
                 className="relative max-h-40 w-auto max-w-full object-contain"
+                style={study.imageScale ? { transform: `scale(${study.imageScale})` } : undefined}
               />
             </div>
           </div>
