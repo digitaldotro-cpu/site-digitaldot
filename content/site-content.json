@@ -4924,6 +4924,7 @@
         "audienceType": "Brand expansion și retail interior",
         "heroImage": "/branding/partners/lumea-perdelelor.png",
         "ogImage": "/branding/partners/lumea-perdelelor.png",
+        "imageScale": 2.4,
         "cardMetrics": [
           {
             "value": "7,30M+",
