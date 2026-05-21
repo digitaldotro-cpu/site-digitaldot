@@ -35,7 +35,7 @@ export const primaryServices: ServiceHighlight[] = [
 
 export const secondaryServices = [
   {
-    title: "Reclame Plătite: Google & Facebook",
+    title: "Reclame Plătite: Google, Meta & TikTok",
     description:
       "Administrăm campanii pentru leaduri și vânzări, cu variante de colaborare flexibile: Setup sau Setup + Abonament lunar de optimizare.",
   },
