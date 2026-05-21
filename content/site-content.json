@@ -1405,10 +1405,26 @@
           "googleBotIndex": true,
           "googleBotFollow": true
         }
+      },
+      {
+        "path": "/case-studies/lumea-perdelelor",
+        "label": "Studiu de caz Lumea Perdelelor",
+        "seoTitle": "Studiu de caz Lumea Perdelelor | Social Media, Reels & TikTok",
+        "seoDescription": "Studiu de caz Digital Dot pentru Lumea Perdelelor: 7,30M+ afișări Social Media, 282K+ interacțiuni, 2.951 materiale publicate și 1,67M+ video views pe TikTok.",
+        "ogTitle": "Studiu de caz Lumea Perdelelor | Social Media, Reels & TikTok",
+        "ogDescription": "Studiu de caz Digital Dot pentru Lumea Perdelelor: 7,30M+ afișări Social Media, 282K+ interacțiuni, 2.951 materiale publicate și 1,67M+ video views pe TikTok.",
+        "ogImage": "/branding/partners/logo-no-bg.png",
+        "canonicalUrl": "https://digitaldot.ro/case-studies/lumea-perdelelor",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/case-studies/cosmeticahoteliera\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- cosmeticahoteliera.ro: https://digitaldot.ro/case-studies/cosmeticahoteliera\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/case-studies/cosmeticahoteliera\n- https://digitaldot.ro/case-studies/lumea-perdelelor\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- cosmeticahoteliera.ro: https://digitaldot.ro/case-studies/cosmeticahoteliera\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n- Lumea Perdelelor: https://digitaldot.ro/case-studies/lumea-perdelelor\n- Confirmed metrics include 7.30M+ Social Media impressions, 282K+ interactions, 2.951 published materials, and 1.67M+ TikTok video views.\n",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -4867,6 +4883,150 @@
         "seoDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
         "heroIntro": "Pentru cosmeticahoteliera.ro, am construit un sistem de promovare digitală orientat spre trafic calificat, vizibilitate în Google, campanii Shopping, Performance Max, Search și rezultate urmărite în ecommerce. Obiectivul a fost să susținem creșterea prin Google Ads, Meta Ads și optimizarea fluxului de trafic către website.",
         "audienceType": "Ecommerce B2B"
+      },
+      {
+        "slug": "lumea-perdelelor",
+        "clientName": "Lumea Perdelelor",
+        "category": "Social Media · Reels · TikTok · Brand Expansion",
+        "title": "Lumea Perdelelor: conținut social media pentru un brand în expansiune",
+        "excerpt": "Pentru Lumea Perdelelor, am construit un ecosistem de conținut social media la nivel național, cu focus pe vizibilitate, interacțiuni, Reels, TikTok și susținerea comunicării pentru un brand în expansiune.",
+        "heroIntro": "Pentru Lumea Perdelelor, am construit un ecosistem de comunicare social media la nivel național, cu focus pe vizibilitate, conținut video, Reels, TikTok, postări recurente și susținerea comunicării pentru un brand aflat în expansiune regională. Obiectivul nu a fost doar publicarea constantă, ci transformarea conținutului într-un sistem recognoscibil, scalabil și adaptat ritmului de creștere al francizei.",
+        "clientWebsite": "https://lumeaperdelelor.ro/",
+        "period": "01 mai 2024 – 20 mai 2026",
+        "audienceType": "Brand expansion și retail interior",
+        "heroImage": "/branding/partners/logo-no-bg.png",
+        "ogImage": "/branding/partners/logo-no-bg.png",
+        "cardMetrics": [
+          {
+            "value": "7,30M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "282K+",
+            "label": "interacțiuni"
+          },
+          {
+            "value": "2.951",
+            "label": "materiale publicate"
+          },
+          {
+            "value": "1,67M+",
+            "label": "video views TikTok"
+          }
+        ],
+        "metrics": [
+          {
+            "value": "7,30M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "282K+",
+            "label": "interacțiuni totale"
+          },
+          {
+            "value": "2.951",
+            "label": "materiale publicate"
+          },
+          {
+            "value": "53K+",
+            "label": "followers total"
+          },
+          {
+            "value": "1,67M+",
+            "label": "video views TikTok"
+          },
+          {
+            "value": "67K+",
+            "label": "interacțiuni Reels Facebook"
+          }
+        ],
+        "context": {
+          "title": "Context",
+          "text": "Lumea Perdelelor este un brand românesc din zona de perdele, draperii și design interior, cu o prezență extinsă prin mai multe locații și francize. Într-un domeniu vizual, în care decizia clientului este influențată de inspirație, încredere, lucrări reale și proximitate locală, Social Media devine un canal esențial de comunicare și scalare."
+        },
+        "challenge": {
+          "title": "Provocarea",
+          "text": "Brandul avea nevoie de o prezență social media care să susțină simultan imaginea națională, activitatea francizelor, lucrările reale, deschiderile de locații și comunicarea constantă cu publicul. Provocarea nu era doar să publicăm conținut, ci să construim un sistem editorial capabil să funcționeze pe Facebook, Instagram și TikTok, fără să piardă coerența brandului.",
+          "items": [
+            "comunicare social media la nivel național",
+            "susținerea francizelor și locațiilor regionale",
+            "conținut pentru lucrări reale",
+            "Reels și TikTok pentru vizibilitate",
+            "comunicare pentru deschideri de locații",
+            "păstrarea coerenței de brand între regiuni",
+            "transformarea conținutului într-un sistem scalabil"
+          ]
+        },
+        "intervention": {
+          "title": "Intervenția Digital Dot",
+          "text": "Am construit o direcție de comunicare bazată pe volum editorial, conținut video, postări recurente, promovarea lucrărilor reale, campanii de anunț pentru deschideri de locații și adaptarea mesajelor la fiecare platformă social media.",
+          "items": [
+            {
+              "title": "Social Media constant la nivel național",
+              "text": "Am menținut o prezență activă pe Facebook, Instagram și TikTok, cu un volum editorial capabil să susțină vizibilitatea unui brand cu mai multe locații."
+            },
+            {
+              "title": "Conținut pentru lucrări reale",
+              "text": "Am pus accent pe proiecte finalizate, imagini de interior, perdele, draperii și transformări vizuale, pentru ca publicul să vadă concret rezultatul serviciilor oferite."
+            },
+            {
+              "title": "Reels și TikTok",
+              "text": "Am folosit formate video scurte pentru a crește reach-ul, interacțiunile și memorabilitatea brandului, adaptând conținutul la comportamentul specific fiecărei platforme."
+            },
+            {
+              "title": "Comunicare pentru extindere și francize",
+              "text": "Am susținut comunicarea pentru deschideri de locații și momente importante ale brandului, inclusiv Cluj, Pașcani, Brașov și Iași."
+            },
+            {
+              "title": "Sistem editorial scalabil",
+              "text": "Am structurat conținutul astfel încât să poată susține atât brandul central, cât și prezența regională, fără să transforme comunicarea într-o colecție dezordonată de postări izolate."
+            }
+          ]
+        },
+        "results": {
+          "title": "Rezultate",
+          "intro": "În perioada analizată, ecosistemul social media Lumea Perdelelor a generat rezultate relevante în vizibilitate, interacțiuni, conținut video și comunicare regională.",
+          "items": [
+            "7,30M afișări totale în Social Media",
+            "282,72K interacțiuni totale",
+            "+29.976,06% creștere interacțiuni totale",
+            "2.951 materiale publicate",
+            "+4.584,13% creștere volum conținut",
+            "53,77K followers total",
+            "5,16M afișări Facebook",
+            "1,67M afișări TikTok",
+            "479,59K afișări Instagram",
+            "207,25K interacțiuni Facebook",
+            "63,35K interacțiuni TikTok",
+            "2,80M views Facebook",
+            "5,16M content views Facebook",
+            "1,73M views TikTok posts",
+            "1,67M video views TikTok",
+            "61,17K likes TikTok",
+            "1.917 comments TikTok",
+            "1.525 shares TikTok",
+            "67,76K interacțiuni Reels Facebook",
+            "51,99K likes Reels Facebook",
+            "15,77K actions Reels Facebook",
+            "4.511 profile views TikTok"
+          ]
+        },
+        "highlightCampaign": {
+          "title": "Conținut care a susținut expansiunea brandului",
+          "text": "Unele dintre cele mai puternice rezultate au venit din comunicarea momentelor de expansiune și din conținutul cu miză regională. Postarea despre deschiderea Lumea Perdelelor Cluj a generat 271,22K afișări și 13,44K interacțiuni. Postarea despre deschiderea Lumea Perdelelor Pașcani a generat 205,06K afișări și 11,7K interacțiuni. Comunicarea pentru Brașov și Iași a generat, de asemenea, rezultate relevante, susținând vizibilitatea brandului în regiuni diferite."
+        },
+        "conclusion": {
+          "title": "Ce arată acest studiu de caz",
+          "text": "Lumea Perdelelor este un exemplu bun pentru modul în care Social Media poate susține un brand în expansiune atunci când conținutul este tratat ca infrastructură editorială, nu ca simplă activitate de feed. Într-un business vizual și regional, consecvența, volumul, adaptarea pe platforme și comunicarea locală pot transforma Social Media într-un instrument real de creștere a vizibilității și de consolidare a încrederii."
+        },
+        "cta": {
+          "title": "Vrei să construim un sistem social media scalabil pentru brandul tău?",
+          "subtitle": "Hai să vedem cum poate fi transformat conținutul tău într-un sistem coerent de vizibilitate, încredere și creștere.",
+          "buttonText": "Contactează-ne",
+          "buttonLink": "/#contact"
+        },
+        "seoTitle": "Studiu de caz Lumea Perdelelor | Social Media, Reels & TikTok",
+        "seoDescription": "Studiu de caz Digital Dot pentru Lumea Perdelelor: 7,30M+ afișări Social Media, 282K+ interacțiuni, 2.951 materiale publicate și 1,67M+ video views pe TikTok."
       }
     ]
   }
