@@ -161,6 +161,7 @@ const caseStudySchema = z.object({
   heroImage: z.string().min(1),
   ogImage: z.string().min(1),
   imageScale: z.number().min(0.5).max(4).optional(),
+  imageBlendMode: z.enum(["multiply"]).optional(),
   cardMetrics: z.array(caseStudyMetricSchema).min(1),
   metrics: z.array(caseStudyMetricSchema).min(1),
   context: caseStudyTextBlockSchema,

@@ -49,7 +49,10 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                       width={360}
                       height={180}
                       className="relative max-h-32 w-auto max-w-full object-contain"
-                      style={study.imageScale ? { transform: `scale(${study.imageScale})` } : undefined}
+                      style={{
+                        ...(study.imageScale ? { transform: `scale(${study.imageScale})` } : {}),
+                        ...(study.imageBlendMode ? { mixBlendMode: study.imageBlendMode } : {}),
+                      }}
                     />
                   </div>
 
