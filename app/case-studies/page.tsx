@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
-import { PortfolioGrid } from "@/components/portfolio/portfolio-grid";
+import { CaseStudyCard } from "@/components/case-studies/case-study-card";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { JsonLd } from "@/components/seo/json-ld";
-import { portfolioProjects } from "@/data/portfolio";
 import { getSiteContent } from "@/lib/site-content";
 import { buildRouteMetadata } from "@/lib/seo";
 import { buildBreadcrumbSchema } from "@/lib/structured-data";
@@ -23,6 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function CaseStudiesPage() {
   const content = await getSiteContent();
+  const caseStudies = content.caseStudies.studies;
 
   return (
     <>
@@ -45,10 +45,10 @@ export default async function CaseStudiesPage() {
               Rezultate
             </p>
             <h1 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">
-              Case Studies Digital Dot
+              {content.caseStudies.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#c6c6c6]">
-              Exemple de proiecte în care strategia, execuția și datele lucrează împreună pentru creștere măsurabilă.
+              {content.caseStudies.description}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <ButtonLink href="/#contact">Discută un proiect</ButtonLink>
@@ -56,8 +56,10 @@ export default async function CaseStudiesPage() {
             </div>
           </header>
 
-          <div className="mt-12">
-            <PortfolioGrid projects={portfolioProjects} />
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {caseStudies.map((study, index) => (
+              <CaseStudyCard key={study.slug} study={study} featured={index === 0} />
+            ))}
           </div>
         </Container>
       </section>

@@ -332,32 +332,36 @@
     },
     "miniCaseStudy": {
       "enabled": true,
-      "title": "Cum transformăm marketingul din cost în sistem de creștere",
+      "title": "Optik Tataru: marketing conectat între Social Media, Ads și website",
       "clientLabel": "Client",
-      "clientValue": "Ecommerce / Clinică / Retail / HoReCa",
-      "problemLabel": "Problemă",
-      "problem": "Campanii fără structură, costuri ridicate pe lead și lipsă de direcție între canale.",
+      "clientValue": "Optik Tataru",
+      "problemLabel": "Provocare",
+      "problem": "Brandul avea nevoie de o structură care să lege conținutul educativ, campaniile Meta Ads, Google Ads, traficul către website și vizibilitatea regională.",
       "interventionLabel": "Intervenție",
       "intervention": [
         {
           "id": "case-action-1",
-          "text": "audit complet"
+          "text": "Social Media constant"
         },
         {
           "id": "case-action-2",
-          "text": "restructurare funnel"
+          "text": "conținut video și Reels"
         },
         {
           "id": "case-action-3",
-          "text": "strategie de campanii"
+          "text": "campanii Meta Ads"
         },
         {
           "id": "case-action-4",
-          "text": "execuție și optimizare"
+          "text": "campanii Google Ads"
+        },
+        {
+          "id": "case-action-5",
+          "text": "trafic către website"
         }
       ],
       "resultLabel": "Rezultat",
-      "result": "Rezultatele concrete vor fi completate cu date reale din portofoliu."
+      "result": "3,5M afișări totale în Social Media, 150,13K clickuri totale Ads și 3.967,35 conversii urmărite prin Google Ads în perioada analizată."
     },
     "proofCta": {
       "enabled": true,
@@ -454,38 +458,9 @@
     },
     "portfolioExamples": {
       "enabled": true,
-      "title": "Proiecte care au generat creștere reală",
-      "subtitle": "Branduri cu care am lucrat pentru creștere predictibilă și performanță măsurabilă.",
-      "examples": [
-        {
-          "id": "portfolio-1",
-          "businessType": "Retail local",
-          "problem": "Vizibilitate fragmentată și campanii fără o direcție comună între social media și promovare plătită.",
-          "intervention": "Clarificare poziționare, calendar editorial și structură de campanii orientată spre leaduri relevante.",
-          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
-        },
-        {
-          "id": "portfolio-2",
-          "businessType": "Clinică medicală",
-          "problem": "Costuri ridicate pe lead și mesaje inconsistente între reclame, conținut și website.",
-          "intervention": "Audit, restructurare funnel, mesaje de încredere și optimizare Google & Meta Ads.",
-          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
-        },
-        {
-          "id": "portfolio-3",
-          "businessType": "HoReCa",
-          "problem": "Prezență vizuală bună, dar fără sistem constant de conversie și retenție.",
-          "intervention": "Conținut foto-video, campanii sezoniere și direcție editorială conectată la obiective comerciale.",
-          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
-        },
-        {
-          "id": "portfolio-4",
-          "businessType": "Ecommerce",
-          "problem": "Trafic plătit fără structură clară de testare, remarketing și optimizare pe funnel.",
-          "intervention": "Strategie de campanii, testare creativă, optimizare continuă și raportare pe metrici utile.",
-          "result": "Rezultatul concret va fi completat cu date reale din portofoliu."
-        }
-      ]
+      "title": "Studii de caz reale",
+      "subtitle": "Rezultate construite prin strategie, conținut, campanii plătite și optimizare constantă.",
+      "examples": []
     },
     "instagramSection": {
       "enabled": true,
@@ -1311,12 +1286,12 @@
       },
       {
         "path": "/case-studies",
-        "label": "Case Studies",
-        "seoTitle": "Case Studies Marketing Digital | Digital Dot",
-        "seoDescription": "Studii de caz și exemple de proiecte Digital Dot pentru social media, performance marketing, branding, website-uri și lead generation.",
-        "ogTitle": "Case Studies Digital Dot",
-        "ogDescription": "Proiecte orientate spre strategie, execuție premium și rezultate măsurabile.",
-        "ogImage": "/images/portfolio/ecom-fashion.svg",
+        "label": "Studii de caz",
+        "seoTitle": "Studii de caz reale | Digital Dot",
+        "seoDescription": "Studii de caz reale Digital Dot, cu rezultate construite prin strategie, conținut, Meta Ads, Google Ads, SEO și optimizare constantă.",
+        "ogTitle": "Studii de caz reale | Digital Dot",
+        "ogDescription": "Rezultate reale construite prin strategie, conținut, campanii plătite și optimizare constantă.",
+        "ogImage": "/branding/partners/optiktataru-negru-verde-principal.p.png",
         "canonicalUrl": "https://digitaldot.ro/case-studies",
         "robots": {
           "index": true,
@@ -1366,10 +1341,26 @@
           "googleBotIndex": true,
           "googleBotFollow": true
         }
+      },
+      {
+        "path": "/case-studies/optik-tataru",
+        "label": "Studiu de caz Optik Tataru",
+        "seoTitle": "Studiu de caz Optik Tataru | Social Media, Meta Ads & Google Ads",
+        "seoDescription": "Studiu de caz Digital Dot pentru Optik Tataru: 3,5M+ afișări Social Media, 150K+ clickuri Ads, 99K+ vizitatori website și 3.900+ conversii urmărite prin Google Ads.",
+        "ogTitle": "Studiu de caz Optik Tataru | Social Media, Meta Ads & Google Ads",
+        "ogDescription": "Studiu de caz Digital Dot pentru Optik Tataru: 3,5M+ afișări Social Media, 150K+ clickuri Ads, 99K+ vizitatori website și 3.900+ conversii urmărite prin Google Ads.",
+        "ogImage": "/branding/partners/optiktataru-negru-verde-principal.p.png",
+        "canonicalUrl": "https://digitaldot.ro/case-studies/optik-tataru",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -4267,34 +4258,143 @@
     ],
     "caseStudyRegistry": [
       {
-        "title": "HoReCa local: din conținut reactiv în sistem de rezervări",
-        "href": "/case-studies",
-        "description": "Case study despre HoReCa, video-first content și Meta Ads pentru rezervări."
-      },
+        "title": "Optik Tataru: vizibilitate, trafic și campanii construite strategic",
+        "href": "/case-studies/optik-tataru",
+        "description": "Studiu de caz real despre Social Media, Meta Ads, Google Ads, trafic website și conversii urmărite."
+      }
+    ]
+  },
+  "caseStudies": {
+    "enabled": true,
+    "title": "Studii de caz reale",
+    "description": "Rezultate construite prin strategie, conținut, campanii plătite și optimizare constantă.",
+    "studies": [
       {
-        "title": "Retail regional: campanii predictibile pentru vânzări recurente",
-        "href": "/case-studies",
-        "description": "Case study despre Google Ads, Meta Ads, tracking și optimizare retail."
-      },
-      {
-        "title": "Medical: funnel de programări cu încredere și claritate",
-        "href": "/case-studies",
-        "description": "Case study despre medical, SEO local și lead generation."
-      },
-      {
-        "title": "Branding: consistență pentru o companie de servicii B2B",
-        "href": "/case-studies",
-        "description": "Case study despre poziționare, website creation și autoritate B2B."
-      },
-      {
-        "title": "Producție video: percepție premium pentru brand local",
-        "href": "/case-studies",
-        "description": "Case study despre producție video, percepție și active modulare."
-      },
-      {
-        "title": "SEO + AI SEO: arhitectură semantică pentru autoritate națională",
-        "href": "/case-studies",
-        "description": "Case study despre schema, llms.txt, topic clusters și internal linking."
+        "slug": "optik-tataru",
+        "clientName": "Optik Tataru",
+        "category": "Social Media · Meta Ads · Google Ads",
+        "title": "Optik Tataru: vizibilitate, trafic și campanii construite strategic",
+        "excerpt": "Pentru Optik Tataru, am construit un ecosistem digital care a combinat conținut social media, Meta Ads, Google Ads și trafic către website, cu focus pe vizibilitate, interacțiuni și conversii urmărite.",
+        "clientWebsite": "https://www.optiktataru.ro/",
+        "period": "01 februarie 2025 – 20 mai 2026",
+        "heroImage": "/branding/partners/optiktataru-negru-verde-principal.p.png",
+        "ogImage": "/branding/partners/optiktataru-negru-verde-principal.p.png",
+        "cardMetrics": [
+          {
+            "value": "3,5M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "150K+",
+            "label": "clickuri Ads"
+          },
+          {
+            "value": "99K+",
+            "label": "vizitatori website"
+          },
+          {
+            "value": "3.900+",
+            "label": "conversii urmărite"
+          }
+        ],
+        "metrics": [
+          {
+            "value": "3,5M+",
+            "label": "afișări Social Media"
+          },
+          {
+            "value": "16,7K+",
+            "label": "interacțiuni totale"
+          },
+          {
+            "value": "150K+",
+            "label": "clickuri Ads"
+          },
+          {
+            "value": "99K+",
+            "label": "vizitatori website"
+          },
+          {
+            "value": "3.900+",
+            "label": "conversii urmărite în Google Ads"
+          },
+          {
+            "value": "384",
+            "label": "materiale publicate"
+          }
+        ],
+        "context": {
+          "title": "Context",
+          "text": "Optik Tataru este un brand din zona de optică medicală, cu servicii care au nevoie de încredere, vizibilitate locală și comunicare constantă. Într-un domeniu în care decizia clientului este influențată atât de nevoia medicală, cât și de experiența vizuală și comercială, simpla prezență online nu este suficientă."
+        },
+        "challenge": {
+          "title": "Provocarea",
+          "text": "Brandul avea nevoie de mai mult decât postări recurente. Era nevoie de o structură care să lege conținutul educativ, promovarea serviciilor, campaniile plătite, traficul către website, cererea activă din Google Search și vizibilitatea regională.",
+          "items": [
+            "conținut educativ",
+            "promovare produse și servicii",
+            "campanii Meta Ads",
+            "campanii Google Ads",
+            "trafic către website",
+            "vizibilitate regională"
+          ]
+        },
+        "intervention": {
+          "title": "Intervenția Digital Dot",
+          "text": "Am construit o direcție de comunicare bazată pe mai multe niveluri: conținut social media constant, formate video scurte, campanii Meta Ads, campanii Google Ads și direcționarea traficului către website.",
+          "items": [
+            {
+              "title": "Social Media constant",
+              "text": "Conținut adaptat pentru Facebook, Instagram și TikTok, cu focus pe educație, produse, situații reale și recunoașterea nevoilor clientului."
+            },
+            {
+              "title": "Conținut video și Reels",
+              "text": "Formate video scurte folosite pentru apropierea de public, interacțiune și vizibilitate în feed."
+            },
+            {
+              "title": "Meta Ads",
+              "text": "Campanii orientate spre trafic, interacțiune și conversii urmărite, cu optimizare constantă a costurilor."
+            },
+            {
+              "title": "Google Ads",
+              "text": "Campanii Search construite pentru captarea cererii active, în special pe căutări relevante pentru optică medicală și oftalmologie."
+            },
+            {
+              "title": "Website traffic",
+              "text": "Traficul a fost direcționat către website, unde utilizatorii puteau continua decizia prin pagini de servicii, locații și programări."
+            }
+          ]
+        },
+        "results": {
+          "title": "Rezultate",
+          "intro": "În perioada analizată, ecosistemul digital Optik Tataru a generat rezultate relevante în Social Media, Meta Ads, Google Ads și trafic website.",
+          "items": [
+            "3,5M afișări totale în Social Media",
+            "16,71K interacțiuni",
+            "384 materiale publicate",
+            "168,46K views pe website",
+            "109,61K visits pe website",
+            "99,46K visitors",
+            "2,46M afișări prin Meta Ads",
+            "119,94K clickuri prin Meta Ads",
+            "328,58K afișări prin Google Ads",
+            "30,19K clickuri prin Google Ads",
+            "3.967,35 conversii urmărite prin Google Ads"
+          ]
+        },
+        "conclusion": {
+          "title": "Ce arată acest studiu de caz",
+          "text": "Optik Tataru este un exemplu bun pentru modul în care marketingul nu ar trebui privit ca o colecție de acțiuni separate. Social Media, Google Ads, Meta Ads, conținutul video și website-ul trebuie să funcționeze împreună. Când fiecare canal are rolul lui, marketingul începe să devină un sistem. Iar sistemele, spre deosebire de improvizații, pot fi măsurate, ajustate și scalate."
+        },
+        "cta": {
+          "title": "Vrei să construim un sistem similar pentru brandul tău?",
+          "subtitle": "Hai să vedem unde se pierde eficiența în marketingul tău și cum poate fi refăcută structura.",
+          "buttonText": "Contactează-ne",
+          "buttonLink": "/#contact"
+        },
+        "seoTitle": "Studiu de caz Optik Tataru | Social Media, Meta Ads & Google Ads",
+        "seoDescription": "Studiu de caz Digital Dot pentru Optik Tataru: 3,5M+ afișări Social Media, 150K+ clickuri Ads, 99K+ vizitatori website și 3.900+ conversii urmărite prin Google Ads.",
+        "heroIntro": "Pentru Optik Tataru, am construit un ecosistem de comunicare care a combinat Social Media, conținut video, Meta Ads și Google Ads. Obiectivul nu a fost doar publicarea constantă, ci creșterea vizibilității, direcționarea traficului către website și susținerea cererii comerciale prin campanii structurate."
       }
     ]
   }

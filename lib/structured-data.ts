@@ -190,6 +190,61 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
   };
 }
 
+export function buildCaseStudySchema(content: SiteContent, study: SiteContent["caseStudies"]["studies"][number]) {
+  const url = absoluteUrl(`/case-studies/${study.slug}`, content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Article", "CaseStudy"],
+    "@id": `${url}#case-study`,
+    headline: study.title,
+    description: study.seoDescription,
+    image: absoluteUrl(study.ogImage, content),
+    url,
+    author: {
+      "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+      name: siteMetadata.siteName,
+    },
+    publisher: {
+      "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+      name: siteMetadata.siteName,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl(content.seoSettings.structuredData.logo, content),
+      },
+    },
+    about: {
+      "@type": "Organization",
+      name: study.clientName,
+      url: study.clientWebsite,
+    },
+    mainEntityOfPage: url,
+  };
+}
+
+export function buildCaseStudyServiceSchema(content: SiteContent, study: SiteContent["caseStudies"]["studies"][number]) {
+  const url = absoluteUrl(`/case-studies/${study.slug}`, content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: study.category,
+    description: study.excerpt,
+    url,
+    provider: {
+      "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+      name: siteMetadata.siteName,
+    },
+    serviceType: study.category,
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Optică medicală",
+    },
+    mainEntityOfPage: url,
+  };
+}
+
 export function buildAuthorSchema(content: SiteContent, author: { slug: string; name: string; role: string; bio: string }) {
   return {
     "@context": "https://schema.org",

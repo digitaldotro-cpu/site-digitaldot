@@ -129,6 +129,61 @@ const portfolioExampleSchema = z.object({
   result: z.string().min(1),
 });
 
+const caseStudyMetricSchema = z.object({
+  value: z.string().min(1),
+  label: z.string().min(1),
+});
+
+const caseStudyTextBlockSchema = z.object({
+  title: z.string().min(1),
+  text: z.string().min(20),
+});
+
+const caseStudyListBlockSchema = caseStudyTextBlockSchema.extend({
+  items: z.array(z.string().min(1)).default([]),
+});
+
+const caseStudyInterventionItemSchema = z.object({
+  title: z.string().min(1),
+  text: z.string().min(20),
+});
+
+const caseStudySchema = z.object({
+  slug: z.string().min(1),
+  clientName: z.string().min(1),
+  category: z.string().min(1),
+  title: z.string().min(1),
+  excerpt: z.string().min(20),
+  heroIntro: z.string().min(20),
+  clientWebsite: z.string().min(1),
+  period: z.string().min(1),
+  heroImage: z.string().min(1),
+  ogImage: z.string().min(1),
+  cardMetrics: z.array(caseStudyMetricSchema).min(1),
+  metrics: z.array(caseStudyMetricSchema).min(1),
+  context: caseStudyTextBlockSchema,
+  challenge: caseStudyListBlockSchema,
+  intervention: z.object({
+    title: z.string().min(1),
+    text: z.string().min(20),
+    items: z.array(caseStudyInterventionItemSchema).min(1),
+  }),
+  results: z.object({
+    title: z.string().min(1),
+    intro: z.string().min(20),
+    items: z.array(z.string().min(1)).min(1),
+  }),
+  conclusion: caseStudyTextBlockSchema,
+  cta: z.object({
+    title: z.string().min(1),
+    subtitle: z.string().min(20),
+    buttonText: z.string().min(1),
+    buttonLink: z.string().min(1),
+  }),
+  seoTitle: z.string().min(3),
+  seoDescription: z.string().min(10),
+});
+
 const processStepSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
@@ -628,7 +683,7 @@ export const siteContentSchema = z.object({
       enabled: z.boolean().default(true),
       title: z.string().min(1),
       subtitle: z.string().min(1),
-      examples: z.array(portfolioExampleSchema).min(1),
+      examples: z.array(portfolioExampleSchema).default([]),
     }),
     instagramSection: z.object({
       enabled: z.boolean().default(true),
@@ -717,6 +772,17 @@ export const siteContentSchema = z.object({
         messageMin: z.string().min(1),
       }),
     }),
+  }),
+  caseStudies: z.object({
+    enabled: z.boolean().default(true),
+    title: z.string().min(1),
+    description: z.string().min(10),
+    studies: z.array(caseStudySchema).default([]),
+  }).default({
+    enabled: true,
+    title: "Studii de caz reale",
+    description: "Rezultate construite prin strategie, conținut, campanii plătite și optimizare constantă.",
+    studies: [],
   }),
   privacyPolicy: legalPageSchema,
   termsConditions: legalPageSchema,

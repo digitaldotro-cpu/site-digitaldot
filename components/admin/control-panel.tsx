@@ -128,6 +128,7 @@ const labelDictionary: Record<string, string> = {
   question: "Întrebare",
   answer: "Răspuns",
   sectionOrder: "Ordine Secțiuni",
+  caseStudies: "Studii de Caz",
   global: "Global",
   landing: "Landing Page",
   privacyPolicy: "Politică de Confidențialitate",

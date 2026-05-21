@@ -25,8 +25,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           .map((page) => `/agentie-marketing/${page.slug}`),
       ]
     : [];
+  const caseStudyRoutes = content.caseStudies.enabled
+    ? content.caseStudies.studies.map((study) => `/case-studies/${study.slug}`)
+    : [];
 
-  const staticEntries = [...staticRoutes, ...serviceRoutes, ...regionalRoutes].map((path) => ({
+  const staticEntries = [...staticRoutes, ...serviceRoutes, ...regionalRoutes, ...caseStudyRoutes].map((path) => ({
     url: absoluteUrl(path || "/", content),
     lastModified: new Date(),
   }));

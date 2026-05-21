@@ -43,7 +43,7 @@ export default async function HomePage() {
     authority: <TextBlockSection id="authority" section={landing.authority} />,
     brandValueSection: <ImageCtaSection id="brand-value" section={landing.brandValueSection} />,
     services: <ServicesGrid section={landing.services} />,
-    portfolioExamples: <PortfolioExamplesSection section={landing.portfolioExamples} />,
+    portfolioExamples: <PortfolioExamplesSection section={landing.portfolioExamples} studies={content.caseStudies.studies} />,
     instagramSection: <InstagramPortfolioSection section={landing.instagramSection} />,
     strategySection: <StrategySection section={landing.strategySection} />,
     teamSection: <TeamSection section={landing.teamSection} />,
