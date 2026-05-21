@@ -854,6 +854,12 @@
           "enabled": true,
           "src": "/branding/partners/radburg.jpg",
           "alt": "Radburg"
+        },
+        {
+          "id": "partner-23",
+          "enabled": true,
+          "src": "/branding/partners/lumea-perdelelor.png",
+          "alt": "Lumea Perdelelor"
         }
       ],
       "tickerDirection": "rtl",
@@ -4915,8 +4921,8 @@
         "clientWebsite": "https://lumeaperdelelor.ro/",
         "period": "01 mai 2024 – 20 mai 2026",
         "audienceType": "Brand expansion și retail interior",
-        "heroImage": "/branding/partners/decon.jpg",
-        "ogImage": "/branding/partners/decon.jpg",
+        "heroImage": "/branding/partners/lumea-perdelelor.png",
+        "ogImage": "/branding/partners/lumea-perdelelor.png",
         "cardMetrics": [
           {
             "value": "7,30M+",
