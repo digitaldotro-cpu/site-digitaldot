@@ -110,7 +110,6 @@ export function Navbar({
 
   useEffect(() => {
     if (pathname !== "/") {
-      setActiveHash("");
       return;
     }
 
