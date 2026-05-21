@@ -1389,10 +1389,26 @@
           "googleBotIndex": true,
           "googleBotFollow": true
         }
+      },
+      {
+        "path": "/case-studies/cosmeticahoteliera",
+        "label": "Studiu de caz cosmeticahoteliera.ro",
+        "seoTitle": "Studiu de caz cosmeticahoteliera.ro | Google Ads, Meta Ads & Ecommerce B2B",
+        "seoDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
+        "ogTitle": "Studiu de caz cosmeticahoteliera.ro | Google Ads, Meta Ads & Ecommerce B2B",
+        "ogDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
+        "ogImage": "/branding/partners/logo-no-bg.png",
+        "canonicalUrl": "https://digitaldot.ro/case-studies/cosmeticahoteliera",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
       }
     ],
     "aiSeo": {
-      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n",
+      "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/case-studies/cosmeticahoteliera\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- cosmeticahoteliera.ro: https://digitaldot.ro/case-studies/cosmeticahoteliera\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n",
       "allowedCrawlers": [
         "GPTBot",
         "ClaudeBot",
@@ -4713,6 +4729,144 @@
         },
         "seoTitle": "Studiu de caz Taco Loco | Meta Ads, Social Media & Restaurant Marketing",
         "seoDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30."
+      },
+      {
+        "slug": "cosmeticahoteliera",
+        "clientName": "cosmeticahoteliera.ro",
+        "category": "Google Ads · Meta Ads · Ecommerce B2B · Performance Marketing",
+        "title": "cosmeticahoteliera.ro: performance marketing pentru ecommerce B2B",
+        "excerpt": "Pentru cosmeticahoteliera.ro, am construit un sistem de performance marketing orientat spre trafic calificat, campanii Shopping, Performance Max, Search și rezultate măsurabile în ecommerce B2B.",
+        "clientWebsite": "https://cosmeticahoteliera.ro/",
+        "period": "01 octombrie 2023 – 20 mai 2026",
+        "heroImage": "/branding/partners/logo-no-bg.png",
+        "ogImage": "/branding/partners/logo-no-bg.png",
+        "cardMetrics": [
+          {
+            "value": "3,82M+",
+            "label": "afișări Ads"
+          },
+          {
+            "value": "59K+",
+            "label": "clickuri Ads"
+          },
+          {
+            "value": "ROAS 5,52",
+            "label": "Google Ads"
+          },
+          {
+            "value": "751K+",
+            "label": "conversion value"
+          }
+        ],
+        "metrics": [
+          {
+            "value": "3,82M+",
+            "label": "afișări Ads"
+          },
+          {
+            "value": "59K+",
+            "label": "clickuri Ads"
+          },
+          {
+            "value": "1.922+",
+            "label": "conversii urmărite Google Ads"
+          },
+          {
+            "value": "751K+",
+            "label": "conversion value Google Ads"
+          },
+          {
+            "value": "5,52",
+            "label": "ROAS Google Ads"
+          },
+          {
+            "value": "166K+",
+            "label": "views pe website"
+          }
+        ],
+        "context": {
+          "title": "Context",
+          "text": "cosmeticahoteliera.ro este un ecommerce B2B specializat în produse hoteliere, cosmetice hoteliere, consumabile HoReCa și produse profesionale pentru unități de cazare. Într-o piață în care cererea este puternic influențată de intenția de căutare și de disponibilitatea produselor, campaniile Google Ads și structura ecommerce devin esențiale."
+        },
+        "challenge": {
+          "title": "Provocarea",
+          "text": "Provocarea principală a fost construirea unui sistem de promovare care să capteze cererea existentă din Google, să susțină traficul către categorii și produse relevante și să transforme campaniile plătite într-un canal măsurabil de creștere. Pentru un ecommerce B2B, simpla vizibilitate nu este suficientă. Contează intenția, relevanța căutărilor, optimizarea catalogului și eficiența bugetului.",
+          "items": [
+            "captarea cererii active din Google",
+            "promovarea produselor hoteliere și HoReCa",
+            "campanii Shopping și Performance Max",
+            "trafic calificat către website",
+            "optimizare pentru conversii urmărite",
+            "eficiență în costuri și ROAS"
+          ]
+        },
+        "intervention": {
+          "title": "Intervenția Digital Dot",
+          "text": "Am construit o direcție de performance marketing bazată pe Google Ads, Meta Ads, campanii Shopping, Performance Max, Search și optimizarea fluxului de trafic către website. Accentul a fost pus pe cererea activă, relevanța produselor și măsurarea rezultatelor.",
+          "items": [
+            {
+              "title": "Google Shopping",
+              "text": "Am folosit campanii Shopping pentru a promova produsele relevante direct în zona de căutare, acolo unde utilizatorii au deja intenție comercială."
+            },
+            {
+              "title": "Performance Max",
+              "text": "Campaniile Performance Max au fost folosite pentru extinderea vizibilității și pentru conectarea produselor cu audiențe relevante în ecosistemul Google."
+            },
+            {
+              "title": "Search Ads",
+              "text": "Campaniile Search au susținut captarea cererilor explicite pentru produse hoteliere, cosmetice hoteliere, papuci hotelieri, săpun hotelier, gel de duș hotelier și alte căutări comerciale relevante."
+            },
+            {
+              "title": "Meta Ads",
+              "text": "Meta Ads a fost folosit ca suport pentru vizibilitate, trafic și conversii urmărite, cu focus pe eficiență și costuri controlate."
+            },
+            {
+              "title": "Website traffic",
+              "text": "Traficul a fost direcționat către website, categorii și produse, acolo unde utilizatorii puteau continua procesul de achiziție."
+            }
+          ]
+        },
+        "results": {
+          "title": "Rezultate",
+          "intro": "În perioada analizată, ecosistemul digital cosmeticahoteliera.ro a generat rezultate relevante în Google Ads, Meta Ads, trafic website și ecommerce performance.",
+          "items": [
+            "3,82M afișări Ads total",
+            "59,81K clickuri Ads total",
+            "166,94K views pe website",
+            "73,19K visits pe website",
+            "65,98K visitors pe website",
+            "3,75M afișări Google Ads",
+            "56,87K clickuri Google Ads",
+            "1.922,96 conversii urmărite Google Ads",
+            "conversion value Google Ads: 751,15K",
+            "ROAS Google Ads: 5,52",
+            "68,79K afișări Meta Ads",
+            "2.943 clickuri Meta Ads",
+            "conversion value Meta Ads: 16,21K",
+            "ROAS Meta Ads: 12,19",
+            "3.761 reach Google Business Profile",
+            "1.022 interacțiuni Google Business Profile",
+            "961 cereri de direcții Google Business Profile"
+          ]
+        },
+        "highlightCampaign": {
+          "title": "Campanii cu performanță ridicată",
+          "text": "Cele mai puternice rezultate au venit din mixul Google Shopping, Performance Max și Search. Campania DOT | Shopping - LOW INDEX a generat 2,18M afișări, 26,81K clickuri, 1.044 conversii urmărite, 376,33K conversion value și ROAS 7,07. Campania DOT | pMax - INDEX a generat 1,23M afișări, 21,87K clickuri, 667,64 conversii urmărite și 281,1K conversion value. În Meta Ads, campania DOT - Sales a generat ROAS 12,19."
+        },
+        "conclusion": {
+          "title": "Ce arată acest studiu de caz",
+          "text": "cosmeticahoteliera.ro este un exemplu bun pentru modul în care un ecommerce B2B poate folosi Google Ads, Shopping, Performance Max, Search și Meta Ads pentru a construi trafic calificat și rezultate măsurabile. Într-un business unde intenția de căutare contează enorm, performanța nu vine doar din buget, ci din structură, segmentare, optimizare și conectarea corectă dintre campanii, produse și website."
+        },
+        "cta": {
+          "title": "Vrei să construim un sistem de performance marketing pentru ecommerce-ul tău?",
+          "subtitle": "Hai să vedem unde se pierde eficiența în campaniile tale și cum poate fi optimizat traseul dintre trafic, produs și conversie.",
+          "buttonText": "Contactează-ne",
+          "buttonLink": "/#contact"
+        },
+        "seoTitle": "Studiu de caz cosmeticahoteliera.ro | Google Ads, Meta Ads & Ecommerce B2B",
+        "seoDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
+        "heroIntro": "Pentru cosmeticahoteliera.ro, am construit un sistem de promovare digitală orientat spre trafic calificat, vizibilitate în Google, campanii Shopping, Performance Max, Search și rezultate urmărite în ecommerce. Obiectivul a fost să susținem creșterea prin Google Ads, Meta Ads și optimizarea fluxului de trafic către website.",
+        "audienceType": "Ecommerce B2B"
       }
     ]
   }
