@@ -20,7 +20,8 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
   const gridClassName = `mt-10 grid gap-5 md:grid-cols-2 ${visibleStudies.length > 2 ? "xl:grid-cols-3" : ""}`;
 
   return (
-    <section id="portfolio" className="scroll-mt-24 py-18 sm:py-24">
+    <section id="case-studies" className="relative scroll-mt-24 py-18 sm:py-24">
+      <span id="portfolio" className="absolute -top-24" aria-hidden />
       <Container>
         <AnimatedSection className="max-w-4xl">
           <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{section.title}</h2>

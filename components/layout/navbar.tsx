@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { type MouseEvent, useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useMemo, useState } from "react";
 import { flushSync } from "react-dom";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
@@ -28,6 +28,18 @@ type NavbarProps = {
   transitionDuration?: number;
 };
 
+function normalizeNavHref(href: string) {
+  if (!href) {
+    return "/";
+  }
+
+  if (href.startsWith("#")) {
+    return `/${href}`;
+  }
+
+  return href;
+}
+
 export function Navbar({
   brandName,
   headerLogo,
@@ -41,20 +53,11 @@ export function Navbar({
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
-  const visibleNavItems = navItems.filter((item) => item.enabled !== false);
-  const logoHref = "/#hero";
-
-  function normalizeNavHref(href: string) {
-    if (!href) {
-      return "/";
-    }
-
-    if (href.startsWith("#")) {
-      return `/${href}`;
-    }
-
-    return href;
-  }
+  const visibleNavItems = useMemo(
+    () => navItems.filter((item) => item.enabled !== false),
+    [navItems],
+  );
+  const logoHref = "/";
 
   function isActiveNavLink(href: string) {
     const normalizedHref = normalizeNavHref(href);
@@ -62,9 +65,16 @@ export function Navbar({
     const targetPath = rawPath || "/";
     const targetHash = rawHash ? `#${rawHash}` : "";
     const isPathMatch = pathname === targetPath;
+    const isCaseStudiesPath = pathname === "/case-studies" || pathname.startsWith("/case-studies/");
+
+    if (targetHash === "#case-studies" && isCaseStudiesPath) {
+      return true;
+    }
 
     if (!targetHash) {
-      return targetPath === "/" ? pathname === "/" : pathname.startsWith(targetPath);
+      return targetPath === "/"
+        ? pathname === "/" && (!activeHash || activeHash === "#hero")
+        : pathname.startsWith(targetPath);
     }
 
     if (!isPathMatch) {
@@ -76,20 +86,16 @@ export function Navbar({
   }
 
   function handleLogoClick(event: MouseEvent<HTMLAnchorElement>) {
-    event.preventDefault();
-
     flushSync(() => {
       setIsOpen(false);
     });
 
     if (pathname === "/") {
-      window.history.pushState(window.history.state, "", logoHref);
+      event.preventDefault();
+      window.history.pushState(window.history.state, "", "/");
       setActiveHash("#hero");
-      document.getElementById("hero")?.scrollIntoView({ block: "start", behavior: "smooth" });
-      return;
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
-
-    window.location.assign(logoHref);
   }
 
   useEffect(() => {
@@ -101,6 +107,65 @@ export function Navbar({
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveHash("");
+      return;
+    }
+
+    const sectionHashes = [
+      "#hero",
+      ...visibleNavItems
+        .map((item) => normalizeNavHref(item.href).split("#")[1])
+        .filter((hash): hash is string => Boolean(hash))
+        .map((hash) => `#${hash}`),
+    ];
+    const uniqueHashes = Array.from(new Set(sectionHashes));
+    let rafId: number | null = null;
+
+    function updateActiveSection() {
+      const threshold = window.scrollY + Math.min(window.innerHeight * 0.38, 360);
+      let currentHash = "#hero";
+
+      uniqueHashes.forEach((hash) => {
+        const section = document.getElementById(hash.slice(1));
+        if (!section) {
+          return;
+        }
+
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        if (top <= threshold) {
+          currentHash = hash;
+        }
+      });
+
+      setActiveHash(currentHash);
+    }
+
+    function handleScroll() {
+      if (rafId !== null) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(() => {
+        updateActiveSection();
+        rafId = null;
+      });
+    }
+
+    updateActiveSection();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [pathname, visibleNavItems]);
 
   useEffect(() => {
     if (!isOpen) {

@@ -9,12 +9,7 @@
     "navigation": [
       {
         "label": "Acasă",
-        "href": "/#hero",
-        "enabled": true
-      },
-      {
-        "label": "Poziționare",
-        "href": "/#positioning",
+        "href": "/",
         "enabled": true
       },
       {
@@ -23,13 +18,13 @@
         "enabled": true
       },
       {
-        "label": "Cine Suntem",
-        "href": "/#team",
+        "label": "Studii de caz",
+        "href": "/#case-studies",
         "enabled": true
       },
       {
-        "label": "Proces",
-        "href": "/#process",
+        "label": "Cine suntem",
+        "href": "/#team",
         "enabled": true
       },
       {
