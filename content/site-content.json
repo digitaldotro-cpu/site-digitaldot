@@ -907,8 +907,20 @@
           "label": "Producție Foto & Video"
         },
         {
-          "value": "google-meta-ads",
-          "label": "Google & Meta Ads"
+          "value": "creare-website",
+          "label": "Creare Website"
+        },
+        {
+          "value": "google-ads",
+          "label": "Google Ads"
+        },
+        {
+          "value": "meta-ads",
+          "label": "Meta Ads"
+        },
+        {
+          "value": "tiktok-ads",
+          "label": "TikTok Ads"
         }
       ],
       "buttonText": "Trimite solicitarea",
@@ -4777,6 +4789,7 @@
         "period": "01 octombrie 2023 – 20 mai 2026",
         "heroImage": "/branding/partners/logo-no-bg.png",
         "ogImage": "/branding/partners/logo-no-bg.png",
+        "imageScale": 2.4,
         "cardMetrics": [
           {
             "value": "3,82M+",
@@ -4917,6 +4930,7 @@
         "audienceType": "Brand expansion și retail interior",
         "heroImage": "/branding/partners/decon.jpg",
         "ogImage": "/branding/partners/decon.jpg",
+        "imageScale": 2.4,
         "cardMetrics": [
           {
             "value": "7,30M+",
@@ -5062,6 +5076,7 @@
         "heroImage": "/branding/partners/artio.png",
         "ogImage": "/branding/partners/artio.png",
         "imagePosition": "center",
+        "imageScale": 2.4,
         "cardMetrics": [
           {
             "value": "6,07M+",
