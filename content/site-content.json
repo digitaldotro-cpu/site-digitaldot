@@ -891,8 +891,8 @@
           "placeholder": "07xx xxx xxx"
         },
         "service": {
-          "label": "Serviciu",
-          "placeholder": "Alege serviciul de interes"
+          "label": "Servicii",
+          "placeholder": "Alege serviciile de interes"
         },
         "message": {
           "label": "Mesaj",
@@ -937,7 +937,7 @@
         "nameMin": "Numele trebuie să aibă cel puțin 2 caractere.",
         "emailInvalid": "Introdu o adresă de email validă.",
         "phoneMin": "Numărul de telefon este prea scurt.",
-        "serviceRequired": "Selectează un serviciu de interes.",
+        "serviceRequired": "Selectează cel puțin un serviciu de interes.",
         "messageMin": "Mesajul trebuie să aibă cel puțin 20 de caractere."
       }
     }
