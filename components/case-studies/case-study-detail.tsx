@@ -38,7 +38,7 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative flex min-h-72 items-center justify-center overflow-hidden rounded-[2rem] border border-[#276864]/45 bg-[#c6c6c6] p-10 shadow-[0_35px_90px_-55px_rgba(102,252,241,0.75)]">
+            <div className="relative flex min-h-72 items-center justify-center overflow-hidden rounded-[2rem] border border-[#276864]/45 bg-white p-10 shadow-[0_35px_90px_-55px_rgba(102,252,241,0.75)]">
               <Image
                 src={study.heroImage}
                 alt={`${study.clientName} logo`}

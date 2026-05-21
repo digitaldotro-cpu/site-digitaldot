@@ -17,7 +17,7 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
       className="group block h-full rounded-[2rem] border border-[#276864]/42 bg-[linear-gradient(150deg,rgba(16,22,27,0.94),rgba(9,12,16,0.98))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#66fcf1]/55 hover:shadow-[0_0_40px_-22px_rgba(102,252,241,0.85)] sm:p-7"
     >
       <article className={featured ? "grid h-full gap-7 lg:grid-cols-[0.85fr_1.15fr]" : "h-full"}>
-        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.5rem] border border-[#276864]/40 bg-[#c6c6c6] p-8">
+        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.5rem] border border-[#276864]/40 bg-white p-8">
           <Image
             src={study.heroImage}
             alt={`${study.clientName} case study`}
