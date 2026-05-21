@@ -39,7 +39,6 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
 
           <div className="lg:col-span-5">
             <div className="relative flex min-h-72 items-center justify-center overflow-hidden rounded-[2rem] border border-[#276864]/45 bg-[#c6c6c6] p-10 shadow-[0_35px_90px_-55px_rgba(102,252,241,0.75)]">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(102,252,241,0.08),transparent_50%)]" />
               <Image
                 src={study.heroImage}
                 alt={`${study.clientName} logo`}
@@ -49,7 +48,6 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
                 className="relative max-h-40 w-auto max-w-full object-contain"
                 style={{
                   ...(study.imageScale ? { transform: `scale(${study.imageScale})` } : {}),
-                  ...(study.imageBlendMode ? { mixBlendMode: study.imageBlendMode } : {}),
                 }}
               />
             </div>

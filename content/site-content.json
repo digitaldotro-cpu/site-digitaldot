@@ -726,8 +726,8 @@
         {
           "id": "partner-1",
           "enabled": true,
-          "src": "/branding/partners/tacoloco.jpg",
-          "alt": "Tacoloco"
+          "src": "/branding/partners/taco-loco-logo.png",
+          "alt": "Taco Loco"
         },
         {
           "id": "partner-2",
@@ -1393,7 +1393,7 @@
         "seoDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30.",
         "ogTitle": "Studiu de caz Taco Loco | Meta Ads, Social Media & Restaurant Marketing",
         "ogDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30.",
-        "ogImage": "/branding/partners/tacoloco.jpg",
+        "ogImage": "/branding/partners/taco-loco-logo.png",
         "canonicalUrl": "https://digitaldot.ro/case-studies/taco-loco",
         "robots": {
           "index": true,
@@ -4647,9 +4647,9 @@
         "clientWebsite": "https://tacoloco.ro/",
         "period": "01 februarie 2024 – 20 mai 2026",
         "audienceType": "Restaurant local și food marketing",
-        "heroImage": "/branding/partners/tacoloco.jpg",
-        "ogImage": "/branding/partners/tacoloco.jpg",
-        "imageScale": 1.9,
+        "heroImage": "/branding/partners/taco-loco-logo.png",
+        "ogImage": "/branding/partners/taco-loco-logo.png",
+        "imageScale": 1.28,
         "cardMetrics": [
           {
             "value": "4,62M+",
@@ -4777,8 +4777,7 @@
           "buttonLink": "/#contact"
         },
         "seoTitle": "Studiu de caz Taco Loco | Meta Ads, Social Media & Restaurant Marketing",
-        "seoDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30.",
-        "imageBlendMode": "multiply"
+        "seoDescription": "Studiu de caz Digital Dot pentru Taco Loco: 4,62M+ afișări Social Media, 54K+ interacțiuni, 2,91M afișări Meta Ads, 24,89K clickuri și ROAS 13,30."
       },
       {
         "slug": "cosmeticahoteliera",
