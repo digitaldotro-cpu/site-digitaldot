@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { AnimatedSection } from "@/components/ui/animated-section";
 import { ButtonLink } from "@/components/ui/button";
 import type { SiteContent } from "@/lib/site-content-schema";
 import { cn } from "@/lib/utils";
@@ -27,14 +26,13 @@ export function HeroSection({ section }: HeroSectionProps) {
   return (
     <section id="hero" className="relative overflow-hidden scroll-mt-24 pt-10 sm:pt-14 lg:pt-16">
       {section.imageVisibility && useBackgroundMode ? (
-        <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
           <Image
             src={section.image}
             alt="Digital Dot hero visual"
             fill
-            priority
             className="object-cover object-right"
-            sizes="100vw"
+            sizes="(max-width: 1024px) 100vw, 100vw"
           />
           <div
             className="absolute inset-0"
@@ -53,7 +51,7 @@ export function HeroSection({ section }: HeroSectionProps) {
             useBackgroundMode ? "flex" : "grid gap-10 lg:grid-cols-12 lg:gap-12",
           )}
         >
-          <AnimatedSection
+          <div
             className={cn(
               "order-1 space-y-8",
               useBackgroundMode ? "max-w-3xl" : "lg:col-span-6",
@@ -80,15 +78,14 @@ export function HeroSection({ section }: HeroSectionProps) {
               {section.ctaText}
               <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </ButtonLink>
-          </AnimatedSection>
+          </div>
 
           {section.imageVisibility && !useBackgroundMode ? (
-            <AnimatedSection
+            <div
               className={cn(
                 "order-2 lg:col-span-6",
                 section.imagePosition === "left" ? "lg:order-1" : "lg:order-2",
               )}
-              delay={0.04}
             >
               <div className="relative overflow-hidden rounded-[2rem] border border-[#276864]/45 bg-[#0b0c10] shadow-[0_0_40px_-22px_rgba(102,252,241,0.42)]">
                 <div className="relative aspect-[16/9] w-full">
@@ -108,7 +105,7 @@ export function HeroSection({ section }: HeroSectionProps) {
                   />
                 </div>
               </div>
-            </AnimatedSection>
+            </div>
           ) : null}
         </div>
       </Container>
