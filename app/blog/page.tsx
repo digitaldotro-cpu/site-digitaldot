@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getAllPosts } from "@/lib/blog";
 import { getSiteContent } from "@/lib/site-content";
 import { buildRouteMetadata } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, getFaqGroupsForPath } from "@/lib/structured-data";
+import { buildBlogCollectionSchema, buildBreadcrumbSchema, buildFaqSchema, getFaqGroupsForPath } from "@/lib/structured-data";
 
 const path = "/blog";
 
@@ -25,6 +25,7 @@ export default async function BlogPage() {
   const [content, posts] = await Promise.all([getSiteContent(), getAllPosts()]);
   const faqGroups = getFaqGroupsForPath(content, path);
   const schemas = [
+    buildBlogCollectionSchema(content, posts),
     buildBreadcrumbSchema(content, [
       { name: "Acasă", path: "/" },
       { name: "Blog", path },

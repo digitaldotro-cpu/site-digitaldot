@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { getAllAuthors } from "@/lib/blog";
 import { absoluteUrl, buildRouteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { buildAuthorSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
+import { buildAuthorSchema, buildBlogCollectionSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
 
 type AuthorPageProps = {
   params: Promise<{ author: string }>;
@@ -49,6 +49,12 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
       <JsonLd
         data={[
           buildAuthorSchema(content, author),
+          buildBlogCollectionSchema(
+            content,
+            author.posts,
+            `/blog/autor/${author.slug}`,
+            `${author.name} | Articole Digital Dot`,
+          ),
           buildBreadcrumbSchema(content, [
             { name: "Acasă", path: "/" },
             { name: "Blog", path: "/blog" },

@@ -27,7 +27,59 @@ export function buildOrganizationSchema(content: SiteContent) {
     logo: absoluteUrl(data.logo, content),
     email: data.email,
     telephone: data.phone,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: data.email,
+      telephone: data.phone,
+      areaServed: "RO",
+      availableLanguage: ["ro", "en"],
+    },
     sameAs,
+  };
+}
+
+export function buildWebSiteSchema(content: SiteContent) {
+  const baseUrl = getCanonicalBaseUrl(content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${baseUrl}/#website`,
+    name: content.seoSettings.global.siteTitle || siteMetadata.siteName,
+    alternateName: siteMetadata.siteName,
+    url: baseUrl,
+    inLanguage: "ro-RO",
+    publisher: {
+      "@id": `${baseUrl}/#organization`,
+      name: siteMetadata.siteName,
+    },
+  };
+}
+
+export function buildWebPageSchema(
+  content: SiteContent,
+  path: string,
+  type: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage" = "WebPage",
+) {
+  const pageSeo = getPageSeo(content, path);
+  const url = pageSeo?.canonicalUrl || absoluteUrl(path, content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    "@id": `${url}#webpage`,
+    url,
+    name: pageSeo?.seoTitle || content.seoSettings.global.siteTitle,
+    description: pageSeo?.seoDescription || content.seoSettings.global.siteDescription,
+    isPartOf: {
+      "@id": `${getCanonicalBaseUrl(content)}/#website`,
+    },
+    about: {
+      "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+      name: siteMetadata.siteName,
+    },
+    inLanguage: "ro-RO",
   };
 }
 
@@ -88,6 +140,32 @@ export function buildServiceSchema(content: SiteContent, path: string) {
     serviceType: service.name,
     areaServed: "Romania",
     mainEntityOfPage: pageSeo?.canonicalUrl || absoluteUrl(path, content),
+  };
+}
+
+export function buildServiceItemListSchema(content: SiteContent) {
+  const services = content.seoSettings.structuredData.services;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${absoluteUrl("/", content)}#services`,
+    name: "Servicii Digital Dot",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(service.url, content),
+      item: {
+        "@type": "Service",
+        "@id": `${absoluteUrl(service.url, content)}#service`,
+        name: service.name,
+        description: service.description,
+        provider: {
+          "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+          name: siteMetadata.siteName,
+        },
+      },
+    })),
   };
 }
 
@@ -242,6 +320,77 @@ export function buildCaseStudyServiceSchema(content: SiteContent, study: SiteCon
       audienceType: study.audienceType || study.category,
     },
     mainEntityOfPage: url,
+  };
+}
+
+export function buildBlogCollectionSchema(content: SiteContent, posts: BlogPost[], path = "/blog", name = "Blog Digital Dot") {
+  const pageSeo = getPageSeo(content, path);
+  const url = pageSeo?.canonicalUrl || absoluteUrl(path, content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#collection`,
+    name,
+    description: pageSeo?.seoDescription || content.seoSettings.global.siteDescription,
+    url,
+    isPartOf: {
+      "@id": `${getCanonicalBaseUrl(content)}/#website`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: posts.map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteUrl(`/blog/${post.slug}`, content),
+        item: {
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.publishedAt,
+          author: {
+            "@type": "Person",
+            name: post.authorName,
+            url: absoluteUrl(`/blog/autor/${post.authorSlug}`, content),
+          },
+        },
+      })),
+    },
+  };
+}
+
+export function buildCaseStudyCollectionSchema(content: SiteContent, studies: SiteContent["caseStudies"]["studies"]) {
+  const url = absoluteUrl("/case-studies", content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#collection`,
+    name: content.caseStudies.title,
+    description: content.caseStudies.description,
+    url,
+    isPartOf: {
+      "@id": `${getCanonicalBaseUrl(content)}/#website`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: studies.map((study, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteUrl(`/case-studies/${study.slug}`, content),
+        item: {
+          "@type": "CaseStudy",
+          headline: study.title,
+          description: study.seoDescription,
+          image: absoluteUrl(study.ogImage, content),
+          about: {
+            "@type": "Organization",
+            name: study.clientName,
+            url: study.clientWebsite,
+          },
+        },
+      })),
+    },
   };
 }
 

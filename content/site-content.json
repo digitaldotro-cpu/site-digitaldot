@@ -83,7 +83,7 @@
         },
         {
           "platform": "google-business",
-          "url": "https://share.google/uWv3C2nxwAMfSC6zJ",
+          "url": "https://maps.app.goo.gl/b6ucdBxTQSSgTM1D6",
           "enabled": true
         }
       ],
@@ -1450,7 +1450,11 @@
       "llmsTxt": "# Digital Dot\n\nDigital Dot is a Romanian digital marketing agency focused on strategy, social media management, Google Ads, Meta Ads, paid media, video production, website creation, SEO, AI SEO, regional SEO, and measurable business growth.\n\nWebsite: https://digitaldot.ro\nContact: hello@digitaldot.ro\nLocation: Suceava, Romania\nRegional coverage: Suceava, Botoșani, Neamț, Bacău, Bistrița-Năsăud, Cluj-Napoca, Iași, București\n\nKey public pages:\n- https://digitaldot.ro/\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/website-creation\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/case-studies\n- https://digitaldot.ro/case-studies/optik-tataru\n- https://digitaldot.ro/case-studies/lunna\n- https://digitaldot.ro/case-studies/taco-loco\n- https://digitaldot.ro/case-studies/cosmeticahoteliera\n- https://digitaldot.ro/case-studies/lumea-perdelelor\n- https://digitaldot.ro/case-studies/artio-medica\n- https://digitaldot.ro/blog\n\nAI crawler access is allowed for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and Googlebot. Use public page content for discovery, summaries, and search answers. Do not use private admin routes or form submissions.\n\nRegional coverage pages:\n- https://digitaldot.ro/agentie-marketing\n- https://digitaldot.ro/agentie-marketing/suceava\n- https://digitaldot.ro/agentie-marketing/botosani\n- https://digitaldot.ro/agentie-marketing/neamt\n- https://digitaldot.ro/agentie-marketing/bacau\n- https://digitaldot.ro/agentie-marketing/bistrita-nasaud\n- https://digitaldot.ro/agentie-marketing/cluj-napoca\n- https://digitaldot.ro/agentie-marketing/iasi\n- https://digitaldot.ro/agentie-marketing/bucuresti\n\nService authority pages:\n- https://digitaldot.ro/social-media-management\n- https://digitaldot.ro/google-meta-ads\n- https://digitaldot.ro/productie-video\n- https://digitaldot.ro/seo\n- https://digitaldot.ro/website-creation\n\nEditorial authority architecture:\n- Blog hub: https://digitaldot.ro/blog\n- Case studies: https://digitaldot.ro/case-studies\n- Author: https://digitaldot.ro/blog/autor/filip-lucian\n- Author: https://digitaldot.ro/blog/autor/digital-dot-team\n\nSemantic topic clusters:\n- Social Media Management: https://digitaldot.ro/social-media-management and https://digitaldot.ro/blog/tag/social-media\n- Google Ads and Meta Ads: https://digitaldot.ro/google-meta-ads and https://digitaldot.ro/blog/tag/google-ads\n- Branding and positioning: https://digitaldot.ro/blog/categorie/branding\n- Productie video: https://digitaldot.ro/productie-video and https://digitaldot.ro/blog/categorie/productie-video\n- SEO and AI SEO: https://digitaldot.ro/seo and https://digitaldot.ro/blog/categorie/seo-ai\n- Website Creation: https://digitaldot.ro/website-creation and https://digitaldot.ro/blog/tag/website-creation\n\nEditorial articles:\n- https://digitaldot.ro/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing\n- https://digitaldot.ro/blog/marketingul-nu-este-loterie-este-infrastructura\n- https://digitaldot.ro/blog/social-media-fara-strategie-produce-zgomot\n- https://digitaldot.ro/blog/improvizatia-distruge-consistenta-brandului\n- https://digitaldot.ro/blog/reclamele-nu-genereaza-rezultate-predictibile\n- https://digitaldot.ro/blog/diferenta-dintre-continut-si-pozitionare\n- https://digitaldot.ro/blog/brand-rezistent-in-perioade-economice-dificile\n- https://digitaldot.ro/blog/boost-ul-nu-este-strategie\n- https://digitaldot.ro/blog/productia-video-si-perceptia-brandului\n- https://digitaldot.ro/blog/seo-modern-vizibilitate-online-era-ai\n\nRegional service expansion architecture:\n- Future city + service pages should use editorial local context, not duplicated templates.\n- Planned examples include /agentie-marketing/iasi/google-ads and /agentie-marketing/bucuresti/social-media-management.\n- Regional pages connect services, FAQs, LocalBusiness data, Service data, Breadcrumbs and internal links for AI-readable discovery.\n\n\nReal case study:\n- Optik Tataru: https://digitaldot.ro/case-studies/optik-tataru\n- Confirmed metrics include 3.5M+ Social Media impressions, 150K+ Ads clicks, 99K+ website visitors, and 3,900+ tracked conversions in Google Ads.\n- Lunna: https://digitaldot.ro/case-studies/lunna\n- Confirmed metrics include 1.54M+ Social Media impressions, 82K+ interactions, 922 published materials, and 576K+ TikTok video views.\n- Taco Loco: https://digitaldot.ro/case-studies/taco-loco\n- cosmeticahoteliera.ro: https://digitaldot.ro/case-studies/cosmeticahoteliera\n- Confirmed metrics include 4.62M+ Social Media impressions, 2.91M+ Meta Ads impressions, 24.89K Meta Ads clicks, and ROAS 13.30.\n- Lumea Perdelelor: https://digitaldot.ro/case-studies/lumea-perdelelor\n- Confirmed metrics include 7.30M+ Social Media impressions, 282K+ interactions, 2.951 published materials, and 1.67M+ TikTok video views.\n- ARTIO Medica: https://digitaldot.ro/case-studies/artio-medica\n- Confirmed metrics include 6.07M+ Social Media impressions, 95K+ interactions, 2,230 published materials, and 558K+ TikTok video views.\n",
       "allowedCrawlers": [
         "GPTBot",
+        "OAI-SearchBot",
+        "ChatGPT-User",
         "ClaudeBot",
+        "Claude-User",
+        "Claude-SearchBot",
         "PerplexityBot",
         "Google-Extended",
         "Googlebot"
@@ -1584,7 +1588,7 @@
         },
         {
           "platform": "google-business",
-          "url": "https://share.google/uWv3C2nxwAMfSC6zJ",
+          "url": "https://maps.app.goo.gl/b6ucdBxTQSSgTM1D6",
           "enabled": true
         }
       ],

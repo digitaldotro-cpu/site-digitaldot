@@ -8,7 +8,7 @@ import { blogCategories, getCategoryLabel } from "@/data/blog-taxonomy";
 import { getPostsByCategory } from "@/lib/blog";
 import { buildRouteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { buildBreadcrumbSchema } from "@/lib/structured-data";
+import { buildBlogCollectionSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
 
 type CategoryPageProps = {
   params: Promise<{ category: string }>;
@@ -43,11 +43,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <>
       <JsonLd
-        data={buildBreadcrumbSchema(content, [
-          { name: "Acasă", path: "/" },
-          { name: "Blog", path: "/blog" },
-          { name: categoryInfo.label, path: `/blog/categorie/${category}` },
-        ])}
+        data={[
+          buildBlogCollectionSchema(
+            content,
+            posts,
+            `/blog/categorie/${category}`,
+            `${categoryInfo.label} | Blog Digital Dot`,
+          ),
+          buildBreadcrumbSchema(content, [
+            { name: "Acasă", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: categoryInfo.label, path: `/blog/categorie/${category}` },
+          ]),
+        ]}
       />
       <Breadcrumbs
         items={[

@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getSiteContent } from "@/lib/site-content";
 import { buildRouteMetadata } from "@/lib/seo";
-import { buildBreadcrumbSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildCaseStudyCollectionSchema } from "@/lib/structured-data";
 
 const path = "/case-studies";
 
@@ -27,10 +27,13 @@ export default async function CaseStudiesPage() {
   return (
     <>
       <JsonLd
-        data={buildBreadcrumbSchema(content, [
-          { name: "Acasă", path: "/" },
-          { name: "Studii de caz", path },
-        ])}
+        data={[
+          buildCaseStudyCollectionSchema(content, caseStudies),
+          buildBreadcrumbSchema(content, [
+            { name: "Acasă", path: "/" },
+            { name: "Studii de caz", path },
+          ]),
+        ]}
       />
       <Breadcrumbs
         items={[

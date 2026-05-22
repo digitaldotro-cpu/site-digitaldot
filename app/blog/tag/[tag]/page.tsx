@@ -8,7 +8,7 @@ import { blogTags, getTagLabel } from "@/data/blog-taxonomy";
 import { getPostsByTag } from "@/lib/blog";
 import { buildRouteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
-import { buildBreadcrumbSchema } from "@/lib/structured-data";
+import { buildBlogCollectionSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
 
 type TagPageProps = {
   params: Promise<{ tag: string }>;
@@ -41,11 +41,19 @@ export default async function TagPage({ params }: TagPageProps) {
   return (
     <>
       <JsonLd
-        data={buildBreadcrumbSchema(content, [
-          { name: "Acasă", path: "/" },
-          { name: "Blog", path: "/blog" },
-          { name: getTagLabel(tag), path: `/blog/tag/${tag}` },
-        ])}
+        data={[
+          buildBlogCollectionSchema(
+            content,
+            posts,
+            `/blog/tag/${tag}`,
+            `${getTagLabel(tag)} | Blog Digital Dot`,
+          ),
+          buildBreadcrumbSchema(content, [
+            { name: "Acasă", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: getTagLabel(tag), path: `/blog/tag/${tag}` },
+          ]),
+        ]}
       />
       <Breadcrumbs
         items={[

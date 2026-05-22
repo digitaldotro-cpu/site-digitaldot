@@ -179,11 +179,17 @@ export function AppShell({ children, content }: AppShellProps) {
   }, [isCmsRoute, scrollStorageKey]);
 
   if (isCmsRoute) {
-    return <main>{children}</main>;
+    return <main id="main-content">{children}</main>;
   }
 
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#66fcf1] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-[#071012] focus:shadow-lg"
+      >
+        Sari la conținut
+      </a>
       <Navbar
         brandName={content.global.brandName}
         headerLogo={content.global.headerLogo}
@@ -194,7 +200,7 @@ export function AppShell({ children, content }: AppShellProps) {
         isVisible={effectiveUiVisible}
         transitionDuration={scrollBehavior.transitionDuration}
       />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <Footer
         brandName={content.global.brandName}
         logo={content.global.footer.logo}

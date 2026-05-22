@@ -50,7 +50,7 @@ export function Footer({
   );
 
   return (
-    <footer className="mt-16 border-t border-[#1e2a30] bg-[#0a0d10]">
+    <footer className="mt-16 border-t border-[#1e2a30] bg-[#0a0d10]" aria-label="Footer Digital Dot">
       <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-7">
         <div>
           {logo ? (
@@ -67,8 +67,8 @@ export function Footer({
           <FooterSocialLinks title={socialLinksTitle} links={socialLinks} />
         </div>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+        <nav aria-labelledby="footer-services-title">
+          <h3 id="footer-services-title" className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
             {serviceLinksTitle}
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
@@ -80,10 +80,10 @@ export function Footer({
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+        <nav aria-labelledby="footer-regional-title">
+          <h3 id="footer-regional-title" className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
             {regionalLinksTitle}
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
@@ -95,10 +95,10 @@ export function Footer({
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+        <nav aria-labelledby="footer-resources-title">
+          <h3 id="footer-resources-title" className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
             {resourceLinksTitle}
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
@@ -110,10 +110,10 @@ export function Footer({
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+        <nav aria-labelledby="footer-legal-title">
+          <h3 id="footer-legal-title" className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
             {legalLinksTitle}
           </h3>
           <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
@@ -123,21 +123,21 @@ export function Footer({
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+          <h3 id="footer-contact-title" className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
             {contactTitle}
           </h3>
-          <ul className="mt-4 space-y-2 text-sm text-[#c3c7ca]">
-            <li>
+          <address aria-labelledby="footer-contact-title" className="mt-4 space-y-2 text-sm not-italic text-[#c3c7ca]">
+            <p>
               Email: <a href={`mailto:${contactEmail}`} className="transition-colors hover:text-[#66fcf1]">{contactEmail}</a>
-            </li>
-            <li>
+            </p>
+            <p>
               Telefon: <a href={`tel:${contactPhone}`} className="transition-colors hover:text-[#66fcf1]">{contactPhone}</a>
-            </li>
-            <li>{contactLocation}</li>
-          </ul>
+            </p>
+            <p>{contactLocation}</p>
+          </address>
         </div>
       </Container>
       <div className="border-t border-[#1f2a31] py-4 text-center text-xs text-[#8f979d]">

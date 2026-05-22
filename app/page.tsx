@@ -18,6 +18,8 @@ import { ClientFilterSection } from "@/components/landing/client-filter-section"
 import { PartnersTickerSection } from "@/components/landing/partners-ticker-section";
 import { CTASection } from "@/components/landing/cta-section";
 import { ContactSection } from "@/components/landing/contact-section";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildServiceItemListSchema, buildWebPageSchema } from "@/lib/structured-data";
 import type { LandingSectionKey } from "@/lib/site-content-schema";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -56,6 +58,12 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          buildWebPageSchema(content, "/", "WebPage"),
+          buildServiceItemListSchema(content),
+        ]}
+      />
       {landing.sectionOrder.map((key) => (
         <Fragment key={key}>
           {sections[key]}

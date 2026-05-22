@@ -42,6 +42,7 @@ export function SocialLinkItem({ platform, url }: SocialLinkItemProps) {
   return (
     <a
       href={url}
+      aria-label={`${label} Digital Dot`}
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-2 rounded-full border border-[#276864]/45 bg-[#12171b] px-4 py-2 text-sm text-[#c6c6c6] transition duration-300 hover:border-[#66fcf1]/70 hover:text-[#66fcf1]"

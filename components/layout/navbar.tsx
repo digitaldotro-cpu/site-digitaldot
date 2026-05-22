@@ -209,6 +209,7 @@ export function Navbar({
     <>
       <div className="h-20" aria-hidden />
       <header
+        aria-label="Header principal Digital Dot"
         className={cn(
           "fixed inset-x-0 top-0 z-50 border-b border-[rgba(39,104,100,0.25)] bg-[rgba(11,12,16,0.82)] backdrop-blur-[20px] transition-[transform,opacity] lg:border-white/5 lg:bg-[#0b0c10]/85 lg:backdrop-blur-lg",
           shouldShowHeader
@@ -245,7 +246,7 @@ export function Navbar({
               )}
             </Link>
 
-            <nav className="hidden items-center gap-2 lg:flex">
+            <nav aria-label="Navigare principală" className="hidden items-center gap-2 lg:flex">
               {visibleNavItems.map((item) => {
                 const active = isActiveNavLink(item.href);
                 const href = normalizeNavHref(item.href);
@@ -340,7 +341,7 @@ export function Navbar({
               className="absolute left-4 right-4 top-4 rounded-3xl border border-[#276864]/40 bg-[rgba(11,12,16,0.94)] p-4 shadow-[0_0_36px_-16px_rgba(102,252,241,0.35)] backdrop-blur-xl"
               onClick={(event) => event.stopPropagation()}
             >
-              <nav className="flex flex-col gap-2">
+              <nav aria-label="Navigare principală mobilă" className="flex flex-col gap-2">
                 {visibleNavItems.map((item) => {
                   const active = isActiveNavLink(item.href);
                   const href = normalizeNavHref(item.href);
