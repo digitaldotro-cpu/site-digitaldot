@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { type MouseEvent, useEffect, useMemo, useState } from "react";
+import { type MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
@@ -53,6 +53,7 @@ export function Navbar({
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
+  const activeHashRef = useRef("");
   const visibleNavItems = useMemo(
     () => navItems.filter((item) => item.enabled !== false),
     [navItems],
@@ -93,13 +94,15 @@ export function Navbar({
     if (pathname === "/") {
       event.preventDefault();
       window.history.pushState(window.history.state, "", "/");
+      activeHashRef.current = "#hero";
       setActiveHash("#hero");
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     }
   }
 
   useEffect(() => {
     function handleHashChange() {
+      activeHashRef.current = window.location.hash;
       setActiveHash(window.location.hash);
     }
 
@@ -139,7 +142,10 @@ export function Navbar({
         }
       });
 
-      setActiveHash(currentHash);
+      if (activeHashRef.current !== currentHash) {
+        activeHashRef.current = currentHash;
+        setActiveHash(currentHash);
+      }
     }
 
     function handleScroll() {
