@@ -45,7 +45,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 function baseButtonClasses(position: "bottom-right" | "bottom-left") {
   return cn(
-    "fixed bottom-5 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#276864]/55 bg-[#101418]/92 text-[#66fcf1] backdrop-blur-sm shadow-[0_18px_44px_-28px_rgba(102,252,241,0.9)] transition duration-300 hover:scale-105 hover:border-[#66fcf1]/70 hover:bg-[#0b0c10] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]",
+    "fixed bottom-5 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#276864]/55 bg-[#101418]/92 text-[#66fcf1] backdrop-blur-md shadow-[0_14px_34px_-26px_rgba(102,252,241,0.9)] transition duration-300 hover:-translate-y-0.5 hover:border-[#66fcf1]/70 hover:bg-[#0b0c10] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]",
     position === "bottom-left" ? "left-5" : "right-5",
   );
 }

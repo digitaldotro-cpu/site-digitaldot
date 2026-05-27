@@ -15,7 +15,8 @@ export function PartnersTickerSection({ section }: PartnersTickerSectionProps) {
   return (
     <section id="partners" className="scroll-mt-24 pb-18 sm:pb-24">
       <Container>
-        <AnimatedSection className="rounded-xl border border-[#1f2a2d] bg-[#101418]/86 p-5 backdrop-blur-sm sm:p-6">
+        <AnimatedSection className="brand-card p-5 sm:p-6">
+          <span className="brand-rule mb-4" />
           <h3 className="text-xl font-semibold text-white sm:text-2xl">{section.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-[#dadada] sm:text-base">{section.subtitle}</p>
           <div className="mt-5">

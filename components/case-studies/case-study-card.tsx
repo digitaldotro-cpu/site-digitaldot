@@ -14,10 +14,10 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group block h-full rounded-[2rem] border border-[#276864]/42 bg-[linear-gradient(150deg,rgba(16,22,27,0.94),rgba(9,12,16,0.98))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#66fcf1]/55 hover:shadow-[0_0_40px_-22px_rgba(102,252,241,0.85)] sm:p-7"
+      className="brand-card group block h-full p-5 sm:p-6"
     >
       <article className={featured ? "grid h-full gap-7 lg:grid-cols-[0.85fr_1.15fr]" : "h-full"}>
-        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.5rem] border border-[#276864]/40 bg-white p-8">
+        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.35rem] border border-[#276864]/30 bg-[linear-gradient(145deg,rgba(218,218,218,0.08),rgba(16,20,24,0.92))] p-8">
           <Image
             src={study.heroImage}
             alt={`${study.clientName} case study`}
@@ -41,7 +41,7 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
 
           <dl className="mt-6 grid gap-3 sm:grid-cols-2">
             {study.cardMetrics.map((metric) => (
-              <div key={`${metric.value}-${metric.label}`} className="rounded-2xl border border-[#263740] bg-[#0d1317] p-4">
+              <div key={`${metric.value}-${metric.label}`} className="rounded-2xl border border-[#1f2a2d] bg-[#0b0c10]/72 p-4">
                 <dt className="text-xl font-semibold text-[#66fcf1]">{metric.value}</dt>
                 <dd className="mt-1 text-xs leading-relaxed text-[#c6c6c6]">{metric.label}</dd>
               </div>

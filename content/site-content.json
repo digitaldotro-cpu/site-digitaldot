@@ -297,7 +297,7 @@
       }
     },
     "proofMetrics": {
-      "enabled": true,
+      "enabled": false,
       "title": "Creștere măsurabilă prin strategie clară.",
       "subtitle": "Câteva dintre rezultatele obținute prin campanii structurate strategic.",
       "metrics": [

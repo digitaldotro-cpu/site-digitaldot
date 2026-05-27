@@ -41,9 +41,10 @@ export default async function CaseStudiesPage() {
           { label: "Studii de caz", href: "/case-studies" },
         ]}
       />
-      <section className="pb-16 pt-10 sm:pb-20 sm:pt-14">
-        <Container>
+      <section className="brand-orbit relative overflow-hidden pb-16 pt-10 sm:pb-20 sm:pt-14">
+        <Container className="relative z-10">
           <header className="max-w-4xl">
+            <span className="brand-rule mb-5" />
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66fcf1]">
               Rezultate
             </p>

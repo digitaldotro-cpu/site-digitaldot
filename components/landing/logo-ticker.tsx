@@ -24,7 +24,7 @@ export function LogoTicker({
   const track = [...visibleLogos, ...visibleLogos];
 
   return (
-    <div className="relative overflow-hidden rounded-xl border border-[#1f2a2d] bg-[#0b0c10]/70">
+    <div className="relative overflow-hidden rounded-2xl border border-[#1f2a2d] bg-[#0b0c10]/68">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0b0c10] to-transparent sm:w-14" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0b0c10] to-transparent sm:w-14" />
 

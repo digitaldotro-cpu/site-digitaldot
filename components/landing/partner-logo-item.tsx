@@ -24,7 +24,7 @@ export function PartnerLogoItem({ logo }: PartnerLogoItemProps) {
         className={cn(
           "w-auto object-contain transition duration-300",
           "max-h-9 sm:max-h-10",
-          "opacity-100 grayscale-0 md:opacity-60 md:grayscale md:hover:opacity-100 md:hover:grayscale-0",
+          "opacity-90 grayscale-0 md:opacity-55 md:grayscale md:hover:opacity-95 md:hover:grayscale-0",
           isBiggerLogo && "max-h-11 sm:max-h-12 md:max-h-12",
         )}
       />

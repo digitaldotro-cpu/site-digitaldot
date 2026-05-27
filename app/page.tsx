@@ -4,8 +4,6 @@ import { buildRouteMetadata } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
 import { HeroSection } from "@/components/landing/hero-section";
 import { PositioningManifestoSection } from "@/components/landing/positioning-manifesto-section";
-import { ProofMetricsSection } from "@/components/landing/proof-metrics-section";
-import { MiniCaseStudySection } from "@/components/landing/mini-case-study-section";
 import { TextBlockSection } from "@/components/landing/text-block-section";
 import { ImageCtaSection } from "@/components/landing/image-cta-section";
 import { ServicesGrid } from "@/components/landing/services-grid";
@@ -39,8 +37,8 @@ export default async function HomePage() {
   const sections: Record<LandingSectionKey, ReactNode> = {
     hero: <HeroSection section={landing.hero} />,
     positioning: <PositioningManifestoSection section={landing.positioning} />,
-    proofMetrics: <ProofMetricsSection section={landing.proofMetrics} />,
-    miniCaseStudy: <MiniCaseStudySection section={landing.miniCaseStudy} />,
+    proofMetrics: null,
+    miniCaseStudy: null,
     proofCta: <CTASection id="proof-cta" section={landing.proofCta} />,
     authority: <TextBlockSection id="authority" section={landing.authority} />,
     brandValueSection: <ImageCtaSection id="brand-value" section={landing.brandValueSection} />,

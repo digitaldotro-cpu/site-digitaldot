@@ -30,7 +30,7 @@ export function FormSelect({
       <select
         id={id}
         className={cn(
-          "h-12 w-full rounded-xl border border-[#1f2a2d] bg-[#0b0c10] px-4 text-sm text-white focus:border-[#66fcf1] focus:outline-none",
+          "h-12 w-full rounded-xl border border-[#1f2a2d] bg-[#0b0c10]/86 px-4 text-sm text-white transition-colors focus:border-[#66fcf1]/80 focus:outline-none focus:ring-1 focus:ring-[#66fcf1]/20",
           error && "border-[#ff7a7a]",
           className,
         )}
