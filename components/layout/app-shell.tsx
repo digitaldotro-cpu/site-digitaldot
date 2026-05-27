@@ -68,9 +68,6 @@ export function AppShell({ children, content }: AppShellProps) {
   const lastScrollY = useRef(0);
   const scrollBehavior = content.global.scrollBehavior;
   const effectiveUiVisible = scrollBehavior.hideOnScrollDown ? isUiVisible : true;
-  const scrollStorageKey = typeof window !== "undefined"
-    ? `digitaldot:scroll:${window.location.pathname}${window.location.search}${window.location.hash}`
-    : "";
 
   useEffect(() => {
     if (isCmsRoute) {
@@ -101,82 +98,6 @@ export function AppShell({ children, content }: AppShellProps) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isCmsRoute, scrollBehavior.hideOnScrollDown, scrollBehavior.scrollThreshold]);
-
-  useEffect(() => {
-    if (isCmsRoute) {
-      return;
-    }
-
-    const navigationEntry = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
-    const isReload = navigationEntry?.type === "reload";
-    const hasHistoryState = window.history.state?.__NA?.tree;
-
-    if (!isReload || hasHistoryState) {
-      return;
-    }
-
-    const rawPosition = sessionStorage.getItem(scrollStorageKey);
-    const savedPosition = rawPosition ? Number.parseInt(rawPosition, 10) : Number.NaN;
-
-    if (!Number.isFinite(savedPosition) || savedPosition < 0) {
-      return;
-    }
-
-    window.history.scrollRestoration = "manual";
-
-    const restore = () => {
-      window.scrollTo({ top: savedPosition, left: 0, behavior: "auto" });
-    };
-
-    requestAnimationFrame(() => {
-      restore();
-      requestAnimationFrame(restore);
-      setTimeout(restore, 120);
-    });
-
-    return () => {
-      window.history.scrollRestoration = "auto";
-    };
-  }, [isCmsRoute, scrollStorageKey]);
-
-  useEffect(() => {
-    if (isCmsRoute) {
-      return;
-    }
-
-    let rafId: number | null = null;
-
-    const savePosition = () => {
-      sessionStorage.setItem(scrollStorageKey, String(window.scrollY));
-    };
-
-    const handleScroll = () => {
-      if (rafId !== null) {
-        return;
-      }
-
-      rafId = window.requestAnimationFrame(() => {
-        savePosition();
-        rafId = null;
-      });
-    };
-
-    const handleBeforeUnload = () => {
-      savePosition();
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      if (rafId !== null) {
-        window.cancelAnimationFrame(rafId);
-      }
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-      savePosition();
-    };
-  }, [isCmsRoute, scrollStorageKey]);
 
   if (isCmsRoute) {
     return <main id="main-content">{children}</main>;
