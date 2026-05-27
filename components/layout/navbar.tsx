@@ -193,14 +193,33 @@ export function Navbar({
   }, [pathname, visibleNavItems]);
 
   useEffect(() => {
+    const body = document.body;
+    const root = document.documentElement;
+
     if (!isOpen) {
+      if (body.style.overflow === "hidden") {
+        body.style.overflow = "";
+      }
+
+      if (root.style.overflow === "hidden") {
+        root.style.overflow = "";
+      }
+
       return;
     }
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    if (window.innerWidth >= 1024) {
+      return;
+    }
+
+    const previousBodyOverflow = body.style.overflow;
+    const previousRootOverflow = root.style.overflow;
+    body.style.overflow = "hidden";
+    root.style.overflow = "hidden";
+
     return () => {
-      document.body.style.overflow = previousOverflow;
+      body.style.overflow = previousBodyOverflow;
+      root.style.overflow = previousRootOverflow;
     };
   }, [isOpen]);
 
