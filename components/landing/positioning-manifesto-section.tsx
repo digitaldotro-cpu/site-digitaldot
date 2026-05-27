@@ -17,11 +17,11 @@ const spacingClassMap: Record<SiteContent["landing"]["positioning"]["layout"]["s
 
 const backgroundClassMap: Record<SiteContent["landing"]["positioning"]["layout"]["backgroundVariant"], string> = {
   subtle:
-    "border-[#1f2a2d] bg-[linear-gradient(145deg,rgba(16,20,24,0.94),rgba(11,12,16,0.98))]",
+    "border-[#276864]/30 bg-[linear-gradient(145deg,rgba(16,20,24,0.9),rgba(11,12,16,0.98))]",
   glow:
-    "border-[#1f2a2d] bg-[linear-gradient(145deg,rgba(16,20,24,0.96),rgba(11,12,16,0.99))] shadow-[0_28px_90px_-72px_rgba(102,252,241,0.55)]",
+    "border-[#276864]/34 bg-[linear-gradient(145deg,rgba(16,20,24,0.92),rgba(11,12,16,0.98))]",
   glass:
-    "border-[#1f2a2d] bg-[linear-gradient(145deg,rgba(16,20,24,0.86),rgba(11,12,16,0.94))] backdrop-blur-sm",
+    "border-[#276864]/30 bg-[linear-gradient(145deg,rgba(16,20,24,0.78),rgba(11,12,16,0.92))] backdrop-blur-sm",
 };
 
 function escapeRegExp(value: string) {
@@ -74,7 +74,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
   return (
     <section id="positioning" className={cn("scroll-mt-24", spacingClass)}>
       <Container className="max-w-6xl">
-        <div className="brand-orbit relative overflow-hidden rounded-2xl border p-7 sm:p-10 lg:p-14">
+        <div className="brand-orbit relative overflow-hidden rounded-[22px] border p-7 sm:p-10 lg:p-14">
           <div
             className={cn(
               "pointer-events-none absolute inset-0 opacity-95 transition-opacity duration-700",
@@ -108,7 +108,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
 
             {section.comparison ? (
               <div className="grid items-stretch gap-5 lg:grid-cols-[1fr_auto_1fr]">
-                <AnimatedSection delay={0.08} className="rounded-2xl border border-[#1f2a2d] bg-[#101418]/86 p-6 sm:p-7">
+                <AnimatedSection delay={0.08} className="brand-card p-6 sm:p-7">
                   <h3 className="text-xl font-semibold text-white">{section.comparison.left.title}</h3>
                   <ul className="mt-5 space-y-3 text-[#dadada]">
                     {section.comparison.left.items.map((item) => (
@@ -127,7 +127,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
                   </div>
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.16} className="rounded-2xl border border-[#276864]/55 bg-[#0b0c10]/55 p-6 sm:p-7">
+                <AnimatedSection delay={0.16} className="brand-card border-[#276864]/45 p-6 sm:p-7">
                   <h3 className="text-xl font-semibold text-[#e8fffd]">{section.comparison.right.title}</h3>
                   <ul className="mt-5 space-y-3 text-[#d9fffc]">
                     {section.comparison.right.items.map((item) => (

@@ -51,14 +51,14 @@ export function Footer({
 
   return (
     <footer className="brand-orbit relative mt-16 overflow-hidden border-t border-[#1f2a2d] bg-[#0b0c10]" aria-label="Footer Digital Dot">
-      <Container className="relative z-10 grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-8">
+      <Container className="relative z-10 grid gap-10 py-18 md:grid-cols-2 lg:grid-cols-8">
         <div className="lg:col-span-2">
           {logo ? (
-            <Image src={logo} alt={brandName} width={260} height={86} unoptimized className="brand-wordmark h-16 w-64 rounded-xl px-3 py-2 object-cover" />
+            <Image src={logo} alt={brandName} width={300} height={76} unoptimized className="brand-wordmark h-20 w-auto max-w-full object-contain" />
           ) : (
             <p className="text-lg font-semibold text-white">{brandName}</p>
           )}
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-[#dadada]">
+          <p className="mt-6 max-w-xs border-l border-[#276864]/55 pl-5 text-sm leading-relaxed text-[#dadada]">
             {description}
           </p>
         </div>

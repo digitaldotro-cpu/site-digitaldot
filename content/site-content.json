@@ -2,8 +2,8 @@
   "global": {
     "brandName": "Digital Dot",
     "gtmId": "GTM-KN8PGQC",
-    "headerLogo": "/branding/2026/logo-dot-2026.png",
-    "favicon": "/branding/2026/favicon-logo-dot-2026.png",
+    "headerLogo": "/branding/2026/logo-dot-2026-transparent.png",
+    "favicon": "/branding/2026/favicon-logo-dot-2026-transparent.png",
     "navbarCtaLabel": "Hai să povestim",
     "navbarCtaHref": "/#contact",
     "navigation": [
@@ -56,7 +56,7 @@
       "ariaLabel": "Sună Digital Dot"
     },
     "footer": {
-      "logo": "/branding/2026/logo-digital-dot-complet-2026.png",
+      "logo": "/branding/2026/logo-digital-dot-complet-2026-transparent.png",
       "description": "Dacă marketingul tău a ridicat steagul alb, noi suntem aici să îi dăm culoare.",
       "contactDescription": "Strategie clară. Execuție impecabilă. Rezultate măsurabile.",
       "socialLinksTitle": "Social",
@@ -205,7 +205,6 @@
     "sectionOrder": [
       "hero",
       "positioning",
-      "proofMetrics",
       "portfolioExamples",
       "proofCta",
       "services",
@@ -1553,7 +1552,7 @@
     "structuredData": {
       "organizationName": "Digital Dot",
       "legalName": "IONNEL TECH SRL",
-      "logo": "/branding/2026/logo-digital-dot-complet-2026.png",
+      "logo": "/branding/2026/logo-digital-dot-complet-2026-transparent.png",
       "websiteUrl": "https://digitaldot.ro",
       "email": "hello@digitaldot.ro",
       "phone": "+40773330551",

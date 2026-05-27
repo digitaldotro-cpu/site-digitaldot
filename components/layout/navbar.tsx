@@ -211,7 +211,7 @@ export function Navbar({
       <header
         aria-label="Header principal Digital Dot"
         className={cn(
-          "fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/90 bg-[rgba(11,12,16,0.88)] backdrop-blur-[20px] transition-[transform,opacity]",
+          "fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.76)] backdrop-blur-[18px] transition-[transform,opacity]",
           shouldShowHeader
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-full opacity-0 pointer-events-none",
@@ -219,7 +219,7 @@ export function Navbar({
         style={{ transitionDuration: `${transitionDuration}ms` }}
       >
         <Container>
-          <div className="hidden h-20 items-center justify-between gap-4 lg:flex">
+          <div className="hidden h-20 items-center justify-between gap-8 lg:flex">
             <Link
               href={logoHref}
               onClick={handleLogoClick}
@@ -234,7 +234,7 @@ export function Navbar({
                     width={178}
                     height={100}
                     unoptimized
-                    className="brand-wordmark h-11 w-44 rounded-xl px-3 py-2 object-cover"
+                    className="brand-wordmark h-9 w-auto object-contain"
                   />
                   <span className="sr-only">{brandName}</span>
                 </>
@@ -246,7 +246,7 @@ export function Navbar({
               )}
             </Link>
 
-            <nav aria-label="Navigare principală" className="hidden items-center gap-2 lg:flex">
+            <nav aria-label="Navigare principală" className="hidden items-center gap-1.5 lg:flex">
               {visibleNavItems.map((item) => {
                 const active = isActiveNavLink(item.href);
                 const href = normalizeNavHref(item.href);
@@ -256,10 +256,10 @@ export function Navbar({
                     key={item.href}
                     href={href}
                     className={cn(
-                      "rounded-full px-4 py-2 text-sm font-medium text-[#dadada] transition-colors",
+                      "rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#dadada] transition-colors",
                       active
-                        ? "border border-[#276864]/50 bg-[#101418] text-[#66fcf1]"
-                        : "hover:text-white",
+                        ? "border-[#276864]/55 bg-[#101418]/60 text-[#66fcf1]"
+                        : "hover:border-[#1f2a2d] hover:text-white",
                     )}
                   >
                     {item.label}
@@ -298,7 +298,7 @@ export function Navbar({
                     width={136}
                     height={77}
                     unoptimized
-                    className="brand-wordmark h-10 w-32 rounded-xl px-2.5 py-2 object-cover"
+                    className="brand-wordmark h-7 w-auto object-contain"
                   />
                   <span className="sr-only">{brandName}</span>
                 </>
