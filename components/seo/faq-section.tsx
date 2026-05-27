@@ -15,7 +15,8 @@ export function FaqSection({ groups }: FaqSectionProps) {
     <section className="py-18 sm:py-24" aria-labelledby="faq-title">
       <Container>
         <div className="mx-auto max-w-4xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66fcf1]">
+          <span className="brand-rule mb-5" />
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">
             FAQ
           </p>
           <h2 id="faq-title" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
@@ -26,7 +27,7 @@ export function FaqSection({ groups }: FaqSectionProps) {
             {groups.map((group) => (
               <div key={group.id}>
                 <h3 className="text-xl font-semibold text-white">{group.title}</h3>
-                <div className="mt-4 divide-y divide-[#263740] overflow-hidden rounded-[1.6rem] border border-[#263740] bg-[#10161a]">
+                <div className="mt-4 divide-y divide-[#1f2a2d] overflow-hidden rounded-[1.35rem] border border-[#1f2a2d] bg-[#101418]">
                   {group.items.map((item) => (
                     <details key={item.id} className="group">
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-white transition-colors hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#66fcf1] [&::-webkit-details-marker]:hidden">
