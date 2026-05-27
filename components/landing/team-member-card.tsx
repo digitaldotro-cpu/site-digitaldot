@@ -30,7 +30,6 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
       fill
       className="object-cover object-center"
       sizes="(max-width: 767px) 112px, (max-width: 1279px) 128px, 112px"
-      quality={90}
     />
   ) : (
     <div className="flex h-full w-full items-center justify-center text-sm font-semibold tracking-[0.12em] text-[#66fcf1]">
