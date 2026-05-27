@@ -61,12 +61,12 @@ export function ServicesGrid({ section }: ServicesGridProps) {
                 className="brand-card p-6 sm:p-7"
               >
                 <article>
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-[#66fcf1]">
+                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-[#d8c7a3]">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-semibold text-white">
                   {href ? (
-                    <Link href={href} className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]">
+                    <Link href={href} className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]">
                       {item.title}
                     </Link>
                   ) : (

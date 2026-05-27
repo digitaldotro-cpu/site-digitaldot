@@ -87,7 +87,7 @@ export function HeroSection({ section }: HeroSectionProps) {
                 section.imagePosition === "left" ? "lg:order-1" : "lg:order-2",
               )}
             >
-              <div className="relative overflow-hidden rounded-2xl border border-[#1f2a2d] bg-[#0b0c10] shadow-[0_24px_80px_-60px_rgba(102,252,241,0.6)]">
+              <div className="relative overflow-hidden rounded-2xl border border-[#1f2a2d] bg-[#0b0c10] shadow-[0_24px_80px_-60px_rgba(39,104,100,0.6)]">
                 <div className="relative aspect-[16/9] w-full">
                   <Image
                     src={section.image}

@@ -4,7 +4,7 @@
   --color-bg: #0b0c10;
   --color-surface: #101418;
   --color-slate: #1f2a2d;
-  --color-primary: #66fcf1;
+  --color-primary: #276864;
   --color-accent: #276864;
   --color-gold: #d8c7a3;
   --color-muted: #dadada;
@@ -85,8 +85,8 @@ li {
   width: 6.5rem;
   height: 6.5rem;
   border-radius: 9999px;
-  background: rgba(102, 252, 241, 0.026);
-  border: 1px solid rgba(102, 252, 241, 0.07);
+  background: rgba(39, 104, 100, 0.026);
+  border: 1px solid rgba(39, 104, 100, 0.07);
   pointer-events: none;
 }
 
@@ -107,12 +107,12 @@ li {
   background:
     linear-gradient(150deg, rgba(16, 20, 24, 0.92), rgba(11, 12, 16, 0.97)),
     #101418;
-  box-shadow: 0 24px 80px -72px rgba(102, 252, 241, 0.48);
+  box-shadow: 0 24px 80px -72px rgba(39, 104, 100, 0.48);
   transition: border-color 260ms ease, transform 260ms ease, background 260ms ease;
 }
 
 .brand-card:hover {
-  border-color: rgba(102, 252, 241, 0.36);
+  border-color: rgba(39, 104, 100, 0.36);
   transform: translateY(-2px);
 }
 
@@ -124,7 +124,7 @@ li {
 }
 
 ::selection {
-  background: rgba(102, 252, 241, 0.3);
+  background: rgba(39, 104, 100, 0.3);
   color: #f8ffff;
 }
 

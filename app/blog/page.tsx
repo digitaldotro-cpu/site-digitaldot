@@ -45,7 +45,7 @@ export default async function BlogPage() {
       <section className="pb-16 pt-10 sm:pb-20 sm:pt-14">
         <Container>
           <header className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66fcf1]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">
               Resurse
             </p>
             <h1 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">

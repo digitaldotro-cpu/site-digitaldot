@@ -29,7 +29,7 @@ function renderInlineText(text: string) {
       <Link
         key={`${href}-${start}`}
         href={href}
-        className="text-[#66fcf1] underline decoration-[#66fcf1]/35 underline-offset-4 transition hover:text-[#95fff8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
+        className="text-[#d8c7a3] underline decoration-[#276864]/35 underline-offset-4 transition hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
       >
         {label}
       </Link>,
@@ -149,7 +149,7 @@ export function RichTextRenderer({ content }: RichTextRendererProps) {
 
         if (block.type === "ul") {
           return (
-            <ul key={`ul-${index}`} className="list-disc space-y-2 pl-6 marker:text-[#66fcf1]">
+            <ul key={`ul-${index}`} className="list-disc space-y-2 pl-6 marker:text-[#d8c7a3]">
               {block.items.map((item, itemIndex) => (
                 <li key={`ul-item-${index}-${itemIndex}`}>{renderInlineText(item)}</li>
               ))}
@@ -159,7 +159,7 @@ export function RichTextRenderer({ content }: RichTextRendererProps) {
 
         if (block.type === "ol") {
           return (
-            <ol key={`ol-${index}`} className="list-decimal space-y-2 pl-6 marker:text-[#66fcf1]">
+            <ol key={`ol-${index}`} className="list-decimal space-y-2 pl-6 marker:text-[#d8c7a3]">
               {block.items.map((item, itemIndex) => (
                 <li key={`ol-item-${index}-${itemIndex}`}>{renderInlineText(item)}</li>
               ))}

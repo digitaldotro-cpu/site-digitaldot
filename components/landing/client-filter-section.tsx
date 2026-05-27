@@ -32,11 +32,11 @@ export function ClientFilterSection({ section }: ClientFilterSectionProps) {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <AnimatedSection className="brand-card p-6 sm:p-7">
-            <h3 className="text-xl font-semibold text-[#66fcf1]">{section.worksWithTitle}</h3>
+            <h3 className="text-xl font-semibold text-[#d8c7a3]">{section.worksWithTitle}</h3>
             <ul className="mt-4 space-y-3">
               {section.worksWith.map((item) => (
                 <li key={item.id} className="flex items-start gap-3 text-[#e5f3f2]">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#66fcf1]" />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#d8c7a3]" />
                   <span>{item.text}</span>
                 </li>
               ))}

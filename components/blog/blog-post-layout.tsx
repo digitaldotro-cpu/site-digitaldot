@@ -39,7 +39,7 @@ export function BlogPostLayout({
               <span>•</span>
               <span>{post.readingTime}</span>
             <span>•</span>
-              <Link href={`/blog/autor/${post.authorSlug}`} className="transition-colors hover:text-[#66fcf1]">
+              <Link href={`/blog/autor/${post.authorSlug}`} className="transition-colors hover:text-[#d8c7a3]">
                 {post.authorName}
               </Link>
             </div>
@@ -66,10 +66,10 @@ export function BlogPostLayout({
           <div className="article-content mx-auto mt-10 max-w-4xl">{children}</div>
 
           <div className="mx-auto mt-12 max-w-4xl rounded-[1.6rem] border border-[#273840] bg-[#11181d] p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#d8c7a3]">
               Autor
             </p>
-            <Link href={`/blog/autor/${post.authorSlug}`} className="mt-3 inline-block text-lg font-semibold text-white transition-colors hover:text-[#66fcf1]">
+            <Link href={`/blog/autor/${post.authorSlug}`} className="mt-3 inline-block text-lg font-semibold text-white transition-colors hover:text-[#d8c7a3]">
               {post.authorName}
             </Link>
             <p className="text-sm text-[#b8bec2]">{post.authorRole}</p>

@@ -16,7 +16,7 @@ export function Input({ className, ...props }: InputProps) {
   return (
     <input
       className={cn(
-        "h-11 w-full rounded-xl border border-[#3c4948]/40 bg-[#0d0e0f] px-4 text-sm text-white placeholder:text-[#617783] focus:border-[#62f9ee] focus:outline-none",
+        "h-11 w-full rounded-xl border border-[#3c4948]/40 bg-[#0d0e0f] px-4 text-sm text-white placeholder:text-[#617783] focus:border-[#276864] focus:outline-none",
         className,
       )}
       {...props}
@@ -30,7 +30,7 @@ export function Textarea({ className, ...props }: TextareaProps) {
   return (
     <textarea
       className={cn(
-        "min-h-[120px] w-full rounded-xl border border-[#3c4948]/40 bg-[#0d0e0f] px-4 py-3 text-sm text-white placeholder:text-[#617783] focus:border-[#62f9ee] focus:outline-none",
+        "min-h-[120px] w-full rounded-xl border border-[#3c4948]/40 bg-[#0d0e0f] px-4 py-3 text-sm text-white placeholder:text-[#617783] focus:border-[#276864] focus:outline-none",
         className,
       )}
       {...props}
@@ -44,7 +44,7 @@ export function Select({ className, children, ...props }: SelectProps) {
   return (
     <select
       className={cn(
-        "h-11 w-full rounded-xl border border-[#3c4948]/40 bg-[#0d0e0f] px-4 text-sm text-white focus:border-[#62f9ee] focus:outline-none",
+        "h-11 w-full rounded-xl border border-[#3c4948]/40 bg-[#0d0e0f] px-4 text-sm text-white focus:border-[#276864] focus:outline-none",
         className,
       )}
       {...props}

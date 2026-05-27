@@ -69,8 +69,8 @@ export function SocialLinkButton({
       className={cn(
         "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300",
         emphasized
-          ? "border-[#66fcf1]/70 bg-[#66fcf1]/12 text-[#66fcf1] shadow-[0_0_22px_-12px_rgba(102,252,241,0.85)]"
-          : "border-[#2a3e42] bg-[#121820] text-[#c6c6c6] hover:border-[#66fcf1]/55 hover:text-[#66fcf1]",
+          ? "border-[#276864]/70 bg-[#276864]/12 text-[#d8c7a3] shadow-[0_0_22px_-12px_rgba(39,104,100,0.85)]"
+          : "border-[#2a3e42] bg-[#121820] text-[#c6c6c6] hover:border-[#276864]/55 hover:text-[#d8c7a3]",
       )}
     >
       <Icon className="h-4 w-4" />

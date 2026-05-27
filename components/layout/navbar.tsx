@@ -224,7 +224,7 @@ export function Navbar({
               href={logoHref}
               onClick={handleLogoClick}
               aria-label="Digital Dot - Acasă"
-              className="group inline-flex min-h-12 items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+              className="group inline-flex min-h-12 items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
             >
               {headerLogo ? (
                 <>
@@ -240,7 +240,7 @@ export function Navbar({
                 </>
               ) : (
                 <>
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#66fcf1] shadow-[0_0_20px_0_rgba(102,252,241,0.7)]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#276864] shadow-[0_0_20px_0_rgba(39,104,100,0.7)]" />
                   <span className="text-lg font-semibold tracking-tight text-white">{brandName}</span>
                 </>
               )}
@@ -258,7 +258,7 @@ export function Navbar({
                     className={cn(
                       "rounded-full border border-transparent px-4 py-2 text-sm font-medium text-[#dadada] transition-colors",
                       active
-                        ? "border-[#276864]/55 bg-[#101418]/60 text-[#66fcf1]"
+                        ? "border-[#276864]/55 bg-[#101418]/60 text-[#d8c7a3]"
                         : "hover:border-[#1f2a2d] hover:text-white",
                     )}
                   >
@@ -279,7 +279,7 @@ export function Navbar({
             <a
               href={`tel:${contactPhone || "+40773330551"}`}
               aria-label="Sună Digital Dot"
-              className="inline-flex h-11 w-11 items-center justify-center justify-self-start rounded-full border border-[#1f2a2d] bg-[#101418]/85 text-white transition-colors duration-300 hover:border-[#66fcf1]/50 hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+              className="inline-flex h-11 w-11 items-center justify-center justify-self-start rounded-full border border-[#1f2a2d] bg-[#101418]/85 text-white transition-colors duration-300 hover:border-[#276864]/50 hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
             >
               <Phone size={18} />
             </a>
@@ -288,7 +288,7 @@ export function Navbar({
               href={logoHref}
               onClick={handleLogoClick}
               aria-label="Digital Dot - Acasă"
-              className="group inline-flex min-h-12 min-w-24 items-center justify-center justify-self-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+              className="group inline-flex min-h-12 min-w-24 items-center justify-center justify-self-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
             >
               {headerLogo ? (
                 <>
@@ -310,7 +310,7 @@ export function Navbar({
             <button
               type="button"
               onClick={() => setIsOpen((state) => !state)}
-              className="inline-flex h-11 w-11 items-center justify-center justify-self-end rounded-full border border-[#1f2a2d] bg-[#101418]/85 text-white transition-colors duration-300 hover:border-[#66fcf1]/50 hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]"
+              className="inline-flex h-11 w-11 items-center justify-center justify-self-end rounded-full border border-[#1f2a2d] bg-[#101418]/85 text-white transition-colors duration-300 hover:border-[#276864]/50 hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
               aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
               aria-expanded={isOpen}
               aria-controls="mobile-nav-overlay"
@@ -338,7 +338,7 @@ export function Navbar({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(102,252,241,0.65)] backdrop-blur-xl"
+              className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)] backdrop-blur-xl"
               onClick={(event) => event.stopPropagation()}
             >
               <nav aria-label="Navigare principală mobilă" className="flex flex-col gap-2">
@@ -354,7 +354,7 @@ export function Navbar({
                       className={cn(
                         "rounded-xl px-4 py-3 text-sm font-medium transition-colors",
                         active
-                          ? "border border-[#276864]/50 bg-[#0b0c10] text-[#66fcf1]"
+                          ? "border border-[#276864]/50 bg-[#0b0c10] text-[#d8c7a3]"
                           : "bg-[#101418] text-[#dadada] hover:text-white",
                       )}
                     >

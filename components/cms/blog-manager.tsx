@@ -95,7 +95,7 @@ export function BlogManager({ posts, media, onCreatePost, onDeletePost, onUpdate
                 const nextId = onCreatePost();
                 setSelectedPostId(nextId);
               }}
-              className="inline-flex h-9 items-center gap-1 rounded-full border border-[#2a4552] px-3 text-xs font-semibold uppercase tracking-[0.13em] text-[#9bc4d0] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]"
+              className="inline-flex h-9 items-center gap-1 rounded-full border border-[#2a4552] px-3 text-xs font-semibold uppercase tracking-[0.13em] text-[#9bc4d0] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]"
             >
               <Plus className="h-3.5 w-3.5" /> Nou
             </button>
@@ -113,14 +113,14 @@ export function BlogManager({ posts, media, onCreatePost, onDeletePost, onUpdate
                   className={cn(
                     "w-full rounded-2xl border px-3 py-3 text-left transition",
                     active
-                      ? "border-[#66fcf1]/50 bg-[#12313b]"
+                      ? "border-[#276864]/50 bg-[#12313b]"
                       : "border-[#223843] bg-[#0d161b] hover:border-[#2f4a56]",
                   )}
                 >
                   <p className="line-clamp-2 text-sm font-semibold text-white">{post.title}</p>
                   <div className="mt-2 flex items-center justify-between text-xs">
                     <span className="text-[#8ea4ae]">{post.category}</span>
-                    <span className={post.published ? "text-[#66fcf1]" : "text-[#b0bfc6]"}>
+                    <span className={post.published ? "text-[#d8c7a3]" : "text-[#b0bfc6]"}>
                       {post.published ? "Publicat" : "Draft"}
                     </span>
                   </div>
@@ -159,7 +159,7 @@ export function BlogManager({ posts, media, onCreatePost, onDeletePost, onUpdate
                 <div className="flex items-center gap-2">
                   <button
                     type="submit"
-                    className="inline-flex h-10 items-center gap-2 rounded-full bg-[#66fcf1] px-4 text-sm font-semibold text-[#063037] transition hover:bg-[#8ffff8]"
+                    className="inline-flex h-10 items-center gap-2 rounded-full bg-[#276864] px-4 text-sm font-semibold text-[#d8c7a3] transition hover:bg-[#2f7773]"
                   >
                     <Save className="h-4 w-4" /> Salvează
                   </button>
@@ -212,7 +212,7 @@ export function BlogManager({ posts, media, onCreatePost, onDeletePost, onUpdate
                 </div>
 
                 <label className="inline-flex items-center gap-2 text-sm text-[#9db1ba]">
-                  <input type="checkbox" {...register("published")} className="h-4 w-4 rounded border-[#314751] accent-[#66fcf1]" />
+                  <input type="checkbox" {...register("published")} className="h-4 w-4 rounded border-[#314751] accent-[#276864]" />
                   Publicat
                 </label>
               </div>

@@ -55,7 +55,7 @@ export function LoginForm() {
               onChange={(event) => setAdminUsername(event.target.value)}
               placeholder="admin"
               autoComplete="username"
-              className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0c1418] px-3 text-sm text-white focus:border-[#66fcf1] focus:outline-none"
+              className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0c1418] px-3 text-sm text-white focus:border-[#276864] focus:outline-none"
             />
           </label>
 
@@ -67,7 +67,7 @@ export function LoginForm() {
               onChange={(event) => setAdminPassword(event.target.value)}
               placeholder="Parola de admin"
               autoComplete="current-password"
-              className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0c1418] px-3 text-sm text-white focus:border-[#66fcf1] focus:outline-none"
+              className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0c1418] px-3 text-sm text-white focus:border-[#276864] focus:outline-none"
             />
           </label>
 

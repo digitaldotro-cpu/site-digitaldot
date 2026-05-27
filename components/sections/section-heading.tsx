@@ -24,7 +24,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <p className="mb-4 inline-flex rounded-full border border-[#2b3d45] bg-[#12191d] px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#66fcf1]">
+        <p className="mb-4 inline-flex rounded-full border border-[#2b3d45] bg-[#12191d] px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#d8c7a3]">
           {eyebrow}
         </p>
       ) : null}

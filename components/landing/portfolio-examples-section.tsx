@@ -71,7 +71,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                             </p>
                             <h3 className="mt-2 text-base font-semibold leading-tight text-white sm:mt-3 sm:text-xl lg:text-2xl">{study.clientName}</h3>
                           </div>
-                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10] text-[#66fcf1] transition-colors group-hover:border-[#66fcf1]/45 sm:h-10 sm:w-10">
+                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10] text-[#d8c7a3] transition-colors group-hover:border-[#276864]/45 sm:h-10 sm:w-10">
                             <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                           </span>
                         </div>
@@ -81,15 +81,15 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                       <dl className="mt-4 grid gap-2 sm:mt-6 sm:grid-cols-2 sm:gap-3">
                         {study.cardMetrics.map((metric, metricIndex) => (
                           <div key={`${metric.value}-${metric.label}`} className={metricIndex > 1 ? "hidden rounded-lg border border-[#1f2a2d] bg-[#0b0c10]/70 p-2.5 sm:block sm:p-4" : "rounded-lg border border-[#1f2a2d] bg-[#0b0c10]/70 p-2.5 sm:p-4"}>
-                            <dt className="text-base font-semibold text-[#66fcf1] sm:text-xl">{metric.value}</dt>
+                            <dt className="text-base font-semibold text-white sm:text-xl">{metric.value}</dt>
                             <dd className="mt-1 line-clamp-2 text-[0.68rem] leading-snug text-[#dadada] sm:text-xs sm:leading-relaxed">{metric.label}</dd>
                           </div>
                         ))}
                       </dl>
 
-                      <span className="mt-4 inline-flex items-center text-xs font-semibold text-[#66fcf1] sm:mt-6 sm:text-sm">
+                      <span className="mt-4 inline-flex w-fit items-center rounded-full border border-[#276864] bg-[#276864] px-3 py-2 text-xs font-semibold text-[#d8c7a3] sm:mt-6 sm:text-sm">
                         Vezi studiul de caz
-                      <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                        <ArrowUpRight className="ml-1 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </span>
                     </div>
                   </article>

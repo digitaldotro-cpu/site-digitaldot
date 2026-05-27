@@ -35,7 +35,7 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
             className={cn(
               "rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
               activeCategory === category
-                ? "border-[#66fcf1] bg-[#122126] text-[#66fcf1]"
+                ? "border-[#276864] bg-[#122126] text-[#d8c7a3]"
                 : "border-[#2a3a42] text-[#c6c6c6] hover:text-white",
             )}
           >

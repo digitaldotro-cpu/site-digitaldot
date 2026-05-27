@@ -21,7 +21,7 @@ export function ServiceSection({
   return (
     <AnimatedSection
       className={cn(
-        "rounded-[2rem] border border-[#27363d] bg-[linear-gradient(140deg,#0f1317_20%,#111f22_100%)] p-7 shadow-[0_30px_70px_-45px_rgba(102,252,241,0.4)] sm:p-10",
+        "rounded-[2rem] border border-[#27363d] bg-[linear-gradient(140deg,#0f1317_20%,#111f22_100%)] p-7 shadow-[0_30px_70px_-45px_rgba(39,104,100,0.4)] sm:p-10",
         className,
       )}
     >
@@ -30,7 +30,7 @@ export function ServiceSection({
       <ul className="mt-6 grid gap-3 text-sm text-[#d9d9d9] sm:grid-cols-2">
         {bullets.map((bullet) => (
           <li key={bullet} className="flex items-start gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
+            <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#d8c7a3]" />
             <span>{bullet}</span>
           </li>
         ))}

@@ -32,7 +32,7 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
       sizes="(max-width: 767px) 112px, (max-width: 1279px) 128px, 112px"
     />
   ) : (
-    <div className="flex h-full w-full items-center justify-center text-sm font-semibold tracking-[0.12em] text-[#66fcf1]">
+    <div className="flex h-full w-full items-center justify-center text-sm font-semibold tracking-[0.12em] text-[#d8c7a3]">
       {getInitials(member.name)}
     </div>
   );
@@ -49,7 +49,7 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name} profile link`}
-            className={`${avatarClasses} transition-colors duration-300 hover:border-[#66fcf1]/55`}
+            className={`${avatarClasses} transition-colors duration-300 hover:border-[#276864]/55`}
           >
             {avatarContent}
           </a>

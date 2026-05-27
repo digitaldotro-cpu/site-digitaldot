@@ -101,7 +101,7 @@ export function PagesManager({
                   className={cn(
                     "w-full rounded-2xl border px-3 py-3 text-left transition",
                     active
-                      ? "border-[#66fcf1]/50 bg-[#12313b]"
+                      ? "border-[#276864]/50 bg-[#12313b]"
                       : "border-[#223843] bg-[#0d161b] hover:border-[#2f4a56]",
                   )}
                 >
@@ -137,13 +137,13 @@ export function PagesManager({
                   <button
                     type="button"
                     onClick={() => onPreviewPage(normalizeSlug(slugPreview || selectedPage.slug))}
-                    className="inline-flex h-10 items-center gap-2 rounded-full border border-[#2a4552] px-4 text-sm font-semibold text-[#9bc4d0] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]"
+                    className="inline-flex h-10 items-center gap-2 rounded-full border border-[#2a4552] px-4 text-sm font-semibold text-[#9bc4d0] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]"
                   >
                     <ExternalLink className="h-4 w-4" /> Preview
                   </button>
                   <button
                     type="submit"
-                    className="inline-flex h-10 items-center gap-2 rounded-full bg-[#66fcf1] px-4 text-sm font-semibold text-[#063037] transition hover:bg-[#8ffff8]"
+                    className="inline-flex h-10 items-center gap-2 rounded-full bg-[#276864] px-4 text-sm font-semibold text-[#d8c7a3] transition hover:bg-[#2f7773]"
                   >
                     <Save className="h-4 w-4" /> Salvează
                   </button>
@@ -188,7 +188,7 @@ export function PagesManager({
                 <button
                   type="button"
                   onClick={() => onOpenEditor(selectedPage.id)}
-                  className="inline-flex h-10 items-center gap-2 rounded-full border border-[#2a4552] px-4 text-sm font-semibold text-[#9bc4d0] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]"
+                  className="inline-flex h-10 items-center gap-2 rounded-full border border-[#2a4552] px-4 text-sm font-semibold text-[#9bc4d0] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]"
                 >
                   <FilePenLine className="h-4 w-4" /> Deschide editorul
                 </button>

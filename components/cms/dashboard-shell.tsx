@@ -343,7 +343,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Problemă ${index + 1} - icon`,
           content: "Lightbulb",
-          style: { ...defaultStyle(), fontSize: 14, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 14, color: "#276864" },
         },
         {
           id: `strategy-problem-${index}-title`,
@@ -389,7 +389,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Card ${index + 1} - variant`,
           content: "small",
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
       ];
 
@@ -432,7 +432,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Proiect ${index + 1} - categorie`,
           content: "Case Study",
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `strategy-case-${index}-title`,
@@ -454,7 +454,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           label: `Proiect ${index + 1} - link`,
           content: "Detalii proiect",
           href: "/portofoliu",
-          style: { ...defaultStyle(), color: "#66fcf1", fontWeight: 700 },
+          style: { ...defaultStyle(), color: "#276864", fontWeight: 700 },
         },
         {
           id: `strategy-case-${index}-media`,
@@ -487,7 +487,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Filtru ${index + 1} - value`,
           content: `filtru-${index + 1}`,
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-filter-${index}-categories`,
@@ -512,7 +512,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Project ${index + 1} - slug`,
           content: `project-${index + 1}`,
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-project-${index}-title`,
@@ -547,7 +547,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Project ${index + 1} - hasVideo`,
           content: "false",
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-project-${index}-href`,
@@ -561,14 +561,14 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Project ${index + 1} - layout`,
           content: "standard",
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-project-${index}-badge`,
           type: "text",
           label: `Project ${index + 1} - badge`,
           content: "Featured",
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-project-${index}-media`,
@@ -594,7 +594,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Video item ${index + 1} - label`,
           content: `Video ${index + 1}`,
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-video-item-${index}-title`,
@@ -616,7 +616,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           label: `Video item ${index + 1} - link`,
           content: "Vezi",
           href: "/portofoliu",
-          style: { ...defaultStyle(), color: "#66fcf1", fontWeight: 700 },
+          style: { ...defaultStyle(), color: "#276864", fontWeight: 700 },
         },
         {
           id: `portfolio-video-item-${index}-media`,
@@ -642,7 +642,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Case ${index + 1} - icon`,
           content: "Target",
-          style: { ...defaultStyle(), fontSize: 12, color: "#66fcf1" },
+          style: { ...defaultStyle(), fontSize: 12, color: "#276864" },
         },
         {
           id: `portfolio-case-${index}-title`,
@@ -670,7 +670,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
           type: "text",
           label: `Case ${index + 1} - metric`,
           content: "KPI",
-          style: { ...defaultStyle(), color: "#66fcf1" },
+          style: { ...defaultStyle(), color: "#276864" },
         },
       ];
 
@@ -732,7 +732,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
               href: "/contacteaza-ne",
               style: {
                 ...defaultStyle(),
-                backgroundColor: "#66fcf1",
+                backgroundColor: "#276864",
                 color: "#0b0c10",
                 textAlign: "center",
                 padding: 12,
@@ -1107,7 +1107,7 @@ export function DashboardShell({ initialData }: DashboardShellProps) {
                   onClick={() => setView(item)}
                   className={cn(
                     "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em]",
-                    view === item ? "bg-[#62f9ee]/10 text-[#62f9ee]" : "bg-[#1a1c1c] text-[#88a0aa]",
+                    view === item ? "bg-[#276864]/10 text-[#d8c7a3]" : "bg-[#1a1c1c] text-[#88a0aa]",
                   )}
                 >
                   {item}

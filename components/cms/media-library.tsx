@@ -130,7 +130,7 @@ export function MediaLibrary({
 
             <div className="space-y-2">
               <FieldLabel>Fișier</FieldLabel>
-              <label className="flex h-28 cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-[#33505d] bg-[#0c1419] text-sm text-[#98adb7] transition hover:border-[#66fcf1]/70 hover:text-[#66fcf1]">
+              <label className="flex h-28 cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-[#33505d] bg-[#0c1419] text-sm text-[#98adb7] transition hover:border-[#276864]/70 hover:text-[#d8c7a3]">
                 <Upload className="mb-2 h-5 w-5" />
                 Selectează fișier
                 <input name="file" type="file" accept="image/*,video/*" className="hidden" />
@@ -140,7 +140,7 @@ export function MediaLibrary({
 
           <button
             type="submit"
-            className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-full bg-[#66fcf1] text-sm font-semibold text-[#093238] transition hover:bg-[#8ffff8]"
+            className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-full bg-[#276864] text-sm font-semibold text-[#d8c7a3] transition hover:bg-[#2f7773]"
           >
             Upload Media
           </button>
@@ -158,7 +158,7 @@ export function MediaLibrary({
                   className={cn(
                     "rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] transition",
                     filter === value
-                      ? "bg-[#123843] text-[#66fcf1]"
+                      ? "bg-[#123843] text-[#d8c7a3]"
                       : "bg-[#0c151b] text-[#89a0aa] hover:text-white",
                   )}
                 >
@@ -182,13 +182,13 @@ export function MediaLibrary({
                   key={item.id}
                   className={cn(
                     "overflow-hidden rounded-2xl border bg-[#0d151a]",
-                    selected ? "border-[#66fcf1]" : "border-[#223742]",
+                    selected ? "border-[#276864]" : "border-[#223742]",
                   )}
                 >
                   <button type="button" onClick={() => onSelect(item.id)} className="block w-full text-left">
                     <div className="relative h-36 w-full bg-[#0b1217]">
                       {item.type === "video" ? (
-                        <div className="flex h-full items-center justify-center text-[#66fcf1]">
+                        <div className="flex h-full items-center justify-center text-[#d8c7a3]">
                           <Film className="h-8 w-8" />
                         </div>
                       ) : item.url.startsWith("data:") ? (
@@ -213,7 +213,7 @@ export function MediaLibrary({
                     <button
                       type="button"
                       onClick={() => handleReplaceClick(item.id)}
-                      className="inline-flex flex-1 items-center justify-center gap-1 rounded-full border border-[#2e4550] px-2 py-1.5 text-xs font-semibold text-[#9bc0cd] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]"
+                      className="inline-flex flex-1 items-center justify-center gap-1 rounded-full border border-[#2e4550] px-2 py-1.5 text-xs font-semibold text-[#9bc0cd] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]"
                     >
                       <Replace className="h-3.5 w-3.5" /> Replace
                     </button>
@@ -258,7 +258,7 @@ export function MediaLibrary({
         <p className="font-semibold text-white">Bibliotecă optimizată</p>
         <p className="mt-1">Upload-ul folosește Cloudinary prin route handler server-side. Dacă providerul nu este configurat, sistemul folosește fallback local pentru preview imediat.</p>
         <div className="mt-3 flex gap-2 text-xs text-[#8da2ac]">
-          <ImageIcon className="h-4 w-4 text-[#66fcf1]" />
+          <ImageIcon className="h-4 w-4 text-[#d8c7a3]" />
           <span>Total assets: {media.length}</span>
         </div>
       </div>

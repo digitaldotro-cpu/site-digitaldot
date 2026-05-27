@@ -27,9 +27,9 @@ export function ProofMetricsSection({ section }: ProofMetricsSectionProps) {
             <AnimatedSection
               key={metric.id}
               delay={index * 0.04}
-              className="rounded-xl border border-[#1f2a2d] bg-[linear-gradient(160deg,rgba(16,20,24,0.94),rgba(11,12,16,0.98))] p-6 shadow-[0_22px_60px_-52px_rgba(102,252,241,0.55)] transition duration-300 hover:border-[#276864]"
+              className="rounded-xl border border-[#1f2a2d] bg-[linear-gradient(160deg,rgba(16,20,24,0.94),rgba(11,12,16,0.98))] p-6 shadow-[0_22px_60px_-52px_rgba(39,104,100,0.55)] transition duration-300 hover:border-[#276864]"
             >
-              <p className="text-2xl font-semibold leading-tight text-[#66fcf1] sm:text-3xl">{metric.value}</p>
+              <p className="text-2xl font-semibold leading-tight text-[#d8c7a3] sm:text-3xl">{metric.value}</p>
               {metric.description ? (
                 <p className="mt-3 text-sm leading-relaxed text-[#dadada]">{metric.description}</p>
               ) : null}

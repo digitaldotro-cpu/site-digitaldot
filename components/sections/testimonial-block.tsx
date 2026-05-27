@@ -13,7 +13,7 @@ export function TestimonialBlock({
 }: TestimonialBlockProps) {
   return (
     <figure className="rounded-[1.8rem] border border-[#2a3940] bg-[#11171b] p-6 sm:p-8">
-      <Quote className="h-8 w-8 text-[#66fcf1]" />
+      <Quote className="h-8 w-8 text-[#d8c7a3]" />
       <blockquote className="mt-4 text-lg leading-relaxed text-[#d8d8d8]">
         „{quote}”
       </blockquote>

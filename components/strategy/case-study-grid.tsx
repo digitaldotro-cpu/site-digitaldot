@@ -24,13 +24,13 @@ export function CaseStudyGrid({ title, intro, items }: CaseStudyGridProps) {
     <section className="py-20 sm:py-24">
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div className="max-w-3xl">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#66fcf1]">Impact</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#d8c7a3]">Impact</p>
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{title}</h2>
           <p className="mt-4 text-base leading-relaxed text-[#c6c6c6]">{intro}</p>
         </div>
         <Link
           href="/portofoliu"
-          className="inline-flex items-center gap-1 rounded-full border border-[#2a3f48] px-4 py-2 text-sm font-semibold text-[#c8d1d5] transition hover:border-[#66fcf1]/70 hover:text-[#66fcf1]"
+          className="inline-flex items-center gap-1 rounded-full border border-[#2a3f48] px-4 py-2 text-sm font-semibold text-[#c8d1d5] transition hover:border-[#276864]/70 hover:text-[#d8c7a3]"
         >
           Vezi portofoliu <ArrowRight className="h-4 w-4" />
         </Link>
@@ -57,10 +57,10 @@ export function CaseStudyGrid({ title, intro, items }: CaseStudyGridProps) {
               />
             </div>
             <div className="p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">{item.category}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#d8c7a3]">{item.category}</p>
               <h3 className="mt-2 text-xl font-semibold text-white">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#b8c2c7]">{item.description}</p>
-              <Link href={item.href} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#66fcf1] hover:text-[#93fff8]">
+              <Link href={item.href} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#d8c7a3] hover:text-[#d8c7a3]">
                 Detalii proiect <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

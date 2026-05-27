@@ -32,7 +32,7 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
 
         <div className="mt-6 flex min-w-0 flex-col justify-between lg:mt-0">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">{study.category}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d8c7a3]">{study.category}</p>
             <h2 className={featured ? "mt-3 text-3xl font-semibold text-white sm:text-4xl" : "mt-3 text-2xl font-semibold text-white"}>
               {study.clientName}
             </h2>
@@ -42,13 +42,13 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
           <dl className="mt-6 grid gap-3 sm:grid-cols-2">
             {study.cardMetrics.map((metric) => (
               <div key={`${metric.value}-${metric.label}`} className="rounded-2xl border border-[#1f2a2d] bg-[#0b0c10]/72 p-4">
-                <dt className="text-xl font-semibold text-[#66fcf1]">{metric.value}</dt>
+                <dt className="text-xl font-semibold text-white">{metric.value}</dt>
                 <dd className="mt-1 text-xs leading-relaxed text-[#c6c6c6]">{metric.label}</dd>
               </div>
             ))}
           </dl>
 
-          <span className="mt-6 inline-flex items-center text-sm font-semibold text-[#66fcf1]">
+          <span className="mt-6 inline-flex w-fit items-center rounded-full border border-[#276864] bg-[#276864] px-4 py-2 text-sm font-semibold text-[#d8c7a3]">
             Vezi studiul de caz
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>

@@ -32,7 +32,7 @@ function RegionalCta({
   return (
     <section className="py-18 sm:py-24">
       <Container>
-        <div className="rounded-[2rem] border border-[#66fcf1]/30 bg-[linear-gradient(145deg,rgba(16,24,28,0.95),rgba(11,12,16,0.98))] p-8 text-center shadow-[0_35px_80px_-55px_rgba(102,252,241,0.55)] sm:p-12">
+        <div className="rounded-[2rem] border border-[#276864]/30 bg-[linear-gradient(145deg,rgba(16,24,28,0.95),rgba(11,12,16,0.98))] p-8 text-center shadow-[0_35px_80px_-55px_rgba(39,104,100,0.55)] sm:p-12">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">{title}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-[#c6c6c6]">{description}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -62,10 +62,10 @@ export function RegionalHubPage({ regional }: RegionalHubPageProps) {
       />
 
       <section className="relative overflow-hidden pb-16 pt-10 sm:pb-20 sm:pt-14">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(102,252,241,0.13),transparent_38%),radial-gradient(circle_at_84%_10%,rgba(39,104,100,0.2),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(39,104,100,0.13),transparent_38%),radial-gradient(circle_at_84%_10%,rgba(39,104,100,0.2),transparent_40%)]" />
         <Container className="relative">
           <div className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66fcf1]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">
               {regional.hub.hero.eyebrow}
             </p>
             <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl">
@@ -102,7 +102,7 @@ export function RegionalHubPage({ regional }: RegionalHubPageProps) {
             {enabledPages[0]?.services.map((service) => (
               <article key={service.id} className="rounded-3xl border border-[#263740] bg-[#10161a] p-6">
                 <h3 className="text-xl font-semibold text-white">
-                  <Link href={service.href} className="transition-colors hover:text-[#66fcf1]">
+                  <Link href={service.href} className="transition-colors hover:text-[#d8c7a3]">
                     {service.title}
                   </Link>
                 </h3>
@@ -121,10 +121,10 @@ export function RegionalHubPage({ regional }: RegionalHubPageProps) {
               <Link
                 key={page.slug}
                 href={`/agentie-marketing/${page.slug}`}
-                className="group rounded-3xl border border-[#263740] bg-[#10181d] p-6 transition hover:border-[#66fcf1]/55"
+                className="group rounded-3xl border border-[#263740] bg-[#10181d] p-6 transition hover:border-[#276864]/55"
               >
-                <MapPin className="h-5 w-5 text-[#66fcf1]" />
-                <h3 className="mt-4 text-xl font-semibold text-white group-hover:text-[#66fcf1]">
+                <MapPin className="h-5 w-5 text-[#d8c7a3]" />
+                <h3 className="mt-4 text-xl font-semibold text-white group-hover:text-[#d8c7a3]">
                   {page.cityName}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#c6c6c6]">{page.hero.intro}</p>
@@ -151,10 +151,10 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
       />
 
       <section className="relative overflow-hidden pb-16 pt-10 sm:pb-20 sm:pt-14">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(102,252,241,0.13),transparent_38%),radial-gradient(circle_at_80%_8%,rgba(39,104,100,0.21),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(39,104,100,0.13),transparent_38%),radial-gradient(circle_at_80%_8%,rgba(39,104,100,0.21),transparent_40%)]" />
         <Container className="relative">
           <div className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66fcf1]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">
               {page.hero.eyebrow}
             </p>
             <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl">
@@ -198,7 +198,7 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
               <ul className="mt-5 space-y-3 text-sm text-[#c6c6c6]">
                 {page.regionalContext.sectors.map((sector) => (
                   <li key={sector} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#d8c7a3]" />
                     <span>{sector}</span>
                   </li>
                 ))}
@@ -234,7 +234,7 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
             {page.services.map((service) => (
               <article key={service.id} className="rounded-3xl border border-[#263740] bg-[#10181d] p-6">
                 <h3 className="text-xl font-semibold text-white">
-                  <Link href={service.href} className="transition-colors hover:text-[#66fcf1]">
+                  <Link href={service.href} className="transition-colors hover:text-[#d8c7a3]">
                     {service.title}
                   </Link>
                 </h3>
@@ -257,7 +257,7 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
             <div className="mt-7 grid gap-4 md:grid-cols-2">
               {page.serviceExpansion.items.map((item) => (
                 <article key={item.id} className="rounded-2xl border border-[#263740] bg-[#10161a] p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d8c7a3]">
                     {item.futurePath}
                   </p>
                   <h3 className="mt-3 text-lg font-semibold text-white">{item.label}</h3>
@@ -297,9 +297,9 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
           <div className="mt-8 divide-y divide-[#263740] overflow-hidden rounded-[1.6rem] border border-[#263740] bg-[#10161a]">
             {page.faqs.map((item) => (
               <details key={item.id} className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-white transition-colors hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#66fcf1] [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-white transition-colors hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#276864] [&::-webkit-details-marker]:hidden">
                   <span>{item.question}</span>
-                  <ChevronDown className="h-4 w-4 shrink-0 text-[#66fcf1] transition-transform group-open:rotate-180" />
+                  <ChevronDown className="h-4 w-4 shrink-0 text-[#d8c7a3] transition-transform group-open:rotate-180" />
                 </summary>
                 <p className="px-5 pb-5 text-sm leading-relaxed text-[#c6c6c6]">{item.answer}</p>
               </details>
@@ -313,12 +313,12 @@ export function RegionalCityPage({ page, siblingPages }: RegionalCityPageProps) 
           <h2 className="text-2xl font-semibold text-white">Legături utile</h2>
           <div className="mt-6 flex flex-wrap gap-3">
             {page.internalLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="rounded-full border border-[#2f3f47] bg-[#11181d] px-4 py-2 text-sm font-semibold text-[#c6c6c6] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]">
+              <Link key={item.href} href={item.href} className="rounded-full border border-[#2f3f47] bg-[#11181d] px-4 py-2 text-sm font-semibold text-[#c6c6c6] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]">
                 {item.label}
               </Link>
             ))}
             {siblingPages.map((item) => (
-              <Link key={item.slug} href={`/agentie-marketing/${item.slug}`} className="rounded-full border border-[#2f3f47] bg-[#11181d] px-4 py-2 text-sm font-semibold text-[#c6c6c6] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]">
+              <Link key={item.slug} href={`/agentie-marketing/${item.slug}`} className="rounded-full border border-[#2f3f47] bg-[#11181d] px-4 py-2 text-sm font-semibold text-[#c6c6c6] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]">
                 {item.cityName}
               </Link>
             ))}

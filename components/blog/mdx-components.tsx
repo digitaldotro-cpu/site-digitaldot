@@ -18,7 +18,7 @@ export const mdxComponents = {
   ),
   blockquote: (props: React.ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote
-      className="mt-6 rounded-2xl border-l-4 border-[#66fcf1] bg-[#11181d] px-5 py-4 text-[#d4d9dc]"
+      className="mt-6 rounded-2xl border-l-4 border-[#276864] bg-[#11181d] px-5 py-4 text-[#d4d9dc]"
       {...props}
     />
   ),
@@ -27,7 +27,7 @@ export const mdxComponents = {
 
     if (href.startsWith("/")) {
       return (
-        <Link href={href} className="text-[#66fcf1] underline-offset-4 hover:underline">
+        <Link href={href} className="text-[#d8c7a3] underline-offset-4 hover:underline">
           {props.children}
         </Link>
       );
@@ -36,7 +36,7 @@ export const mdxComponents = {
     return (
       <a
         {...props}
-        className="text-[#66fcf1] underline-offset-4 hover:underline"
+        className="text-[#d8c7a3] underline-offset-4 hover:underline"
         target="_blank"
         rel="noreferrer"
       />

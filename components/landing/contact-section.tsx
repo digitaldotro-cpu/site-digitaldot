@@ -33,19 +33,19 @@ export function ContactSection({ section, global }: ContactSectionProps) {
             <h3 className="text-lg font-semibold text-white">{global.footer.contactTitle}</h3>
             <ul className="mt-4 space-y-3 text-sm text-[#dadada]">
               <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
-                <a href={`mailto:${global.footer.contactEmail}`} className="transition-colors hover:text-[#66fcf1]">
+                <Mail className="mt-0.5 h-4 w-4 text-[#d8c7a3]" />
+                <a href={`mailto:${global.footer.contactEmail}`} className="transition-colors hover:text-[#d8c7a3]">
                   {global.footer.contactEmail}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
-                <a href={`tel:${global.footer.contactPhone}`} className="transition-colors hover:text-[#66fcf1]">
+                <Phone className="mt-0.5 h-4 w-4 text-[#d8c7a3]" />
+                <a href={`tel:${global.footer.contactPhone}`} className="transition-colors hover:text-[#d8c7a3]">
                   {global.footer.contactPhone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-[#66fcf1]" />
+                <MapPin className="mt-0.5 h-4 w-4 text-[#d8c7a3]" />
                 {global.footer.contactLocation}
               </li>
             </ul>

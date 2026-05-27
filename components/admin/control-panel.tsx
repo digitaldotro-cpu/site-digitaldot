@@ -291,7 +291,7 @@ function EditorNode({
 
               onChange(path, next);
             }}
-            className="min-h-28 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
+            className="min-h-28 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#276864] focus:outline-none"
           />
           <p className="text-xs text-[#8e99a1]">Elementele din listă sunt separate prin rânduri noi.</p>
         </div>
@@ -305,7 +305,7 @@ function EditorNode({
           <button
             type="button"
             onClick={() => onAddArrayItem(path)}
-            className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-3 py-1 text-xs font-semibold text-[#66fcf1]"
+            className="inline-flex items-center gap-1 rounded-full border border-[#2d434c] px-3 py-1 text-xs font-semibold text-[#d8c7a3]"
           >
             <Plus size={14} /> Adaugă item
           </button>
@@ -396,7 +396,7 @@ function EditorNode({
   if (typeof value === "boolean") {
     return (
       <label className="flex items-center justify-between rounded-2xl border border-[#25373f] bg-[#0f171c] p-4 cursor-pointer hover:bg-[#151d22] transition-colors group">
-        <span className="text-sm font-semibold text-white group-hover:text-[#66fcf1] transition-colors">{label}</span>
+        <span className="text-sm font-semibold text-white group-hover:text-[#d8c7a3] transition-colors">{label}</span>
         <div className="relative">
           <input
             type="checkbox"
@@ -404,7 +404,7 @@ function EditorNode({
             onChange={(event) => onChange(path, event.target.checked)}
             className="sr-only peer"
           />
-          <div className="w-11 h-6 bg-[#25373f] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-[#0f171c] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#8da0aa] after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#66fcf1] peer-checked:after:bg-[#0f171c]"></div>
+          <div className="w-11 h-6 bg-[#25373f] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-[#0f171c] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#8da0aa] after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#276864] peer-checked:after:bg-[#0f171c]"></div>
         </div>
       </label>
     );
@@ -429,7 +429,7 @@ function EditorNode({
         <textarea
           value={String(value ?? "")}
           onChange={(event) => onChange(path, event.target.value)}
-          className="min-h-24 resize-y w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
+          className="min-h-24 resize-y w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 py-2 text-sm text-[#dce2e6] focus:border-[#276864] focus:outline-none"
         />
       ) : (
         <input
@@ -443,7 +443,7 @@ function EditorNode({
 
             onChange(path, event.target.value);
           }}
-          className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 text-sm text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
+          className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 text-sm text-[#dce2e6] focus:border-[#276864] focus:outline-none"
         />
       )}
     </div>
@@ -567,7 +567,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
           </div>
           <Link 
             href="/" 
-            className="shrink-0 flex items-center justify-center p-3 rounded-2xl bg-[#1c2c33] border border-[#2a3c44] transition-all hover:bg-[#25373f] hover:border-[#66fcf1]"
+            className="shrink-0 flex items-center justify-center p-3 rounded-2xl bg-[#1c2c33] border border-[#2a3c44] transition-all hover:bg-[#25373f] hover:border-[#276864]"
             title="Înapoi pe site"
           >
             <Image
@@ -590,7 +590,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
             className={cn(
               "mt-4 rounded-xl border px-4 py-2 text-sm",
               status.type === "success"
-                ? "border-[#2d4a48] bg-[#112b2a] text-[#9ef7f1]"
+                ? "border-[#2d4a48] bg-[#112b2a] text-[#d8c7a3]"
                 : "border-[#4a3033] bg-[#2f1b1d] text-[#ffc5cb]",
             )}
           >
@@ -611,8 +611,8 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
             className={cn(
               "rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
               activeTab === key
-                ? "bg-[#66fcf1] text-[#0b1318]"
-                : "bg-[#1c2c33] text-[#b7d9d7] hover:bg-[#66fcf1] hover:text-[#0b1318]"
+                ? "bg-[#276864] text-[#d8c7a3]"
+                : "bg-[#1c2c33] text-[#b7d9d7] hover:bg-[#276864] hover:text-[#d8c7a3]"
             )}
           >
             {formatLabel(key)}
@@ -718,7 +718,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
       })()}
 
       {dirty && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full border border-[#2a3c44] bg-[#10181d]/95 px-4 py-3 shadow-[0_0_40px_rgba(102,252,241,0.1)] backdrop-blur-md transition-all animate-in slide-in-from-bottom-10 fade-in duration-300">
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full border border-[#2a3c44] bg-[#10181d]/95 px-4 py-3 shadow-[0_0_40px_rgba(39,104,100,0.1)] backdrop-blur-md transition-all animate-in slide-in-from-bottom-10 fade-in duration-300">
           <span className="text-xs font-semibold text-[#8ea0aa] hidden sm:inline-block mr-2">
             Ai modificări nesalvate
           </span>
@@ -727,7 +727,7 @@ export function ControlPanel({ initialContent }: ControlPanelProps) {
             Anulează
           </Button>
 
-          <Button type="button" size="sm" onClick={saveContent} disabled={isSaving} className="rounded-full bg-[#66fcf1] text-[#0b1318] hover:bg-[#52e8dd] font-semibold px-6 shadow-[0_0_15px_rgba(102,252,241,0.4)]">
+          <Button type="button" size="sm" onClick={saveContent} disabled={isSaving} className="rounded-full bg-[#276864] text-[#d8c7a3] hover:bg-[#2f7773] font-semibold px-6 shadow-[0_0_15px_rgba(39,104,100,0.4)]">
             <Save className="mr-2 h-4 w-4" />
             {isSaving ? "Se salvează..." : "Salvează"}
           </Button>

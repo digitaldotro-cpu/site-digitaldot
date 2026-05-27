@@ -21,7 +21,7 @@ export function SectionShell({
     <header className={cn("flex items-end justify-between gap-6", className)}>
       <div className="max-w-3xl">
         {eyebrow ? (
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#66fcf1]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#d8c7a3]">
             {eyebrow}
           </p>
         ) : null}

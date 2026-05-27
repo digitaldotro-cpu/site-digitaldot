@@ -37,7 +37,7 @@ export function VideoShowcase({
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{title}</h2>
           <p className="mt-4 text-[#bacac7]">{intro}</p>
         </div>
-        <Link href={ctaHref} className="inline-flex items-center gap-2 text-sm font-semibold text-[#66fcf1] hover:underline">
+        <Link href={ctaHref} className="inline-flex items-center gap-2 text-sm font-semibold text-[#d8c7a3] hover:underline">
           {ctaLabel} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
@@ -60,14 +60,14 @@ export function VideoShowcase({
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/65 to-transparent" />
           </div>
           <div className="absolute inset-0 flex flex-col justify-end p-7">
-            <span className="mb-3 w-fit rounded-full border border-[#3c4948]/40 bg-[#0f1519]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#66fcf1]">
+            <span className="mb-3 w-fit rounded-full border border-[#3c4948]/40 bg-[#0f1519]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#d8c7a3]">
               {featured.label}
             </span>
             <h3 className="text-2xl font-bold text-white">{featured.title}</h3>
             <p className="mt-3 max-w-xl text-sm text-[#bacac7]">{featured.description}</p>
             <Link
               href={featured.href ?? "/portofoliu"}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#66fcf1] hover:underline"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#d8c7a3] hover:underline"
             >
               Deschide proiect <ArrowRight className="h-4 w-4" />
             </Link>
@@ -94,12 +94,12 @@ export function VideoShowcase({
                 />
               </div>
               <div className="min-w-0">
-                <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#66fcf1]">{item.label}</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#d8c7a3]">{item.label}</p>
                 <h3 className="mt-1 truncate text-sm font-semibold text-white">{item.title}</h3>
                 {item.description ? (
                   <p className="mt-1 line-clamp-2 text-xs text-[#bacac7]">{item.description}</p>
                 ) : null}
-                <Link href={item.href ?? "/portofoliu"} className="mt-2 inline-flex items-center gap-1 text-xs text-[#66fcf1] hover:underline">
+                <Link href={item.href ?? "/portofoliu"} className="mt-2 inline-flex items-center gap-1 text-xs text-[#d8c7a3] hover:underline">
                   <Play className="h-3 w-3 fill-current" /> Vezi
                 </Link>
               </div>

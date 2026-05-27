@@ -5,14 +5,14 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10] disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d8c7a3]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10] disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[#66fcf1] text-[#0b0c10] shadow-[0_18px_45px_-32px_rgba(102,252,241,0.9)] hover:-translate-y-0.5 hover:bg-[#8dfff7]",
+    "border border-[#276864] bg-[#276864] text-[#d8c7a3] shadow-[0_18px_45px_-34px_rgba(39,104,100,0.65)] hover:-translate-y-0.5 hover:border-[#d8c7a3]/70 hover:bg-[#2f7773] hover:text-[#d8c7a3]",
   secondary:
-    "border border-[#276864]/60 bg-[#101418]/40 text-white hover:border-[#66fcf1]/55 hover:bg-[#101418]",
-  ghost: "bg-transparent border border-[#1f2a2d] text-[#dadada] hover:border-[#276864]/75 hover:text-white",
+    "border border-[#276864]/55 bg-[#101418]/40 text-white hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
+  ghost: "bg-transparent border border-[#1f2a2d] text-[#dadada] hover:border-[#276864]/75 hover:text-[#d8c7a3]",
 };
 
 const sizes: Record<Size, string> = {

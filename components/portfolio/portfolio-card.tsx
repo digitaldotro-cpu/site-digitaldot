@@ -20,7 +20,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {project.hasVideo ? (
-          <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-[#0b0c10]/80 px-3 py-1 text-xs font-semibold text-[#66fcf1]">
+          <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-[#0b0c10]/80 px-3 py-1 text-xs font-semibold text-[#d8c7a3]">
             <PlayCircle className="h-4 w-4" /> Video First
           </span>
         ) : null}
@@ -64,7 +64,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
           </blockquote>
         ) : null}
         {project.cta ? (
-          <Link href={project.cta.href} className="inline-flex items-center text-sm font-semibold text-[#66fcf1]">
+          <Link href={project.cta.href} className="inline-flex items-center text-sm font-semibold text-[#d8c7a3]">
             {project.cta.label}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>

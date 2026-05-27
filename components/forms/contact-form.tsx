@@ -136,7 +136,7 @@ export function ContactForm({ config }: ContactFormProps) {
         <p
           className={
             serverState.type === "success"
-              ? "rounded-2xl border border-[#2a4846] bg-[#11302f] px-4 py-3 text-sm text-[#9bf7f1]"
+              ? "rounded-2xl border border-[#2a4846] bg-[#11302f] px-4 py-3 text-sm text-[#d8c7a3]"
               : "rounded-2xl border border-[#4a2e2e] bg-[#321b1b] px-4 py-3 text-sm text-[#ffb6b6]"
           }
           role="status"

@@ -54,11 +54,11 @@ export async function sendContactEmail(
       <h2 style="margin:0 0 16px;">Cerere nouă din formularul Digital Dot</h2>
       <table style="width:100%;border-collapse:collapse;background:#111319;border:1px solid #276864;border-radius:12px;overflow:hidden;">
         <tbody>
-          <tr><td style="padding:10px 14px;color:#66fcf1;">Nume</td><td style="padding:10px 14px;">${escapeHtml(values.name)}</td></tr>
-          <tr><td style="padding:10px 14px;color:#66fcf1;">Email</td><td style="padding:10px 14px;">${escapeHtml(values.email)}</td></tr>
-          <tr><td style="padding:10px 14px;color:#66fcf1;">Telefon</td><td style="padding:10px 14px;">${escapeHtml(values.phone)}</td></tr>
-          <tr><td style="padding:10px 14px;color:#66fcf1;">Serviciu</td><td style="padding:10px 14px;">${escapeHtml(values.service)}</td></tr>
-          <tr><td style="padding:10px 14px;color:#66fcf1;vertical-align:top;">Mesaj</td><td style="padding:10px 14px;white-space:pre-wrap;">${escapeHtml(values.message)}</td></tr>
+          <tr><td style="padding:10px 14px;color:#276864;">Nume</td><td style="padding:10px 14px;">${escapeHtml(values.name)}</td></tr>
+          <tr><td style="padding:10px 14px;color:#276864;">Email</td><td style="padding:10px 14px;">${escapeHtml(values.email)}</td></tr>
+          <tr><td style="padding:10px 14px;color:#276864;">Telefon</td><td style="padding:10px 14px;">${escapeHtml(values.phone)}</td></tr>
+          <tr><td style="padding:10px 14px;color:#276864;">Serviciu</td><td style="padding:10px 14px;">${escapeHtml(values.service)}</td></tr>
+          <tr><td style="padding:10px 14px;color:#276864;vertical-align:top;">Mesaj</td><td style="padding:10px 14px;white-space:pre-wrap;">${escapeHtml(values.message)}</td></tr>
         </tbody>
       </table>
       <p style="margin:16px 0 0;color:#c6c6c6;font-size:12px;">

@@ -36,12 +36,12 @@ export function BlogGridFilter({ posts }: BlogGridFilterProps) {
       <div className="mb-8 flex flex-col gap-4">
         <label className="relative block max-w-xl">
           <span className="sr-only">Caută articole</span>
-          <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#66fcf1]" />
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#d8c7a3]" />
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Caută după strategie, SEO, branding, Google Ads..."
-            className="w-full rounded-full border border-[#2a3a42] bg-[#0f1519] py-3 pl-11 pr-4 text-sm text-white outline-none transition focus:border-[#66fcf1]"
+            className="w-full rounded-full border border-[#2a3a42] bg-[#0f1519] py-3 pl-11 pr-4 text-sm text-white outline-none transition focus:border-[#276864]"
             type="search"
           />
         </label>
@@ -53,7 +53,7 @@ export function BlogGridFilter({ posts }: BlogGridFilterProps) {
             className={cn(
               "rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
               activeCategory === ALL
-                ? "border-[#66fcf1] bg-[#112126] text-[#66fcf1]"
+                ? "border-[#276864] bg-[#112126] text-[#d8c7a3]"
                 : "border-[#2a3a42] text-[#c6c6c6]",
             )}
           >
@@ -68,7 +68,7 @@ export function BlogGridFilter({ posts }: BlogGridFilterProps) {
               className={cn(
                 "rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
                 activeCategory === category.key
-                  ? "border-[#66fcf1] bg-[#112126] text-[#66fcf1]"
+                  ? "border-[#276864] bg-[#112126] text-[#d8c7a3]"
                   : "border-[#2a3a42] text-[#c6c6c6]",
               )}
             >

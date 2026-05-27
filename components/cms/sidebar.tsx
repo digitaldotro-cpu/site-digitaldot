@@ -44,13 +44,13 @@ export function Sidebar({ activeView, collapsed, onViewChange, onToggle }: Sideb
       <button
         type="button"
         onClick={onToggle}
-        className="absolute right-3 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#1f2f3d] text-[#6d808b] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]"
+        className="absolute right-3 top-4 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#1f2f3d] text-[#6d808b] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]"
       >
         {collapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
       </button>
 
       <div className={cn("mb-8 px-2", collapsed && "px-0 text-center")}>
-        <p className="text-[1.75rem] font-semibold leading-none tracking-tight text-[#66fcf1]">
+        <p className="text-[1.75rem] font-semibold leading-none tracking-tight text-[#d8c7a3]">
           {collapsed ? "DD" : "Digital Dot"}
         </p>
       </div>
@@ -67,14 +67,14 @@ export function Sidebar({ activeView, collapsed, onViewChange, onToggle }: Sideb
               onClick={() => onViewChange(item.id)}
               className={cn(
                 "group relative flex h-11 w-full items-center gap-3 rounded-full px-4 text-sm text-slate-400 transition",
-                active ? "text-[#66fcf1]" : "hover:bg-white/5 hover:text-white",
+                active ? "text-[#d8c7a3]" : "hover:bg-white/5 hover:text-white",
                 collapsed && "justify-center px-0",
               )}
             >
               {active ? (
                 <motion.span
                   layoutId="sidebar-active"
-                  className="absolute inset-0 rounded-full bg-cyan-400/10"
+                  className="absolute inset-0 rounded-full bg-[#276864]/10"
                   transition={{ type: "spring", stiffness: 420, damping: 32 }}
                 />
               ) : null}
@@ -87,7 +87,7 @@ export function Sidebar({ activeView, collapsed, onViewChange, onToggle }: Sideb
 
       <button
         type="button"
-        className="mt-auto rounded-full border border-cyan-400/20 bg-cyan-400/10 py-3 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#66fcf1] transition hover:bg-cyan-400/20"
+        className="mt-auto rounded-full border border-[#276864]/30 bg-[#276864]/10 py-3 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#d8c7a3] transition hover:bg-[#276864]/20"
       >
         {collapsed ? "NEW" : "NEW PROJECT"}
       </button>

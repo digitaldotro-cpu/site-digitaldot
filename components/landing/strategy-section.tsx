@@ -41,7 +41,7 @@ export function StrategySection({ section }: StrategySectionProps) {
                 background: `linear-gradient(180deg, rgba(0,0,0,${Math.max(section.overlayIntensity / 100, 0.25)}) 0%, rgba(0,0,0,${Math.max((section.overlayIntensity / 100) * 0.9, 0.2)}) 100%)`,
               }}
             />
-            <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_78%_28%,rgba(102,252,241,0.12),transparent_35%)]" />
+            <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_78%_28%,rgba(39,104,100,0.12),transparent_35%)]" />
           </div>
         </AnimatedSection>
       </Container>

@@ -31,7 +31,7 @@ export function ProcessSteps({ section }: ProcessStepsProps) {
               delay={index * 0.06}
               className="brand-card p-6"
             >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-sm font-semibold text-[#66fcf1]">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-sm font-semibold text-[#d8c7a3]">
                 0{index + 1}
               </span>
               <h3 className="mt-3 text-xl font-semibold text-white">{step.title}</h3>

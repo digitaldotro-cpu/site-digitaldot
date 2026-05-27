@@ -56,7 +56,7 @@ export function AddSectionModal({ open, media, onClose, onConfirm }: AddSectionM
           <button
             type="button"
             onClick={onClose}
-            className="h-10 rounded-full border border-[#28404b] px-4 text-sm text-[#a2b4bc] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1]"
+            className="h-10 rounded-full border border-[#28404b] px-4 text-sm text-[#a2b4bc] transition hover:border-[#276864]/60 hover:text-[#d8c7a3]"
           >
             Anulează
           </button>
@@ -71,7 +71,7 @@ export function AddSectionModal({ open, media, onClose, onConfirm }: AddSectionM
               onClose();
               reset();
             })}
-            className="h-10 rounded-full bg-[#66fcf1] px-4 text-sm font-semibold text-[#063037] transition hover:bg-[#90fff8]"
+            className="h-10 rounded-full bg-[#276864] px-4 text-sm font-semibold text-[#d8c7a3] transition hover:bg-[#2f7773]"
           >
             Adaugă
           </button>

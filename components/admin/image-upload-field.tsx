@@ -74,7 +74,7 @@ export function ImageUploadField({ value, onChange }: ImageUploadFieldProps) {
             >
               <X size={18} />
             </button>
-            <label className="bg-[#66fcf1]/80 hover:bg-[#66fcf1] text-[#0b1318] p-2 rounded-full cursor-pointer backdrop-blur-sm transition-colors" title="Înlocuiește imaginea">
+            <label className="bg-[#276864]/80 hover:bg-[#276864] text-[#d8c7a3] p-2 rounded-full cursor-pointer backdrop-blur-sm transition-colors" title="Înlocuiește imaginea">
               <UploadCloud size={18} />
               <input
                 type="file"
@@ -93,18 +93,18 @@ export function ImageUploadField({ value, onChange }: ImageUploadFieldProps) {
               "flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-xl cursor-pointer transition-colors",
               isUploading
                 ? "border-[#2b3d45] bg-[#0b1318] opacity-50 cursor-not-allowed"
-                : "border-[#2b3d45] bg-[#0b1318] hover:border-[#66fcf1] hover:bg-[#10181d]"
+                : "border-[#2b3d45] bg-[#0b1318] hover:border-[#276864] hover:bg-[#10181d]"
             )}
           >
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               {isUploading ? (
-                <Loader2 className="w-8 h-8 mb-3 text-[#66fcf1] animate-spin" />
+                <Loader2 className="w-8 h-8 mb-3 text-[#d8c7a3] animate-spin" />
               ) : (
                 <ImageIcon className="w-8 h-8 mb-3 text-[#8ea0aa]" />
               )}
               <p className="mb-2 text-sm text-[#8ea0aa]">
                 {isUploading ? (
-                  <span className="font-semibold text-[#66fcf1]">Se încarcă...</span>
+                  <span className="font-semibold text-[#d8c7a3]">Se încarcă...</span>
                 ) : (
                   <>
                     <span className="font-semibold text-white">Click pentru a încărca</span> o imagine
@@ -138,7 +138,7 @@ export function ImageUploadField({ value, onChange }: ImageUploadFieldProps) {
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="/cale/catre/imagine.png sau https://..."
-          className="h-8 w-full rounded-lg border border-[#2b3d45] bg-[#0b1318] px-2 text-xs text-[#dce2e6] focus:border-[#66fcf1] focus:outline-none"
+          className="h-8 w-full rounded-lg border border-[#2b3d45] bg-[#0b1318] px-2 text-xs text-[#dce2e6] focus:border-[#276864] focus:outline-none"
         />
       </div>
     </div>

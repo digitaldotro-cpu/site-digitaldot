@@ -54,7 +54,7 @@ export function StructurePanel({
               className={cn(
                 "group flex w-full items-center gap-3 rounded-xl border px-3 py-3 text-left transition",
                 active
-                  ? "border-[#66fcf1]/30 bg-[#333535] text-white shadow-lg"
+                  ? "border-[#276864]/30 bg-[#333535] text-white shadow-lg"
                   : "border-[#3c4948]/20 bg-[#1e2020] text-[#bacac7] hover:bg-[#333535]",
               )}
             >
@@ -77,14 +77,14 @@ export function StructurePanel({
                 className={cn(
                   "inline-flex h-7 w-7 items-center justify-center rounded-full border transition",
                   isVisible
-                    ? "border-[#00504b] text-[#62f9ee] hover:border-[#62f9ee]"
+                    ? "border-[#00504b] text-[#d8c7a3] hover:border-[#276864]"
                     : "border-[#3c4948] text-[#859491] hover:text-[#e3e2e2]",
                 )}
                 aria-label={isVisible ? `Ascunde ${section.name}` : `Afișează ${section.name}`}
               >
                 {isVisible ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
               </span>
-              {active ? <span className="h-1.5 w-1.5 rounded-full bg-[#66fcf1]" /> : null}
+              {active ? <span className="h-1.5 w-1.5 rounded-full bg-[#276864]" /> : null}
               <span
                 role="button"
                 tabIndex={0}
@@ -112,7 +112,7 @@ export function StructurePanel({
       <button
         type="button"
         onClick={onAdd}
-        className="mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-dashed border-[#3c4948]/50 text-sm font-medium text-[#bacac7] transition hover:border-[#62f9ee]/60 hover:text-white"
+        className="mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-dashed border-[#3c4948]/50 text-sm font-medium text-[#bacac7] transition hover:border-[#276864]/60 hover:text-white"
       >
         <Plus className="h-4 w-4" />
         Add Section

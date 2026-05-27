@@ -37,11 +37,11 @@ export function Topbar({
     <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-[#2c3a43]/20 bg-slate-950/60 px-4 backdrop-blur-2xl sm:px-6">
       <div className="flex items-center gap-4 sm:gap-8">
         <div className="relative">
-          <Sparkles className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#66fcf1]" />
+          <Sparkles className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#d8c7a3]" />
           <select
             value={selectedPageId}
             onChange={(event) => onSelectPage(event.target.value)}
-            className="h-9 appearance-none rounded-full border border-[#314048]/30 bg-[#1e2020] px-10 pr-8 text-sm font-medium text-white focus:border-[#66fcf1] focus:outline-none"
+            className="h-9 appearance-none rounded-full border border-[#314048]/30 bg-[#1e2020] px-10 pr-8 text-sm font-medium text-white focus:border-[#276864] focus:outline-none"
           >
             {pages.map((page) => (
               <option key={page.id} value={page.id}>
@@ -62,11 +62,11 @@ export function Topbar({
                 type="button"
                 className={cn(
                   "relative pb-1 text-sm font-medium transition",
-                  active ? "text-[#66fcf1]" : "text-slate-400 hover:text-cyan-300",
+                  active ? "text-[#d8c7a3]" : "text-slate-400 hover:text-[#d8c7a3]",
                 )}
               >
                 {tab}
-                {active ? <span className="absolute inset-x-0 -bottom-[9px] h-0.5 rounded-full bg-[#66fcf1]" /> : null}
+                {active ? <span className="absolute inset-x-0 -bottom-[9px] h-0.5 rounded-full bg-[#276864]" /> : null}
               </button>
             );
           })}
@@ -78,7 +78,7 @@ export function Topbar({
           type="button"
           onClick={onUndo}
           disabled={!canUndo}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#314048]/30 bg-[#14181b] text-[#99aab3] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1] disabled:cursor-not-allowed disabled:opacity-45"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#314048]/30 bg-[#14181b] text-[#99aab3] transition hover:border-[#276864]/60 hover:text-[#d8c7a3] disabled:cursor-not-allowed disabled:opacity-45"
           aria-label="Undo"
         >
           <Undo2 className="h-4 w-4" />
@@ -87,7 +87,7 @@ export function Topbar({
           type="button"
           onClick={onRedo}
           disabled={!canRedo}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#314048]/30 bg-[#14181b] text-[#99aab3] transition hover:border-[#66fcf1]/60 hover:text-[#66fcf1] disabled:cursor-not-allowed disabled:opacity-45"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#314048]/30 bg-[#14181b] text-[#99aab3] transition hover:border-[#276864]/60 hover:text-[#d8c7a3] disabled:cursor-not-allowed disabled:opacity-45"
           aria-label="Redo"
         >
           <Redo2 className="h-4 w-4" />
@@ -105,7 +105,7 @@ export function Topbar({
           type="button"
           onClick={onSave}
           disabled={isSaving}
-          className="inline-flex h-9 min-w-[104px] items-center justify-center rounded-full bg-[#62f9ee] px-5 text-sm font-bold text-[#003734] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex h-9 min-w-[104px] items-center justify-center rounded-full bg-[#276864] px-5 text-sm font-bold text-[#d8c7a3] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSaving ? "Saving..." : "Publish"}
         </button>

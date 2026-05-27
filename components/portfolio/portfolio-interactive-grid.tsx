@@ -71,7 +71,7 @@ export function PortfolioInteractiveGrid({
             className={cn(
               "rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
               activeFilter === filter.value
-                ? "border-[#66fcf1] bg-[#122126] text-[#66fcf1]"
+                ? "border-[#276864] bg-[#122126] text-[#d8c7a3]"
                 : "border-[#2a3a42] text-[#c6c6c6] hover:text-white",
             )}
           >
@@ -104,7 +104,7 @@ export function PortfolioInteractiveGrid({
 
             <div className="absolute inset-0 flex flex-col justify-end p-6">
               <div className="mb-3 flex flex-wrap gap-2">
-                <span className="rounded-full border border-[#3c4948]/40 bg-[#0e1317]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#66fcf1]">
+                <span className="rounded-full border border-[#3c4948]/40 bg-[#0e1317]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#d8c7a3]">
                   {project.category}
                 </span>
                 {project.highlightBadge ? (
@@ -113,7 +113,7 @@ export function PortfolioInteractiveGrid({
                   </span>
                 ) : null}
                 {project.hasVideo ? (
-                  <span className="inline-flex items-center gap-1 rounded-full border border-[#3c4948]/40 bg-[#0e1317]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#66fcf1]">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-[#3c4948]/40 bg-[#0e1317]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#d8c7a3]">
                     <PlayCircle className="h-3 w-3" /> Video
                   </span>
                 ) : null}
@@ -131,7 +131,7 @@ export function PortfolioInteractiveGrid({
 
               <Link
                 href={project.href ?? "/portofoliu"}
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#66fcf1] hover:underline"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#d8c7a3] hover:underline"
               >
                 Vezi detalii <ArrowUpRight className="h-4 w-4" />
               </Link>

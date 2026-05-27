@@ -33,7 +33,7 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
       />
 
       <section className="brand-orbit relative overflow-hidden pb-16 pt-10 sm:pb-20 sm:pt-14">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(102,252,241,0.07),transparent_36%),radial-gradient(circle_at_85%_15%,rgba(39,104,100,0.14),transparent_38%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(39,104,100,0.07),transparent_36%),radial-gradient(circle_at_85%_15%,rgba(39,104,100,0.14),transparent_38%)]" />
         <Container className="relative grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <span className="inline-flex rounded-full border border-[#276864]/55 bg-[#101418]/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">
@@ -58,7 +58,7 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
 
           <div className="lg:col-span-6">
             <div className="brand-panel relative overflow-hidden">
-              <div className="absolute left-5 top-5 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#66fcf1]/40 bg-[#0b0c10]/70 text-[#66fcf1] backdrop-blur">
+              <div className="absolute left-5 top-5 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#276864]/40 bg-[#0b0c10]/70 text-[#d8c7a3] backdrop-blur">
                 <Icon className="h-5 w-5" />
               </div>
               <div className="relative aspect-[16/10]">
@@ -85,7 +85,7 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {page.explanationParagraphs.map((paragraph, index) => (
               <article key={`${page.id}-explanation-${index}`} className="brand-card p-6">
-                <CheckCircle2 className="h-5 w-5 text-[#66fcf1]" />
+                <CheckCircle2 className="h-5 w-5 text-[#d8c7a3]" />
                 <p className="mt-4 text-sm leading-relaxed text-[#c6c6c6]">{paragraph}</p>
               </article>
             ))}
@@ -125,7 +125,7 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {page.approachSteps.map((step, index) => (
               <article key={step.title} className="brand-card p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66fcf1]">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d8c7a3]">
                   0{index + 1}
                 </p>
                 <h3 className="mt-4 text-xl font-semibold text-white">{step.title}</h3>
@@ -164,7 +164,7 @@ export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="inline-flex rounded-full border border-[#1f2a2d] bg-[#0b0c10]/66 px-4 py-2 text-sm font-semibold text-[#dadada] transition hover:border-[#66fcf1]/45 hover:text-[#66fcf1]"
+                className="inline-flex rounded-full border border-[#1f2a2d] bg-[#0b0c10]/66 px-4 py-2 text-sm font-semibold text-[#dadada] transition hover:border-[#276864]/45 hover:text-[#d8c7a3]"
               >
                 {item.label}
               </Link>

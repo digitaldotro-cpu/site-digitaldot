@@ -74,7 +74,7 @@ export function Footer({
           <ul className="mt-4 space-y-2 text-sm text-[#dadada]">
             {serviceLinks.filter((link) => link.enabled !== false).map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-[#66fcf1]">
+                <Link href={link.href} className="transition-colors hover:text-[#d8c7a3]">
                   {link.label}
                 </Link>
               </li>
@@ -89,7 +89,7 @@ export function Footer({
           <ul className="mt-4 space-y-2 text-sm text-[#dadada]">
             {regionalLinks.filter((link) => link.enabled !== false).map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-[#66fcf1]">
+                <Link href={link.href} className="transition-colors hover:text-[#d8c7a3]">
                   {link.label}
                 </Link>
               </li>
@@ -104,7 +104,7 @@ export function Footer({
           <ul className="mt-4 space-y-2 text-sm text-[#dadada]">
             {resourceLinks.filter((link) => link.enabled !== false).map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-[#66fcf1]">
+                <Link href={link.href} className="transition-colors hover:text-[#d8c7a3]">
                   {link.label}
                 </Link>
               </li>
@@ -119,7 +119,7 @@ export function Footer({
           <ul className="mt-4 space-y-2 text-sm text-[#dadada]">
             {legalLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-[#66fcf1]">{link.label}</Link>
+                <Link href={link.href} className="transition-colors hover:text-[#d8c7a3]">{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -131,10 +131,10 @@ export function Footer({
           </h3>
           <address aria-labelledby="footer-contact-title" className="mt-4 space-y-2 text-sm not-italic text-[#dadada]">
             <p>
-              Email: <a href={`mailto:${contactEmail}`} className="transition-colors hover:text-[#66fcf1]">{contactEmail}</a>
+              Email: <a href={`mailto:${contactEmail}`} className="transition-colors hover:text-[#d8c7a3]">{contactEmail}</a>
             </p>
             <p>
-              Telefon: <a href={`tel:${contactPhone}`} className="transition-colors hover:text-[#66fcf1]">{contactPhone}</a>
+              Telefon: <a href={`tel:${contactPhone}`} className="transition-colors hover:text-[#d8c7a3]">{contactPhone}</a>
             </p>
             <p>{contactLocation}</p>
           </address>

@@ -44,7 +44,7 @@ export function BentoDeliverables({ title, intro, items }: BentoDeliverablesProp
           whileHover={{ y: -4 }}
           className="rounded-[1.4rem] border border-[#2a3e47] bg-[#111a20] p-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">Core</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#d8c7a3]">Core</p>
           <h3 className="mt-4 text-2xl font-semibold text-white">{normalized[0].title}</h3>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-[#b6c0c5]">{normalized[0].description}</p>
         </motion.article>
@@ -60,12 +60,12 @@ export function BentoDeliverables({ title, intro, items }: BentoDeliverablesProp
               className={cn(
                 "rounded-[1.2rem] border p-5",
                 item.variant === "accent"
-                  ? "border-[#66fcf1]/60 bg-[linear-gradient(150deg,#66fcf1_0%,#44cdc6_60%,#2f9892_100%)] text-[#0b0c10]"
+                  ? "border-[#276864]/60 bg-[linear-gradient(150deg,#276864_0%,#276864_60%,#276864_100%)] text-[#d8c7a3]"
                   : "border-[#2a3e47] bg-[#10181d] text-white",
               )}
             >
               <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className={cn("mt-2 text-sm leading-relaxed", item.variant === "accent" ? "text-[#103534]" : "text-[#b6c0c5]")}>{item.description}</p>
+              <p className={cn("mt-2 text-sm leading-relaxed", item.variant === "accent" ? "text-[#d8c7a3]" : "text-[#b6c0c5]")}>{item.description}</p>
             </motion.article>
           ))}
         </div>
@@ -83,12 +83,12 @@ export function BentoDeliverables({ title, intro, items }: BentoDeliverablesProp
               className={cn(
                 "rounded-[1.2rem] border p-5",
                 item.variant === "accent"
-                  ? "border-[#66fcf1]/60 bg-[linear-gradient(150deg,#66fcf1_0%,#44cdc6_60%,#2f9892_100%)] text-[#0b0c10]"
+                  ? "border-[#276864]/60 bg-[linear-gradient(150deg,#276864_0%,#276864_60%,#276864_100%)] text-[#d8c7a3]"
                   : "border-[#2a3e47] bg-[#10181d] text-white",
               )}
             >
               <h3 className="text-base font-semibold">{item.title}</h3>
-              <p className={cn("mt-2 text-sm leading-relaxed", item.variant === "accent" ? "text-[#103534]" : "text-[#b6c0c5]")}>{item.description}</p>
+              <p className={cn("mt-2 text-sm leading-relaxed", item.variant === "accent" ? "text-[#d8c7a3]" : "text-[#b6c0c5]")}>{item.description}</p>
             </motion.article>
           ))}
         </div>

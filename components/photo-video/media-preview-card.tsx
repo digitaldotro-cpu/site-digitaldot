@@ -44,13 +44,13 @@ export function MediaPreviewCard({
         className={cn(
           "p-4",
           highlight &&
-            "bg-[linear-gradient(160deg,#66fcf1_0%,#47cbc3_60%,#36aaa3_100%)] text-[#0b0c10]",
+            "bg-[linear-gradient(160deg,#276864_0%,#276864_60%,#276864_100%)] text-[#d8c7a3]",
         )}
       >
         <h3
           className={cn(
             "text-sm font-semibold",
-            highlight ? "text-[#0b0c10]" : "text-white",
+            highlight ? "text-[#d8c7a3]" : "text-white",
           )}
         >
           {title}
@@ -59,7 +59,7 @@ export function MediaPreviewCard({
           <p
             className={cn(
               "mt-1 text-xs",
-              highlight ? "text-[#0f2a29]" : "text-[#aeb6bc]",
+              highlight ? "text-[#d8c7a3]" : "text-[#aeb6bc]",
             )}
           >
             {subtitle}

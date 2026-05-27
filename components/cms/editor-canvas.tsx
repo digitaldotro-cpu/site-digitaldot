@@ -88,13 +88,13 @@ export function EditorCanvas({
 
   return (
     <section className="relative flex flex-1 items-start justify-center overflow-auto bg-[radial-gradient(circle_at_50%_50%,#1a1c1c_0%,#121414_100%)] p-8 lg:p-12">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_54%_28%,rgba(102,252,241,0.09),transparent_35%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_54%_28%,rgba(39,104,100,0.09),transparent_35%)]" />
 
       <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-2xl border border-[#3c4948]/30 bg-[#121414] shadow-2xl">
         <div className="flex h-10 items-center gap-2 border-b border-[#3c4948]/20 px-4">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffb4ab]/40" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#93d2cd]/40" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#62f9ee]/40" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#276864]/40" />
           <div className="mx-auto rounded-full border border-[#3c4948]/30 bg-[#1a1c1c] px-8 py-0.5 text-[10px] text-[#bacac7]">
             digitaldot.agency/preview
           </div>
@@ -111,9 +111,9 @@ export function EditorCanvas({
               paddingTop: section.settings.paddingY,
               paddingBottom: section.settings.paddingY,
             }}
-            className="relative rounded-3xl border border-[#62f9ee]/40 px-5 shadow-[0_0_0_1px_rgba(98,249,238,0.15)]"
+            className="relative rounded-3xl border border-[#276864]/40 px-5 shadow-[0_0_0_1px_rgba(98,249,238,0.15)]"
           >
-            <div className="absolute -top-3 left-4 rounded bg-[#62f9ee] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#003734]">
+            <div className="absolute -top-3 left-4 rounded bg-[#276864] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#d8c7a3]">
               Editing Section
             </div>
             {section.elements.map((element) => {
@@ -126,7 +126,7 @@ export function EditorCanvas({
                     onClick={() => onSelectElement(element.id)}
                     className={cn(
                       "rounded-xl border border-transparent p-1 transition",
-                      active && "border-[#62f9ee]/60 bg-[#62f9ee]/8",
+                      active && "border-[#276864]/60 bg-[#276864]/8",
                     )}
                   >
                     <p
@@ -154,7 +154,7 @@ export function EditorCanvas({
                     onClick={() => onSelectElement(element.id)}
                     className={cn(
                       "mt-4 rounded-2xl border border-transparent p-1 transition",
-                      active && "border-[#62f9ee]/60 bg-[#62f9ee]/8",
+                      active && "border-[#276864]/60 bg-[#276864]/8",
                     )}
                   >
                     <MediaPreview item={mediaById[element.mediaId]} alt={element.label} />
@@ -172,7 +172,7 @@ export function EditorCanvas({
                     onClick={() => onSelectElement(element.id)}
                     className={cn(
                       "mt-4 flex rounded-full border border-transparent p-1 transition",
-                      active && "border-[#62f9ee]/60 bg-[#62f9ee]/8",
+                      active && "border-[#276864]/60 bg-[#276864]/8",
                       element.style.textAlign === "center" && "justify-center",
                       element.style.textAlign === "right" && "justify-end",
                     )}
@@ -201,13 +201,13 @@ export function EditorCanvas({
                   onClick={() => onSelectElement(element.id)}
                   className={cn(
                     "mt-5 rounded-[1.6rem] border border-transparent p-4 transition",
-                    active && "border-[#62f9ee]/60 bg-[#62f9ee]/8",
+                    active && "border-[#276864]/60 bg-[#276864]/8",
                   )}
                   style={styleFromElement(element)}
                 >
                   <p className="text-3xl font-bold leading-[1.1]">{element.content}</p>
                   <p className="mt-3 text-base leading-relaxed text-[#cfd8dc]">{element.subcontent}</p>
-                  <span className="mt-5 inline-flex rounded-full bg-[#66fcf1] px-5 py-3 text-sm font-semibold text-[#0a2f34]">
+                  <span className="mt-5 inline-flex rounded-full bg-[#276864] px-5 py-3 text-sm font-semibold text-[#d8c7a3]">
                     {element.buttonLabel}
                   </span>
                 </div>

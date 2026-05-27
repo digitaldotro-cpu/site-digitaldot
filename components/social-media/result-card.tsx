@@ -30,7 +30,7 @@ export function ResultCard({ title, metric, image }: ResultCardProps) {
       </div>
       <div className="p-4">
         <h3 className="text-sm font-semibold text-white">{title}</h3>
-        <p className="mt-1 text-xs uppercase tracking-[0.12em] text-[#66fcf1]">{metric}</p>
+        <p className="mt-1 text-xs uppercase tracking-[0.12em] text-[#d8c7a3]">{metric}</p>
       </div>
     </motion.article>
   );

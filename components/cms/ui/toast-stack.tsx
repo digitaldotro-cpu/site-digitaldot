@@ -21,7 +21,7 @@ const iconByType = {
 };
 
 const styleByType = {
-  success: "border-[#01504c]/60 bg-[#1e2020] text-[#62f9ee]",
+  success: "border-[#01504c]/60 bg-[#1e2020] text-[#d8c7a3]",
   error: "border-[#93000a]/40 bg-[#1e2020] text-[#ffb4ab]",
   info: "border-[#3c4948]/60 bg-[#1e2020] text-[#bacac7]",
 };

@@ -38,7 +38,7 @@ type EditPanelProps = {
   onDelete: () => void;
 };
 
-const colorPalette = ["#ffffff", "#66fcf1", "#276864", "#c6c6c6", "#61727a"];
+const colorPalette = ["#ffffff", "#276864", "#276864", "#c6c6c6", "#61727a"];
 
 function clampNumber(value: unknown, min: number, max: number, fallback: number) {
   if (typeof value !== "number" || Number.isNaN(value)) {
@@ -311,7 +311,7 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
       <div className="mt-6 space-y-4 rounded-xl border border-[#3c4948]/20 bg-[#0d0e0f] p-4">
         <div className="flex items-center justify-between">
           <FieldLabel>Font Size</FieldLabel>
-          <span className="text-xs font-semibold text-[#66fcf1]">{fontSize}px</span>
+          <span className="text-xs font-semibold text-[#d8c7a3]">{fontSize}px</span>
         </div>
         <input
           type="range"
@@ -325,7 +325,7 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
               shouldTouch: true,
             })
           }
-          className="h-1 w-full cursor-pointer appearance-none rounded-full bg-[#333535] accent-[#62f9ee]"
+          className="h-1 w-full cursor-pointer appearance-none rounded-full bg-[#333535] accent-[#276864]"
         />
 
         <div className="space-y-2">
@@ -358,7 +358,7 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
                   }
                   className={cn(
                     "h-8 w-8 rounded-full border transition",
-                    active ? "border-[#66fcf1] shadow-[0_0_0_2px_rgba(102,252,241,0.25)]" : "border-transparent",
+                    active ? "border-[#276864] shadow-[0_0_0_2px_rgba(39,104,100,0.25)]" : "border-transparent",
                   )}
                   style={{ background: color }}
                   aria-label={`Selectează ${color}`}
@@ -388,7 +388,7 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
                   }
                   className={cn(
                     "inline-flex h-9 items-center justify-center rounded-full transition",
-                    active ? "bg-[#123643] text-[#66fcf1]" : "text-[#7a909b] hover:text-white",
+                    active ? "bg-[#123643] text-[#d8c7a3]" : "text-[#7a909b] hover:text-white",
                   )}
                 >
                   <Icon className="h-4 w-4" />
@@ -424,7 +424,7 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
       <button
         type="button"
         onClick={() => onAddElement("text")}
-        className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-xl border border-[#3c4948]/40 text-xs font-semibold uppercase tracking-[0.15em] text-[#bacac7] transition hover:border-[#62f9ee]/70 hover:text-[#62f9ee]"
+        className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-xl border border-[#3c4948]/40 text-xs font-semibold uppercase tracking-[0.15em] text-[#bacac7] transition hover:border-[#276864]/70 hover:text-[#d8c7a3]"
       >
         Add Text
       </button>
@@ -433,14 +433,14 @@ export function EditPanel({ element, media, onUpdate, onAddElement, onDelete }: 
         <button
           type="button"
           onClick={() => onAddElement("media")}
-          className="inline-flex h-10 items-center justify-center rounded-xl border border-[#3c4948]/40 text-xs font-semibold uppercase tracking-[0.12em] text-[#bacac7] transition hover:border-[#62f9ee]/70 hover:text-[#62f9ee]"
+          className="inline-flex h-10 items-center justify-center rounded-xl border border-[#3c4948]/40 text-xs font-semibold uppercase tracking-[0.12em] text-[#bacac7] transition hover:border-[#276864]/70 hover:text-[#d8c7a3]"
         >
           Add Media
         </button>
         <button
           type="button"
           onClick={() => onAddElement("button")}
-          className="inline-flex h-10 items-center justify-center rounded-xl border border-[#3c4948]/40 text-xs font-semibold uppercase tracking-[0.12em] text-[#bacac7] transition hover:border-[#62f9ee]/70 hover:text-[#62f9ee]"
+          className="inline-flex h-10 items-center justify-center rounded-xl border border-[#3c4948]/40 text-xs font-semibold uppercase tracking-[0.12em] text-[#bacac7] transition hover:border-[#276864]/70 hover:text-[#d8c7a3]"
         >
           Add Button
         </button>

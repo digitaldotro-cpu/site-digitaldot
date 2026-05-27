@@ -20,7 +20,7 @@ export function LogsViewer({ submissions, emails }: LogsViewerProps) {
           onClick={() => setActiveTab("submissions")}
           className={`text-sm font-semibold transition-colors ${
             activeTab === "submissions"
-              ? "text-[#66fcf1] border-b-2 border-[#66fcf1] pb-[17px] -mb-[18px]"
+              ? "text-[#d8c7a3] border-b-2 border-[#276864] pb-[17px] -mb-[18px]"
               : "text-[#8da0aa] hover:text-white"
           }`}
         >
@@ -30,7 +30,7 @@ export function LogsViewer({ submissions, emails }: LogsViewerProps) {
           onClick={() => setActiveTab("emails")}
           className={`text-sm font-semibold transition-colors ${
             activeTab === "emails"
-              ? "text-[#66fcf1] border-b-2 border-[#66fcf1] pb-[17px] -mb-[18px]"
+              ? "text-[#d8c7a3] border-b-2 border-[#276864] pb-[17px] -mb-[18px]"
               : "text-[#8da0aa] hover:text-white"
           }`}
         >
@@ -49,7 +49,7 @@ export function LogsViewer({ submissions, emails }: LogsViewerProps) {
                   <div className="mb-4 flex flex-wrap items-center justify-between gap-4 border-b border-[#1c2c33] pb-4">
                     <div>
                       <h3 className="font-semibold text-white">{sub.data.name}</h3>
-                      <p className="text-sm text-[#66fcf1]">{sub.data.email} • {sub.data.phone}</p>
+                      <p className="text-sm text-[#d8c7a3]">{sub.data.email} • {sub.data.phone}</p>
                     </div>
                     <div className="text-right text-xs text-[#8da0aa]">
                       <p>{format(new Date(sub.timestamp), "dd MMM yyyy, HH:mm:ss", { locale: ro })}</p>
@@ -91,7 +91,7 @@ export function LogsViewer({ submissions, emails }: LogsViewerProps) {
                       <td className="py-3 pr-4">
                         <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                           log.status === "success" 
-                            ? "bg-[#112b2a] text-[#66fcf1]" 
+                            ? "bg-[#112b2a] text-[#d8c7a3]" 
                             : "bg-[#2f1b1d] text-[#ffc5cb]"
                         }`}>
                           {log.status}

@@ -7,7 +7,7 @@ type CaseStudyPreviewProps = {
 export function CaseStudyPreview({ project }: CaseStudyPreviewProps) {
   return (
     <article className="rounded-[1.5rem] border border-[#26353c] bg-[#11181d] p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#66fcf1]">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#d8c7a3]">
         Case Study Preview
       </p>
       <h3 className="mt-3 text-xl font-semibold text-white">{project.title}</h3>

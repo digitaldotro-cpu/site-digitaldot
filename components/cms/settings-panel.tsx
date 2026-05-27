@@ -112,7 +112,7 @@ export function SettingsPanel({ values, media, onUpdate, onUploadAsset }: Settin
 
           <div className="rounded-2xl border border-[#23414d] bg-[#0d171d] p-4">
             <div className="mb-3 flex items-center gap-2">
-              <ImagePlus className="h-4 w-4 text-[#66fcf1]" />
+              <ImagePlus className="h-4 w-4 text-[#d8c7a3]" />
               <p className="text-sm font-semibold text-white">Brand Assets</p>
             </div>
             <p className="text-xs text-[#8ea2ad]">
@@ -134,7 +134,7 @@ export function SettingsPanel({ values, media, onUpdate, onUploadAsset }: Settin
                   type="button"
                   onClick={() => headerInputRef.current?.click()}
                   disabled={uploadingField === "headerLogoMediaId"}
-                  className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-[#31505c] text-xs font-semibold text-[#a7c2ce] transition hover:border-[#66fcf1]/70 hover:text-[#66fcf1] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-[#31505c] text-xs font-semibold text-[#a7c2ce] transition hover:border-[#276864]/70 hover:text-[#d8c7a3] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <Upload className="h-3.5 w-3.5" />
                   {uploadingField === "headerLogoMediaId" ? "Se încarcă..." : "Încarcă logo"}
@@ -180,7 +180,7 @@ export function SettingsPanel({ values, media, onUpdate, onUploadAsset }: Settin
                   type="button"
                   onClick={() => faviconInputRef.current?.click()}
                   disabled={uploadingField === "faviconMediaId"}
-                  className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-[#31505c] text-xs font-semibold text-[#a7c2ce] transition hover:border-[#66fcf1]/70 hover:text-[#66fcf1] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-[#31505c] text-xs font-semibold text-[#a7c2ce] transition hover:border-[#276864]/70 hover:text-[#d8c7a3] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <Upload className="h-3.5 w-3.5" />
                   {uploadingField === "faviconMediaId" ? "Se încarcă..." : "Încarcă favicon"}
@@ -219,7 +219,7 @@ export function SettingsPanel({ values, media, onUpdate, onUploadAsset }: Settin
 
         <button
           type="submit"
-          className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-[#66fcf1] px-5 text-sm font-semibold text-[#062f35] transition hover:bg-[#8ffff8]"
+          className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-[#276864] px-5 text-sm font-semibold text-[#d8c7a3] transition hover:bg-[#2f7773]"
         >
           <Save className="h-4 w-4" /> Salvează setări
         </button>

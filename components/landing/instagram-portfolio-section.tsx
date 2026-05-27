@@ -30,7 +30,7 @@ export function InstagramPortfolioSection({ section }: InstagramPortfolioSection
               className="group order-2 block lg:col-span-7"
               aria-label={section.ctaText}
             >
-              <div className="relative overflow-hidden rounded-3xl border border-[#66fcf1]/35 bg-[#0b0c10] transition duration-300 group-hover:border-[#66fcf1]/65 group-hover:shadow-[0_0_34px_-16px_rgba(102,252,241,0.8)]">
+              <div className="relative overflow-hidden rounded-3xl border border-[#276864]/35 bg-[#0b0c10] transition duration-300 group-hover:border-[#276864]/65 group-hover:shadow-[0_0_34px_-16px_rgba(39,104,100,0.8)]">
                 <div className="relative aspect-[3/2] w-full">
                   <Image
                     src={section.image}

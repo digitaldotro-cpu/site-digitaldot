@@ -45,7 +45,7 @@ export function SocialLinkItem({ platform, url }: SocialLinkItemProps) {
       aria-label={`${label} Digital Dot`}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full border border-[#1f2a2d] bg-[#101418] px-4 py-2 text-sm text-[#dadada] transition duration-300 hover:border-[#276864] hover:text-[#66fcf1]"
+      className="inline-flex items-center gap-2 rounded-full border border-[#1f2a2d] bg-[#101418] px-4 py-2 text-sm text-[#dadada] transition duration-300 hover:border-[#276864] hover:text-[#d8c7a3]"
     >
       <Icon className="h-4 w-4" />
       <span>{label}</span>

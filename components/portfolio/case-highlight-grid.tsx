@@ -44,13 +44,13 @@ export function CaseHighlightGrid({ title, intro, items }: CaseHighlightGridProp
               transition={{ delay: index * 0.04 }}
               className="rounded-2xl border border-[#2d3b43] bg-[#1a1c1c] p-6"
             >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#66fcf1]/10 text-[#66fcf1]">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#276864]/10 text-[#d8c7a3]">
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-4 text-xl font-bold text-white">{item.title}</h3>
               <p className="mt-3 text-sm text-[#bacac7]"><span className="font-semibold text-white">Context:</span> {item.context}</p>
               <p className="mt-2 text-sm text-[#bacac7]"><span className="font-semibold text-white">Abordare:</span> {item.approach}</p>
-              <p className="mt-4 rounded-full border border-[#3c4948]/40 px-3 py-1 text-xs font-semibold text-[#66fcf1]">
+              <p className="mt-4 rounded-full border border-[#3c4948]/40 px-3 py-1 text-xs font-semibold text-[#d8c7a3]">
                 {item.metric}
               </p>
             </motion.article>

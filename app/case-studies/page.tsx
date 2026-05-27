@@ -45,7 +45,7 @@ export default async function CaseStudiesPage() {
         <Container className="relative z-10">
           <header className="max-w-4xl">
             <span className="brand-rule mb-5" />
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66fcf1]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">
               Rezultate
             </p>
             <h1 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">

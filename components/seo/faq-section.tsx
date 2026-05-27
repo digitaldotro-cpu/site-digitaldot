@@ -30,9 +30,9 @@ export function FaqSection({ groups }: FaqSectionProps) {
                 <div className="mt-4 divide-y divide-[#1f2a2d] overflow-hidden rounded-[1.35rem] border border-[#1f2a2d] bg-[#101418]">
                   {group.items.map((item) => (
                     <details key={item.id} className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-white transition-colors hover:text-[#66fcf1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#66fcf1] [&::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-white transition-colors hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#276864] [&::-webkit-details-marker]:hidden">
                         <span>{item.question}</span>
-                        <ChevronDown className="h-4 w-4 shrink-0 text-[#66fcf1] transition-transform group-open:rotate-180" />
+                        <ChevronDown className="h-4 w-4 shrink-0 text-[#d8c7a3] transition-transform group-open:rotate-180" />
                       </summary>
                       <p className="px-5 pb-5 text-sm leading-relaxed text-[#c6c6c6]">
                         {item.answer}

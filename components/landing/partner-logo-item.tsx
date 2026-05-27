@@ -41,7 +41,7 @@ export function PartnerLogoItem({ logo }: PartnerLogoItemProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={logo.alt}
-      className={cn("inline-flex", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]")}
+      className={cn("inline-flex", "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]")}
     >
       {content}
     </a>

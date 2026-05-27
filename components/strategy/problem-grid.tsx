@@ -45,7 +45,7 @@ export function ProblemGrid({ title, intro, items }: ProblemGridProps) {
               whileHover={{ y: -4 }}
               className="rounded-[1.2rem] border border-[#2a3c46] bg-[#111a20] p-5"
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#2f4650] bg-[#0f1f28] text-[#66fcf1]">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#2f4650] bg-[#0f1f28] text-[#d8c7a3]">
                 <Icon className="h-4 w-4" />
               </span>
               <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>

@@ -50,8 +50,8 @@ function renderHighlightedText(text: string, phrases: string[], tone: "headline"
         key={`${part}-${index}`}
         className={cn(
           tone === "headline"
-            ? "text-[#66fcf1]"
-            : "rounded-full bg-[#66fcf1]/10 px-2 py-0.5 text-[#d8fffc]",
+            ? "text-[#d8c7a3]"
+            : "rounded-full bg-[#276864]/10 px-2 py-0.5 text-[#d8c7a3]",
         )}
       >
         {part}
@@ -122,8 +122,8 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
 
                 <AnimatedSection delay={0.12} className="relative hidden items-center px-1 lg:flex">
                   <div className="flex h-full min-h-64 w-14 items-center justify-center">
-                    <div className="h-px w-full bg-gradient-to-r from-[#c6c6c6]/20 via-[#66fcf1] to-[#276864]" />
-                    <ArrowRight className="absolute h-5 w-5 rounded-full border border-[#66fcf1]/35 bg-[#0b0c10] p-1 text-[#66fcf1]" />
+                    <div className="h-px w-full bg-gradient-to-r from-[#c6c6c6]/20 via-[#276864] to-[#276864]" />
+                    <ArrowRight className="absolute h-5 w-5 rounded-full border border-[#276864]/35 bg-[#0b0c10] p-1 text-[#d8c7a3]" />
                   </div>
                 </AnimatedSection>
 
@@ -132,7 +132,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
                   <ul className="mt-5 space-y-3 text-[#d9fffc]">
                     {section.comparison.right.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#66fcf1]" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#276864]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -184,7 +184,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
                   href={section.cta.link}
                   size="lg"
                   variant="secondary"
-                  className="group h-12 border-[#2e434b] bg-[#122029] px-8 text-sm uppercase tracking-[0.09em] text-[#dff9f7] hover:border-[#66fcf1]/70 hover:bg-[#152730]"
+                  className="group h-12 border-[#2e434b] bg-[#122029] px-8 text-sm uppercase tracking-[0.09em] text-[#dff9f7] hover:border-[#276864]/70 hover:bg-[#152730]"
                 >
                   {section.cta.text}
                   <ArrowRight className="ml-3 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

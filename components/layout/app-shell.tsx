@@ -186,7 +186,7 @@ export function AppShell({ children, content }: AppShellProps) {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#66fcf1] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-[#071012] focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#276864] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-[#d8c7a3] focus:shadow-lg"
       >
         Sari la conținut
       </a>

@@ -30,7 +30,7 @@ export function DeliverableCard({
         "overflow-hidden rounded-[1.2rem] border",
         tone === "dark"
           ? "border-[#293b43] bg-[#10181d]"
-          : "border-[#55ddd5]/60 bg-[linear-gradient(150deg,#66fcf1_0%,#46cec6_58%,#2f9993_100%)]",
+          : "border-[#276864]/60 bg-[linear-gradient(150deg,#276864_0%,#276864_58%,#276864_100%)]",
         className,
       )}
     >
@@ -46,11 +46,11 @@ export function DeliverableCard({
         </div>
       ) : null}
       <div className="p-4">
-        <h3 className={cn("text-sm font-semibold", tone === "dark" ? "text-white" : "text-[#09201f]")}>
+        <h3 className={cn("text-sm font-semibold", tone === "dark" ? "text-white" : "text-[#d8c7a3]")}>
           {title}
         </h3>
         {description ? (
-          <p className={cn("mt-2 text-xs leading-relaxed", tone === "dark" ? "text-[#adb5bb]" : "text-[#123a38]")}>
+          <p className={cn("mt-2 text-xs leading-relaxed", tone === "dark" ? "text-[#adb5bb]" : "text-[#d8c7a3]")}>
             {description}
           </p>
         ) : null}

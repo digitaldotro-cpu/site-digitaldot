@@ -55,7 +55,7 @@ export function AuthGate({ onAuthenticated }: AuthGateProps) {
         className="w-full max-w-md rounded-[1.8rem] border border-[#28404d] bg-[#0d161d] p-7 shadow-[0_30px_80px_-45px_rgba(0,0,0,0.85)]"
       >
         <div className="mb-6 flex items-center gap-3">
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#112c37] text-[#66fcf1]">
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#112c37] text-[#d8c7a3]">
             <ShieldCheck className="h-6 w-6" />
           </span>
           <div>
@@ -80,7 +80,7 @@ export function AuthGate({ onAuthenticated }: AuthGateProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full bg-[#66fcf1] text-sm font-semibold text-[#063138] transition hover:bg-[#8ffff8] disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full bg-[#276864] text-sm font-semibold text-[#d8c7a3] transition hover:bg-[#2f7773] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting ? "Verificăm..." : "Intră în Dashboard"}
         </button>
