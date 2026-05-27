@@ -17,7 +17,7 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
       className="brand-card group block h-full p-5 sm:p-6"
     >
       <article className={featured ? "grid h-full gap-7 lg:grid-cols-[0.85fr_1.15fr]" : "h-full"}>
-        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.35rem] border border-[#276864]/30 bg-[linear-gradient(145deg,rgba(218,218,218,0.08),rgba(16,20,24,0.92))] p-8">
+        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.35rem] border border-[#276864]/30 bg-[#f3f1ea] p-8">
           <Image
             src={study.heroImage}
             alt={`${study.clientName} case study`}

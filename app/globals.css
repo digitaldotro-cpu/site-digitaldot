@@ -47,6 +47,18 @@ h3 {
   letter-spacing: 0;
 }
 
+main {
+  overflow-x: clip;
+}
+
+p,
+h1,
+h2,
+h3,
+li {
+  overflow-wrap: break-word;
+}
+
 .brand-wordmark {
   display: block;
   background: transparent;

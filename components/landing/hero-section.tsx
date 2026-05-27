@@ -53,7 +53,7 @@ export function HeroSection({ section }: HeroSectionProps) {
         >
           <div
             className={cn(
-              "order-1 space-y-8",
+              "order-1 min-w-0 max-w-full space-y-8",
               useBackgroundMode ? "max-w-3xl" : "lg:col-span-6",
               section.imageVisibility && section.imagePosition === "left" ? "lg:order-2" : "lg:order-1",
             )}
