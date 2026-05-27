@@ -72,7 +72,6 @@ export function AppShell({ children, content }: AppShellProps) {
   useEffect(() => {
     if (isCmsRoute || !scrollBehavior.hideOnScrollDown) {
       isUiVisibleRef.current = true;
-      setIsUiVisible(true);
       return;
     }
 
