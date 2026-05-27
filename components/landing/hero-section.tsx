@@ -24,7 +24,7 @@ export function HeroSection({ section }: HeroSectionProps) {
   const useBackgroundMode = section.imagePosition === "right";
 
   return (
-    <section id="hero" className="relative overflow-hidden scroll-mt-24 pt-10 sm:pt-14 lg:pt-16">
+    <section id="hero" className="brand-orbit relative overflow-hidden scroll-mt-24 pt-10 sm:pt-14 lg:pt-16">
       {section.imageVisibility && useBackgroundMode ? (
         <div className="pointer-events-none absolute inset-0 hidden md:block">
           <Image
@@ -37,12 +37,12 @@ export function HeroSection({ section }: HeroSectionProps) {
           <div
             className="absolute inset-0"
             style={{
-              background: `linear-gradient(90deg, rgba(11,12,16,${overlayOpacity}) 0%, rgba(11,12,16,${Math.max(overlayOpacity * 0.76, 0.3)}) 45%, rgba(11,12,16,0.22) 100%)`,
+              background: `linear-gradient(90deg, rgba(11,12,16,${overlayOpacity}) 0%, rgba(11,12,16,${Math.max(overlayOpacity * 0.88, 0.44)}) 50%, rgba(11,12,16,0.36) 100%)`,
             }}
           />
         </div>
       ) : null}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(102,252,241,0.16),transparent_42%),radial-gradient(circle_at_82%_12%,rgba(39,104,100,0.22),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_34%,rgba(39,104,100,0.16),transparent_34%),radial-gradient(circle_at_84%_12%,rgba(216,199,163,0.055),transparent_28%)]" />
 
       <Container className="relative z-10 pb-8 pt-8 sm:pb-10 sm:pt-10 lg:pb-14 lg:pt-10">
         <div
@@ -58,17 +58,17 @@ export function HeroSection({ section }: HeroSectionProps) {
               section.imageVisibility && section.imagePosition === "left" ? "lg:order-2" : "lg:order-1",
             )}
           >
-            <span className="inline-flex rounded-full border border-[#66fcf1]/35 bg-[#66fcf1]/10 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[#66fcf1]">
+            <span className="inline-flex rounded-full border border-[#276864]/60 bg-[#101418]/80 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[#d8c7a3]">
               {section.badge}
             </span>
 
-            <h1 className="text-4xl font-semibold leading-[1.06] text-white sm:text-5xl md:text-6xl">
+            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">
               {selectedHeadline}
             </h1>
 
-            <p className="max-w-2xl text-lg leading-relaxed text-[#c6c6c6] sm:text-xl">{section.subheadline}</p>
+            <p className="max-w-2xl text-lg leading-relaxed text-[#dadada] sm:text-xl">{section.subheadline}</p>
 
-            <div className="space-y-2 text-base text-[#c6c6c6]">
+            <div className="space-y-2 border-l border-[#d8c7a3]/45 pl-5 text-base text-[#dadada]">
               {section.supportingPoints.map((point) => (
                 <p key={point}>{point}</p>
               ))}
@@ -87,7 +87,7 @@ export function HeroSection({ section }: HeroSectionProps) {
                 section.imagePosition === "left" ? "lg:order-1" : "lg:order-2",
               )}
             >
-              <div className="relative overflow-hidden rounded-[2rem] border border-[#276864]/45 bg-[#0b0c10] shadow-[0_0_40px_-22px_rgba(102,252,241,0.42)]">
+              <div className="relative overflow-hidden rounded-2xl border border-[#1f2a2d] bg-[#0b0c10] shadow-[0_24px_80px_-60px_rgba(102,252,241,0.6)]">
                 <div className="relative aspect-[16/9] w-full">
                   <Image
                     src={section.image}

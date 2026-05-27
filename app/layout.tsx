@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Varela_Round } from "next/font/google";
+import { Inter, Varela_Round } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
@@ -13,6 +13,11 @@ const varelaRound = Varela_Round({
   variable: "--font-varela-round",
   subsets: ["latin"],
   weight: "400",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const viewport: Viewport = {
@@ -73,7 +78,7 @@ export default async function RootLayout({
   const gtmId = content.global.gtmId?.trim();
 
   return (
-    <html lang="ro" className={varelaRound.variable}>
+    <html lang="ro" className={`${varelaRound.variable} ${inter.variable}`}>
       <body className="bg-[#0b0c10] text-white antialiased">
         {gtmId && (
           <Script
@@ -96,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         )}
         <div className="relative min-h-screen overflow-x-hidden">
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(102,252,241,0.11),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(39,104,100,0.26),transparent_36%),linear-gradient(160deg,#090b0f_10%,#0c1014_55%,#0b0f12_100%)]" />
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_14%,rgba(39,104,100,0.16),transparent_32%),radial-gradient(circle_at_18%_0%,rgba(216,199,163,0.055),transparent_28%),linear-gradient(160deg,#0b0c10_0%,#101418_50%,#0b0c10_100%)]" />
           <JsonLd
             data={[
               buildOrganizationSchema(content),

@@ -17,11 +17,11 @@ const spacingClassMap: Record<SiteContent["landing"]["positioning"]["layout"]["s
 
 const backgroundClassMap: Record<SiteContent["landing"]["positioning"]["layout"]["backgroundVariant"], string> = {
   subtle:
-    "border-[#263740]/65 bg-[linear-gradient(145deg,rgba(11,15,19,0.9),rgba(8,11,15,0.96))]",
+    "border-[#1f2a2d] bg-[linear-gradient(145deg,rgba(16,20,24,0.94),rgba(11,12,16,0.98))]",
   glow:
-    "border-[#2a444d] bg-[linear-gradient(145deg,rgba(16,24,30,0.95),rgba(10,13,17,0.98))] shadow-[0_0_55px_-35px_rgba(102,252,241,0.5)]",
+    "border-[#1f2a2d] bg-[linear-gradient(145deg,rgba(16,20,24,0.96),rgba(11,12,16,0.99))] shadow-[0_28px_90px_-72px_rgba(102,252,241,0.55)]",
   glass:
-    "border-[#2d474f] bg-[linear-gradient(145deg,rgba(17,25,32,0.84),rgba(9,12,16,0.9))] backdrop-blur-sm",
+    "border-[#1f2a2d] bg-[linear-gradient(145deg,rgba(16,20,24,0.86),rgba(11,12,16,0.94))] backdrop-blur-sm",
 };
 
 function escapeRegExp(value: string) {
@@ -74,7 +74,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
   return (
     <section id="positioning" className={cn("scroll-mt-24", spacingClass)}>
       <Container className="max-w-6xl">
-        <div className="relative overflow-hidden rounded-[2.15rem] border p-7 sm:p-10 lg:p-14">
+        <div className="brand-orbit relative overflow-hidden rounded-2xl border p-7 sm:p-10 lg:p-14">
           <div
             className={cn(
               "pointer-events-none absolute inset-0 opacity-95 transition-opacity duration-700",
@@ -82,12 +82,12 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
             )}
           />
 
-          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#66fcf1]/12 blur-3xl transition-opacity duration-700" />
+          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#276864]/12 blur-3xl transition-opacity duration-700" />
           <div className="relative space-y-10 sm:space-y-12 lg:space-y-14">
             <AnimatedSection className={cn("max-w-4xl", widthAlignmentClass)}>
               <h2
                 className={cn(
-                  "text-balance text-[2rem] font-semibold leading-[1.08] tracking-[-0.015em] text-white sm:text-[2.9rem] lg:text-[3.5rem]",
+                  "text-balance text-[2rem] font-semibold leading-[1.08] text-white sm:text-[2.9rem] lg:text-[3.5rem]",
                   alignmentClass,
                 )}
               >
@@ -98,7 +98,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
             <AnimatedSection delay={0.05} className={cn("max-w-3xl", widthAlignmentClass)}>
               <p
                 className={cn(
-                  "text-pretty text-lg leading-[1.85] text-[#cbd4d9] sm:text-[1.2rem]",
+                  "text-pretty text-lg leading-[1.85] text-[#dadada] sm:text-[1.2rem]",
                   alignmentClass,
                 )}
               >
@@ -108,12 +108,12 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
 
             {section.comparison ? (
               <div className="grid items-stretch gap-5 lg:grid-cols-[1fr_auto_1fr]">
-                <AnimatedSection delay={0.08} className="rounded-3xl border border-[#344148] bg-[#0d1216]/86 p-6 sm:p-7">
+                <AnimatedSection delay={0.08} className="rounded-2xl border border-[#1f2a2d] bg-[#101418]/86 p-6 sm:p-7">
                   <h3 className="text-xl font-semibold text-white">{section.comparison.left.title}</h3>
-                  <ul className="mt-5 space-y-3 text-[#c6c6c6]">
+                  <ul className="mt-5 space-y-3 text-[#dadada]">
                     {section.comparison.left.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c6c6c6]/70" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d8c7a3]/80" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -127,7 +127,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
                   </div>
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.16} className="rounded-3xl border border-[#66fcf1]/34 bg-[#66fcf1]/8 p-6 sm:p-7">
+                <AnimatedSection delay={0.16} className="rounded-2xl border border-[#276864]/55 bg-[#0b0c10]/55 p-6 sm:p-7">
                   <h3 className="text-xl font-semibold text-[#e8fffd]">{section.comparison.right.title}</h3>
                   <ul className="mt-5 space-y-3 text-[#d9fffc]">
                     {section.comparison.right.items.map((item) => (
@@ -146,9 +146,9 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
                     <AnimatedSection
                       key={entry.id}
                       delay={0.08 + index * 0.05}
-                      className="rounded-2xl border border-[#2a3c44]/65 bg-[#0f151a]/75 p-6 sm:p-7"
+                      className="rounded-xl border border-[#1f2a2d] bg-[#101418]/78 p-6 sm:p-7"
                     >
-                      <p className="text-pretty text-base leading-8 text-[#d0d7db] sm:text-[1.06rem]">
+                      <p className="text-pretty text-base leading-8 text-[#dadada] sm:text-[1.06rem]">
                         {renderHighlightedText(entry.text, paragraphHighlights, "body")}
                       </p>
                     </AnimatedSection>
@@ -160,7 +160,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
                     <AnimatedSection
                       key={quote.id}
                       delay={0.16 + index * 0.06}
-                      className="rounded-2xl border border-[#66fcf1]/28 bg-[#66fcf1]/8 p-6"
+                      className="rounded-xl border border-[#276864]/50 bg-[#0b0c10]/52 p-6"
                     >
                       <p className="text-pretty text-lg leading-relaxed text-[#e8fffd]">“{quote.text}”</p>
                     </AnimatedSection>
@@ -172,7 +172,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
             <AnimatedSection delay={0.24} className={cn("space-y-7", widthAlignmentClass)}>
               <p
                 className={cn(
-                  "max-w-3xl text-pretty text-lg leading-[1.85] text-[#c7cfd4] sm:text-[1.15rem]",
+                  "max-w-3xl text-pretty text-lg leading-[1.85] text-[#dadada] sm:text-[1.15rem]",
                   alignmentClass,
                 )}
               >

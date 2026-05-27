@@ -9,10 +9,10 @@ const baseClasses =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[#66fcf1] text-[#0b0c10] shadow-[0_10px_35px_-12px_rgba(102,252,241,0.7)] hover:-translate-y-0.5 hover:bg-[#95fff8]",
+    "bg-[#66fcf1] text-[#0b0c10] shadow-[0_12px_34px_-20px_rgba(102,252,241,0.82)] hover:-translate-y-0.5 hover:bg-[#8dfff7]",
   secondary:
-    "bg-[#1a2429] text-white border border-[#2e4048] hover:border-[#66fcf1]/60 hover:bg-[#1c2c31]",
-  ghost: "bg-transparent border border-[#2f3f47] text-[#c6c6c6] hover:text-white",
+    "border border-[#276864]/70 bg-transparent text-white hover:border-[#66fcf1]/70 hover:bg-[#101418]",
+  ghost: "bg-transparent border border-[#1f2a2d] text-[#dadada] hover:border-[#276864] hover:text-white",
 };
 
 const sizes: Record<Size, string> = {

@@ -45,7 +45,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 function baseButtonClasses(position: "bottom-right" | "bottom-left") {
   return cn(
-    "fixed bottom-5 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#276864]/40 bg-[#0f1418]/90 text-[#66fcf1] backdrop-blur-sm shadow-[0_0_30px_-14px_rgba(102,252,241,0.85)] transition duration-300 hover:scale-105 hover:border-[#66fcf1]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]",
+    "fixed bottom-5 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#276864]/55 bg-[#101418]/92 text-[#66fcf1] backdrop-blur-sm shadow-[0_18px_44px_-28px_rgba(102,252,241,0.9)] transition duration-300 hover:scale-105 hover:border-[#66fcf1]/70 hover:bg-[#0b0c10] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66fcf1]",
     position === "bottom-left" ? "left-5" : "right-5",
   );
 }
@@ -92,4 +92,3 @@ export function FloatingContactButtons({
     </>
   );
 }
-

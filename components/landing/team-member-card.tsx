@@ -21,7 +21,7 @@ function getInitials(name: string) {
 
 export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
   const avatarClasses =
-    "relative aspect-square h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-[#2a3e42] bg-[#121820] md:h-32 md:w-32 lg:h-28 lg:w-28";
+    "relative aspect-square h-28 w-28 shrink-0 overflow-hidden rounded-xl border border-[#1f2a2d] bg-[#101418] md:h-32 md:w-32 lg:h-28 lg:w-28";
 
   const avatarContent = member.avatar ? (
     <Image
@@ -41,7 +41,7 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
   return (
     <AnimatedSection
       delay={delay}
-      className="group rounded-3xl border border-[#2a3e42] bg-[linear-gradient(150deg,rgba(16,20,24,0.92),rgba(10,13,16,0.98))] p-6 transition-all duration-300 hover:border-[#66fcf1]/40 hover:shadow-[0_0_30px_-18px_rgba(102,252,241,0.8)]"
+      className="group rounded-xl border border-[#1f2a2d] bg-[linear-gradient(150deg,rgba(16,20,24,0.94),rgba(11,12,16,0.98))] p-6 transition-all duration-300 hover:border-[#276864] hover:shadow-[0_22px_64px_-52px_rgba(102,252,241,0.75)]"
     >
       <div className="grid grid-cols-[auto_1fr] items-start gap-4">
         {member.avatarLink ? (
@@ -60,7 +60,7 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
 
         <div className="min-w-0">
           <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-          <p className="mt-1 text-sm leading-relaxed text-[#c6c6c6]">{member.role}</p>
+          <p className="mt-1 text-sm leading-relaxed text-[#dadada]">{member.role}</p>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
             {member.socials.map((social) => (

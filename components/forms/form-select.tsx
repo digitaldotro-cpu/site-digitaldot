@@ -24,13 +24,13 @@ export function FormSelect({
 }: FormSelectProps) {
   return (
     <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-semibold text-[#d9dde0]">
+      <label htmlFor={id} className="text-sm font-semibold text-[#dadada]">
         {label}
       </label>
       <select
         id={id}
         className={cn(
-          "h-12 w-full rounded-2xl border border-[#2b3a42] bg-[#10171b] px-4 text-sm text-white focus:border-[#66fcf1] focus:outline-none",
+          "h-12 w-full rounded-xl border border-[#1f2a2d] bg-[#0b0c10] px-4 text-sm text-white focus:border-[#66fcf1] focus:outline-none",
           error && "border-[#ff7a7a]",
           className,
         )}

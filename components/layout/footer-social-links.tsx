@@ -21,7 +21,7 @@ export function FooterSocialLinks({ title, links }: FooterSocialLinksProps) {
 
   return (
     <nav aria-labelledby={titleId}>
-      <h3 id={titleId} className="text-sm font-semibold uppercase tracking-[0.12em] text-[#66fcf1]">{title}</h3>
+      <h3 id={titleId} className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d8c7a3]">{title}</h3>
       <div className="mt-4 flex flex-wrap gap-2.5">
         {visibleLinks.map((link) => (
           <SocialLinkItem key={`${link.platform}-${link.url}`} platform={link.platform} url={link.url} />
