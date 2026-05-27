@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -64,6 +65,65 @@ export function AppShell({ children, content }: AppShellProps) {
   const pathname = usePathname();
   const isCmsRoute = pathname.startsWith("/panou-control");
   const scrollBehavior = content.global.scrollBehavior;
+  const [isUiVisible, setIsUiVisible] = useState(true);
+  const isUiVisibleRef = useRef(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    if (isCmsRoute || !scrollBehavior.hideOnScrollDown) {
+      isUiVisibleRef.current = true;
+      setIsUiVisible(true);
+      return;
+    }
+
+    let rafId: number | null = null;
+
+    function setVisible(nextVisible: boolean) {
+      if (isUiVisibleRef.current === nextVisible) {
+        return;
+      }
+
+      isUiVisibleRef.current = nextVisible;
+      setIsUiVisible(nextVisible);
+    }
+
+    function updateVisibility() {
+      const currentY = Math.max(window.scrollY, 0);
+      const delta = currentY - lastScrollY.current;
+
+      if (currentY <= 10) {
+        setVisible(true);
+      } else if (currentY > scrollBehavior.scrollThreshold && delta > 8) {
+        setVisible(false);
+      } else if (delta < -8) {
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentY;
+      rafId = null;
+    }
+
+    function handleScroll() {
+      if (rafId !== null) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(updateVisibility);
+    }
+
+    lastScrollY.current = Math.max(window.scrollY, 0);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isCmsRoute, scrollBehavior.hideOnScrollDown, scrollBehavior.scrollThreshold]);
+
+  const effectiveUiVisible = scrollBehavior.hideOnScrollDown ? isUiVisible : true;
 
   if (isCmsRoute) {
     return <main id="main-content">{children}</main>;
@@ -84,7 +144,7 @@ export function AppShell({ children, content }: AppShellProps) {
         ctaLabel={content.global.navbarCtaLabel}
         ctaHref={content.global.navbarCtaHref}
         contactPhone={content.global.footer.contactPhone}
-        isVisible
+        isVisible={effectiveUiVisible}
         transitionDuration={scrollBehavior.transitionDuration}
       />
       <main id="main-content">{children}</main>
@@ -111,7 +171,7 @@ export function AppShell({ children, content }: AppShellProps) {
       <FloatingContactButtons
         whatsapp={content.global.whatsappButton}
         call={content.global.callButton}
-        isVisible
+        isVisible={effectiveUiVisible}
         transitionDuration={scrollBehavior.transitionDuration}
       />
     </>

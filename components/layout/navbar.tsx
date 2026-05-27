@@ -159,15 +159,35 @@ export function Navbar({
       });
     }
 
+    const sections = uniqueHashes
+      .map((hash) => document.getElementById(hash.slice(1)))
+      .filter((section): section is HTMLElement => Boolean(section));
+    const observer =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(handleScroll, {
+            root: null,
+            rootMargin: "-12% 0px -58% 0px",
+            threshold: [0, 0.1, 0.35, 0.65, 1],
+          });
+
     updateActiveSection();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    if (observer) {
+      sections.forEach((section) => observer.observe(section));
+    } else {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }
     window.addEventListener("resize", handleScroll);
 
     return () => {
       if (rafId !== null) {
         window.cancelAnimationFrame(rafId);
       }
-      window.removeEventListener("scroll", handleScroll);
+
+      observer?.disconnect();
+      if (!observer) {
+        window.removeEventListener("scroll", handleScroll);
+      }
       window.removeEventListener("resize", handleScroll);
     };
   }, [pathname, visibleNavItems]);
