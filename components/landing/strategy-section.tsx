@@ -17,7 +17,10 @@ export function StrategySection({ section }: StrategySectionProps) {
     <section id="strategy-section" className="py-18 sm:py-24">
       <Container>
         <AnimatedSection className="relative overflow-hidden rounded-[2rem] border border-[#276864]/50 bg-[#0b0c10]">
-          <div className="relative h-[420px] sm:h-[520px] lg:h-[620px]" style={{ paddingBottom: `${section.paddingBottom}px` }}>
+          <div
+            className="relative min-h-[420px] overflow-hidden sm:min-h-[520px] lg:min-h-[620px]"
+            style={{ paddingBottom: `${section.paddingBottom}px` }}
+          >
             <Image
               src={section.image}
               alt="Ușa strategică Digital Dot"
@@ -27,7 +30,7 @@ export function StrategySection({ section }: StrategySectionProps) {
             />
             <div
               className={cn(
-                "absolute inset-x-0 top-0 z-10 h-full px-6 py-10 sm:px-10 sm:py-14",
+                "relative z-10 min-h-[420px] px-6 py-10 sm:min-h-[520px] sm:px-10 sm:py-14 lg:min-h-[620px]",
                 section.textAlignment === "center" ? "flex items-center justify-center text-center" : "flex items-center",
               )}
             >

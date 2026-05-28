@@ -47,7 +47,7 @@ export function HeroSection({ section }: HeroSectionProps) {
       <Container className="relative z-10 pb-8 pt-8 sm:pb-10 sm:pt-10 lg:pb-14 lg:pt-10">
         <div
           className={cn(
-            "items-start lg:min-h-[calc(100vh-8rem)] lg:items-center",
+            "items-start lg:items-center",
             useBackgroundMode ? "flex" : "grid gap-10 lg:grid-cols-12 lg:gap-12",
           )}
         >
