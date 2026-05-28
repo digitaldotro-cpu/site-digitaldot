@@ -88,7 +88,7 @@ export default async function RootLayout({
           />
         )}
         {gtmId ? <DeferredGtm gtmId={gtmId} /> : null}
-        <div className="relative min-h-screen overflow-x-clip bg-[#0b0c10]">
+        <div className="relative overflow-x-clip bg-[#0b0c10]">
           <JsonLd
             data={[
               buildOrganizationSchema(content),
