@@ -15,6 +15,16 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
   }
 
   const visibleStudies = studies.slice(0, 6);
+  const artioIndex = visibleStudies.findIndex((study) => study.slug === "artio-medica");
+  const cosmeticIndex = visibleStudies.findIndex((study) => study.slug === "cosmeticahoteliera");
+
+  if (artioIndex !== -1 && cosmeticIndex !== -1) {
+    [visibleStudies[artioIndex], visibleStudies[cosmeticIndex]] = [
+      visibleStudies[cosmeticIndex],
+      visibleStudies[artioIndex],
+    ];
+  }
+
   const gridClassName = "mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-6";
 
   return (
