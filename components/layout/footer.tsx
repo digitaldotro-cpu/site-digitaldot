@@ -54,7 +54,15 @@ export function Footer({
       <Container className="relative z-10 grid gap-10 py-18 md:grid-cols-2 lg:grid-cols-8">
         <div className="lg:col-span-2">
           {logo ? (
-            <Image src={logo} alt={brandName} width={300} height={76} unoptimized className="brand-wordmark h-20 w-auto max-w-full object-contain" />
+            <Image
+              src={logo}
+              alt={brandName}
+              width={300}
+              height={76}
+              loading="lazy"
+              decoding="async"
+              className="brand-wordmark h-20 w-auto max-w-full object-contain"
+            />
           ) : (
             <p className="text-lg font-semibold text-white">{brandName}</p>
           )}

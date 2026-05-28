@@ -28,10 +28,7 @@ body {
 body {
   font-family: var(--font-sans), sans-serif;
   color: var(--color-white);
-  background:
-    radial-gradient(circle at 82% 8%, rgba(39, 104, 100, 0.1), transparent 34rem),
-    radial-gradient(circle at 8% 28%, rgba(216, 199, 163, 0.035), transparent 24rem),
-    linear-gradient(180deg, #0b0c10 0%, #0d1013 46%, #0b0c10 100%);
+  background: #0b0c10;
   overflow-y: auto;
 }
 
@@ -156,7 +153,6 @@ li {
 .partner-ticker-track {
   display: flex;
   width: max-content;
-  will-change: transform;
   animation-name: partner-ticker-scroll;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

@@ -82,7 +82,7 @@ export function PositioningManifestoSection({ section }: PositioningManifestoSec
             )}
           />
 
-          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#276864]/12 blur-3xl transition-opacity duration-700" />
+          <div className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#276864]/7 transition-opacity duration-700" />
           <div className="relative space-y-10 sm:space-y-12 lg:space-y-14">
             <AnimatedSection className={cn("max-w-4xl", widthAlignmentClass)}>
               <h2

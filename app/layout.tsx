@@ -88,8 +88,7 @@ export default async function RootLayout({
           />
         )}
         {gtmId ? <DeferredGtm gtmId={gtmId} /> : null}
-        <div className="relative min-h-screen overflow-x-hidden">
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_14%,rgba(39,104,100,0.16),transparent_32%),radial-gradient(circle_at_18%_0%,rgba(216,199,163,0.055),transparent_28%),linear-gradient(160deg,#0b0c10_0%,#101418_50%,#0b0c10_100%)]" />
+        <div className="relative min-h-screen overflow-x-hidden bg-[#0b0c10]">
           <JsonLd
             data={[
               buildOrganizationSchema(content),

@@ -271,7 +271,8 @@ export function Navbar({
                     alt=""
                     width={178}
                     height={100}
-                    unoptimized
+                    loading="eager"
+                    decoding="async"
                     className="brand-wordmark h-9 w-auto object-contain"
                   />
                   <span className="sr-only">{brandName}</span>
@@ -335,7 +336,8 @@ export function Navbar({
                     alt=""
                     width={136}
                     height={77}
-                    unoptimized
+                    loading="eager"
+                    decoding="async"
                     className="brand-wordmark h-7 w-auto object-contain"
                   />
                   <span className="sr-only">{brandName}</span>
@@ -365,9 +367,9 @@ export function Navbar({
           className="fixed inset-x-0 bottom-0 top-20 z-40 lg:hidden"
           onClick={() => setIsOpen(false)}
         >
-          <div className="absolute inset-0 bg-[#0b0c10]/70 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-[#0b0c10]/86" />
           <div
-            className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)] backdrop-blur-xl"
+            className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.98)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)]"
             onClick={(event) => event.stopPropagation()}
           >
             <nav aria-label="Navigare principală mobilă" className="flex flex-col gap-2">

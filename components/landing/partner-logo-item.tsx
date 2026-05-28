@@ -20,7 +20,8 @@ export function PartnerLogoItem({ logo }: PartnerLogoItemProps) {
         alt={logo.alt}
         width={220}
         height={72}
-        unoptimized
+        loading="lazy"
+        decoding="async"
         className={cn(
           "w-auto object-contain transition duration-300",
           "max-h-9 sm:max-h-10",
