@@ -360,48 +360,48 @@ export function Navbar({
       </header>
 
       {isOpen ? (
+        <div
+          id="mobile-nav-overlay"
+          className="fixed inset-x-0 bottom-0 top-20 z-40 lg:hidden"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="absolute inset-0 bg-[#0b0c10]/70 backdrop-blur-[2px]" />
           <div
-            id="mobile-nav-overlay"
-            className="fixed inset-x-0 bottom-0 top-20 z-40 lg:hidden"
-            onClick={() => setIsOpen(false)}
+            className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)] backdrop-blur-xl"
+            onClick={(event) => event.stopPropagation()}
           >
-            <div className="absolute inset-0 bg-[#0b0c10]/70 backdrop-blur-[2px]" />
-            <div
-              className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)] backdrop-blur-xl"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <nav aria-label="Navigare principală mobilă" className="flex flex-col gap-2">
-                {visibleNavItems.map((item) => {
-                  const active = isActiveNavLink(item.href);
-                  const href = normalizeNavHref(item.href);
+            <nav aria-label="Navigare principală mobilă" className="flex flex-col gap-2">
+              {visibleNavItems.map((item) => {
+                const active = isActiveNavLink(item.href);
+                const href = normalizeNavHref(item.href);
 
-                  return (
-                    <Link
-                      key={item.href}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "rounded-xl px-4 py-3 text-sm font-medium transition-colors",
-                        active
-                          ? "border border-[#276864]/50 bg-[#0b0c10] text-[#d8c7a3]"
-                          : "bg-[#101418] text-[#dadada] hover:text-white",
-                      )}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-                <ButtonLink
-                  href={ctaHref}
-                  size="sm"
-                  className="mt-1"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {ctaLabel}
-                </ButtonLink>
-              </nav>
-            </div>
+                return (
+                  <Link
+                    key={item.href}
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                      active
+                        ? "border border-[#276864]/50 bg-[#0b0c10] text-[#d8c7a3]"
+                        : "bg-[#101418] text-[#dadada] hover:text-white",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+              <ButtonLink
+                href={ctaHref}
+                size="sm"
+                className="mt-1"
+                onClick={() => setIsOpen(false)}
+              >
+                {ctaLabel}
+              </ButtonLink>
+            </nav>
           </div>
+        </div>
       ) : null}
     </>
   );
