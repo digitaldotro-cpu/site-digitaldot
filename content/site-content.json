@@ -1397,11 +1397,11 @@
       },
       {
         "path": "/case-studies/cosmeticahoteliera",
-        "label": "Studiu de caz cosmeticahoteliera.ro",
-        "seoTitle": "Studiu de caz cosmeticahoteliera.ro | Google Ads, Meta Ads & Ecommerce B2B",
-        "seoDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
-        "ogTitle": "Studiu de caz cosmeticahoteliera.ro | Google Ads, Meta Ads & Ecommerce B2B",
-        "ogDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
+        "label": "Studiu de caz Cosmetică Hotelieră",
+        "seoTitle": "Studiu de caz Cosmetică Hotelieră | Google Ads, Meta Ads & Ecommerce B2B",
+        "seoDescription": "Studiu de caz Digital Dot pentru Cosmetică Hotelieră: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
+        "ogTitle": "Studiu de caz Cosmetică Hotelieră | Google Ads, Meta Ads & Ecommerce B2B",
+        "ogDescription": "Studiu de caz Digital Dot pentru Cosmetică Hotelieră: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
         "ogImage": "/branding/partners/logo-no-bg.png",
         "canonicalUrl": "https://digitaldot.ro/case-studies/cosmeticahoteliera",
         "robots": {
@@ -4389,6 +4389,10 @@
             "label": "afișări Social Media"
           },
           {
+            "value": "16,7K+",
+            "label": "interacțiuni"
+          },
+          {
             "value": "150K+",
             "label": "clickuri Ads"
           },
@@ -4399,6 +4403,10 @@
           {
             "value": "3.900+",
             "label": "conversii urmărite"
+          },
+          {
+            "value": "384",
+            "label": "materiale publicate"
           }
         ],
         "metrics": [
@@ -4429,7 +4437,7 @@
         ],
         "context": {
           "title": "Context",
-          "text": "Optik Tataru este un brand din zona de optică medicală, cu servicii care au nevoie de încredere, vizibilitate locală și comunicare constantă. Într-un domeniu în care decizia clientului este influențată atât de nevoia medicală, cât și de experiența vizuală și comercială, simpla prezență online nu este suficientă."
+          "text": "Optik Tataru activează într-o zonă în care decizia clientului combină nevoia medicală, estetica ramelor și accesul rapid la servicii. Comunicarea digitală trebuia să acopere atât partea de încredere și expertiză, cât și partea comercială: produse, locații, programări, trafic și conversii urmărite."
         },
         "challenge": {
           "title": "Provocarea",
@@ -4498,7 +4506,7 @@
         },
         "seoTitle": "Studiu de caz Optik Tataru | Social Media, Meta Ads & Google Ads",
         "seoDescription": "Studiu de caz Digital Dot pentru Optik Tataru: 3,5M+ afișări Social Media, 150K+ clickuri Ads, 99K+ vizitatori website și 3.900+ conversii urmărite prin Google Ads.",
-        "heroIntro": "Pentru Optik Tataru, am construit un ecosistem de comunicare care a combinat Social Media, conținut video, Meta Ads și Google Ads. Obiectivul nu a fost doar publicarea constantă, ci creșterea vizibilității, direcționarea traficului către website și susținerea cererii comerciale prin campanii structurate.",
+        "heroIntro": "Într-un business în care încrederea începe cu felul în care oamenii își protejează vederea, comunicarea trebuie să fie clară, constantă și ușor de înțeles. Pentru Optik Tataru, am construit un ecosistem digital care a susținut vizibilitatea serviciilor de optică medicală, consultații oftalmologice, rame, lentile și trafic către website, conectând Social Media, Meta Ads și Google Ads într-un sistem coerent.",
         "audienceType": "Optică medicală"
       },
       {
@@ -4507,7 +4515,7 @@
         "category": "Social Media · Reels · TikTok · Content Marketing",
         "title": "Lunna: vizibilitate, interacțiuni și conținut social media construit strategic",
         "excerpt": "Pentru Lunna, am construit o prezență social media orientată spre vizibilitate, interacțiune și conținut memorabil, cu focus pe Facebook, Instagram, Reels și TikTok.",
-        "heroIntro": "Pentru Lunna, am construit o direcție de comunicare social media orientată spre vizibilitate, interacțiune și memorabilitate. Obiectivul nu a fost doar publicarea constantă, ci transformarea conținutului într-un sistem recognoscibil pe Facebook, Instagram, Reels și TikTok.",
+        "heroIntro": "Pentru un coffee & brunch spot, comunicarea nu se reduce la poze cu farfurii frumoase. Trebuie să transmită atmosferă, gust, ritm și motive reale pentru care oamenii aleg să revină. Pentru Lunna, am construit o prezență social media care a pus în centru cafeaua de specialitate, brunch-ul, deserturile și experiența locului, transformând conținutul într-un mecanism constant de vizibilitate și interacțiune.",
         "clientWebsite": "https://lunna.ro/",
         "period": "01 februarie 2024 – 20 mai 2026",
         "audienceType": "Coffee, brunch și experiențe gastronomice",
@@ -4529,6 +4537,14 @@
           {
             "value": "576K+",
             "label": "video views TikTok"
+          },
+          {
+            "value": "38K+",
+            "label": "interacțiuni TikTok"
+          },
+          {
+            "value": "+287%",
+            "label": "creștere followers"
           }
         ],
         "metrics": [
@@ -4559,7 +4575,7 @@
         ],
         "context": {
           "title": "Context",
-          "text": "Lunna este un brand din zona de coffee, brunch și experiențe gastronomice, unde decizia publicului este influențată puternic de imagine, ritm, atmosferă și recognoscibilitate. Într-un domeniu în care oamenii aleg nu doar produsul, ci și starea pe care o asociază cu brandul, Social Media devine un canal esențial de poziționare."
+          "text": "Lunna avea nevoie de o comunicare caldă, memorabilă și vizuală, capabilă să transforme produsele și atmosfera într-un limbaj social media recognoscibil. Într-un domeniu în care decizia este emoțională, vizuală și imediată, conținutul trebuia să creeze poftă, familiaritate și prezență constantă."
         },
         "challenge": {
           "title": "Provocarea",
@@ -4639,8 +4655,8 @@
         "clientName": "Taco Loco",
         "category": "Meta Ads · Social Media · Website Traffic · Restaurant Marketing",
         "title": "Taco Loco: vizibilitate, trafic și Meta Ads cu ROAS 13,30",
-        "excerpt": "Pentru Taco Loco, am construit un ecosistem digital care a combinat Social Media, Meta Ads și trafic către website, cu focus pe vizibilitate, interacțiuni, rezultate urmărite și eficiență în promovare.",
-        "heroIntro": "Pentru Taco Loco, am construit un ecosistem digital care a combinat Social Media, conținut constant, Meta Ads și trafic către website. Obiectivul a fost să susținem vizibilitatea brandului, interacțiunea cu publicul și performanța campaniilor plătite într-un domeniu unde pofta, contextul și viteza deciziei contează enorm.",
+        "excerpt": "Pentru Taco Loco, am construit un ecosistem digital care a combinat Social Media, Meta Ads și trafic către website, cu focus pe vizibilitate, interacțiuni, comenzi urmărite și eficiență în promovare.",
+        "heroIntro": "Taco Loco este genul de brand în care apetitul, decizia rapidă și recurența contează enorm. Comunicarea trebuia să susțină un meniu divers, de la pizza și burgeri la tacos, burritos și quesadillas, dar și să transforme Social Media și Meta Ads într-un sistem măsurabil de vizibilitate, trafic și comenzi urmărite.",
         "clientWebsite": "https://tacoloco.ro/",
         "period": "01 februarie 2024 – 20 mai 2026",
         "audienceType": "Restaurant local și food marketing",
@@ -4661,8 +4677,16 @@
             "label": "afișări Meta Ads"
           },
           {
+            "value": "24,89K",
+            "label": "clickuri Meta Ads"
+          },
+          {
             "value": "ROAS 13,30",
             "label": "Meta Ads"
+          },
+          {
+            "value": "180K+",
+            "label": "views website"
           }
         ],
         "metrics": [
@@ -4693,7 +4717,7 @@
         ],
         "context": {
           "title": "Context",
-          "text": "Taco Loco este un brand local din zona restaurantelor, cu o identitate vizuală puternică și o ofertă care se bazează pe apetit, recurență și decizie rapidă. Într-o piață în care utilizatorii aleg repede unde mănâncă, Social Media și campaniile plătite trebuie să lucreze împreună: conținutul creează poftă, iar promovarea îl duce în fața oamenilor potriviți."
+          "text": "În restaurant marketing, oamenii nu caută doar informație, ci impuls, familiaritate și poftă. Pentru Taco Loco, provocarea a fost să conectăm conținutul vizual, campaniile Meta Ads și traficul către website într-un ecosistem care susține decizia rapidă și interacțiunea constantă cu brandul."
         },
         "challenge": {
           "title": "Provocarea",
@@ -4778,10 +4802,10 @@
       },
       {
         "slug": "cosmeticahoteliera",
-        "clientName": "cosmeticahoteliera.ro",
+        "clientName": "Cosmetică Hotelieră",
         "category": "Google Ads · Meta Ads · Ecommerce B2B · Performance Marketing",
-        "title": "cosmeticahoteliera.ro: performance marketing pentru ecommerce B2B",
-        "excerpt": "Pentru cosmeticahoteliera.ro, am construit un sistem de performance marketing orientat spre trafic calificat, campanii Shopping, Performance Max, Search și rezultate măsurabile în ecommerce B2B.",
+        "title": "Cosmetică Hotelieră: performance marketing pentru ecommerce B2B HoReCa",
+        "excerpt": "Pentru Cosmetică Hotelieră, am construit un sistem de performance marketing orientat spre trafic calificat, campanii Shopping, Performance Max, Search și rezultate măsurabile în ecommerce B2B.",
         "clientWebsite": "https://cosmeticahoteliera.ro/",
         "period": "01 octombrie 2023 – 20 mai 2026",
         "heroImage": "/branding/partners/logo-no-bg.png",
@@ -4797,12 +4821,20 @@
             "label": "clickuri Ads"
           },
           {
-            "value": "5,52",
-            "label": "ROAS Google Ads"
+            "value": "1.922+",
+            "label": "conversii urmărite"
           },
           {
             "value": "751K+",
             "label": "conversion value"
+          },
+          {
+            "value": "ROAS 5,52",
+            "label": "Google Ads"
+          },
+          {
+            "value": "ROAS 12,19",
+            "label": "Meta Ads"
           }
         ],
         "metrics": [
@@ -4833,7 +4865,7 @@
         ],
         "context": {
           "title": "Context",
-          "text": "cosmeticahoteliera.ro este un ecommerce B2B specializat în produse hoteliere, cosmetice hoteliere, consumabile HoReCa și produse profesionale pentru unități de cazare. Într-o piață în care cererea este puternic influențată de intenția de căutare și de disponibilitatea produselor, campaniile Google Ads și structura ecommerce devin esențiale."
+          "text": "Cosmetică Hotelieră funcționează într-o piață în care clienții caută soluții clare: cosmetice hoteliere, consumabile, detergenți, produse profesionale și livrare eficientă. Comunicarea și campaniile trebuiau să susțină exact această logică: intenție comercială, catalog, produse relevante și conversii urmărite."
         },
         "challenge": {
           "title": "Provocarea",
@@ -4875,7 +4907,7 @@
         },
         "results": {
           "title": "Rezultate",
-          "intro": "În perioada analizată, ecosistemul digital cosmeticahoteliera.ro a generat rezultate relevante în Google Ads, Meta Ads, trafic website și ecommerce performance.",
+          "intro": "În perioada analizată, ecosistemul digital Cosmetică Hotelieră a generat rezultate relevante în Google Ads, Meta Ads, trafic website și ecommerce performance.",
           "items": [
             "3,82M afișări Ads total",
             "59,81K clickuri Ads total",
@@ -4902,7 +4934,7 @@
         },
         "conclusion": {
           "title": "Ce arată acest studiu de caz",
-          "text": "cosmeticahoteliera.ro este un exemplu bun pentru modul în care un ecommerce B2B poate folosi Google Ads, Shopping, Performance Max, Search și Meta Ads pentru a construi trafic calificat și rezultate măsurabile. Într-un business unde intenția de căutare contează enorm, performanța nu vine doar din buget, ci din structură, segmentare, optimizare și conectarea corectă dintre campanii, produse și website."
+          "text": "Cosmetică Hotelieră este un exemplu bun pentru modul în care un ecommerce B2B poate folosi Google Ads, Shopping, Performance Max, Search și Meta Ads pentru a construi trafic calificat și rezultate măsurabile. Într-un business unde intenția de căutare contează enorm, performanța nu vine doar din buget, ci din structură, segmentare, optimizare și conectarea corectă dintre campanii, produse și website."
         },
         "cta": {
           "title": "Vrei să construim un sistem de performance marketing pentru ecommerce-ul tău?",
@@ -4910,9 +4942,9 @@
           "buttonText": "Contactează-ne",
           "buttonLink": "/#contact"
         },
-        "seoTitle": "Studiu de caz cosmeticahoteliera.ro | Google Ads, Meta Ads & Ecommerce B2B",
-        "seoDescription": "Studiu de caz Digital Dot pentru cosmeticahoteliera.ro: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
-        "heroIntro": "Pentru cosmeticahoteliera.ro, am construit un sistem de promovare digitală orientat spre trafic calificat, vizibilitate în Google, campanii Shopping, Performance Max, Search și rezultate urmărite în ecommerce. Obiectivul a fost să susținem creșterea prin Google Ads, Meta Ads și optimizarea fluxului de trafic către website.",
+        "seoTitle": "Studiu de caz Cosmetică Hotelieră | Google Ads, Meta Ads & Ecommerce B2B",
+        "seoDescription": "Studiu de caz Digital Dot pentru Cosmetică Hotelieră: 3,82M+ afișări Ads, 59K+ clickuri, 1.922 conversii urmărite Google Ads, ROAS Google Ads 5,52 și 751K+ conversion value.",
+        "heroIntro": "În zona HoReCa, achizițiile nu pornesc din impuls, ci din nevoie, disponibilitate și eficiență. Pentru Cosmetică Hotelieră, am construit un sistem de performance marketing orientat spre cererea activă din Google, campanii Shopping, Performance Max, Search și trafic calificat către produse relevante pentru hoteluri, pensiuni și operatori B2B.",
         "audienceType": "Ecommerce B2B"
       },
       {
@@ -4921,7 +4953,7 @@
         "category": "Social Media · Reels · TikTok · Brand Expansion",
         "title": "Lumea Perdelelor: conținut social media pentru un brand în expansiune",
         "excerpt": "Pentru Lumea Perdelelor, am construit un ecosistem de conținut social media la nivel național, cu focus pe vizibilitate, interacțiuni, Reels, TikTok și susținerea comunicării pentru un brand în expansiune.",
-        "heroIntro": "Pentru Lumea Perdelelor, am construit un ecosistem de comunicare social media la nivel național, cu focus pe vizibilitate, conținut video, Reels, TikTok, postări recurente și susținerea comunicării pentru un brand aflat în expansiune regională. Obiectivul nu a fost doar publicarea constantă, ci transformarea conținutului într-un sistem recognoscibil, scalabil și adaptat ritmului de creștere al francizei.",
+        "heroIntro": "Lumea Perdelelor este un brand în care imaginea finală contează aproape la fel de mult ca produsul. Perdelele, draperiile și lucrările reale trebuie văzute, înțelese și imaginat integrate în casele oamenilor. Pentru Lumea Perdelelor, am construit un sistem social media capabil să susțină lucrări reale, locații multiple, deschideri regionale și o comunicare vizuală coerentă la nivel național.",
         "clientWebsite": "https://lumeaperdelelor.ro/",
         "period": "01 mai 2024 – 20 mai 2026",
         "audienceType": "Brand expansion și retail interior",
@@ -4942,8 +4974,16 @@
             "label": "materiale publicate"
           },
           {
+            "value": "53K+",
+            "label": "followers total"
+          },
+          {
             "value": "1,67M+",
             "label": "video views TikTok"
+          },
+          {
+            "value": "67K+",
+            "label": "interacțiuni Reels Facebook"
           }
         ],
         "metrics": [
@@ -4974,7 +5014,7 @@
         ],
         "context": {
           "title": "Context",
-          "text": "Lumea Perdelelor este un brand românesc din zona de perdele, draperii și design interior, cu o prezență extinsă prin mai multe locații și francize. Într-un domeniu vizual, în care decizia clientului este influențată de inspirație, încredere, lucrări reale și proximitate locală, Social Media devine un canal esențial de comunicare și scalare."
+          "text": "Într-un business vizual și regional, Social Media devine mai mult decât un canal de postare. Devine o arhivă vie de lucrări, idei, locații, transformări și încredere. Provocarea a fost să păstrăm coerența brandului în timp ce comunicarea se extindea pe mai multe orașe și formate."
         },
         "challenge": {
           "title": "Provocarea",
@@ -5066,7 +5106,7 @@
         "category": "Social Media · Medical Content · Reels · TikTok",
         "title": "ARTIO Medica: comunicare medicală construită pentru încredere și vizibilitate",
         "excerpt": "Pentru ARTIO Medica, am construit un ecosistem de comunicare social media orientat spre încredere, educație medicală, vizibilitate locală și conținut video adaptat unei clinici medicale.",
-        "heroIntro": "Pentru ARTIO Medica, am construit un ecosistem de comunicare social media orientat spre educație medicală, vizibilitate locală și încredere. Obiectivul nu a fost doar publicarea constantă, ci transformarea conținutului medical într-un sistem clar, recognoscibil și adaptat comportamentului publicului pe Facebook, Instagram și TikTok.",
+        "heroIntro": "În zona medicală, comunicarea nu are voie să fie zgomotoasă. Trebuie să fie clară, responsabilă și construită în jurul încrederii. Pentru ARTIO Medica, am dezvoltat un ecosistem social media care a susținut vizibilitatea clinicii, prezentarea specialiștilor și explicarea unor servicii medicale diverse, de la cardiologie și urologie la obstetrică-ginecologie, chirurgie vasculară și neurologie.",
         "clientWebsite": "https://artiomedica.ro/",
         "period": "16 ianuarie 2024 – 20 mai 2026",
         "audienceType": "Clinică medicală",
@@ -5087,8 +5127,16 @@
             "label": "materiale publicate"
           },
           {
+            "value": "10K+",
+            "label": "followers total"
+          },
+          {
             "value": "558K+",
             "label": "video views TikTok"
+          },
+          {
+            "value": "57K+",
+            "label": "clickuri Facebook posts"
           }
         ],
         "metrics": [
@@ -5119,7 +5167,7 @@
         ],
         "context": {
           "title": "Context",
-          "text": "ARTIO Medica este o clinică medicală din Suceava, unde comunicarea are nevoie de echilibru între informare, încredere, claritate și responsabilitate. În zona medicală, Social Media nu poate fi tratat ca simplă promovare. Publicul are nevoie de explicații clare, specialiști vizibili, mesaje coerente și conținut care reduce distanța dintre pacient și clinică."
+          "text": "ARTIO Medica avea nevoie de o comunicare care să reducă distanța dintre pacient și clinică. Într-un domeniu sensibil, conținutul trebuie să informeze fără să exagereze, să prezinte specialiștii fără să devină agresiv comercial și să transforme subiectele medicale în mesaje accesibile publicului local."
         },
         "challenge": {
           "title": "Provocarea",

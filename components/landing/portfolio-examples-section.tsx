@@ -1,7 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import { Container } from "@/components/ui/container";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import type { SiteContent } from "@/lib/site-content-schema";
@@ -17,7 +15,6 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
   }
 
   const visibleStudies = studies.slice(0, 6);
-  const hasMultipleStudies = visibleStudies.length > 1;
   const gridClassName = "mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-6";
 
   return (
@@ -34,12 +31,6 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
 
         <div className={gridClassName}>
           {visibleStudies.map((study, index) => {
-            const logoScale = study.imageScale ?? 1;
-            const logoStyle = {
-              "--case-study-logo-scale": String(logoScale),
-              "--case-study-logo-mobile-scale": String(Math.min(logoScale, 1.45)),
-            } as CSSProperties;
-
             return (
               <AnimatedSection
                 key={study.slug}
@@ -48,41 +39,33 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
               >
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="brand-card group block h-full p-2.5 sm:p-5 lg:p-6"
+                  className="group block h-full rounded-[18px] border border-[#276864]/35 bg-[#101418] p-2.5 transition-colors hover:border-[#276864] sm:p-5 lg:p-6"
                 >
-                  <article className={hasMultipleStudies ? "flex h-full flex-col gap-4 sm:gap-6" : "grid h-full gap-4 sm:gap-6 lg:grid-cols-[0.82fr_1.18fr]"}>
-                    <div className="relative flex aspect-[1.18/1] min-h-0 items-center justify-center overflow-hidden rounded-[14px] border border-[#1f2a2d] bg-[#f3f1ea] p-3 sm:aspect-[4/3] sm:min-h-40 sm:p-6 lg:min-h-48 lg:p-8">
-                      <Image
-                        src={study.heroImage}
-                        alt={`${study.clientName} case study`}
-                        width={360}
-                        height={180}
-                        className="relative max-h-20 w-auto max-w-full scale-[var(--case-study-logo-mobile-scale)] object-contain sm:max-h-28 sm:scale-[var(--case-study-logo-scale)] lg:max-h-32"
-                        style={logoStyle}
-                      />
-                    </div>
-
+                  <article className="flex h-full flex-col justify-between gap-4 sm:gap-6">
                     <div className="flex min-w-0 flex-col justify-between">
                       <div>
                         <div className="flex items-start justify-between gap-2 sm:gap-4">
                           <div>
-                            <p className="line-clamp-2 text-[0.58rem] font-semibold uppercase leading-snug tracking-[0.12em] text-[#d8c7a3] sm:text-xs sm:tracking-[0.16em]">
-                              0{index + 1} · {study.category}
+                            <p className="inline-flex rounded-full border border-[#276864]/35 bg-[#1f2a2d] px-2 py-1 text-[0.5rem] font-semibold uppercase leading-none tracking-[0.1em] text-[#d8c7a3] sm:px-3 sm:text-[0.66rem] sm:tracking-[0.14em]">
+                              0{index + 1}
                             </p>
-                            <h3 className="mt-2 text-base font-semibold leading-tight text-white sm:mt-3 sm:text-xl lg:text-2xl">{study.clientName}</h3>
+                            <h3 className="mt-3 text-base font-semibold leading-tight text-white sm:text-xl lg:text-2xl">{study.clientName}</h3>
                           </div>
                           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] text-[#dadada] transition-colors group-hover:border-[#276864] group-hover:bg-[#276864] group-hover:text-[#d8c7a3] sm:h-10 sm:w-10">
                             <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                           </span>
                         </div>
-                        <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-[#dadada] sm:mt-4 sm:line-clamp-3 sm:text-sm lg:text-base">{study.excerpt}</p>
+                        <p className="mt-3 line-clamp-2 text-[0.55rem] font-semibold uppercase leading-snug tracking-[0.08em] text-[#d8c7a3] sm:line-clamp-none sm:text-xs sm:tracking-[0.14em]">
+                          {study.category}
+                        </p>
+                        <p className="mt-3 line-clamp-4 text-xs leading-relaxed text-[#dadada] sm:mt-4 sm:line-clamp-4 sm:text-sm lg:text-base">{study.excerpt}</p>
                       </div>
 
-                      <dl className="mt-4 grid gap-2 sm:mt-6 sm:grid-cols-2 sm:gap-3">
+                      <dl className="mt-4 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
                         {study.cardMetrics.map((metric, metricIndex) => (
-                          <div key={`${metric.value}-${metric.label}`} className={metricIndex > 1 ? "hidden rounded-lg border border-[#1f2a2d] bg-[#0b0c10]/70 p-2.5 sm:block sm:p-4" : "rounded-lg border border-[#1f2a2d] bg-[#0b0c10]/70 p-2.5 sm:p-4"}>
-                            <dt className="text-base font-semibold text-white sm:text-xl">{metric.value}</dt>
-                            <dd className="mt-1 line-clamp-2 text-[0.68rem] leading-snug text-[#dadada] sm:text-xs sm:leading-relaxed">{metric.label}</dd>
+                          <div key={`${metric.value}-${metric.label}`} className={metricIndex > 3 ? "hidden rounded-lg border border-[#1f2a2d] bg-[#0b0c10]/72 p-2 sm:block sm:p-3" : "rounded-lg border border-[#1f2a2d] bg-[#0b0c10]/72 p-2 sm:p-3"}>
+                            <dt className="text-sm font-semibold leading-tight text-white sm:text-lg lg:text-xl">{metric.value}</dt>
+                            <dd className="mt-1 line-clamp-2 text-[0.58rem] leading-snug text-[#dadada] sm:text-xs sm:leading-relaxed">{metric.label}</dd>
                           </div>
                         ))}
                       </dl>
