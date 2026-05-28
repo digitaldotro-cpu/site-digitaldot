@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type MediaPreviewCardProps = {
@@ -20,14 +19,9 @@ export function MediaPreviewCard({
   className,
 }: MediaPreviewCardProps) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+    <article
       className={cn(
-        "group overflow-hidden rounded-[1.25rem] border border-[#263740] bg-[#11181d]",
+        "group overflow-hidden rounded-[1.25rem] border border-[#263740] bg-[#11181d] transition-transform duration-300 hover:-translate-y-1.5",
         className,
       )}
     >
@@ -66,6 +60,6 @@ export function MediaPreviewCard({
           </p>
         ) : null}
       </div>
-    </motion.article>
+    </article>
   );
 }

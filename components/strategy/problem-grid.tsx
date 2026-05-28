@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Target, Gauge, BarChart3, Lightbulb, type LucideIcon } from "lucide-react";
 import { SectionShell } from "@/components/photo-video/section-shell";
 
@@ -36,21 +35,16 @@ export function ProblemGrid({ title, intro, items }: ProblemGridProps) {
           const Icon = iconMap[item.icon] ?? Lightbulb;
 
           return (
-            <motion.article
+            <article
               key={`${item.title}-${index}`}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-              whileHover={{ y: -4 }}
-              className="rounded-[1.2rem] border border-[#2a3c46] bg-[#111a20] p-5"
+              className="rounded-[1.2rem] border border-[#2a3c46] bg-[#111a20] p-5 transition-transform duration-300 hover:-translate-y-1"
             >
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#2f4650] bg-[#0f1f28] text-[#d8c7a3]">
                 <Icon className="h-4 w-4" />
               </span>
               <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#b4bdc2]">{item.description}</p>
-            </motion.article>
+            </article>
           );
         })}
       </div>

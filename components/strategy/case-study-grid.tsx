@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 type CaseStudy = {
@@ -38,14 +37,9 @@ export function CaseStudyGrid({ title, intro, items }: CaseStudyGridProps) {
 
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {items.map((item, index) => (
-          <motion.article
+          <article
             key={`${item.title}-${index}`}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-            whileHover={{ y: -4 }}
-            className="group overflow-hidden rounded-[1.3rem] border border-[#2b3f48] bg-[#10181d]"
+            className="group overflow-hidden rounded-[1.3rem] border border-[#2b3f48] bg-[#10181d] transition-transform duration-300 hover:-translate-y-1"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
@@ -64,7 +58,7 @@ export function CaseStudyGrid({ title, intro, items }: CaseStudyGridProps) {
                 Detalii proiect <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
     </section>

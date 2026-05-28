@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 type ProcessStep = {
   title: string;
   description: string;
@@ -25,12 +23,8 @@ export function ProcessTimeline({ title, intro, steps }: ProcessTimelineProps) {
 
         <div className="space-y-3">
           {steps.map((step, index) => (
-            <motion.article
+            <article
               key={`${step.title}-${index}`}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.38, ease: "easeOut", delay: index * 0.05 }}
               className="rounded-[1.1rem] border border-[#2a3d46] bg-[#101920] p-5"
             >
               <div className="flex items-start gap-4">
@@ -42,7 +36,7 @@ export function ProcessTimeline({ title, intro, steps }: ProcessTimelineProps) {
                   <p className="mt-2 text-sm leading-relaxed text-[#b5bdc2]">{step.description}</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

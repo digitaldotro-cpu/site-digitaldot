@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type ImpactCaseCardProps = {
   title: string;
@@ -10,13 +9,8 @@ type ImpactCaseCardProps = {
 
 export function ImpactCaseCard({ title, image }: ImpactCaseCardProps) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="group overflow-hidden rounded-[1.1rem] border border-[#2a3b43] bg-[#10171b]"
+    <article
+      className="group overflow-hidden rounded-[1.1rem] border border-[#2a3b43] bg-[#10171b] transition-transform duration-300 hover:-translate-y-1"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
@@ -30,6 +24,6 @@ export function ImpactCaseCard({ title, image }: ImpactCaseCardProps) {
       <div className="p-4">
         <h3 className="text-sm font-semibold text-white">{title}</h3>
       </div>
-    </motion.article>
+    </article>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type DeliverableCardProps = {
@@ -20,14 +19,9 @@ export function DeliverableCard({
   className,
 }: DeliverableCardProps) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+    <article
       className={cn(
-        "overflow-hidden rounded-[1.2rem] border",
+        "overflow-hidden rounded-[1.2rem] border transition-transform duration-300 hover:-translate-y-1",
         tone === "dark"
           ? "border-[#293b43] bg-[#10181d]"
           : "border-[#276864]/60 bg-[linear-gradient(150deg,#276864_0%,#276864_58%,#276864_100%)]",
@@ -55,6 +49,6 @@ export function DeliverableCard({
           </p>
         ) : null}
       </div>
-    </motion.article>
+    </article>
   );
 }

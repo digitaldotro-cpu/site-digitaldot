@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Activity, BarChart3, Sparkles, Target } from "lucide-react";
 
 type CaseHighlight = {
@@ -36,12 +35,8 @@ export function CaseHighlightGrid({ title, intro, items }: CaseHighlightGridProp
         {items.map((item, index) => {
           const Icon = iconMap[item.icon] ?? Target;
           return (
-            <motion.article
+            <article
               key={`${item.title}-${index}`}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: index * 0.04 }}
               className="rounded-2xl border border-[#2d3b43] bg-[#1a1c1c] p-6"
             >
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#276864]/10 text-[#d8c7a3]">
@@ -53,7 +48,7 @@ export function CaseHighlightGrid({ title, intro, items }: CaseHighlightGridProp
               <p className="mt-4 rounded-full border border-[#3c4948]/40 px-3 py-1 text-xs font-semibold text-[#d8c7a3]">
                 {item.metric}
               </p>
-            </motion.article>
+            </article>
           );
         })}
       </div>

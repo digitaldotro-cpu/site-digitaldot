@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 type SocialProofLogo = {
   name: string;
@@ -26,12 +25,8 @@ export function SocialProofStrip({ title, intro, logos }: SocialProofStripProps)
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {logos.map((logo, index) => (
-          <motion.div
+          <div
             key={`${logo.name}-${index}`}
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: index * 0.03 }}
             className="rounded-2xl border border-[#2a3840] bg-[#1a1c1c] p-4"
           >
             <Link href={logo.href ?? "/portofoliu"} className="block">
@@ -46,7 +41,7 @@ export function SocialProofStrip({ title, intro, logos }: SocialProofStripProps)
               </div>
               <p className="mt-3 text-sm font-semibold text-white">{logo.name}</p>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -61,82 +60,6 @@ type AppShellProps = {
   };
 };
 
-type ScrollVisibilityControllerProps = {
-  enabled: boolean;
-  scrollThreshold: number;
-};
-
-function ScrollVisibilityController({
-  enabled,
-  scrollThreshold,
-}: ScrollVisibilityControllerProps) {
-  const isHiddenRef = useRef(false);
-  const lastScrollY = useRef(0);
-
-  useEffect(() => {
-    const root = document.documentElement;
-
-    if (!enabled) {
-      delete root.dataset.scrollChromeHidden;
-      isHiddenRef.current = false;
-      return;
-    }
-
-    let rafId: number | null = null;
-
-    function setHidden(nextHidden: boolean) {
-      if (isHiddenRef.current === nextHidden) {
-        return;
-      }
-
-      isHiddenRef.current = nextHidden;
-      if (nextHidden) {
-        root.dataset.scrollChromeHidden = "true";
-      } else {
-        delete root.dataset.scrollChromeHidden;
-      }
-    }
-
-    function updateVisibility() {
-      const currentY = Math.max(window.scrollY, 0);
-      const delta = currentY - lastScrollY.current;
-
-      if (currentY <= 10) {
-        setHidden(false);
-      } else if (currentY > scrollThreshold && delta > 10) {
-        setHidden(true);
-      } else if (delta < -10) {
-        setHidden(false);
-      }
-
-      lastScrollY.current = currentY;
-      rafId = null;
-    }
-
-    function handleScroll() {
-      if (rafId !== null) {
-        return;
-      }
-
-      rafId = window.requestAnimationFrame(updateVisibility);
-    }
-
-    lastScrollY.current = Math.max(window.scrollY, 0);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      if (rafId !== null) {
-        window.cancelAnimationFrame(rafId);
-      }
-
-      window.removeEventListener("scroll", handleScroll);
-      delete root.dataset.scrollChromeHidden;
-    };
-  }, [enabled, scrollThreshold]);
-
-  return null;
-}
-
 export function AppShell({ children, content }: AppShellProps) {
   const pathname = usePathname();
   const isCmsRoute = pathname.startsWith("/panou-control");
@@ -148,10 +71,6 @@ export function AppShell({ children, content }: AppShellProps) {
 
   return (
     <>
-      <ScrollVisibilityController
-        enabled={scrollBehavior.hideOnScrollDown}
-        scrollThreshold={scrollBehavior.scrollThreshold}
-      />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#276864] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-[#d8c7a3] focus:shadow-lg"

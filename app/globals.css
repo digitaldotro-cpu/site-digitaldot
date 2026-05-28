@@ -22,6 +22,7 @@
 html,
 body {
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -31,6 +32,7 @@ body {
     radial-gradient(circle at 82% 8%, rgba(39, 104, 100, 0.1), transparent 34rem),
     radial-gradient(circle at 8% 28%, rgba(216, 199, 163, 0.035), transparent 24rem),
     linear-gradient(180deg, #0b0c10 0%, #0d1013 46%, #0b0c10 100%);
+  overflow-y: auto;
 }
 
 a {
@@ -44,7 +46,8 @@ h3 {
 }
 
 main {
-  overflow-x: clip;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 
 p,
@@ -117,18 +120,6 @@ li {
   width: 64px;
   height: 2px;
   background: #d8c7a3;
-}
-
-html[data-scroll-chrome-hidden="true"]:not([data-mobile-nav-open="true"]) .scroll-chrome-header {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-html[data-scroll-chrome-hidden="true"] .scroll-chrome-floating {
-  transform: translateY(1.5rem);
-  opacity: 0;
-  pointer-events: none;
 }
 
 ::selection {

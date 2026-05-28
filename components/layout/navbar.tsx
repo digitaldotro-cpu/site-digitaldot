@@ -198,14 +198,7 @@ export function Navbar({
 
     if (!isOpen) {
       delete root.dataset.mobileNavOpen;
-
-      if (body.style.overflow === "hidden") {
-        body.style.overflow = "";
-      }
-
-      if (root.style.overflow === "hidden") {
-        root.style.overflow = "";
-      }
+      body.style.overflow = "";
 
       return;
     }
@@ -215,15 +208,12 @@ export function Navbar({
     }
 
     const previousBodyOverflow = body.style.overflow;
-    const previousRootOverflow = root.style.overflow;
     root.dataset.mobileNavOpen = "true";
     body.style.overflow = "hidden";
-    root.style.overflow = "hidden";
 
     return () => {
       delete root.dataset.mobileNavOpen;
       body.style.overflow = previousBodyOverflow;
-      root.style.overflow = previousRootOverflow;
     };
   }, [isOpen]);
 

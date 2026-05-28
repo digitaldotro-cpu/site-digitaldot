@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 
 type VideoItem = {
@@ -43,10 +42,7 @@ export function VideoShowcase({
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <motion.article
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+        <article
           className="group relative overflow-hidden rounded-2xl border border-[#2b3941] bg-[#1a1c1c]"
         >
           <div className="relative aspect-[16/10]">
@@ -72,16 +68,12 @@ export function VideoShowcase({
               Deschide proiect <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </motion.article>
+        </article>
 
         <div className="space-y-4">
           {items.map((item, index) => (
-            <motion.article
+            <article
               key={`${item.title}-${index}`}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: index * 0.04 }}
               className="group flex gap-4 rounded-2xl border border-[#2b3941] bg-[#1a1c1c] p-4"
             >
               <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-xl">
@@ -103,7 +95,7 @@ export function VideoShowcase({
                   <Play className="h-3 w-3 fill-current" /> Vezi
                 </Link>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>
