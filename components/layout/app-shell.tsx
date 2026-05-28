@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -61,29 +61,40 @@ type AppShellProps = {
   };
 };
 
-export function AppShell({ children, content }: AppShellProps) {
-  const pathname = usePathname();
-  const isCmsRoute = pathname.startsWith("/panou-control");
-  const scrollBehavior = content.global.scrollBehavior;
-  const [isUiVisible, setIsUiVisible] = useState(true);
-  const isUiVisibleRef = useRef(true);
+type ScrollVisibilityControllerProps = {
+  enabled: boolean;
+  scrollThreshold: number;
+};
+
+function ScrollVisibilityController({
+  enabled,
+  scrollThreshold,
+}: ScrollVisibilityControllerProps) {
+  const isHiddenRef = useRef(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
-    if (isCmsRoute || !scrollBehavior.hideOnScrollDown) {
-      isUiVisibleRef.current = true;
+    const root = document.documentElement;
+
+    if (!enabled) {
+      delete root.dataset.scrollChromeHidden;
+      isHiddenRef.current = false;
       return;
     }
 
     let rafId: number | null = null;
 
-    function setVisible(nextVisible: boolean) {
-      if (isUiVisibleRef.current === nextVisible) {
+    function setHidden(nextHidden: boolean) {
+      if (isHiddenRef.current === nextHidden) {
         return;
       }
 
-      isUiVisibleRef.current = nextVisible;
-      setIsUiVisible(nextVisible);
+      isHiddenRef.current = nextHidden;
+      if (nextHidden) {
+        root.dataset.scrollChromeHidden = "true";
+      } else {
+        delete root.dataset.scrollChromeHidden;
+      }
     }
 
     function updateVisibility() {
@@ -91,11 +102,11 @@ export function AppShell({ children, content }: AppShellProps) {
       const delta = currentY - lastScrollY.current;
 
       if (currentY <= 10) {
-        setVisible(true);
-      } else if (currentY > scrollBehavior.scrollThreshold && delta > 8) {
-        setVisible(false);
-      } else if (delta < -8) {
-        setVisible(true);
+        setHidden(false);
+      } else if (currentY > scrollThreshold && delta > 10) {
+        setHidden(true);
+      } else if (delta < -10) {
+        setHidden(false);
       }
 
       lastScrollY.current = currentY;
@@ -119,10 +130,17 @@ export function AppShell({ children, content }: AppShellProps) {
       }
 
       window.removeEventListener("scroll", handleScroll);
+      delete root.dataset.scrollChromeHidden;
     };
-  }, [isCmsRoute, scrollBehavior.hideOnScrollDown, scrollBehavior.scrollThreshold]);
+  }, [enabled, scrollThreshold]);
 
-  const effectiveUiVisible = scrollBehavior.hideOnScrollDown ? isUiVisible : true;
+  return null;
+}
+
+export function AppShell({ children, content }: AppShellProps) {
+  const pathname = usePathname();
+  const isCmsRoute = pathname.startsWith("/panou-control");
+  const scrollBehavior = content.global.scrollBehavior;
 
   if (isCmsRoute) {
     return <main id="main-content">{children}</main>;
@@ -130,6 +148,10 @@ export function AppShell({ children, content }: AppShellProps) {
 
   return (
     <>
+      <ScrollVisibilityController
+        enabled={scrollBehavior.hideOnScrollDown}
+        scrollThreshold={scrollBehavior.scrollThreshold}
+      />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#276864] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-[#d8c7a3] focus:shadow-lg"
@@ -143,7 +165,7 @@ export function AppShell({ children, content }: AppShellProps) {
         ctaLabel={content.global.navbarCtaLabel}
         ctaHref={content.global.navbarCtaHref}
         contactPhone={content.global.footer.contactPhone}
-        isVisible={effectiveUiVisible}
+        isVisible
         transitionDuration={scrollBehavior.transitionDuration}
       />
       <main id="main-content">{children}</main>
@@ -170,7 +192,7 @@ export function AppShell({ children, content }: AppShellProps) {
       <FloatingContactButtons
         whatsapp={content.global.whatsappButton}
         call={content.global.callButton}
-        isVisible={effectiveUiVisible}
+        isVisible
         transitionDuration={scrollBehavior.transitionDuration}
       />
     </>

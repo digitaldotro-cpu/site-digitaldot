@@ -197,6 +197,8 @@ export function Navbar({
     const root = document.documentElement;
 
     if (!isOpen) {
+      delete root.dataset.mobileNavOpen;
+
       if (body.style.overflow === "hidden") {
         body.style.overflow = "";
       }
@@ -214,10 +216,12 @@ export function Navbar({
 
     const previousBodyOverflow = body.style.overflow;
     const previousRootOverflow = root.style.overflow;
+    root.dataset.mobileNavOpen = "true";
     body.style.overflow = "hidden";
     root.style.overflow = "hidden";
 
     return () => {
+      delete root.dataset.mobileNavOpen;
       body.style.overflow = previousBodyOverflow;
       root.style.overflow = previousRootOverflow;
     };
@@ -256,7 +260,7 @@ export function Navbar({
       <header
         aria-label="Header principal Digital Dot"
         className={cn(
-          "fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.76)] backdrop-blur-[18px] transition-[transform,opacity]",
+          "scroll-chrome-header fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.76)] backdrop-blur-[18px] transition-[transform,opacity]",
           shouldShowHeader
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-full opacity-0 pointer-events-none",
@@ -372,7 +376,7 @@ export function Navbar({
             id="mobile-nav-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, pointerEvents: "none" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed inset-x-0 bottom-0 top-20 z-40 lg:hidden"
             onClick={() => setIsOpen(false)}
@@ -381,7 +385,7 @@ export function Navbar({
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
+              exit={{ opacity: 0, pointerEvents: "none", y: -8 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
               className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)] backdrop-blur-xl"
               onClick={(event) => event.stopPropagation()}
