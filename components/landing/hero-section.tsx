@@ -68,12 +68,6 @@ export function HeroSection({ section }: HeroSectionProps) {
 
             <p className="max-w-2xl text-lg leading-relaxed text-[#dadada] sm:text-xl">{section.subheadline}</p>
 
-            <div className="space-y-2 border-l border-[#d8c7a3]/45 pl-5 text-base text-[#dadada]">
-              {section.supportingPoints.map((point) => (
-                <p key={point}>{point}</p>
-              ))}
-            </div>
-
             <ButtonLink href={section.ctaLink} size="lg" className="group mt-2 h-14 px-9 text-base uppercase tracking-[0.1em]">
               {section.ctaText}
               <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
