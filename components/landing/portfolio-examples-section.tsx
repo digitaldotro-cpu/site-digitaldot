@@ -71,7 +71,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                             </p>
                             <h3 className="mt-2 text-base font-semibold leading-tight text-white sm:mt-3 sm:text-xl lg:text-2xl">{study.clientName}</h3>
                           </div>
-                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10] text-[#d8c7a3] transition-colors group-hover:border-[#276864]/45 sm:h-10 sm:w-10">
+                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] text-[#dadada] transition-colors group-hover:border-[#276864] group-hover:bg-[#276864] group-hover:text-[#d8c7a3] sm:h-10 sm:w-10">
                             <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                           </span>
                         </div>
@@ -87,7 +87,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
                         ))}
                       </dl>
 
-                      <span className="mt-4 inline-flex w-fit items-center rounded-full border border-[#276864] bg-[#276864] px-3 py-2 text-xs font-semibold text-[#d8c7a3] sm:mt-6 sm:text-sm">
+                      <span className="case-study-button mt-4 inline-flex w-fit items-center whitespace-nowrap rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] px-2.5 py-2 text-[0.72rem] font-semibold leading-none text-[#dadada] transition-colors group-hover:border-[#276864] group-hover:bg-[#276864] group-hover:text-[#d8c7a3] sm:mt-6 sm:px-3 sm:text-sm sm:leading-normal">
                         Vezi studiul de caz
                         <ArrowUpRight className="ml-1 h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </span>

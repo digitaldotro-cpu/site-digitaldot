@@ -14,7 +14,7 @@ export function CTAButton({ label, href, className, external = false }: CTAButto
     <Link
       href={href}
       className={cn(
-        "group inline-flex h-12 items-center justify-center rounded-full border border-[#276864]/65 bg-[#276864] px-7 text-sm font-semibold uppercase tracking-[0.08em] text-[#d8c7a3] transition hover:-translate-y-0.5 hover:bg-[#2f7773]",
+        "group inline-flex h-12 items-center justify-center rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] px-7 text-sm font-semibold uppercase tracking-[0.08em] text-[#dadada] transition-[transform,background-color,border-color,color] hover:-translate-y-0.5 hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
         className,
       )}
       target={external ? "_blank" : undefined}

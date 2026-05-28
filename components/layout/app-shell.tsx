@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -60,10 +61,123 @@ type AppShellProps = {
   };
 };
 
+function useScrollChromeVisibility(enabled: boolean) {
+  const pathname = usePathname();
+  const [isVisible, setIsVisible] = useState(true);
+  const isVisibleRef = useRef(true);
+  const lastScrollYRef = useRef(0);
+  const suppressHideUntilRef = useRef(0);
+
+  useEffect(() => {
+    const rafId = window.requestAnimationFrame(() => {
+      suppressHideUntilRef.current = window.performance.now() + 450;
+      isVisibleRef.current = true;
+      lastScrollYRef.current = Math.max(window.scrollY, 0);
+      setIsVisible(true);
+    });
+
+    return () => window.cancelAnimationFrame(rafId);
+  }, [pathname]);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+
+    function resetVisibilityForHashChange() {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      rafId = window.requestAnimationFrame(() => {
+        suppressHideUntilRef.current = window.performance.now() + 450;
+        isVisibleRef.current = true;
+        lastScrollYRef.current = Math.max(window.scrollY, 0);
+        setIsVisible(true);
+        rafId = null;
+      });
+    }
+
+    window.addEventListener("hashchange", resetVisibilityForHashChange);
+
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      window.removeEventListener("hashchange", resetVisibilityForHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) {
+      const rafId = window.requestAnimationFrame(() => {
+        isVisibleRef.current = true;
+        setIsVisible(true);
+      });
+
+      return () => window.cancelAnimationFrame(rafId);
+    }
+
+    let rafId: number | null = null;
+
+    function updateVisibility(nextVisible: boolean) {
+      if (isVisibleRef.current === nextVisible) {
+        return;
+      }
+
+      isVisibleRef.current = nextVisible;
+      setIsVisible(nextVisible);
+    }
+
+    function measureScroll() {
+      const currentScrollY = Math.max(window.scrollY, 0);
+      const delta = currentScrollY - lastScrollYRef.current;
+      const isAutomaticRouteScroll = window.performance.now() < suppressHideUntilRef.current;
+
+      if (isAutomaticRouteScroll) {
+        updateVisibility(true);
+      } else if (currentScrollY < 20) {
+        updateVisibility(true);
+      } else if (delta > 10) {
+        updateVisibility(false);
+      } else if (delta < -10) {
+        updateVisibility(true);
+      }
+
+      lastScrollYRef.current = currentScrollY;
+      rafId = null;
+    }
+
+    function handleScroll() {
+      if (rafId !== null) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(measureScroll);
+    }
+
+    lastScrollYRef.current = Math.max(window.scrollY, 0);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [enabled]);
+
+  return isVisible;
+}
+
 export function AppShell({ children, content }: AppShellProps) {
   const pathname = usePathname();
   const isCmsRoute = pathname.startsWith("/panou-control");
   const scrollBehavior = content.global.scrollBehavior;
+  const isScrollChromeVisible = useScrollChromeVisibility(
+    scrollBehavior.hideOnScrollDown,
+  );
 
   if (isCmsRoute) {
     return <main id="main-content">{children}</main>;
@@ -83,8 +197,7 @@ export function AppShell({ children, content }: AppShellProps) {
         navItems={content.global.navigation}
         ctaLabel={content.global.navbarCtaLabel}
         ctaHref={content.global.navbarCtaHref}
-        contactPhone={content.global.footer.contactPhone}
-        isVisible
+        isVisible={isScrollChromeVisible}
         transitionDuration={scrollBehavior.transitionDuration}
       />
       <main id="main-content">{children}</main>
@@ -111,7 +224,7 @@ export function AppShell({ children, content }: AppShellProps) {
       <FloatingContactButtons
         whatsapp={content.global.whatsappButton}
         call={content.global.callButton}
-        isVisible
+        isVisible={isScrollChromeVisible}
         transitionDuration={scrollBehavior.transitionDuration}
       />
     </>

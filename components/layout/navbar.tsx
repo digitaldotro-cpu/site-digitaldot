@@ -5,7 +5,7 @@ import Link from "next/link";
 import { type MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,6 @@ type NavbarProps = {
   navItems: NavItem[];
   ctaLabel: string;
   ctaHref: string;
-  contactPhone?: string;
   isVisible?: boolean;
   transitionDuration?: number;
 };
@@ -45,7 +44,6 @@ export function Navbar({
   navItems,
   ctaLabel,
   ctaHref,
-  contactPhone,
   isVisible = true,
   transitionDuration = 300,
 }: NavbarProps) {
@@ -249,10 +247,10 @@ export function Navbar({
       <header
         aria-label="Header principal Digital Dot"
         className={cn(
-          "scroll-chrome-header fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.94)] transition-[transform,opacity]",
+          "scroll-chrome-header fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.96)] transition-[transform,background-color,border-color]",
           shouldShowHeader
-            ? "translate-y-0 opacity-100 pointer-events-auto"
-            : "-translate-y-full opacity-0 pointer-events-none",
+            ? "translate-y-0 pointer-events-auto"
+            : "-translate-y-full pointer-events-none",
         )}
         style={{ transitionDuration: `${transitionDuration}ms` }}
       >
@@ -314,20 +312,12 @@ export function Navbar({
             </div>
           </div>
 
-          <div className="grid h-20 grid-cols-3 items-center lg:hidden">
-            <a
-              href={`tel:${contactPhone || "+40773330551"}`}
-              aria-label="Sună Digital Dot"
-              className="inline-flex h-11 w-11 items-center justify-center justify-self-start rounded-full border border-[#1f2a2d] bg-[#101418]/85 text-white transition-colors duration-300 hover:border-[#276864]/50 hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
-            >
-              <Phone size={18} />
-            </a>
-
+          <div className="grid h-20 grid-cols-2 items-center lg:hidden">
             <Link
               href={logoHref}
               onClick={handleLogoClick}
               aria-label="Digital Dot - Acasă"
-              className="group inline-flex min-h-12 min-w-24 items-center justify-center justify-self-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
+              className="group inline-flex min-h-12 min-w-24 items-center justify-start justify-self-start rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
             >
               {headerLogo ? (
                 <>
@@ -350,7 +340,7 @@ export function Navbar({
             <button
               type="button"
               onClick={() => setIsOpen((state) => !state)}
-              className="inline-flex h-11 w-11 items-center justify-center justify-self-end rounded-full border border-[#1f2a2d] bg-[#101418]/85 text-white transition-colors duration-300 hover:border-[#276864]/50 hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
+              className="inline-flex h-11 w-11 items-center justify-center justify-self-end rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] text-[#dadada] transition-colors duration-300 hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]"
               aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
               aria-expanded={isOpen}
               aria-controls="mobile-nav-overlay"

@@ -69,10 +69,10 @@ export function PortfolioInteractiveGrid({
             type="button"
             onClick={() => setActiveFilter(filter.value)}
             className={cn(
-              "rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
+              "rounded-full border bg-[#1f2a2d] px-4 py-2 text-sm font-semibold transition-colors hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
               activeFilter === filter.value
-                ? "border-[#276864] bg-[#122126] text-[#d8c7a3]"
-                : "border-[#2a3a42] text-[#c6c6c6] hover:text-white",
+                ? "border-[#276864] text-[#d8c7a3]"
+                : "border-[rgba(218,218,218,0.16)] text-[#dadada]",
             )}
           >
             {filter.label}

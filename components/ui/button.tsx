@@ -9,10 +9,11 @@ const baseClasses =
 
 const variants: Record<Variant, string> = {
   primary:
-    "border border-[#276864] bg-[#276864] text-[#d8c7a3] shadow-[0_18px_45px_-34px_rgba(39,104,100,0.65)] hover:-translate-y-0.5 hover:border-[#d8c7a3]/70 hover:bg-[#2f7773] hover:text-[#d8c7a3]",
+    "border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] text-[#dadada] shadow-[0_18px_45px_-34px_rgba(39,104,100,0.65)] hover:-translate-y-0.5 hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
   secondary:
-    "border border-[#276864]/55 bg-[#101418]/40 text-white hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
-  ghost: "bg-transparent border border-[#1f2a2d] text-[#dadada] hover:border-[#276864]/75 hover:text-[#d8c7a3]",
+    "border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] text-[#dadada] hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
+  ghost:
+    "border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] text-[#dadada] hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
 };
 
 const sizes: Record<Size, string> = {

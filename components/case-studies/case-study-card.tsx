@@ -48,7 +48,7 @@ export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
             ))}
           </dl>
 
-          <span className="mt-6 inline-flex w-fit items-center rounded-full border border-[#276864] bg-[#276864] px-4 py-2 text-sm font-semibold text-[#d8c7a3]">
+          <span className="case-study-button mt-6 inline-flex w-fit items-center whitespace-nowrap rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] px-2.5 py-2 text-[0.72rem] font-semibold leading-none text-[#dadada] transition-colors group-hover:border-[#276864] group-hover:bg-[#276864] group-hover:text-[#d8c7a3] sm:px-4 sm:text-sm sm:leading-normal">
             Vezi studiul de caz
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
