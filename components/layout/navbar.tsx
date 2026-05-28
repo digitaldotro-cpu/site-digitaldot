@@ -6,7 +6,6 @@ import { type MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
@@ -250,7 +249,7 @@ export function Navbar({
       <header
         aria-label="Header principal Digital Dot"
         className={cn(
-          "scroll-chrome-header fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.76)] backdrop-blur-[18px] transition-[transform,opacity]",
+          "scroll-chrome-header fixed inset-x-0 top-0 z-50 border-b border-[#1f2a2d]/80 bg-[rgba(11,12,16,0.94)] transition-[transform,opacity]",
           shouldShowHeader
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-full opacity-0 pointer-events-none",
@@ -360,23 +359,14 @@ export function Navbar({
         </Container>
       </header>
 
-      <AnimatePresence>
-        {isOpen ? (
-          <motion.div
+      {isOpen ? (
+          <div
             id="mobile-nav-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, pointerEvents: "none" }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed inset-x-0 bottom-0 top-20 z-40 lg:hidden"
             onClick={() => setIsOpen(false)}
           >
             <div className="absolute inset-0 bg-[#0b0c10]/70 backdrop-blur-[2px]" />
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, pointerEvents: "none", y: -8 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
+            <div
               className="absolute left-4 right-4 top-4 rounded-2xl border border-[#1f2a2d] bg-[rgba(16,20,24,0.96)] p-4 shadow-[0_24px_70px_-48px_rgba(39,104,100,0.65)] backdrop-blur-xl"
               onClick={(event) => event.stopPropagation()}
             >
@@ -410,10 +400,9 @@ export function Navbar({
                   {ctaLabel}
                 </ButtonLink>
               </nav>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+            </div>
+          </div>
+      ) : null}
     </>
   );
 }
