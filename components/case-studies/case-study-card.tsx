@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { SiteContent } from "@/lib/site-content-schema";
@@ -10,30 +9,17 @@ type CaseStudyCardProps = {
   featured?: boolean;
 };
 
-export function CaseStudyCard({ study, featured = false }: CaseStudyCardProps) {
+export function CaseStudyCard({ study }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${study.slug}`}
       className="brand-card group block h-full p-5 sm:p-6"
     >
-      <article className={featured ? "grid h-full gap-7 lg:grid-cols-[0.85fr_1.15fr]" : "h-full"}>
-        <div className="relative flex min-h-48 items-center justify-center overflow-hidden rounded-[1.35rem] border border-[#276864]/30 bg-[#f3f1ea] p-8">
-          <Image
-            src={study.heroImage}
-            alt={`${study.clientName} case study`}
-            width={420}
-            height={220}
-            className="relative max-h-32 w-auto max-w-full object-contain"
-            style={{
-              ...(study.imageScale ? { transform: `scale(${study.imageScale})` } : {}),
-            }}
-          />
-        </div>
-
-        <div className="mt-6 flex min-w-0 flex-col justify-between lg:mt-0">
+      <article className="h-full">
+        <div className="flex h-full min-w-0 flex-col justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d8c7a3]">{study.category}</p>
-            <h2 className={featured ? "mt-3 text-3xl font-semibold text-white sm:text-4xl" : "mt-3 text-2xl font-semibold text-white"}>
+            <h2 className="mt-3 text-2xl font-semibold text-white">
               {study.clientName}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[#c6c6c6] sm:text-base">{study.excerpt}</p>

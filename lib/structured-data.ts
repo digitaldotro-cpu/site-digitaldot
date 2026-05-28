@@ -227,9 +227,13 @@ export function buildFaqSchema(group: FaqGroupContent) {
 }
 
 export function buildBreadcrumbSchema(content: SiteContent, items: BreadcrumbItem[]) {
+  const currentPath = items.at(-1)?.path || "/";
+  const currentUrl = absoluteUrl(currentPath, content);
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${currentUrl}#breadcrumb`,
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -270,6 +274,7 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
 
 export function buildCaseStudySchema(content: SiteContent, study: SiteContent["caseStudies"]["studies"][number]) {
   const url = absoluteUrl(`/case-studies/${study.slug}`, content);
+  const serviceNames = study.servicesInvolved.map((service) => service.label);
 
   return {
     "@context": "https://schema.org",
@@ -279,6 +284,7 @@ export function buildCaseStudySchema(content: SiteContent, study: SiteContent["c
     description: study.seoDescription,
     image: absoluteUrl(study.ogImage, content),
     url,
+    dateModified: "2026-05-28",
     author: {
       "@id": `${getCanonicalBaseUrl(content)}/#organization`,
       name: siteMetadata.siteName,
@@ -296,7 +302,41 @@ export function buildCaseStudySchema(content: SiteContent, study: SiteContent["c
       name: study.clientName,
       url: study.clientWebsite,
     },
+    keywords: [
+      study.category,
+      study.audienceType,
+      ...serviceNames,
+    ].filter(Boolean).join(", "),
+    mentions: study.metrics.map((metric) => ({
+      "@type": "PropertyValue",
+      name: metric.label,
+      value: metric.value,
+    })),
     mainEntityOfPage: url,
+  };
+}
+
+export function buildCaseStudyWebPageSchema(content: SiteContent, study: SiteContent["caseStudies"]["studies"][number]) {
+  const url = absoluteUrl(`/case-studies/${study.slug}`, content);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: study.seoTitle,
+    description: study.seoDescription,
+    inLanguage: "ro-RO",
+    dateModified: "2026-05-28",
+    isPartOf: {
+      "@id": `${getCanonicalBaseUrl(content)}/#website`,
+    },
+    mainEntity: {
+      "@id": `${url}#case-study`,
+    },
+    breadcrumb: {
+      "@id": `${url}#breadcrumb`,
+    },
   };
 }
 
@@ -315,6 +355,20 @@ export function buildCaseStudyServiceSchema(content: SiteContent, study: SiteCon
       name: siteMetadata.siteName,
     },
     serviceType: study.category,
+    hasOfferCatalog: study.servicesInvolved.length
+      ? {
+          "@type": "OfferCatalog",
+          name: "Servicii implicate",
+          itemListElement: study.servicesInvolved.map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: service.label,
+              url: absoluteUrl(service.href, content),
+            },
+          })),
+        }
+      : undefined,
     audience: {
       "@type": "BusinessAudience",
       audienceType: study.audienceType || study.category,

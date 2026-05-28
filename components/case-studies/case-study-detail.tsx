@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import type { SiteContent } from "@/lib/site-content-schema";
@@ -38,18 +38,23 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative flex min-h-72 items-center justify-center overflow-hidden rounded-[22px] border border-[#276864]/35 bg-[#f3f1ea] p-10">
-              <Image
-                src={study.heroImage}
-                alt={`${study.clientName} logo`}
-                width={520}
-                height={280}
-                priority
-                className="relative max-h-40 w-auto max-w-full object-contain"
-                style={{
-                  ...(study.imageScale ? { transform: `scale(${study.imageScale})` } : {}),
-                }}
-              />
+            <div className="brand-panel p-6 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d8c7a3]">
+                Servicii implicate
+              </p>
+              <ul className="mt-5 grid gap-3">
+                {study.servicesInvolved.map((service) => (
+                  <li key={`${service.label}-${service.href}`}>
+                    <Link
+                      href={service.href}
+                      className="flex items-center justify-between rounded-2xl border border-[#1f2a2d] bg-[#0b0c10]/66 px-4 py-3 text-sm font-semibold text-[#dadada] transition-colors hover:border-[#276864] hover:text-[#d8c7a3]"
+                    >
+                      {service.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>
@@ -138,7 +143,11 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
                 Highlight campanie
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{study.highlightCampaign.title}</h2>
-              <p className="mt-5 max-w-4xl text-base leading-8 text-[#c6c6c6]">{study.highlightCampaign.text}</p>
+              <div className="mt-5 max-w-4xl space-y-4 text-base leading-8 text-[#c6c6c6]">
+                {study.highlightCampaign.text.split("\n\n").map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
           </Container>
         </section>

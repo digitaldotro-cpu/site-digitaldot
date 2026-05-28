@@ -134,6 +134,11 @@ const caseStudyMetricSchema = z.object({
   label: z.string().min(1),
 });
 
+const caseStudyServiceLinkSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+});
+
 const caseStudyTextBlockSchema = z.object({
   title: z.string().min(1),
   text: z.string().min(20),
@@ -163,6 +168,7 @@ const caseStudySchema = z.object({
   imageScale: z.number().min(0.5).max(4).optional(),
   cardMetrics: z.array(caseStudyMetricSchema).min(1),
   metrics: z.array(caseStudyMetricSchema).min(1),
+  servicesInvolved: z.array(caseStudyServiceLinkSchema).default([]),
   context: caseStudyTextBlockSchema,
   challenge: caseStudyListBlockSchema,
   intervention: z.object({

@@ -9,6 +9,7 @@ import {
   buildBreadcrumbSchema,
   buildCaseStudySchema,
   buildCaseStudyServiceSchema,
+  buildCaseStudyWebPageSchema,
   buildOrganizationSchema,
 } from "@/lib/structured-data";
 
@@ -67,6 +68,7 @@ export default async function CaseStudyPage({ params }: CaseStudyRouteProps) {
       <JsonLd
         data={[
           buildOrganizationSchema(content),
+          buildCaseStudyWebPageSchema(content, study),
           buildCaseStudySchema(content, study),
           buildCaseStudyServiceSchema(content, study),
           buildBreadcrumbSchema(content, [
