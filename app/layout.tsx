@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Varela_Round } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 import { siteMetadata } from "@/lib/seo";
@@ -98,6 +99,22 @@ export default async function RootLayout({
           />
           <AppShell content={{ global: content.global }}>{children}</AppShell>
         </div>
+        <Script id="metricool-tracker" strategy="afterInteractive">
+          {`
+function loadScript(a){
+  var b=document.getElementsByTagName("head")[0],
+      c=document.createElement("script");
+  c.type="text/javascript";
+  c.src="https://tracker.metricool.com/resources/be.js";
+  c.onreadystatechange=a;
+  c.onload=a;
+  b.appendChild(c);
+}
+loadScript(function(){
+  beTracker.t({hash:"4d1e715fbcbcd9f21fc45fb38296a21d"});
+});
+`}
+        </Script>
       </body>
     </html>
   );

@@ -14,6 +14,7 @@ const marketingScripts = [
   "https://snap.licdn.com",
   "https://*.hotjar.com",
   "https://www.clarity.ms",
+  "https://tracker.metricool.com",
 ];
 
 const marketingConnections = [
@@ -32,6 +33,7 @@ const marketingConnections = [
   "https://*.hotjar.com",
   "wss://*.hotjar.com",
   "https://*.clarity.ms",
+  "https://tracker.metricool.com",
 ];
 
 const marketingFrames = [
