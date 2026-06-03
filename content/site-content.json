@@ -149,8 +149,18 @@
       "serviceLinksTitle": "Servicii",
       "serviceLinks": [
         {
+          "label": "Strategie de Marketing",
+          "href": "/servicii/strategie-marketing",
+          "enabled": true
+        },
+        {
           "label": "Social Media Management",
           "href": "/social-media-management",
+          "enabled": true
+        },
+        {
+          "label": "Producție Foto/Video",
+          "href": "/productie-video",
           "enabled": true
         },
         {
@@ -159,18 +169,13 @@
           "enabled": true
         },
         {
-          "label": "Producție Video",
-          "href": "/productie-video",
+          "label": "Website Creation",
+          "href": "/website-creation",
           "enabled": true
         },
         {
           "label": "SEO",
           "href": "/seo",
-          "enabled": true
-        },
-        {
-          "label": "Website Creation",
-          "href": "/website-creation",
           "enabled": true
         }
       ],
@@ -182,8 +187,13 @@
           "enabled": true
         },
         {
-          "label": "Studii de Caz",
+          "label": "Studii de caz",
           "href": "/case-studies",
+          "enabled": true
+        },
+        {
+          "label": "Contact",
+          "href": "/#contact",
           "enabled": true
         },
         {
@@ -2057,6 +2067,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -2065,7 +2079,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -2077,12 +2091,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -2253,6 +2271,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -2261,7 +2283,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -2273,12 +2295,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -2449,6 +2475,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -2457,7 +2487,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -2469,12 +2499,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -2645,6 +2679,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -2653,7 +2691,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -2665,12 +2703,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -2841,6 +2883,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -2849,7 +2895,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -2861,12 +2907,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -3038,6 +3088,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -3046,7 +3100,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -3058,12 +3112,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -3262,6 +3320,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -3270,7 +3332,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -3282,12 +3344,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing București",
@@ -3455,6 +3521,10 @@
             "href": "/agentie-marketing"
           },
           {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Social Media Management",
             "href": "/social-media-management"
           },
@@ -3463,7 +3533,7 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Producție Foto & Video",
+            "label": "Producție Foto/Video",
             "href": "/productie-video"
           },
           {
@@ -3475,12 +3545,16 @@
             "href": "/seo"
           },
           {
+            "label": "Studii de caz",
+            "href": "/case-studies"
+          },
+          {
             "label": "Blog",
             "href": "/blog"
           },
           {
-            "label": "Case Studies",
-            "href": "/case-studies"
+            "label": "Contact",
+            "href": "/#contact"
           },
           {
             "label": "Agenție de marketing Iași",
@@ -3588,43 +3662,27 @@
           "Rezultatul urmărit este o prezență socială care pare vie, dar nu haotică. O comunicare bună are energie, însă are și coloană vertebrală: teme recurente, stil recognoscibil, CTA-uri naturale, dovezi concrete și o relație clară cu restul infrastructurii de marketing.",
           "Această logică păstrează estetica premium a brandului, dar adaugă profunzime pentru Google, sisteme AI și utilizatori reali. Nu urmărim aglomerarea site-ului, ci construcția unei baze clare, scalabile și ușor de administrat."
         ],
-        "relatedTitle": "Linkuri interne utile pentru context",
+        "relatedTitle": "Studii de caz relevante",
         "relatedLinks": [
           {
-            "label": "Google & Meta Ads",
-            "href": "/google-meta-ads"
+            "label": "Social Media pentru Lunna",
+            "href": "/case-studies/lunna"
           },
           {
-            "label": "Producție Video",
-            "href": "/productie-video"
+            "label": "Social Media pentru Lumea Perdelelor",
+            "href": "/case-studies/lumea-perdelelor"
           },
           {
-            "label": "Website Creation",
-            "href": "/website-creation"
+            "label": "Social Media medical pentru ARTIO Medica",
+            "href": "/case-studies/artio-medica"
           },
           {
-            "label": "Contact",
-            "href": "/#contact"
+            "label": "Social Media și Meta Ads pentru Taco Loco",
+            "href": "/case-studies/taco-loco"
           },
           {
-            "label": "Agenție de Marketing",
-            "href": "/agentie-marketing"
-          },
-          {
-            "label": "Blog",
-            "href": "/blog"
-          },
-          {
-            "label": "Case Studies",
-            "href": "/case-studies"
-          },
-          {
-            "label": "Agenție Social Media Iași",
-            "href": "/agentie-marketing/iasi"
-          },
-          {
-            "label": "Social Media Marketing București",
-            "href": "/agentie-marketing/bucuresti"
+            "label": "Social Media și Ads pentru Optik Tataru",
+            "href": "/case-studies/optik-tataru"
           }
         ],
         "cta": {
@@ -3734,43 +3792,19 @@
           "În toate proiectele, criteriul final este utilitatea comercială. O pagină, o campanie sau un material vizual trebuie să facă decizia mai clară pentru clientul potrivit și să lase compania cu o infrastructură mai bună decât înainte.",
           "Această logică păstrează estetica premium a brandului, dar adaugă profunzime pentru Google, sisteme AI și utilizatori reali. Nu urmărim aglomerarea site-ului, ci construcția unei baze clare, scalabile și ușor de administrat."
         ],
-        "relatedTitle": "Linkuri interne utile pentru performanță",
+        "relatedTitle": "Studii de caz relevante",
         "relatedLinks": [
           {
-            "label": "Website Creation",
-            "href": "/website-creation"
+            "label": "Google Ads și Meta Ads pentru Optik Tataru",
+            "href": "/case-studies/optik-tataru"
           },
           {
-            "label": "SEO",
-            "href": "/seo"
+            "label": "Performance marketing pentru Cosmetică Hotelieră",
+            "href": "/case-studies/cosmeticahoteliera"
           },
           {
-            "label": "Social Media Management",
-            "href": "/social-media-management"
-          },
-          {
-            "label": "Contact",
-            "href": "/#contact"
-          },
-          {
-            "label": "Agenție de Marketing",
-            "href": "/agentie-marketing"
-          },
-          {
-            "label": "Blog",
-            "href": "/blog"
-          },
-          {
-            "label": "Case Studies",
-            "href": "/case-studies"
-          },
-          {
-            "label": "Google Ads Iași",
-            "href": "/agentie-marketing/iasi"
-          },
-          {
-            "label": "Reclame Google Ads București",
-            "href": "/agentie-marketing/bucuresti"
+            "label": "Meta Ads pentru Taco Loco",
+            "href": "/case-studies/taco-loco"
           }
         ],
         "cta": {
@@ -3881,43 +3915,23 @@
           "În toate proiectele, criteriul final este utilitatea comercială. O pagină, o campanie sau un material vizual trebuie să facă decizia mai clară pentru clientul potrivit și să lase compania cu o infrastructură mai bună decât înainte.",
           "Această logică păstrează estetica premium a brandului, dar adaugă profunzime pentru Google, sisteme AI și utilizatori reali. Nu urmărim aglomerarea site-ului, ci construcția unei baze clare, scalabile și ușor de administrat."
         ],
-        "relatedTitle": "Linkuri interne utile pentru producție și distribuție",
+        "relatedTitle": "Studii de caz relevante",
         "relatedLinks": [
           {
-            "label": "Social Media Management",
-            "href": "/social-media-management"
+            "label": "Conținut foto-video pentru Lunna",
+            "href": "/case-studies/lunna"
           },
           {
-            "label": "Google & Meta Ads",
-            "href": "/google-meta-ads"
+            "label": "Conținut culinar pentru Taco Loco",
+            "href": "/case-studies/taco-loco"
           },
           {
-            "label": "Website Creation",
-            "href": "/website-creation"
+            "label": "Reels și TikTok pentru Lumea Perdelelor",
+            "href": "/case-studies/lumea-perdelelor"
           },
           {
-            "label": "Contact",
-            "href": "/#contact"
-          },
-          {
-            "label": "Agenție de Marketing",
-            "href": "/agentie-marketing"
-          },
-          {
-            "label": "Blog",
-            "href": "/blog"
-          },
-          {
-            "label": "Case Studies",
-            "href": "/case-studies"
-          },
-          {
-            "label": "Creare Conținut Video Iași",
-            "href": "/agentie-marketing/iasi"
-          },
-          {
-            "label": "Content marketing București",
-            "href": "/agentie-marketing/bucuresti"
+            "label": "Conținut medical pentru ARTIO Medica",
+            "href": "/case-studies/artio-medica"
           }
         ],
         "cta": {
@@ -4030,6 +4044,14 @@
         "relatedTitle": "Linkuri interne utile pentru autoritate",
         "relatedLinks": [
           {
+            "label": "Studii de caz Digital Dot",
+            "href": "/case-studies"
+          },
+          {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
+          },
+          {
             "label": "Website Creation",
             "href": "/website-creation"
           },
@@ -4038,28 +4060,8 @@
             "href": "/google-meta-ads"
           },
           {
-            "label": "Agenție de Marketing",
-            "href": "/agentie-marketing"
-          },
-          {
-            "label": "Contact",
-            "href": "/#contact"
-          },
-          {
-            "label": "Blog",
+            "label": "Blog Digital Dot",
             "href": "/blog"
-          },
-          {
-            "label": "Case Studies",
-            "href": "/case-studies"
-          },
-          {
-            "label": "AI SEO Iași",
-            "href": "/agentie-marketing/iasi"
-          },
-          {
-            "label": "SEO și marketing București",
-            "href": "/agentie-marketing/bucuresti"
           }
         ],
         "cta": {
@@ -4172,43 +4174,19 @@
           "Această logică păstrează estetica premium a brandului, dar adaugă profunzime pentru Google, sisteme AI și utilizatori reali. Nu urmărim aglomerarea site-ului, ci construcția unei baze clare, scalabile și ușor de administrat.",
           "Această disciplină protejează investiția și face site-ul pregătit pentru campanii viitoare."
         ],
-        "relatedTitle": "Linkuri interne utile pentru arhitectură digitală",
+        "relatedTitle": "Studii de caz relevante",
         "relatedLinks": [
           {
-            "label": "SEO",
-            "href": "/seo"
+            "label": "Website traffic pentru Taco Loco",
+            "href": "/case-studies/taco-loco"
           },
           {
-            "label": "Google & Meta Ads",
-            "href": "/google-meta-ads"
+            "label": "Ecommerce B2B pentru Cosmetică Hotelieră",
+            "href": "/case-studies/cosmeticahoteliera"
           },
           {
-            "label": "Social Media Management",
-            "href": "/social-media-management"
-          },
-          {
-            "label": "Contact",
-            "href": "/#contact"
-          },
-          {
-            "label": "Agenție de Marketing",
-            "href": "/agentie-marketing"
-          },
-          {
-            "label": "Blog",
-            "href": "/blog"
-          },
-          {
-            "label": "Case Studies",
-            "href": "/case-studies"
-          },
-          {
-            "label": "Creare Website Iași",
-            "href": "/agentie-marketing/iasi"
-          },
-          {
-            "label": "Creare Website București",
-            "href": "/agentie-marketing/bucuresti"
+            "label": "Trafic website pentru Optik Tataru",
+            "href": "/case-studies/optik-tataru"
           }
         ],
         "cta": {
@@ -4515,10 +4493,10 @@
         "servicesInvolved": [
           {
             "label": "Social Media Management",
-            "href": "/servicii/social-media-management"
+            "href": "/social-media-management"
           },
           {
-            "label": "Google Ads & Meta Ads",
+            "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
           },
           {
@@ -4678,14 +4656,10 @@
         "servicesInvolved": [
           {
             "label": "Social Media Management",
-            "href": "/servicii/social-media-management"
+            "href": "/social-media-management"
           },
           {
             "label": "Producție Foto/Video",
-            "href": "/servicii/productie-foto-video"
-          },
-          {
-            "label": "Producție Video",
             "href": "/productie-video"
           },
           {
@@ -4850,23 +4824,23 @@
         "servicesInvolved": [
           {
             "label": "Social Media Management",
-            "href": "/servicii/social-media-management"
+            "href": "/social-media-management"
           },
           {
-            "label": "Google Ads & Meta Ads",
+            "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
           },
           {
             "label": "Producție Foto/Video",
-            "href": "/servicii/productie-foto-video"
-          },
-          {
-            "label": "Strategie de Marketing",
-            "href": "/servicii/strategie-marketing"
+            "href": "/productie-video"
           },
           {
             "label": "Website Creation",
             "href": "/website-creation"
+          },
+          {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
           }
         ]
       },
@@ -5022,12 +4996,8 @@
         "audienceType": "Ecommerce B2B",
         "servicesInvolved": [
           {
-            "label": "Google Ads & Meta Ads",
+            "label": "Google & Meta Ads",
             "href": "/google-meta-ads"
-          },
-          {
-            "label": "Strategie de Marketing",
-            "href": "/servicii/strategie-marketing"
           },
           {
             "label": "Website Creation",
@@ -5036,6 +5006,10 @@
           {
             "label": "SEO",
             "href": "/seo"
+          },
+          {
+            "label": "Strategie de Marketing",
+            "href": "/servicii/strategie-marketing"
           }
         ]
       },
@@ -5198,14 +5172,10 @@
         "servicesInvolved": [
           {
             "label": "Social Media Management",
-            "href": "/servicii/social-media-management"
+            "href": "/social-media-management"
           },
           {
             "label": "Producție Foto/Video",
-            "href": "/servicii/productie-foto-video"
-          },
-          {
-            "label": "Producție Video",
             "href": "/productie-video"
           },
           {
@@ -5372,14 +5342,10 @@
         "servicesInvolved": [
           {
             "label": "Social Media Management",
-            "href": "/servicii/social-media-management"
+            "href": "/social-media-management"
           },
           {
             "label": "Producție Foto/Video",
-            "href": "/servicii/productie-foto-video"
-          },
-          {
-            "label": "Producție Video",
             "href": "/productie-video"
           },
           {
