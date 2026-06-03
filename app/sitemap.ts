@@ -23,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/servicii/productie-foto-video",
     "/servicii/google-ads",
     "/servicii/meta-ads",
+    "/servicii/seo",
     "/case-studies",
     "/blog",
     "/politica-confidentialitate",
