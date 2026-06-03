@@ -13,11 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getAllAuthors(),
   ]);
 
-  const indexedSeoRoutes = content.seoSettings.pages
-    .filter((page) => page.robots.index && page.robots.googleBotIndex)
-    .map((page) => page.canonicalUrl || page.path);
-
-  const staticRoutes = [
+  const homeUrl = absoluteUrl("/", content);
+  const serviceRoutes = [
     "/servicii/strategie-marketing",
     "/servicii/social-media-management",
     "/servicii/productie-foto-video",
@@ -25,17 +22,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/servicii/meta-ads",
     "/servicii/seo",
     "/servicii/website-creation",
+  ];
+  const staticRoutes = [
     "/case-studies",
     "/blog",
     "/politica-confidentialitate",
     "/termeni-si-conditii",
   ];
-
-  const serviceRoutes = content.serviceSeo.enabled
-    ? content.serviceSeo.pages
-        .filter((page) => page.enabled !== false)
-        .map((page) => page.path)
-    : [];
   const regionalRoutes = content.regionalSeo.enabled
     ? [
         content.regionalSeo.hub.path,
@@ -47,38 +40,52 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const caseStudyRoutes = content.caseStudies.enabled
     ? content.caseStudies.studies.map((study) => `/case-studies/${study.slug}`)
     : [];
-
-  const homeUrl = absoluteUrl("/", content);
-  const staticUrls = [
-    ...new Set([
-      homeUrl,
-      ...indexedSeoRoutes,
-      ...staticRoutes,
-      ...serviceRoutes,
-      ...regionalRoutes,
-      ...caseStudyRoutes,
-    ].map((route) => absoluteUrl(route, content))),
-  ];
-
-  const staticEntries = staticUrls.map((url): SitemapEntry => ({
-    url,
+  const makeEntry = (
+    route: string,
+    changeFrequency: SitemapEntry["changeFrequency"],
+    priority: SitemapEntry["priority"],
+  ): SitemapEntry => ({
+    url: absoluteUrl(route, content),
     lastModified: new Date(),
-    changeFrequency: url === homeUrl ? "weekly" : "monthly",
-    priority: url === homeUrl ? 1 : 0.8,
-  }));
+    changeFrequency,
+    priority,
+  });
+
+  const staticEntries: SitemapEntry[] = [
+    {
+      url: homeUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    ...serviceRoutes.map((route) => makeEntry(route, "monthly", 0.9)),
+    ...caseStudyRoutes.map((route) => makeEntry(route, "monthly", 0.8)),
+    ...regionalRoutes.map((route) => makeEntry(route, "monthly", route === content.regionalSeo.hub.path ? 0.8 : 0.75)),
+    ...staticRoutes.map((route) => {
+      if (route === "/blog") {
+        return makeEntry(route, "weekly", 0.7);
+      }
+
+      if (route === "/politica-confidentialitate" || route === "/termeni-si-conditii") {
+        return makeEntry(route, "yearly", 0.3);
+      }
+
+      return makeEntry(route, "monthly", 0.6);
+    }),
+  ];
 
   const blogEntries = posts.map((post): SitemapEntry => ({
     url: absoluteUrl(`/blog/${post.slug}`, content),
     lastModified: new Date(post.publishedAt),
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: 0.65,
   }));
 
   const authorEntries = authors.map((author): SitemapEntry => ({
     url: absoluteUrl(`/blog/autor/${author.slug}`, content),
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: 0.5,
+    priority: 0.4,
   }));
 
   const taxonomyEntries = [
@@ -91,5 +98,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...blogEntries, ...authorEntries, ...taxonomyEntries];
+  const entries = [...staticEntries, ...blogEntries, ...authorEntries, ...taxonomyEntries];
+  const seen = new Set<string>();
+
+  return entries.filter((entry) => {
+    if (seen.has(entry.url)) {
+      return false;
+    }
+
+    seen.add(entry.url);
+    return true;
+  });
 }

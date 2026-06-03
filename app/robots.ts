@@ -14,7 +14,14 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     rules: allowedCrawlers.map((userAgent) => ({
       userAgent,
       allow: "/",
-      disallow: ["/panou-control", "/api/admin"],
+      disallow: [
+        "/admin/",
+        "/dashboard/",
+        "/preview/",
+        "/api/",
+        "/private/",
+        "/panou-control/",
+      ],
     })),
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,
