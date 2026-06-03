@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "/servicii/strategie-marketing",
     "/servicii/social-media-management",
+    "/servicii/productie-foto-video",
     "/case-studies",
     "/blog",
     "/politica-confidentialitate",
