@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: AuthorPageProps): Promise<Met
     content,
     path: `/blog/autor/${author.slug}`,
     fallbackTitle: `${author.name} | Autor Digital Dot`,
-    fallbackDescription: author.bio,
+    fallbackDescription: `${author.name} publică articole Digital Dot despre strategie de marketing, poziționare, SEO, Social Media Management și creștere predictibilă.`,
   });
 }
 

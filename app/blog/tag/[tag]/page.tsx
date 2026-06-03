@@ -21,12 +21,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
   const { tag } = await params;
   const content = await getSiteContent();
+  const label = getTagLabel(tag);
 
   return buildRouteMetadata({
     content,
     path: `/blog/tag/${tag}`,
-    fallbackTitle: `${getTagLabel(tag)} | Blog Digital Dot`,
-    fallbackDescription: `Articole Digital Dot despre ${getTagLabel(tag)}, strategie de marketing, SEO, AI SEO și creștere digitală.`,
+    fallbackTitle: `${label} | Tag Blog Digital Dot`,
+    fallbackDescription: `Articole Digital Dot despre ${label}, strategie de marketing, SEO, AI SEO, conținut, performance marketing și creștere digitală coerentă.`,
   });
 }
 

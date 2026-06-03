@@ -18,16 +18,21 @@ export function generateStaticParams() {
   return blogCategories.map((category) => ({ category: category.key }));
 }
 
+function buildCategoryDescription(label: string, description?: string) {
+  return `${description || `Articole Digital Dot despre ${label}.`} Citește perspective aplicate despre marketing digital, strategie, SEO, conținut și creștere predictibilă.`;
+}
+
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const { category } = await params;
   const content = await getSiteContent();
   const categoryInfo = blogCategories.find((item) => item.key === category);
+  const label = categoryInfo?.label || category;
 
   return buildRouteMetadata({
     content,
     path: `/blog/categorie/${category}`,
-    fallbackTitle: `${categoryInfo?.label || category} | Blog Digital Dot`,
-    fallbackDescription: categoryInfo?.description || "Articole Digital Dot organizate semantic pe categorii editoriale.",
+    fallbackTitle: `${label} | Categorie Blog Digital Dot`,
+    fallbackDescription: buildCategoryDescription(label, categoryInfo?.description),
   });
 }
 

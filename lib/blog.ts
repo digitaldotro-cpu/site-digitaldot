@@ -121,7 +121,7 @@ export async function getAllAuthors() {
   for (const post of posts) {
     const slug = post.authorSlug || slugify(post.authorName);
     const existing = authors.get(slug);
-    const bio = post.authorBio || "Autor Digital Dot cu focus pe strategie de marketing, poziționare, SEO, Social Media Management și sisteme de creștere predictibilă.";
+    const bio = post.authorBio || `${post.authorName} scrie pentru Digital Dot despre strategie de marketing, poziționare, SEO, Social Media Management și sisteme de creștere predictibilă.`;
 
     if (existing) {
       existing.posts.push(post);
