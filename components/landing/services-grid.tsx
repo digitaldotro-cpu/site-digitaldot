@@ -18,9 +18,9 @@ const iconByName: Record<string, ComponentType<{ className?: string }>> = {
 };
 
 const hrefByServiceTitle: Record<string, string> = {
-  "Social Media Management": "/social-media-management",
-  "Producție Foto & Video": "/productie-video",
-  "Strategie de Marketing": "/#positioning",
+  "Social Media Management": "/servicii/social-media-management",
+  "Producție Foto & Video": "/servicii/productie-foto-video",
+  "Strategie de Marketing": "/servicii/strategie-marketing",
   "Google & Meta Ads": "/google-meta-ads",
   "Website Creation": "/website-creation",
   "Reclame Plătite: Google & Facebook": "/google-meta-ads",
@@ -58,23 +58,32 @@ export function ServicesGrid({ section }: ServicesGridProps) {
               <AnimatedSection
                 key={item.id}
                 delay={index * 0.04}
-                className="brand-card p-6 sm:p-7"
               >
-                <article>
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-[#d8c7a3]">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="text-xl font-semibold text-white">
-                  {href ? (
-                    <Link href={href} className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#276864]">
-                      {item.title}
-                    </Link>
-                  ) : (
-                    item.title
-                  )}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#dadada] sm:text-base">{item.description}</p>
-                </article>
+                {href ? (
+                  <Link
+                    href={href}
+                    aria-label={`Vezi serviciul ${item.title}`}
+                    className="brand-card block h-full p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d8c7a3]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10] sm:p-7"
+                  >
+                    <article>
+                      <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-[#d8c7a3]">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-white">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-[#dadada] sm:text-base">{item.description}</p>
+                    </article>
+                  </Link>
+                ) : (
+                  <article className="brand-card h-full p-6 sm:p-7">
+                    <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#276864]/55 bg-[#0b0c10]/70 text-[#d8c7a3]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#dadada] sm:text-base">{item.description}</p>
+                  </article>
+                )}
               </AnimatedSection>
             );
           })}
