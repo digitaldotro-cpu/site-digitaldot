@@ -1452,6 +1452,22 @@
           "googleBotIndex": true,
           "googleBotFollow": true
         }
+      },
+      {
+        "path": "/servicii/strategie-marketing",
+        "label": "Strategie de Marketing",
+        "seoTitle": "Strategie de Marketing | Digital Dot",
+        "seoDescription": "Construim strategii de marketing clare pentru companii care au nevoie de poziționare, direcție, structură și campanii conectate. Strategie, conținut, ads și website într-un sistem coerent.",
+        "ogTitle": "Strategie de Marketing | Digital Dot",
+        "ogDescription": "Strategie de marketing pentru companii care vor claritate, poziționare și un sistem coerent de promovare. Digital Dot conectează strategia, conținutul, ads-urile și website-ul.",
+        "ogImage": "/branding/references/door-strategy-wide.png",
+        "canonicalUrl": "https://digitaldot.ro/servicii/strategie-marketing",
+        "robots": {
+          "index": true,
+          "follow": true,
+          "googleBotIndex": true,
+          "googleBotFollow": true
+        }
       }
     ],
     "aiSeo": {
@@ -1601,6 +1617,12 @@
         }
       ],
       "services": [
+        {
+          "id": "strategie-marketing",
+          "name": "Strategie de Marketing",
+          "description": "Strategie de marketing pentru companii care au nevoie de poziționare, direcție, structură și campanii conectate prin Social Media, Google Ads, Meta Ads, SEO și website.",
+          "url": "/servicii/strategie-marketing"
+        },
         {
           "id": "social-media-management",
           "name": "Social Media Management",
