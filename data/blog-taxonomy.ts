@@ -42,6 +42,7 @@ export const blogTags: BlogTag[] = [
   { key: "funnel", label: "Funnel" },
   { key: "content", label: "Content" },
   { key: "marketing-digital", label: "Marketing Digital" },
+  { key: "buget-marketing", label: "Buget de Marketing" },
   { key: "meta-ads", label: "Meta Ads" },
   { key: "google-ads", label: "Google Ads" },
   { key: "kpi", label: "KPI" },
