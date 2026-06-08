@@ -13,7 +13,7 @@ export function TeamSection({ section }: TeamSectionProps) {
   }
 
   return (
-    <section id="team" className="scroll-mt-24 py-18 sm:py-24">
+    <section id="team" className="content-visibility-auto scroll-mt-24 py-18 sm:py-24">
       <Container>
         <AnimatedSection className="max-w-4xl">
           <span className="brand-rule mb-5" />

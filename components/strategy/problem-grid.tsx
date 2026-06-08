@@ -1,5 +1,3 @@
-"use client";
-
 import { Target, Gauge, BarChart3, Lightbulb, type LucideIcon } from "lucide-react";
 import { SectionShell } from "@/components/photo-video/section-shell";
 

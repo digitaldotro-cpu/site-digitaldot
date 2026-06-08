@@ -1,5 +1,3 @@
-"use client";
-
 type ProcessStep = {
   title: string;
   description: string;

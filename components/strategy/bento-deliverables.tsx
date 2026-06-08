@@ -1,5 +1,3 @@
-"use client";
-
 import { SectionShell } from "@/components/photo-video/section-shell";
 import { cn } from "@/lib/utils";
 

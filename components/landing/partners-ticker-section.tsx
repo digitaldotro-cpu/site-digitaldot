@@ -13,7 +13,7 @@ export function PartnersTickerSection({ section }: PartnersTickerSectionProps) {
   }
 
   return (
-    <section id="partners" className="scroll-mt-24 pb-18 sm:pb-24">
+    <section id="partners" className="content-visibility-auto scroll-mt-24 pb-18 sm:pb-24">
       <Container>
         <AnimatedSection className="brand-card p-5 sm:p-6">
           <span className="brand-rule mb-4" />

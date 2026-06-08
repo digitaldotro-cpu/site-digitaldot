@@ -1,5 +1,3 @@
-"use client";
-
 type ProblemCardProps = {
   title: string;
   description: string;

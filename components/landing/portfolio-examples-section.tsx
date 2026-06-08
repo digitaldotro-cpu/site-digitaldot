@@ -28,7 +28,7 @@ export function PortfolioExamplesSection({ section, studies }: PortfolioExamples
   const gridClassName = "mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-6";
 
   return (
-    <section id="case-studies" className="brand-orbit relative scroll-mt-24 overflow-hidden border-y border-[#1f2a2d] bg-[#0b0c10] py-18 sm:py-24">
+    <section id="case-studies" className="brand-orbit content-visibility-auto relative scroll-mt-24 overflow-hidden border-y border-[#1f2a2d] bg-[#0b0c10] py-18 sm:py-24">
       <span id="portfolio" className="absolute -top-24" aria-hidden />
       <Container className="relative z-10">
         <AnimatedSection className="max-w-4xl">

@@ -1,5 +1,3 @@
-"use client";
-
 type ProcessStepCardProps = {
   index: number;
   title: string;

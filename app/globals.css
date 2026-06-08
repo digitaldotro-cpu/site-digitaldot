@@ -117,6 +117,22 @@ li {
   transform: translateY(-2px);
 }
 
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+@media (max-width: 767px) {
+  .brand-orbit::before,
+  .brand-orbit::after {
+    display: none;
+  }
+
+  .brand-card:hover {
+    transform: none;
+  }
+}
+
 .brand-rule {
   display: block;
   width: 64px;

@@ -99,7 +99,7 @@ export default async function RootLayout({
           />
           <AppShell content={{ global: content.global }}>{children}</AppShell>
         </div>
-        <Script id="metricool-tracker" strategy="afterInteractive">
+        <Script id="metricool-tracker" strategy="lazyOnload">
           {`
 function loadScript(a){
   var b=document.getElementsByTagName("head")[0],

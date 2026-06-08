@@ -113,6 +113,12 @@ export function Navbar({
       return;
     }
 
+    if (!window.matchMedia("(min-width: 1024px)").matches) {
+      activeHashRef.current = window.location.hash || "#hero";
+      setActiveHash(activeHashRef.current);
+      return;
+    }
+
     const sectionHashes = [
       "#hero",
       ...visibleNavItems
@@ -174,7 +180,7 @@ export function Navbar({
     } else {
       window.addEventListener("scroll", handleScroll, { passive: true });
     }
-    window.addEventListener("resize", handleScroll);
+    window.addEventListener("resize", handleScroll, { passive: true });
 
     return () => {
       if (rafId !== null) {

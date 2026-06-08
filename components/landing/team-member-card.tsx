@@ -28,6 +28,8 @@ export function TeamMemberCard({ member, delay = 0 }: TeamMemberCardProps) {
       src={member.avatar}
       alt={member.name}
       fill
+      loading="lazy"
+      decoding="async"
       className="object-cover object-center"
       sizes="(max-width: 767px) 112px, (max-width: 1279px) 128px, 112px"
     />

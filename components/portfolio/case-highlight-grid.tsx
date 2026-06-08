@@ -1,5 +1,3 @@
-"use client";
-
 import { Activity, BarChart3, Sparkles, Target } from "lucide-react";
 
 type CaseHighlight = {
