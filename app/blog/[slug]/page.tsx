@@ -31,8 +31,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return buildRouteMetadata({
     content,
     path: `/blog/${post.slug}`,
-    fallbackTitle: `${post.title} | Digital Dot`,
-    fallbackDescription: post.excerpt,
+    fallbackTitle: post.seoTitle || `${post.title} | Digital Dot`,
+    fallbackDescription: post.seoDescription || post.excerpt,
+    fallbackOgTitle: post.ogTitle,
+    fallbackOgDescription: post.ogDescription,
     type: "article",
     publishedTime: post.publishedAt,
     image: post.coverImage,

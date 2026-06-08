@@ -9,6 +9,10 @@ const blogDirectory = path.join(process.cwd(), "content/blog");
 const blogFrontmatterSchema: z.ZodType<BlogFrontmatter> = z.object({
   title: z.string().min(10),
   excerpt: z.string().min(20),
+  seoTitle: z.string().min(10).optional(),
+  seoDescription: z.string().min(20).optional(),
+  ogTitle: z.string().min(10).optional(),
+  ogDescription: z.string().min(20).optional(),
   coverImage: z.string().min(1),
   category: z.string().min(1),
   tags: z.array(z.string().min(1)).min(1),

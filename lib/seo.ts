@@ -17,6 +17,8 @@ type RouteMetadataInput = {
   path: string;
   fallbackTitle: string;
   fallbackDescription: string;
+  fallbackOgTitle?: string;
+  fallbackOgDescription?: string;
   type?: "website" | "article";
   publishedTime?: string;
   image?: string;
@@ -82,6 +84,8 @@ export function buildRouteMetadata({
   path,
   fallbackTitle,
   fallbackDescription,
+  fallbackOgTitle,
+  fallbackOgDescription,
   type = "website",
   publishedTime,
   image,
@@ -89,8 +93,8 @@ export function buildRouteMetadata({
   const pageSeo = getPageSeo(content, path);
   const title = pageSeo?.seoTitle || fallbackTitle;
   const description = pageSeo?.seoDescription || fallbackDescription;
-  const ogTitle = pageSeo?.ogTitle || title;
-  const ogDescription = pageSeo?.ogDescription || description;
+  const ogTitle = pageSeo?.ogTitle || fallbackOgTitle || title;
+  const ogDescription = pageSeo?.ogDescription || fallbackOgDescription || description;
   const canonical = pageSeo?.canonicalUrl || absoluteUrl(path, content);
   const ogImage = pageSeo?.ogImage || image || content.seoSettings.global.defaultOgImage;
   const ogImageUrl = absoluteUrl(ogImage, content);

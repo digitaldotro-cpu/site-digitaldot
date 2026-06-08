@@ -52,6 +52,10 @@ export type BlogTag = {
 export type BlogFrontmatter = {
   title: string;
   excerpt: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  ogTitle?: string;
+  ogDescription?: string;
   coverImage: string;
   category: string;
   tags: string[];

@@ -250,7 +250,7 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
     "@context": "https://schema.org",
     "@type": ["Article", "BlogPosting"],
     headline: post.title,
-    description: post.excerpt,
+    description: post.seoDescription || post.excerpt,
     image: absoluteUrl(post.coverImage, content),
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
@@ -269,6 +269,7 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
       },
     },
     mainEntityOfPage: url,
+    url,
   };
 }
 

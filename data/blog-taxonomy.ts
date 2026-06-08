@@ -18,7 +18,7 @@ export const blogCategories: BlogCategory[] = [
   },
   {
     key: "strategie",
-    label: "Strategie",
+    label: "Strategie de Marketing",
     description: "Cadre de lucru pentru decizii de marketing mai bune.",
   },
   {
@@ -41,6 +41,7 @@ export const blogCategories: BlogCategory[] = [
 export const blogTags: BlogTag[] = [
   { key: "funnel", label: "Funnel" },
   { key: "content", label: "Content" },
+  { key: "marketing-digital", label: "Marketing Digital" },
   { key: "meta-ads", label: "Meta Ads" },
   { key: "google-ads", label: "Google Ads" },
   { key: "kpi", label: "KPI" },
@@ -53,6 +54,7 @@ export const blogTags: BlogTag[] = [
   { key: "seo", label: "SEO" },
   { key: "ai-seo", label: "AI SEO" },
   { key: "website-creation", label: "Website Creation" },
+  { key: "social-media-management", label: "Social Media Management" },
   { key: "strategie-marketing", label: "Strategie de marketing" },
   { key: "brand-infrastructure", label: "Brand Infrastructure" },
 ];

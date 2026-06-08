@@ -51,6 +51,8 @@ export async function GET() {
     "## Blog",
     "",
     `- Blog Digital Dot: ${absoluteUrl("/blog", content)}`,
+    "- Articole recomandate:",
+    `  - Marketingul nu este loterie. Este infrastructură: ${absoluteUrl("/blog/marketingul-nu-este-loterie-este-infrastructura", content)}`,
     "",
     "## Contact",
     "",
