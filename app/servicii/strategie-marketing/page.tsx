@@ -311,6 +311,13 @@ export default async function StrategyMarketingPage() {
                 <p className="text-base leading-relaxed text-[#c6c6c6]">
                   Când marketingul nu are structură, apar simptome clare: bugete risipite, mesaje inconsistente, conținut fără scop, campanii care nu comunică între ele și decizii luate reactiv.
                 </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Am detaliat această logică și într-un articol despre{" "}
+                  <Link href="/blog/de-ce-marketingul-unei-companii-trebuie-sa-functioneze-ca-un-organism" className="text-[#d8c7a3] underline-offset-4 hover:underline">
+                    cum funcționează un sistem de marketing integrat
+                  </Link>
+                  .
+                </p>
                 <ul className="grid gap-3 sm:grid-cols-2">
                   {problems.map((item) => (
                     <li key={item} className="rounded-2xl border border-[#1f2a2d] bg-[#0b0c10]/72 px-4 py-3 text-sm text-[#dadada]">

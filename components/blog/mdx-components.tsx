@@ -38,7 +38,7 @@ export const mdxComponents = {
         {...props}
         className="text-[#d8c7a3] underline-offset-4 hover:underline"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       />
     );
   },

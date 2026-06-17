@@ -57,6 +57,9 @@ export const blogTags: BlogTag[] = [
   { key: "website-creation", label: "Website Creation" },
   { key: "social-media-management", label: "Social Media Management" },
   { key: "strategie-marketing", label: "Strategie de marketing" },
+  { key: "marketing-integrat", label: "Marketing Integrat" },
+  { key: "sisteme-marketing", label: "Sisteme de Marketing" },
+  { key: "management", label: "Management" },
   { key: "brand-infrastructure", label: "Brand Infrastructure" },
 ];
 

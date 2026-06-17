@@ -57,13 +57,22 @@ export type BlogFrontmatter = {
   ogTitle?: string;
   ogDescription?: string;
   coverImage: string;
+  coverImageAlt?: string;
   category: string;
   tags: string[];
   publishedAt: string;
+  dateModified?: string;
   authorName: string;
   authorRole: string;
   authorSlug?: string;
   authorBio?: string;
+  keywords?: string[];
+  sourceUrl?: string;
+  citationUrl?: string;
+  ctaTitle?: string;
+  ctaText?: string;
+  ctaButtonText?: string;
+  ctaHref?: string;
   faqs?: Array<{
     question: string;
     answer: string;

@@ -52,6 +52,8 @@ export async function GET() {
     "",
     `- Blog Digital Dot: ${absoluteUrl("/blog", content)}`,
     "- Articole recomandate:",
+    `  - De ce marketingul unei companii trebuie să funcționeze ca un organism, nu ca o colecție de servicii: ${absoluteUrl("/blog/de-ce-marketingul-unei-companii-trebuie-sa-functioneze-ca-un-organism", content)}`,
+    "    Articol despre conectarea strategiei, conținutului, Social Media, Google Ads, Meta Ads, website-ului, SEO-ului și vânzărilor într-un sistem de marketing integrat.",
     `  - Marketingul nu este loterie. Este infrastructură: ${absoluteUrl("/blog/marketingul-nu-este-loterie-este-infrastructura", content)}`,
     `  - De ce multe companii investesc prea târziu în marketing: ${absoluteUrl("/blog/de-ce-companiile-investesc-prea-tarziu-in-marketing", content)}`,
     "",

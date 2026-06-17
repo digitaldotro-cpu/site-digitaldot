@@ -1,5 +1,6 @@
 import type { BlogPost } from "@/types/content";
 import type { FaqGroupContent, RegionalPageContent, SiteContent } from "@/lib/site-content-schema";
+import { getCategoryLabel, getTagLabel } from "@/data/blog-taxonomy";
 import { absoluteUrl, getCanonicalBaseUrl, getPageSeo, siteMetadata } from "@/lib/seo";
 
 type BreadcrumbItem = {
@@ -245,21 +246,30 @@ export function buildBreadcrumbSchema(content: SiteContent, items: BreadcrumbIte
 
 export function buildArticleSchema(content: SiteContent, post: BlogPost) {
   const url = absoluteUrl(`/blog/${post.slug}`, content);
+  const author = post.authorName.toLowerCase().includes("digital dot")
+    ? {
+        "@type": "Organization",
+        "@id": `${getCanonicalBaseUrl(content)}/#organization`,
+        name: siteMetadata.siteName,
+      }
+    : {
+        "@type": "Person",
+        name: post.authorName,
+        jobTitle: post.authorRole,
+        url: absoluteUrl(`/blog/autor/${post.authorSlug}`, content),
+      };
 
   return {
     "@context": "https://schema.org",
-    "@type": ["Article", "BlogPosting"],
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.seoDescription || post.excerpt,
     image: absoluteUrl(post.coverImage, content),
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
-    author: {
-      "@type": "Person",
-      name: post.authorName,
-      jobTitle: post.authorRole,
-      url: absoluteUrl(`/blog/autor/${post.authorSlug}`, content),
-    },
+    dateModified: post.dateModified || post.publishedAt,
+    articleSection: getCategoryLabel(post.category),
+    keywords: post.keywords?.join(", ") || post.tags.map(getTagLabel).join(", "),
+    author,
     publisher: {
       "@id": `${getCanonicalBaseUrl(content)}/#organization`,
       name: siteMetadata.siteName,
@@ -270,6 +280,8 @@ export function buildArticleSchema(content: SiteContent, post: BlogPost) {
     },
     mainEntityOfPage: url,
     url,
+    isBasedOn: post.sourceUrl,
+    citation: post.citationUrl,
   };
 }
 

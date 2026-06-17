@@ -18,6 +18,11 @@ export function BlogPostLayout({
   relatedPosts,
   children,
 }: BlogPostLayoutProps) {
+  const ctaTitle = post.ctaTitle || "Vrei să aplici aceste tactici în business-ul tău?";
+  const ctaText = post.ctaText || "Discutăm obiectivele tale și construim un plan de marketing orientat spre creștere reală.";
+  const ctaButtonText = post.ctaButtonText || "Programează o discuție";
+  const ctaHref = post.ctaHref || "/contacteaza-ne";
+
   return (
     <>
       <article>
@@ -49,7 +54,7 @@ export function BlogPostLayout({
             <div className="relative aspect-[16/8]">
               <Image
                 src={post.coverImage}
-                alt={post.title}
+                alt={post.coverImageAlt || post.title}
                 fill
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-cover"
@@ -64,6 +69,18 @@ export function BlogPostLayout({
           </div>
 
           <div className="article-content mx-auto mt-10 max-w-4xl">{children}</div>
+
+          <div className="mx-auto mt-12 max-w-4xl rounded-[2rem] border border-[#2a3b43] bg-[linear-gradient(130deg,#11181d_0%,#17353a_100%)] p-8 text-center sm:p-10">
+            <h2 className="text-3xl font-semibold text-white">
+              {ctaTitle}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-[#cbd1d5]">
+              {ctaText}
+            </p>
+            <ButtonLink href={ctaHref} className="mt-8 whitespace-nowrap">
+              {ctaButtonText}
+            </ButtonLink>
+          </div>
 
           <div className="mx-auto mt-12 max-w-4xl rounded-[1.6rem] border border-[#273840] bg-[#11181d] p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#d8c7a3]">
@@ -87,23 +104,6 @@ export function BlogPostLayout({
             {relatedPosts.map((related) => (
               <BlogCard key={related.slug} post={related} />
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="pb-20">
-        <Container>
-          <div className="rounded-[2rem] border border-[#2a3b43] bg-[linear-gradient(130deg,#11181d_0%,#17353a_100%)] p-8 text-center sm:p-10">
-            <h2 className="text-3xl font-semibold text-white">
-              Vrei să aplici aceste tactici în business-ul tău?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[#cbd1d5]">
-              Discutăm obiectivele tale și construim un plan de marketing orientat
-              spre creștere reală.
-            </p>
-            <ButtonLink href="/contacteaza-ne" className="mt-8">
-              Programează o discuție
-            </ButtonLink>
           </div>
         </Container>
       </section>

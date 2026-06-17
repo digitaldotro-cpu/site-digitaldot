@@ -591,7 +591,11 @@ export default async function SeoServicePage() {
                 SEO funcționează mai bine când este conectat cu strategia și website-ul
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#c6c6c6]">
-                SEO nu funcționează izolat. Are nevoie de structură, conținut, website bun, strategie și dovezi reale.
+                SEO nu funcționează izolat. Are nevoie de structură, conținut, website bun, strategie și dovezi reale, în aceeași logică în care{" "}
+                <Link href="/blog/de-ce-marketingul-unei-companii-trebuie-sa-functioneze-ca-un-organism" className="text-[#d8c7a3] underline-offset-4 hover:underline">
+                  marketingul trebuie să funcționeze ca un organism
+                </Link>
+                .
               </p>
               <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {connectedServices.map((item) => (
