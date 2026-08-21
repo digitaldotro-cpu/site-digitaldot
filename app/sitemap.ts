@@ -6,6 +6,15 @@ import { getSiteContent } from "@/lib/site-content";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
+function parseLastModified(value: string | undefined): Date | undefined {
+  if (!value) {
+    return undefined;
+  }
+
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? undefined : date;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [content, posts, authors] = await Promise.all([
     getSiteContent(),
@@ -46,7 +55,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: SitemapEntry["priority"],
   ): SitemapEntry => ({
     url: absoluteUrl(route, content),
-    lastModified: new Date(),
     changeFrequency,
     priority,
   });
@@ -54,7 +62,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticEntries: SitemapEntry[] = [
     {
       url: homeUrl,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
@@ -74,16 +81,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   ];
 
-  const blogEntries = posts.map((post): SitemapEntry => ({
-    url: absoluteUrl(`/blog/${post.slug}`, content),
-    lastModified: new Date(post.publishedAt),
-    changeFrequency: "monthly",
-    priority: 0.65,
-  }));
+  const blogEntries = posts.map((post): SitemapEntry => {
+    const lastModified = parseLastModified(
+      post.dateModified ?? post.publishedAt,
+    );
+
+    return {
+      url: absoluteUrl(`/blog/${post.slug}`, content),
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    };
+  });
 
   const authorEntries = authors.map((author): SitemapEntry => ({
     url: absoluteUrl(`/blog/autor/${author.slug}`, content),
-    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.4,
   }));
@@ -93,7 +105,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogTags.map((tag) => `/blog/tag/${tag.key}`),
   ].map((route): SitemapEntry => ({
     url: absoluteUrl(route, content),
-    lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.5,
   }));
