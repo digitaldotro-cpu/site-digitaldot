@@ -22,10 +22,10 @@ const hrefByServiceTitle: Record<string, string> = {
   "Producție Foto & Video": "/servicii/productie-foto-video",
   "Strategie de Marketing": "/servicii/strategie-marketing",
   "Google & Meta Ads": "/google-meta-ads",
-  "Website Creation": "/website-creation",
+  "Website Creation": "/servicii/website-creation",
   "Reclame Plătite: Google & Facebook": "/google-meta-ads",
-  "Creare Web (WordPress & Shopify)": "/website-creation",
-  SEO: "/seo",
+  "Creare Web (WordPress & Shopify)": "/servicii/website-creation",
+  SEO: "/servicii/seo",
 };
 
 type ServicesGridProps = {

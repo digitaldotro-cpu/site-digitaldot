@@ -6,7 +6,8 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, buildRouteMetadata, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema, buildWebPageSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from "@/lib/structured-data";
+import { photoVideoProductionFaqGroup as faqGroup } from "@/data/consolidated-service-faqs";
 
 const path = "/servicii/productie-foto-video";
 
@@ -25,6 +26,7 @@ const systemElements = [
   "direcție vizuală",
   "concept foto-video",
   "planificare cadre",
+  "producție modulară și bibliotecă de active",
   "filmări verticale pentru Reels și TikTok",
   "fotografii de brand",
   "fotografii de produs",
@@ -33,6 +35,7 @@ const systemElements = [
   "materiale pentru ads",
   "materiale pentru website",
   "editare video",
+  "variante de hook, durată și subtitrare",
   "selecție și optimizare conținut",
   "adaptare pentru platforme",
 ];
@@ -94,7 +97,7 @@ const processSteps = [
   },
   {
     title: "Planificăm producția",
-    description: "Construim un plan clar: locație, produse, oameni, cadre, durată, formate și livrabile.",
+    description: "Construim un plan modular: locație, produse, oameni și cadre care pot genera spoturi, Reels, testimoniale, b-roll și materiale evergreen.",
   },
   {
     title: "Filmăm și fotografiem",
@@ -103,11 +106,11 @@ const processSteps = [
   },
   {
     title: "Edităm și adaptăm",
-    description: "Selectăm, edităm și adaptăm materialele pentru formatele necesare: Reels, TikTok, postări, ads sau website.",
+    description: "Selectăm și adaptăm materialele cu hook-uri, durate, subtitrări și formate potrivite pentru Reels, TikTok, ads sau website.",
   },
   {
     title: "Livrăm organizat",
-    description: "Materialele sunt livrate într-o structură clară, pentru a putea fi folosite rapid în calendarul editorial și campanii.",
+    description: "Livrăm o bibliotecă de active organizată pe platforme și utilizări, pentru calendar editorial, campanii, website și reutilizare ulterioară.",
   },
   {
     title: "Optimizăm în timp",
@@ -211,50 +214,6 @@ const caseStudies = [
   },
 ];
 
-const faqGroup = {
-  id: "productie-foto-video-faq",
-  title: "Întrebări frecvente despre producția foto-video",
-  assignedPaths: [path],
-  items: [
-    {
-      id: "ce-include-productia-foto-video-social-media",
-      question: "Ce include producția foto-video pentru Social Media?",
-      answer:
-        "Producția foto-video pentru Social Media poate include filmări verticale pentru Reels și TikTok, fotografii de produs, imagini de locație, materiale pentru campanii, video-uri scurte și conținut adaptat platformelor digitale.",
-    },
-    {
-      id: "de-ce-este-important-continutul-video",
-      question: "De ce este important conținutul video pentru Social Media?",
-      answer:
-        "Conținutul video ajută brandurile să transmită mai rapid atmosferă, mesaj, produs și diferențiere. Platforme precum Instagram, TikTok și Facebook favorizează materialele video scurte, mai ales atunci când acestea sunt adaptate publicului și formatului platformei.",
-    },
-    {
-      id: "produceti-reels-tiktok",
-      question: "Produceți conținut pentru Reels și TikTok?",
-      answer:
-        "Da. Digital Dot poate produce conținut vertical pentru Reels și TikTok, de la idee și direcție până la filmare, editare și adaptare pentru publicare.",
-    },
-    {
-      id: "productie-foto-video-meta-ads",
-      question: "Producția foto-video poate fi folosită și în campanii Meta Ads?",
-      answer:
-        "Da. Materialele foto-video pot fi adaptate pentru Meta Ads, inclusiv pentru campanii de awareness, trafic, engagement, retargeting sau conversii urmărite.",
-    },
-    {
-      id: "strategie-inainte-filmare",
-      question: "Aveți nevoie de strategie înainte de filmare?",
-      answer:
-        "Da, în majoritatea cazurilor. O direcție clară ajută la stabilirea mesajului, formatelor, cadrelor și modului în care materialele vor fi folosite în Social Media, website sau campanii.",
-    },
-    {
-      id: "tipuri-business-productie-foto-video",
-      question: "Pentru ce tipuri de business este potrivită producția foto-video?",
-      answer:
-        "Producția foto-video este potrivită pentru HoReCa, clinici medicale, retail, ecommerce, servicii profesionale, branduri locale și companii care au nevoie de conținut vizual constant și coerent.",
-    },
-  ],
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
 
@@ -278,7 +237,6 @@ export default async function ProductieFotoVideoServicePage() {
     { name: "Producție Foto/Video", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     buildWebPageSchema(content, path),
     {
       "@context": "https://schema.org",
@@ -379,6 +337,12 @@ export default async function ProductieFotoVideoServicePage() {
                 </p>
                 <p className="text-base leading-relaxed text-[#c6c6c6]">
                   Un material bun trebuie să aibă un rol clar. Uneori trebuie să prezinte produsul. Alteori trebuie să transmită atmosferă, să explice un serviciu, să arate o locație, să prezinte o echipă sau să susțină o campanie. De aceea, înainte de producție, stabilim ce trebuie comunicat și unde va fi folosit conținutul.
+                </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Gândim producția modular: din aceeași sesiune pot rezulta spoturi scurte, Reels, testimoniale, b-roll, fotografii și materiale evergreen. Variantele de hook, durată, subtitrare și format sunt stabilite pentru comportamentul fiecărei platforme, nu tăiate mecanic dintr-un singur clip.
+                </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Livrabilele formează o bibliotecă de active reutilizabile pentru Social Media, ads și website. Când video-ul este publicat în pagini indexabile, alături de titluri, texte descriptive, transcrieri și date structurate relevante, capătă și contextul semantic de care Google și sistemele AI au nevoie.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {systemElements.map((item) => (

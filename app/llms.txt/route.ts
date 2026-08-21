@@ -19,6 +19,7 @@ export async function GET() {
     `- Producție Foto/Video: ${absoluteUrl("/servicii/productie-foto-video", content)}`,
     `- Google Ads: ${absoluteUrl("/servicii/google-ads", content)}`,
     `- Meta Ads: ${absoluteUrl("/servicii/meta-ads", content)}`,
+    `- Paid Media integrat (Google Ads & Meta Ads): ${absoluteUrl("/google-meta-ads", content)}`,
     `- SEO: ${absoluteUrl("/servicii/seo", content)}`,
     `- Website Creation: ${absoluteUrl("/servicii/website-creation", content)}`,
     "",

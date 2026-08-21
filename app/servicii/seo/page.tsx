@@ -6,7 +6,8 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema } from "@/lib/structured-data";
+import { seoFaqGroup as faqGroup } from "@/data/consolidated-service-faqs";
 
 const path = "/servicii/seo";
 
@@ -151,7 +152,7 @@ const processSteps = [
   },
   {
     title: "Monitorizare",
-    description: "Urmărim indexarea, traficul organic, pozițiile relevante, paginile performante și conversiile generate organic.",
+    description: "Urmărim indexarea, afișările în căutare, CTR-ul, paginile și pozițiile relevante, traficul organic și conversiile generate.",
   },
 ];
 
@@ -244,50 +245,6 @@ const regionalLinks = [
   },
 ];
 
-const faqGroup = {
-  id: "seo-faq",
-  title: "Întrebări frecvente despre SEO",
-  assignedPaths: [path],
-  items: [
-    {
-      id: "ce-este-seo",
-      question: "Ce este SEO?",
-      answer:
-        "SEO înseamnă optimizarea website-ului pentru motoarele de căutare. Include structură tehnică, conținut relevant, metadata, linkuri interne, sitemap, schema, performanță și autoritate organică.",
-    },
-    {
-      id: "cat-dureaza-seo",
-      question: "Cât durează până apar rezultate SEO?",
-      answer:
-        "SEO este un proces pe termen mediu și lung. Primele îmbunătățiri pot apărea după indexarea modificărilor, dar rezultatele consistente depind de competiție, conținut, autoritate, structură și ritmul de optimizare.",
-    },
-    {
-      id: "seo-vs-google-ads",
-      question: "Care este diferența dintre SEO și Google Ads?",
-      answer:
-        "Google Ads aduce trafic plătit cât timp rulează campaniile. SEO construiește vizibilitate organică pe termen lung. Cele două pot funcționa împreună: Google Ads oferă date rapide, iar SEO consolidează prezența organică.",
-    },
-    {
-      id: "ce-este-ai-seo",
-      question: "Ce este AI SEO?",
-      answer:
-        "AI SEO este optimizarea website-ului pentru motoare AI și sisteme care interpretează conținutul. Include claritate semantică, date structurate, llms.txt, FAQ, pagini explicite și o arhitectură internă ușor de înțeles.",
-    },
-    {
-      id: "seo-tehnic",
-      question: "SEO include și partea tehnică?",
-      answer:
-        "Da. SEO tehnic include indexare, sitemap, robots.txt, canonical, structured data, performanță, mobile usability, linkuri interne și corectarea erorilor care pot afecta crawlability.",
-    },
-    {
-      id: "blog-important-seo",
-      question: "Este blogul important pentru SEO?",
-      answer:
-        "Da, dacă este construit strategic. Blogul ajută la acoperirea unor întrebări, teme și căutări pe care paginile de servicii nu le pot acoperi complet. Totuși, articolele trebuie legate intern de servicii și studii de caz.",
-    },
-  ],
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   const canonical = absoluteUrl(path, content);
@@ -297,7 +254,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(getCanonicalBaseUrl(content)),
     title: "SEO | Digital Dot",
     description:
-      "Servicii SEO și AI SEO pentru companii care au nevoie de vizibilitate organică, structură tehnică, conținut optimizat, internal linking, sitemap, schema și creștere pe termen lung.",
+      "Servicii SEO și AI SEO pentru vizibilitate organică: audit tehnic, conținut optimizat, internal linking, schema și măsurarea conversiilor.",
     alternates: {
       canonical,
     },
@@ -344,7 +301,6 @@ export default async function SeoServicePage() {
     { name: "SEO", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -408,7 +364,7 @@ export default async function SeoServicePage() {
                   SEO nu înseamnă să repetăm aceleași cuvinte cheie până obosește pagina. Înseamnă structură tehnică, conținut relevant, linkuri interne, date structurate și o arhitectură clară pe care Google și motoarele AI o pot înțelege.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <ButtonLink href="/#contact">Hai să povestim</ButtonLink>
+                  <ButtonLink href="/#contact">Cere un audit SEO</ButtonLink>
                   <ButtonLink href="/case-studies" variant="ghost">Vezi studiile de caz</ButtonLink>
                 </div>
                 <p className="mt-5 text-sm leading-relaxed text-[#aeb6bb]">
@@ -461,6 +417,9 @@ export default async function SeoServicePage() {
                 </p>
                 <p className="text-base leading-relaxed text-[#c6c6c6]">
                   Un website optimizat SEO trebuie să răspundă limpede la câteva întrebări: cine este brandul, ce servicii oferă, pentru cine sunt aceste servicii, ce rezultate există, ce pagini sunt importante și cum sunt legate între ele.
+                </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Conectăm SEO local cu vizibilitatea națională fără să amestecăm intențiile: paginile locale răspund căutărilor din orașele relevante, iar paginile de servicii și conținutul de autoritate susțin cererea mai largă. Legăturile dintre ele trebuie să fie naturale, iar fiecare pagină să aibă un rol distinct.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {seoElements.map((item) => (
@@ -681,7 +640,7 @@ export default async function SeoServicePage() {
                   Dacă website-ul tău există, dar nu este clar pentru Google, AI search sau utilizatori, problema nu este doar traficul. Problema este structura. Putem construi o direcție SEO clară, tehnică și aplicabilă.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <ButtonLink href="/#contact">Hai să povestim</ButtonLink>
+                  <ButtonLink href="/#contact">Cere un audit SEO</ButtonLink>
                   <ButtonLink href="/case-studies" variant="ghost">Vezi studiile de caz</ButtonLink>
                 </div>
               </div>

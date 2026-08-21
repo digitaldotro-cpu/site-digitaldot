@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, buildRouteMetadata, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema, buildWebPageSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from "@/lib/structured-data";
 
 const path = "/servicii/strategie-marketing";
 
@@ -238,7 +238,6 @@ export default async function StrategyMarketingPage() {
     { name: "Strategie de Marketing", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     buildWebPageSchema(content, path),
     {
       "@context": "https://schema.org",

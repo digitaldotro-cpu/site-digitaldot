@@ -6,7 +6,8 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, buildRouteMetadata, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema, buildWebPageSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from "@/lib/structured-data";
+import { socialMediaManagementFaqGroup as faqGroup } from "@/data/consolidated-service-faqs";
 
 const path = "/servicii/social-media-management";
 
@@ -24,11 +25,13 @@ const problems = [
 const systemElements = [
   "direcție editorială",
   "calendar de conținut",
+  "piloni editoriali și repetiție inteligentă",
   "texte pentru postări",
   "idei de Reels și TikTok",
   "conținut foto-video",
   "adaptare pentru fiecare platformă",
   "analiză rezultate",
+  "feedback comercial din reacții și mesaje",
   "optimizare continuă",
   "integrare cu Meta Ads, Google Ads, website și SEO",
 ];
@@ -100,11 +103,11 @@ const processSteps = [
   },
   {
     title: "Analizăm rezultatele",
-    description: "Urmărim afișări, reach, interacțiuni, clickuri, creștere comunitate și conținut performant.",
+    description: "Urmărim reach, retenție, salvări, comentarii relevante, clickuri, leaduri și calitatea interacțiunilor, nu doar like-uri.",
   },
   {
     title: "Optimizăm direcția",
-    description: "Ajustăm lunar comunicarea în funcție de rezultate și de obiectivele businessului.",
+    description: "Ajustăm comunicarea după rezultate și transformăm întrebările sau reacțiile publicului în feedback pentru ofertă, campanii, website și SEO.",
   },
 ];
 
@@ -192,50 +195,6 @@ const caseStudies = [
   },
 ];
 
-const faqGroup = {
-  id: "social-media-management-faq",
-  title: "Întrebări frecvente despre Social Media Management",
-  assignedPaths: [path],
-  items: [
-    {
-      id: "ce-inseamna-social-media-management",
-      question: "Ce înseamnă Social Media Management?",
-      answer:
-        "Social Media Management înseamnă administrarea strategică a prezenței unui brand pe platforme precum Facebook, Instagram, TikTok sau LinkedIn. Include planificare, conținut, publicare, analiză și optimizare.",
-    },
-    {
-      id: "doar-postari",
-      question: "Social Media Management înseamnă doar postări?",
-      answer:
-        "Nu. Postările sunt doar partea vizibilă. Un serviciu complet include strategie, calendar editorial, direcție vizuală, texte, conținut foto-video, analiză și conectarea comunicării cu obiectivele de business.",
-    },
-    {
-      id: "platforme-administrate",
-      question: "Pe ce platforme poate administra Digital Dot comunicarea?",
-      answer:
-        "Digital Dot poate construi comunicare pentru Facebook, Instagram, TikTok, LinkedIn și Google Business Profile, în funcție de publicul și obiectivele fiecărui brand.",
-    },
-    {
-      id: "productie-foto-video",
-      question: "Este nevoie de producție foto-video pentru Social Media?",
-      answer:
-        "În cele mai multe cazuri, da. Conținutul foto-video ajută brandul să comunice mai clar, mai memorabil și mai coerent. Pentru servicii precum HoReCa, medical, retail sau branduri vizuale, producția foto-video este esențială.",
-    },
-    {
-      id: "conectare-meta-ads",
-      question: "Social Media Management poate fi conectat cu Meta Ads?",
-      answer:
-        "Da. Conținutul organic și campaniile Meta Ads funcționează mai bine împreună. Social Media construiește prezență și încredere, iar Meta Ads poate amplifica mesajele relevante către publicuri bine definite.",
-    },
-    {
-      id: "frecventa-postari",
-      question: "Cât de des trebuie să posteze un brand?",
-      answer:
-        "Frecvența depinde de industrie, obiective, resurse și platforme. Important nu este doar numărul de postări, ci coerența comunicării și rolul fiecărui material în strategia generală.",
-    },
-  ],
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
 
@@ -258,7 +217,6 @@ export default async function SocialMediaManagementServicePage() {
     { name: "Social Media Management", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     buildWebPageSchema(content, path),
     {
       "@context": "https://schema.org",
@@ -359,6 +317,12 @@ export default async function SocialMediaManagementServicePage() {
                 </p>
                 <p className="text-base leading-relaxed text-[#c6c6c6]">
                   Un sistem bun de Social Media leagă strategia, conținutul foto-video, textele, ritmul de publicare, campaniile plătite și analiza rezultatelor. Fiecare postare trebuie să aibă un rol: să educe, să atragă atenția, să prezinte un produs, să construiască încredere, să genereze interacțiune sau să susțină o campanie.
+                </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Tratat ca infrastructură de brand, sistemul editorial construiește memorie prin repetiție inteligentă: aceeași promisiune revine în formate și contexte diferite, fără ca mesajele să devină mecanice. În timp, publicul recunoaște mai ușor brandul, serviciile și diferențiatorii lui.
+                </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Comentariile, salvările, întrebările și mesajele directe sunt și feedback comercial. Le folosim pentru a rafina comunicarea și pentru a identifica teme care merită dezvoltate în campanii, pagini SEO sau FAQ-uri; coerența dintre Social Media, website și Google Business Profile ajută și sistemele AI să înțeleagă mai clar brandul.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {systemElements.map((item) => (

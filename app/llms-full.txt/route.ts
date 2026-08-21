@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/blog";
 import { absoluteUrl, getCanonicalBaseUrl } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
+import { consolidatedServiceFaqGroups } from "@/data/consolidated-service-faqs";
 
 function listItems(items: string[]) {
   return items.map((item) => `- ${item}`).join("\n");
@@ -42,7 +43,10 @@ export async function GET() {
       })
     : [];
 
-  const faqLines = content.seoSettings.faqGroups.flatMap((group) => (
+  const faqLines = [
+    ...content.seoSettings.faqGroups,
+    ...consolidatedServiceFaqGroups,
+  ].flatMap((group) => (
     group.items.map((item) => `Q: ${item.question}\nA: ${item.answer}`)
   ));
 
