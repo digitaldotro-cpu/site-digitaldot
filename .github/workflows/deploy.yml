@@ -3,40 +3,81 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main 
+      - main
+
+permissions: {}
+
+concurrency:
+  group: digitaldot-production-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
       - name: Execute Server Deployment over SSH
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@029f5b4aeeeb58fdfe1410a5d17f967dacf36262 # v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
+          command_timeout: 20m
+          script_stop: true
           script: |
-            # Load NVM explicitly to make npm and pm2 available
             export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            export PATH=$PATH:/usr/local/bin:/usr/bin
+            if [ ! -s "$NVM_DIR/nvm.sh" ]; then
+              echo "Deployment refused: NVM is unavailable." >&2
+              exit 1
+            fi
+
+            . "$NVM_DIR/nvm.sh" || exit 1
+            set -e
+
+            export PATH="$PATH:/usr/local/bin:/usr/bin"
 
             cd /home/digitaldot/htdocs/digitaldot.ro
-            
-            # Fetch and hard reset to avoid merge conflicts with local server files
-            git fetch origin
-            git reset --hard origin/main
-            
-            # Install dependencies cleanly
+
+            DEPLOY_TARGET_SHA="${{ github.sha }}"
+            git fetch origin main
+
+            if ! git cat-file -e "${DEPLOY_TARGET_SHA}^{commit}"; then
+              echo "Deployment refused: target commit is unavailable." >&2
+              exit 1
+            fi
+
+            if ! git merge-base --is-ancestor HEAD "$DEPLOY_TARGET_SHA"; then
+              echo "Deployment refused: the production checkout cannot fast-forward to the target commit." >&2
+              exit 1
+            fi
+
+            DEPLOY_PREFLIGHT_DIRECTORY="$(mktemp -d)"
+            DEPLOY_PREFLIGHT_SCRIPT="$DEPLOY_PREFLIGHT_DIRECTORY/report-deployment-runtime.mjs"
+            trap 'rm -f "$DEPLOY_PREFLIGHT_SCRIPT"; rmdir "$DEPLOY_PREFLIGHT_DIRECTORY"' EXIT
+            git show "${DEPLOY_TARGET_SHA}:scripts/report-deployment-runtime.mjs" > "$DEPLOY_PREFLIGHT_SCRIPT"
+            node "$DEPLOY_PREFLIGHT_SCRIPT" --app digitaldot.ro --phase before-update
+
+            DEPLOY_TRACKED_CHANGES="$(git status --porcelain --untracked-files=no)"
+            if [ -n "$DEPLOY_TRACKED_CHANGES" ]; then
+              echo "Deployment refused: tracked production files contain uncommitted changes." >&2
+              echo "$DEPLOY_TRACKED_CHANGES" >&2
+              exit 1
+            fi
+
+            git merge --ff-only "$DEPLOY_TARGET_SHA"
+
+            DEPLOYED_SHA="$(git rev-parse HEAD)"
+            if [ "$DEPLOYED_SHA" != "$DEPLOY_TARGET_SHA" ]; then
+              echo "Deployment refused: the checked-out commit does not match the triggering commit." >&2
+              exit 1
+            fi
+
             npm ci
-            
-            # Build the Next.js application
             npm run build
-            
-            # Restart the Node app
             pm2 restart digitaldot.ro
-            
-            echo "Deployment finished!"
+            node scripts/report-deployment-runtime.mjs --app digitaldot.ro --phase after-restart
+
+            echo "Deployment finished successfully at $DEPLOYED_SHA."
