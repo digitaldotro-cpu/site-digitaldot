@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema } from "@/lib/structured-data";
 
 const path = "/servicii/google-ads";
 
@@ -240,7 +240,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(getCanonicalBaseUrl(content)),
     title: "Google Ads | Digital Dot",
     description:
-      "Servicii Google Ads pentru companii care au nevoie de trafic calificat, campanii Search, Shopping, Performance Max, conversii urmărite și optimizare constantă a bugetului.",
+      "Servicii Google Ads pentru trafic calificat: campanii Search, Shopping și Performance Max, tracking al conversiilor și optimizarea bugetului.",
     alternates: {
       canonical,
     },
@@ -287,7 +287,6 @@ export default async function GoogleAdsServicePage() {
     { name: "Google Ads", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     {
       "@context": "https://schema.org",
       "@type": "WebPage",

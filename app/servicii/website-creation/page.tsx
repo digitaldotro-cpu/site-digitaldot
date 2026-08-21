@@ -6,7 +6,8 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema } from "@/lib/structured-data";
+import { websiteCreationFaqGroup as faqGroup } from "@/data/consolidated-service-faqs";
 
 const path = "/servicii/website-creation";
 
@@ -29,6 +30,7 @@ const systemElements = [
   "arhitectură de pagini",
   "structură UX",
   "structură SEO",
+  "CMS și conținut editabil",
   "design adaptat brandului",
   "pagini de servicii",
   "landing pages",
@@ -39,6 +41,7 @@ const systemElements = [
   "sitemap",
   "schema JSON-LD",
   "optimizare mobil",
+  "accesibilitate și structură pentru AI Search",
   "integrare cu campanii Ads",
   "structură pentru scalare",
 ];
@@ -228,50 +231,6 @@ const caseStudies = [
   },
 ];
 
-const faqGroup = {
-  id: "website-creation-service-faq",
-  title: "Întrebări frecvente despre Website Creation",
-  assignedPaths: [path],
-  items: [
-    {
-      id: "ce-inseamna-website-creation",
-      question: "Ce înseamnă Website Creation?",
-      answer:
-        "Website Creation înseamnă construirea unui website clar, funcțional și adaptat obiectivelor de marketing. Include structură, design, pagini, CTA-uri, responsive design, SEO de bază, tracking și pregătire pentru campanii.",
-    },
-    {
-      id: "seo-de-la-inceput",
-      question: "Un website nou trebuie optimizat SEO de la început?",
-      answer:
-        "Da. SEO trebuie luat în calcul încă din etapa de structură, nu adăugat la final. Paginile, headingurile, metadata, sitemap-ul, viteza, linkurile interne și schema influențează modul în care website-ul este înțeles de Google.",
-    },
-    {
-      id: "conectare-google-meta-ads",
-      question: "Website-ul poate fi conectat cu Google Ads și Meta Ads?",
-      answer:
-        "Da. Un website bun trebuie să poată susține campanii Google Ads și Meta Ads prin pagini de destinație clare, CTA-uri vizibile, tracking corect și structură orientată spre conversii.",
-    },
-    {
-      id: "website-wordpress",
-      question: "Construiți website-uri pe WordPress?",
-      answer:
-        "Da, Digital Dot poate construi website-uri WordPress, în funcție de obiectivele proiectului și de structura necesară. WordPress este potrivit pentru multe website-uri de prezentare, servicii, blog și pagini optimizate SEO.",
-    },
-    {
-      id: "ce-trebuie-pregatit",
-      question: "Ce trebuie pregătit înainte de construirea unui website?",
-      answer:
-        "Este util să existe informații despre servicii, public țintă, diferențiatori, exemple de website-uri preferate, identitate vizuală, texte existente, fotografii, materiale video și obiectivele principale ale website-ului.",
-    },
-    {
-      id: "optimizare-ulterior",
-      question: "Un website poate fi optimizat ulterior?",
-      answer:
-        "Da, dar este mai eficient să fie construit corect de la început. Optimizările ulterioare pot corecta structura, SEO-ul, viteza, conținutul și trackingul, dar uneori refacerea parțială devine inevitabilă.",
-    },
-  ],
-};
-
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   const canonical = absoluteUrl(path, content);
@@ -281,7 +240,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(getCanonicalBaseUrl(content)),
     title: "Website Creation | Digital Dot",
     description:
-      "Servicii Website Creation pentru companii care au nevoie de website-uri clare, rapide, optimizate SEO și conectate cu strategia de marketing, Google Ads, Meta Ads și conversii.",
+      "Website-uri clare, rapide și optimizate SEO, conectate cu strategia de marketing, Google Ads, Meta Ads, tracking și conversii.",
     alternates: {
       canonical,
     },
@@ -328,7 +287,6 @@ export default async function WebsiteCreationServicePage() {
     { name: "Website Creation", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -445,6 +403,9 @@ export default async function WebsiteCreationServicePage() {
                 </p>
                 <p className="text-base leading-relaxed text-[#c6c6c6]">
                   Construim website-uri pornind de la întrebări simple: ce trebuie să înțeleagă vizitatorul, ce acțiune trebuie să facă, ce servicii trebuie prioritizate, ce pagini sunt importante pentru SEO și cum va fi folosit site-ul în campanii.
+                </p>
+                <p className="text-base leading-relaxed text-[#c6c6c6]">
+                  Lucrăm SEO-first: arhitectura, URL-urile, headingurile, metadata, schema și conținutul sunt gândite înainte de lansare, nu reparate ulterior. Zonele importante rămân editabile într-un CMS, iar implementarea urmărește accesibilitatea, lizibilitatea și semantica necesară pentru Google și AI Search.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {systemElements.map((item) => (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, CheckCircle2, Clapperboard, Code2, Search, Share2 } from "lucide-react";
+import { ArrowRight, BarChart3, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
@@ -13,11 +13,7 @@ type ServicePageLayoutProps = {
 };
 
 const iconByPath = {
-  "/social-media-management": Share2,
   "/google-meta-ads": BarChart3,
-  "/productie-video": Clapperboard,
-  "/website-creation": Code2,
-  "/seo": Search,
 } as const;
 
 export function ServicePageLayout({ page, faqGroups }: ServicePageLayoutProps) {

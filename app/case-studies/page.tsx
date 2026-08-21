@@ -12,11 +12,11 @@ import { buildBreadcrumbSchema, buildCaseStudyCollectionSchema } from "@/lib/str
 const path = "/case-studies";
 const serviceLinks = [
   { label: "Strategie de Marketing", href: "/servicii/strategie-marketing" },
-  { label: "Social Media Management", href: "/social-media-management" },
-  { label: "Producție Foto/Video", href: "/productie-video" },
+  { label: "Social Media Management", href: "/servicii/social-media-management" },
+  { label: "Producție Foto/Video", href: "/servicii/productie-foto-video" },
   { label: "Google & Meta Ads", href: "/google-meta-ads" },
-  { label: "Website Creation", href: "/website-creation" },
-  { label: "SEO", href: "/seo" },
+  { label: "Website Creation", href: "/servicii/website-creation" },
+  { label: "SEO", href: "/servicii/seo" },
 ];
 
 export async function generateMetadata(): Promise<Metadata> {

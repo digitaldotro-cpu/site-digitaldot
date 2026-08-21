@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { getSiteContent } from "@/lib/site-content";
 import { absoluteUrl, getCanonicalBaseUrl } from "@/lib/seo";
-import { buildBreadcrumbSchema, buildFaqSchema, buildOrganizationSchema } from "@/lib/structured-data";
+import { buildBreadcrumbSchema, buildFaqSchema } from "@/lib/structured-data";
 
 const path = "/servicii/meta-ads";
 
@@ -303,7 +303,6 @@ export default async function MetaAdsServicePage() {
     { name: "Meta Ads", path },
   ];
   const schemas = [
-    buildOrganizationSchema(content),
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
