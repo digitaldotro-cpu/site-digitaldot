@@ -19,6 +19,7 @@
     "test:deployment-runtime": "node --test scripts/report-deployment-runtime.test.mjs",
     "check:runtime": "node scripts/verify-toolchain.mjs",
     "smoke:production": "node scripts/smoke-production.mjs",
+    "soak:production": "node scripts/soak-production.mjs",
     "check:security-env": "node scripts/validate-security-env.mjs"
   },
   "dependencies": {
