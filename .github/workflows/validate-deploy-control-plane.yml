@@ -1,0 +1,42 @@
+name: Validate deploy control plane
+
+on:
+  pull_request:
+    branches:
+      - main
+  merge_group:
+    types:
+      - checks_requested
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-deploy-control-plane-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate deploy control plane
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out the reviewed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1b # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+
+      - name: Use Node.js 22 for control-plane tests
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22.22.2
+          check-latest: false
+          package-manager-cache: false
+
+      - name: Test the fail-closed deploy target policy
+        run: node --test scripts/validate-deploy-target.test.mjs
+
+      - name: Confirm validation did not change tracked files
+        run: git diff --exit-code
