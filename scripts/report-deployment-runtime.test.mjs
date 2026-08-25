@@ -12,9 +12,31 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 import {
+  assertExpectedRuntime,
   parsePm2ProcessList,
+  runCommand,
   summarizePm2Processes,
 } from "./report-deployment-runtime.mjs";
+
+function createExpectedRuntimeReport() {
+  return {
+    shell: {
+      nodeVersion: "v24.19.0",
+      nodeExecutable: "/opt/node-v24.19.0/bin/node",
+    },
+    applications: [
+      {
+        status: "online",
+        executionMode: "fork_mode",
+        instances: 1,
+        configuredInterpreter: "/opt/node-v24.19.0/bin/node",
+        pm2ReportedNodeVersion: "24.19.0",
+        runtimeExecutable: "/opt/node-v24.19.0/bin/node",
+        runtimeNodeVersion: "v24.19.0",
+      },
+    ],
+  };
+}
 
 test("the PM2 summary exposes only explicitly allowed fields", () => {
   const processes = [
@@ -113,6 +135,72 @@ test("invalid PM2 output is rejected without echoing the raw data", () => {
   );
 });
 
+test("external runtime commands fail within their deadline", () => {
+  assert.throws(
+    () =>
+      runCommand(
+        process.execPath,
+        ["-e", "setTimeout(() => {}, 10_000)"],
+        25,
+      ),
+    /Unable to execute the required command: node/,
+  );
+});
+
+test("the strict runtime gate accepts one online Node 24 process", () => {
+  assert.doesNotThrow(() =>
+    assertExpectedRuntime(createExpectedRuntimeReport(), "24.19.0"),
+  );
+});
+
+test("the strict runtime gate rejects a Node 22 deployment shell", () => {
+  const report = createExpectedRuntimeReport();
+  report.shell.nodeVersion = "v22.22.2";
+
+  assert.throws(
+    () => assertExpectedRuntime(report, "24.19.0"),
+    /deployment shell is not using Node\.js 24\.19\.0/,
+  );
+});
+
+test("the strict runtime gate rejects an online process on the old runtime", () => {
+  const report = createExpectedRuntimeReport();
+  report.applications[0].pm2ReportedNodeVersion = "22.22.2";
+  report.applications[0].runtimeNodeVersion = "v22.22.2";
+
+  assert.throws(
+    () => assertExpectedRuntime(report, "24.19.0"),
+    /PM2 did not report Node\.js 24\.19\.0/,
+  );
+});
+
+test("the strict runtime gate rejects offline or ambiguous PM2 state", () => {
+  const offlineReport = createExpectedRuntimeReport();
+  offlineReport.applications[0].status = "errored";
+  assert.throws(
+    () => assertExpectedRuntime(offlineReport, "24.19.0"),
+    /not online/,
+  );
+
+  const multipleReport = createExpectedRuntimeReport();
+  multipleReport.applications.push({ ...multipleReport.applications[0] });
+  assert.throws(
+    () => assertExpectedRuntime(multipleReport, "24.19.0"),
+    /exactly one PM2 application instance/,
+  );
+});
+
+test("the strict runtime gate rejects a stale configured interpreter", () => {
+  const report = createExpectedRuntimeReport();
+  report.applications[0].configuredInterpreter =
+    "/opt/node-v22.22.2/bin/node";
+
+  assert.throws(
+    () => assertExpectedRuntime(report, "24.19.0"),
+    /interpreter, live executable, and deployment shell do not match/,
+  );
+});
+
 test("the command-line report withholds PM2 environment values", () => {
   const fixtureDirectory = mkdtempSync(
     join(tmpdir(), "digitaldot-runtime-preflight-"),
@@ -148,6 +236,8 @@ exit 1
       [reportScript, "--app", "digitaldot.ro", "--phase", "test"],
       {
         encoding: "utf8",
+        killSignal: "SIGKILL",
+        timeout: 10_000,
         env: {
           ...process.env,
           PATH: fixtureDirectory,
@@ -160,6 +250,36 @@ exit 1
     assert.match(result.stdout, /"status": "online"/);
     assert.equal(result.stdout.includes("cli-secret-must-not-appear"), false);
     assert.equal(result.stdout.includes("ADMIN_SESSION_SECRET"), false);
+
+    const strictMismatch = spawnSync(
+      process.execPath,
+      [
+        reportScript,
+        "--app",
+        "digitaldot.ro",
+        "--phase",
+        "test",
+        "--expected-node-version",
+        "22.22.2",
+      ],
+      {
+        encoding: "utf8",
+        killSignal: "SIGKILL",
+        timeout: 10_000,
+        env: {
+          ...process.env,
+          PATH: fixtureDirectory,
+        },
+      },
+    );
+
+    assert.equal(strictMismatch.status, 1);
+    assert.match(
+      strictMismatch.stderr,
+      /deployment shell is not using Node\.js 22\.22\.2/,
+    );
+    assert.equal(strictMismatch.stderr.includes("cli-secret-must-not-appear"), false);
+    assert.equal(strictMismatch.stderr.includes("ADMIN_SESSION_SECRET"), false);
   } finally {
     rmSync(fixtureDirectory, { recursive: true, force: true });
   }
