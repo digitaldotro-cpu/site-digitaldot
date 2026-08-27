@@ -1,0 +1,115 @@
+name: Compare Node runtimes
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - labeled
+
+permissions:
+  contents: read
+
+concurrency:
+  group: compare-node-runtimes-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.action == 'labeled' &&
+      github.event.pull_request.draft == true &&
+      github.event.label.name == 'node-runtime-ab'
+    name: Node ${{ matrix.node-version }} two-hour soak, run ${{ matrix.repetition }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - "22.22.2"
+          - "24.19.0"
+        repetition:
+          - 1
+          - 2
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: ""
+      ADMIN_DASHBOARD_KEY: ci-only-dashboard-key-not-for-production
+      ADMIN_SESSION_SECRET: ci-only-session-secret-not-for-production-use
+      SOAK_DURATION_SECONDS: "7200"
+      SOAK_REQUESTS_PER_SECOND: "4"
+      SOAK_CONCURRENCY: "8"
+      SOAK_REQUEST_TIMEOUT_MS: "10000"
+      SOAK_RSS_SAMPLE_INTERVAL_SECONDS: "5"
+      SOAK_MAX_RSS_MIB: "1536"
+      SOAK_RSS_WARMUP_SECONDS: "600"
+      SOAK_MAX_RSS_GROWTH_MIB: "64"
+      SOAK_MAX_RSS_SLOPE_KIB_PER_MINUTE: "512"
+
+    steps:
+      - name: Check out the exact pull request commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1b # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Refuse runtime dotenv files
+        run: |
+          unexpected_dotenv="$(find . -maxdepth 1 -type f -name '.env*' ! -name '.env.example' -print -quit)"
+          test -z "$unexpected_dotenv"
+
+      - name: Use the comparison Node.js runtime
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          check-latest: false
+          package-manager-cache: false
+
+      - name: Use the same pinned npm version for both runtimes
+        run: npm install --global npm@11.17.0 --no-audit --no-fund
+
+      - name: Verify the comparison invariants
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha }}
+          EXPECTED_NODE_VERSION: ${{ matrix.node-version }}
+          EXPECTED_NPM_VERSION: "11.17.0"
+        run: |
+          actual_sha="$(git rev-parse HEAD)"
+          actual_node_version="$(node -p 'process.versions.node')"
+          actual_npm_version="$(npm --version)"
+          test "$actual_sha" = "$EXPECTED_SHA"
+          test "$actual_node_version" = "$EXPECTED_NODE_VERSION"
+          test "$actual_npm_version" = "$EXPECTED_NPM_VERSION"
+          sha256sum package-lock.json
+          printf 'ImageOS=%s\n' "${ImageOS:-unknown}"
+          printf 'ImageVersion=%s\n' "${ImageVersion:-unknown}"
+          uname -m
+          nproc
+          free -b
+          grep -m 1 '^model name' /proc/cpuinfo || true
+          if test -f /sys/fs/cgroup/memory.max; then
+            printf 'cgroup_memory_max='
+            cat /sys/fs/cgroup/memory.max
+          fi
+
+      - name: Install the identical locked dependency tree
+        env:
+          # This override is confined to the diagnostic comparison workflow.
+          NPM_CONFIG_ENGINE_STRICT: "false"
+        run: npm ci --no-audit
+
+      - name: Test the RSS evaluator under the comparison runtime
+        run: npm run test:soak-rss
+
+      - name: Build the isolated production application
+        run: npm run build
+
+      - name: Soak-test the loopback production server
+        run: npm run soak:production
+
+      - name: Confirm the comparison did not change tracked files
+        if: always()
+        run: git diff --exit-code

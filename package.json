@@ -17,6 +17,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit --pretty false --incremental false",
     "test:deployment-runtime": "node --test scripts/report-deployment-runtime.test.mjs",
+    "test:soak-rss": "node --test scripts/soak-rss.test.mjs",
     "check:runtime": "node scripts/verify-toolchain.mjs",
     "smoke:production": "node scripts/smoke-production.mjs",
     "soak:production": "node scripts/soak-production.mjs",

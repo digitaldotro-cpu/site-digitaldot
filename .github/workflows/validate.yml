@@ -68,6 +68,9 @@ jobs:
       - name: Test deployment runtime safeguards
         run: npm run test:deployment-runtime
 
+      - name: Test soak RSS safeguards
+        run: npm run test:soak-rss
+
       - name: Build the production application
         run: npm run build
 

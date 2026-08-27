@@ -8,6 +8,12 @@ import { dirname, join } from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
 import { fileURLToPath } from "node:url";
 
+import {
+  RssTrendError,
+  assertRssTrendWithinLimits,
+  evaluateRssTrend,
+} from "./soak-rss.mjs";
+
 const HOST = "127.0.0.1";
 const MAX_LOG_LENGTH = 100_000;
 const MAX_BODY_BYTES = 2 * 1024 * 1024;
@@ -486,81 +492,6 @@ function percentile(values, fraction) {
   return sorted[Math.min(sorted.length - 1, Math.ceil(sorted.length * fraction) - 1)];
 }
 
-function median(values) {
-  const sorted = [...values].sort((left, right) => left - right);
-  const middle = Math.floor(sorted.length / 2);
-  return sorted.length % 2 === 0
-    ? (sorted[middle - 1] + sorted[middle]) / 2
-    : sorted[middle];
-}
-
-function evaluateRssTrend(samples) {
-  if (process.platform !== "linux") {
-    return null;
-  }
-
-  const stableSamples = samples.filter(
-    (sample) => sample.elapsedSeconds >= configuration.rssWarmupSeconds,
-  );
-  if (stableSamples.length < 6) {
-    throw new SoakError(
-      "rss_sampling_insufficient",
-      "Too few post-warmup Linux RSS samples were collected.",
-    );
-  }
-
-  const windowSize = Math.max(3, Math.floor(stableSamples.length * 0.2));
-  const earlyMedianBytes = median(
-    stableSamples.slice(0, windowSize).map((sample) => sample.rssBytes),
-  );
-  const lateMedianBytes = median(
-    stableSamples.slice(-windowSize).map((sample) => sample.rssBytes),
-  );
-  const growthBytes = lateMedianBytes - earlyMedianBytes;
-  const averageTime =
-    stableSamples.reduce((sum, sample) => sum + sample.elapsedSeconds, 0) /
-    stableSamples.length;
-  const averageRss =
-    stableSamples.reduce((sum, sample) => sum + sample.rssBytes, 0) /
-    stableSamples.length;
-  let covariance = 0;
-  let timeVariance = 0;
-  for (const sample of stableSamples) {
-    const timeDelta = sample.elapsedSeconds - averageTime;
-    covariance += timeDelta * (sample.rssBytes - averageRss);
-    timeVariance += timeDelta ** 2;
-  }
-  if (timeVariance === 0) {
-    throw new SoakError("rss_sampling_insufficient", "Linux RSS samples lack a time range.");
-  }
-  const slopeBytesPerMinute = (covariance / timeVariance) * 60;
-
-  if (growthBytes > configuration.maxRssGrowthMib * 1024 * 1024) {
-    throw new SoakError(
-      "rss_growth_exceeded",
-      "Post-warmup RSS growth exceeded the configured plateau limit.",
-    );
-  }
-  if (
-    slopeBytesPerMinute >
-    configuration.maxRssSlopeKibPerMinute * 1024
-  ) {
-    throw new SoakError(
-      "rss_trend_exceeded",
-      "Post-warmup RSS retained an excessive upward trend.",
-    );
-  }
-
-  return {
-    postWarmupSamples: stableSamples.length,
-    windowSamples: windowSize,
-    earlyMedianBytes,
-    lateMedianBytes,
-    growthBytes,
-    slopeBytesPerMinute: round(slopeBytesPerMinute),
-  };
-}
-
 function round(value) {
   return Number(value.toFixed(2));
 }
@@ -597,6 +528,8 @@ let loadStartedAt = null;
 let loadFinishedAt = null;
 let initialStartTicks = null;
 let serverExit = null;
+let shutdownRequiredForce = false;
+let shutdownReport = null;
 
 function failRun(error) {
   if (fatalError) {
@@ -675,14 +608,13 @@ function stopServer() {
   }
   expectedShutdown = true;
   stopPromise = (async () => {
-    let requiredForce = false;
     killServer("SIGTERM");
     await Promise.race([
       serverClosePromise,
       delay(SHUTDOWN_GRACE_MS, undefined, { ref: false }),
     ]);
     if (server.exitCode === null && server.signalCode === null) {
-      requiredForce = true;
+      shutdownRequiredForce = true;
       killServer("SIGKILL");
       await Promise.race([
         serverClosePromise,
@@ -692,7 +624,7 @@ function stopServer() {
     if (server.exitCode === null && server.signalCode === null) {
       throw new SoakError("cleanup_failed", "Next.js did not stop during cleanup.");
     }
-    if (requiredForce) {
+    if (shutdownRequiredForce) {
       throw new SoakError(
         "unclean_shutdown",
         "Next.js required SIGKILL during cleanup.",
@@ -933,11 +865,16 @@ try {
   samplingTimer = null;
   await samplingChain;
   await sampleRss();
-  rssTrend = evaluateRssTrend(rssSamples);
+  rssTrend = evaluateRssTrend(rssSamples, configuration);
+  if (rssTrend) {
+    assertRssTrendWithinLimits(rssTrend);
+  }
 } catch (error) {
   resultError =
     error instanceof SoakError
       ? error
+      : error instanceof RssTrendError
+        ? new SoakError(error.code, error.message)
       : fatalError ??
         new SoakError("unexpected_failure", "The soak test failed unexpectedly.");
 } finally {
@@ -955,6 +892,19 @@ try {
         ? error
         : new SoakError("cleanup_failed", "Next.js cleanup failed.");
   }
+  shutdownReport = {
+    attempted: true,
+    clean: shutdownError === null,
+    requiredForce: shutdownRequiredForce,
+    exitCode: serverExit?.code ?? null,
+    signal: serverExit?.signal ?? null,
+    failure: shutdownError
+      ? {
+          code: shutdownError.code,
+          message: sanitize(shutdownError.message).slice(0, 500),
+        }
+      : null,
+  };
   resultError ??= fatalError;
   resultError ??= shutdownError;
   process.removeListener("SIGINT", handleSigint);
@@ -982,7 +932,7 @@ const rssValues = rssSamples.map((sample) => sample.rssBytes);
 const rssMinimum = rssValues.length > 0 ? Math.min(...rssValues) : null;
 const rssMaximum = rssValues.length > 0 ? Math.max(...rssValues) : null;
 const report = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   result: resultError ? "failure" : "success",
   nodeVersion: process.versions.node,
   configuration: {
@@ -1025,6 +975,7 @@ const report = {
       plateau: rssTrend,
     },
     cgroupOomDelta: Object.keys(oomDeltas).length > 0 ? oomDeltas : null,
+    shutdown: shutdownReport,
   },
   failure: resultError
     ? { code: resultError.code, message: sanitize(resultError.message).slice(0, 500) }

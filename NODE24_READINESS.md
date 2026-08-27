@@ -1,6 +1,6 @@
 # Node.js 24 — starea pregătirii
 
-Actualizat: 25 august 2026
+Actualizat: 27 august 2026
 
 ## Decizie
 
@@ -27,6 +27,32 @@ Dovada Linux independentă este
 Aceasta confirmă compatibilitatea funcțională de bază pe SHA-ul testat. Nu
 demonstrează stabilitatea după ore de trafic și nu validează serverul de
 producție.
+
+## Rezultatul testului de două ore
+
+[Rularea GitHub Actions 32838576616](https://github.com/digitaldotro-cpu/site-digitaldot/actions/runs/32838576616)
+a testat exact commitul `da0c4acab424b4945c3913346d0ff0d32b440abe` sub
+Node.js `24.19.0`. Rezultatul funcțional a fost bun: 28.714 cereri în 7.200 de
+secunde, zero erori, 77/77 rute canonice acoperite și niciun eveniment OOM sau
+crash.
+
+Bariera RSS a eșuat însă cu `rss_trend_exceeded`. Procesul a pornit la
+aproximativ 315 MiB RSS, a terminat la aproximativ 763 MiB și a atins
+aproximativ 804 MiB. Prin urmare candidatul exact rămâne **NO-GO**, iar
+pragurile nu sunt relaxate după rezultat.
+
+Următorul experiment este o comparație opt-in, pe același commit și aceeași
+imagine Linux, între Node.js `22.22.2` și `24.19.0`. Ambele variante folosesc
+npm `11.17.0`, același lockfile, aceeași încărcare, aceeași durată și aceleași
+praguri; singura variabilă principală este runtime-ul Node.js. Comparația
+rulează numai la eticheta dedicată `node-runtime-ab` pe PR-ul Draft, fără
+secrete, Environment, SSH sau acces la producție. Fiecare runtime are două
+repetări independente, pentru a identifica variația dintre runner-ele GitHub.
+
+Raportarea RSS păstrează acum medianele, creșterea și panta exactă inclusiv
+când pragul final de creștere sau pantă este depășit și raportează separat dacă
+oprirea serverului a necesitat forțare. Cele opt teste unitare noi verifică
+limitele exacte, depășirile și cazurile de eșantionare insuficientă.
 
 ## Bariera suplimentară din acest PR
 
