@@ -68,21 +68,30 @@ jobs:
           check-latest: false
           package-manager-cache: false
 
-      - name: Use the same pinned npm version for both runtimes
-        run: npm install --global npm@11.17.0 --no-audit --no-fund
+      - name: Install the same pinned npm into an isolated prefix
+        env:
+          PINNED_NPM_PREFIX: ${{ runner.temp }}/npm-11.17.0
+        run: |
+          npm install --global npm@11.17.0 --prefix "$PINNED_NPM_PREFIX" --no-audit --no-fund
+          installed_npm_version="$("$PINNED_NPM_PREFIX/bin/npm" --version)"
+          test "$installed_npm_version" = "11.17.0"
+          printf '%s\n' "$PINNED_NPM_PREFIX/bin" >> "$GITHUB_PATH"
 
       - name: Verify the comparison invariants
         env:
           EXPECTED_SHA: ${{ github.event.pull_request.head.sha }}
           EXPECTED_NODE_VERSION: ${{ matrix.node-version }}
           EXPECTED_NPM_VERSION: "11.17.0"
+          PINNED_NPM_PREFIX: ${{ runner.temp }}/npm-11.17.0
         run: |
           actual_sha="$(git rev-parse HEAD)"
           actual_node_version="$(node -p 'process.versions.node')"
           actual_npm_version="$(npm --version)"
+          actual_npm_path="$(command -v npm)"
           test "$actual_sha" = "$EXPECTED_SHA"
           test "$actual_node_version" = "$EXPECTED_NODE_VERSION"
           test "$actual_npm_version" = "$EXPECTED_NPM_VERSION"
+          test "$actual_npm_path" = "$PINNED_NPM_PREFIX/bin/npm"
           sha256sum package-lock.json
           printf 'ImageOS=%s\n' "${ImageOS:-unknown}"
           printf 'ImageVersion=%s\n' "${ImageVersion:-unknown}"
