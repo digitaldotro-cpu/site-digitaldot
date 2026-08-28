@@ -1,6 +1,6 @@
 # Node.js 24 — starea pregătirii
 
-Actualizat: 27 august 2026
+Actualizat: 28 august 2026
 
 ## Decizie
 
@@ -28,7 +28,9 @@ Aceasta confirmă compatibilitatea funcțională de bază pe SHA-ul testat. Nu
 demonstrează stabilitatea după ore de trafic și nu validează serverul de
 producție.
 
-## Rezultatul testului de două ore
+## Rezultatul testelor de două ore
+
+### Proba inițială Node.js 24
 
 [Rularea GitHub Actions 32838576616](https://github.com/digitaldotro-cpu/site-digitaldot/actions/runs/32838576616)
 a testat exact commitul `da0c4acab424b4945c3913346d0ff0d32b440abe` sub
@@ -38,21 +40,49 @@ crash.
 
 Bariera RSS a eșuat însă cu `rss_trend_exceeded`. Procesul a pornit la
 aproximativ 315 MiB RSS, a terminat la aproximativ 763 MiB și a atins
-aproximativ 804 MiB. Prin urmare candidatul exact rămâne **NO-GO**, iar
-pragurile nu sunt relaxate după rezultat.
+aproximativ 804 MiB. Pragurile nu au fost relaxate după rezultat.
 
-Următorul experiment este o comparație opt-in, pe același commit și aceeași
-imagine Linux, între Node.js `22.22.2` și `24.19.0`. Ambele variante folosesc
-npm `11.17.0`, același lockfile, aceeași încărcare, aceeași durată și aceleași
-praguri; singura variabilă principală este runtime-ul Node.js. Comparația
-rulează numai la eticheta dedicată `node-runtime-ab` pe PR-ul Draft, fără
-secrete, Environment, SSH sau acces la producție. Fiecare runtime are două
-repetări independente, pentru a identifica variația dintre runner-ele GitHub.
+### Comparația finală A/B
 
-Raportarea RSS păstrează acum medianele, creșterea și panta exactă inclusiv
-când pragul final de creștere sau pantă este depășit și raportează separat dacă
-oprirea serverului a necesitat forțare. Cele opt teste unitare noi verifică
-limitele exacte, depășirile și cazurile de eșantionare insuficientă.
+[Rularea GitHub Actions 33058856598](https://github.com/digitaldotro-cpu/site-digitaldot/actions/runs/33058856598)
+a testat exact commitul `8d8496028d1c23b52aad82b14e12459351879b14` în
+patru joburi independente. Node.js `22.22.2` și `24.19.0` au folosit npm
+`11.17.0`, același lockfile, aceeași încărcare, aceeași durată și aceleași
+praguri.
+
+| Runtime | Repetarea 1 | Repetarea 2 |
+| --- | --- | --- |
+| Node.js `22.22.2` | **PASS** | **PASS** |
+| Node.js `24.19.0` | **FAIL** | **FAIL** |
+
+Fiecare job a procesat aproximativ 28.700 de cereri în 7.200 de secunde, cu
+zero erori, acoperire 77/77, fără OOM, crash sau restart și cu oprire curată.
+Build-ul și verificările funcționale au trecut în toate cele patru joburi.
+Eșecurile Node.js 24 provin exclusiv din evaluarea tendinței RSS:
+
+| Runtime și repetare | Creștere RSS | Pantă RSS | Prag încălcat |
+| --- | ---: | ---: | --- |
+| Node.js 22, runda 1 | 15,97 MiB | 170,6 KiB/min | niciunul |
+| Node.js 22, runda 2 | 10,64 MiB | 125,1 KiB/min | niciunul |
+| Node.js 24, runda 1 | 64,92 MiB | 672,9 KiB/min | creștere și pantă |
+| Node.js 24, runda 2 | 49,12 MiB | 673,5 KiB/min | pantă |
+
+Limitele prestabilite au fost 64 MiB pentru creșterea post-warm-up și
+512 KiB/min pentru pantă. Cele două pante Node.js 24 sunt aproape identice și
+ambele depășesc clar limita. Nu este necesară o a treia repetare identică
+pentru clasificarea acestui candidat: Node.js `24.19.0` rămâne **NO-GO**, iar
+pragurile nu sunt relaxate.
+
+Rezultatul demonstrează o regresie RSS reproductibilă în configurația build +
+runtime Node.js 24, nu un memory leak dovedit în Node.js/V8. Tipul procesorului
+runnerului a fost corelat cu runtime-ul testat, iar curbele Node.js 24 par să se
+apropie de un platou superior spre final. O investigație cauzală trebuie să
+decupleze runtime-ul de hardware și să analizeze separat fereastra finală.
+
+Următoarea probă este justificată numai pentru o versiune Node.js 24 corectată
+sau într-un staging reprezentativ, cu revalidare completă și rollback
+demonstrat. Comparația actuală nu autorizează merge, deploy sau modificări în
+producție.
 
 ## Bariera suplimentară din acest PR
 
@@ -71,8 +101,8 @@ El:
   pragurilor interimare stricte pentru RSS;
 - nu folosește secrete de producție, SSH sau domeniul live.
 
-Pragurile de memorie sunt intenționat fail-closed pentru prima rulare și vor fi
-recalibrate numai după o comparație A/B pe același mediu.
+Pragurile de memorie sunt intenționat fail-closed și nu au fost relaxate după
+comparația A/B.
 
 Testul de două ore este o verificare sintetică în CI. Un rezultat PASS confirmă
 numai că, în acea rulare și în acel mediu, nu au fost observate erori, OOM sau o
