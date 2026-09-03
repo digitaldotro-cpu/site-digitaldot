@@ -46,6 +46,7 @@ jobs:
     timeout-minutes: 25
     environment:
       name: production
+      deployment: false
 
     steps:
       - name: Check out the reviewed inventory scripts
@@ -83,17 +84,11 @@ jobs:
           echo "script_sha=$script_sha" >> "$GITHUB_OUTPUT"
           echo "certificate_sha=$certificate_sha" >> "$GITHUB_OUTPUT"
 
-      - name: Verify the server and inspect production over native SSH
+      - name: Verify the pinned SSH host identity
         shell: bash
         env:
           EXPECTED_FINGERPRINT: ${{ secrets.PRODUCTION_INVENTORY_HOST_FINGERPRINT }}
-          INVENTORY_CERT_B64: ${{ steps.inventory-payload.outputs.certificate }}
-          INVENTORY_CERT_SHA256: ${{ steps.inventory-payload.outputs.certificate_sha }}
-          INVENTORY_SCRIPT_B64: ${{ steps.inventory-payload.outputs.script }}
-          INVENTORY_SCRIPT_SHA256: ${{ steps.inventory-payload.outputs.script_sha }}
           PRODUCTION_HOST: ${{ secrets.PRODUCTION_INVENTORY_HOST }}
-          PRODUCTION_SSH_KEY: ${{ secrets.PRODUCTION_INVENTORY_SSH_KEY }}
-          PRODUCTION_USERNAME: ${{ secrets.PRODUCTION_INVENTORY_USERNAME }}
         run: |
           set -euo pipefail
 
@@ -102,27 +97,8 @@ jobs:
             exit 1
           fi
 
-          if [[ ! "$PRODUCTION_USERNAME" =~ ^[A-Za-z0-9_][A-Za-z0-9._-]{0,63}$ ]]; then
-            echo "Inventory refused: the production username is missing or invalid." >&2
-            exit 1
-          fi
-
-          if [[ ! "$INVENTORY_SCRIPT_B64" =~ ^[A-Za-z0-9+/]+={0,2}$ ]] || \
-             [[ ! "$INVENTORY_CERT_B64" =~ ^[A-Za-z0-9+/]+={0,2}$ ]] || \
-             [[ ! "$INVENTORY_SCRIPT_SHA256" =~ ^[a-f0-9]{64}$ ]] || \
-             [[ ! "$INVENTORY_CERT_SHA256" =~ ^[a-f0-9]{64}$ ]]; then
-            echo "Inventory refused: the reviewed payload is malformed." >&2
-            exit 1
-          fi
-
           inventory_temp_prefix="$RUNNER_TEMP/digitaldot-inventory-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           observed_host_keys="${inventory_temp_prefix}.known-hosts"
-          identity_file="${inventory_temp_prefix}.identity"
-
-          cleanup_inventory_credentials() {
-            rm -f -- "$observed_host_keys" "$identity_file"
-          }
-          trap cleanup_inventory_credentials EXIT
           umask 077
 
           if ! ssh-keyscan -T 10 -p 22 -t ed25519 "$PRODUCTION_HOST" \
@@ -174,14 +150,66 @@ jobs:
             exit 1
           fi
 
+          chmod 600 "$observed_host_keys"
+
+      - name: Inspect production and emit only the encrypted report
+        shell: bash
+        env:
+          INVENTORY_CERT_B64: ${{ steps.inventory-payload.outputs.certificate }}
+          INVENTORY_CERT_SHA256: ${{ steps.inventory-payload.outputs.certificate_sha }}
+          INVENTORY_SCRIPT_B64: ${{ steps.inventory-payload.outputs.script }}
+          INVENTORY_SCRIPT_SHA256: ${{ steps.inventory-payload.outputs.script_sha }}
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_INVENTORY_HOST }}
+          PRODUCTION_SSH_KEY: ${{ secrets.PRODUCTION_INVENTORY_SSH_KEY }}
+          PRODUCTION_USERNAME: ${{ secrets.PRODUCTION_INVENTORY_USERNAME }}
+        run: |
+          set -euo pipefail
+
+          if [[ ! "$PRODUCTION_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.:-]{0,252}$ ]]; then
+            echo "Inventory refused: the production host is missing or invalid." >&2
+            exit 1
+          fi
+
+          if [[ ! "$PRODUCTION_USERNAME" =~ ^[A-Za-z0-9_][A-Za-z0-9._-]{0,63}$ ]]; then
+            echo "Inventory refused: the production username is missing or invalid." >&2
+            exit 1
+          fi
+
+          if [[ ! "$INVENTORY_SCRIPT_B64" =~ ^[A-Za-z0-9+/]+={0,2}$ ]] || \
+             [[ ! "$INVENTORY_CERT_B64" =~ ^[A-Za-z0-9+/]+={0,2}$ ]] || \
+             [[ ! "$INVENTORY_SCRIPT_SHA256" =~ ^[a-f0-9]{64}$ ]] || \
+             [[ ! "$INVENTORY_CERT_SHA256" =~ ^[a-f0-9]{64}$ ]]; then
+            echo "Inventory refused: the reviewed payload is malformed." >&2
+            exit 1
+          fi
+
+          inventory_temp_prefix="$RUNNER_TEMP/digitaldot-inventory-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          observed_host_keys="${inventory_temp_prefix}.known-hosts"
+          identity_file="${inventory_temp_prefix}.identity"
+          remote_output_file="${inventory_temp_prefix}.output"
+          maximum_output_bytes=262144
+
+          cleanup_inventory_credentials() {
+            rm -f -- "$observed_host_keys" "$identity_file" "$remote_output_file"
+          }
+          trap cleanup_inventory_credentials EXIT
+          umask 077
+
+          if [ ! -f "$observed_host_keys" ] || [ -L "$observed_host_keys" ]; then
+            echo "Inventory refused: the verified host-key file is unavailable." >&2
+            exit 1
+          fi
+
           if [ -z "$PRODUCTION_SSH_KEY" ]; then
             echo "Inventory refused: the production SSH key is unavailable." >&2
             exit 1
           fi
 
           printf '%s\n' "$PRODUCTION_SSH_KEY" > "$identity_file"
+          unset PRODUCTION_SSH_KEY
           chmod 600 "$identity_file" "$observed_host_keys"
 
+          set +e
           {
             printf 'INVENTORY_CERT_B64=%q\n' "$INVENTORY_CERT_B64"
             printf 'INVENTORY_CERT_SHA256=%q\n' "$INVENTORY_CERT_SHA256"
@@ -208,4 +236,39 @@ jobs:
             -o StrictHostKeyChecking=yes \
             -o UserKnownHostsFile="$observed_host_keys" \
             "$PRODUCTION_HOST" \
-            '/usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C HOME="$HOME" /bin/bash --noprofile --norc -s'
+            '/usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C HOME="$HOME" /bin/bash --noprofile --norc -s' \
+            2>&1 \
+            | head -c "$((maximum_output_bytes + 1))" > "$remote_output_file"
+          remote_status=$?
+          set -e
+
+          if [ "$remote_status" -ne 0 ]; then
+            echo "Inventory failed safely: the protected SSH inspection did not complete." >&2
+            exit 1
+          fi
+
+          output_size="$(wc -c < "$remote_output_file")"
+          if [ "$output_size" -gt "$maximum_output_bytes" ]; then
+            echo "Inventory failed safely: remote output exceeded the protected limit." >&2
+            exit 1
+          fi
+
+          mapfile -t remote_lines < "$remote_output_file"
+          if [ "${#remote_lines[@]}" -ne 1 ]; then
+            echo "Inventory failed safely: remote output was not one encrypted report." >&2
+            exit 1
+          fi
+
+          remote_line="${remote_lines[0]}"
+          if [[ ! "$remote_line" =~ ^DIGITALDOT_INVENTORY_CMS_DER_BASE64=([A-Za-z0-9+/]+={0,2})$ ]]; then
+            echo "Inventory failed safely: remote output was not one encrypted report." >&2
+            exit 1
+          fi
+
+          encrypted_report="${BASH_REMATCH[1]}"
+          if [ "${#encrypted_report}" -lt 128 ]; then
+            echo "Inventory failed safely: the encrypted report was incomplete." >&2
+            exit 1
+          fi
+
+          printf '%s\n' "$remote_line"

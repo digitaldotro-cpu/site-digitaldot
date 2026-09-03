@@ -48,7 +48,9 @@ Directorul trebuie să fie în afara checkout-ului aplicației și să nu fie un
 Inventarul se rulează din GitHub Actions prin workflow-ul manual
 `Inventory production storage (read-only)`, numai din `main`. Solicitantul
 introduce tokenul `INVENTORY`, apoi aprobatorul mediului `production` verifică
-rularea înainte ca aceasta să primească acces la secretele SSH.
+rularea înainte ca aceasta să primească acces la secretele SSH. Jobul folosește
+`deployment: false`: regulile, aprobarea și secretele Environment-ului se aplică,
+dar simpla inspecție nu este înregistrată ca deploy.
 
 Înaintea primei conexiuni autentificate, workflow-ul compară cheia ED25519 a
 serverului cu secretul de Environment
@@ -56,7 +58,9 @@ serverului cu secretul de Environment
 oprește după afișarea amprentei observate, fără să scrie sau să folosească cheia
 SSH. Amprenta trebuie verificată separat cu furnizorul serverului și apoi salvată
 în Environment; o valoare observată din rețea nu este suficientă singură pentru
-stabilirea identității serverului.
+stabilirea identității serverului. Cheia SSH este încărcată numai în pasul
+următor, după ce verificarea amprentei a trecut, apoi este scoasă din mediul
+comenzilor și păstrată temporar cu permisiuni restrictive.
 
 Toate cele patru valori folosite de inventar —
 `PRODUCTION_INVENTORY_HOST`, `PRODUCTION_INVENTORY_USERNAME`,
@@ -85,7 +89,10 @@ fișierelor din directoarele de loguri/uploaduri ori mediul brut al procesului.
 Deoarece repository-ul este public, nici metadatele operaționale nu sunt lăsate
 în logurile Actions: raportul este criptat pe server pentru certificatul public
 `ops/production-inventory-recipient.pem`, iar cheia privată rămâne local, în
-afara repository-ului. În log apare numai textul criptat.
+afara repository-ului. Ieșirea SSH este capturată și limitată, apoi acceptată
+numai dacă reprezintă exact o singură linie cu payload CMS în base64. Orice banner,
+mesaj de startup sau ieșire neașteptată oprește rularea fără a fi reafișată; în
+log apare numai linia criptată validată.
 
 Înaintea primei rulări se confirmă local că certificatul și cheia privată au
 aceeași cheie publică. Cele două comenzi de mai jos trebuie să producă același
