@@ -29,6 +29,7 @@
 # misc
 .DS_Store
 *.pem
+!/ops/production-inventory-recipient.pem
 
 # debug
 npm-debug.log*

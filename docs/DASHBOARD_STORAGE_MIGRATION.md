@@ -45,6 +45,94 @@ Directorul trebuie să fie în afara checkout-ului aplicației și să nu fie un
 - versiunea curentă a aplicației și starea procesului PM2;
 - checksumurile fișierelor care vor fi copiate.
 
+Inventarul se rulează din GitHub Actions prin workflow-ul manual
+`Inventory production storage (read-only)`, numai din `main`. Solicitantul
+introduce tokenul `INVENTORY`, apoi aprobatorul mediului `production` verifică
+rularea înainte ca aceasta să primească acces la secretele SSH.
+
+Înaintea primei conexiuni autentificate, workflow-ul compară cheia ED25519 a
+serverului cu secretul de Environment
+`PRODUCTION_INVENTORY_HOST_FINGERPRINT`. Dacă secretul lipsește, rularea se
+oprește după afișarea amprentei observate, fără să scrie sau să folosească cheia
+SSH. Amprenta trebuie verificată separat cu furnizorul serverului și apoi salvată
+în Environment; o valoare observată din rețea nu este suficientă singură pentru
+stabilirea identității serverului.
+
+Toate cele patru valori folosite de inventar —
+`PRODUCTION_INVENTORY_HOST`, `PRODUCTION_INVENTORY_USERNAME`,
+`PRODUCTION_INVENTORY_SSH_KEY` și
+`PRODUCTION_INVENTORY_HOST_FINGERPRINT` — trebuie create exclusiv ca secrete ale
+Environment-ului `production`, nu ca secrete generale ale repository-ului.
+Rularea rămâne **NO-GO** cât timp există în repository scope orice cheie SSH sau
+credential de producție; acestea ar putea fi referite de un workflow modificat
+pe altă ramură, în afara aprobării Environment-ului. Secretele generale existente
+se mută în Environment și se șterg din repository scope înainte de prima rulare.
+
+Workflow-ul transmite în memorie scriptul versionat
+`scripts/report-production-storage.mjs` și nu execută nicio mutație intenționată
+a aplicației, datelor, configurației, repository-ului ori proceselor. Clientul
+SSH standard al runnerului este folosit direct, fără o acțiune SSH terță, iar
+cheia temporară de pe runner are permisiuni restrictive și este ștearsă automat.
+Clientul PM2 nu este pornit; starea proceselor este citită pasiv din PID-urile
+existente și din `/proc`. Ca orice sesiune SSH și orice citire de fișier pe un
+server live, operația poate totuși produce loguri de sistem sau actualizări
+`atime`; o garanție fizică de zero scrieri ar necesita un snapshot montat
+read-only.
+
+Raportul nu afișează conținutul fișierelor JSON sau al logurilor, numele
+fișierelor din directoarele de loguri/uploaduri ori mediul brut al procesului.
+Deoarece repository-ul este public, nici metadatele operaționale nu sunt lăsate
+în logurile Actions: raportul este criptat pe server pentru certificatul public
+`ops/production-inventory-recipient.pem`, iar cheia privată rămâne local, în
+afara repository-ului. În log apare numai textul criptat.
+
+Înaintea primei rulări se confirmă local că certificatul și cheia privată au
+aceeași cheie publică. Cele două comenzi de mai jos trebuie să producă același
+hash, fără ca cheia privată să fie copiată în repository:
+
+```bash
+export DIGITALDOT_INVENTORY_PRIVATE_KEY=/calea-securizată/production-inventory-private-key.pem
+openssl x509 -in ops/production-inventory-recipient.pem -pubkey -noout \
+  | openssl pkey -pubin -outform DER \
+  | openssl dgst -sha256
+openssl pkey -in "$DIGITALDOT_INVENTORY_PRIVATE_KEY" -pubout -outform DER \
+  | openssl dgst -sha256
+```
+
+Valoarea de după `DIGITALDOT_INVENTORY_CMS_DER_BASE64=` se decriptează local,
+nu într-un comentariu GitHub și nu într-un serviciu online:
+
+```bash
+export DIGITALDOT_INVENTORY_CMS_DER_BASE64='<valoarea din rularea Actions>'
+printf '%s' "$DIGITALDOT_INVENTORY_CMS_DER_BASE64" \
+  | openssl base64 -d -A \
+  | openssl cms -decrypt -binary -inform DER \
+      -recip ops/production-inventory-recipient.pem \
+      -inkey "$DIGITALDOT_INVENTORY_PRIVATE_KEY"
+```
+
+Pentru directoare sunt calculate întâi numărul de fișiere, dimensiunea totală,
+profilurile de permisiuni și o amprentă de metadate. Conținutul este hash-uit o
+singură dată, cu prioritate redusă, numai sub limitele explicite de 10.000 de
+fișiere și 256 MiB pentru fiecare arbore. Limitele sunt reverificate în timpul
+citirii; dacă arborele crește între scanări, checksumul parțial este eliminat și
+checksumul complet este amânat pentru fereastra de mentenanță. Stabilitatea
+raportată pentru directoare privește metadatele, nu detectează o rescriere cu
+aceeași dimensiune și nu este echivalentul unui snapshot atomic.
+
+`HEAD`-ul checkout-ului și directorul de lucru al procesului nu dovedesc singure
+ce SHA a produs buildul care rulează. Similar, `/proc` confirmă numai prezența
+cheilor urmărite în mediul inițial al procesului, nu valorile, sursa dotenv sau
+ordinea lor efectivă de precedență. Aceste limitări rămân explicite în raport.
+
+Inventarul inițial nu confirmă încă spațiul și permisiunile viitoarei rădăcini
+persistente sau ale destinației de backup. Acestea se verifică separat după
+confirmarea exactă a celor două locații, fără a le crea în această fază.
+
+În această fază nu se rulează `npm run check:storage -- --require-external`.
+Preflight-ul verifică și dreptul de scriere prin fișiere-probă temporare, deci
+aparține fazei 3, după backup și copiere.
+
 Dacă datele live diferă de repository, copia live are prioritate pentru backup și migrare. Nu se presupune că GitHub conține ultima salvare făcută din dashboard.
 
 ## Faza 2 — backup și înghețarea scrierilor
