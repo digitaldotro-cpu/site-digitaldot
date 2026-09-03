@@ -187,7 +187,7 @@ jobs:
           observed_host_keys="${inventory_temp_prefix}.known-hosts"
           identity_file="${inventory_temp_prefix}.identity"
           remote_output_file="${inventory_temp_prefix}.output"
-          maximum_output_bytes=262144
+          maximum_output_bytes=65536
 
           cleanup_inventory_credentials() {
             rm -f -- "$observed_host_keys" "$identity_file" "$remote_output_file"
@@ -266,8 +266,24 @@ jobs:
           fi
 
           encrypted_report="${BASH_REMATCH[1]}"
-          if [ "${#encrypted_report}" -lt 128 ]; then
+          if [ "${#encrypted_report}" -lt 128 ] || \
+             [ "$(( ${#encrypted_report} % 4 ))" -ne 0 ]; then
             echo "Inventory failed safely: the encrypted report was incomplete." >&2
+            exit 1
+          fi
+
+          if ! printf '%s' "$encrypted_report" \
+            | base64 --decode \
+            | /usr/bin/env -i \
+                PATH=/usr/bin:/bin \
+                LANG=C \
+                LC_ALL=C \
+                HOME=/nonexistent \
+                RANDFILE=/dev/null \
+                OPENSSL_CONF=/dev/null \
+                /usr/bin/openssl cms -cmsout -inform DER -noout \
+                >/dev/null 2>&1; then
+            echo "Inventory failed safely: the encrypted report was malformed." >&2
             exit 1
           fi
 
