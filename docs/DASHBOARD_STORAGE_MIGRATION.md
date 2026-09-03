@@ -62,11 +62,12 @@ Toate cele patru valori folosite de inventar —
 `PRODUCTION_INVENTORY_HOST`, `PRODUCTION_INVENTORY_USERNAME`,
 `PRODUCTION_INVENTORY_SSH_KEY` și
 `PRODUCTION_INVENTORY_HOST_FINGERPRINT` — trebuie create exclusiv ca secrete ale
-Environment-ului `production`, nu ca secrete generale ale repository-ului.
-Rularea rămâne **NO-GO** cât timp există în repository scope orice cheie SSH sau
-credential de producție; acestea ar putea fi referite de un workflow modificat
-pe altă ramură, în afara aprobării Environment-ului. Secretele generale existente
-se mută în Environment și se șterg din repository scope înainte de prima rulare.
+Environment-ului `production`, nu ca secrete generale ale repository-ului sau
+organizației. Rularea rămâne **NO-GO** cât timp există în repository scope ori
+organization scope orice cheie SSH sau credential de producție; acestea ar putea
+fi referite de un workflow modificat pe altă ramură, în afara aprobării
+Environment-ului. Secretele generale existente se mută în Environment și se
+șterg din ambele scope-uri înainte de prima rulare.
 
 Workflow-ul transmite în memorie scriptul versionat
 `scripts/report-production-storage.mjs` și nu execută nicio mutație intenționată
