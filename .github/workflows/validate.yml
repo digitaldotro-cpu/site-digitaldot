@@ -1,0 +1,134 @@
+name: Validate Node 24
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-node24-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Install, audit, build, and smoke test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+      ADMIN_DASHBOARD_KEY: ci-only-dashboard-key-not-for-production
+      ADMIN_SESSION_SECRET: ci-only-session-secret-not-for-production-use
+      SMOKE_ROUNDS: "5"
+
+    steps:
+      - name: Check out the reviewed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1b # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Use the pinned Node.js toolchain
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          check-latest: false
+          package-manager-cache: false
+
+      - name: Verify Node.js and npm versions
+        run: npm run check:runtime
+
+      - name: Install the locked dependency tree
+        run: npm ci --no-audit
+
+      - name: Audit all dependencies
+        run: npm audit --audit-level=low
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=low
+
+      - name: Verify the installed dependency tree
+        run: npm ls --all
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Test deployment runtime safeguards
+        run: npm run test:deployment-runtime
+
+      - name: Test soak RSS safeguards
+        run: npm run test:soak-rss
+
+      - name: Build the production application
+        run: npm run build
+
+      - name: Smoke-test the production application
+        run: npm run smoke:production
+
+      - name: Confirm generated commands did not change tracked files
+        run: git diff --exit-code
+
+  soak:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' &&
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'node24-soak')
+    needs: validate
+    name: Run the two-hour local production soak
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+      ADMIN_DASHBOARD_KEY: ci-only-dashboard-key-not-for-production
+      ADMIN_SESSION_SECRET: ci-only-session-secret-not-for-production-use
+      SOAK_DURATION_SECONDS: "7200"
+      SOAK_REQUESTS_PER_SECOND: "4"
+      SOAK_CONCURRENCY: "8"
+      SOAK_RSS_SAMPLE_INTERVAL_SECONDS: "5"
+      SOAK_MAX_RSS_MIB: "1536"
+      SOAK_RSS_WARMUP_SECONDS: "600"
+      SOAK_MAX_RSS_GROWTH_MIB: "64"
+      SOAK_MAX_RSS_SLOPE_KIB_PER_MINUTE: "512"
+
+    steps:
+      - name: Check out the validated commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1b # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Use the pinned Node.js toolchain
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          check-latest: false
+          package-manager-cache: false
+
+      - name: Verify Node.js and npm versions
+        run: npm run check:runtime
+
+      - name: Install the locked dependency tree
+        run: npm ci --no-audit
+
+      - name: Build the isolated production application
+        run: npm run build
+
+      - name: Soak-test the loopback production server
+        run: npm run soak:production
+
+      - name: Confirm the soak did not change tracked files
+        run: git diff --exit-code

@@ -8,20 +8,33 @@ import { pathToFileURL } from "node:url";
 const APP_NAME_PATTERN = /^[A-Za-z0-9._-]{1,100}$/;
 const PHASE_PATTERN = /^[A-Za-z0-9._-]{1,50}$/;
 const VERSION_PATTERN = /^v?\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/;
+const EXACT_VERSION_PATTERN = /^\d+\.\d+\.\d+$/;
 const MAX_COMMAND_OUTPUT = 1024 * 1024;
+const COMMAND_TIMEOUT_MS = 10_000;
 
 class RuntimePreflightError extends Error {}
 
 function parseArguments(argv) {
   const values = new Map();
+  const supportedFlags = new Set([
+    "--app",
+    "--phase",
+    "--expected-node-version",
+  ]);
+
+  if (argv.length % 2 !== 0) {
+    throw new RuntimePreflightError(
+      "Usage: report-deployment-runtime.mjs --app <name> --phase <label> [--expected-node-version <version>]",
+    );
+  }
 
   for (let index = 0; index < argv.length; index += 2) {
     const flag = argv[index];
     const value = argv[index + 1];
 
-    if ((flag !== "--app" && flag !== "--phase") || value === undefined) {
+    if (!supportedFlags.has(flag) || value === undefined || values.has(flag)) {
       throw new RuntimePreflightError(
-        "Usage: report-deployment-runtime.mjs --app <name> --phase <label>",
+        "Usage: report-deployment-runtime.mjs --app <name> --phase <label> [--expected-node-version <version>]",
       );
     }
 
@@ -30,6 +43,7 @@ function parseArguments(argv) {
 
   const appName = values.get("--app");
   const phase = values.get("--phase");
+  const expectedNodeVersion = values.get("--expected-node-version") ?? null;
 
   if (!appName || !APP_NAME_PATTERN.test(appName)) {
     throw new RuntimePreflightError("The PM2 application name is invalid.");
@@ -39,13 +53,32 @@ function parseArguments(argv) {
     throw new RuntimePreflightError("The runtime report phase is invalid.");
   }
 
-  return { appName, phase };
+  if (
+    expectedNodeVersion !== null &&
+    !EXACT_VERSION_PATTERN.test(expectedNodeVersion)
+  ) {
+    throw new RuntimePreflightError(
+      "The expected Node.js version must be an exact semantic version.",
+    );
+  }
+
+  return { appName, phase, expectedNodeVersion };
 }
 
-function runCommand(command, args) {
+export function runCommand(command, args, timeoutMilliseconds = COMMAND_TIMEOUT_MS) {
+  if (
+    !Number.isSafeInteger(timeoutMilliseconds) ||
+    timeoutMilliseconds < 1 ||
+    timeoutMilliseconds > COMMAND_TIMEOUT_MS
+  ) {
+    throw new RuntimePreflightError("The command timeout is invalid.");
+  }
+
   const result = spawnSync(command, args, {
     encoding: "utf8",
+    killSignal: "SIGKILL",
     maxBuffer: MAX_COMMAND_OUTPUT,
+    timeout: timeoutMilliseconds,
   });
 
   if (result.error || result.status !== 0) {
@@ -222,10 +255,74 @@ export function createSafeReport({ appName, phase, processList }) {
   };
 }
 
+export function assertExpectedRuntime(report, expectedNodeVersion) {
+  if (!EXACT_VERSION_PATTERN.test(expectedNodeVersion)) {
+    throw new RuntimePreflightError(
+      "The expected Node.js version must be an exact semantic version.",
+    );
+  }
+
+  const expectedVersionOutput = `v${expectedNodeVersion}`;
+
+  if (report.shell.nodeVersion !== expectedVersionOutput) {
+    throw new RuntimePreflightError(
+      `The deployment shell is not using Node.js ${expectedNodeVersion}.`,
+    );
+  }
+
+  if (report.applications.length !== 1) {
+    throw new RuntimePreflightError(
+      "The deployment requires exactly one PM2 application instance.",
+    );
+  }
+
+  const [application] = report.applications;
+
+  if (application.status !== "online") {
+    throw new RuntimePreflightError(
+      "The PM2 application is not online after deployment.",
+    );
+  }
+
+  if (application.executionMode !== "fork_mode" || application.instances !== 1) {
+    throw new RuntimePreflightError(
+      "The PM2 application must use one fork-mode instance.",
+    );
+  }
+
+  if (application.pm2ReportedNodeVersion !== expectedNodeVersion) {
+    throw new RuntimePreflightError(
+      `PM2 did not report Node.js ${expectedNodeVersion} for the application.`,
+    );
+  }
+
+  if (application.runtimeNodeVersion !== expectedVersionOutput) {
+    throw new RuntimePreflightError(
+      `The live application is not using Node.js ${expectedNodeVersion}.`,
+    );
+  }
+
+  if (
+    !application.configuredInterpreter ||
+    application.configuredInterpreter !== application.runtimeExecutable ||
+    application.runtimeExecutable !== report.shell.nodeExecutable
+  ) {
+    throw new RuntimePreflightError(
+      "The PM2 interpreter, live executable, and deployment shell do not match.",
+    );
+  }
+}
+
 function main() {
-  const { appName, phase } = parseArguments(process.argv.slice(2));
+  const { appName, phase, expectedNodeVersion } = parseArguments(
+    process.argv.slice(2),
+  );
   const processList = parsePm2ProcessList(runCommand("pm2", ["jlist"]));
   const report = createSafeReport({ appName, phase, processList });
+
+  if (expectedNodeVersion) {
+    assertExpectedRuntime(report, expectedNodeVersion);
+  }
 
   console.log("[deployment-runtime] Sanitized runtime report");
   console.log(JSON.stringify(report, null, 2));
