@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/validate-security-env.mjs && next build",
+    "build": "node scripts/validate-security-env.mjs && node scripts/validate-persistent-storage.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "test:storage": "node --test lib/persistent-storage.test.mjs scripts/validate-persistent-storage.test.mjs",
+    "check:storage": "node scripts/validate-persistent-storage.mjs",
     "check:security-env": "node scripts/validate-security-env.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@next/env": "16.3.2",
     "@next/third-parties": "^16.3.2",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
