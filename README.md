@@ -100,13 +100,15 @@ npm run dev -- -p 3001
 
 ```bash
 npm run lint
+npm run test:storage
 npm run check:security-env
 npm run build
 ```
 
 ## Deployment Notes
 
-- Recomandat: Vercel (deploy direct din repository)
+- Fluxul versionat în acest repository rulează aplicația pe un server Node.js gestionat prin PM2.
+- `DIGITALDOT_DATA_ROOT` este potrivit pentru acest server cu filesystem persistent. Pe platforme cu filesystem efemer, inclusiv deploy-uri serverless, conținutul și media trebuie mutate într-o bază de date/object storage sau într-un provider media extern.
 - Variabile utile pentru producție:
   - `NEXT_PUBLIC_SITE_URL` (opțional, dacă vrei URL configurabil)
   - `ADMIN_DASHBOARD_USER` (utilizatorul pentru autentificarea în CMS, opțional)
@@ -140,6 +142,25 @@ npm run build
   - upload local în `public/uploads/*`
   - sunt acceptate doar imagini (`png`, `jpg`, `jpeg`, `webp`, `svg`)
   - limita implicită per fișier este 5MB (`ADMIN_UPLOAD_MAX_BYTES`)
+
+### Persistența datelor dashboardului
+
+- Fără configurare suplimentară, aplicația păstrează compatibilitatea cu structura actuală:
+  - conținut: `content/site-content.json` și `content/cms-data.json`
+  - loguri: `content/logs/*`
+  - uploaduri: `public/uploads/*`
+- În producție, setează `DIGITALDOT_DATA_ROOT` la un director absolut, aflat în afara checkout-ului Git. Aplicația va folosi:
+  - `<DIGITALDOT_DATA_ROOT>/content/site-content.json`
+  - `<DIGITALDOT_DATA_ROOT>/content/cms-data.json`
+  - `<DIGITALDOT_DATA_ROOT>/content/logs/*`
+  - `<DIGITALDOT_DATA_ROOT>/public/uploads/*`
+- Fișierele din `uploads/*` sunt servite în continuare la URL-urile existente `/uploads/*`.
+- Salvarea fișierelor JSON folosește înlocuire atomică, pentru a nu lăsa conținut trunchiat dacă o scriere este întreruptă.
+- Directorul persistent trebuie creat și populat din datele curente înainte de activarea variabilei. Dacă fișierele de conținut lipsesc, aplicația se oprește cu eroare în loc să pornească pe conținut gol.
+- `DIGITALDOT_DATA_ROOT` trebuie să aibă aceeași valoare atât în mediul în care rulează build-ul, cât și în procesul PM2 care servește site-ul.
+- `content/logs/*` conține date din formularele de contact și trebuie protejat prin permisiuni restrictive, backup securizat și o politică de retenție.
+- Nu activa `DIGITALDOT_DATA_ROOT` în producție înainte de backup, copierea datelor și verificarea permisiunilor utilizatorului care rulează aplicația.
+- Procedura completă, inclusiv oprirea scrierilor și rollbackul, este în [`docs/DASHBOARD_STORAGE_MIGRATION.md`](docs/DASHBOARD_STORAGE_MIGRATION.md).
 
 ## Licență
 

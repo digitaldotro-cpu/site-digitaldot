@@ -20,6 +20,12 @@
 # production
 /build
 
+# runtime data (must never be committed)
+/content/logs/
+/content/.site-content.json.*.tmp
+/content/.cms-data.json.*.tmp
+/public/uploads/
+
 # misc
 .DS_Store
 *.pem

@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
 import type { ContactFormValues } from "@/lib/validation/contact";
+import { getPersistentStoragePaths } from "@/lib/persistent-storage.mjs";
 
 export type SubmissionLog = {
   id: string;
@@ -18,19 +19,26 @@ export type EmailLog = {
   error?: string;
 };
 
-const LOGS_DIR = path.join(process.cwd(), "content/logs");
-const SUBMISSIONS_FILE = path.join(LOGS_DIR, "submissions.jsonl");
-const EMAILS_FILE = path.join(LOGS_DIR, "emails.jsonl");
+function getLogPaths() {
+  const { logsDirectory } = getPersistentStoragePaths();
 
-async function ensureDir() {
-  await fs.mkdir(LOGS_DIR, { recursive: true });
+  return {
+    logsDirectory,
+    submissionsFile: path.join(logsDirectory, "submissions.jsonl"),
+    emailsFile: path.join(logsDirectory, "emails.jsonl"),
+  };
+}
+
+async function ensureDir(logsDirectory: string) {
+  await fs.mkdir(logsDirectory, { recursive: true });
 }
 
 export async function logSubmission(
   data: ContactFormValues,
   meta: { ip: string; userAgent: string },
 ): Promise<string> {
-  await ensureDir();
+  const { logsDirectory, submissionsFile } = getLogPaths();
+  await ensureDir(logsDirectory);
   const id = crypto.randomUUID();
   const log: SubmissionLog = {
     id,
@@ -39,7 +47,7 @@ export async function logSubmission(
     meta,
   };
 
-  await fs.appendFile(SUBMISSIONS_FILE, JSON.stringify(log) + "\n", "utf8");
+  await fs.appendFile(submissionsFile, JSON.stringify(log) + "\n", "utf8");
   return id;
 }
 
@@ -48,7 +56,8 @@ export async function logEmailStatus(
   status: "success" | "error",
   error?: string,
 ): Promise<void> {
-  await ensureDir();
+  const { emailsFile, logsDirectory } = getLogPaths();
+  await ensureDir(logsDirectory);
   const log: EmailLog = {
     id: crypto.randomUUID(),
     submissionId,
@@ -57,7 +66,7 @@ export async function logEmailStatus(
     error,
   };
 
-  await fs.appendFile(EMAILS_FILE, JSON.stringify(log) + "\n", "utf8");
+  await fs.appendFile(emailsFile, JSON.stringify(log) + "\n", "utf8");
 }
 
 async function readJsonl<T>(filePath: string): Promise<T[]> {
@@ -77,9 +86,11 @@ async function readJsonl<T>(filePath: string): Promise<T[]> {
 }
 
 export async function getSubmissionLogs(): Promise<SubmissionLog[]> {
-  return readJsonl<SubmissionLog>(SUBMISSIONS_FILE);
+  const { submissionsFile } = getLogPaths();
+  return readJsonl<SubmissionLog>(submissionsFile);
 }
 
 export async function getEmailLogs(): Promise<EmailLog[]> {
-  return readJsonl<EmailLog>(EMAILS_FILE);
+  const { emailsFile } = getLogPaths();
+  return readJsonl<EmailLog>(emailsFile);
 }
