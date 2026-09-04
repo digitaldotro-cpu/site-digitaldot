@@ -139,7 +139,8 @@ confirmarea exactă a celor două locații, fără a le crea în această fază.
 
 În această fază nu se rulează `npm run check:storage -- --require-external`.
 Preflight-ul verifică și dreptul de scriere prin fișiere-probă temporare, deci
-aparține fazei 3, după backup și copiere.
+aparține fazei 4, după backup, copiere și eliminarea controlată a conflictelor
+legacy din checkout.
 
 Dacă datele live diferă de repository, copia live are prioritate pentru backup și migrare. Nu se presupune că GitHub conține ultima salvare făcută din dashboard.
 
@@ -158,13 +159,10 @@ Orice diferență neașteptată oprește procedura; nu se continuă automat.
 1. Se creează structura țintă cu proprietarul identic cu utilizatorul procesului PM2.
 2. Se copiază datele păstrând structura de directoare.
 3. Se validează checksumurile sursă/destinație și faptul că ambele fișiere sunt obiecte JSON valide.
-4. Se rulează preflight-ul proiectului cu rădăcina externă configurată:
 
-```bash
-DIGITALDOT_DATA_ROOT=<calea-confirmată> npm run check:storage -- --require-external
-```
-
-Preflight-ul trebuie să confirme că fișierele există, directoarele sunt citibile și scriibile, rădăcina reală nu intră în checkout și vechiul `public/uploads` nu mai poate umbri fișierele persistente.
+Preflight-ul complet se rulează în faza următoare, numai după eliminarea
+controlată a conflictelor din checkout. Altfel, un `public/uploads` încă nevid ar
+opri corect verificarea înainte ca procedura să ajungă la pasul care îl rezolvă.
 
 ## Faza 4 — eliminarea conflictelor din checkout
 
@@ -174,7 +172,17 @@ Această fază începe numai după confirmarea backupului și a checksumurilor.
 - Dacă `content/site-content.json` sau `content/cms-data.json` are modificări locale, acestea se readuc la versiunea Git numai după confirmarea separată că varianta live este copiată și verificată în storage și în backup.
 - Nu se folosesc comenzi destructive generale și nu se curăță alte fișiere din checkout.
 
-La final, verificarea Git pentru fișiere urmărite trebuie să fie curată.
+La final, verificarea Git pentru fișiere urmărite trebuie să fie curată. Apoi se
+rulează obligatoriu preflight-ul complet cu rădăcina externă configurată:
+
+```bash
+DIGITALDOT_DATA_ROOT=<calea-confirmată> npm run check:storage -- --require-external
+```
+
+Preflight-ul trebuie să confirme că fișierele există, directoarele sunt
+citibile și scriibile, rădăcina reală nu intră în checkout și vechiul
+`public/uploads` nu mai poate umbri fișierele persistente. Faza 5 și deploy-ul
+rămân blocate până când această comandă trece.
 
 ## Faza 5 — aceeași configurare pentru build și PM2
 
