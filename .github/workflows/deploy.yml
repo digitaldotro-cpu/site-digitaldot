@@ -1,83 +1,319 @@
-name: Deploy to Server
+name: Deploy production
+run-name: Production deploy request for ${{ github.sha }}
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: Full 40-character SHA currently at the tip of main
+        required: true
+        type: string
+      confirmation:
+        description: Select DEPLOY to acknowledge the protected production gate
+        required: true
+        default: DO_NOT_DEPLOY
+        type: choice
+        options:
+          - DO_NOT_DEPLOY
+          - DEPLOY
 
-permissions: {}
+permissions:
+  contents: read
 
 concurrency:
-  group: digitaldot-production-deploy
+  group: digitaldot-production
   cancel-in-progress: false
+  queue: max
 
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
+  validate_target:
+    name: Validate exact main target
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      target_sha: ${{ steps.validate.outputs.target_sha }}
 
     steps:
-      - name: Execute Server Deployment over SSH
-        uses: appleboy/ssh-action@029f5b4aeeeb58fdfe1410a5d17f967dacf36262 # v1.0.3
+      - name: Check out the dispatch commit without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: 22
-          command_timeout: 20m
-          script_stop: true
-          script: |
-            export NVM_DIR="$HOME/.nvm"
-            if [ ! -s "$NVM_DIR/nvm.sh" ]; then
-              echo "Deployment refused: NVM is unavailable." >&2
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.sha }}
+
+      - name: Use the control-plane validation runtime
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22.22.2
+          check-latest: false
+          package-manager-cache: false
+
+      - name: Fetch the current main ref
+        run: >-
+          git fetch --force --no-tags --prune origin
+          +refs/heads/main:refs/remotes/origin/main
+
+      - id: validate
+        name: Refuse every target except the exact current main tip
+        env:
+          DEPLOY_CONFIRMATION: ${{ inputs.confirmation }}
+          DEPLOY_EMIT_GITHUB_OUTPUT: "true"
+          DEPLOY_EVENT_NAME: ${{ github.event_name }}
+          DEPLOY_EVENT_REF: ${{ github.ref }}
+          DEPLOY_EVENT_REF_NAME: ${{ github.ref_name }}
+          DEPLOY_EVENT_REF_TYPE: ${{ github.ref_type }}
+          DEPLOY_EVENT_SHA: ${{ github.sha }}
+          DEPLOY_TARGET_SHA: ${{ inputs.target_sha }}
+        run: node scripts/validate-deploy-target.mjs
+
+  deploy:
+    name: Deploy approved SHA
+    needs: validate_target
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    environment:
+      name: production
+
+    steps:
+      - name: Revalidate current main after Environment approval
+        shell: bash
+        env:
+          CONTROL_PLANE_GITHUB_TOKEN: ${{ github.token }}
+          DEPLOY_CONFIRMATION: ${{ inputs.confirmation }}
+          DEPLOY_EVENT_NAME: ${{ github.event_name }}
+          DEPLOY_EVENT_REF: ${{ github.ref }}
+          DEPLOY_EVENT_REF_NAME: ${{ github.ref_name }}
+          DEPLOY_EVENT_REF_TYPE: ${{ github.ref_type }}
+          DEPLOY_EVENT_SHA: ${{ github.sha }}
+          DEPLOY_TARGET_SHA: ${{ needs.validate_target.outputs.target_sha }}
+        run: |
+          set -euo pipefail
+
+          if [ "$DEPLOY_CONFIRMATION" != "DEPLOY" ]; then
+            echo "Deployment refused: explicit confirmation is missing." >&2
+            exit 1
+          fi
+
+          if [ "$DEPLOY_EVENT_NAME" != "workflow_dispatch" ] || \
+             [ "$DEPLOY_EVENT_REF" != "refs/heads/main" ] || \
+             [ "$DEPLOY_EVENT_REF_TYPE" != "branch" ] || \
+             [ "$DEPLOY_EVENT_REF_NAME" != "main" ]; then
+            echo "Deployment refused: dispatch must target the main branch." >&2
+            exit 1
+          fi
+
+          if [[ ! "$DEPLOY_TARGET_SHA" =~ ^[0-9a-f]{40}$ ]] || \
+             [ "$DEPLOY_TARGET_SHA" != "$DEPLOY_EVENT_SHA" ]; then
+            echo "Deployment refused: target identity is invalid." >&2
+            exit 1
+          fi
+
+          CURRENT_MAIN_SHA="$(
+            curl --silent --show-error --fail \
+              --header "Accept: application/vnd.github+json" \
+              --header "Authorization: Bearer $CONTROL_PLANE_GITHUB_TOKEN" \
+              --header "X-GitHub-Api-Version: 2022-11-28" \
+              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/git/ref/heads/main" |
+              jq --exit-status --raw-output '.object.sha'
+          )"
+
+          if [ "$CURRENT_MAIN_SHA" != "$DEPLOY_TARGET_SHA" ]; then
+            echo "Deployment refused: main changed after this request was created." >&2
+            exit 1
+          fi
+
+          echo "Deployment target revalidated after Environment approval."
+
+      - name: Verify the production server identity without the deploy key
+        shell: bash
+        env:
+          EXPECTED_FINGERPRINT: ${{ secrets.PRODUCTION_DEPLOY_HOST_FINGERPRINT }}
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_DEPLOY_HOST }}
+        run: |
+          set -euo pipefail
+          umask 077
+
+          if [ -z "${RUNNER_TEMP:-}" ] || [ ! -d "$RUNNER_TEMP" ]; then
+            echo "Deployment refused: secure runner storage is unavailable." >&2
+            exit 1
+          fi
+
+          if [[ ! "$PRODUCTION_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.:-]{0,252}$ ]]; then
+            echo "Deployment refused: protected host format is invalid." >&2
+            exit 1
+          fi
+          if [[ ! "$EXPECTED_FINGERPRINT" =~ ^SHA256:[A-Za-z0-9+/]{43}$ ]]; then
+            echo "Deployment refused: protected host fingerprint format is invalid." >&2
+            exit 1
+          fi
+
+          DEPLOY_SSH_DIRECTORY="$(mktemp -d "$RUNNER_TEMP/digitaldot-production-ssh.XXXXXX")"
+          DEPLOY_KNOWN_HOSTS_FILE="$DEPLOY_SSH_DIRECTORY/known-hosts"
+          cleanup_unverified_host_key() {
+            rm -f -- "$DEPLOY_KNOWN_HOSTS_FILE"
+            rmdir "$DEPLOY_SSH_DIRECTORY" 2>/dev/null || true
+          }
+          trap cleanup_unverified_host_key EXIT
+
+          if ! ssh-keyscan -T 10 -p 22 -t ed25519 "$PRODUCTION_HOST" \
+            > "$DEPLOY_KNOWN_HOSTS_FILE" 2>/dev/null; then
+            echo "Deployment refused: the production server identity is unavailable." >&2
+            exit 1
+          fi
+
+          observed_fingerprint=""
+          while IFS= read -r host_key_line; do
+            if ! current_fingerprint="$(
+              printf '%s\n' "$host_key_line" |
+                ssh-keygen -lf - -E sha256 2>/dev/null |
+                awk 'NR == 1 { print $2 }'
+            )"; then
+              echo "Deployment refused: the production server identity is malformed." >&2
               exit 1
             fi
 
-            . "$NVM_DIR/nvm.sh" || exit 1
-            set -e
-
-            export PATH="$PATH:/usr/local/bin:/usr/bin"
-
-            cd /home/digitaldot/htdocs/digitaldot.ro
-
-            DEPLOY_TARGET_SHA="${{ github.sha }}"
-            git fetch origin main
-
-            if ! git cat-file -e "${DEPLOY_TARGET_SHA}^{commit}"; then
-              echo "Deployment refused: target commit is unavailable." >&2
+            if [[ ! "$current_fingerprint" =~ ^SHA256:[A-Za-z0-9+/]{43}$ ]]; then
+              echo "Deployment refused: the production server identity is malformed." >&2
               exit 1
             fi
 
-            if ! git merge-base --is-ancestor HEAD "$DEPLOY_TARGET_SHA"; then
-              echo "Deployment refused: the production checkout cannot fast-forward to the target commit." >&2
+            if [ -z "$observed_fingerprint" ]; then
+              observed_fingerprint="$current_fingerprint"
+            elif [ "$observed_fingerprint" != "$current_fingerprint" ]; then
+              echo "Deployment refused: the production server returned multiple identities." >&2
               exit 1
             fi
+          done < "$DEPLOY_KNOWN_HOSTS_FILE"
 
-            DEPLOY_PREFLIGHT_DIRECTORY="$(mktemp -d)"
-            DEPLOY_PREFLIGHT_SCRIPT="$DEPLOY_PREFLIGHT_DIRECTORY/report-deployment-runtime.mjs"
-            trap 'rm -f "$DEPLOY_PREFLIGHT_SCRIPT"; rmdir "$DEPLOY_PREFLIGHT_DIRECTORY"' EXIT
-            git show "${DEPLOY_TARGET_SHA}:scripts/report-deployment-runtime.mjs" > "$DEPLOY_PREFLIGHT_SCRIPT"
-            node "$DEPLOY_PREFLIGHT_SCRIPT" --app digitaldot.ro --phase before-update
+          if [ -z "$observed_fingerprint" ] || \
+             [ "$observed_fingerprint" != "$EXPECTED_FINGERPRINT" ]; then
+            echo "Deployment refused: the production server identity does not match." >&2
+            exit 1
+          fi
 
-            DEPLOY_TRACKED_CHANGES="$(git status --porcelain --untracked-files=no)"
-            if [ -n "$DEPLOY_TRACKED_CHANGES" ]; then
-              echo "Deployment refused: tracked production files contain uncommitted changes." >&2
-              echo "$DEPLOY_TRACKED_CHANGES" >&2
-              exit 1
-            fi
+          chmod 600 "$DEPLOY_KNOWN_HOSTS_FILE"
+          printf 'DEPLOY_SSH_DIRECTORY=%s\n' "$DEPLOY_SSH_DIRECTORY" >> "$GITHUB_ENV"
+          trap - EXIT
 
-            git merge --ff-only "$DEPLOY_TARGET_SHA"
+      - name: Invoke the restricted server-side deploy entrypoint
+        shell: bash
+        env:
+          DEPLOY_TARGET_SHA: ${{ needs.validate_target.outputs.target_sha }}
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_DEPLOY_HOST }}
+          PRODUCTION_SSH_KEY: ${{ secrets.PRODUCTION_DEPLOY_SSH_KEY }}
+          PRODUCTION_USERNAME: ${{ secrets.PRODUCTION_DEPLOY_USERNAME }}
+        run: |
+          set -euo pipefail
+          umask 077
 
-            DEPLOYED_SHA="$(git rev-parse HEAD)"
-            if [ "$DEPLOYED_SHA" != "$DEPLOY_TARGET_SHA" ]; then
-              echo "Deployment refused: the checked-out commit does not match the triggering commit." >&2
-              exit 1
-            fi
+          if [[ ! "$DEPLOY_TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Deployment refused: validated target format was lost." >&2
+            exit 1
+          fi
+          if [[ ! "$PRODUCTION_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.:-]{0,252}$ ]]; then
+            echo "Deployment refused: protected host format is invalid." >&2
+            exit 1
+          fi
+          if [[ ! "$PRODUCTION_USERNAME" =~ ^[A-Za-z0-9_][A-Za-z0-9._-]{0,63}$ ]]; then
+            echo "Deployment refused: protected username format is invalid." >&2
+            exit 1
+          fi
+          if [ -z "$PRODUCTION_SSH_KEY" ]; then
+            echo "Deployment refused: the protected deploy key is unavailable." >&2
+            exit 1
+          fi
+          if [ -z "${DEPLOY_SSH_DIRECTORY:-}" ] || \
+             [ ! -d "$DEPLOY_SSH_DIRECTORY" ] || \
+             [ -L "$DEPLOY_SSH_DIRECTORY" ]; then
+            echo "Deployment refused: verified runner storage is unavailable." >&2
+            exit 1
+          fi
 
-            npm ci
-            npm run build
-            pm2 restart digitaldot.ro
-            node scripts/report-deployment-runtime.mjs --app digitaldot.ro --phase after-restart
+          DEPLOY_SSH_KEY_FILE="$DEPLOY_SSH_DIRECTORY/deploy-key"
+          DEPLOY_KNOWN_HOSTS_FILE="$DEPLOY_SSH_DIRECTORY/known-hosts"
+          DEPLOY_EXPECTED_OUTPUT_FILE="$DEPLOY_SSH_DIRECTORY/expected-output"
+          DEPLOY_REMOTE_OUTPUT_FILE="$DEPLOY_SSH_DIRECTORY/remote-output"
+          cleanup_deploy_credentials() {
+            rm -f -- \
+              "$DEPLOY_SSH_KEY_FILE" \
+              "$DEPLOY_KNOWN_HOSTS_FILE" \
+              "$DEPLOY_EXPECTED_OUTPUT_FILE" \
+              "$DEPLOY_REMOTE_OUTPUT_FILE"
+            rmdir "$DEPLOY_SSH_DIRECTORY" 2>/dev/null || true
+          }
+          trap cleanup_deploy_credentials EXIT
 
-            echo "Deployment finished successfully at $DEPLOYED_SHA."
+          if [ ! -f "$DEPLOY_KNOWN_HOSTS_FILE" ] || \
+             [ -L "$DEPLOY_KNOWN_HOSTS_FILE" ]; then
+            echo "Deployment refused: the verified server identity was lost." >&2
+            exit 1
+          fi
+
+          printf '%s\n' "$PRODUCTION_SSH_KEY" > "$DEPLOY_SSH_KEY_FILE"
+          unset PRODUCTION_SSH_KEY
+          chmod 600 "$DEPLOY_SSH_KEY_FILE" "$DEPLOY_KNOWN_HOSTS_FILE"
+
+          if ! ssh-keygen -y -P "" -f "$DEPLOY_SSH_KEY_FILE" >/dev/null 2>&1; then
+            echo "Deployment refused: protected private key is unreadable." >&2
+            exit 1
+          fi
+
+          maximum_output_bytes=4096
+          set +e
+          timeout --signal=TERM --kill-after=30s 20m \
+            ssh \
+              -F /dev/null \
+              -n \
+              -T \
+              -x \
+              -i "$DEPLOY_SSH_KEY_FILE" \
+              -l "$PRODUCTION_USERNAME" \
+              -p 22 \
+              -o BatchMode=yes \
+              -o CheckHostIP=no \
+              -o ClearAllForwardings=yes \
+              -o ConnectTimeout=15 \
+              -o ForwardAgent=no \
+              -o GlobalKnownHostsFile=/dev/null \
+              -o HostKeyAlgorithms=ssh-ed25519 \
+              -o IdentityAgent=none \
+              -o IdentitiesOnly=yes \
+              -o KbdInteractiveAuthentication=no \
+              -o LogLevel=ERROR \
+              -o PasswordAuthentication=no \
+              -o PermitLocalCommand=no \
+              -o PreferredAuthentications=publickey \
+              -o RequestTTY=no \
+              -o ServerAliveCountMax=3 \
+              -o ServerAliveInterval=15 \
+              -o StrictHostKeyChecking=yes \
+              -o Tunnel=no \
+              -o UpdateHostKeys=no \
+              -o "UserKnownHostsFile=$DEPLOY_KNOWN_HOSTS_FILE" \
+              -- "$PRODUCTION_HOST" "deploy $DEPLOY_TARGET_SHA" \
+              2>&1 |
+            head -c "$((maximum_output_bytes + 1))" > "$DEPLOY_REMOTE_OUTPUT_FILE"
+          deploy_pipeline_status=("${PIPESTATUS[@]}")
+          set -e
+
+          if [ "${#deploy_pipeline_status[@]}" -ne 2 ] || \
+             [ "${deploy_pipeline_status[0]}" -ne 0 ] || \
+             [ "${deploy_pipeline_status[1]}" -ne 0 ]; then
+            echo "Deployment failed safely: the restricted server entrypoint did not complete." >&2
+            exit 1
+          fi
+
+          output_size="$(wc -c < "$DEPLOY_REMOTE_OUTPUT_FILE")"
+          if [ "$output_size" -gt "$maximum_output_bytes" ]; then
+            echo "Deployment failed safely: the protected response exceeded its limit." >&2
+            exit 1
+          fi
+
+          printf 'DIGITALDOT_DEPLOY_RESULT=SUCCESS:%s\n' "$DEPLOY_TARGET_SHA" \
+            > "$DEPLOY_EXPECTED_OUTPUT_FILE"
+          if ! cmp -s -- "$DEPLOY_REMOTE_OUTPUT_FILE" "$DEPLOY_EXPECTED_OUTPUT_FILE"; then
+            echo "Deployment failed safely: the server returned no valid success receipt." >&2
+            exit 1
+          fi
+
+          echo "Restricted deployment entrypoint confirmed the approved SHA."
