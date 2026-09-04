@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Check out the dispatch commit without persisted credentials
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1b # v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -124,15 +124,11 @@ jobs:
 
           echo "Deployment target revalidated after Environment approval."
 
-      - name: Invoke the restricted server-side deploy entrypoint
+      - name: Verify the production server identity without the deploy key
         shell: bash
         env:
-          DEPLOY_TARGET_SHA: ${{ needs.validate_target.outputs.target_sha }}
-          PRODUCTION_SSH_HOST: ${{ secrets.PRODUCTION_SSH_HOST }}
-          PRODUCTION_SSH_HOST_FINGERPRINT: ${{ secrets.PRODUCTION_SSH_HOST_FINGERPRINT }}
-          PRODUCTION_SSH_KNOWN_HOSTS: ${{ secrets.PRODUCTION_SSH_KNOWN_HOSTS }}
-          PRODUCTION_SSH_PRIVATE_KEY: ${{ secrets.PRODUCTION_SSH_PRIVATE_KEY }}
-          PRODUCTION_SSH_USERNAME: ${{ secrets.PRODUCTION_SSH_USERNAME }}
+          EXPECTED_FINGERPRINT: ${{ secrets.PRODUCTION_DEPLOY_HOST_FINGERPRINT }}
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_DEPLOY_HOST }}
         run: |
           set -euo pipefail
           umask 077
@@ -142,68 +138,136 @@ jobs:
             exit 1
           fi
 
-          for REQUIRED_VALUE in \
-            "$PRODUCTION_SSH_HOST" \
-            "$PRODUCTION_SSH_HOST_FINGERPRINT" \
-            "$PRODUCTION_SSH_KNOWN_HOSTS" \
-            "$PRODUCTION_SSH_PRIVATE_KEY" \
-            "$PRODUCTION_SSH_USERNAME"; do
-            if [ -z "$REQUIRED_VALUE" ]; then
-              echo "Deployment refused: protected connection material is incomplete." >&2
-              exit 1
-            fi
-          done
-
-          if [[ ! "$DEPLOY_TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]; then
-            echo "Deployment refused: validated target format was lost." >&2
-            exit 1
-          fi
-          if [[ ! "$PRODUCTION_SSH_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.:-]{0,252}$ ]]; then
+          if [[ ! "$PRODUCTION_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.:-]{0,252}$ ]]; then
             echo "Deployment refused: protected host format is invalid." >&2
             exit 1
           fi
-          if [[ ! "$PRODUCTION_SSH_USERNAME" =~ ^[a-z_][a-z0-9_-]{0,31}$ ]]; then
-            echo "Deployment refused: protected username format is invalid." >&2
-            exit 1
-          fi
-          if [[ ! "$PRODUCTION_SSH_HOST_FINGERPRINT" =~ ^SHA256:[A-Za-z0-9+/]{43}$ ]]; then
+          if [[ ! "$EXPECTED_FINGERPRINT" =~ ^SHA256:[A-Za-z0-9+/]{43}$ ]]; then
             echo "Deployment refused: protected host fingerprint format is invalid." >&2
             exit 1
           fi
 
           DEPLOY_SSH_DIRECTORY="$(mktemp -d "$RUNNER_TEMP/digitaldot-production-ssh.XXXXXX")"
+          DEPLOY_KNOWN_HOSTS_FILE="$DEPLOY_SSH_DIRECTORY/known-hosts"
+          cleanup_unverified_host_key() {
+            rm -f -- "$DEPLOY_KNOWN_HOSTS_FILE"
+            rmdir "$DEPLOY_SSH_DIRECTORY" 2>/dev/null || true
+          }
+          trap cleanup_unverified_host_key EXIT
+
+          if ! ssh-keyscan -T 10 -p 22 -t ed25519 "$PRODUCTION_HOST" \
+            > "$DEPLOY_KNOWN_HOSTS_FILE" 2>/dev/null; then
+            echo "Deployment refused: the production server identity is unavailable." >&2
+            exit 1
+          fi
+
+          observed_fingerprint=""
+          while IFS= read -r host_key_line; do
+            if ! current_fingerprint="$(
+              printf '%s\n' "$host_key_line" |
+                ssh-keygen -lf - -E sha256 2>/dev/null |
+                awk 'NR == 1 { print $2 }'
+            )"; then
+              echo "Deployment refused: the production server identity is malformed." >&2
+              exit 1
+            fi
+
+            if [[ ! "$current_fingerprint" =~ ^SHA256:[A-Za-z0-9+/]{43}$ ]]; then
+              echo "Deployment refused: the production server identity is malformed." >&2
+              exit 1
+            fi
+
+            if [ -z "$observed_fingerprint" ]; then
+              observed_fingerprint="$current_fingerprint"
+            elif [ "$observed_fingerprint" != "$current_fingerprint" ]; then
+              echo "Deployment refused: the production server returned multiple identities." >&2
+              exit 1
+            fi
+          done < "$DEPLOY_KNOWN_HOSTS_FILE"
+
+          if [ -z "$observed_fingerprint" ] || \
+             [ "$observed_fingerprint" != "$EXPECTED_FINGERPRINT" ]; then
+            echo "Deployment refused: the production server identity does not match." >&2
+            exit 1
+          fi
+
+          chmod 600 "$DEPLOY_KNOWN_HOSTS_FILE"
+          printf 'DEPLOY_SSH_DIRECTORY=%s\n' "$DEPLOY_SSH_DIRECTORY" >> "$GITHUB_ENV"
+          trap - EXIT
+
+      - name: Invoke the restricted server-side deploy entrypoint
+        shell: bash
+        env:
+          DEPLOY_TARGET_SHA: ${{ needs.validate_target.outputs.target_sha }}
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_DEPLOY_HOST }}
+          PRODUCTION_SSH_KEY: ${{ secrets.PRODUCTION_DEPLOY_SSH_KEY }}
+          PRODUCTION_USERNAME: ${{ secrets.PRODUCTION_DEPLOY_USERNAME }}
+        run: |
+          set -euo pipefail
+          umask 077
+
+          if [[ ! "$DEPLOY_TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Deployment refused: validated target format was lost." >&2
+            exit 1
+          fi
+          if [[ ! "$PRODUCTION_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.:-]{0,252}$ ]]; then
+            echo "Deployment refused: protected host format is invalid." >&2
+            exit 1
+          fi
+          if [[ ! "$PRODUCTION_USERNAME" =~ ^[A-Za-z0-9_][A-Za-z0-9._-]{0,63}$ ]]; then
+            echo "Deployment refused: protected username format is invalid." >&2
+            exit 1
+          fi
+          if [ -z "$PRODUCTION_SSH_KEY" ]; then
+            echo "Deployment refused: the protected deploy key is unavailable." >&2
+            exit 1
+          fi
+          if [ -z "${DEPLOY_SSH_DIRECTORY:-}" ] || \
+             [ ! -d "$DEPLOY_SSH_DIRECTORY" ] || \
+             [ -L "$DEPLOY_SSH_DIRECTORY" ]; then
+            echo "Deployment refused: verified runner storage is unavailable." >&2
+            exit 1
+          fi
+
           DEPLOY_SSH_KEY_FILE="$DEPLOY_SSH_DIRECTORY/deploy-key"
           DEPLOY_KNOWN_HOSTS_FILE="$DEPLOY_SSH_DIRECTORY/known-hosts"
-          DEPLOY_FINGERPRINT_REPORT="$DEPLOY_SSH_DIRECTORY/fingerprints"
-          trap 'rm -f "$DEPLOY_SSH_KEY_FILE" "$DEPLOY_KNOWN_HOSTS_FILE" "$DEPLOY_FINGERPRINT_REPORT"; rmdir "$DEPLOY_SSH_DIRECTORY" 2>/dev/null || true' EXIT
+          DEPLOY_EXPECTED_OUTPUT_FILE="$DEPLOY_SSH_DIRECTORY/expected-output"
+          DEPLOY_REMOTE_OUTPUT_FILE="$DEPLOY_SSH_DIRECTORY/remote-output"
+          cleanup_deploy_credentials() {
+            rm -f -- \
+              "$DEPLOY_SSH_KEY_FILE" \
+              "$DEPLOY_KNOWN_HOSTS_FILE" \
+              "$DEPLOY_EXPECTED_OUTPUT_FILE" \
+              "$DEPLOY_REMOTE_OUTPUT_FILE"
+            rmdir "$DEPLOY_SSH_DIRECTORY" 2>/dev/null || true
+          }
+          trap cleanup_deploy_credentials EXIT
 
-          printf '%s\n' "$PRODUCTION_SSH_PRIVATE_KEY" > "$DEPLOY_SSH_KEY_FILE"
-          printf '%s\n' "$PRODUCTION_SSH_KNOWN_HOSTS" > "$DEPLOY_KNOWN_HOSTS_FILE"
+          if [ ! -f "$DEPLOY_KNOWN_HOSTS_FILE" ] || \
+             [ -L "$DEPLOY_KNOWN_HOSTS_FILE" ]; then
+            echo "Deployment refused: the verified server identity was lost." >&2
+            exit 1
+          fi
+
+          printf '%s\n' "$PRODUCTION_SSH_KEY" > "$DEPLOY_SSH_KEY_FILE"
+          unset PRODUCTION_SSH_KEY
           chmod 600 "$DEPLOY_SSH_KEY_FILE" "$DEPLOY_KNOWN_HOSTS_FILE"
 
           if ! ssh-keygen -y -P "" -f "$DEPLOY_SSH_KEY_FILE" >/dev/null 2>&1; then
             echo "Deployment refused: protected private key is unreadable." >&2
             exit 1
           fi
-          if ! ssh-keygen -lf "$DEPLOY_KNOWN_HOSTS_FILE" -E sha256 \
-            > "$DEPLOY_FINGERPRINT_REPORT" 2>/dev/null; then
-            echo "Deployment refused: protected known_hosts data is invalid." >&2
-            exit 1
-          fi
 
-          DEPLOY_HOST_KEY_COUNT="$(wc -l < "$DEPLOY_FINGERPRINT_REPORT" | tr -d ' ')"
-          DEPLOY_ACTUAL_FINGERPRINT="$(awk 'NR == 1 { print $2 }' "$DEPLOY_FINGERPRINT_REPORT")"
-          if [ "$DEPLOY_HOST_KEY_COUNT" != "1" ] || \
-             [ "$DEPLOY_ACTUAL_FINGERPRINT" != "$PRODUCTION_SSH_HOST_FINGERPRINT" ]; then
-            echo "Deployment refused: protected host identity does not match." >&2
-            exit 1
-          fi
-
+          maximum_output_bytes=4096
+          set +e
           timeout --signal=TERM --kill-after=30s 20m \
             ssh \
               -F /dev/null \
+              -n \
+              -T \
+              -x \
               -i "$DEPLOY_SSH_KEY_FILE" \
-              -l "$PRODUCTION_SSH_USERNAME" \
+              -l "$PRODUCTION_USERNAME" \
               -p 22 \
               -o BatchMode=yes \
               -o CheckHostIP=no \
@@ -211,17 +275,45 @@ jobs:
               -o ConnectTimeout=15 \
               -o ForwardAgent=no \
               -o GlobalKnownHostsFile=/dev/null \
+              -o HostKeyAlgorithms=ssh-ed25519 \
+              -o IdentityAgent=none \
               -o IdentitiesOnly=yes \
               -o KbdInteractiveAuthentication=no \
               -o LogLevel=ERROR \
               -o PasswordAuthentication=no \
               -o PermitLocalCommand=no \
+              -o PreferredAuthentications=publickey \
               -o RequestTTY=no \
               -o ServerAliveCountMax=3 \
               -o ServerAliveInterval=15 \
               -o StrictHostKeyChecking=yes \
+              -o Tunnel=no \
               -o UpdateHostKeys=no \
               -o "UserKnownHostsFile=$DEPLOY_KNOWN_HOSTS_FILE" \
-              -- "$PRODUCTION_SSH_HOST" "deploy $DEPLOY_TARGET_SHA"
+              -- "$PRODUCTION_HOST" "deploy $DEPLOY_TARGET_SHA" \
+              2>&1 |
+            head -c "$((maximum_output_bytes + 1))" > "$DEPLOY_REMOTE_OUTPUT_FILE"
+          deploy_pipeline_status=("${PIPESTATUS[@]}")
+          set -e
 
-          echo "Restricted deployment entrypoint completed successfully."
+          if [ "${#deploy_pipeline_status[@]}" -ne 2 ] || \
+             [ "${deploy_pipeline_status[0]}" -ne 0 ] || \
+             [ "${deploy_pipeline_status[1]}" -ne 0 ]; then
+            echo "Deployment failed safely: the restricted server entrypoint did not complete." >&2
+            exit 1
+          fi
+
+          output_size="$(wc -c < "$DEPLOY_REMOTE_OUTPUT_FILE")"
+          if [ "$output_size" -gt "$maximum_output_bytes" ]; then
+            echo "Deployment failed safely: the protected response exceeded its limit." >&2
+            exit 1
+          fi
+
+          printf 'DIGITALDOT_DEPLOY_RESULT=SUCCESS:%s\n' "$DEPLOY_TARGET_SHA" \
+            > "$DEPLOY_EXPECTED_OUTPUT_FILE"
+          if ! cmp -s -- "$DEPLOY_REMOTE_OUTPUT_FILE" "$DEPLOY_EXPECTED_OUTPUT_FILE"; then
+            echo "Deployment failed safely: the server returned no valid success receipt." >&2
+            exit 1
+          fi
+
+          echo "Restricted deployment entrypoint confirmed the approved SHA."

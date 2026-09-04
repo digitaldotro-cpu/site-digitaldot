@@ -219,6 +219,17 @@ test("the deploy workflow is manual-only and keeps secrets behind the gate", () 
     new URL("../.github/workflows/deploy.yml", import.meta.url),
     "utf8",
   );
+  const validationWorkflow = readFileSync(
+    new URL(
+      "../.github/workflows/validate-deploy-control-plane.yml",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const deployRunbook = readFileSync(
+    new URL("../docs/PRODUCTION_DEPLOY_CONTROL.md", import.meta.url),
+    "utf8",
+  );
   const trigger = workflow.slice(
     workflow.indexOf("on:\n"),
     workflow.indexOf("\npermissions:\n"),
@@ -227,15 +238,90 @@ test("the deploy workflow is manual-only and keeps secrets behind the gate", () 
     [...trigger.matchAll(/^  ([A-Za-z0-9_-]+):/gm)].map((match) => match[1]),
     ["workflow_dispatch"],
   );
-  assert.match(workflow, /\n    environment:\n      name: production\n/);
   assert.match(workflow, /\n  queue: max\n/);
+  assert.match(workflow, /\npermissions:\n  contents: read\n/);
+  assert.match(workflow, /ssh-keyscan/);
   assert.match(workflow, /StrictHostKeyChecking=yes/);
   assert.match(workflow, /UserKnownHostsFile=/);
-  assert.match(workflow, /secrets\.PRODUCTION_SSH_PRIVATE_KEY/);
+  assert.match(workflow, /secrets\.PRODUCTION_DEPLOY_HOST/);
+  assert.match(workflow, /secrets\.PRODUCTION_DEPLOY_HOST_FINGERPRINT/);
+  assert.match(workflow, /secrets\.PRODUCTION_DEPLOY_SSH_KEY/);
+  assert.match(workflow, /secrets\.PRODUCTION_DEPLOY_USERNAME/);
+  assert.match(workflow, /unset PRODUCTION_SSH_KEY/);
+  assert.match(workflow, /DIGITALDOT_DEPLOY_RESULT=SUCCESS:/);
+  assert.match(workflow, /maximum_output_bytes=4096/);
+  assert.match(workflow, /IdentityAgent=none/);
+  assert.doesNotMatch(workflow, /PRODUCTION_SSH_KNOWN_HOSTS/);
+  assert.doesNotMatch(workflow, /secrets\.PRODUCTION_SSH_/);
   assert.doesNotMatch(workflow, /secrets\.SERVER_/);
   assert.doesNotMatch(workflow, /appleboy|docker|npm ci|npm run|pm2|\/home\//i);
+  assert.doesNotMatch(workflow, /continue-on-error|deployment:\s*false/);
+
+  const actionReferences = [workflow, validationWorkflow].flatMap((source) =>
+    [...source.matchAll(/^\s+uses:\s+([^\s#]+)/gm)].map((match) => match[1]),
+  );
+  assert.ok(actionReferences.length > 0);
+  for (const reference of actionReferences) {
+    assert.match(reference, /@[0-9a-f]{40}$/);
+  }
 
   const privilegedJob = workflow.slice(workflow.indexOf("\n  deploy:\n"));
+  assert.match(privilegedJob, /\n    environment:\n      name: production\n/);
   assert.doesNotMatch(privilegedJob, /\n\s+uses:/);
   assert.doesNotMatch(privilegedJob, /actions\/checkout/);
+
+  const workflowJobs = workflow.slice(workflow.indexOf("\njobs:\n"));
+  assert.deepEqual(
+    [...workflowJobs.matchAll(/^  ([a-z][a-z0-9_-]*):/gm)].map(
+      (match) => match[1],
+    ),
+    ["validate_target", "deploy"],
+  );
+
+  const validationJob = workflow.slice(
+    workflow.indexOf("\n  validate_target:\n"),
+    workflow.indexOf("\n  deploy:\n"),
+  );
+  assert.doesNotMatch(validationJob, /secrets\./);
+
+  const hostIdentityStep = privilegedJob.slice(
+    privilegedJob.indexOf("- name: Verify the production server identity"),
+    privilegedJob.indexOf("- name: Invoke the restricted server-side deploy entrypoint"),
+  );
+  assert.match(hostIdentityStep, /secrets\.PRODUCTION_DEPLOY_HOST/);
+  assert.match(hostIdentityStep, /secrets\.PRODUCTION_DEPLOY_HOST_FINGERPRINT/);
+  assert.doesNotMatch(hostIdentityStep, /SSH_KEY|USERNAME/);
+
+  const sshStep = privilegedJob.slice(
+    privilegedJob.indexOf("- name: Invoke the restricted server-side deploy entrypoint"),
+  );
+  assert.match(sshStep, /unset PRODUCTION_SSH_KEY[\s\S]*ssh-keygen/);
+  assert.match(sshStep, /2>&1 \|[\s\S]*head -c/);
+  assert.match(sshStep, /cmp -s --/);
+  assert.equal(
+    [...sshStep.matchAll(/"deploy \$DEPLOY_TARGET_SHA"/g)].length,
+    1,
+  );
+  assert.match(
+    sshStep,
+    /-n \\\n[\s\S]*-- "\$PRODUCTION_HOST" "deploy \$DEPLOY_TARGET_SHA"/,
+  );
+  assert.doesNotMatch(sshStep, /mapfile/);
+  assert.doesNotMatch(sshStep, /cat scripts\/|npm ci|pm2|set -x/);
+
+  const validationTrigger = validationWorkflow.slice(
+    validationWorkflow.indexOf("on:\n"),
+    validationWorkflow.indexOf("\npermissions:\n"),
+  );
+  assert.deepEqual(
+    [...validationTrigger.matchAll(/^  ([A-Za-z0-9_-]+):/gm)].map(
+      (match) => match[1],
+    ),
+    ["pull_request", "merge_group"],
+  );
+  assert.match(validationWorkflow, /\npermissions:\n  contents: read\n/);
+  assert.doesNotMatch(validationWorkflow, /secrets\.|environment:\s*production/);
+  assert.match(deployRunbook, /NO-GO pentru orice deploy/);
+  assert.match(deployRunbook, /npm run check:storage -- --require-external/);
+  assert.match(deployRunbook, /Node 24/);
 });
