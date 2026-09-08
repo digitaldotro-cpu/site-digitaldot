@@ -1,18 +1,18 @@
 import fs from "node:fs/promises";
 import { unstable_noStore as noStore } from "next/cache";
 import { writeTextFileAtomically } from "@/lib/atomic-write.mjs";
-import { cmsDataSchema } from "@/lib/cms-schema";
+import { cmsDataSchema, cmsReadDataSchema, type CmsReadData } from "@/lib/cms-schema";
 import { getPersistentStoragePaths } from "@/lib/persistent-storage.mjs";
 import type { CmsData } from "@/types/cms";
 
-export async function readCmsData(): Promise<CmsData> {
+export async function readCmsData(): Promise<CmsReadData> {
   const { cmsDataFile } = getPersistentStoragePaths();
   const raw = await fs.readFile(cmsDataFile, "utf8");
   const parsed = JSON.parse(raw) as unknown;
-  return cmsDataSchema.parse(parsed) as CmsData;
+  return cmsReadDataSchema.parse(parsed);
 }
 
-export async function getCmsData(): Promise<CmsData> {
+export async function getCmsData(): Promise<CmsReadData> {
   noStore();
   return readCmsData();
 }

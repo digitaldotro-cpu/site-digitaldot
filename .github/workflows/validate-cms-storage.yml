@@ -1,0 +1,60 @@
+name: Validate CMS and persistent storage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-cms-storage-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: CMS and storage checks (Node 24)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+      NPM_CONFIG_IGNORE_SCRIPTS: "true"
+
+    steps:
+      - name: Check out the pull-request merge commit without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Select the approved test runtime only
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24.19.0"
+          check-latest: false
+          package-manager-cache: false
+
+      - name: Verify the exact test runtime
+        run: node -e 'if (process.version !== "v24.19.0") process.exit(1)'
+
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Test legacy CMS read compatibility and strict writes
+        run: npm run test:cms
+
+      - name: Test persistent-storage paths and isolated preflight
+        run: npm run test:storage
+
+      - name: Check TypeScript without build output or incremental files
+        run: node node_modules/typescript/bin/tsc --noEmit --incremental false
+
+      - name: Lint the CMS correction and regression tests
+        run: node node_modules/eslint/bin/eslint.js lib/cms-schema.ts lib/cms-data.ts lib/cms-schema.test.mjs
+
+      - name: Confirm checks did not change tracked files
+        run: |
+          git diff --quiet
+          git diff --cached --quiet

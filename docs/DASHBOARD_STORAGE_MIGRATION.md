@@ -72,6 +72,24 @@ Preflight-ul trebuie să confirme că fișierele există, directoarele sunt citi
 
 ## Faza 4 — eliminarea conflictelor din checkout
 
+### Compatibilitatea datelor CMS vechi
+
+Unele pagini din `content/cms-data.json` preced câmpurile `seoTitle` și
+`seoDescription`. Citirea folosește `cmsReadDataSchema`, care acceptă absența
+acestor două câmpuri, dar validează în continuare orice valoare prezentă și toate
+celelalte cerințe ale schemei. Nu generează texte SEO și nu rescrie fișierul.
+
+Salvarea folosește în continuare schema strictă `cmsDataSchema`: ambele câmpuri
+SEO trebuie completate valid înaintea unei salvări. Un rezultat negativ al
+schemei de scriere pentru date vechi nu este echivalent cu o eroare de citire.
+
+Proba migrării trebuie să raporteze separat validarea pentru citire și pentru
+scriere și să verifice păstrarea exactă a octeților și a checksumurilor copiei.
+Compatibilitatea la citire nu autorizează completarea automată a datelor,
+migrarea efectivă sau publicarea în producție.
+
+### Condiții pentru eliminarea conflictelor
+
 Această fază începe numai după confirmarea backupului și a checksumurilor.
 
 - Fișierele din vechiul `public/uploads` se elimină din checkout numai după ce fiecare copie persistentă a fost verificată. Un director vechi nevid ar putea fi servit de Next.js înaintea rutei persistente.
