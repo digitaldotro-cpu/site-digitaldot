@@ -15,12 +15,9 @@ type RegionalCityRouteProps = {
   params: Promise<{ city: string }>;
 };
 
-export async function generateStaticParams() {
-  const content = await getSiteContent();
-  return content.regionalSeo.pages
-    .filter((page) => page.enabled !== false)
-    .map((page) => ({ city: page.slug }));
-}
+// Regional pages are editable at runtime. getSiteContent() opts out of caching;
+// do not combine that with a build-time list (possibly empty) of static params.
+// Resolve active, disabled and newly added cities from the current CMS data.
 
 export async function generateMetadata({ params }: RegionalCityRouteProps): Promise<Metadata> {
   const [{ city }, content] = await Promise.all([params, getSiteContent()]);

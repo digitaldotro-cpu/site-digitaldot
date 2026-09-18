@@ -7,6 +7,7 @@ import { useMemo, useRef, useState } from "react";
 import { Plus, RefreshCcw, Save, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageUploadField } from "@/components/admin/image-upload-field";
+import { getContentFieldKind, heroImagePositions } from "@/lib/content-editor-fields";
 import type { SiteContent } from "@/lib/site-content-schema";
 import { cn } from "@/lib/utils";
 
@@ -52,6 +53,7 @@ function getItemTitle(value: JsonValue) {
 
 const labelDictionary: Record<string, string> = {
   hero: "Secțiunea Hero",
+  imagePosition: "Poziția imaginii",
   positioning: "Poziționare",
   proofMetrics: "Metrici Proof",
   miniCaseStudy: "Mini Studiu de Caz",
@@ -411,19 +413,23 @@ function EditorNode({
   }
 
   const isLongText = typeof value === "string" && value.length > 90;
-  const keyName = String(path[path.length - 1]);
-  const isImageField =
-    typeof value === "string" &&
-    (keyName.toLowerCase().includes("image") ||
-      keyName.toLowerCase().includes("logo") ||
-      keyName.toLowerCase().includes("avatar") ||
-      keyName.toLowerCase().includes("favicon") ||
-      keyName === "src");
+  const fieldKind = getContentFieldKind(path, value);
 
   return (
     <div className="space-y-2 rounded-2xl border border-[#25373f] bg-[#0f171c] p-4">
       <label className="text-sm font-semibold text-white">{label}</label>
-      {isImageField ? (
+      {fieldKind === "hero-image-position" ? (
+        <select
+          aria-label={label}
+          value={String(value)}
+          onChange={(event) => onChange(path, event.target.value)}
+          className="h-11 w-full rounded-xl border border-[#2b3d45] bg-[#0b1318] px-3 text-sm text-[#dce2e6] focus:border-[#276864] focus:outline-none"
+        >
+          {heroImagePositions.map((option) => (
+            <option key={option.value} value={option.value}>{option.label}</option>
+          ))}
+        </select>
+      ) : fieldKind === "image" ? (
         <ImageUploadField value={value as string} onChange={(val) => onChange(path, val)} />
       ) : isLongText ? (
         <textarea
