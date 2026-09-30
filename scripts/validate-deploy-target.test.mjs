@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import {
   mkdtempSync,
+  mkdirSync,
+  existsSync,
   readFileSync,
   rmSync,
+  symlinkSync,
   writeFileSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
@@ -324,4 +327,115 @@ test("the deploy workflow is manual-only and keeps secrets behind the gate", () 
   assert.match(deployRunbook, /NO-GO pentru orice deploy/);
   assert.match(deployRunbook, /npm run check:storage -- --require-external/);
   assert.match(deployRunbook, /Node 24/);
+});
+
+test("both control-plane jobs pin and assert the approved Node 24 runtime", () => {
+  for (const path of ["deploy.yml", "validate-deploy-control-plane.yml"]) {
+    const source = readFileSync(new URL(`../.github/workflows/${path}`, import.meta.url), "utf8");
+    assert.match(source, /node-version: "24\.19\.0"/);
+    assert.match(source, /if \(process\.version !== "v24\.19\.0"\) process\.exit\(1\)/);
+    assert.doesNotMatch(source, /22\.22\.2|Node\.js 22/);
+  }
+});
+
+test("runbook binds recovery to the shared journal and the write boundary", () => {
+  const source = readFileSync(new URL("../docs/PRODUCTION_DEPLOY_CONTROL.md", import.meta.url), "utf8");
+  for (const invariant of [
+    /UNCONFIRMED/, /Nu se folosește Re-run jobs/, /thaw-intent/,
+    /același jurnal/, /plan aprobat, autentic/, /nu un gateway instalat/,
+    /Prima tranziție legacy este exclusă/, /operație istorică reușită/,
+  ]) assert.match(source, invariant);
+});
+
+// Execute the actual workflow shell block with an isolated command allowlist.
+// No SSH/timeout/keygen executable from the host can be resolved via PATH.
+function runOfflineTransport(context, overrides = {}) {
+  const directory = mkdtempSync(join(tmpdir(), "deploy-transport-test-"));
+  context.after(() => rmSync(directory, { recursive: true, force: true }));
+  const bin = join(directory, "bin");
+  const secure = join(directory, "secure");
+  mkdirSync(bin);
+  mkdirSync(secure);
+  for (const utility of ["chmod", "rm", "rmdir", "head", "wc", "cmp"]) {
+    const path = execFileSync("/bin/sh", ["-c", 'command -v "$1"', "test-utility", utility], {
+      env: { PATH: "/usr/bin:/bin" }, encoding: "utf8",
+    }).trim();
+    assert.ok(path.startsWith("/"));
+    symlinkSync(path, join(bin, utility));
+  }
+  const stubs = {
+    "ssh-keygen": '#!/bin/bash\nexit "${TEST_KEY_EXIT:-0}"\n',
+    timeout: '#!/bin/bash\nif [ "${TEST_TIMEOUT:-0}" = 1 ]; then exit 124; fi\nshift 3\nexec "$@"\n',
+    ssh: '#!/bin/bash\nprintf "%s\\n" "$*" >> "$TEST_CALLS"\nprintf "%s" "$TEST_RESPONSE"\nexit "${TEST_SSH_EXIT:-0}"\n',
+  };
+  for (const [name, body] of Object.entries(stubs)) {
+    writeFileSync(join(bin, name), body, { mode: 0o700 });
+  }
+  writeFileSync(join(secure, "known-hosts"), "synthetic-host-key\n");
+  const workflow = readFileSync(new URL("../.github/workflows/deploy.yml", import.meta.url), "utf8");
+  const marker = "      - name: Invoke the restricted server-side deploy entrypoint\n";
+  assert.equal(workflow.split(marker).length, 2);
+  const block = workflow.split(marker)[1].split("        run: |\n")[1];
+  assert.ok(block);
+  const script = block.split("\n").map((line) => {
+    assert.ok(line === "" || line.startsWith("          "), "transport must remain the final step");
+    return line.slice(10);
+  }).join("\n");
+  assert.doesNotMatch(script, /\$\{\{/);
+  const target = "a".repeat(40);
+  const calls = join(directory, "calls");
+  const result = spawnSync("/bin/bash", ["--noprofile", "--norc", "-c", script], {
+    cwd: directory, encoding: "utf8", timeout: 5000, maxBuffer: 65536,
+    env: {
+      PATH: bin, LC_ALL: "C", DEPLOY_SSH_DIRECTORY: secure,
+      DEPLOY_TARGET_SHA: target, PRODUCTION_HOST: "example.invalid",
+      PRODUCTION_USERNAME: "synthetic", PRODUCTION_SSH_KEY: "synthetic-key-not-a-credential",
+      TEST_CALLS: calls, TEST_RESPONSE: `DIGITALDOT_DEPLOY_RESULT=SUCCESS:${target}\n`,
+      ...overrides,
+    },
+  });
+  assert.equal(result.error, undefined);
+  assert.equal(result.signal, null);
+  assert.equal(existsSync(secure), false, "temporary key and output files must be removed");
+  const log = result.stdout + result.stderr;
+  assert.doesNotMatch(log, /synthetic-key-not-a-credential|RAW_PRIVATE_OUTPUT/);
+  assert.doesNotMatch(log, /failed safely/);
+  const invocations = existsSync(calls) ? readFileSync(calls, "utf8").trim().split("\n") : [];
+  assert.ok(invocations.length <= 1, "no automatic retry");
+  if (invocations.length) assert.ok(invocations[0].endsWith(`-- example.invalid deploy ${target}`));
+  return { ...result, log, invocations };
+}
+
+test("offline transport accepts only an exact receipt and cleans credentials", (context) => {
+  const result = runOfflineTransport(context);
+  assert.equal(result.status, 0);
+  assert.equal(result.invocations.length, 1);
+  assert.match(result.log, /confirmed the approved SHA/);
+});
+
+for (const [name, overrides] of [
+  ["lost SSH connection", { TEST_SSH_EXIT: "255", TEST_RESPONSE: "RAW_PRIVATE_OUTPUT" }],
+  ["simulated timeout", { TEST_TIMEOUT: "1" }],
+  ["nonzero exit despite a success receipt", { TEST_SSH_EXIT: "1" }],
+  ["empty receipt", { TEST_RESPONSE: "" }],
+  ["wrong SHA", { TEST_RESPONSE: `DIGITALDOT_DEPLOY_RESULT=SUCCESS:${"b".repeat(40)}\n` }],
+  ["missing newline", { TEST_RESPONSE: `DIGITALDOT_DEPLOY_RESULT=SUCCESS:${"a".repeat(40)}` }],
+  ["extra output", { TEST_RESPONSE: `DIGITALDOT_DEPLOY_RESULT=SUCCESS:${"a".repeat(40)}\nRAW_PRIVATE_OUTPUT` }],
+  ["oversized response", { TEST_RESPONSE: "x".repeat(4097) }],
+]) {
+  test(`offline transport leaves ${name} unconfirmed without retry`, (context) => {
+    const result = runOfflineTransport(context, overrides);
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /Deployment outcome UNCONFIRMED:/);
+    assert.match(result.stderr, /reconcile before retry/);
+    assert.doesNotMatch(result.log, /confirmed the approved SHA/);
+  });
+}
+
+test("offline transport refuses an unreadable key before invoking SSH", (context) => {
+  const result = runOfflineTransport(context, { TEST_KEY_EXIT: "1" });
+  assert.notEqual(result.status, 0);
+  assert.equal(result.invocations.length, 0);
+  assert.match(result.stderr, /Deployment refused: protected private key is unreadable/);
+  assert.doesNotMatch(result.log, /Deployment outcome/);
 });

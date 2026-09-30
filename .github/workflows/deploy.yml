@@ -44,9 +44,12 @@ jobs:
       - name: Use the control-plane validation runtime
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 22.22.2
+          node-version: "24.19.0"
           check-latest: false
           package-manager-cache: false
+
+      - name: Verify the exact control-plane runtime
+        run: node -e 'if (process.version !== "v24.19.0") process.exit(1)'
 
       - name: Fetch the current main ref
         run: >-
@@ -258,6 +261,9 @@ jobs:
             exit 1
           fi
 
+          # A lost client/receipt cannot prove that the remote operation stopped.
+          # Keep this warning visible even if the runner is cancelled mid-request.
+          echo "Deployment outcome is UNCONFIRMED until an exact success receipt is verified. Do not retry without trusted journal and live-state reconciliation."
           maximum_output_bytes=4096
           set +e
           timeout --signal=TERM --kill-after=30s 20m \
@@ -299,20 +305,20 @@ jobs:
           if [ "${#deploy_pipeline_status[@]}" -ne 2 ] || \
              [ "${deploy_pipeline_status[0]}" -ne 0 ] || \
              [ "${deploy_pipeline_status[1]}" -ne 0 ]; then
-            echo "Deployment failed safely: the restricted server entrypoint did not complete." >&2
+            echo "Deployment outcome UNCONFIRMED: transport did not confirm completion. Remote effects may have occurred; reconcile before retry." >&2
             exit 1
           fi
 
           output_size="$(wc -c < "$DEPLOY_REMOTE_OUTPUT_FILE")"
           if [ "$output_size" -gt "$maximum_output_bytes" ]; then
-            echo "Deployment failed safely: the protected response exceeded its limit." >&2
+            echo "Deployment outcome UNCONFIRMED: response exceeded its limit. Remote effects may have occurred; reconcile before retry." >&2
             exit 1
           fi
 
           printf 'DIGITALDOT_DEPLOY_RESULT=SUCCESS:%s\n' "$DEPLOY_TARGET_SHA" \
             > "$DEPLOY_EXPECTED_OUTPUT_FILE"
           if ! cmp -s -- "$DEPLOY_REMOTE_OUTPUT_FILE" "$DEPLOY_EXPECTED_OUTPUT_FILE"; then
-            echo "Deployment failed safely: the server returned no valid success receipt." >&2
+            echo "Deployment outcome UNCONFIRMED: no exact success receipt. Remote effects may have occurred; reconcile before retry." >&2
             exit 1
           fi
 

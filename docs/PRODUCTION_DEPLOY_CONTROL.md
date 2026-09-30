@@ -24,6 +24,26 @@ autorizează un deploy.
 Workflow-ul păstrează cererile concurente într-o singură coadă, dar refuză o
 cerere veche dacă `main` a avansat înainte de aprobarea ei.
 
+Validarea GitHub și testele control-plane folosesc exact **Node 24.19.0**,
+verificat explicit înainte de execuție. Nu instalează și nu schimbă Node pe
+server. Versiunea candidatului aplicației din planul local este **Node 24.21.0**;
+cele două roluri nu se confundă. Orice alt candidat cere plan și probe separate.
+
+## Rezultat neconfirmat și reluare
+
+Înainte de trimiterea cererii, workflow-ul anunță starea `UNCONFIRMED` până la
+validarea confirmării exacte. Un timeout, o anulare a runnerului, o eroare SSH,
+un răspuns prea lung sau lipsa confirmării valide **nu demonstrează absența
+efectelor pe server**. Nici oprirea clientului SSH nu confirmă oprirea procesului
+remote. Workflow-ul eșuează fără a afișa răspunsul brut și fără reîncercare automată.
+
+Nu se folosește Re-run jobs și nu se trimite o cerere nouă pentru a testa dacă
+prima a reușit. Se verifică, într-o etapă autorizată separat, jurnalul de încredere,
+identitatea operației și starea live (release, procese, storage, configurație,
+scrieri). La incertitudine se păstrează blocarea și se cere intervenție manuală;
+nu se șterge lockul pe baza unui timeout sau PID absent. Ieșirea GitHub nu este
+jurnalul autoritativ și nu implementează singură această barieră pe server.
+
 ## Cele patru secrete dedicate
 
 Aceste valori se creează numai în Environment-ul GitHub `production`, nu la
@@ -65,7 +85,8 @@ caracter de control sau comandă diferită trebuie refuzată.
 
 Gateway-ul trebuie, înainte de prima mutație a aplicației:
 
-1. să ia un lock unic de producție;
+1. să ia lockul unic al aceluiași controller pentru backup, migrare, promovare
+   și recuperare, nu lockuri independente pentru fiecare script;
 2. să confirme repository-ul remote așteptat și să aducă `main` fără
    credențiale Git persistente;
 3. să confirme că ținta este exact în `main`, că nu este downgrade sau istoric
@@ -81,8 +102,40 @@ Gateway-ul trebuie, înainte de prima mutație a aplicației:
    rulează efectiv aplicația cu Node 24;
 8. să folosească aceeași configurare `DIGITALDOT_DATA_ROOT` pentru build și PM2;
 9. să construiască într-un release separat de versiunea activă;
-10. să activeze atomic release-ul, să facă health check pentru SHA-ul exact și să
-   revină automat la release-ul anterior dacă restartul sau verificarea eșuează.
+10. să activeze atomic release-ul și să verifice SHA, runtime, storage,
+    configurație și identitatea procesului, nu doar HTTP 200;
+11. să permită revenirea automată numai în limitele jurnalului și înainte de
+    orice `thaw-intent` (încercare de redeschidere a scrierilor). După acest prag,
+    pot exista date noi: se refuză rollbackul automat și restaurarea unui backup
+    vechi; incertitudinea rămâne pentru intervenție manuală autorizată.
+
+### Legătura cu biblioteca locală integrată prin PR #12
+
+`scripts/deploy-control` este o bibliotecă, **nu un gateway instalat**. Acest
+workflow nu o conectează implicit la SSH. Adaptorul de producție rămâne de
+implementat și verificat separat, conform `DEPLOY_CONTROL_STATE.md`:
+
+- încarcă un plan aprobat, autentic, cu proveniență și expirare verificate,
+  dintr-o sursă controlată de administrator; identificatorul operației nu este
+  ales din `SSH_ORIGINAL_COMMAND`, iar comanda rămâne numai `deploy <SHA>`;
+- validează planul și observațiile înainte de admitere și înaintea efectelor;
+  un JSON cu forma corectă nu dovedește autenticitatea;
+- verifică excluderea tuturor scriitorilor (CMS/upload, joburi și acces direct),
+  apoi copia consistentă și restaurarea de probă în mediu separat;
+- scrie intenția în jurnal înaintea efectului și confirmarea numai după
+  verificarea efectului real; folosește același jurnal și aceeași autoritate;
+- nu emite confirmarea curentă `DIGITALDOT_DEPLOY_RESULT=SUCCESS:<SHA>` doar
+  pentru că găsește o operație istorică reușită. Revalidează starea live, iar o
+  operație incompletă sau ambiguă nu declanșează o nouă încercare automat.
+
+**Prima tranziție legacy este exclusă din biblioteca existentă.** Aceasta refuză
+bootstrap, Node 22 și storage legacy; migrarea inițială necesită plan separat,
+backup proaspăt și probă de revenire la versiunea live exactă. Nu relaxăm
+validatorii pentru a transforma implicit o promovare Node 24 în migrare.
+
+Testele offline ale transportului înlocuiesc SSH, validarea cheii și timeoutul
+cu dubluri locale și folosesc date fictive. Ele verifică mesajele/refuzurile și
+curățarea fișierelor temporare, nu rețeaua, un timeout real sau gateway-ul real.
 
 Gateway-ul nu trebuie să folosească `git reset --hard`, `git clean`, ștergeri
 recursive ori sincronizări destructive asupra conținutului, uploadurilor,
