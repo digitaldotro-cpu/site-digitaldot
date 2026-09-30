@@ -112,4 +112,18 @@ export const cmsDataSchema = z.object({
   }),
 });
 
+// Older stored pages predate SEO fields. Reading them must neither invent SEO
+// text nor relax validation of values that are present. Writes stay strict.
+export const cmsReadDataSchema = cmsDataSchema.extend({
+  pages: z
+    .array(
+      pageSchema.extend({
+        seoTitle: pageSchema.shape.seoTitle.optional(),
+        seoDescription: pageSchema.shape.seoDescription.optional(),
+      }),
+    )
+    .min(1),
+});
+
+export type CmsReadData = z.infer<typeof cmsReadDataSchema>;
 export type CmsDataInput = z.infer<typeof cmsDataSchema>;
