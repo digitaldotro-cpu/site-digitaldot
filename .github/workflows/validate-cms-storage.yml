@@ -48,6 +48,9 @@ jobs:
       - name: Test persistent-storage paths and isolated preflight
         run: npm run test:storage
 
+      - name: Test deployment-control admission and portable laboratory rules
+        run: npm run test:deploy-control
+
       - name: Check TypeScript without build output or incremental files
         run: node node_modules/typescript/bin/tsc --noEmit --incremental false
 
