@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllAuthors, getAllPosts } from "@/lib/blog";
-import { blogCategories, blogTags } from "@/data/blog-taxonomy";
+import { blogCategories } from "@/data/blog-taxonomy";
 import { absoluteUrl } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
 
@@ -103,7 +103,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const taxonomyEntries = [
     ...blogCategories.map((category) => `/blog/categorie/${category.key}`),
-    ...blogTags.map((tag) => `/blog/tag/${tag.key}`),
   ].map((route): SitemapEntry => ({
     url: absoluteUrl(route, content),
     changeFrequency: "weekly",
