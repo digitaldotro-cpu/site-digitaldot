@@ -28,7 +28,9 @@ export function BlogPostLayout({
       <article>
         <Container className="pt-16 sm:pt-20">
           <header className="mx-auto max-w-4xl">
-            <TagBadge>{getCategoryLabel(post.category)}</TagBadge>
+            <Link href={`/blog/categorie/${post.category}`} className="inline-block rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#66fcf1]">
+              <TagBadge>{getCategoryLabel(post.category)}</TagBadge>
+            </Link>
             <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               {post.title}
             </h1>

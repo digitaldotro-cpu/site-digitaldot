@@ -109,6 +109,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {"source": "/blog/tag/leaduri", "destination": "/blog/categorie/lead-generation", "permanent": true},
+      {"source": "/blog/tag/productie-video", "destination": "/blog/categorie/productie-video", "permanent": true},
+      {"source": "/blog/tag/ai-seo", "destination": "/blog/categorie/seo-ai", "permanent": true},
       {
         source: "/politica-de-confidentialitate",
         destination: "/politica-confidentialitate",

@@ -23,12 +23,20 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
   const content = await getSiteContent();
   const label = getTagLabel(tag);
 
-  return buildRouteMetadata({
+  const metadata = buildRouteMetadata({
     content,
     path: `/blog/tag/${tag}`,
     fallbackTitle: `${label} | Tag Blog Digital Dot`,
     fallbackDescription: `Articole Digital Dot despre ${label}, strategie de marketing, SEO, AI SEO, conținut, performance marketing și creștere digitală coerentă.`,
   });
+  return {
+    ...metadata,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: { index: false, follow: true },
+    },
+  };
 }
 
 export default async function TagPage({ params }: TagPageProps) {

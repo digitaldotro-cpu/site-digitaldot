@@ -1,20 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { BlogPost } from "@/types/content";
 import { blogCategories, getCategoryLabel } from "@/data/blog-taxonomy";
 import { BlogCard } from "@/components/blog/blog-card";
-import { cn } from "@/lib/utils";
-
-const ALL = "all";
 
 type BlogGridFilterProps = {
   posts: BlogPost[];
 };
 
 export function BlogGridFilter({ posts }: BlogGridFilterProps) {
-  const [activeCategory, setActiveCategory] = useState(ALL);
   const [query, setQuery] = useState("");
 
   const availableCategories = useMemo(() => {
@@ -24,11 +21,10 @@ export function BlogGridFilter({ posts }: BlogGridFilterProps) {
 
   const normalizedQuery = query.trim().toLowerCase();
   const visiblePosts = posts.filter((post) => {
-    const matchesCategory = activeCategory === ALL || post.category === activeCategory;
     const searchable = [post.title, post.excerpt, post.authorName, post.category, ...post.tags]
       .join(" ")
       .toLowerCase();
-    return matchesCategory && (!normalizedQuery || searchable.includes(normalizedQuery));
+    return !normalizedQuery || searchable.includes(normalizedQuery);
   });
 
   return (
@@ -46,36 +42,20 @@ export function BlogGridFilter({ posts }: BlogGridFilterProps) {
           />
         </label>
 
-        <div className="flex flex-wrap gap-3">
-          <button
-            type="button"
-            onClick={() => setActiveCategory(ALL)}
-            className={cn(
-              "rounded-full border bg-[#1f2a2d] px-4 py-2 text-sm font-semibold transition-colors hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
-              activeCategory === ALL
-                ? "border-[#276864] text-[#d8c7a3]"
-                : "border-[rgba(218,218,218,0.16)] text-[#dadada]",
-            )}
-          >
+        <nav aria-label="Categorii blog" className="flex flex-wrap gap-3">
+          <Link href="/blog" aria-current="page" className="rounded-full border border-[#276864] bg-[#1f2a2d] px-4 py-2 text-sm font-semibold text-[#d8c7a3] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#66fcf1]">
             Toate articolele
-          </button>
-
+          </Link>
           {availableCategories.map((category) => (
-            <button
+            <Link
               key={category.key}
-              type="button"
-              onClick={() => setActiveCategory(category.key)}
-              className={cn(
-                "rounded-full border bg-[#1f2a2d] px-4 py-2 text-sm font-semibold transition-colors hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3]",
-                activeCategory === category.key
-                  ? "border-[#276864] text-[#d8c7a3]"
-                  : "border-[rgba(218,218,218,0.16)] text-[#dadada]",
-              )}
+              href={`/blog/categorie/${category.key}`}
+              className="rounded-full border border-[rgba(218,218,218,0.16)] bg-[#1f2a2d] px-4 py-2 text-sm font-semibold text-[#dadada] transition-colors hover:border-[#276864] hover:bg-[#276864] hover:text-[#d8c7a3] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#66fcf1]"
             >
               {getCategoryLabel(category.key)}
-            </button>
+            </Link>
           ))}
-        </div>
+        </nav>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
